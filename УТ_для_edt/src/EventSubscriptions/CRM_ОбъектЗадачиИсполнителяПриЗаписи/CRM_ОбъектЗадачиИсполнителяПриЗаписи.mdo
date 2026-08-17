@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="73b60ae5-527f-4aa8-8598-97122d7fada2">
+  <name>CRM_ОбъектЗадачиИсполнителяПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект задачи исполнителя при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM when writing a user task object</value>
+  </synonym>
+  <comment>Объект задачи исполнителя при записи (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.ПриЗаписиОбъектаЗадачПользователя</handler>
+</mdclass:EventSubscription>

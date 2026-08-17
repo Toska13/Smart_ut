@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="02f9cb69-0403-4511-818c-e74cb59fe302">
+  <producedTypes>
+    <selectionType typeId="d8ad41f1-702a-4169-9891-0c20bcc1f51d" valueTypeId="85864478-5d98-4a5f-bb84-604720fde278"/>
+    <listType typeId="627f8670-1b43-45c5-b571-763eece5eac6" valueTypeId="fb34c099-ca65-4588-a1ce-0c69d0841299"/>
+    <managerType typeId="59c1fc3d-da08-48f2-b062-d7f836b31224" valueTypeId="165ef47c-a133-431e-b92a-8ce6e3a386d1"/>
+    <recordSetType typeId="707d35d9-6ac4-40c0-a744-3ee968fa4d70" valueTypeId="ec2fdfcd-b472-4493-9b3e-61dfeea6bfeb"/>
+    <recordKeyType typeId="829d3b3e-0f95-41db-8b48-48e9eb5061ea" valueTypeId="6ceca02b-bfb4-4d2c-bf48-5f30f83876cb"/>
+    <recordType typeId="d14a9f51-6148-4742-b1ce-4c793c601c65" valueTypeId="3098db0d-ffe4-405a-9a2a-709c141ee0e3"/>
+    <recordManagerType typeId="6718b546-ad6d-4996-9497-c7ec3247fcf5" valueTypeId="f1388ed7-29d6-4012-b07c-68b1b3dc059d"/>
+  </producedTypes>
+  <name>смартIECHOВопросыОтветыПоКомплектующим</name>
+  <synonym>
+    <key>ru</key>
+    <value>IECHO Вопросы и ответы по комплектующим (смарт)</value>
+  </synonym>
+  <comment>//смарт:ММ 621 21.09.2021</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартIECHOВопросыОтветыПоКомплектующим.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартIECHOВопросыОтветыПоКомплектующим.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="fede50b1-842f-46cf-89af-903aa363ef4e">
+    <name>ИсходнаяКомплектующая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исходная комплектующая</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартIECHOКомплектующие</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="030ccc6e-eb26-4232-b0bf-44998a9b0f06">
+    <name>Вопрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вопрос</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартIECHOВопросы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="94072464-f124-4fc5-8ab1-8c14fe1c5fdd">
+    <name>Ответ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>БЛ=Нет; БИ=Да</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>БЛ=Нет; БИ=Да</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8647c049-2f61-41ec-8966-29e71fa95127">
+    <name>Комплектующая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комплектующая</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартIECHOКомплектующие</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6e05dc8e-40e4-44a0-bb60-9950939434cc">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1ce5befd-1e56-4b16-ba04-178d3bff76e4">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6a4ca37f-f739-4ebc-88b8-90451a1c9bf3">
+    <name>ПодобранныеКомплектующие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подобранные комплектующие</value>
+    </synonym>
+    <comment>//смарт:ММ 621 30.09..2021</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

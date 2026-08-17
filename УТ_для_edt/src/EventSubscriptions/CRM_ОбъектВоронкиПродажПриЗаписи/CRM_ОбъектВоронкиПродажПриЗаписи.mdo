@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dce0e34e-a43f-4aff-a25a-4e9f2dece7b5">
+  <name>CRM_ОбъектВоронкиПродажПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект воронки продаж при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>When recording a funnel object</value>
+  </synonym>
+  <comment>Объект воронки продаж при записи (CRM)</comment>
+  <source>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+    <types>DocumentObject</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ВоронкиПродажСервер.ПриЗаписиОбъектаВоронкиПродаж</handler>
+</mdclass:EventSubscription>

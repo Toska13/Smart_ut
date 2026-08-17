@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e0e797d1-5745-46af-bae1-939ea34177ea">
+  <producedTypes>
+    <selectionType typeId="9e067d4d-4bb2-4db9-a7de-99058784ab1e" valueTypeId="a62a54f9-4e0c-4c4c-bc42-79df6ae96dcf"/>
+    <listType typeId="6f707425-8b8f-4c72-a742-f4231f0a9167" valueTypeId="496d3138-dfc8-438f-93e1-659f9b0d0eea"/>
+    <managerType typeId="e29cec1a-6731-4ae0-a477-b57d5b522414" valueTypeId="f6d4cf13-d038-43e9-aa74-ce719be5b8be"/>
+    <recordSetType typeId="e6a54120-c548-4666-99d7-424ba533d261" valueTypeId="ceaa6ff0-4518-4cc8-aa0d-4e3a911b4755"/>
+    <recordKeyType typeId="6fd48057-d9fd-4986-8fbe-a87cd8ec0b61" valueTypeId="207ec0d4-819d-4962-baff-368c78fabe31"/>
+    <recordType typeId="80483b76-3f84-4dff-9a93-41593e99ab4d" valueTypeId="c8ca54f7-1fb7-41fa-94eb-41c74f063034"/>
+    <recordManagerType typeId="da82ecd9-6dfd-4950-97a3-36df14299837" valueTypeId="7724fe35-7927-4847-8b98-71034392ea14"/>
+  </producedTypes>
+  <name>CRM_СквознаяАналитикаИзмененныеЗаявки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Измененные заявки (Сквозная аналитика)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Changed requests (End-to-end analytics)</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b584e5b0-524d-4105-9f46-40567d56a69d">
+    <name>Статус</name>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <comment>&quot;InWork&quot; (1), &quot;Paid&quot; (2), &quot;Canceled&quot; (3)</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1d411871-897f-4654-86ca-1ff646fdd84d">
+    <name>Клиент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Client</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.CRM_ПотенциальныеКлиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="61873f2a-4c08-4ea5-b78f-797c3d099ca1">
+    <name>Менеджер</name>
+    <synonym>
+      <key>en</key>
+      <value>Manager</value>
+    </synonym>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b9a70926-d850-4931-861b-4296183dff9d">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="6039b7c7-de36-4412-b5d4-ea158b6152b7">
+    <name>ИсточникДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Data source</value>
+    </synonym>
+    <comment>Служебный, для анализа</comment>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+      <types>DocumentRef.CRM_Заявка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="2efd4155-37b2-4a71-93ea-a3c053c61dfc">
+    <name>ИсточникАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник аналитики</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Analytic source</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ИсточникиПолученияЛидов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3aca0429-a56e-49ef-a4c0-0354bd0238e2">
+    <name>ДатаИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Change date</value>
+    </synonym>
+    <comment>Дата изменения заявки</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e6aa9242-e02f-451f-be67-27e439bb23db">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Request</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Заявка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

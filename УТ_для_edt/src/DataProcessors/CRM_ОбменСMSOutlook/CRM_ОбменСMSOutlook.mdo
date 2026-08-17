@@ -1,0 +1,1699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="003bcef2-9624-4cd9-828f-e9fe741a31d6">
+  <producedTypes>
+    <objectType typeId="edd3054e-651a-4e4e-958b-70acadc243c1" valueTypeId="9e1d9dac-a268-428a-be8f-708bab356747"/>
+    <managerType typeId="772987bc-c104-4209-8f83-e88cb91840aa" valueTypeId="202e5f1f-124a-4dfe-b9a8-7351ee272527"/>
+  </producedTypes>
+  <name>CRM_ОбменСMSOutlook</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен данными с MS Outlook</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Data interchange with MS Outlook</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_ОбменСMSOutlook.Form.ФормаМастерНастройки</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="ad31b08d-2a13-48c8-ab1e-92aa62cf7ff6">
+    <name>ПрограммаOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Программа outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Program of outlook</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ПрограммыMSOutlook</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="70dc6b11-5e42-45d7-ab61-1a0e73eb3905">
+    <name>ИмяСохраненнойНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя сохраненной настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Name of the saved settings</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="98c3ff0d-0019-412d-9792-5558a9ae471c">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ddec53a0-04cf-40d7-b1de-9805b1f5dc19">
+    <name>Направление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Direction</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="79e2dfca-882f-4ec6-a676-6600c33e86a0">
+    <name>Приоритет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Priority</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e5813e05-234e-481a-a279-2a0dddc11ac2">
+    <name>ОткрытьФормуСопоставленияОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Открыть форму сопоставления объектов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Open the form of comparison of objects</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="50228f6b-1023-4955-a2e8-0adb89bc5b1a">
+    <name>УдалятьПомеченныеНаУдалениеОбъекты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалять помеченные на удаление объекты 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Delete 1C objects marked for deletion</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cb5ea7e8-96e6-4028-b44b-b6e97354654f">
+    <name>СинхронизироватьСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize events</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4935e163-dc85-4968-ad81-a7ac05631a93">
+    <name>СинхронизироватьЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать задачи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize tasks</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9e8f8638-a707-49a3-9928-be99c01673f2">
+    <name>СинхронизироватьПисьма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать письма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize letters</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f6e62010-d05e-48eb-953d-fde1b5cd7c50">
+    <name>СинхронизироватьКонтакты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize contacts</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="902c6f80-377e-490b-84aa-16496b12239d">
+    <name>СинхронизироватьКЛК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать контактных лиц контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize contact persons of the counterpart</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="41c63f8a-b37b-4ce4-8ee2-4a62fb40c904">
+    <name>СинхронизироватьК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать клиентов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize customers</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="db6ff508-7de5-4ea6-9ad4-1921fd00b28c">
+    <name>СинхронизироватьЛК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать личные контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize personal contacts</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="59eb2d2b-e547-4b29-9996-124dfbc27e21">
+    <name>ИсключитьЧастныеКонтакты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исключить частные контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Eliminate private contacts</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6c2dd63b-57fc-4cc3-a30e-f0a86e2b7867">
+    <name>ИсключитьЧастныеСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исключить частные события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Eliminate private events</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0cda15c7-2370-4616-a47f-5f8c5a0b8457">
+    <name>ФильтрДатаИзмененияСобытияOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр дата изменения события outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Filter date of change of event of outlook</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="546aac8e-b428-4e3a-ab85-fdae17326fe5">
+    <name>ФильтрДатаИзмененияКонтактаOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр дата изменения контакта outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Filter date of change of contact of outlook</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5ee93a73-f5c5-47e6-b6e3-fd1c5020222d">
+    <name>ТолькоИзмененныеКонтакты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только измененные контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Only the changed contacts</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="799980ae-8bb7-4f97-8793-b85689923706">
+    <name>ТолькоИзмененныеСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только измененные события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Only the changed events</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d6e79f9c-e2e0-4733-ae61-2e052eb98a58">
+    <name>СинхронизироватьКонтактыПоПолям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать контакты по полям</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize contacts on fields</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8cf6790a-aee6-46d6-be25-96d0a5a3b5f6">
+    <name>ГруппаДоступаККонтрагенту</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа доступа к контрагенту</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Group access to counterparty</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыДоступаПартнеров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Группа доступа, к которой отнесен клиент</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Access group to which customer is assigned</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="199080d5-593c-4486-9c25-584f21dd3b60">
+    <name>ГруппаКонтактов1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Group</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="52e15c17-05e6-49d1-85ce-74fd577e3fad">
+    <name>ГруппаСобытий1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа событий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Group of 1C events</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f63f71f9-fe0b-4977-8589-c955429afaf5">
+    <name>ВидСобытий1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид событий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>1C events type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВидыСобытий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0ded6d09-faf6-4943-82f8-644a9fc18635">
+    <name>ТипСобытий1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип событий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type of events 1С</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВходящееИсходящееСобытие</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4ea17c9c-fed7-470d-bc03-606e663731d3">
+    <name>СостояниеСобытий1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State of event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияСобытий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0213e75d-9e5c-4b2b-bdcc-21ce5cfd57bc">
+    <name>СинхронизироватьКонтактыСобытияOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать контакты события outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize contacts of event of outlook</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b97dad82-7d82-4b81-ac43-ce0d6a735f76">
+    <name>СинхронизироватьУчастниковСобытияOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Синхронизировать участников события outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Synchronize participants of event of outlook</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7d0e979c-4669-44db-9d8e-cc7ff5cef111">
+    <name>ИспользоватьОбщиеНастройкиСинхронизацииОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать общие настройки синхронизации объектов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Use inline tunings of synchronization of objects</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="29303174-b40a-4f8c-82a7-c059bb22c91f">
+    <name>ИспользоватьОбщиеНастройкиСинхронизацииРеквизитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать общие настройки синхронизации реквизитов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Use common settings of attributes synchronization</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="67473a57-f018-464e-8f9b-cf57f397bc12">
+    <name>ИспользоватьОбщиеДополнительныеНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать общие дополнительные настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Use inline additional tunings</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fd5e4e49-b450-440d-9286-2eec27f657d1">
+    <name>КомментарийOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment of outlook</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b5d6574d-b487-4bf3-aba6-cb76f79b559a">
+    <name>Комментарий1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment 1С</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2e5fd65a-01b1-4813-803f-778abd4dd24c">
+    <name>ФильтрДатаИзмененияПисьмаOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр дата изменения письма outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Filter date of change of the letter of outlook</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="08476eba-b00a-4eb3-90a3-ed950dbf6892">
+    <name>ТолькоИзмененныеПисьма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только измененные письма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Only the changed letters</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="193a08db-1853-47f9-8947-10d6ae9181e6">
+    <name>ВидСобытийПисьмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид событий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>1C events type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВидыСобытий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e5d489d6-7081-4552-b138-19cc2d0f505b">
+    <name>СостояниеСобытийПисьмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State of event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияСобытий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1b9f4397-c542-48a3-8f52-11224e569b17">
+    <name>ГруппаСобытийПисьмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа событий 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Group of 1C events</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4d4585c8-5d78-4047-99c7-c2c984dae7cb">
+    <name>ЗагружатьВложенияПисьмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружать вложения электронных  писем</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Load enclosures of electronic letters</value>
+    </synonym>
+    <comment>Загружать вложения электронных  писем</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9e73576e-1699-4c2e-a9a0-5ca42bbccbfd">
+    <name>ПереноситьКомментарийКонтактаВOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переносить комментарий контакта в outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transfer the comment of contact to outlook</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="91440801-7c5f-4f48-9fb8-2f9105fa3355">
+    <name>ПереноситьЗаметкиКонтактаВ1С</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переносить заметки контакта в 1С</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transfer notices of contact in 1С</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="513c87d6-021d-43ff-8657-49dc0b19e012">
+    <name>НастройкиКонтактов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки контактов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Settings of contacts</value>
+    </synonym>
+    <type>
+      <types>DataCompositionSettingsComposer</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4b6d1ee8-ee16-446b-b1fd-fe0446c99d6c">
+    <name>НастройкиСобытий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки событий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Settings of events</value>
+    </synonym>
+    <type>
+      <types>DataCompositionSettingsComposer</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f71e230a-c3a8-4c21-a89b-c0695d14dc44">
+    <name>ИскатьКонтактыПоАдресамEMail</name>
+    <synonym>
+      <key>ru</key>
+      <value>Искать контакты по адресам E-Mail</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Search for contacts to addresses of the E-mail</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="238bb788-0421-4f49-b865-137397c27bfc">
+    <name>УчетнаяЗаписьПочтыДляСинхронизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учетная запись почты для синхронизации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mail account for synchronization</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УчетныеЗаписиЭлектроннойПочты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="34c5fba3-a7fd-4c57-962b-9169c29c28f6">
+    <producedTypes>
+      <objectType typeId="fe3acc9d-2532-4d15-b327-0638aa7dc1e6" valueTypeId="e9aeab80-fe20-4da4-8993-56c05f02cb16"/>
+      <rowType typeId="7eb2e5ba-afa2-4852-be8c-42d29e33835e" valueTypeId="1b45fe87-65f6-4522-be3a-838b53134bea"/>
+    </producedTypes>
+    <name>Контакты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контакты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contacts</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="4b631230-b917-4fab-8947-40d79bd4430a">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Mark</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="48c552b5-56c2-4942-8125-8521c81c3417">
+      <name>Направление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Direction</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="01459a7a-1016-4a09-a443-7df9595f72da">
+      <name>Объект_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект 1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C object</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Партнеры</types>
+        <types>CatalogRef.КонтактныеЛицаПартнеров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b3c1f3c-fd27-405c-89ec-0182f9cd1acd">
+      <name>ДатаИзменения_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения  1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5f39d54d-8828-4318-9a95-b5730e82c38f">
+      <name>Представление_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Представление outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Presentation of outlook</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a49579e4-fdf4-4bac-8432-f5203999198d">
+      <name>ДатаИзменения_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="14daec10-0c26-4196-88c3-c84c943ce99e">
+      <name>ПапкаOutlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Папка outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook folder</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c4538801-8e20-4fba-a352-920e6b731a8c">
+      <name>ВидКонтакта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид контакта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Contact type</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a8c2ac73-804f-420a-9b74-92097127ce50">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ID</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c94d358d-ca0a-4ed2-927d-143ee95bbf04">
+    <producedTypes>
+      <objectType typeId="1f9eceba-8a62-4be1-b2ac-405154d0173b" valueTypeId="d0e8f55b-1d83-4d37-9a3a-8a41b880c9de"/>
+      <rowType typeId="71c936cc-acdb-4209-8150-a9959ae84c74" valueTypeId="003cb8fb-a4e0-4c80-ab5b-7dac28cb919c"/>
+    </producedTypes>
+    <name>События</name>
+    <synonym>
+      <key>ru</key>
+      <value>События</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Events</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b56cf65d-f759-4232-8da6-8df7b7b0344b">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Mark</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ff774542-be9d-45ff-9e26-a09a68618c87">
+      <name>Направление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Direction</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="55efc343-c540-4dcb-8095-c7fda7f17f2d">
+      <name>Объект_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект 1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C object</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.CRM_Взаимодействие</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e41fe16b-60ad-4665-be15-71dd1def2574">
+      <name>ДатаИзменения_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения  1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b87755ff-e23d-4491-9efc-c5b34908c2d4">
+      <name>Представление_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект MS Outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MS Outlook object</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="67c2e7f9-8735-4386-b88e-295f00612280">
+      <name>ДатаИзменения_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="00fef537-fb62-4155-9761-813ba2f5934a">
+      <name>ПапкаOutlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Папка outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook folder</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7ce676ad-3663-4b4d-93ca-2c5e0e924ebe">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ID</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="9e7757de-fa86-4c59-880b-9f742f93bbc0">
+    <producedTypes>
+      <objectType typeId="97ae0bf8-134d-48b7-9fa0-5a8647f24d23" valueTypeId="6de87d1f-c7e5-45a8-8272-02e1036c192d"/>
+      <rowType typeId="f319f40e-bd98-485e-b8bf-faea547b7ef3" valueTypeId="7fc44c78-2796-4e06-bad9-fe9ed2f4ccf3"/>
+    </producedTypes>
+    <name>СоответствиеКонтактнойИнформации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствие контактной информации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Correspondence of the contact information</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="74978064-b019-4011-85e7-ef7317c429a7">
+      <name>Тип</name>
+      <synonym>
+        <key>ru</key>
+        <value>Тип</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Type</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ТипыКонтактнойИнформации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0f5b57ff-57d7-4234-b07f-a5c7b0c45f52">
+      <name>ВидКИ1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид КИ 1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Type of CI in 1С</value>
+      </synonym>
+      <comment>Вид контактной информации 1С</comment>
+      <type>
+        <types>CatalogRef.ВидыКонтактнойИнформации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82e81eef-af59-4ed3-98b8-eecb1a34ce50">
+      <name>ВидКИOutlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид КИ Outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Type of CI Outlook</value>
+      </synonym>
+      <comment>Вид контактной информации Outlook</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cbc8fc88-ff92-4bdb-ad51-16f07de46f20">
+      <name>ПредставлениеКИOutlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Представление КИ Outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Presentation of CI Outlook</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="49dfec39-b7a9-43f8-b1e0-791fb4c7710b">
+      <name>ВидКонтакта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид контакта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Contact type</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>3</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="2cd7ab9a-e267-4508-a541-b6dd9d6dea20">
+    <producedTypes>
+      <objectType typeId="60f6d1de-754a-4f30-9caa-24397460a30a" valueTypeId="dea127fa-fed3-4567-a26b-504147fb5598"/>
+      <rowType typeId="9890a7c8-2323-4ae3-84b3-5479fc0764e2" valueTypeId="2933a6c0-d9a8-41a5-96a1-633a2cf9d5d4"/>
+    </producedTypes>
+    <name>Письма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Письма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Letters</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="fbb2d2c5-68f3-4a53-9047-2c8d173b3234">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Mark</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="721e1f71-0f1b-45f1-af54-2524331fcfc9">
+      <name>Направление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Direction</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="218c0a1c-6677-4123-a0a9-55b9e559f46a">
+      <name>Объект_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект 1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C object</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ae2a5606-06ba-4bf8-a628-371069affaec">
+      <name>ДатаИзменения_1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения  1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>1C modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4ebfd4c2-6a9c-4b1b-af08-7df73d1ceb16">
+      <name>Представление_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект MS Outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MS Outlook object</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a50db8f5-e2f6-4be1-ac39-633e6517d1ca">
+      <name>ДатаИзменения_Outlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата изменения outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook modifiedication date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="96387720-368c-4080-b8e2-ed1af04da39d">
+      <name>ПапкаOutlook</name>
+      <synonym>
+        <key>ru</key>
+        <value>Папка outlook</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Outlook folder</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b8b626e3-d09f-4821-8b7d-d0e581b2d66e">
+      <name>ID</name>
+      <synonym>
+        <key>ru</key>
+        <value>ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ID</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d41406fa-b0ce-41ac-8c03-074740c97de9">
+    <producedTypes>
+      <objectType typeId="5e0be01e-26d0-4dfc-9072-fa28831f4ed3" valueTypeId="b4af8fef-dc51-4ffc-b2bf-e53f6e7c7b93"/>
+      <rowType typeId="fc98bec3-0dad-41f2-a0ef-997f4a32a2f5" valueTypeId="2bfb047e-a2dd-4a08-927c-2493e59fb298"/>
+    </producedTypes>
+    <name>ТаблицаПапокOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица папок outlook</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Table of outlook folders</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="dad0a22f-33df-453e-be93-26b94a64e9ea">
+      <name>Папка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Папка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Folder</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="3eca77e1-9d72-47dc-84c6-252240c062d3">
+      <name>FolderPath</name>
+      <synonym>
+        <key>ru</key>
+        <value>Folder path</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Folder path</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="887ac81f-bba8-47ce-b281-1e0e45f98b4f">
+      <name>olFolder</name>
+      <synonym>
+        <key>ru</key>
+        <value>olFolder</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>olFolder</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="6cca0c17-4357-4283-8f54-0122df7d46ab">
+      <name>ЗагрузкаИз1С</name>
+      <synonym>
+        <key>ru</key>
+        <value>Загрузка из 1С</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Import from 1С</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="5c401a07-a907-4bcb-856e-2e248ebe6ead">
+    <name>ФормаМастерНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мастер настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Settings Wizard</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f7767333-0b72-4172-b0d4-a4c521129f92">
+    <name>ФормаСопоставленияОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма сопоставления объектов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of comparison of objects</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="455cb906-649a-4cb3-bbce-993fc0907062">
+    <name>ФормаНастройкиСоответствияПолей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки соответствия полей</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of settings of correspondence of fields</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f4836898-51af-43f9-a822-2a48a327c578">
+    <name>СписокСобытий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список взаимодействий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event list</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="10a39a39-f883-4538-9346-199754a01efe">
+    <name>СписокКонтактов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список контактов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contact list</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="80a9bfbe-16b9-4e3f-b2f7-b957ca8c9c41">
+    <name>Таблицы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблицы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tables</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="e13af3ea-cd0e-4171-b0d2-f321734d2fab">
+    <name>ВидыКонтактнойИнформации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виды контактной информации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contact information kinds</value>
+    </synonym>
+  </templates>
+  <templates uuid="f9b2b72c-ff73-444c-9e2a-dfa08c038fe2">
+    <name>ТипыДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типы данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Data types</value>
+    </synonym>
+    <templateType>HTMLDocument</templateType>
+  </templates>
+  <templates uuid="6c8e84a1-a3c4-4d3c-bc6b-77343c656e63">
+    <name>НастройкаРеквизитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка реквизитов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Settings of attributes</value>
+    </synonym>
+    <templateType>HTMLDocument</templateType>
+  </templates>
+  <commands uuid="f6c620f0-701d-4fde-8c7d-51f1107b88f2">
+    <name>CRM_МастерСозданияНастройкиMSOutlook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мастер создания настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Master of creation of settings</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

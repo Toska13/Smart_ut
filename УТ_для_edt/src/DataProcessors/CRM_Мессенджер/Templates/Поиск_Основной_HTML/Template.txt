@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Диалоги</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            
+        html {            overflow: hidden;            font-family: Arial, sans-serif;        }        html * {            box-sizing: border-box;        }        body {            overflow-y: auto;            overflow-x: hidden;            color: #000000;            height: 98%;        }        #main {            display: flex;            height: 100%;            width: 100%;        }        #chat {            display: flex;            flex-direction: column;            height: 100%;            width: 100%;        }        #dialogs {            width: 100%;        }        #messages {            flex: 1;            position: relative;        }        #dialog {            overflow-y: scroll;            position: absolute;            width: 100%;            height: 100%;            padding-right: 12px;        }        #previous {            text-align: center;            font-size: 9pt;        }        #QuotedMessage {            border-left: groove;            color: grey;            margin-bottom: 5px;            margin-top: 5px;            margin-left: 10px;            border-left: groove;        }        #search_context {            max-width: 400px;            overflow-y: auto;            overflow-x: hidden;        }        #search {            height: 100%;            padding: 0 12px 12px;            border-left: solid;            border-left-color: #E5E5E5;            border-left-width: 1px;            margin-left: 6px;        }        #context {            height: 100%;            padding: 8px;            border-left: dashed;            border-left-color: lightgrey;            border-left-width: 1px;            margin-left: 5px;        }        #searchHeader {            display: flex;            flex-wrap: wrap;            margin-bottom: 12px;        }
+        a {            color: #00A0F2;            text-decoration: none;        }        .chat__item {            display: flex;            align-items: flex-start;            margin-bottom: 16px;        }        .chat__item--responder {            flex-direction: row-reverse;        }        .chat__item + .chat__item--info {            margin-top: 24px;            margin-bottom: 8px;        }        .chat__item--info + .chat__item {            margin-top: 24px;        }        .chat__item--info + .chat__item--info {            margin-top: 0;            margin-bottom: 8px;        }        .chat__item--info {            justify-content: center;        }        .chat__info {            font-weight: 400;            font-size: 13px;            line-height: 16px;            color: #838E9C;        }        .chat__info-link {            font-weight: 700;        }        .chat__date {            font-weight: 400;            font-size: 13px;            line-height: 16px;            color: #838E9C;            background: #FAFAFA;            border-radius: 26px;            padding: 4px 16px;        }        /* Группировка нескольких входящих / исходящих сообщений подряд        .chat__item--sent + .chat__item--sent .chat__message-data {            display: none;        }        .chat__item--responder + .chat__item--responder .chat__message-data {            display: none;        }        */        .chat__item--responder .chat__message {            flex-direction: row-reverse;            background: #D1F0FF;        }        .chat__item--responder .chat__message-content {            margin-left: 0;            margin-right: 5px;        }        .chat__item:hover .action_button {            opacity: 1;        }        .chat__person-avatar {            border-radius: 50%;        }        .chat__serice {            display: flex;            max-width: fit-content;            position: relative;            background-color: #f0f0f0;            margin-bottom: 8px;            border-radius: 14px;            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);            border: 1px solid #dddddd;            padding: 5px 5px 5px 5px;            box-sizing: border-box;        }        .chat__messages {            margin-left: 10px;        }        .chat__message {            min-width: 218px;            max-width: 90%;            position: relative;            background: #FAFAFA;            border-radius: 20px;            padding: 14px 14px 13px 16px;            box-sizing: border-box;            display: inline-block;            align-items: flex-start;            z-index: 1;            font-size: 13px;            line-height: 15px;        }        .chat__message-data {            display: flex;            align-items: flex-start;            margin-bottom: 4px;        }        .chat__message-time {            color: #838E9C;            margin-right: 8px;        }        .chat__message-author {            color: #333333;            font-weight: 700;            margin-right: 8px;        }        .chat__message-content {            color: #333333;            margin-bottom: 3px;        }        .chat__message-content:last-child {            margin-bottom: 0;        }        .chat__message-attachments > div {            margin-bottom: 3px;        }        .chat__message-attachments > div:last-child {            margin-bottom: 0;        }        .action_button {            cursor: pointer;            margin-left: auto;            color: #6B7889;            font-size: 24px;            font-weight: 700;            line-height: 0;        }        ::-webkit-scrollbar {            width: 8px;        }        ::-webkit-scrollbar-thumb {            border-radius: 4px;            border-width: 1px 1px 1px 2px;            border-color: #777;            background-color: #aaa;        }        ::-webkit-scrollbar-thumb:hover {            border-width: 1px 1px 1px 2px;            border-color: #555;            background-color: #777;        }        ::-webkit-scrollbar-track {            border-width: 0;        }        ::-webkit-scrollbar-track:hover {            border-left: solid 1px #aaa;            background-color: #eee;        }        .text__black {            color: #000000;        }        .text__blue {            color: #00a0f2;        }        .text__grey {            color: #838E9C;        }        .text__bold {            font-weight: 600;            margin-right: 8px;        }        .text__red {            color: #FF5722;            margin-right: 8px;        }        .text__green {            color: #1E9852;            margin-right: 8px;        }        .text__strike {            text-decoration: line-through;            margin-right: 8px;        }        .result__item {            width: 100%;            position: relative;            margin-bottom: 5px;            padding: 14px 16px 12px 16px;            cursor: pointer;            z-index: 1;            background: #FAFAFA;            border: 1px solid #FAFAFA;            border-radius: 12px;            font-size: 13px;            line-height: 15px;        }        .result__item .chat__message-author {            color: #2C2C2C;            font-weight: 400;        }        .result__item.current {            border-color: yellow;        }        .group__title {            font-size: 13px;            line-height: 15px;            font-weight: 700;            color: #2C2C2C;            margin-bottom: 6px;        }        [hidden] {            display: none;        }        .chat__message-attachment {            display: flex;            align-items: flex-start;            word-break: break-all;            font-size: 13px;            line-height: 15px;            color: #00A0F2;        }        .chat__message-attachment:not(:last-child) {            margin-bottom: 4px;        }        .chat__message-icon {            flex-shrink: 0;            width: 16px;            height: 16px;            margin-right: 8px;        }        .empty {
+            height: 98%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: grey;
+        }
+        
+        .empty__hidden {
+            display: none;
+        }
+
+        .global-search__item:not(:last-child) {            margin-bottom: 12px;        }        .global-search .result__item {            display: flex;            align-items: flex-start;            line-height: 12px;            color: #6B7889;        }        .global-search .result__logo {            margin-right: 8px;        }        .global-search .result__message {            width: 100%;            display: flex;            flex-wrap: wrap;
+            justify-content: space-between;        }        .global-search .result__text {            line-height: 12px;
+            word-break: break-all;        }        .global-search .result__data {            flex-shrink: 0;        }        .global-search .result__contact,
+        .global-search .result__dialog {            margin-bottom: 7px;            width: 100%;        }        .global-search .result__date {            margin-left: auto;            color: #6B7889;        }
+        
+        </style>
+        <script type="text/javascript">
+
+            "use strict";
+
+            var search;
+            var currentEl;
+            
+            function addResultItem(owner, itemData) {
+                let aItem = document.createElement("a");
+                aItem.setAttribute("href", itemData.ref);
+                aItem.onclick = function(e) { e.preventDefault(); };
+                let divItem = document.createElement("div");
+                divItem.setAttribute("class", "result__item");
+                divItem.setAttribute("onclick", "clickItem(this)");
+                divItem.setAttribute("data-user-id", itemData.user_attr);
+                divItem.setAttribute("data-group-id", itemData.group_attr);
+                divItem.setAttribute("data-dialog-ref", itemData.dialog_attr);
+                divItem.setAttribute("data-account-ref", itemData.account_attr);
+                let divData = document.createElement("div");
+                divData.setAttribute("class", "result__data");
+                let divLogo = document.createElement("div");
+                divLogo.setAttribute("class", "result__logo");
+                let imgLogo = document.createElement("img");
+                imgLogo.setAttribute("class", "result__logo__img");
+                imgLogo.setAttribute("src", itemData.logo);
+                divLogo.appendChild(imgLogo);
+                divData.appendChild(divLogo);
+                let divMessege = document.createElement("div");
+                divMessege.setAttribute("class", "result__message");
+                let divContact = document.createElement("div");
+                divContact.setAttribute("class", "result__contact");
+                selectSearch(divContact, itemData.contact);
+                let divDate = document.createElement("div");
+                divDate.setAttribute("class", "result__date");
+                divDate.innerHTML = itemData.date;
+                let divText = document.createElement("div");
+                divText.setAttribute("class", "result__text");
+                selectSearch(divText, itemData.text);
+                divMessege.appendChild(divContact);
+                if (itemData.is_dialog) {
+                    let divDialog = document.createElement("div");
+                    divDialog.setAttribute("class", "result__dialog");
+                    selectSearch(divDialog, itemData.dialog_name);
+                    divMessege.appendChild(divDialog);
+                }
+                divMessege.appendChild(divText);
+                divMessege.appendChild(divDate);
+                divItem.appendChild(divData);
+                divItem.appendChild(divMessege);
+                aItem.appendChild(divItem);
+                owner.appendChild(aItem);
+            }
+
+            function addResultItems(owner, items) {
+                var index, len = items.length;
+                for (index = 0; index < len; index++) {
+                    addResultItem(owner, items[index]);
+                }
+            }
+
+            function addResults(resultsJSON) {
+                var results = JSON.parse(resultsJSON);
+                var elOwner;
+                var elGroupTitle;
+
+                search = results.search;
+                currentEl = undefined;
+                
+                var elEmpty = document.getElementById("empty");
+                if ((results.contacts) || (results.dialogs) || (results.messages)) {
+                    elEmpty.setAttribute("class", "empty__hidden");
+                } else {
+                    elEmpty.setAttribute("class", "empty");
+                }
+                
+                if (results.contacts) {
+                    elOwner = document.getElementById("contacts");
+                    elGroupTitle = document.createElement("div");
+                    elGroupTitle.setAttribute("class", "group__title");
+                    elGroupTitle.innerHTML = "Контакты";
+                    elOwner.appendChild(elGroupTitle);
+                    addResultItems(elOwner, results.contacts);
+                }
+                if (results.dialogs) {
+                    elOwner = document.getElementById("dialogs");
+                    elGroupTitle = document.createElement("div");
+                    elGroupTitle.setAttribute("class", "group__title");
+                    elGroupTitle.innerHTML = "Диалоги";
+                    elOwner.appendChild(elGroupTitle);
+                    addResultItems(elOwner, results.dialogs);
+                }
+                if (results.messages) {
+                    elOwner = document.getElementById("messages");
+                    elGroupTitle = document.createElement("div");
+                    elGroupTitle.setAttribute("class", "group__title");
+                    elGroupTitle.innerHTML = "Сообщения";
+                    elOwner.appendChild(elGroupTitle);
+                    addResultItems(elOwner, results.messages);
+                }
+            }
+            
+            function clearResults() {
+                var results = document.getElementById("contacts");
+                while (results.firstChild) {
+                    results.removeChild(results.firstChild);
+                }
+                results = document.getElementById("dialogs");
+                while (results.firstChild) {
+                    results.removeChild(results.firstChild);
+                }
+                results = document.getElementById("messages");
+                while (results.firstChild) {
+                    results.removeChild(results.firstChild);
+                }
+            }
+
+            function selectSearch(owner, str) {
+                
+                var el, res = str.search(new RegExp(search, "ig"));
+                while (res !== -1) {
+                    if (res>0) {
+                        el = document.createElement("span");
+                        el.setAttribute("class", "text_black");
+                        el.innerHTML = str.substr(0, res);
+                        owner.appendChild(el);
+                    }
+                    el = document.createElement("span");
+                    el.setAttribute("class", "text__blue");
+                    el.innerHTML = str.substr(res, search.length);
+                    owner.appendChild(el);
+                    str = str.substr(res+search.length);
+                    res = str.search(new RegExp(search, "ig"));
+                }
+                
+                if (str.length > 0) {
+                    el = document.createElement("span");
+                    el.setAttribute("class", "text_black");
+                    el.innerHTML = str;
+                    owner.appendChild(el);
+                }
+            }
+
+            function selectFirstItem() {
+                var elementToPos = getElementToPos();
+                
+                if (elementToPos) {
+                    clickItem(elementToPos.childNodes[0]);
+                    elementToPos.querySelector('.result__item').click();
+                    return true;
+                }
+                
+                return false;
+            }
+
+            function clickItem(el) {
+                if (currentEl) {
+                    currentEl.setAttribute("class", "result__item");
+                }
+                el.setAttribute("class", "result__item current");
+                currentEl = el;
+            }
+
+            function getSelectedElementData() {
+                if (currentEl) {
+                    return {
+                        user_id: currentEl.dataset.userId,
+                        group_id: currentEl.dataset.groupId,
+                        dialog_ref: currentEl.dataset.dialogRef,
+                        account_ref: currentEl.dataset.accountRef
+                    };
+                }
+                return undefined;
+            }
+
+            function getElementToPos() {
+                var contacts = document.getElementById('contacts');
+                if (contacts.childNodes.length > 2) {
+                  return contacts.childNodes[1];
+                }
+                
+                var dialogs = document.getElementById('dialogs');
+                if (dialogs.childNodes.length > 2) {
+                  return dialogs.childNodes[1];
+                }
+                
+                var messages = document.getElementById('messages');
+                if (messages.childNodes.length > 2) {
+                  return messages.childNodes[1];
+                }
+                
+                return undefined;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="global-search">
+            <div class="global-search__item" id="contacts">
+            </div>
+            <div class="global-search__item" id="dialogs">
+            </div>
+            <div class="global-search__item" id="messages">
+            </div>
+        </div>
+        <div id="empty" hidden>
+            <span>Ничего не найдено...</span>
+        </div>
+    </body>
+</html>

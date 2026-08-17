@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bc3047a5-c9fb-4234-b6ba-eaa35c632626">
+  <producedTypes>
+    <selectionType typeId="2b348f63-768f-4b82-96aa-2af8545a94f0" valueTypeId="41a4148c-5a59-431a-a7de-dc94f85aead5"/>
+    <listType typeId="59c775ac-9250-42ab-91b5-f61bb0feac07" valueTypeId="151a31e2-270e-47eb-887d-265d19a2d4f3"/>
+    <managerType typeId="edf1955e-7e9b-4511-b731-5ee518008cda" valueTypeId="ff225570-ab41-453c-8b53-8189a9a727c9"/>
+    <recordSetType typeId="da9587eb-3047-4952-9d1e-735674709251" valueTypeId="63b5baa5-dfff-4c58-8613-29b27e65a161"/>
+    <recordKeyType typeId="d347150e-2ab2-48fb-962a-0f298d31049e" valueTypeId="0fd63a2f-3f64-4960-acc1-4432f60953ce"/>
+    <recordType typeId="5406bc38-eb66-4536-a12d-c22aa2287422" valueTypeId="98a86909-7a19-4366-b5c0-6dcfa300716c"/>
+    <recordManagerType typeId="96f0c355-7717-43b1-8011-240c2cb25af0" valueTypeId="b3a05777-0bcf-4212-9524-6910fe2cfd4b"/>
+  </producedTypes>
+  <name>смартДанныеРегламентаСЦ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные регламента СЦ (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-4738 смарт: Фролов 12.11.2025 //Создание отчета по эффективности обработки заявок СЦ. </comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4a6b4088-ba21-4dfc-b154-17640cf0f513">
+    <name>Срок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="68127e45-20fc-42fa-9300-32cfd524f3aa">
+    <name>ВидРегламента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид регламента</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыРегламентовСЦ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="45c104bb-a55e-4e8c-942a-d07dbee8b93d">
+    <name>ВидРемонта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид ремонта</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыРемонта</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

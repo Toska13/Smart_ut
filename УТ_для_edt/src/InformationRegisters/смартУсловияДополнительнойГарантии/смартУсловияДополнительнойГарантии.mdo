@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="01c85988-4913-4fc9-a285-db9e03679eb5">
+  <producedTypes>
+    <selectionType typeId="6d126cf1-60d7-4589-9340-c03c2e9da74f" valueTypeId="d5b5901a-f0ee-48a5-b8f6-840db1587a92"/>
+    <listType typeId="27896e84-5d73-45fa-9bf0-a4d1d5f42a4a" valueTypeId="72d7bed8-3a89-4f0c-89a8-ec807a485ae1"/>
+    <managerType typeId="e5817421-8a6d-4efd-99ea-ed0e94a40369" valueTypeId="65d782e1-04e7-49ef-822e-e3a8a90f2786"/>
+    <recordSetType typeId="73b6c960-30d5-4581-91f7-5d789d14f861" valueTypeId="552a55fb-8fd5-4f5c-870f-d082f4797a48"/>
+    <recordKeyType typeId="3c07e778-28f7-4630-9354-620326f00a7e" valueTypeId="d66ed5eb-6621-47bd-bc18-15fb19cbdc1d"/>
+    <recordType typeId="b3838571-c633-47b5-b528-c71e6116ae64" valueTypeId="8c7de719-564d-4e29-b40a-4d7f2c869033"/>
+    <recordManagerType typeId="77010af1-b8f7-4c7d-ac65-a212845f6086" valueTypeId="2890cd9e-f80d-477e-8690-f9b255ffc3ab"/>
+  </producedTypes>
+  <name>смартУсловияДополнительнойГарантии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Условия дополнительной гарантии (смарт)</value>
+  </synonym>
+  <comment>//++ #1944 смарт: Мосолов 26.07.2024 // Реализовать механизм предложения доп гарантии при покупке оборудования.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6f08ecea-8024-468a-a6f5-c3cbfc20fee4">
+    <name>СрокГарантииНаОборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок гарантии на оборудование, мес.</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0b9500f4-1389-4c54-a47e-e8beb2dc5771">
+    <name>СрокГарантииНаГоловку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок гарантии на головку, мес.</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="42e00e07-8eb5-4156-a209-637adb1859ec">
+    <name>СтоимостьДопГарантииНаПервомЭтапе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость доп. гарантии на первом этапе, % от стоимости</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4c1e4ff8-91b3-47c5-ae2f-7cc7d294ffce">
+    <name>СтоимостьДопГарантииНаВторомЭтапе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость доп гарантии на втором этапе</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f0450a38-b41a-4481-8bcc-e4a2a4874986">
+    <name>ДатаНачалаДействияУсловий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала действия условий</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="00308653-4388-4ff9-aaf5-5a93e3cfe3e5">
+    <name>ДатаОкончанияДействияУсловий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания действия условий</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c18c3950-b418-40d9-9b29-7e659822704b">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

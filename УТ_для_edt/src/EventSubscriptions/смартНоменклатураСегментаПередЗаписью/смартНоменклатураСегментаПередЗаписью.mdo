@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b7d6890d-3061-44f8-84a2-8a583ebdbc65">
+  <name>смартНоменклатураСегментаПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Номенклатура сегмента перед записью (смарт)</value>
+  </synonym>
+  <comment>#Б-1706 смарт: Лопато 18.12.2024 //Доработка синхронизации УТ СМАРТ-Т РФ - БП СМАРТ-Т РФ</comment>
+  <source>
+    <types>InformationRegisterRecordSet.НоменклатураСегмента</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.смартНоменклатураСегментаПередЗаписью</handler>
+</mdclass:EventSubscription>

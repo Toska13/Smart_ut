@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="790845a2-c694-4d47-bd47-e327852ea5e2">
+  <producedTypes>
+    <selectionType typeId="f4caa512-e195-4168-b668-a49c0f2d4dd7" valueTypeId="fa894f02-b601-4ae7-846e-3875401c5b39"/>
+    <listType typeId="6f328a43-0f16-411b-976e-7161d9d9bd46" valueTypeId="2f6024ae-5285-4f1f-88e8-d86463d3650e"/>
+    <managerType typeId="554ffbbe-ec55-4185-acb9-fa12cfba2ef7" valueTypeId="6aac27de-21a2-4fe6-b605-645601499ee1"/>
+  </producedTypes>
+  <name>CRM_Почта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Почта</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Mail</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ЭлектронноеПисьмоВходящее</registeredDocuments>
+  <registeredDocuments>Document.ЭлектронноеПисьмоИсходящее</registeredDocuments>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="fcba8dad-bae2-4d65-827d-a035a08524e3">
+    <name>Важность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Важность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Importance</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.Важность</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.Важность</references>
+  </columns>
+  <columns uuid="f471a59f-3fb4-4f7c-b4bd-e5995cb3e60e">
+    <name>ЕстьВложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть вложения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Attachments</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.ЕстьВложения</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.ЕстьВложения</references>
+  </columns>
+  <columns uuid="561d2190-b9f0-4181-b1a2-79925d442520">
+    <name>Получено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Received</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.ДатаПолучения</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.ДатаОтправления</references>
+  </columns>
+  <columns uuid="f91a3040-3923-48e7-a9ae-fd40ab0f5ce6">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.Ответственный</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.Ответственный</references>
+  </columns>
+  <columns uuid="ddea9636-de26-4dba-b922-39d0a0f38a0c">
+    <name>Отправитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sender</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.ОтправительПредставление</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.ОтправительПредставление</references>
+  </columns>
+  <columns uuid="b0d4d4bb-d4c2-48e2-b06c-31d89d067006">
+    <name>ПолучательВходящего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель </value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recipient </value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.УчетнаяЗапись</references>
+  </columns>
+  <columns uuid="1360bbf4-2f98-4618-a20c-94a748fb6b10">
+    <name>ПолучательИсходящего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель </value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recipient </value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.СписокПолучателейПисьма</references>
+  </columns>
+  <columns uuid="c525aace-ba22-4c19-a6bc-a2c9509ca919">
+    <name>СтатусПисьма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус письма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Letter Status</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.СтатусПисьма</references>
+  </columns>
+  <columns uuid="9d0b81af-fd86-4665-934a-7dee687ecf5f">
+    <name>Тема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.Тема</references>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.Тема</references>
+  </columns>
+  <columns uuid="ab8f86a6-9ec0-4b06-b3e3-aa1b183f1176">
+    <name>УчетнаяЗапись</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учетная запись</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Login Account</value>
+    </synonym>
+    <indexing>Index</indexing>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.УчетнаяЗапись</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.УчетнаяЗапись</references>
+  </columns>
+  <columns uuid="ffd3ee6f-505f-44e4-86b9-4478b6d23ded">
+    <name>Папка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Папка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Folder</value>
+    </synonym>
+    <indexing>Index</indexing>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.УдалитьCRM_Папка</references>
+  </columns>
+  <columns uuid="e0786cb3-7fbf-4de9-9f4a-ce87ccc89705">
+    <name>РазмерПисьма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размер письма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Letter size</value>
+    </synonym>
+    <comment>Размер письма с вложениями</comment>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.Размер</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.Размер</references>
+  </columns>
+  <columns uuid="29aada50-773b-4983-bdd3-ff7d41ab02ed">
+    <name>CRM_РольОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль ответственного</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.CRM_РольОтветственного</references>
+  </columns>
+  <columns uuid="aa31b9d8-d461-403a-90de-538544c03813">
+    <name>Текст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.Текст</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.Текст</references>
+  </columns>
+  <columns uuid="a85584e0-2266-47f3-87fa-2a5395e098c7">
+    <name>CRM_Избранный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пометка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Chosen</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.CRM_Избранный</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.CRM_Избранный</references>
+  </columns>
+  <columns uuid="c07c3a1b-9fff-4d23-b2d7-d305fdd26c6d">
+    <name>Контакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контакт</value>
+    </synonym>
+    <references>Document.ЭлектронноеПисьмоВходящее.Attribute.ОтправительКонтакт</references>
+    <references>Document.ЭлектронноеПисьмоИсходящее.Attribute.CRM_ОтправительКонтакт</references>
+  </columns>
+</mdclass:DocumentJournal>

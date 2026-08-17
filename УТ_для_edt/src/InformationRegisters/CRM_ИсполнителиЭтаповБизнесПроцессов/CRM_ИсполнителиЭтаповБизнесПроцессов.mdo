@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="62f05b54-6145-4d67-a9d9-fa0d1f4bd658">
+  <producedTypes>
+    <selectionType typeId="e6c20b4a-f8be-476f-83ed-4bf540eda08a" valueTypeId="a8d93393-8f03-463f-8a87-046a8543fe73"/>
+    <listType typeId="31e3eeae-4505-43cf-90aa-26db23164a8d" valueTypeId="27571389-2885-41cb-bf0f-88ea84f8fe56"/>
+    <managerType typeId="328d5b02-3f67-466a-805c-51d38625ec83" valueTypeId="3d47d931-9caa-4d68-b316-a924dcbae8ce"/>
+    <recordSetType typeId="337f5a54-7936-4450-b5b0-fc25bbb2a92f" valueTypeId="ad2a0763-a2d3-4621-b69a-ed5791edd836"/>
+    <recordKeyType typeId="0b47de81-d1d5-41c4-9c5a-a2509003e3eb" valueTypeId="24804932-38d2-4d99-be24-8b4ffbf9dc21"/>
+    <recordType typeId="d5adc4b9-e24c-464b-920e-5fd73c136f1e" valueTypeId="7f98b0b0-98bf-4676-b2be-e4a480fb9091"/>
+    <recordManagerType typeId="57da172d-210e-4959-a133-ddd36085bfe4" valueTypeId="23e84d09-6c74-44e2-a78a-82761e24f781"/>
+  </producedTypes>
+  <name>CRM_ИсполнителиЭтаповБизнесПроцессов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Исполнители этапов бизнес-процессов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Executors of stages of business processes</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b18c04e1-ae2a-4137-a3fc-14e17ca62974">
+    <name>Все</name>
+    <synonym>
+      <key>ru</key>
+      <value>Все</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>All</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b16b85bc-786d-4c63-818a-25b3894760a8">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef.CRM_БизнесПроцесс</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Владелец маршрута</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Route owner</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8b14c23e-64eb-4009-96b4-3caa5982b08d">
+    <name>ТочкаМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка маршрута</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Route Point</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Точка</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Point</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="667ecdbc-0214-4584-b6ad-31ef7d2cbd4e">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignee</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+      <types>EnumRef.CRM_ВидыИсполнителейЗадач</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Исполнитель задач</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Task assignee</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Пользователи.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

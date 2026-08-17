@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="62f91ef3-a116-40c9-b622-01fd9a0b8b92">
+  <producedTypes>
+    <selectionType typeId="de44c1d9-c3da-458c-986d-afba06a0e314" valueTypeId="e65963e0-0b99-4012-a8ab-c10cc882ad7e"/>
+    <listType typeId="63f40daf-5975-4599-93d1-3dfa461c0853" valueTypeId="11b68d3c-81e0-4e3d-bc7e-5530e244512a"/>
+    <managerType typeId="54580017-583f-473f-aa96-b89d55bc002f" valueTypeId="f4fb85fb-7229-45c9-aa59-02a538e14f35"/>
+    <recordSetType typeId="c8f8216d-63ab-4eb8-a14f-5445c33a43ce" valueTypeId="852e80dd-1ea5-4e16-a53f-a8dc3ba5fd93"/>
+    <recordKeyType typeId="41afbc7c-2062-4bb3-a1ab-2983efc09963" valueTypeId="fedb093c-0e28-458b-85ea-c5cf0df616c1"/>
+    <recordType typeId="3115d862-6b0f-455f-b4eb-c00da56ccb2a" valueTypeId="ed831f16-ac64-446f-87ab-4e368e496cc9"/>
+    <recordManagerType typeId="a0b688db-3e46-4cf9-b4ed-2c8edb28aa9a" valueTypeId="8f23c9e5-ffbc-4823-98f8-fc4d132e5f56"/>
+  </producedTypes>
+  <name>сфпНомераТелефоновДляПоиска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Номера телефонов для поиска</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Phone numbers for searching</value>
+  </synonym>
+  <comment>Номера телефонов для поиска абонентов</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <explanation>
+    <key>ru</key>
+    <value>Регистр хранит соответствия номеров телефонов абонентам ИБ и используется для поиска абонентов по их номеру телефона</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>The register stores the correspondence of telephone numbers to subscribers of the IS and is used to search for subscribers by their phone number</value>
+  </explanation>
+  <resources uuid="385758ce-0b44-473b-a78f-30213d001b78">
+    <name>НомерТелефона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер телефона</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Phone Number</value>
+    </synonym>
+    <comment>Номер телефона</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="a99bc59b-c90a-46c0-baf0-56d23cf47005">
+    <name>Представление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Presentation</value>
+    </synonym>
+    <comment>Представление</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="853693a4-4914-4f0a-9663-d21edb534382">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment>Пользователь</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, который контролирует телефонные переговоры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The user which supervised telephone negotiations</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="eebaa636-b26b-4947-a4e3-1cb9339061ca">
+    <name>ВнутреннийНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внутренний номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Internal number</value>
+    </synonym>
+    <comment>Внутренний номер</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Внутренний номер пользователя</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>User Internal Number</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="a76ca09a-b4db-49c5-8418-3de3fcb29ff2">
+    <name>НомерТелефонаДляПоиска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер телефона для поиска</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Phone number for search</value>
+    </synonym>
+    <comment>Номер телефона для полнотекстового поиска</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер телефона</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Phone Number</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="831bfede-9453-440e-a059-fd68b512dccf">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <comment>Объект для поиска</comment>
+    <type>
+      <types>DefinedType.сфпКонтактВзаимодействия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект для поиска</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Object for searching</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e4f76423-e509-479b-86ea-6680bd6859b2">
+    <name>Вид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Kind</value>
+    </synonym>
+    <comment>Вид номера</comment>
+    <type>
+      <types>CatalogRef.ВидыКонтактнойИнформации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид номера</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Type of number</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="679dd5cf-cc94-48d9-b629-361b579977a4">
+    <name>ПорядковыйНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядковый номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Serial number</value>
+    </synonym>
+    <comment>Номер строки табличной части</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер строки табличной части</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Row number of tabular section</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="427d3656-302e-485c-ba98-de8a59e841d2">
+  <producedTypes>
+    <selectionType typeId="a5353db8-be29-46a4-9f88-2dfe31959a12" valueTypeId="67dc404b-c10b-4336-9f9e-75b4a337860d"/>
+    <listType typeId="511d0f3b-109a-4565-b25c-53f084607c9f" valueTypeId="5a7b0e7a-f169-40ee-a24e-0befb4e77995"/>
+    <managerType typeId="fe6a9a20-fd32-463c-abb4-edb47aa9485b" valueTypeId="7f5493a6-634f-4f30-ab33-9494f78d8d9e"/>
+    <recordSetType typeId="40380d1f-8d75-41f1-bdc7-d635a945cf9a" valueTypeId="4897ebc8-5233-4f42-861a-273c1fda41f1"/>
+    <recordKeyType typeId="8568892e-face-4d86-8b5f-5f71e639d23e" valueTypeId="c142547e-476b-4fff-8ff8-f3b02a5b3216"/>
+    <recordType typeId="8effe525-8d61-4465-8ac0-8c501e5c1ee0" valueTypeId="c12f33ad-d273-4535-a2d0-48983d34584b"/>
+    <recordManagerType typeId="5855feb5-8169-4923-8165-74d12d870459" valueTypeId="50c153fb-e909-47cd-8a4f-ef7769f5e09a"/>
+  </producedTypes>
+  <name>СмартСтатусыЗаказовБитрикс</name>
+  <synonym>
+    <key>ru</key>
+    <value>(Смарт) Статусы заказов (битрикс)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="d022088e-7d2f-4d5b-8b45-a94d63417aa9">
+    <name>СтатусЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус заказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСтатусыЗаказовБитриксЗначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="be5f7e48-9ce5-4dee-a809-9dc85c88cc32">
+    <name>Идентификатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="0d9c9a34-52be-4bcb-bfa5-4de60918223b">
+    <name>ГУИД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ГУИД</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7df0a2e3-a85f-4a0a-a870-6b3177315ce3">
+    <name>СсылкаМет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка мет</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d2cd26c3-a9b0-4ae4-bf4f-11da4735ea4e">
+    <name>ИДсайта</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИД сайта</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

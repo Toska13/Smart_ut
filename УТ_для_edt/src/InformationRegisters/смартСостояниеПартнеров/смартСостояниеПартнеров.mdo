@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8aa386ec-875a-4c6c-a61c-66e66a9b3d3f">
+  <producedTypes>
+    <selectionType typeId="05552e84-69a6-4d1e-b443-bf827481e825" valueTypeId="84104263-2d50-4c7c-8136-3cad90ac5963"/>
+    <listType typeId="5e96cfd6-4105-4331-a627-d0cc693e66d6" valueTypeId="211d8bd2-50e5-4a78-8e60-69b2de08fff9"/>
+    <managerType typeId="e3584e7f-4821-47e3-86d8-2c574bc830d6" valueTypeId="c1113154-05d7-4e86-95b2-183ea671c6d5"/>
+    <recordSetType typeId="cbaa7ae0-aa14-4ebf-ae64-b5cf9830481e" valueTypeId="81279e3d-64a3-4dbd-a8c9-a5b2ed23344f"/>
+    <recordKeyType typeId="29f58933-6f63-4c79-b2c1-ce83ee4acac4" valueTypeId="0528a474-4c91-4fd4-83db-60788f38229b"/>
+    <recordType typeId="82e5462d-af0a-423a-93f7-e24105bd99ae" valueTypeId="aad332c2-48e5-4a6a-8d8c-51bc23b6372c"/>
+    <recordManagerType typeId="6adab342-f587-4cda-bfa2-60fe37bd9b1a" valueTypeId="b345237f-0506-46a5-a344-7106c03a7db1"/>
+  </producedTypes>
+  <name>смартСостояниеПартнеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояние партнеров (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-1144 //Создание регистра Состояния партнеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6ef3afd6-c045-4983-a2a0-d401ec6bf9d1">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСтатусыПартнера</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bf0ee7ac-fded-44bf-a621-00b8441dcb86">
+    <name>ПредыдущийСтатус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предыдущий статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСтатусыПартнера</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f26e3205-5231-4503-be70-b378f64b40ea">
+    <name>ДатаИзмененияСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения статуса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d07fa40e-94b8-4374-8de4-5927d9b43b17">
+    <name>КоличествоПродажОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество продаж оборудования</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e1f2e0cb-c6cb-46ee-94be-2bc52fc7692d">
+    <name>СуммаПродажОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма продаж оборудования</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2841fb54-63de-471b-9114-55867fd18112">
+    <name>СуммаПродажЗапчастей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма продаж запчастей</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="244f82f6-ed40-4b9a-a21e-5d5ac4e90426">
+    <name>СуммаПродажРасходников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма продаж расходников</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="71d39ad3-8da3-4cc0-b2d8-84c1b2a8c024">
+    <name>ДатаПоследнегоВзаимодействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего выполненного взаимодействия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="adec37d8-a1bf-4322-8eb4-4078c7da0cd2">
+    <name>ДатаЗапланированногоВзаимодействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата запланированного взаимодействия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f814ed1c-9f78-4681-a947-b96a6759635b">
+    <name>КоличествоКасаний</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество касаний</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="68ec20ef-172e-49cc-8430-6c6ebdedca49">
+    <name>КоличествоЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество задач</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="95e7482a-b08a-4a4b-9b7e-7dc1b54005c7">
+    <name>ДатаПоследнейПродажиОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последней продажи оборудования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e1df2454-4da9-4d4e-8427-3bfdbc36713b">
+    <name>ДатаПоследнейПродажиЗапчастей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последней продажи запчастей</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="62158e13-6fe7-4b38-91ec-d0fed2d24607">
+    <name>ДатаПоследнейПродажиРасходников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последней продажи расходников</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c1bfeb58-8853-4878-a239-3d1b5f4da43d">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <comment>//++ #Б-1260 смарт: Фролов 01.11.2024 //Дополнение регистра смартСостояниеПартнеров </comment>
+    <type>
+      <types>EnumRef.смартСостоянияПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7d575784-fb39-40bd-af5b-d05c3eccb000">
+    <name>ДатаСменыСостояния</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата смены состояния</value>
+    </synonym>
+    <comment>//++ #Б-1260 смарт: Фролов 01.11.2024 //Дополнение регистра смартСостояниеПартнеров </comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0dac3555-e501-4307-8e74-2d9bfd6c471c">
+    <name>ПредыдущееСостояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предыдущее состояние</value>
+    </synonym>
+    <comment>//++ #Б-1260 смарт: Фролов 01.11.2024 //Дополнение регистра смартСостояниеПартнеров </comment>
+    <type>
+      <types>EnumRef.смартСостоянияПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dd915243-3d24-4e11-a892-d4c604070720">
+    <name>ДатаПоследнегоЗвонка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего звонка</value>
+    </synonym>
+    <comment>//++ #Б-1510 //Добавление ресурса ДатаПоследнегоЗвонка в регистр Состояния партнеров</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="96d6691a-3991-406f-8630-3f48ee99c16b">
+    <name>СостояниеСЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние (СЦ)</value>
+    </synonym>
+    <comment>//++ #Б-1260 смарт: Фролов 01.11.2024 //Дополнение регистра смартСостояниеПартнеров </comment>
+    <type>
+      <types>EnumRef.смартСостоянияПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b6219b41-bf1c-44e7-8a0e-1941414b9c36">
+    <name>СостояниеРМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние (РМ)</value>
+    </synonym>
+    <comment>//++ #Б-1260 смарт: Фролов 01.11.2024 //Дополнение регистра смартСостояниеПартнеров </comment>
+    <type>
+      <types>EnumRef.смартСостоянияПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="93be018b-dbfd-42d6-83e6-b46c3a65a9fa">
+    <name>ДатаПоследнегоВзаимодействияСЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего выполненного взаимодействия (СЦ)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="15c228cb-ba2c-4b48-8ef5-13416ad6888e">
+    <name>ДатаПоследнегоВзаимодействияРМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего выполненного взаимодействия (РМ)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2644c6cf-153a-4c13-a4b6-8d5d8aad8471">
+    <name>ДатаЗапланированногоВзаимодействияСЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата запланированного взаимодействия (СЦ)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="19693632-1319-43c9-a97f-d1e6089872a0">
+    <name>ДатаЗапланированногоВзаимодействияРМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата запланированного взаимодействия (РМ)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3a8008df-82ca-438a-a795-9a81b8744445">
+    <name>ДатаПоследнегоЗвонкаСЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего звонка (СЦ)</value>
+    </synonym>
+    <comment>//++ #Б-1510 //Добавление ресурса ДатаПоследнегоЗвонка в регистр Состояния партнеров</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="467ef655-34b4-40ab-9be4-4cf7625dcf4c">
+    <name>ДатаПоследнегоЗвонкаРМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата последнего звонка (РМ)</value>
+    </synonym>
+    <comment>//++ #Б-1510 //Добавление ресурса ДатаПоследнегоЗвонка в регистр Состояния партнеров</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c975907d-7585-4368-b73c-84054a5a0675">
+    <name>СтанетСвободнымЧерез</name>
+    <synonym>
+      <key>ru</key>
+      <value>Станет свободным через, дн</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f828fe00-a1fa-4862-ac0d-ee5ad3bde1cf">
+    <name>СтанетСвободнымЧерезСЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Станет свободным через СЦ, дн</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="482133ab-da32-4dc9-b07a-c671677aa39d">
+    <name>СтанетСвободнымЧерезРМ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Станет свободным через РМ, дн</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ab173387-7ba2-4745-a7c1-9fd1634424fb">
+    <name>ПричинаПереводаКлиентовВАрхив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина перевода клиентов в архив</value>
+    </synonym>
+    <comment>//++ #Б-2852 смарт: Фролов 08.04.2025 //Реализовать возможность присваивать Архивное &quot;Состояние СЦ&quot; Менеджерами СЦ</comment>
+    <type>
+      <types>String</types>
+      <types>CatalogRef.смартПричиныПереводаКлиентовВАрхив</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0cf33ad3-a46d-41a3-8ffb-273bbd2eb8cd">
+    <name>ДатаПереводаВАрхив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата перевода в архив</value>
+    </synonym>
+    <comment>//++ #Б-2852 смарт: Фролов 08.04.2025 //Реализовать возможность присваивать Архивное &quot;Состояние СЦ&quot; Менеджерами СЦ</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="95b8707a-a7a1-4100-aad1-ce064b3a30e6">
+    <name>ОтветственныйЗаПереводВАрхив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный за перевод в архив</value>
+    </synonym>
+    <comment>//++ #Б-2852 смарт: Фролов 08.04.2025 //Реализовать возможность присваивать Архивное &quot;Состояние СЦ&quot; Менеджерами СЦ</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e035f21e-0c8a-4a05-84e6-e2ce4c3e4422">
+    <name>СогласованоПомещениеВАрхив</name>
+    <synonym>
+      <key>ru</key>
+      <value>Согласовано помещение в архив</value>
+    </synonym>
+    <comment>//++ #Б-2852 смарт: Фролов 08.04.2025 //Реализовать возможность присваивать Архивное &quot;Состояние СЦ&quot; Менеджерами СЦ</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4b0f0770-5928-462c-8702-a8cc4f58070a">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

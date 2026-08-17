@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d93efcb-0f53-4575-9990-e18a11d58f04">
+  <producedTypes>
+    <selectionType typeId="d689f282-4648-4c82-af9f-e850483d20ce" valueTypeId="322b9288-5214-427e-8895-54e24fcdaec6"/>
+    <listType typeId="0c5eefc2-bf31-47a2-ae73-485d66147156" valueTypeId="b4adb790-b599-4fe0-9624-7ca3d23c92e3"/>
+    <managerType typeId="99f8f32f-b97c-404a-90c9-8ee2636a325a" valueTypeId="52949908-f7e5-4363-82eb-64a48ecc853e"/>
+    <recordSetType typeId="82f10edc-3440-47e7-8fb9-759f78ddd9f4" valueTypeId="9ea69dc5-5efd-4811-9dfd-7b79c310771b"/>
+    <recordKeyType typeId="73a6c57b-014d-4ab8-ab95-fcc0fb07bdb9" valueTypeId="7e4f0c2c-6b3c-4a09-ae0c-dbacefd290ad"/>
+    <recordType typeId="cd8246ec-66bf-46e9-b5bd-6e57db19009f" valueTypeId="ce164236-7081-4781-95a5-14cc47b3df31"/>
+    <recordManagerType typeId="75282257-9160-4103-bbe3-1121c3fe7fac" valueTypeId="546fdad4-94dd-4407-ba44-97f2b0f3004b"/>
+  </producedTypes>
+  <name>CRM_ИзменениеКонтактнойИнформации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Изменение контактной информации (CRM)</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="5bf707fc-336a-48a2-9d6f-819284450a86">
+    <name>ВидКИ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид КИ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыКонтактнойИнформации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dbfe3620-ba36-4bef-a2c6-f3d6d19f8e56">
+    <name>ЗначениеКИ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение КИ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Search Value</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="df748243-37c0-452f-b486-7fd8b87423f2">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.КонтактныеЛицаПартнеров</types>
+      <types>CatalogRef.CRM_ПотенциальныеКлиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e1777b55-aaa2-4a0c-874a-0b7fef58ad91">
+    <name>КлючУникальности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ уникальности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Uniqueness key</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

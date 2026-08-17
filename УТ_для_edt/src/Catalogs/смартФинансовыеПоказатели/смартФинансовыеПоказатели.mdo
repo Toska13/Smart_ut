@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3f5f7b7d-1f5f-46cb-ba17-b5d9a237d85b">
+  <producedTypes>
+    <objectType typeId="0b4e4878-482e-4b5f-9f96-b44c9c1f3b97" valueTypeId="d05f6a82-bbba-445c-b0ae-5f2eaf564878"/>
+    <refType typeId="368bc555-d651-41c3-89c7-53b36e8a1967" valueTypeId="005f0bc6-a8c4-405e-b287-834746166682"/>
+    <selectionType typeId="de4f9f4b-ade1-43da-afc1-57c48ae86e29" valueTypeId="983fc22c-98c4-4227-a097-6eff845a3ff9"/>
+    <listType typeId="84eaef3b-2a0a-44b4-8c70-b7453b6a66e8" valueTypeId="5960e22d-6271-42cb-8c54-b2525831d030"/>
+    <managerType typeId="7b4a5429-4d83-46bf-8ca6-6f858deb2593" valueTypeId="c1a46384-eea9-40b3-8a07-090f73ca2941"/>
+  </producedTypes>
+  <name>смартФинансовыеПоказатели</name>
+  <synonym>
+    <key>ru</key>
+    <value>Финансовые показатели (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-3852 смарт: Фролов 17.07.2025 //Разработка механизма, позволяющего перенести работу из EXCELL в 1С - Первый этап, проектирование.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартФинансовыеПоказатели.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <hierarchyType>HierarchyOfItems</hierarchyType>
+  <levelCount>2</levelCount>
+  <descriptionLength>75</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="46b9ea40-7423-48c2-8e86-a26c56ece69a">
+    <name>ВидПоказателя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид показателя</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыРасчетовФинансовыхПоказателей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="51eab156-14d4-4c6d-8323-61228354a581">
+    <name>Сортировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8b9033b2-27cd-4178-8fa6-55d1fe2b3368">
+    <name>ХозяйственнаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хозяйственная операция</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид операции расхода денежных средств.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ХозяйственныеОперации.EmptyRef</value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="11001af0-5a26-4f74-8fc9-a1e8b8de9b4d">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="283bf0c5-d544-443b-8718-63ab42a278f5">
+  <producedTypes>
+    <selectionType typeId="2a1dfd1a-7d73-4a2f-9123-77c9f528b06e" valueTypeId="bfc0fa92-e34f-4a2d-bf07-3546ba5e4fd8"/>
+    <listType typeId="d4eb46d9-0338-494a-ade9-92c9dcb75922" valueTypeId="7415b7f0-1b27-418c-b99a-f5804a79b45a"/>
+    <managerType typeId="5fdf6dbe-2bf0-4ff6-9d10-a802a2a0aeb5" valueTypeId="7f73e764-7f30-4a6a-a56c-d155eadae6c7"/>
+    <recordSetType typeId="0c221ad1-70b3-42de-9bf4-5748d592d57e" valueTypeId="de1b54b7-616c-4479-8aa4-cbbd30535a88"/>
+    <recordKeyType typeId="62b30016-b99c-4727-adb5-daa82276595e" valueTypeId="59a380b5-4293-48be-909f-df07ad4c99cb"/>
+    <recordType typeId="a3335043-0699-48ef-838c-26a8d7cfc1f2" valueTypeId="baa303f3-d58f-4a5e-98b3-c66ae11060c1"/>
+  </producedTypes>
+  <name>смартСвободныеОстаткиОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Свободные остатки организаций (смарт)</value>
+  </synonym>
+  <comment>//++ #Б1154 смарт: Шляпников 17.10.2024 / Контроль оперативных остатков в разрезе организаций</comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5461b126-6aa8-433b-8b46-73e7d4014c49">
+    <name>ВНаличии</name>
+    <synonym>
+      <key>ru</key>
+      <value>В наличии</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество учитываемой номенклатуры на складах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="b71082c3-ee08-4e9d-9f0b-f8f888e23d90">
+    <name>ВРезервеСоСклада</name>
+    <synonym>
+      <key>ru</key>
+      <value>В резерве со склада</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="174fae5c-0480-490e-b1ab-69e8506a1dd3">
+    <name>ВРезервеПодЗаказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>В резерве под заказ</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="03383042-4108-45c2-bcc7-1b371858c45c">
+    <name>смартВНаличииГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>В наличии гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество учитываемой номенклатуры на складах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9964fabc-a75b-45e7-9308-396d203d3f24">
+    <name>смартВРезервеСоСкладаГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>В резерве со склада гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="30e7bd12-9333-4eeb-b564-2f7d6285d662">
+    <name>смартВРезервеПодЗаказГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>В резерве под заказ гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="c8908236-75b6-45ef-a736-58b593b57c46">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="164d28d8-f393-45fe-83da-84e33f40e7f3">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, остатки которой учитываются на складах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="05f20810-628b-4e34-ba46-1e84720d64aa">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, остатки которой учитываются на складах.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.смартСвободныеОстаткиОрганизаций.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="33ea8fe0-abfa-41f8-996b-c04934bf414e">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, на котором учитываются остатки номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

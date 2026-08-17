@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4e83869e-b36c-45cb-9538-efe575a03da8">
+  <producedTypes>
+    <selectionType typeId="3a737fb6-da58-481f-9116-307e5699e9dc" valueTypeId="c6b86da1-30f7-4971-8e3d-b429b111d6bd"/>
+    <listType typeId="cb8523e6-af07-4f47-9cd7-69c220cfaebb" valueTypeId="7526517f-f3ac-4ca1-87be-98b52af1763d"/>
+    <managerType typeId="8601b9b4-bdaa-4cd5-b31a-5c8ad55d5220" valueTypeId="4864d824-9bfb-4675-a428-4d0ac345d02e"/>
+    <recordSetType typeId="9b0cbee7-7762-4da3-ad63-45604cca5228" valueTypeId="cb163c5e-35da-4cfa-8333-f200efc002a5"/>
+    <recordKeyType typeId="924fa80a-14ff-41e2-a765-3138ac6069f8" valueTypeId="1a7b2929-61a6-4508-84e8-c8b2b0c3dd83"/>
+    <recordType typeId="1ad0aee5-cdd3-4dc6-9b9b-2e82e47eb85d" valueTypeId="209f9201-f70d-4918-9b0d-93ca95baeb4c"/>
+    <recordManagerType typeId="8d4bbccc-0da5-4385-9b3f-9f90961248e3" valueTypeId="38951eca-77f6-494b-b62b-8a3ffa450087"/>
+  </producedTypes>
+  <name>смартОчередьФормированияСкладскихОрдеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очередь формирования складских одеров (смарт)</value>
+  </synonym>
+  <comment>#5806 смарт: Тимофеева 26.02.26 / Перевод запчастей на серийный учет. Автоматизация создания ордеров для складов физлиц.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартОчередьФормированияСкладскихОрдеров.Form.ФормаЗаписи</defaultRecordForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="83482f55-720f-4eeb-94c0-fb848fafd347">
+    <name>ДатаОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата обработки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7df991f4-4d48-4266-86e4-9636393deee7">
+    <name>КоличествоПопыток</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество попыток</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ea129aae-36ac-4946-902d-dd0b9753a466">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="aa0f98a4-431f-4869-8660-9e2cef64f7b3">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ-основание</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПеремещение</types>
+      <types>DocumentRef.ЗаказНаВнутреннееПотребление</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a05f5865-2b5e-427d-8914-bdca62d27e1e">
+    <name>ДокументСобытие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ-событие</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВнутреннееПотреблениеТоваров</types>
+      <types>DocumentRef.РасходныйОрдерНаТовары</types>
+      <types>DocumentRef.ПеремещениеТоваров</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.СчетФактураВыданный</types>
+      <types>DocumentRef.ПриходныйОрдерНаТовары</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5f0e211f-210d-40ae-8963-d7b78f20dfce">
+    <name>Действие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действие</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="afe7912e-2de3-4bdd-b738-49793b0c78fd">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

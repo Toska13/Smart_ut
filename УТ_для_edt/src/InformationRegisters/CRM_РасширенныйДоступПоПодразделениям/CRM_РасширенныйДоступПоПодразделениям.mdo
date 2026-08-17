@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e283aca-c122-4e76-874e-4788e2612698">
+  <producedTypes>
+    <selectionType typeId="41d0b029-6e7a-4814-a7fc-322bc1cd21c9" valueTypeId="37862ea6-7313-4acd-a3b3-3689dd84929f"/>
+    <listType typeId="bb828d4b-da80-47e8-8c64-1c2b5cd4ea0e" valueTypeId="a65326cd-a711-47aa-9752-d833ec784853"/>
+    <managerType typeId="250d686c-422c-454f-ba43-f5838a623f44" valueTypeId="8b3af0f7-7f36-44c8-8eef-90c42ea800a9"/>
+    <recordSetType typeId="76beed1c-8960-4698-80f4-8dd2db572dc4" valueTypeId="52393d69-db77-49f7-ad24-17d8fe5aadd3"/>
+    <recordKeyType typeId="db356ad6-2509-41ef-8e43-b047ba200ad6" valueTypeId="9aab8211-3432-42f4-aaa6-a6ed56864286"/>
+    <recordType typeId="b65a65d1-099a-44ac-9b0e-70a6b96b2e75" valueTypeId="3fb0a770-06b3-4c6e-a2e5-5cc41dda318e"/>
+    <recordManagerType typeId="b97727cc-52f0-484f-ac10-0272a72a18f1" valueTypeId="5cc205b9-c3aa-49bc-87f0-c3b108472948"/>
+  </producedTypes>
+  <name>CRM_РасширенныйДоступПоПодразделениям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расширенный доступ по подразделениям</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Extended access by department</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.CRM_РасширенныйДоступПоПодразделениям.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="b69a9579-21ec-4cca-a0f3-8dd97a45adfb">
+    <name>ДолжностнаяПозиция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должностная позиция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Position Position</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ДолжностныеПозиции</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b78cc43b-5b3f-43bd-a316-7d2b20592d4d">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Department</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="32d1cd0c-a825-4a92-a411-8ceeb5729d2b">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of record</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="258e0e1c-54cb-4627-b244-5c5446979fe9">
+  <producedTypes>
+    <objectType typeId="5f96c404-ae0a-4b46-aa94-f3b706b628d4" valueTypeId="bf59c1c7-2664-459c-a226-72d4e1ca37a0"/>
+    <managerType typeId="4899b5fe-f875-4779-a599-7f4ccb9f2a23" valueTypeId="3f887f7c-f96b-4bb7-9f39-374afed9954e"/>
+  </producedTypes>
+  <name>смартИнтерактивнаяКартаЯндекс</name>
+  <synonym>
+    <key>ru</key>
+    <value>Интерактивная карта Яндекс (смарт)</value>
+  </synonym>
+  <comment>//--#1503 смарт: Ермаков 19.10.2023 // Интерактивная карта в 1C (продолжение 1248) -> //смарт:Фролов #1248 //Заявки инженеров на Яндекс карте</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.смартИнтерактивнаяКартаЯндекс.Form.Форма</defaultForm>
+  <tabularSections uuid="28da52fb-4d0b-4d3b-96cc-4be014d3efcf">
+    <producedTypes>
+      <objectType typeId="b6859c7e-b9a5-44d2-b4b6-6dcce38d351d" valueTypeId="bf3b7647-c57b-44c3-971c-466335572968"/>
+      <rowType typeId="127c043a-0cf6-4249-aeb9-0783a40ae96b" valueTypeId="b18e0338-a151-4a7e-bb72-02104dc45705"/>
+    </producedTypes>
+    <name>Заявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявки</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="facffd52-7d48-4832-bb0b-57336b399e55">
+      <name>Партнер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партнер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="fba9411d-5bb8-4c95-98ae-b126d1583541">
+      <name>АдресВыезда</name>
+      <synonym>
+        <key>ru</key>
+        <value>Адрес выезда</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="16cf38cb-b0e3-4cbd-93e5-be188d065ffd">
+      <name>Статус</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус</value>
+      </synonym>
+      <type>
+        <types>EnumRef.смартСтатусыЗаявокНаРемонтныеРаботы</types>
+        <types>EnumRef.смартСтатусыЗаявокНаПускоНаладку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3fb42dde-035f-4a63-b575-d1c8f5127702">
+      <name>Инженер1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инженер1</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d6c7f483-6633-40ab-917a-1fd9099d4bcf">
+      <name>Инженер2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инженер2</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2e9662b7-2042-482f-8c30-bf85ad40365c">
+      <name>ДатаРемонтаС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата ремонта</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="da410a88-50e5-49f7-94f7-8e73e9c6da73">
+      <name>ВидГарантии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид гарантии</value>
+      </synonym>
+      <type>
+        <types>EnumRef.смартВидыГарантии</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fdfb8bf5-9b0a-470f-bfa1-32a31643090c">
+      <name>Широта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Широта</value>
+      </synonym>
+      <comment>//++ #1248 смарт: Фролов 07.12.2022</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>9</precision>
+          <scale>6</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d53ad331-e1ec-4263-bd57-4379cd677690">
+      <name>Долгота</name>
+      <synonym>
+        <key>ru</key>
+        <value>Долгота</value>
+      </synonym>
+      <comment>//++ #1248 смарт: Фролов 07.12.2022</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>9</precision>
+          <scale>6</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f781888d-a0c3-4124-9151-3c668fae1fa5">
+      <name>Номер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="fa29b4b3-b72f-42a6-99e8-072cb920f174">
+      <name>Заявка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заявка</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.смартЗаявкаНаРемонтныеРаботы</types>
+        <types>DocumentRef.смартЗаявкаНаПускоНаладку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="55c8cb41-4361-45d6-a4dc-35d0c0247ed6">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="75940d21-0185-4edb-bf31-6e595ce78a6c">
+      <name>СтатусПеречисление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус перечисление</value>
+      </synonym>
+      <type>
+        <types>EnumRef.смартСтатусыЗаявокНаРемонтныеРаботы</types>
+        <types>EnumRef.смартСтатусыЗаявокНаПускоНаладку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="96abe691-aac8-4deb-b7d0-2553b6a66018">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="41b6a6cb-a20b-43ee-a5cc-ee78a6d2955b">
+      <name>НеНайденыКоординаты</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не найдены координаты</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6f181ba5-5e4d-47d9-b139-12564e0b752e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="bc7ffd91-a6e3-4e67-8c2f-fe79e5585ddd">
+    <name>ТекстДляКарты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст для карты</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="2584d082-bafc-4594-810c-09011838d45a">
+    <name>ТекстДляЛегенды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст для легенды</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:DataProcessor>

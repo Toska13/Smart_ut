@@ -1,0 +1,546 @@
+'Скрипт поиска оптимального маршрута. VBScript.
+
+Dim gAPoints
+gAPoints = Array(%POINTSCOORDLIST%)
+
+Dim gPointsCount
+Dim gRouteType
+Dim gABuffer
+
+Dim gADistances() 
+Dim gAFactorial
+gAFactorial = Array(1, 1, 2, 6, 24, 120, 720, 5040)
+
+'1C - Функция РасстояниеМеждуТочками()
+Function DistanceBtwPoints(StartLat, StartLong, EndLat, EndLong) 
+	 If StartLat = EndLat and StartLong = EndLong then 
+		 DistanceBtwPoints = 0
+		 Exit Function
+	 End if 
+  
+	 ' Константы, используемые для вычисления смещения и расстояния 
+	 D2R = 0.017453  'Константа для преобразования градусов в радианы 
+	 R2D = 57.295781 'Константа для преобразования радиан в градусы 
+	 a = 6378137.0   'Основные полуоси 
+	 b = 6356752.314245     'Неосновные полуоси 
+	 e2 = 0.006739496742337 'Квадрат эксцентричности эллипсоида 
+	 f = 0.003352810664747  'Выравнивание эллипсоида 
+
+	 fdLambda = (StartLong - EndLong) * D2R 
+	 fdPhi = (StartLat - EndLat) * D2R 
+	 fPhimean = ((StartLat + EndLat) / 2.0) * D2R 
+
+	 ' Вычисляем меридианные и поперечные радиусы кривизны средней широты 
+	 fTemp = 1 - e2 * (Sin(fPhimean) ^ 2) 
+	 fRho = (a * (1 - e2)) / (fTemp ^ 1.5) 
+	 fNu = a / (sqr(1 - e2 * (Sin(fPhimean) * Sin(fPhimean)))) 
+
+	 'Вычисляем угловое расстояние 
+	 fz = sqr((Sin(fdPhi / 2.0) ^ 2) + Cos(EndLat * D2R) * Cos(StartLat * D2R) * (Sin(fdLambda / 2.0) ^ 2)) 
+
+	 fz = 2 * Atn(fz / Sqr(-fz * fz + 1)) ' ASin(fz) -> Arcsin(X) = Atn(X / Sqr(-X * X + 1))
+
+	 'Вычисляем смещение 
+	 fAlpha = Cos(EndLat * D2R) * Sin(fdLambda) * 1 / Sin(fz) 
+	 fAlpha = Atn(fAlpha / Sqr(-fAlpha * fAlpha + 1)) 'ASin(fAlpha)   ->  'Arcsin(X) = Atn(X / Sqr(-X * X + 1))
+
+	 'Вычисляем радиус Земли 
+	 fR = (fRho * fNu) / ((fRho * (Sin(fAlpha) ^ 2)) + (fNu * (Cos(fAlpha) ^ 2))) 
+
+	 'Получаем расстояние 
+	 DistanceBtwPoints = (fz * fR) 
+	 
+	 'Получаем смещение
+	 'AbsAD = fAlpha * R2D 
+	 'If AbsAD < 0 then 
+	 '    AbsAD = AbsAD * (-1) 
+	 'End if 
+	  
+	 'If ((StartLat < EndLat) and (StartLong < EndLong)) then 
+	 '    Bearing =  AbsAD
+	 'Elseif ((StartLat < EndLat) and (StartLong > EndLong)) then 
+	 '    Bearing = 360 - AbsAD 
+	 'Elseif ((StartLat > EndLat) and (StartLong > EndLong)) then 
+	 '    Bearing = 180 + AbsAD 
+	 'Elseif ((StartLat > EndLat) and (StartLong < EndLong)) then 
+	 '    Bearing = 180 - AbsAD
+	 'End If 
+	
+End Function
+
+Function notUsed(A_used, i_blockNum)
+  pos = 0
+  for j = 1 to gPointsCount-1
+	  If not A_used(j) Then 
+		pos = pos + 1
+	  End if
+	  If i_blockNum = pos Then 
+		Exit For  
+	  End if
+  Next
+  notUsed = j
+End Function
+
+'Функция генерирует уникальную перестановку номеров точек в массиве M_res() в зависимости от порядкового номера перестановки num.
+'Пример взят тут: http://www.everfall.com/paste/id.php?9852brl4gu72
+Sub permutation_by_num(ByVal num, A_res, A_used)
+   PointsCount_1 = gPointsCount - 1
+   For i = 0 to PointsCount_1
+	   A_used(i) = false
+   Next
+  
+   For i = 0 to PointsCount_1
+	  i_blockNum = Int((num - 1) / gAFactorial(PointsCount_1 - i)) + 1
+	  j = notUsed(A_used, i_blockNum)
+	  A_res(i)  = j
+	  A_used(j) = true
+	  num = (num - 1) Mod gAFactorial(PointsCount_1 - i) + 1
+  Next
+End Sub
+
+'встряхивание маршрута
+'1C - Процедура ВстряхнутьМаршрут()
+Sub ShakeRoute(ByRef ARoute)
+	Redim ARouteCopy(gPointsCount + 1)
+	
+	For i = 0 To gPointsCount
+		ARouteCopy(i) = ARoute(i)
+	Next
+	
+	If gRouteType <= 0 Then
+		TryCount = gPointsCount \ 10
+	ElseIf gRouteType = 1 Then
+		TryCount = gPointsCount \ 10 + 2
+	ElseIf gRouteType = 2 Then ' между двумя точками
+		TryCount = gPointsCount \ 10
+	Else
+		TryCount = gPointsCount \ 10
+	End If
+	
+	ShakeCount = gPointsCount \ 5
+	
+	PointsCountHalf = gPointsCount \ 2
+	
+	For i = 1 To TryCount
+	
+		For s = 1 To ShakeCount
+		
+			i1 = Int(rnd() * gPointsCount) 'случайный индекс точки в маршруте
+			i2 = (i1 + PointsCountHalf + Int(rnd() * PointsCountHalf) - 1) Mod gPointsCount 'случайный индекс второй точки в маршруте (не должен быть рядом с первым)
+			SwapVal = ARoute(i1)
+			ARoute(i1) = ARoute(i2)
+			ARoute(i2) = SwapVal
+			
+		Next
+
+		OldLength = ARoute(gPointsCount)
+		NewLength = CalculateRouteLengthOptimised(ARoute)
+		
+		If OldLength > NewLength Then
+			For j = 0 To gPointsCount
+				ARouteCopy(j) = ARoute(j)
+			Next
+		End If
+	Next
+	
+	If ARouteCopy(gPointsCount) < ARoute(gPointsCount) Then
+		For i = 0 To gPointsCount
+			ARoute(i) = ARouteCopy(i) 
+		Next
+	End If
+
+End Sub
+
+'Расчет длины маршрута с предварительной оптимизацией маршрута.
+'1C Функция РассчитатьДлинуМаршрутаИОптимизировать()
+Function CalculateRouteLengthOptimised(ByRef ARoute)
+	PointsCount_1 = gPointsCount - 1
+	RLength = gADistances(ARoute(PointsCount_1), ARoute(0)) 'замыкаем маршрут - важно соблюдать несимметрию - отрезок до нулевой точки, а не после нулевой!
+	For i = 1 To PointsCount_1 
+		RLength = RLength + gADistances(ARoute(i-1), ARoute(i))  
+	Next
+
+	Do
+		OldLength = RLength
+		For n = 0 To PointsCount_1 - 2
+
+			For i = 0 To PointsCount_1
+			
+				ip1 = (i + 1) Mod gPointsCount 'эквивалент i+1
+				k = (i + 2) Mod gPointsCount
+				km1 = ip1 'эквивалент k-1
+				kn = (k + n) Mod gPointsCount
+				knp1 = (kn + 1) Mod gPointsCount 'эквивалент kn+1				
+				
+				Pti = ARoute(i) 'для ускорения
+
+				Do While knp1 <> i
+					Delta = gADistances(Pti,ARoute(k)) + gADistances(ARoute(kn),ARoute(ip1)) + gADistances(ARoute(km1),ARoute(knp1)) _
+						  - gADistances(Pti,ARoute(ip1)) - gADistances(ARoute(km1),ARoute(k)) - gADistances(ARoute(kn),ARoute(knp1))
+					
+					If Round(Delta, 3) < 0 Then 'перестановка двух участков маршрута местами
+						d = k
+						For s = 0 To n 'копируем правый участок маршрута в буфер
+							gABuffer(s) = ARoute(d)
+							d = (d + 1) Mod gPointsCount
+						Next
+						s = km1
+						d = kn
+						Do 'двигаемся справа налево - левый участок переносим на место хвоста правого участка
+							ARoute(d) = ARoute(s)
+							If s = 0 Then s = PointsCount_1 Else s = s - 1 End If
+							If d = 0 Then d = PointsCount_1 Else d = d - 1 End If
+						Loop While s <> i
+						d = ip1
+						For s = 0 To n 'правый участок из буфера переносим на место левого участка
+							ARoute(d) = gABuffer(s)
+							d = (d + 1) Mod gPointsCount
+						Next
+						RLength = RLength + Delta
+						If RLength <= 0 Then
+							MsgBox "Error optimise route!"
+							err = 1 / 0
+						End If
+					Else
+						km1 = k
+						k = (k + 1) Mod gPointsCount
+						kn = knp1
+						knp1 = (knp1 + 1) Mod gPointsCount
+					End If
+					
+				Loop 'Do While knp1 <> i
+				
+			Next
+			
+		Next
+			
+	Loop While OldLength > RLength
+	
+	ARoute(gPointsCount) = RLength
+	CalculateRouteLengthOptimised = RLength
+End Function
+
+'1C - Функция РассчитатьДлинуМаршрута()
+Function CalculateRouteLength(ByRef ARoute)
+	PointsCount_1 = gPointsCount - 1
+	If gRouteType <= 0 Then
+		RLength = gADistances(ARoute(PointsCount_1), ARoute(0)) 'замыкаем маршрут - важно соблюдать несимметрию - отрезок до нулевой точки, а не после нулевой!
+	ElseIf gRouteType = 1 Then
+		RLength = 0
+	ElseIf gRouteType = 2 Then
+		RLength = 0
+	Else
+		RLength = 0
+	End If
+
+	For i = 1 To PointsCount_1 
+		RLength = RLength + gADistances(ARoute(i-1), ARoute(i))  
+	Next
+	ARoute(gPointsCount) = RLength
+	CalculateRouteLength = RLength
+End Function
+
+
+'Поиск лучшего маршрута перебором всех вариантов (если до 7 точек маршрута)
+'1C - Функция НайтиМаршрутПереборомВсехВариантов
+Function SearchWithAllVariations()
+	nMaxCount = gAFactorial(gPointsCount) 
+	Redim A_used(gPointsCount + 1) 'так требуется по примеру http://www.everfall.com/paste/id.php?9852brl4gu72
+	Redim ARoute(gPointsCount + 1) 'в последнем параметре маршрута возвращается его длина
+	Redim AMinRoute(gPointsCount + 1)
+
+	permutation_by_num 1, AMinRoute, A_used
+	MinLength = CalculateRouteLength(AMinRoute)
+	For Num = 2 To nMaxCount
+		permutation_by_num num, ARoute, A_used
+		Length = CalculateRouteLength(ARoute)
+		If Length < MinLength Then
+			MinLength = Length
+			For i = 0 To gPointsCount
+				AMinRoute(i) = ARoute(i)
+			Next
+		End If
+	Next
+	
+	SearchWithAllVariations = AMinRoute
+End Function
+
+
+'Поиск лучшего маршрута эвристически
+'1C - Функция НайтиМаршрутЭвристически
+Function SearchHeuristically(nMaxVariations)
+	Redim AVRoutes(nMaxVariations+1)
+	Redim ANumbers(gPointsCount+1)
+	Redim ARouteR(gPointsCount+1) 'маршрут-наследник
+	'Randomize
+
+	'делаем варианты популяций
+	
+	'запоминаем текущий маршрут, чтоб сравнить его с новым результатом
+	Redim ARoute(gPointsCount+1)
+	For i = 1 To gPointsCount
+		ARoute(i-1) = i
+	Next
+
+	MinLength = CalculateRouteLengthOptimised(ARoute) 'важно возвращать результат из функции, иначе параметр передается по значению - особенность VBScript
+	AVRoutes(0) = ARoute
+	m = 0 ' индекс минимального маршрута
+	Stop
+	
+	'генерируем другие случайные варианты маршрута
+	For i = 1 To nMaxVariations
+		Redim ARoute(gPointsCount+1)
+		WasNomber = i Mod 2 'чтобы не обнулять постоянно массив испльзованых номеров
+		For j = 0 To gPointsCount-1
+			RNom = 1 + Int(rnd() * gPointsCount)
+			If ANumbers(RNom) = WasNomber Then
+				'ищем в массиве свободный номер влево или вправо от текущего
+				If rnd() < 0.5 Then
+					Do
+						RNom = RNom + 1
+						If RNom > gPointsCount Then
+							RNom = 1
+						End If
+						If ANumbers(RNom) <> WasNomber Then 
+							Exit Do
+						End If
+					Loop
+				Else
+					Do
+						RNom = RNom - 1
+						If RNom = 0 Then
+							RNom = gPointsCount
+						End If
+						If ANumbers(RNom) <> WasNomber Then 
+							Exit Do
+						End If
+					Loop
+				End If
+			End If
+			ANumbers(RNom) = WasNomber
+			ARoute(j) = RNom
+		Next
+		TempValue = CalculateRouteLengthOptimised(ARoute)
+		ShakeRoute ARoute
+		AVRoutes(i) = ARoute
+		If MinLength > ARoute(gPointsCount) Then
+			MinLength = ARoute(gPointsCount)
+			m = i
+		End If
+	Next
+	
+	SearchHeuristically = AVRoutes(m)
+End Function
+
+Function FindItem(ByRef Arr, item)
+	
+	FindItem = Null
+	For i = 0 To UBound(Arr)
+		If Arr(i) = item Then
+			FindItem = i
+			Exit For
+		End If
+	Next
+	
+End Function
+
+Sub DeleteItem(ByRef Arr, index)
+	
+	Redim Arr2(UBound(Arr)) ' меньше на один элемент
+	
+	j = 0
+	For i = 0 To UBound(Arr)
+		If i <> index Then
+			Arr2(j) = Arr(i)
+			j = j + 1
+		End If
+	Next
+	
+	Arr = Arr2
+	
+End Sub
+
+'Главная функция
+'1C - Функция НайтиОптимальныйМаршрутВстроенныйАлгоритм()
+' EndPointNomber - аналог свойства ПараметрыМаршрута.НомерКонечнойТочки, при значении (-1) - свойство отсутствует
+' EndAtPoint - аналог свойства ПараметрыМаршрута.ЗакончитьВТочке, значения: 1 - true, иначе false
+Function SearchRoute(nMaxVariations, RouteType, EndPointNomber, EndAtPoint)
+	gRouteType = RouteType
+	gPointsCount = (UBound(gAPoints) + 1) / 2
+	PointsCount_1 = gPointsCount - 1
+	Redim gABuffer(gPointsCount) 'буфер для перестановок участков маршрута
+	
+	SizeADistances = gPointsCount + 1
+	If RouteType > 0 Then 
+		SizeADistances = SizeADistances + RouteType
+	End If
+
+	'Заранее рассчитываем все расстояния между всеми точками маршрута.
+	Redim gADistances(SizeADistances, SizeADistances) 'массив расстояний 
+
+	For i = 0 to PointsCount_1
+		Lat1 = gAPoints(i*2)
+		Lon1 = gAPoints(i*2+1)
+		For j = i + 1 to PointsCount_1
+			Lat2 = gAPoints(j*2)
+			Lon2 = gAPoints(j*2+1)
+			Distance = DistanceBtwPoints(Lat1, Lon1, Lat2, Lon2)
+			gADistances(i+1, j+1) = Distance ' в массиве расстояний точки нумеруются, начиная с 1, поэтому индекс увеличен на 1
+			gADistances(j+1, i+1) = Distance
+		Next
+	Next
+	
+	If gRouteType > 0 Then 'маршрут не замкнутый
+	
+		MaxDistance = 0
+		For i = 2 To PointsCount_1 
+			If gADistances(i,1) > MaxDistance Then
+				MaxDistance = gADistances(i,1)
+			End If
+		Next
+		
+		MaxValue = 3 * MaxDistance * gPointsCount
+		
+		If gRouteType = 1 Then ' первая точка маршрута - это начало или конец
+			' добавяем виртуальную точку
+			gPointsCount   = gPointsCount + 1 ' с учетом добавления виртуальной точки
+			PointsCount_1 = gPointsCount - 1
+			VirtPoint = gPointsCount
+			
+			If EndPointNomber <> -1 Then BearingPoint = EndPointNomber Else BearingPoint = 1 End If ' ОпорнаяТочка = ?(ПараметрыМаршрута.Свойство("НомерКонечнойТочки"), ПараметрыМаршрута.НомерКонечнойТочки, 1)
+			' BearingPoint - опорная точка - это начальная или конечная точка маршрута в зависимости от параметров маршрута
+			For i = 1 To gPointsCount
+				If i <> VirtPoint Then
+					gADistances(VirtPoint, i) = MaxValue
+					gADistances(i, VirtPoint) = MaxValue
+				End If
+			Next
+			
+			If Not EndAtPoint = 1 Then ' Если Не ПараметрыМаршрута.Свойство("ЗакончитьВТочке") Тогда // первая точка маршрута - должна стать концом маршрута
+				
+				gADistances(BearingPoint, VirtPoint) = MaxValue
+				gADistances(VirtPoint, BearingPoint) = 0
+				
+			Else
+				
+				gADistances(BearingPoint, VirtPoint) = 0
+				gADistances(VirtPoint, BearingPoint) = MaxValue
+				
+			End If
+
+		ElseIf gRouteType = 2 Then 'первая и предпоследняя точки маршрута - начало и конец
+		
+			StartPoint = 1
+			EndPoint   = gPointsCount
+			gADistances(StartPoint, EndPoint) = MaxValue ' если тут поставить значение 0, то результат может получиться зеркальным (после удаления виртуальной вершины)
+			gADistances(EndPoint, StartPoint) = 0
+		
+		End If
+	
+	
+	End If
+	
+	nMaxPermutations = 0 ' максимальное количество перестановок (представителей первого поколения)
+	'предусматриваем случай, когда заданное количество вариантов маршрута может превысить максимально возможное количество вариантов
+	If gPointsCount <= 5 Then
+		nMaxPermutations = gAFactorial(gPointsCount) / 2 'для симметричных расстояний число всех вариантов для N точек равно N!/2
+		If nMaxPermutations < nMaxVariations Then
+			nMaxVariations = nMaxPermutations
+		End If
+	End If
+	
+	'Все расстояния рассчитаны. Например, расстояние между точками 1 и 2: S(1,2) = gADistances(1,2) = gADistances(2,1)
+	
+	If nMaxVariations = nMaxPermutations Or gPointsCount <= 5 Then 'ищем маршрут перебором всех вариантов 
+		ARoute = SearchWithAllVariations()
+	Else 'ищем маршрут эвристическим методом
+		ARoute = SearchHeuristically(nMaxVariations)
+	End If
+
+	'получили лучший замкнутый маршрут
+	
+	If gRouteType = -1 Then 'маршрут нужно разомкнуть по максимальному отрезку
+		'ищем максимальную длину между точками маршрута - между ними и делаем разрыв - не всегда правильно работает - не всегда размыкание наибольшего отрезка дает кратчайший маршрут
+		MaxLength = gADistances(ARoute(0), ARoute(PointsCount_1))
+		iCut = 0
+		For i = 1 To PointsCount_1 
+			Length = gADistances(ARoute(i-1), ARoute(i))
+			If Length > MaxLength Then
+				MaxLength = Length
+				iCut = i
+			End If
+		Next
+		ARoute(gPointsCount) = ARoute(gPointsCount) - MaxLength 'уменьшаем длину маршрута на длину отрезка размыкания
+		If iCut <> 0 Then
+			Redim ARoute2(gPointsCount+1)
+			ARoute2(gPointsCount) = ARoute(gPointsCount)
+			For i = 0 To PointsCount_1
+				ARoute2(i) = ARoute(iCut)
+				iCut = (iCut+1) Mod gPointsCount
+			Next
+			ARoute = ARoute2
+		End If
+		
+	ElseIf gRouteType = 2 Then 'маршрут между 2 точками
+	
+		'делаем циклический сдвиг массива так, чтобы первым элементом массива у нас стала начальная точка
+		PosStartPoint = FindItem(ARoute, StartPoint)
+		If PosStartPoint <> 0 Then
+			Redim ARoute2(gPointsCount+1)
+			ARoute2(gPointsCount) = ARoute(gPointsCount)
+			j = PosStartPoint
+			For i = 0 To PointsCount_1
+				ARoute2(i) = ARoute(j)
+				j = (j+1) Mod gPointsCount
+			Next
+			ARoute = ARoute2
+		End If
+		
+		TempValue = CalculateRouteLength(ARoute)
+	
+	ElseIf gRouteType = 1 Then 'маршрут от одной точки или в одну точку
+		
+		DeleteItem ARoute, FindItem(ARoute, VirtPoint) ' удаляем виртуальную точку
+		gPointsCount = gPointsCount - 1
+		PointsCount_1 = gPointsCount - 1
+		
+		iPos = FindItem(ARoute, BearingPoint)
+		TruePos = BearingPoint - 1
+		'делаем циклический сдвиг массива так, чтобы первым элементом массива у нас стала начальная точка (или последним - конечная, в зависимости от параметров маршрута)
+		If iPos <> TruePos Then
+			Redim ARoute2(gPointsCount+1)
+			FromPos = iPos
+			j = TruePos
+			For i = 1 To gPointsCount
+				ARoute2(j) = ARoute(FromPos)
+				FromPos = (FromPos + 1) Mod gPointsCount
+				j = (j + 1) Mod gPointsCount
+			Next
+			ARoute = ARoute2
+		End If
+		
+		TempValue = CalculateRouteLength(ARoute)
+		
+	ElseIf gRouteType = 0 Then ' замкнутый маршрут - добавлена одна точка вне маршрута - офис или дом агента
+		
+		iPos = FindItem(ARoute, gPointsCount)			'	ПозОпорнойТочки = Маршрут.Найти(gPointsCount);
+		If iPos <> PointsCount_1 Then
+			Redim ARoute2(gPointsCount+1)
+			ARoute2(gPointsCount) = ARoute2(gPointsCount)
+			j = (gPointsCount + PointsCount_1 - iPos) Mod gPointsCount
+			For i = 0 To PointsCount_1
+				ARoute2(j) = ARoute(i)
+				j = (j + 1) Mod gPointsCount
+			Next
+			ARoute = ARoute2
+		End If
+		
+	End If
+
+	Result = ""
+	for i = 0 to gPointsCount
+		Result = Result + CStr(ARoute(i)) + " "
+	Next
+	
+	SearchRoute = Result
+End Function

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fa80f02c-558e-4a2c-b90c-650c8919077d">
+  <producedTypes>
+    <selectionType typeId="e50c387f-523f-4ac0-87ac-0480920c2ae3" valueTypeId="ba66509f-5d77-4313-9695-56c3cd447a79"/>
+    <listType typeId="deae1725-ee80-426b-aa09-11734795f403" valueTypeId="db662818-9c07-489c-b93b-83bea361dcbe"/>
+    <managerType typeId="720a8e14-9656-4e66-af45-9675a723a643" valueTypeId="8e8f367f-0d93-4dc3-99a9-24667297603f"/>
+    <recordSetType typeId="327d7299-b0d6-410c-8280-5016fcbf2d56" valueTypeId="4805d42f-7d83-4006-acc0-6de5feac6e48"/>
+    <recordKeyType typeId="24c624ee-9625-40e9-84a3-de2b79390de0" valueTypeId="3eb35982-142f-4e8e-88d1-89f340bacf9b"/>
+    <recordType typeId="38275679-3b72-4bba-83e1-bac67342b5a4" valueTypeId="d9318a7f-e89d-4a4b-9b85-d47e92c68244"/>
+    <recordManagerType typeId="264391b4-3c54-4f91-bbb2-293f9430df97" valueTypeId="f2b63403-1554-4656-9063-724183503b92"/>
+  </producedTypes>
+  <name>CRM_Напоминания</name>
+  <synonym>
+    <key>ru</key>
+    <value>Напоминания</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Reminders</value>
+  </synonym>
+  <comment>Данный регистр предназначен для реализации механизма напоминаний. Напоминание - сообщение которое может быть выведено на экран любому пользователю конфигурации единожды либо с заданной регулярностью.</comment>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.CRM_Напоминания.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.CRM_Напоминания.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Напоминание</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Reminder</value>
+  </recordPresentation>
+  <extendedRecordPresentation>
+    <key>ru</key>
+    <value>Напоминание</value>
+  </extendedRecordPresentation>
+  <extendedRecordPresentation>
+    <key>en</key>
+    <value>Reminder</value>
+  </extendedRecordPresentation>
+  <explanation>
+    <key>ru</key>
+    <value>Сообщение, которое может быть выведено на экран любому пользователю конфигурации единожды, либо с заданной регулярностью.</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>The message which could be display to any user of a configuration once, or with the given regular.</value>
+  </explanation>
+  <resources uuid="d85a37c1-6970-4617-ae6b-347e4821850e">
+    <name>ДатаАктуальности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата актуальности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Relevance Date</value>
+    </synonym>
+    <comment>Дата до которой напоминание считается актуальным. Не актуальные напоминания удаляются.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата </value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date </value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fd114c58-ce97-4678-99fb-7066ca9af009">
+    <name>Содержание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Содержание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Content</value>
+    </synonym>
+    <comment>Содержание напоминания - сообщение содержащее суть напоминания.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Содержание напоминания</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Content of a reminder</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5060879d-f86a-4701-9a93-f71fe71fb99e">
+    <name>Важность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Важность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Importance</value>
+    </synonym>
+    <comment>Важность</comment>
+    <type>
+      <types>EnumRef.ВариантыВажностиВзаимодействия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Важность напоминания</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Notification picture</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВариантыВажностиВзаимодействия.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="ff4c32b4-b57e-4ae1-9a4f-eb8916102aa1">
+    <name>Счетчик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счетчик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counter</value>
+    </synonym>
+    <comment>Содержит число, показывающее, сколько раз напоминание было отложено</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Счетчик напоминания</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Counter of a reminder</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="7b5f10c0-b6e3-4566-9d4d-b75a2e9b1afc">
+    <name>СрокОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period of the notification</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Срок</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="aac6024a-6b19-4f1f-afb2-88e4a2c9f4dc">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Periodicity</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ПериодичностьОповещений</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Периодичность напоминания</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Periodicity of a reminder</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6bfef80d-386a-414c-99c0-70806ccbc9d8">
+    <name>ВидОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type of Notification</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыОповещений</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="800f3391-a942-481e-ac71-1bef1eac44dd">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <comment>Получатель  напоминания</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь напоминания</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>User of a reminder</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fe9fd679-5d60-4e8a-b1c3-d1f0985792ba">
+    <name>Предмет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предмет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <comment>Ссылка на объект конфигурации прилагаемый к напоминанию</comment>
+    <type>
+      <types>ExchangePlanRef</types>
+      <types>BusinessProcessRef</types>
+      <types>DocumentRef</types>
+      <types>ChartOfCalculationTypesRef</types>
+      <types>TaskRef</types>
+      <types>ChartOfCharacteristicTypesRef</types>
+      <types>ChartOfAccountsRef</types>
+      <types>CatalogRef</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Указывается предмет</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The subject are entered</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f06e36e9-8910-41a6-bb6b-c84560131e43">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <comment>Дата напоминания (для нового равно дате оповещения)</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bb283a8c-c8c3-40e3-9440-b6beddff8006">
+    <name>ДатаОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Notification date</value>
+    </synonym>
+    <comment>Дата напоминания +  отсрочка (срок на который пользователь отложил напоминание)  </comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата </value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date </value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="a3885fff-edb9-4b36-a0c6-a1a51f17c72b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="feda2a4e-a4b9-4056-a0d5-1d970de1a72c">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of record</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

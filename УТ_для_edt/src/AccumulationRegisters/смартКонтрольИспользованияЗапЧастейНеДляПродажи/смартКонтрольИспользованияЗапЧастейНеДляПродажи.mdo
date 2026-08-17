@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b51e6c55-f149-4a1e-91d2-b20482d6289a">
+  <producedTypes>
+    <selectionType typeId="feee5712-359e-4f8f-aa09-020fbb032cd9" valueTypeId="852dbfa3-37f3-47f1-bcef-0e8a5b885994"/>
+    <listType typeId="17080e26-2cd6-423e-9a26-ddaa11c8132b" valueTypeId="e9bf657a-8b18-4caf-8f28-7125fddd8711"/>
+    <managerType typeId="ca58d728-a2ea-4079-a4a4-8a8875fbfa6d" valueTypeId="13aa2efc-0ce9-40c7-a2d9-64397c10368f"/>
+    <recordSetType typeId="981cc7ea-5868-4802-b76f-364f644eca23" valueTypeId="9573ac2b-ec7d-462e-8333-5fd4493b1a25"/>
+    <recordKeyType typeId="dcef55ba-080e-42ba-bbe7-dcd50ba288e2" valueTypeId="01cbd81c-f5a5-4e63-93ef-3aa3eceb21d5"/>
+    <recordType typeId="79342bb1-6fd9-4f2f-85a8-3b9cb1fe489e" valueTypeId="7b328d41-6511-4613-a18c-acc4d507a8ab"/>
+  </producedTypes>
+  <name>смартКонтрольИспользованияЗапЧастейНеДляПродажи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контроль использования зап частей не для продажи (смарт)</value>
+  </synonym>
+  <comment>//++ #1419 смарт: Фролов 16.08.2023 //Контроль использования запчастей не для продажи</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3c1b5801-961d-4000-afeb-d2eedfabc831">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="40a9c346-b546-4b11-9f1e-874280441992">
+    <name>КВозмещению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К возмещению</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4424b057-d387-4ab9-a729-fde6c40f7cc8">
+    <name>ЗаявкаНаГарантийныйРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на гарантийный ремонт</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаГарантийныйРемонт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d179aaaa-9241-4c7a-adaa-45afd4400480">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="65a5014b-aace-4506-afff-f1b2ef0ef978">
+    <name>НомерГТДКВозмещению</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер ГТД к возмещению</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НомераГТД</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер грузовой таможенной декларации</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="392596eb-9b36-4dc0-b52f-e51d25a9255c">
+    <name>НомерГТДПриход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер ГТД приход</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НомераГТД</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер грузовой таможенной декларации</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ddd47b95-ca6e-4d78-8783-f3cb3a942468">
+    <name>НеКомпенсировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не компенсировать</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cb935871-c081-47c2-ad2e-cb9b91817f63">
+    <name>Партия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПартии</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партия номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

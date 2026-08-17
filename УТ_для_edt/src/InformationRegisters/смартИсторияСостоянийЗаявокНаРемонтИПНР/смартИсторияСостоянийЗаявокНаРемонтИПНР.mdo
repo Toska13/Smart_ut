@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="889163c7-b6f0-4b9d-ae63-dbbc6db0e39b">
+  <producedTypes>
+    <selectionType typeId="908fecf6-a952-4fc5-ba92-8e5ee4fa64d4" valueTypeId="17bee4b4-96bc-4782-82b6-746971512bf6"/>
+    <listType typeId="a4ee3528-e862-4f6c-9c78-30e0f295219c" valueTypeId="4b51bf62-5d47-42bd-98e9-0eb96e0bb8c0"/>
+    <managerType typeId="fe18ab1a-f252-4c91-a337-f50050e57f1d" valueTypeId="a8b8887c-46d3-454e-b07f-c7f6a5d55488"/>
+    <recordSetType typeId="dd908540-efbb-4bc8-81d2-d874f10f10e1" valueTypeId="84f97c7d-020c-4ce1-8af4-483be6ceb63a"/>
+    <recordKeyType typeId="821fa960-bfa8-4c17-801c-bd676c868aac" valueTypeId="ae54e728-8281-4f59-bc6a-ba765108326d"/>
+    <recordType typeId="256d244b-035d-4b30-81bb-ac9d9acd92df" valueTypeId="73e9af1a-1090-401c-877f-c088503f99a6"/>
+    <recordManagerType typeId="785fd996-60a8-4b02-baca-70453749a955" valueTypeId="aa0ad965-5264-41f7-aa5e-504b26805b23"/>
+  </producedTypes>
+  <name>смартИсторияСостоянийЗаявокНаРемонтИПНР</name>
+  <synonym>
+    <key>ru</key>
+    <value>История состояний заявок на ремонт и ПНР (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-4738 смарт: Фролов 15.10.2025 //Создание отчета по эффективности обработки заявок СЦ.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c7ce1a7c-d4d6-46ce-93a8-c8f06fd9a357">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <types>EnumRef.смартСтатусыЗаявокНаРемонтныеРаботы</types>
+      <types>EnumRef.смартСтатусыЗаявокНаПускоНаладку</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="322e5419-811e-47c9-858b-16611f14cf4a">
+    <name>ДатаЗавершения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата завершения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6560f38f-c234-4699-b154-adbb33b7d436">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="230ea3e0-471f-4500-8384-38048b03610c">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="a1ba6d0e-1ee7-4fc0-872c-3e1c7d5dfbbe">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <comment>//++ #Б-5028 смарт: Фролов 20.11.2025 //Доработка документа Заявка на ремонтные работы, по новому регламенту</comment>
+    <type>
+      <types>CatalogRef.смартЭтапыПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8ea47f1f-2c94-4c2c-9714-7984221a0bf3">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="c4133c37-a1d9-416c-aad6-b3842ec96cd2">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаПускоНаладку</types>
+      <types>DocumentRef.смартЗаявкаНаРемонтныеРаботы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

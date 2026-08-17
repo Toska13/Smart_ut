@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="172add33-690e-4daf-8884-b9549a65fb14">
+  <name>CRM_Модуль_ОбработкаПолученияФормДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обработка получения форм документов (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Processing of receipt of document forms (CRM)</value>
+  </synonym>
+  <comment>Обработка получения форм документов (CRM)</comment>
+  <source>
+    <types>DocumentManager.Встреча</types>
+    <types>DocumentManager.ЗапланированноеВзаимодействие</types>
+  </source>
+  <event>FormGetProcessing</event>
+  <handler>CommonModule.CRM_Модуль_МетодыМодулейМенеджеровДокументов.ОбработкаПолученияФормОбъектовCRMМодуль</handler>
+</mdclass:EventSubscription>

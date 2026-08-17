@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="25b87b4e-27a8-494b-ade0-1bea7fde6b3e">
+  <producedTypes>
+    <objectType typeId="7cbb2b32-12cb-4ba0-9ff6-e50f7418b68c" valueTypeId="90790011-4aba-4122-8d69-78d601d20e42"/>
+    <managerType typeId="67e2ac38-31f5-4602-96ec-310a85b1b1f0" valueTypeId="97a02ac7-d6b7-44a2-a7d1-d75bad648435"/>
+  </producedTypes>
+  <name>CRM_ПланированиеПроектов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование ресурсов проектов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Project Planning</value>
+  </synonym>
+  <comment>АРМ &quot;Планирование ресурсов проектов&quot;</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_ПланированиеПроектов.Form.ФормаПланирования</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="4a249e41-aed7-4f7c-96d4-5bb0689a2ed9">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата начала планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Planning start date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b9727f33-812e-4d82-ad8b-fb2abe3440da">
+    <name>ДатаКонца</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата конца</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата конца планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>End date of planning</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="7c4094b2-1b1c-4320-9821-c97e0cdc6b15">
+    <producedTypes>
+      <objectType typeId="d258fdaa-3055-4ae3-9034-f71aa9c77ca2" valueTypeId="4ffacfcd-a63a-4dd9-862d-56477572c7d2"/>
+      <rowType typeId="ba38e712-0bf1-405d-bcdc-ad0f633dd499" valueTypeId="8c3e8905-4a13-4d05-97a5-e8b69580650e"/>
+    </producedTypes>
+    <name>Планы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Plans</value>
+    </synonym>
+    <comment>Кеш плановых записей</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="28b7472b-2c60-4b87-b762-3b6289e57de4">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Project</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Проект для планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Project for planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="30094b6d-ab46-44a5-8ceb-bceb293f679d">
+      <name>Этап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.CRM_ЭтапыПроектов</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Planning Phase</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="41dbd31b-acc2-415f-9317-3dedcbca5381">
+      <name>ЭтапПорядок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап порядок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage order</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап порядок планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Planning order stage</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d0aa13c4-10a5-4f26-9113-68a34324e82e">
+      <name>Исполнитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Assignee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Исполнитель планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Executor of Planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f4b49352-58c0-4afc-aae4-859dc1893976">
+      <name>ДатаНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Start</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата Начала планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Planning start date</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="44e3f11b-66c5-4af0-b959-2bb8baa8c891">
+      <name>ДатаКонца</name>
+      <synonym>
+        <key>ru</key>
+        <value>Окончание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Termination</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Окончание планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>End of planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d7116ddb-5b7b-4b51-83d9-9a54137c322b">
+      <name>Продолжительность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжительность</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Продолжительность планирования, дней</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Duration of planning, days</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f5aeb807-6f99-4871-8cd4-a5e238982250">
+      <name>ПроцентЗагрузки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент загрузки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent of loading</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Процент загрузки планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Percent of Scheduling Load</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:NumberValue">
+        <value>100</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="524b69dc-d07a-47a2-9702-cd8ea352ee95">
+      <name>Трудоемкость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Трудоемкость</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Complexity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Трудоемкость планирования, ч</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The complexity of planning, h</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f4f48f85-0320-4c35-a7fb-bb96b4eca2b0">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Department</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Department of scheduling</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="9e0ac9bf-42d8-41c1-bd92-f59e28101ff6">
+    <producedTypes>
+      <objectType typeId="a985539c-db06-43a6-a006-6f32624c137d" valueTypeId="7bfe3ea8-8e46-41a6-bfc6-1f0063a0355a"/>
+      <rowType typeId="6e545912-cf1c-4bc5-b7ee-a37c425c7910" valueTypeId="6bc39103-194e-493b-89f6-7c0f3f5c411e"/>
+    </producedTypes>
+    <name>ПланыСвернутые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планы свернутые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Plans contract</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="49f098ca-75e7-4858-aaaf-64b598149bd5">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Project</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Проект для планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Project for planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="000c9581-c092-4084-b04f-fbc99c4928a9">
+      <name>Этап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.CRM_ЭтапыПроектов</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Planning Phase</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6f40f164-45df-4e9c-8eb0-32711d55be1a">
+      <name>Исполнитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Assignee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Исполнитель планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Executor of Planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c0e11436-e0a8-47e7-9c21-cc0412d244ec">
+      <name>ДатаНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Start</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Начало планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Start Planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9847f0c9-195d-46e3-973e-68c79d35f1eb">
+      <name>ДатаКонца</name>
+      <synonym>
+        <key>ru</key>
+        <value>Окончание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Termination</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Окончание планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>End of planning</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f6b4579a-be5e-428d-a451-7fa73b7b2737">
+      <name>ДатаНачалаЗаписи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало записи</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Beginning of record</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Начало записи планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Start of the planning record</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b12d231-88a3-4a9a-8095-cf6194fee4e1">
+      <name>ДатаКонцаЗаписи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Окончание записи</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Termination of record</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Окончание записи планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>End of the planning record</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e44314c1-739c-4b95-896b-15d0a1f8692a">
+      <name>Продолжительность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжительность</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Продолжительность планирования, дней</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Duration of planning, days</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6e5a78b6-39b6-4afc-8db8-0e79b67b7758">
+      <name>ПроцентЗагрузки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент загрузки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Percent of loading</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Процент загрузки планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Percent of Scheduling Load</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:NumberValue">
+        <value>100</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="deebd206-a063-4b2d-90e4-95e4d6837d25">
+      <name>Трудоемкость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Трудоемкость</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Complexity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Трудоемкость планирования, ч</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The complexity of planning, h</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b737be6-2a22-4ffd-8ec7-c95925fcda93">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Department</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Department of scheduling</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6734f7a2-4787-4c55-9f13-df28f0276641">
+      <name>РабочихЧасовЗаПериод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочих часов за период</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Working hours during the period</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Трудоемкость планирования, ч</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The complexity of planning, h</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="84909bff-4f79-44cc-ab25-d5da43c8a298">
+      <name>УровеньЗагрузки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Уровень загрузки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Level of loading</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Уровень загрузки планирования</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Planning Load Level</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="1b4703d5-5548-4562-8b88-5ee3cb2a0a38">
+    <name>ФормаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of scheduling</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="d3007d9c-f280-4aea-986d-8179aea38f28">
+    <name>Оформление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оформление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Design</value>
+    </synonym>
+  </templates>
+  <commands uuid="bbe2754b-99da-449a-8dd0-9a932abde902">
+    <name>ОткрытьФормуПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планирование ресурсов проектов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Project Planning</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c94224b4-23b6-4def-bf10-a01b4da72e1a">
+  <producedTypes>
+    <selectionType typeId="86df3e9a-5292-44cf-8ba6-2156c823e6dc" valueTypeId="52fdc624-abdf-4ef5-81c6-d4171280f52b"/>
+    <listType typeId="6d592ac0-cc18-4f25-9445-c9337ad54e59" valueTypeId="2f8df4f6-68b1-47ab-bb27-6112c81d07fd"/>
+    <managerType typeId="e499a7d3-a3ee-45df-a74a-4d37d4077aa3" valueTypeId="99a7d0fd-219f-423b-bc5d-03d5a472fec7"/>
+    <recordSetType typeId="38d93ef3-365a-4392-8f32-1da2c6585f25" valueTypeId="256b38bf-796b-4a24-a3b5-d77cafbd2d83"/>
+    <recordKeyType typeId="11f9fd53-e876-427f-8b4a-a72bcb5ca3b4" valueTypeId="18794014-c12b-4563-a9cd-888d1398d301"/>
+    <recordType typeId="c87917c2-6a71-4e5a-88ba-233a3095563b" valueTypeId="82f6e94a-e270-4430-a4cd-4fdce42fdf37"/>
+    <recordManagerType typeId="3640d02f-a188-43c5-bd3c-3c22b636a485" valueTypeId="a3f8b4a6-f0ac-4d3c-8b6f-2dcbade54e39"/>
+  </producedTypes>
+  <name>смартСоответствиеНоменклатурыСКонструкторомКП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Соответствие номенклатуры с конструктором КП (смарт)</value>
+  </synonym>
+  <comment>++ #Б1252 смарт: Шляпников 12.11.2024 / Создание Заказа клиента из Спецификации IECHO</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.смартСоответствиеНоменклатурыСКонструкторомКП.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ac731396-379e-4064-85a3-26906c78b44e">
+    <name>СуммироватьКоличество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Суммировать количество</value>
+    </synonym>
+    <comment>//++ #Б4688 смарт: Шляпников 13.10.2025 / Доработка Спецификаций IECHo.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="812f9b48-e723-4a54-a6e6-e90b8e26a390">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0b774a3e-d86e-41b8-804a-84920541bba1">
+    <name>Конструктор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конструктор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартIECHOКомплектующие</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="eaa5fa7a-140a-412f-ba2d-b118a0082559">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

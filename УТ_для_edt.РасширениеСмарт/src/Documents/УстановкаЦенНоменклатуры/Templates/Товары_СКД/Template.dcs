@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Товары</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Упаковка</dataPath>
+			<field>Упаковка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСтроки</dataPath>
+			<field>НомерСтроки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦены</dataPath>
+			<field>ВидЦены</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаИзмененаВручную</dataPath>
+			<field>ЦенаИзмененаВручную</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтараяЦена</dataPath>
+			<field>СтараяЦена</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Старая цена</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	УстановкаЦенНоменклатурыТовары.Ссылка КАК Ссылка,
+	УстановкаЦенНоменклатурыТовары.НомерСтроки КАК НомерСтроки,
+	УстановкаЦенНоменклатурыТовары.Номенклатура КАК Номенклатура,
+	УстановкаЦенНоменклатурыТовары.Характеристика КАК Характеристика,
+	УстановкаЦенНоменклатурыТовары.Упаковка КАК Упаковка,
+	УстановкаЦенНоменклатурыТовары.ВидЦены КАК ВидЦены,
+	УстановкаЦенНоменклатурыТовары.Цена КАК Цена,
+	УстановкаЦенНоменклатурыТовары.ЦенаИзмененаВручную КАК ЦенаИзмененаВручную,
+	ДОБАВИТЬКДАТЕ(УстановкаЦенНоменклатурыТовары.Ссылка.Дата, СЕКУНДА, -1) КАК Дата
+ПОМЕСТИТЬ ВТТовары
+ИЗ
+	Документ.УстановкаЦенНоменклатуры.Товары КАК УстановкаЦенНоменклатурыТовары
+ГДЕ
+	УстановкаЦенНоменклатурыТовары.Ссылка = &amp;УстановкаЦенНоменклатуры
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВложенныйЗапрос.Ссылка КАК Ссылка,
+	ВложенныйЗапрос.НомерСтроки КАК НомерСтроки,
+	ВложенныйЗапрос.Номенклатура КАК Номенклатура,
+	ВложенныйЗапрос.Характеристика КАК Характеристика,
+	ВложенныйЗапрос.Упаковка КАК Упаковка,
+	ВложенныйЗапрос.ВидЦены КАК ВидЦены,
+	ВложенныйЗапрос.Цена КАК Цена,
+	ВложенныйЗапрос.ЦенаИзмененаВручную КАК ЦенаИзмененаВручную,
+	ВложенныйЗапрос.Дата КАК Дата,
+	ВложенныйЗапрос.Период КАК Период,
+	ЕСТЬNULL(ЦеныНоменклатуры.Цена, 0) КАК СтараяЦена
+ИЗ
+	(ВЫБРАТЬ
+		ВТТовары.Ссылка КАК Ссылка,
+		ВТТовары.НомерСтроки КАК НомерСтроки,
+		ВТТовары.Номенклатура КАК Номенклатура,
+		ВТТовары.Характеристика КАК Характеристика,
+		ВТТовары.Упаковка КАК Упаковка,
+		ВТТовары.ВидЦены КАК ВидЦены,
+		ВТТовары.Цена КАК Цена,
+		ВТТовары.ЦенаИзмененаВручную КАК ЦенаИзмененаВручную,
+		ВТТовары.Дата КАК Дата,
+		МАКСИМУМ(ЦеныНоменклатуры.Период) КАК Период
+	ИЗ
+		ВТТовары КАК ВТТовары
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры КАК ЦеныНоменклатуры
+			ПО ВТТовары.Номенклатура = ЦеныНоменклатуры.Номенклатура
+				И ВТТовары.Характеристика = ЦеныНоменклатуры.Характеристика
+				И ВТТовары.ВидЦены = ЦеныНоменклатуры.ВидЦены
+				И ВТТовары.Дата &gt;= ЦеныНоменклатуры.Период
+	
+	СГРУППИРОВАТЬ ПО
+		ВТТовары.Характеристика,
+		ВТТовары.Номенклатура,
+		ВТТовары.Упаковка,
+		ВТТовары.Ссылка,
+		ВТТовары.Дата,
+		ВТТовары.ВидЦены,
+		ВТТовары.Цена,
+		ВТТовары.ЦенаИзмененаВручную,
+		ВТТовары.НомерСтроки) КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры КАК ЦеныНоменклатуры
+		ПО ВложенныйЗапрос.Номенклатура = ЦеныНоменклатуры.Номенклатура
+			И ВложенныйЗапрос.Характеристика = ЦеныНоменклатуры.Характеристика
+			И ВложенныйЗапрос.ВидЦены = ЦеныНоменклатуры.ВидЦены
+			И ВложенныйЗапрос.Период = ЦеныНоменклатуры.Период</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидЦены</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид цены</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:TypeId>5eeef668-b52a-4624-a9c2-8ac6327dbc51</v8:TypeId>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>УстановкаЦенНоменклатуры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Установка цен номенклатуры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.УстановкаЦенНоменклатуры</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НомерСтроки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Характеристика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидЦены</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Цена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаИзмененаВручную</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтараяЦена</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

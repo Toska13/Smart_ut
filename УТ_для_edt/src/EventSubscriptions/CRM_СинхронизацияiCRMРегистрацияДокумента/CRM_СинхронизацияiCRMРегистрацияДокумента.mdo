@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f42489b7-7846-4ad6-9c45-e3c996ee6054">
+  <name>CRM_СинхронизацияiCRMРегистрацияДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация iCRM регистрация документа (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Synchronization CRMRegistration</value>
+  </synonym>
+  <comment>Синхронизация iCRM регистрация документа (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_Интерес</types>
+    <types>DocumentObject.ЗаказКлиента</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_СинхронизацияСiCRMНовый.СинхронизацияiCRMРегистрацияПередЗаписью</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="32cb4bee-4acf-4866-941c-df8d2551dc5b">
+  <producedTypes>
+    <selectionType typeId="f3057a99-a2ac-47d8-93e3-474e61ef44c8" valueTypeId="7bb21b45-86d9-4228-b542-af3d2460a404"/>
+    <listType typeId="313dcfcb-7a10-419a-90d6-ca4a7491dcee" valueTypeId="6476e765-4974-4008-8374-79767dbb0c55"/>
+    <managerType typeId="cdbb85d7-253b-4bc2-a615-e3ed56dd3200" valueTypeId="7248c549-2734-498b-9fe6-c3d29a464501"/>
+    <recordSetType typeId="0f0aca16-09ac-49b5-8a6d-27d0ecb8b933" valueTypeId="cf310034-ab0d-49e8-b3b6-2678d1ae7e4a"/>
+    <recordKeyType typeId="95bff1ff-c793-4760-a77a-07a936f91a33" valueTypeId="c964ee52-9d8d-4d3b-8e78-d4dfa4375d95"/>
+    <recordType typeId="82827378-1304-41ce-9ae8-173610649432" valueTypeId="69d3f1f5-e64d-4d9e-9695-3776ae8b2bb9"/>
+    <recordManagerType typeId="af33fd6a-d0c3-40e1-8789-027f7126b5bd" valueTypeId="8c339c72-4c12-4ef1-b3ab-a7ec9f7abb40"/>
+  </producedTypes>
+  <name>смартСформированныеПакетыПФ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сформированные пакеты ПФ (смарт)</value>
+  </synonym>
+  <comment>//++ #1766 смарт: Мосолов 09.04.2024 //Создать предварительный шаг по контролю созданных документов в БП при отгрузке</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="a6af1f7c-7073-4847-a51e-7916ad296cb5">
+    <name>ПакетСформирован</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пакет сформирован</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="31810942-80b4-4156-947e-354ffd35b00d">
+    <name>КаталогСохраненияФайлов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Каталог сохранения файлов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1000</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="7c4a0f2a-3356-4651-8614-e1c6b2621a8e">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

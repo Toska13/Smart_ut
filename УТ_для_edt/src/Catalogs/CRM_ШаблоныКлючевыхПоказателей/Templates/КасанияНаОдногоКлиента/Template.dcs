@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеПоказателя</dataPath>
+			<field>ЗначениеПоказателя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеПоказателяМаксимум</dataPath>
+			<field>ЗначениеПоказателяМаксимум</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ИспользуемыеПоказатели.Менеджер КАК Менеджер,
+	СУММА(ИспользуемыеПоказатели.ЗначениеПоказателя) КАК ЗначениеПоказателя,
+	СУММА(ИспользуемыеПоказатели.ЗначениеПоказателяМаксимум) КАК ЗначениеПоказателяМаксимум
+ПОМЕСТИТЬ ТаблицаПлан
+ИЗ
+	РегистрСведений.CRM_ИспользуемыеКлючевыеПоказатели КАК ИспользуемыеПоказатели
+ГДЕ
+	ИспользуемыеПоказатели.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ИспользуемыеПоказатели.Показатель = &amp;Показатель
+	И ВЫБОР
+			КОГДА &amp;Менеджеры = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ИспользуемыеПоказатели.Менеджер = &amp;Менеджеры
+		КОНЕЦ
+
+СГРУППИРОВАТЬ ПО
+	ИспользуемыеПоказатели.Менеджер
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+				ТОГДА ТелефонныйЗвонок.АбонентКонтакт.Владелец
+			КОГДА ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+					И ТелефонныйЗвонок.АбонентКонтакт.Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+				ТОГДА ТелефонныйЗвонок.АбонентКонтакт.Партнер
+			ИНАЧЕ ТелефонныйЗвонок.АбонентКонтакт
+		КОНЕЦ) КАК Контактов,
+	ТелефонныйЗвонок.Ответственный КАК Ответственный,
+	КОЛИЧЕСТВО(ТелефонныйЗвонок.Ссылка) КАК Ссылка
+ПОМЕСТИТЬ ПредварительныеДанные
+ИЗ
+	Документ.ТелефонныйЗвонок КАК ТелефонныйЗвонок
+ГДЕ
+	НЕ ТелефонныйЗвонок.ПометкаУдаления
+	И ВЫБОР
+			КОГДА &amp;Менеджеры = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ТелефонныйЗвонок.Ответственный = &amp;Менеджеры
+		КОНЕЦ
+	И ТелефонныйЗвонок.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И (ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.Партнеры
+			ИЛИ ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+			ИЛИ ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+			ИЛИ ТелефонныйЗвонок.АбонентКонтакт ССЫЛКА Справочник.СтроковыеКонтактыВзаимодействий)
+
+СГРУППИРОВАТЬ ПО
+	ТелефонныйЗвонок.Ответственный
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+				ТОГДА ЭлектронноеПисьмоВходящее.ОтправительКонтакт.Владелец
+			КОГДА ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+					И ЭлектронноеПисьмоВходящее.ОтправительКонтакт.Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+				ТОГДА ЭлектронноеПисьмоВходящее.ОтправительКонтакт.Партнер
+			ИНАЧЕ ЭлектронноеПисьмоВходящее.ОтправительКонтакт
+		КОНЕЦ),
+	ЭлектронноеПисьмоВходящее.Ответственный,
+	КОЛИЧЕСТВО(ЭлектронноеПисьмоВходящее.Ссылка)
+ИЗ
+	Документ.ЭлектронноеПисьмоВходящее КАК ЭлектронноеПисьмоВходящее
+ГДЕ
+	НЕ ЭлектронноеПисьмоВходящее.ПометкаУдаления
+	И ВЫБОР
+			КОГДА &amp;Менеджеры = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЭлектронноеПисьмоВходящее.Ответственный = &amp;Менеджеры
+		КОНЕЦ
+	И ЭлектронноеПисьмоВходящее.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И (ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.Партнеры
+			ИЛИ ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+			ИЛИ ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+			ИЛИ ЭлектронноеПисьмоВходящее.ОтправительКонтакт ССЫЛКА Справочник.СтроковыеКонтактыВзаимодействий)
+
+СГРУППИРОВАТЬ ПО
+	ЭлектронноеПисьмоВходящее.Ответственный
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+				ТОГДА ЭлектронноеПисьмоИсходящее.Контакт.Владелец
+			КОГДА ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+					И ЭлектронноеПисьмоИсходящее.Контакт.Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+				ТОГДА ЭлектронноеПисьмоИсходящее.Контакт.Партнер
+			ИНАЧЕ ЭлектронноеПисьмоИсходящее.Контакт
+		КОНЕЦ),
+	ЭлектронноеПисьмоИсходящее.Ссылка.Ответственный,
+	КОЛИЧЕСТВО(ЭлектронноеПисьмоИсходящее.Ссылка)
+ИЗ
+	Документ.ЭлектронноеПисьмоИсходящее.ПолучателиПисьма КАК ЭлектронноеПисьмоИсходящее
+ГДЕ
+	НЕ ЭлектронноеПисьмоИсходящее.Ссылка.ПометкаУдаления
+	И ВЫБОР
+			КОГДА &amp;Менеджеры = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЭлектронноеПисьмоИсходящее.Ссылка.Ответственный = &amp;Менеджеры
+		КОНЕЦ
+	И ЭлектронноеПисьмоИсходящее.Ссылка.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+	И (ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.Партнеры
+			ИЛИ ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+			ИЛИ ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты
+			ИЛИ ЭлектронноеПисьмоИсходящее.Контакт ССЫЛКА Справочник.СтроковыеКонтактыВзаимодействий)
+
+СГРУППИРОВАТЬ ПО
+	ЭлектронноеПисьмоИсходящее.Ссылка.Ответственный
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВЫБОР
+			КОГДА Взаимодействие.Партнер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+				ТОГДА Взаимодействие.Партнер
+			КОГДА Взаимодействие.Партнер = ЗНАЧЕНИЕ(Справочник.Партнеры.ПустаяСсылка)
+					И Взаимодействие.КонтактноеЛицо ССЫЛКА Справочник.КонтактныеЛицаПартнеров
+					И Взаимодействие.КонтактноеЛицо &lt;&gt; ЗНАЧЕНИЕ(Справочник.КонтактныеЛицаПартнеров.ПустаяСсылка)
+				ТОГДА Взаимодействие.КонтактноеЛицо.Владелец
+			ИНАЧЕ Взаимодействие.КонтактноеЛицо
+		КОНЕЦ),
+	Взаимодействие.Ссылка.Ответственный,
+	КОЛИЧЕСТВО(Взаимодействие.Ссылка)
+ИЗ
+	Документ.CRM_Взаимодействие.СторонниеЛица КАК Взаимодействие
+ГДЕ
+	НЕ Взаимодействие.Ссылка.ПометкаУдаления
+	И ВЫБОР
+			КОГДА &amp;Менеджеры = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+				ТОГДА ИСТИНА
+			ИНАЧЕ Взаимодействие.Ссылка.Ответственный = &amp;Менеджеры
+		КОНЕЦ
+	И (Взаимодействие.Ссылка.ПлановаяДата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ)
+			ИЛИ Взаимодействие.Ссылка.ПлановаяДатаЗавершение МЕЖДУ НАЧАЛОПЕРИОДА(&amp;НачалоПериода, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;КонецПериода, ДЕНЬ))
+	И Взаимодействие.Ссылка.ВидВзаимодействия.ВидСобытия = &amp;ВидСобытия
+
+СГРУППИРОВАТЬ ПО
+	Взаимодействие.Ссылка.Ответственный
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПредварительныеДанные.Ответственный КАК Менеджер,
+	СУММА(ПредварительныеДанные.Контактов) КАК Контактов,
+	СУММА(ПредварительныеДанные.Ссылка) КАК Документов
+ПОМЕСТИТЬ ТаблицаФакт
+ИЗ
+	ПредварительныеДанные КАК ПредварительныеДанные
+
+СГРУППИРОВАТЬ ПО
+	ПредварительныеДанные.Ответственный
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ТаблицаФакт.Менеджер КАК Менеджер,
+	ЕСТЬNULL(ТаблицаПлан.ЗначениеПоказателя, 0) КАК ЗначениеПоказателя,
+	ЕСТЬNULL(ТаблицаПлан.ЗначениеПоказателяМаксимум, 0) КАК ЗначениеПоказателяМаксимум,
+	ВЫБОР
+		КОГДА ТаблицаФакт.Контактов = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ТаблицаФакт.Документов / ТаблицаФакт.Контактов КАК ЧИСЛО(15, 2))
+	КОНЕЦ КАК Сумма,
+	ВЫБОР
+		КОГДА ТаблицаФакт.Контактов = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ТаблицаФакт.Документов / ТаблицаФакт.Контактов КАК ЧИСЛО(15, 2))
+	КОНЕЦ КАК Количество
+ИЗ
+	ТаблицаФакт КАК ТаблицаФакт
+		ЛЕВОЕ СОЕДИНЕНИЕ ТаблицаПлан КАК ТаблицаПлан
+		ПО (ТаблицаПлан.Менеджер = ТаблицаФакт.Менеджер)</query>
+	</dataSet>
+	<totalField>
+		<dataPath>ЗначениеПоказателя</dataPath>
+		<expression>Сумма(ЗначениеПоказателя)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗначениеПоказателяМаксимум</dataPath>
+		<expression>Сумма(ЗначениеПоказателяМаксимум)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Менеджеры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Менеджеры</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Managers</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Пользователи</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Справочник.Пользователи.ПустаяСсылка</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Показатель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показатель</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Indicator</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_ШаблоныКлючевыхПоказателей</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидСобытия</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид события</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Event type</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.CRM_ВидыСобытий</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.CRM_ВидыСобытий.ЛичнаяВстреча</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Менеджер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеПоказателя</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеПоказателяМаксимум</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Менеджеры</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

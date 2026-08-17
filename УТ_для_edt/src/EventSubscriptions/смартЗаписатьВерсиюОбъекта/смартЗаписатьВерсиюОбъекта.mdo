@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2a583488-8c77-44a4-af4d-4575106258a7">
+  <name>смартЗаписатьВерсиюОбъекта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Записать версию объекта (смарт)</value>
+  </synonym>
+  <comment>//++ #1528 смарт: Фролов 26.10.2023 //смартГрузы версионирование</comment>
+  <source>
+    <types>CatalogObject.смартТипыПродуктов</types>
+    <types>CatalogObject.смартКонструкторОборудования</types>
+    <types>CatalogObject.демоОборудованиеДляДемонстрации</types>
+    <types>CatalogObject.смартШаблоныДанныхКонструктора</types>
+    <types>CatalogObject.смартКвалификацииМенеджеров</types>
+    <types>CatalogObject.смартГрузы</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ВерсионированиеОбъектовСобытия.ЗаписатьВерсиюОбъекта</handler>
+</mdclass:EventSubscription>

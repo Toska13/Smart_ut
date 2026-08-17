@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1ed28520-a628-41c9-a086-bce703692995">
+  <producedTypes>
+    <selectionType typeId="3bae0eee-98f1-4284-bf34-3ada00efaa73" valueTypeId="9f5cc7df-eb8f-46fe-ad03-db1a4f292cc6"/>
+    <listType typeId="b6f10173-a083-4afe-844d-ec035cd72d67" valueTypeId="f4a8e0e5-442e-4075-a81e-9255ca476c89"/>
+    <managerType typeId="ea5f9c28-caec-4c18-9af9-2e533652e4fc" valueTypeId="23d3a39e-cec6-4025-b6c8-df22c65fb9cf"/>
+    <recordSetType typeId="2d3ca41a-f5b1-4fce-85bf-9e721416f966" valueTypeId="b6d655d9-6d54-4559-a8b5-4b0ed7403167"/>
+    <recordKeyType typeId="44ae0753-dd60-4241-8437-37c302360acf" valueTypeId="b31714ef-b5cf-4321-9506-315571810365"/>
+    <recordType typeId="cfdc4fbc-0bc9-4d92-ba5c-0660fe45768e" valueTypeId="accabf74-f830-45a9-bb28-8b4565a73079"/>
+    <recordManagerType typeId="e673a721-7181-4248-93d9-36d981544094" valueTypeId="cd35ac14-1f18-4fee-b915-df09dc135cd9"/>
+  </producedTypes>
+  <name>CRM_АктивныеСеансыВидеофиксации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Активные сеансы видеофиксации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Active video sessions</value>
+  </synonym>
+  <comment>АПК:1032 АПК:265 не проверять на орфографию синоним и имя</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8fca94a7-1ee6-48a4-8b4c-257998ec70d1">
+    <name>СеансЗапущен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сеанс запущен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Session started</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8c5d40b1-9279-411c-a096-c0f31076419d">
+    <name>АктивноеМероприятие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активное мероприятие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Active Event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МаркетинговыеМероприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4dd7333a-3186-4421-80da-ad2b4ac1056b">
+    <name>СервисИдентификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сервис идентификации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Identification Service</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_УчетныеЗаписиСервисаИдентификации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

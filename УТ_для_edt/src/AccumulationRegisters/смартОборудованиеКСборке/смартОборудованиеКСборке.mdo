@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ec545409-d563-4a5a-b6bc-02b323f33167">
+  <producedTypes>
+    <selectionType typeId="224eff5b-5741-4ca9-9d30-c1cb5bf64ab9" valueTypeId="aa5e1ed9-aec5-4509-8876-b80eee71c349"/>
+    <listType typeId="df81b761-5be4-4177-922d-5e70082da2b8" valueTypeId="98190600-b51f-4440-ad75-800999886ec3"/>
+    <managerType typeId="dbd6c771-bdfc-4953-ba6f-3dd714c70677" valueTypeId="5364933b-f66d-4813-ae2e-557c9aa00c7b"/>
+    <recordSetType typeId="b9895a45-c819-4e37-a4c8-3bd56de296bc" valueTypeId="7ea65762-f6b1-4137-ab41-cfa7ebe8fcf5"/>
+    <recordKeyType typeId="83504efe-c9b4-4597-ae53-3c615e5a9e53" valueTypeId="12510058-7a4e-44d1-8837-8539d8514199"/>
+    <recordType typeId="0b9d9557-1751-4e78-8923-05c891bdb01c" valueTypeId="d630b704-4735-4556-8216-c20d9b3fd627"/>
+  </producedTypes>
+  <name>смартОборудованиеКСборке</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оборудование к сборке (смарт)</value>
+  </synonym>
+  <comment>//++ #1646 смарт: Мосолов 20.02.2024 // Создание механизма разборки/сборки оборудования</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="22b5833b-8483-46c2-95fd-9f0729122fc4">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="f64411cb-f512-4e8e-b39e-7df14ee0f12f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2e020455-dce6-420d-ab6b-9861e797b823">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a46e73f8-21e5-4339-ac7b-30841d361814">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="565dbf85-fea2-4db6-a0ee-917c11cf4274">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="62eca780-ac05-407e-8325-d2a1c5bc3f13">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

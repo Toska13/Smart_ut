@@ -1,0 +1,636 @@
+<Structure xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Property name="СправочникСтраны">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникСтраны</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/countries.xml</Value>
+            </Property>
+            <Property name="Поля">
+                <Value xsi:type="Array">
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">1</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Идентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">countryUID</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">2</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Наименование</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">country</Value>
+                        </Property>
+                    </Value>
+                </Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string"/>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="СправочникПоляСтатистическогоОтчета">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникПоляСтатистическогоОтчета</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/report_params.xml</Value>
+            </Property>
+            <Property name="Поля">
+                <Value xsi:type="Array">
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">1</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Идентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">name</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">2</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Наименование</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">caption</Value>
+                        </Property>
+                    </Value>
+                </Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string"/>
+            </Property>
+        </Value>
+    </Property>
+    
+    
+    <Property name="СправочникПравовыеФормы">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникПравовыеФормы</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/opf_list.xml</Value>
+            </Property>
+            <Property name="Поля">
+                <Value xsi:type="Array">
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">1</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Идентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">uid</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">2</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Наименование</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">name</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">3</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">ЮридическоеЛицо</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">juridical</Value>
+                        </Property>
+                   		<Property name="Тип">
+                   			<Value xsi:type="xs:string">Булево</Value>
+                   		</Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">6</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">СтранаИдентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">countryUID</Value>
+                        </Property>
+                    </Value>
+                </Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string"/>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="СправочникСтатусыЗаказов">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникСтатусыЗаказов</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/statuses.xml</Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string">СтатусыЗаказов</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="СправочникТерминалы">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникТерминалы</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v2/public/terminals.xml</Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string">Терминалы</Value>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="СправочникКонтрагенты">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникКонтрагенты</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/counteragents.xml</Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string">Контрагенты</Value>
+            </Property>
+            <Property name="Публичный">
+                <Value xsi:type="xs:boolean">false</Value>
+            </Property>
+            <Property name="Параметры">
+                <Value xsi:type="Structure">
+		            <Property name="full_info">
+		                <Value xsi:type="xs:boolean">true</Value>
+		            </Property>
+                </Value>
+            </Property>
+        </Value>
+    </Property>
+    
+<Property name="Авторизация">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">Авторизация</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/login.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ЖурналОтправок">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ЖурналОтправок</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v2/customers/orders.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="АдреснаяКнига">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">АдреснаяКнига</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/counteragents.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="Взаиморасчеты">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">Взаиморасчеты</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/mutual_calculations.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="Трекер">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">Трекер</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v2/public/tracker.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ДобавитьВИзбранные">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ДобавитьВИзбранные</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/favorites/add.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="УдалитьИзЖурнала">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">УдалитьИзЖурнала</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/favorites/delete.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="АдресаКонтрагента">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">АдресаКонтрагента</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/addresses.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="КонтактнаяИнформация">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">КонтактнаяИнформация</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/address.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="Калькулятор">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">Калькулятор</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/calculator.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ДоставкаДоАдресаРасчет">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ДоставкаДоАдресаРасчет</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/calculator_sf.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ДоставкаДоАдресаЗаказ">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ДоставкаДоАдресаЗаказ</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/sfrequest.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ЗаказНаДоставкуОтАдреса">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ЗаказНаДоставкуОтАдреса</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/request.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ЗаказПрямаяМашина">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ЗаказПрямаяМашина</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/request_ts.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ЗаказПочасоваяАренда">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ЗаказПочасоваяАренда</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/request_hr.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="Мультиотправка">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">Мультиотправка</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/multi_request.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПараметрыПочасовойАренды">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПараметрыПочасовойАренды</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/request_hr_info.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПечатныеФормыНакладной">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПечатныеФормыНакладной</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/orders/printable.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="СканКопииНакладной">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СканКопииНакладной</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/orders/giveout_orders.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПечатнаяФормаЗаказ">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПечатнаяФормаЗаказ</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/request/pdf.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПечатнаяФормаЗаказДоАдреса">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПечатнаяФормаЗаказДоАдреса</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/request_sf/pdf.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПодборГородовПоСтроке">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПодборГородовПоСтроке</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v2/public/kladr.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ПодборУлицПоСтроке">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ПодборУлицПоСтроке</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/kladr_street.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ДоступныеТерминалы">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ДоступныеТерминалы</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/request_terminals.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="ДоступныеУпаковки">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ДоступныеУпаковки</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/packages_available.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="РедактированиеКонтрагента">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">РедактированиеКонтрагента</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/counteragents/update.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="РедактированиеАдреса">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">РедактированиеАдреса</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/addresses/update.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="РедактированиеКонтактногоЛица">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">РедактированиеКонтактногоЛица</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/contacts/update.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="РедактированиеТелефонаАдреса">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">РедактированиеТелефонаАдреса</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/phones/update.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    <Property name="УдалениеИнформации">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">УдалениеИнформации</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/book/delete.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="СправочникСпецТребования">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникСпецТребования</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/services.xml</Value>
+            </Property>
+            <Property name="Поля">
+                <Value xsi:type="Array">
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">1</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Идентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">uid</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">2</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Наименование</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">name</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">3</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Заголовок</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">caption</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">4</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">НесовместимаяУслуга</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">incompatible_uids</Value>
+                        </Property>
+                    </Value>
+                </Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string"/>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="ЗаказСтатистическогоОтчета">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">ЗаказСтатистическогоОтчета</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/create_report.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="МониторСтатистическогоОтчета">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">МониторСтатистическогоОтчета</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/customers/get_report.xml</Value>
+            </Property>
+        </Value>
+    </Property>
+    
+    <Property name="СправочникУслугиПРР">
+        <Value xsi:type="Structure">
+            <Property name="Имя">
+                <Value xsi:type="xs:string">СправочникУслугиПРР</Value>
+            </Property>
+            <Property name="Ресурс">
+                <Value xsi:type="xs:string">/v1/public/load_params.xml</Value>
+            </Property>
+            <Property name="Поля">
+                <Value xsi:type="Array">
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">1</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Идентификатор</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">uid</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">3</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">Наименование</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">name</Value>
+                        </Property>
+                    </Value>
+                    <Value xsi:type="Structure">
+                        <Property name="Позиция">
+                            <Value xsi:type="xs:decimal">2</Value>
+                        </Property>
+                        <Property name="Реквизит">
+                            <Value xsi:type="xs:string">ТребуетсяЗначение</Value>
+                        </Property>
+                        <Property name="Поле">
+                            <Value xsi:type="xs:string">valueRequired</Value>
+                        </Property>
+                   		<Property name="Тип">
+                   			<Value xsi:type="xs:string">Булево</Value>
+                   		</Property>
+                    </Value>
+                </Value>
+            </Property>
+            <Property name="Обработчик">
+                <Value xsi:type="xs:string"/>
+            </Property>
+        </Value>
+    </Property>            
+</Structure>

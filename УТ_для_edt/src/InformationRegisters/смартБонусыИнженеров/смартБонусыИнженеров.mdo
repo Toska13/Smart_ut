@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4402bc18-0245-469c-9c2d-9fb8ef6a0f08">
+  <producedTypes>
+    <selectionType typeId="9dede89f-ed1c-458a-ad37-cb771bf060f0" valueTypeId="5367b683-250b-4e63-958d-20b27e6f39ab"/>
+    <listType typeId="51973d56-a765-4888-aaba-ebb8abe7e7fd" valueTypeId="85d83a4b-f843-4e21-ae97-bda4d4242690"/>
+    <managerType typeId="01bace28-f4bd-457a-b1f5-3d1da5caf0af" valueTypeId="4ae8f5ac-70f1-4387-af71-7e3ab93428e9"/>
+    <recordSetType typeId="4030bdb5-977a-4b63-8e5e-cb9199ab20e4" valueTypeId="81f862db-b7be-4162-aa79-5e13c980e497"/>
+    <recordKeyType typeId="ab3677d7-0fc5-4aba-be55-2ad195ccad52" valueTypeId="a50c1106-1d90-449d-8e14-22cd1e8d362a"/>
+    <recordType typeId="c67855f6-81b0-48ee-b12e-b0893b473d7b" valueTypeId="2b1c0510-520b-4062-b796-b8c6847b405c"/>
+    <recordManagerType typeId="63174992-37ff-46b7-b6c1-eb9832c46859" valueTypeId="d3415246-5983-41d6-b127-79be531edbc0"/>
+  </producedTypes>
+  <name>смартБонусыИнженеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы инженеров (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-5132 смарт: Фролов 03.12.2025 //Создание механизма учета выплат инженерам по демонстрациям.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартБонусыИнженеров.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартБонусыИнженеров.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="2660ace1-ded8-432e-b817-c2371c1f2bfb">
+    <name>СуммаВыручки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ef42437b-d4fe-4abc-bed0-d12a3a42d751">
+    <name>БонусНачисленный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонус начисленный</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="18715728-ce04-44b0-bba2-fe7a94bb7253">
+    <name>БонусВыплаченный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонус выплаченный</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="505b52f0-73a6-486c-bddb-483e7e2acb46">
+    <name>БонусВыплачен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонус выплачен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="73418dff-8d2c-4ed5-88ba-ce0e6e2d0223">
+    <name>ИсточникБонусов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник бонусов</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.МаркетинговыеМероприятияДокумент</types>
+      <types>CatalogRef.смартИсточникиРекламногоВоздействия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b7fffe8d-81a0-4812-aabc-a23724c999d4">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="54dada16-9fdf-4f2b-90d8-888e95ff35e4">
+    <name>ЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ клиента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0d3fd12c-ecdb-46e6-a286-aae31bb55eb8">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="5096baef-a721-4661-bca8-1a8bc33651c7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3e97a4c9-71a9-4421-8535-665e819e5744">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

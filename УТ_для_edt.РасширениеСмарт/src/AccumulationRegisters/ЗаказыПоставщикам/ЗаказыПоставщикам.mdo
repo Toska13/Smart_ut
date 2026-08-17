@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="505e9afd-dc86-4814-9348-cafb7db2f978">
+  <producedTypes>
+    <selectionType typeId="552d3ad6-7d1b-40bd-af9a-ff9b6fe11855" valueTypeId="36bd72c8-ca63-475c-9a0c-3b54feab95f7"/>
+    <listType typeId="6478dff2-7c80-4ef6-8754-50dfc294f996" valueTypeId="62ab0e55-f28a-4f6c-abe1-0455a19168e2"/>
+    <managerType typeId="47427560-66db-49c7-a28b-1759b10ee97f" valueTypeId="c25e51f1-c73b-4e6f-ac1f-d5c9c41f637e"/>
+    <recordSetType typeId="92ca1afc-44c0-49f8-ba73-1c99530a6c41" valueTypeId="5db0673a-60f1-4574-a0fd-1e8bfda6085f"/>
+    <recordKeyType typeId="9e13cabb-f697-40f0-b0ea-17fd5fb427ab" valueTypeId="f064295f-70d1-4f22-aca9-671fd4e71bd3"/>
+    <recordType typeId="4c27bdd1-8459-43a2-96f0-cddec65d252d" valueTypeId="6910cdc3-36d8-47e4-9dbd-f1c723a89dab"/>
+  </producedTypes>
+  <name>ЗаказыПоставщикам</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:AccumulationRegisterExtension">
+    <registerType>Checked</registerType>
+  </extension>
+  <resources uuid="20e5709c-cf2b-479e-91f4-3abeaafaa768">
+    <name>Заказано</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+  </resources>
+  <resources uuid="6a46a73a-475c-4a74-b434-3d623414dc3c">
+    <name>КОформлению</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+  </resources>
+  <attributes uuid="9e04d375-00fe-48c3-b667-49428eb54bff">
+    <name>ПричинаОтмены</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ПричиныОтменыЗаказовПоставщикам</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <dimensions uuid="d4711ba0-52f5-4b71-9f45-b8c25810837e">
+    <name>ЗаказПоставщику</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>DocumentRef.ЗаказПоставщику</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="24393c52-3b85-4fde-8647-1ba30e2fd3bb">
+    <name>Номенклатура</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Номенклатура</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="ac5a5061-9678-486e-98f3-cc8c3c2a9e7a">
+    <name>Характеристика</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ХарактеристикиНоменклатуры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="cf290bcc-820c-4bea-b8bf-5224282a9b2d">
+    <name>КодСтроки</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="4227d4a0-c403-40bc-a039-eaa1d00bd31e">
+    <name>Склад</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Склады</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+</mdclass:AccumulationRegister>

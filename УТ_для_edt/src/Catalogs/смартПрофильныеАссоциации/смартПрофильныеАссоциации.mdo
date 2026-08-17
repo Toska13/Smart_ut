@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9388331e-06f8-4862-bee5-a49b2c9b136d">
+  <producedTypes>
+    <objectType typeId="88410110-7aa6-483b-b10d-dcfebb33e925" valueTypeId="0c5108bc-e9ba-45e5-bb75-e4a4af1f7981"/>
+    <refType typeId="bc4235ee-6595-402d-a26c-471b459fb1aa" valueTypeId="8241aa1a-4d14-4f47-9f9f-2b340dcce4e7"/>
+    <selectionType typeId="8ae9f1fb-2966-4655-83e5-cfe72a82b5dc" valueTypeId="8cc1d52a-5e86-4a6a-94db-499fd2367102"/>
+    <listType typeId="af316059-d2a3-4a2e-a321-91c50b981bcd" valueTypeId="e421f7bf-c8e3-4193-99b6-8e0fdc266467"/>
+    <managerType typeId="44ec688f-7d13-4bec-a9ca-2ed0b9db27fd" valueTypeId="3d4ca1c6-0cfb-4a1d-9817-4c3ef3b95b7e"/>
+  </producedTypes>
+  <name>смартПрофильныеАссоциации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Профильные ассоциации (смарт)</value>
+  </synonym>
+  <comment>#Б-2990 смарт: Лопато 09.04.2025 //Информация о профильные ассоциациях и их членов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартПрофильныеАссоциации.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.смартПрофильныеАссоциации.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>3</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="eb697821-f8b4-4955-b848-d99d5483b5cc">
+      <name>ВизКом</name>
+      <description>Ассоциация производителей средств визуальной рекламы и информации</description>
+      <code xsi:type="core:StringValue">
+        <value>002</value>
+      </code>
+    </items>
+    <items id="ee42ce7c-e8a6-4982-87ed-559c5e366943">
+      <name>АТР</name>
+      <description>Ассоциация Текстильщиков России</description>
+      <code xsi:type="core:StringValue">
+        <value>001</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="e59ea8ef-29d4-4a3b-8622-460258f96604">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a93935ce-f1a4-4e21-8606-df84d6cbbfe5">
+    <name>Сайт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сайт</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1cdc1586-5d78-49dc-baa7-213dbb9609e0">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

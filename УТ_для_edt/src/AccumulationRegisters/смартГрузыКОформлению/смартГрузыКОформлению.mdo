@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8f045efb-589c-4b90-a911-71c5eee3fb49">
+  <producedTypes>
+    <selectionType typeId="be9c7226-4cbe-4c6a-b2ec-2e5e23579a4a" valueTypeId="da2ecbcc-35d9-4ff8-891c-a1b8d610a28b"/>
+    <listType typeId="ce596da8-f5db-4738-bdb6-d162859136e9" valueTypeId="c9f32098-ccbc-40e5-becb-1b94cbb414cf"/>
+    <managerType typeId="0310812d-c6bc-4908-a8c6-f17bb971fda1" valueTypeId="3cadaf66-447c-4918-a69c-e88e7cd2e1a7"/>
+    <recordSetType typeId="9601fdf6-4bd4-4d31-8288-58687a2f6943" valueTypeId="95b957d4-1bab-4338-bfdc-5b157d46e50e"/>
+    <recordKeyType typeId="c6367694-f2de-447a-9c1f-251ce588a0e0" valueTypeId="fc94fdb3-14e9-4b70-8f16-28dca21ebd5d"/>
+    <recordType typeId="908baa58-c966-48c2-9a1f-ce9ad4ffbee4" valueTypeId="b08eb17d-3fd5-4085-b590-965343d4c965"/>
+  </producedTypes>
+  <name>смартГрузыКОформлению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Грузы к оформлению (смарт)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="d82b9204-57c5-4ba7-802f-b60fb07d4369">
+    <name>КОформлению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К оформлению</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d416dc75-3326-4aca-80f3-8cc47c2367d1">
+    <name>КПриемке</name>
+    <synonym>
+      <key>ru</key>
+      <value>К приемке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="1d813048-18c3-4fd6-9218-7e36408bee41">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказПоставщику</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="90e78f53-68d4-47bc-b16b-a8e8ad1cefa1">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="428ce4ec-d696-4b37-bc28-47cc9520a849">
+    <name>Груз</name>
+    <synonym>
+      <key>ru</key>
+      <value>Груз</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартГрузы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="04a4bfbd-9a2a-43b0-bb85-1bb1935ae9f8">
+    <name>Контейнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контейнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартКонтейнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d677a013-e6a4-4d0a-925a-b516b1b5ccec">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <comment>//++#360 смарт: Тимофеева 15.08.2025 / Формирование приходного ордера, учитывая аналитику Контейнер (ИСМ 1903)</comment>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, которая должна поступить на склад.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="45361c7b-2994-48b0-8b93-428979d27439">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <comment>//++#360 смарт: Тимофеева 15.08.2025 / Формирование приходного ордера, учитывая аналитику Контейнер (ИСМ 1903)</comment>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0c9681e4-4878-4e53-b2e0-b9c63d40a9fa">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <comment>//++#360 смарт: Тимофеева 15.08.2025 / Формирование приходного ордера, учитывая аналитику Контейнер (ИСМ 1903)</comment>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="1b2d135e-77ee-4c76-a824-c829d815fa32">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <comment>//++#360 смарт: Тимофеева 15.08.2025 / Формирование приходного ордера, учитывая аналитику Контейнер (ИСМ 1903)</comment>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, на который должно быть выполнено поступление товара.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ece9bec8-7cb0-458a-9bf3-469fcb643d84">
+    <name>ЗаявкаНаГарантийныйРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер заявки на гарантийный ремонт</value>
+    </synonym>
+    <comment>//++#360 смарт: Тимофеева 15.08.2025 / Формирование приходного ордера, учитывая аналитику Контейнер (ИСМ 1903)</comment>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаГарантийныйРемонт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78b93136-a13d-419c-80f2-17854d57033d">
+  <producedTypes>
+    <objectType typeId="1dcf9db8-565d-4431-9ccc-af90901c45eb" valueTypeId="fee70d8e-9600-4abe-ba56-0b304d2b6cf9"/>
+    <refType typeId="66762182-f27f-47c0-83e3-99570e827b40" valueTypeId="49dd74aa-3a30-4e32-8f78-43ba63cf7b21"/>
+    <selectionType typeId="4db859c8-4e6f-460b-83d0-0df93508aca8" valueTypeId="7f41f546-e6de-45ec-b15a-559d9379cfdc"/>
+    <listType typeId="93488d20-3ca1-4b0b-9c25-495f8689c927" valueTypeId="49ee0743-d9c1-48a5-a747-3ad77fd3c22f"/>
+    <managerType typeId="6841e720-3851-44c7-ac63-c81cc7711df7" valueTypeId="8fed86d4-9fe5-4d43-b840-5b0a80b4505c"/>
+  </producedTypes>
+  <name>смартУстановкаМаксимальныхСкидок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка максимальных скидок (смарт)</value>
+  </synonym>
+  <comment>//++ #Б5008 смарт: Шляпников 20.11.2025 / Создание механизма контроля максимальных скидок.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартУстановкаМаксимальныхСкидок.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартУстановкаМаксимальныхСкидок.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.смартУстановкаМаксимальныхСкидок.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>InformationRegister.смартМаксимальныеСкидки</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="bc7cbf8e-4fe5-4102-b7d4-649f2d0cb7ef">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="85f254bb-296c-40bb-9902-93b1a974dfcf">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e0208b6a-43d8-4125-bfd8-0d41002cefd3">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="404f342c-8a68-4405-a0dd-6781399c4dd2">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="caa17f45-b857-4ba2-aa7f-13977ed151e5">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3e05fb1f-95d0-45b3-9cec-7453ba57a9cb">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="2d1af13d-579b-49c5-9f9b-e6b70dd68a26">
+    <producedTypes>
+      <objectType typeId="a3de1a0e-ff19-4c7f-843c-4a3ab2e81059" valueTypeId="1fbaa459-ab7e-4d5f-a8b4-340951970d18"/>
+      <rowType typeId="e72fcc25-6a2f-4734-9f01-d272a68684c6" valueTypeId="5de6fc01-f6f5-4cae-a247-b864036fe073"/>
+    </producedTypes>
+    <name>Товары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <attributes uuid="68aadc0a-b7bb-4db5-934e-ecb8d927f9f5">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6801cd47-b760-4681-8bbd-8ae9c0023c7e">
+      <name>МаксимальнаяСкидка</name>
+      <synonym>
+        <key>ru</key>
+        <value>% для всех</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7ed8db98-bfc9-4446-ac74-b3bb4414df57">
+      <name>МаксимальнаяСкидкаДляДилеров</name>
+      <synonym>
+        <key>ru</key>
+        <value>% для дилеров</value>
+      </synonym>
+      <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e24194a1-7ba2-4bac-98c9-47968efe6c6f">
+      <name>Отменена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отменена</value>
+      </synonym>
+      <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="850974cb-1dd4-4866-bedd-7262929bf804">
+      <name>СкидкаЗапрещена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Скидка запрещена</value>
+      </synonym>
+      <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

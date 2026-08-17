@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3daef49e-75e9-49f0-99ef-7e4b9054c9ca">
+  <name>CRM_ПроверитьДатуЗапретаИзмененияПередУдалениемДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату запрета изменения перед удалением документа (CRM)</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.CRM_ОтчетОРаботе</types>
+    <types>DocumentObject.CRM_ЭтапКалендарногоПлана</types>
+    <types>DocumentObject.CRM_ПланированиеВоронкиПродаж</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ДатыЗапретаИзменения.ПроверитьДатуЗапретаИзмененияПередУдалением</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7dc8a14d-f403-4c44-81b7-d9e203690e67">
+  <name>CRM_ОбъектКлиентскойБазыПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект клиентской базы при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>At record of object of customer basis</value>
+  </synonym>
+  <comment>Объект клиентской базы при записи (CRM)</comment>
+  <source>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>DocumentObject.ЭлектронноеПисьмоВходящее</types>
+    <types>CatalogObject.Партнеры</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.ПриЗаписиОбъектаКлиентскойБазы</handler>
+</mdclass:EventSubscription>

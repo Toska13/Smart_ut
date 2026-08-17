@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="867a6898-f7da-481b-9588-6c7063a0f902">
+  <producedTypes>
+    <selectionType typeId="c013c3f5-3b58-47a7-8318-697ac84c20dc" valueTypeId="90a6b50d-3719-4c39-b48a-86f3a16fca0c"/>
+    <listType typeId="56c1b887-836c-47eb-8054-e110fa61976f" valueTypeId="37218bb7-fc92-4c87-8188-f6a42a5170d7"/>
+    <managerType typeId="61b4cb7d-b2ec-41d6-a72a-50dba13144ae" valueTypeId="cb7aad4d-710b-4e12-a9cb-e456067f9c61"/>
+    <recordSetType typeId="3e9d2b1c-422a-4b14-8df5-782046eb1fdc" valueTypeId="2c3d786b-ee13-42dd-9cb8-2f36ca9bfdb7"/>
+    <recordKeyType typeId="f4651aff-8702-49ff-8a58-cd3753fd9ca0" valueTypeId="17cea6b5-3494-4a1b-b600-3c28a6789a82"/>
+    <recordType typeId="b84d9fc1-aa87-429c-a0e9-00a3dee64b03" valueTypeId="b56cecb8-8cec-4ac4-bf1c-4e7b72864efe"/>
+    <recordManagerType typeId="96ff5eee-5e60-41f9-8113-d54ae880f1e9" valueTypeId="47f8adb7-084d-438f-a1e0-4b80124799dc"/>
+  </producedTypes>
+  <name>смартASP_ТарифыЗапуска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тарифы запуска</value>
+  </synonym>
+  <comment>//доработка внешней компании Асиситпро по проекту Бонусы инженеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3a4fd018-803b-44d0-9d4e-781c01b8b6cb">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0df9f15e-aed0-4325-a6dc-d67ba1929f9e">
+    <name>КоличествоИнженеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество инженеров</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="0c0d7838-197f-462a-8f06-f6e2a34d0e88">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

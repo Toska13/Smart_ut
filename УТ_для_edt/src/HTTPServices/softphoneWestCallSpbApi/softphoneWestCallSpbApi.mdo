@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a6f2c88-07c8-4bb1-9c9a-ae1efb08db6a">
+  <name>softphoneWestCallSpbApi</name>
+  <synonym>
+    <key>ru</key>
+    <value>vats WestCall SPb Api</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>vats WestCall SPb Api</value>
+  </synonym>
+  <comment>ВестКоллСПб</comment>
+  <rootURL>westcallspb-api</rootURL>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="b75c720a-06ec-42e6-93f2-70a2bdd78cf0">
+    <name>Event</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Событие</value>
+    </synonym>
+    <template>/*</template>
+    <methods uuid="3f69e02a-ae68-46d4-bafa-c9b053670d92">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>EventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7dfb2712-77d2-41f8-9e88-fe416784600f">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="a5904912-256a-4277-adaa-be32f9547eb3">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

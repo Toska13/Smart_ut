@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4fde7543-709c-4e87-9bb9-2198ba98c50a">
+  <producedTypes>
+    <selectionType typeId="aba93707-03d3-46c9-ad9a-63b3226c2d88" valueTypeId="6775335c-85e9-418a-b462-6bc9b1a41291"/>
+    <listType typeId="1314b69f-0476-464d-81a7-0c8a3e43302d" valueTypeId="87dbc536-ab76-4d2b-ba9e-7e4dd150d31c"/>
+    <managerType typeId="b9eb01b7-925e-493c-af1d-eb103fb33cdc" valueTypeId="6f293886-6cda-4cce-a25b-72eeb732375c"/>
+    <recordSetType typeId="83c18fc6-e438-4e52-8f4f-b15c1c4b49bd" valueTypeId="42284ef1-df9e-422e-b9fd-0f2f9b149b95"/>
+    <recordKeyType typeId="40674dc6-64e3-48c5-9e55-3dd7c8dfc790" valueTypeId="82806d22-8f62-4632-8832-7d86cffe075d"/>
+    <recordType typeId="dcc28859-679f-492a-b442-40b4535d8dc6" valueTypeId="e2c8ed6f-c6a6-4e6c-a44f-9ed04ebf6f3a"/>
+    <recordManagerType typeId="a62ae238-1660-4850-9c17-214321760891" valueTypeId="04ff9e59-1c4c-432a-a90b-57cdad55e48e"/>
+  </producedTypes>
+  <name>смартСведенияОЛиквидированныхЮЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Смарт сведения о ликвидированных юридических лицах (смарт)</value>
+  </synonym>
+  <comment>#Б-2158 смарт: Ермаков 10.02.2025 / Контактная информация у ликвидированных контрагентов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="02ad79a1-ac82-4fd3-b531-cd8571eaef6d">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="7bd1dc01-ee05-4d92-9f19-cd7ec6ef1684">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="9335ff1e-209c-4e6c-934f-e24dabebdbbb">
+    <name>ДатаПрисвоенияСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата присвоения статуса</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9639be33-d599-47d4-bca8-92d40629f737">
+    <name>ДатаПрекращенияДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата прекращения деятельности</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4049a2aa-51a6-4db8-93bb-9f069a442702">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="47b95ca1-f12f-49b0-b4ee-ec21884e634b">
+    <name>КПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

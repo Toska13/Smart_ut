@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="59f89b7a-9014-4bcd-bbb9-aebe10f8d5ce">
+  <producedTypes>
+    <selectionType typeId="51efbe62-8dbb-4c9b-a082-bdad061b03b5" valueTypeId="8ac4c553-be81-496e-95b1-fbe42c590d95"/>
+    <listType typeId="e335458b-ff8d-4f93-8459-ed4175e97f30" valueTypeId="1dc5db88-b812-4169-878d-ce856607b648"/>
+    <managerType typeId="e8baf9b0-92ab-44cc-be74-9e5373a37768" valueTypeId="c3308597-ee09-420b-8d0d-7cc0bc7265b3"/>
+    <recordSetType typeId="b045405b-258b-4a9f-8ede-6539e50010b6" valueTypeId="1928a231-1bd6-43d0-b0b8-649b66415eb6"/>
+    <recordKeyType typeId="bf703b56-970c-4e1d-936c-730c270e9ef9" valueTypeId="e13d5c11-5c0d-4908-9063-a97f7328f8d5"/>
+    <recordType typeId="518994f9-42b1-460b-891e-c5a85491f20b" valueTypeId="e2c9f937-e1bc-4e0b-ab30-f5f2218ee50f"/>
+  </producedTypes>
+  <name>смартПланПродажПоМенеджерам</name>
+  <synonym>
+    <key>ru</key>
+    <value>План продаж по менеджерам (смарт)</value>
+  </synonym>
+  <comment>//++ #1498 смарт: Фролов 17.10.2023 //Разработать план продаж</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="cedc1a9e-60c8-4141-9664-00356c259022">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a3ac9a49-917b-47ff-a86b-b4c46c93b1af">
+    <name>СуммаРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в валюте регл. учета</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6ef8a5cf-4816-4310-89fe-a2797381d8bf">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ae2a4487-9754-4396-933e-5dd85cfb1ea6">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="4dd6c8b4-090e-4d74-8cbb-b4743a9c6d35">
+    <name>КоэффициентИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент изменения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="32d93d64-3c6d-4b18-8fad-5e49c57bc0b8">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="834989fc-d86b-44c9-9102-b0cb2399a37b">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5d7b3179-2d94-4a58-aec3-cebe033333bb">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+    <type>
+      <types>DefinedType.Подразделение</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, в котором работает пользователь</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="984d2af2-f4bd-4bde-be11-85efdc6e273c">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+    <type>
+      <types>CatalogRef.СегментыНоменклатуры</types>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0326a4fc-aeb9-4a34-8fd2-49bae5399a83">
+    <name>ВидПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид плана</value>
+    </synonym>
+    <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+    <type>
+      <types>EnumRef.смартВидПлана</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e08f1565-f9f5-455f-ab21-9606ffb60cb7">
+    <name>СегментНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СегментыНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="59adb8b4-eb20-4256-a971-740dc311ca46">
+  <producedTypes>
+    <selectionType typeId="09473a67-3faf-429c-9e0a-1212843e46ea" valueTypeId="d69ceda7-88ba-4f76-b6a8-68bbb91aba62"/>
+    <listType typeId="8d1be44e-3ec4-40bc-bda9-b78d18906372" valueTypeId="5fa923cd-faa4-4705-b978-1d5a05299532"/>
+    <managerType typeId="f8d77589-0f02-489e-b4a4-89e2151e319c" valueTypeId="a37f9c2f-72a0-4ce5-9ee3-4c71e7029378"/>
+    <recordSetType typeId="33bf582c-bd30-4fc3-8cad-e770ee9aaa03" valueTypeId="c001c301-51ad-4971-9b71-6a2a8d07c9d4"/>
+    <recordKeyType typeId="85a6f226-9a9d-48a3-87bc-1408eca704e7" valueTypeId="10103d90-53a7-4379-b049-67934820e6fd"/>
+    <recordType typeId="6a2b874c-3837-4ffa-9742-eceee74d6c66" valueTypeId="fce7659e-9322-4753-ae79-f4471a86986a"/>
+    <recordManagerType typeId="be761b30-5b10-43de-add8-35073367f75b" valueTypeId="d7491879-fa43-45e9-b35b-a7244d1a786d"/>
+  </producedTypes>
+  <name>CRM_ОчередьОтложенногоВыполненияТриггеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очередь отложенного выполнения триггеров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Queue of defer triggers execution</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="9f1b6cbe-65a8-46eb-a39f-37066e8d4d36">
+    <name>СрокВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок выполнения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period of execution</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c7d2dc6b-bbfe-4c7b-8f1c-eff3708588d5">
+    <name>КоличествоЗапусков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество запусков</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of launches</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="7c5fe373-4570-43ec-ba03-a21b4528c704">
+    <name>Триггер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Триггер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trigger</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Триггеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3a8c4eee-2594-4443-9cf8-58e82fa8cf92">
+    <name>ОбъектТриггера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект триггера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trigger object</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef</types>
+      <types>DocumentRef</types>
+      <types>TaskRef</types>
+      <types>CatalogRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4d21e521-25fa-46d4-b6a1-e152b01ed6a5">
+    <name>ОбъектДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект действия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Action object</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef</types>
+      <types>DocumentRef</types>
+      <types>TaskRef</types>
+      <types>CatalogRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

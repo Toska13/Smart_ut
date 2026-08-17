@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e3d7bbf5-64c2-4652-b3e4-5358781c21c3">
+  <producedTypes>
+    <objectType typeId="2768bea6-c51a-4921-a64d-101c301401bd" valueTypeId="8d6c7eea-7228-4709-9535-99290a4ff848"/>
+    <refType typeId="1f19ae47-bfd1-49a7-a169-4c984465f5bd" valueTypeId="4ff2c43a-2370-4210-9867-10617620aec9"/>
+    <selectionType typeId="69ac50aa-ae38-4843-9f87-4aaa77b3c482" valueTypeId="d0a2ac77-5ccf-4872-921e-7a74610663f3"/>
+    <listType typeId="ef9cdef1-4959-41be-a23e-85f72142348b" valueTypeId="0a3f6e0e-5b00-44b1-a4dc-7a78c49f745d"/>
+    <managerType typeId="60f088f4-f575-403f-ab8b-acefe1a7ba3d" valueTypeId="1112369c-9d73-4302-a51f-4562a9179d85"/>
+  </producedTypes>
+  <name>смартФинансовыеПотоки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Финансовые потоки (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-3852 смарт: Фролов 17.07.2025 //Разработка механизма, позволяющего перенести работу из EXCELL в 1С - Первый этап, проектирование.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартФинансовыеПотоки.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартФинансовыеПотоки.Form.ФормаДокумента</defaultObjectForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="20295b02-6348-49ae-9083-056d5dfe0516">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="db6c7016-229a-4215-9d7e-ca36dbd39faa">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="533a0555-a191-4e1c-9a18-d100230c8bba">
+    <producedTypes>
+      <objectType typeId="7fc92809-1900-4b19-b808-e784291b13e6" valueTypeId="1b3d2b66-76f6-40d0-9a18-a999091dc3fd"/>
+      <rowType typeId="46f04418-b043-451a-8725-74a7e7576222" valueTypeId="2388138e-3a51-441c-8648-a8fc0c2e6f7f"/>
+    </producedTypes>
+    <name>Платежи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежи</value>
+    </synonym>
+    <attributes uuid="928f6862-5740-417b-862f-2b34a2907802">
+      <name>Показатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартФинансовыеПоказатели</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="dead9e99-1987-4e54-8186-d0da9407c0c4">
+      <name>БанковскийСчет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Банковский счет</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d4f5644a-1304-4f51-8012-917348c3d0a1">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>1</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f17b481b-126c-4897-981e-610184bd1cac">
+      <name>РучноеИзменение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ручное изменение</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

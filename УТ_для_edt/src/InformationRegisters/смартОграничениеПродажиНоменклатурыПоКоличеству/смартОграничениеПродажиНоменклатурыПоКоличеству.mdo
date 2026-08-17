@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="297ba1b4-57ea-4ba0-a076-6a3a2949cfde">
+  <producedTypes>
+    <selectionType typeId="a73f10ba-527a-4c96-991c-e3ebb1875f35" valueTypeId="774d0deb-0e86-4d8d-b062-10b189f63562"/>
+    <listType typeId="03f54e5a-c249-4ebe-8829-1359db744420" valueTypeId="8538f6b0-4382-4840-a031-552a6110fc65"/>
+    <managerType typeId="ba02fc04-eba0-49e4-9b70-e0fb9abbe893" valueTypeId="e4d5e3ec-70fc-4ecc-b877-cc323690c121"/>
+    <recordSetType typeId="011292dd-4708-43f6-9950-01c6f3f4be15" valueTypeId="f8d3af7e-33c9-463a-97e2-a09842b6d3f1"/>
+    <recordKeyType typeId="6168a26a-217c-49c7-8e97-9e4e0996de1f" valueTypeId="c667108f-0320-4696-9f03-ca41911ba327"/>
+    <recordType typeId="d9716a4a-bf14-4f83-9274-38d418e16c95" valueTypeId="2762e0ee-661a-433c-8f1e-851190acbdd8"/>
+    <recordManagerType typeId="eca76974-a3c2-4b7e-a9b7-ed037091663d" valueTypeId="0f434eb0-c098-4fa7-995c-21a1ed90dac2"/>
+  </producedTypes>
+  <name>смартОграничениеПродажиНоменклатурыПоКоличеству</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ограничение продажи номенклатуры по количеству (смарт)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартОграничениеПродажиНоменклатурыПоКоличеству.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартОграничениеПродажиНоменклатурыПоКоличеству.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="986335a7-f79a-4be1-af3b-0ed57bec9b92">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c4af782b-4874-4669-ac41-efe79ddb6734">
+    <name>КвотаДляДилера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Квота для дилера, %</value>
+    </synonym>
+    <comment>//++ #1319 смарт: Фролов 28.02.2023 //Ограничение количества продаж и отмена скидок</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b4e71ec3-88a9-4ca4-9f33-7dcfce8b0376">
+    <name>ИспользоватьКвотуДляДилера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать квоту для дилера</value>
+    </synonym>
+    <comment>//++ #1319 смарт: Фролов 28.02.2023 //Ограничение количества продаж и отмена скидок</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2be2c1f9-12e9-4ff7-8cc5-efe6c24c7c3a">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="94cb759b-3ec0-4e53-b54c-e7c442e5f1e8">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f8539898-0f94-4ef9-8643-04862bdf831d">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment>//++ #1319 смарт: Фролов 28.02.2023 //Ограничение количества продаж и отмена скидок</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

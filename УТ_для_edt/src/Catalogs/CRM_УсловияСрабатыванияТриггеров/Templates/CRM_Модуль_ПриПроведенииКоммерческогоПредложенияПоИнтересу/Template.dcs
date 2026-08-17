@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтактноеЛицо</dataPath>
+			<field>КонтактноеЛицо</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CRM_Автор</dataPath>
+			<field>CRM_Автор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CRM_Подразделение</dataPath>
+			<field>CRM_Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>CRM_Проект</dataPath>
+			<field>CRM_Проект</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектДействия</dataPath>
+			<field>ОбъектДействия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект действия</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Action object</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеИнтереса</dataPath>
+			<field>СостояниеИнтереса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние интереса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Lead Status</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ХозяйственнаяОперация</dataPath>
+			<field>ХозяйственнаяОперация</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_ЖурналДокументов.CRM_Интерес КАК ОбъектДействия,
+	CRM_ЖурналДокументов.CRM_Интерес.СостояниеИнтереса КАК СостояниеИнтереса,
+	КоммерческоеПредложениеКлиенту.Ссылка КАК Ссылка,
+	КоммерческоеПредложениеКлиенту.CRM_Проект КАК CRM_Проект,
+	КоммерческоеПредложениеКлиенту.Организация КАК Организация,
+	КоммерческоеПредложениеКлиенту.Клиент КАК Клиент,
+	КоммерческоеПредложениеКлиенту.Контрагент КАК Контрагент,
+	КоммерческоеПредложениеКлиенту.КонтактноеЛицо КАК КонтактноеЛицо,
+	КоммерческоеПредложениеКлиенту.Валюта КАК Валюта,
+	КоммерческоеПредложениеКлиенту.Менеджер КАК Менеджер,
+	КоммерческоеПредложениеКлиенту.Статус КАК Статус,
+	КоммерческоеПредложениеКлиенту.ХозяйственнаяОперация КАК ХозяйственнаяОперация,
+	КоммерческоеПредложениеКлиенту.CRM_Подразделение КАК CRM_Подразделение,
+	КоммерческоеПредложениеКлиенту.CRM_Автор КАК CRM_Автор
+ИЗ
+	Документ.КоммерческоеПредложениеКлиенту КАК КоммерческоеПредложениеКлиенту
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ЖурналДокументов КАК CRM_ЖурналДокументов
+		ПО КоммерческоеПредложениеКлиенту.Ссылка = CRM_ЖурналДокументов.Объект
+			И (CRM_ЖурналДокументов.ГлавнаяЗапись)
+			И (CRM_ЖурналДокументов.CRM_Интерес &lt;&gt; ЗНАЧЕНИЕ(Документ.CRM_Интерес.ПустаяСсылка))
+ГДЕ
+	КоммерческоеПредложениеКлиенту.Ссылка = &amp;Ссылка</query>
+	</dataSet>
+	<parameter>
+		<name>Ссылка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Ссылка</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Reference</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:DocumentRef.КоммерческоеПредложениеКлиенту</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</settingsVariant>
+</DataCompositionSchema>

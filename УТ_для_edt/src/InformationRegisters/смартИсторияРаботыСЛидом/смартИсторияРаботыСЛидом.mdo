@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="74469ca9-79a4-4ae0-9a30-afb08cbaee00">
+  <producedTypes>
+    <selectionType typeId="144040bc-2ec7-4fa6-9c5f-3d424c80b7d6" valueTypeId="88b93d15-e9c4-4566-8737-03b557009c0e"/>
+    <listType typeId="c8f49be5-7245-44bc-8011-e8a158d2fcdf" valueTypeId="d438455e-e54b-4379-a6e7-bcc5b7003384"/>
+    <managerType typeId="07325703-f375-4db6-9caa-85f39be5ec83" valueTypeId="0fe0056f-d7ac-4459-bf0f-22cc4c1dda38"/>
+    <recordSetType typeId="1b97c104-2808-434b-907c-722d9ce0279c" valueTypeId="ed257f18-27a8-418d-b536-63033791590b"/>
+    <recordKeyType typeId="71e469f9-1d4f-4536-a4d9-c5d7d1a80d2e" valueTypeId="4bf5e428-55e6-46ea-8c48-2055fa92777d"/>
+    <recordType typeId="e395e445-652c-4ba1-ad01-65edc16637a0" valueTypeId="5dc87378-0910-4717-9576-9ecd60346772"/>
+    <recordManagerType typeId="46ce90df-2042-4a09-8d32-a40289f99299" valueTypeId="6b4f9fae-a676-43c8-af24-cb75133fa206"/>
+  </producedTypes>
+  <name>смартИсторияРаботыСЛидом</name>
+  <synonym>
+    <key>ru</key>
+    <value>История работы с лидом (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 23.11.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="76d9a3d7-5d20-4e3d-8d85-3f6fe0b82d41">
+    <name>ДатаВыдачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата выдачи</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2f49b4c2-455e-456f-bd0b-b2f130945437">
+    <name>ДатаКонтроля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата контроля</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b480c9a7-edc7-4a76-b4ec-7572e6cee443">
+    <name>ДатаОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата обработки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3197ce2b-2e1c-48d3-9bf9-498a24f27268">
+    <name>ДатаЗавершения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата завершения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="88d15fbe-7a92-4d82-93eb-8510dcff0038">
+    <name>ПервыйКонтакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первый контакт</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <types>AnyRef</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="152de461-7ad4-4168-8a29-b255c7ed275e">
+    <name>ЗавершенНеУдачно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Завершен не удачно</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f1a7c528-eb9a-4664-a4f3-62c57a96eaba">
+    <name>Лид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лид</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Заявка</types>
+      <types>DocumentRef.смартЛид</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="90b6b757-1bbf-4af8-bc19-4e521119394e">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

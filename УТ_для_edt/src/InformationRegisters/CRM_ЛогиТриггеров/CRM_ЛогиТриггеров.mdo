@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="04a3f574-737a-4fcb-8fef-71221ef3b867">
+  <producedTypes>
+    <selectionType typeId="ae1247ee-12ff-4f66-b2fc-3a1b82363282" valueTypeId="0924358b-e704-4ff7-b713-b976a636aa28"/>
+    <listType typeId="e7fa881c-50f2-49d4-a8c1-d3e8ce239c84" valueTypeId="c42cda22-881a-4618-87e3-ad3f04d771d5"/>
+    <managerType typeId="64ae783b-5035-4154-8502-af65c2dc20bf" valueTypeId="186ff012-958b-4f99-af35-8c85f2a27064"/>
+    <recordSetType typeId="6d3c138d-686c-4265-b75c-a8b6aade29bc" valueTypeId="3df11985-eb65-466f-b410-781149f81a41"/>
+    <recordKeyType typeId="c5239c00-6a3a-4572-9ffb-c861517dcb14" valueTypeId="fc67f9d1-94f3-4da0-b7aa-a6c3f40e351d"/>
+    <recordType typeId="6f16a53f-bc1d-433b-946f-23a8fa3fd7ec" valueTypeId="56c286c0-5f6a-47bb-8b7c-5fb196e4b110"/>
+    <recordManagerType typeId="6f4a62fc-23fb-48ce-8e0b-91ebee466e0d" valueTypeId="78b5db7b-faa6-4287-84ba-ddefd66f61dc"/>
+  </producedTypes>
+  <name>CRM_ЛогиТриггеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Логи триггеров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Trigger Logs</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="0ccdbdbc-db42-45b3-a934-323b2f010bef">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Error Details</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="0030ddbc-f3c6-4aa1-98a6-9be0a0324177">
+    <name>ДатаСрабатывания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата срабатывания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trigger Activation Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e32b52ed-9ab5-4b62-8bac-084e01b16f3e">
+    <name>Триггер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Триггер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trigger</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Триггеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="83d05d0f-8c4c-4e18-97cb-ac1769db2e80">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>BusinessProcessRef</types>
+      <types>DocumentRef</types>
+      <types>TaskRef</types>
+      <types>CatalogRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5a72cb8d-4ed5-4585-bfdc-b5ad96329d44">
+    <name>ОшибкаУсловия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка условия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Condition Error</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9eef3c72-9cf7-45a9-a55d-f529d309ef12">
+    <name>ОшибкаДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка действия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Action Failure</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

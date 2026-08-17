@@ -1,0 +1,26 @@
+var group_id = &group_id;
+var offset = &offset;
+var last_comments = &last_comments;
+var commentsByItem=[];
+
+var res = API.market.get({"v":"5.131", "owner_id":group_id, "count":20, "extended":1,  "offset": offset});
+var i = res.items.length-1;
+while (i > -1){
+	if (res.items[i].can_comment == 1) {
+		var resComm = [];
+		if (!last_comments[res.items[i].id]) {
+			resComm = API.market.getComments({"v":"5.131", "owner_id":group_id, "count":100, "extended":1, "item_id":res.items[i].id, "sort":"desc", "fields":"sex"});
+		} else 
+		{
+			resComm = API.market.getComments({"v":"5.131", "owner_id":group_id, "count":100, "extended":1, "item_id":res.items[i].id, "start_comment_id":last_comments[res.items[i].id], "sort":"asc", "fields":"sex"});
+		};
+		if (resComm.count>0) {
+			commentsByItem.push({"item":res.items[i].id, "title":res.items[i].title, "comments":resComm.items, "profiles":resComm.profiles});
+		};
+	};
+	i = i - 1;
+};
+
+var last = (res.items.length < 20);
+
+return {"commentsByItem":commentsByItem, "count":commentsByItem.length, "last":last};

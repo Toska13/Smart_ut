@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="71a226a8-6e30-4e9b-a40c-22ceb8a27bf1">
+  <producedTypes>
+    <selectionType typeId="fb8af6d4-8877-4f00-a902-fd44c35c6ec4" valueTypeId="fdfb894a-ca8d-481f-be43-b8a665459a47"/>
+    <listType typeId="fb6b72b0-514c-4dba-8503-745b8c408c86" valueTypeId="b4552d8c-e667-4cf9-8f8c-312eb7a148a7"/>
+    <managerType typeId="b25f3d57-a719-4af1-854b-0b7b3f0b5da8" valueTypeId="274e9017-4d9b-43ed-8825-c72119d67fe9"/>
+    <recordSetType typeId="022ec4a7-b9bc-46a4-ad67-aa3d5523e222" valueTypeId="b1e9c43b-4323-42b7-8dd7-8ecf3b27db05"/>
+    <recordKeyType typeId="d1574ea4-463e-4736-b678-05cb41b09f8b" valueTypeId="d20d9087-f451-406a-aa78-e7216d24529f"/>
+    <recordType typeId="7f18f181-5829-4aba-9429-e91dde615fae" valueTypeId="f0bec645-0980-48a1-af46-53d0e607984a"/>
+    <recordManagerType typeId="e9c2d0b1-0086-4c57-bada-7f56a1b8eff1" valueTypeId="d53b6369-1ccf-42bb-a3f3-34b9d4d603c9"/>
+  </producedTypes>
+  <name>CRM_ОбъектыЭтапов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты этапов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Objects of stages</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="26db53af-314f-4a3e-bd2c-b0c0aee365f5">
+    <name>ЭтапОснования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап основания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage of the basis</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Этап</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Stage</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="21abe66f-91db-45e3-8e5a-51b3d9354bde">
+    <name>Обязательный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обязательный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>The mandatory</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Указывается обязателен ли объект?</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>it is entered the object are mandatory?</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4e0e3686-3953-49a2-9fe0-9bf29dcfa14e">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_КартыМаршрутов</types>
+      <types>CatalogRef.Проекты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Владелец маршрута</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Route owner</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2e499347-e0ea-4a4b-87bc-88f4808743dc">
+    <name>ТочкаМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка маршрута</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Route Point</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Точка</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Point</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="eb60530a-c556-4ce3-a3ff-b292f4d9a876">
+    <name>ВидОбъекта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид объекта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object kind</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.CRM_ВидыОбъектовБизнесПроцессов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Исполнитель задач</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Task assignee</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>ChartOfCharacteristicTypes.CRM_ВидыОбъектовБизнесПроцессов.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

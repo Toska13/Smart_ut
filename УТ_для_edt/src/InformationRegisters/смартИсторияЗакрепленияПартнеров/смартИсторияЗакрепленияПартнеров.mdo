@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="021ee0d3-722f-4840-9bde-23104b1cae9a">
+  <producedTypes>
+    <selectionType typeId="baec8ff0-bbae-4a18-83d5-47b196a2fc51" valueTypeId="728800cc-8b44-4825-a94b-3d47b893dfb4"/>
+    <listType typeId="ef3f059e-bb5b-4d66-91fb-7be1a153d053" valueTypeId="427a4b64-c97b-47f5-a2c4-6e68d3739b0f"/>
+    <managerType typeId="f587bd4a-3ab9-4011-b01c-8211da99e082" valueTypeId="1646dc98-520d-4429-9534-5057a854f589"/>
+    <recordSetType typeId="add95d74-d946-44f4-abeb-546010cf4f0e" valueTypeId="70b6f039-67af-4b65-9652-453331f5f61f"/>
+    <recordKeyType typeId="ab787840-2aff-4630-9081-71a2b8b88ec7" valueTypeId="f8cde556-ca45-4ec4-a4a0-87ef0cd0873a"/>
+    <recordType typeId="cfc6022b-4530-4f4d-b782-2eb0f4c61dd3" valueTypeId="daf01afe-d8ad-44cb-b87b-519479dea758"/>
+    <recordManagerType typeId="6e1eeed9-0718-43c5-89dc-60d088dec1fd" valueTypeId="67918f29-b6c5-4718-ae2f-c5a208c0010e"/>
+  </producedTypes>
+  <name>смартИсторияЗакрепленияПартнеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>История закрепления партнеров (смарт)</value>
+  </synonym>
+  <comment>//++ #1920 смарт: Фролов 17.07.2024 //Механизм закрепления Партнеров ответственными менеджерами.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6ae859a6-e6c7-45dc-9d96-45682c06c39d">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5229e7e6-5b3a-4547-bbe5-f8400d1eb611">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d5c6b534-b67e-44bb-9d6d-061c72962703">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

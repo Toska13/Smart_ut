@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="da0158c8-1018-4618-869b-8442c5fe89c9">
+  <producedTypes>
+    <selectionType typeId="486c4454-7d3b-4abe-86da-59f256708e2a" valueTypeId="8d292d6d-29f2-4b7b-b1df-6135b043a4a1"/>
+    <listType typeId="d74ec764-dd5e-4d62-a352-04dab11054f4" valueTypeId="b87ed3df-2bcb-4d6d-95da-0382a9b1b3f6"/>
+    <managerType typeId="fde415c2-1da8-4f76-9cca-888b8ccacfd4" valueTypeId="83c2c90c-9393-42bf-96e0-08277faa44aa"/>
+    <recordSetType typeId="9c34c2b5-c247-4523-b0e3-bde06a7f6771" valueTypeId="edae273c-410d-4912-91bb-3f15cf872ac7"/>
+    <recordKeyType typeId="339518e4-0037-4439-b5e8-ad0ef5fb1d7f" valueTypeId="e50a9d52-cf47-476c-987a-e93849da9e08"/>
+    <recordType typeId="c35e6143-3111-40a0-8120-eba742bd53d8" valueTypeId="4c2309c4-72fa-48bb-8802-41982076df99"/>
+    <recordManagerType typeId="ddc869c0-1b52-492c-882a-0dc9806d4a76" valueTypeId="51cb44ff-49f0-410f-bab1-4e628c041aeb"/>
+  </producedTypes>
+  <name>смартОбщаяОчередьВыдачиЛидов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Общая очередь выдачи лидов (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-1116 смарт: Фролов 10.10.2024 //Создание общей очереди в механизме распределения Интересов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="425c33bc-b9a8-46c5-969f-b137b7c2dbe5">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="888dd619-cf9f-4adb-9fef-5133fe70785c">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

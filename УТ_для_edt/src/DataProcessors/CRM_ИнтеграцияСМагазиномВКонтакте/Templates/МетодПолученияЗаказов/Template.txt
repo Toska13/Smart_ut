@@ -1,0 +1,65 @@
+var group_id = &group_id;
+var offset= &offset;
+var date = &date;
+var orders=[];
+
+var res = API.market.getGroupOrders({"v":"5.131", "group_id":group_id, "count":10, "extended":1,  "offset": offset});
+var i = res.items.length-1;
+while (i > -1){
+	if (res.items[i].date > date) {
+		var resItems = API.market.getOrderItems({"v":"5.131", "order_id":res.items[i].id, "user_id":res.items[i].user_id, "count":50});
+		var j = resItems.items.length-1;
+		var itemIDs = "";
+		while (j > -1){
+			itemIDs = itemIDs + ",-" + group_id + "_" +resItems.items[j].item_id;
+			j = j-1;
+		};
+		itemIDs = itemIDs.substr(1, itemIDs.length-1);
+		
+		var goods = [];
+		var resGoods = API.market.getById({"v":"5.131", "item_ids":itemIDs, "extended":1});
+		var j = resGoods.items.length-1;
+		var main_variants = [];
+		while (j > -1){
+			if (!resGoods.items[j].is_main_variant&&resGoods.items[j].variants){
+				var variants = resGoods.items[j].variants;
+				var n = variants.length-1;
+				while (n > -1){
+					if (variants[n].is_main){
+					    main_variants.push({"item_id":resGoods.items[j].id, "main_item_id":variants[n].item_id});
+						n = -1;
+					}
+					else{ 
+						n = n-1;
+					};
+				};
+			}
+			else{
+				main_variants.push({"item_id":resGoods.items[j].id, "main_item_id":resGoods.items[j].id});
+			};
+			j = j-1;
+		};
+		
+		var j = resItems.items.length-1;
+		while (j > -1){
+			var n = main_variants.length-1;
+			
+			while (n > -1){
+				if (main_variants[n].item_id == resItems.items[j].item_id){
+				    goods.push({"item":resItems.items[j], "main_item_id":main_variants[n].main_item_id});
+					n = -1;
+				}
+				else{ 
+					n = n-1;
+				};
+			};
+			j = j-1;
+		};
+
+		var order = {"order":res.items[i] , "goods":goods};			
+		orders.push(order);
+	};
+	i = i-1;
+};
+
+return {"orders":orders, "count":orders.length};

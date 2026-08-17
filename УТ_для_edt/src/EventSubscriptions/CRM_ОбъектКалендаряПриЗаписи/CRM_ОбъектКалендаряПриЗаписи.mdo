@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3cb01e98-0432-4f37-b3b7-b83fbebed9c9">
+  <name>CRM_ОбъектКалендаряПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект календаря при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>At record of calendar item</value>
+  </synonym>
+  <comment>Объект календаря при записи (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_ЭтапКалендарногоПлана</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>DocumentObject.CRM_Телемаркетинг</types>
+    <types>CatalogObject.МаркетинговыеМероприятия</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ВзаимодействияСервер.ПриЗаписиОбъектаКалендаря</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f572292b-eff8-4b48-940b-e296709bf984">
+  <producedTypes>
+    <objectType typeId="180d87ff-7613-4324-86f3-3b86fb94529e" valueTypeId="74d5eab1-59fb-441b-92c6-46edc1814071"/>
+    <managerType typeId="70577205-bd76-4499-bac1-d45e39a66a52" valueTypeId="2de19eda-6b58-43c1-be61-3e4a854d721e"/>
+  </producedTypes>
+  <name>CRM_РегистрацияПосетителей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрация посетителей</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Visitor registration</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_РегистрацияПосетителей.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="b51f30b6-c0e6-42b5-9c79-db52d094242c">
+    <name>Камера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Камера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Camera</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Камеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="258404d7-b7a3-4d52-9e3a-40cc69e41817">
+    <name>Мероприятие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мероприятие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МаркетинговыеМероприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.CRM_ВедетсяВидеофиксация</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <forms uuid="3a0feb6b-5dbb-486e-9669-5ea11c5e2db2">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

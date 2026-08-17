@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3a6c9015-818f-4533-a48f-148d68f23da0">
+  <producedTypes>
+    <selectionType typeId="2968582c-ba22-4a5b-8cc4-b9ce979d9604" valueTypeId="1e5ff018-05d2-4dcd-9cca-cd70bd3fe2e7"/>
+    <listType typeId="111d0bcb-d035-4bec-8e0c-9e2e374debeb" valueTypeId="7e9cb388-0c84-4670-97e6-cb9b47cb0d26"/>
+    <managerType typeId="072cd84a-48eb-462d-b330-40cae42d8f04" valueTypeId="ca541443-9e7e-48d7-bdd4-fed7059fa135"/>
+    <recordSetType typeId="d601b8a3-b843-4fb5-9abd-c544d45722f4" valueTypeId="eebb5ac6-5bf8-42c5-a2b4-b98a3b44a8ac"/>
+    <recordKeyType typeId="0c996995-9622-49c1-a82b-9d81f76c0831" valueTypeId="03cd63ee-e9c9-4129-a6d8-14cdf0a03368"/>
+    <recordType typeId="c5791bc8-afa0-45f7-9eeb-718c07edf552" valueTypeId="a11dd6af-2fbb-49ad-9961-1c5369986cfc"/>
+    <recordManagerType typeId="bacdaf57-ebaf-40cb-87a8-0d485cf0c5ad" valueTypeId="fc3b88fc-866f-4c86-9018-ac5392b53e43"/>
+  </producedTypes>
+  <name>смартВыдачаЛидов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выдача лидов (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 15.11.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="df0cf2c9-fa1d-40d4-ab32-4c20f3766c08">
+    <name>ВыдатьЛидов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдать лидов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="377cfb66-25fc-4bfd-b558-7c47a053fadb">
+    <name>ВыданоЛидов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдано лидов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="720cfde6-01eb-4b9c-aede-df2ca77e1e55">
+    <name>Квалификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Квалификация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартКвалификацииМенеджеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cec0f277-f735-443f-ae7d-21f704413dd6">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

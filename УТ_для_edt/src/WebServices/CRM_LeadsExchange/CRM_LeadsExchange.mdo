@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63e03d43-31c6-431c-81b9-c04f0f7895a5">
+  <name>CRM_LeadsExchange</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка обращений</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Load leads</value>
+  </synonym>
+  <namespace>http://www.rarus.ru/LeadsExchange</namespace>
+  <descriptorFileName>LeadsExchange.1cws</descriptorFileName>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="1dc23d6e-1dfe-4969-9ddc-9c84b379cf8d">
+    <name>GetLeadStructure</name>
+    <synonym>
+      <key>ru</key>
+      <value>Передает структуру полей лида</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transmits the structure of the lead fields</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetLeadStructure</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="03168332-39f0-470a-a1b3-17649451b43e">
+      <name>ServiceID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Service ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Идентификатор сервиса</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="1e335761-ff86-4282-a010-984d21dcfa86">
+      <name>SourceID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Source ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Source ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="730613d4-0747-4973-8dca-592af6139da1">
+    <name>LoadLead</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружает лид</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Loads the lead</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>LoadLead</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="637d62ff-30f8-4ff0-9121-57ed05d88bf3">
+      <name>ServiceID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Service ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Идентификатор сервиса</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="9b4a82df-ac8d-4501-8ed4-0e38094a348b">
+      <name>SourceID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Source ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Source ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="9ca39a8c-e23c-400b-bec2-294a303b5c7c">
+      <name>LeadStructure</name>
+      <synonym>
+        <key>ru</key>
+        <value>Структура лида для загрузки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Lid structure for download</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="667e904d-ff81-4299-8d65-fee8a777ebff">
+    <name>GetListExtraOptions</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get list extra options</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get list extra options</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetListExtraOptions</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="fda65681-d113-4f43-92cb-f505a6fcac84">
+      <name>SourceID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Source ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Source ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+</mdclass:WebService>

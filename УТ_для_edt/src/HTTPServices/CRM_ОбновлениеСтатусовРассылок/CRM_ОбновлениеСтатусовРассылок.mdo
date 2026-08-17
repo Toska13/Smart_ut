@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ff166ace-b444-40ea-8caa-6cf17a4d2e98">
+  <name>CRM_ОбновлениеСтатусовРассылок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обновление статусов рассылок</value>
+  </synonym>
+  <rootURL>UpdatesMailing</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="ae171c8c-0e3c-4a12-bd2b-4cc912ed3eb8">
+    <name>WebHook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Web hook</value>
+    </synonym>
+    <template>/{ИмяМетода}</template>
+    <methods uuid="e53293ad-191d-4d7d-ae64-1774070f8b76">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>WebHookPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="00330e2a-d2b5-4ddc-9b50-9bd935de1e1f">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="430f0bfc-3435-40b4-81a0-0dce811b3939">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

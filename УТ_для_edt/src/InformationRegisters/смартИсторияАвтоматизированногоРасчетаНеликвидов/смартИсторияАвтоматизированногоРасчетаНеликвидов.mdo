@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4d7fb593-8fc8-437f-837a-28d2179359af">
+  <producedTypes>
+    <selectionType typeId="a374b04d-fdd6-434b-ad89-5e73d495eff5" valueTypeId="1a6f4707-f92a-4124-9f01-d1e32fbbe18e"/>
+    <listType typeId="e292fcf2-53c6-4164-8d95-180dd313aaf9" valueTypeId="ce19041d-3664-4ef7-b158-9f535a3f5e79"/>
+    <managerType typeId="23046d97-6c47-40da-82b2-90b7ab8ba278" valueTypeId="bc35308c-b9dc-41ee-b671-29b998c08588"/>
+    <recordSetType typeId="52efc108-678b-48e4-92d3-f8a70c0f572c" valueTypeId="1795af01-ea07-4de0-8ca1-ebf32f6be449"/>
+    <recordKeyType typeId="db837338-1e0d-4b0b-b879-27fa122f2ca7" valueTypeId="68aa409d-d3d9-4e77-a7d8-5adb1e6cd983"/>
+    <recordType typeId="dd133e2b-35c7-4f73-bd8c-81ed82e33208" valueTypeId="7afa3b7b-d043-462f-8ecb-f67cbf08380f"/>
+    <recordManagerType typeId="6bd6cd66-be57-4651-a5a1-706a80d1dbb8" valueTypeId="ce4a4c50-098a-4d56-98e8-27523330419f"/>
+  </producedTypes>
+  <name>смартИсторияАвтоматизированногоРасчетаНеликвидов</name>
+  <synonym>
+    <key>ru</key>
+    <value>История автоматизированного расчета неликвидов</value>
+  </synonym>
+  <comment>//++ смарт:КМД #3_2 501 13.06.2021</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e9645ca9-46b3-4533-af7a-bf85cc982b8d">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="03053ef7-13f4-49e5-805e-596e28c41489">
+    <name>СреднийТоварныйЗапас</name>
+    <synonym>
+      <key>ru</key>
+      <value>Средний товарный запас</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1e452bd7-5424-42be-8e8d-95e2f68511f8">
+    <name>Товарооборот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товарооборот</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="38965975-49cf-4b10-b17d-116b2850e61c">
+    <name>ОборачиваемостьДней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборачиваемость, дней</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="94f284b5-f6f2-46f8-9d85-2fcf4c861caf">
+    <name>ВключенВНеликвидыS</name>
+    <synonym>
+      <key>ru</key>
+      <value>Включен в неликвиды S</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1e9677ce-f7ee-4c69-934d-c47fd85a4acf">
+    <name>ВключенВНеликвидыSПлюс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Включен в неликвиды S+</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="74255df1-759e-4ef5-b9dd-bf7b058573bd">
+    <name>ИзмененоВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменено вручную</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="e52381b1-fa14-442c-a6ef-be6d51ba9d71">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

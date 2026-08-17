@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Основной</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Серия</dataPath>
+			<field>Серия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказКлиента</dataPath>
+			<field>ЗаказКлиента</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодСтроки</dataPath>
+			<field>КодСтроки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Склад</dataPath>
+			<field>Склад</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказаноОстаток</dataPath>
+			<field>ЗаказаноОстаток</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоУслуг</dataPath>
+			<field>КоличествоУслуг</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество услуг</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборудования</dataPath>
+			<field>КоличествоОборудования</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество оборудования</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВсего</dataPath>
+			<field>КоличествоВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗаказа</dataPath>
+			<field>ДатаЗаказа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата заказа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокЗакрытия</dataPath>
+			<field>СрокЗакрытия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок закрытия</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>// Выбираем заказы, которые должны быть исключены.
+// Такие заказы автоматически не закрываются
+///////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказыКлиентов.ЗаказКлиента,
+	ЗаказыКлиентов.ЗаказаноОстаток                  
+ПОМЕСТИТЬ ЗаказыСодержащиеНоменклатуруИсключение
+ИЗ
+	РегистрНакопления.ЗаказыКлиентов.Остатки(,
+			ТИПЗНАЧЕНИЯ(ЗаказКлиента) = ТИП(Документ.ЗаказКлиента)
+			И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачалаАнализа И ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), СЕКУНДА, -1)
+			И ЗаказКлиента.Организация В (&amp;Организации)
+			И НЕ ЗаказКлиента.Партнер В (&amp;ПартнерыИсключение)
+			И Номенклатура В (&amp;НоменклатураИсключение)
+		) КАК ЗаказыКлиентов
+			
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказовКлиентов КАК СостоянияЗаказов
+	ПО
+		СостоянияЗаказов.Заказ = ЗаказыКлиентов.ЗаказКлиента
+		И СостоянияЗаказов.ПроцентОплаты = 0 
+		И СостоянияЗаказов.ПроцентОтгрузки = 0 
+;			
+///////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказыКлиентов.ЗаказКлиента КАК ЗаказКлиента,
+	НАЧАЛОПЕРИОДА(ЗаказыКлиентов.ЗаказКлиента.Дата, ДЕНЬ) КАК ДатаЗаказа,
+	СУММА(ВЫБОР КОГДА ЗаказыКлиентов.Номенклатура.ТипНоменклатуры = ЗНАЧЕНИЕ(Перечисление.ТипыНоменклатуры.Услуга) ТОГДА 1 ИНАЧЕ 0 КОНЕЦ ) КАК КоличествоУслуг,
+	СУММА(ВЫБОР КОГДА ЗаказыКлиентов.Номенклатура В (&amp;НоменклатураВключение) ТОГДА 1 ИНАЧЕ 0 КОНЕЦ ) КАК КоличествоОборудования,
+	Сумма(1) КАК КоличествоВсего,
+	СУММА(ЗаказыКлиентов.ЗаказаноОстаток) КАК ЗаказаноОстаток
+ПОМЕСТИТЬ ВТЗаказыКЗакрытиюПредварительно
+ИЗ
+	РегистрНакопления.ЗаказыКлиентов.Остатки(, 
+			ТИПЗНАЧЕНИЯ(ЗаказКлиента) = ТИП(Документ.ЗаказКлиента)
+			И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачалаАнализа И ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), СЕКУНДА, -1)
+			И ЗаказКлиента.Организация В (&amp;Организации)
+			И НЕ ЗаказКлиента.Партнер В (&amp;ПартнерыИсключение)
+			И НЕ ЗаказКлиента.СогласованоБух
+		) КАК ЗаказыКлиентов
+		
+	ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказовКлиентов КАК СостоянияЗаказов
+	ПО
+		СостоянияЗаказов.Заказ = ЗаказыКлиентов.ЗаказКлиента
+		И СостоянияЗаказов.ПроцентОплаты = 0 
+		И СостоянияЗаказов.ПроцентОтгрузки = 0 
+	
+СГРУППИРОВАТЬ ПО
+	ЗаказыКлиентов.ЗаказКлиента,
+	НАЧАЛОПЕРИОДА(ЗаказыКлиентов.ЗаказКлиента.Дата, ДЕНЬ)
+;			
+///////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Т.ЗаказКлиента,
+	Т.ДатаЗаказа,
+	Т.ЗаказаноОстаток,
+	Т.КоличествоУслуг,
+	Т.КоличествоОборудования,
+	Т.КоличествоВсего,
+	ВЫБОР КОГДА Т.КоличествоОборудования &gt; 0 И Т.ЗаказКлиента.Валюта = &amp;ВалютаРубли ТОГДА &amp;СрокПросроченнойОплатыДнейРублевыхСчетов
+		  КОГДА Т.КоличествоУслуг = Т.КоличествоВсего ИЛИ Т.КоличествоОборудования &gt; 0 ТОГДА ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), ГОД, - 1)
+		  КОГДА Т.КоличествоОборудования = 0 И Т.КоличествоУслуг &lt;&gt; Т.КоличествоВсего ТОГДА &amp;СрокПросроченнойОплатыДней
+	КОНЕЦ КАК СрокЗакрытия
+ИЗ 
+	ВТЗаказыКЗакрытиюПредварительно КАК Т
+ГДЕ
+	( ( Т.КоличествоУслуг = Т.КоличествоВсего ИЛИ Т.КоличествоОборудования &gt; 0 ) И Т.ДатаЗаказа &lt; ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), ГОД, - 1) )
+	ИЛИ ( Т.КоличествоОборудования = 0 И Т.КоличествоУслуг &lt;&gt; Т.КоличествоВсего И Т.ДатаЗаказа &lt; ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), ДЕНЬ, - &amp;СрокПросроченнойОплатыДней) )
+	ИЛИ ( Т.КоличествоОборудования &gt; 0 И Т.ЗаказКлиента.Валюта = &amp;ВалютаРубли И Т.ДатаЗаказа &lt; ДОБАВИТЬКДАТЕ(НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ), ДЕНЬ, - &amp;СрокПросроченнойОплатыДнейРублевыхСчетов) )
+УПОРЯДОЧИТЬ ПО
+	Т.ЗаказКлиента.Дата ВОЗР</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(ТекущаяДата(), "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаНачалаАнализа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Минимальная дата заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СрокПросроченнойОплатыДней</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Срок просрочки оплаты (дней)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Организации</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организации</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПартнерыИсключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Исключаемые клиенты</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Партнеры</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СегментыНоменклатурыВключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сегменты номенклатуры оборудование</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СегментыНоменклатуры</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СегментыНоменклатурыИсключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Сегменты номенклатуры (иск)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СегментыНоменклатуры</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НоменклатураИсключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура исключение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>АдресEmailДляРассылки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Email для рассылки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>НоменклатураВключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Номенклатура оборудование</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Номенклатура</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВалютаРубли</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Валюта рубли</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Валюты</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>СрокПросроченнойОплатыДнейРублевыхСчетов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Срок просрочки оплаты (дней) (оборудование за рубли)</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказКлиента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗаказа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОборудования</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоУслуг</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрокЗакрытия</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организации</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ПартнерыИсключение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатураИсключение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НоменклатураВключение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

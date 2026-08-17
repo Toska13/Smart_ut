@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2b5619b8-4b77-4a6f-bad1-596b4623ea64">
+  <producedTypes>
+    <selectionType typeId="19082977-3d46-4ce8-bff9-25c38fde7d2a" valueTypeId="64a6c3d1-2f31-4f52-b457-d63de470f0ff"/>
+    <listType typeId="80c61bdd-a975-4286-86da-e28217174b7a" valueTypeId="d8fd889d-16f2-4f48-915d-af2861d9872a"/>
+    <managerType typeId="f0ea9149-6184-4208-b607-2355c00b6f0d" valueTypeId="b7b0d01e-f1f0-4f4c-8ada-b931cc0b2a78"/>
+    <recordSetType typeId="ca64bf07-9849-479a-97ff-b433e040ecd7" valueTypeId="6b58ecc0-4e2b-44a5-acdc-1849480b1c26"/>
+    <recordKeyType typeId="4e5c7244-e001-437f-801e-e0bafe81b6df" valueTypeId="5b79bbeb-5e8f-4a8d-b83a-7614a8803d35"/>
+    <recordType typeId="78b3f5b1-d791-48d5-914e-784733475f5d" valueTypeId="7ea89d0e-5d4f-4818-b1f0-a4ca6f3b5fa4"/>
+    <recordManagerType typeId="f53955a7-1a62-4980-b050-2375c320fcdb" valueTypeId="722305f0-4a90-4805-a467-396c38b2d359"/>
+  </producedTypes>
+  <name>смартЛицензииПО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лицензии ПО (смарт)</value>
+  </synonym>
+  <comment>#Б-3180 смарт: Лопато 10.07.2025 //Лицензии IECHO. Отражение в учетной программе.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартЛицензииПО.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартЛицензииПО.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="1fcaf777-085b-4b4b-adc6-0f659e3e72e0">
+    <name>ТипЛицензии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип лицензии</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартТипыЛицензии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a705813a-fc93-4241-96b2-9d595818198d">
+    <name>СерийныйНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серийный номер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="f498ec5a-96e1-485b-80c9-13425e1c03a0">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="61730775-2a53-4cb6-a76f-ad913f609bdf">
+    <name>ДатаУстановкиПостояннойЛицензии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата установки постоянной лицензии</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="45b9b19a-a5bb-4030-9932-838a90376bf9">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаПускоНаладку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b3aa4de5-345a-4689-8424-96d1cad1c3fd">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9cbd194f-180c-471b-b2e1-b9d0bf33b013">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="c8d4c529-3fe9-4c5a-aafc-d269818caab1">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0aaf69b1-a97b-4d9f-a1b1-f7c786f0d44d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

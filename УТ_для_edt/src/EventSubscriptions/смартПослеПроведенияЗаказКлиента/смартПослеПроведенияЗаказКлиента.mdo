@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="635e7847-66bb-4d67-9bd8-ba555a8a7dea">
+  <name>смартПослеПроведенияЗаказКлиента</name>
+  <synonym>
+    <key>ru</key>
+    <value>После проведения заказ клиента (смарт)</value>
+  </synonym>
+  <comment>#Б-2858 смарт: Лопато 07.04.2025 //Автозадачи по заказам. Согласование даты отгрузки.</comment>
+  <source>
+    <types>DocumentObject.ЗаказКлиента</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.ПослеПроведенияЗаказКлиента</handler>
+</mdclass:EventSubscription>

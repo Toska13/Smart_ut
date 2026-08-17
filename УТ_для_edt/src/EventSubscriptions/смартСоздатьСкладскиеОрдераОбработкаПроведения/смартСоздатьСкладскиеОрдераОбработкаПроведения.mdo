@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d67b0446-8998-49a6-a520-e96edc1da507">
+  <name>смартСоздатьСкладскиеОрдераОбработкаПроведения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создать складские ордера после проведения (смарт)</value>
+  </synonym>
+  <comment>#5806 смарт: Тимофеева 26.02.26 / Перевод запчастей на серийный учет. Автоматизация создания ордеров для складов физлиц.</comment>
+  <source>
+    <types>DocumentObject.ВнутреннееПотреблениеТоваров</types>
+    <types>DocumentObject.ПриходныйОрдерНаТовары</types>
+    <types>DocumentObject.РасходныйОрдерНаТовары</types>
+    <types>DocumentObject.ПеремещениеТоваров</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.смартСервер.СоздатьСкладскиеОрдераОбработкаПроведения</handler>
+</mdclass:EventSubscription>

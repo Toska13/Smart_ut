@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f2dac486-67e2-419e-8f8b-0d1b0c6e322b">
+  <producedTypes>
+    <selectionType typeId="eaffccac-a090-42e1-8654-a50c50527514" valueTypeId="79758d8d-5abe-433b-958a-dfb4d4a7f22c"/>
+    <listType typeId="817ff9b6-cadc-46a3-a7c4-b863f4b126ac" valueTypeId="93797f70-6988-424c-b58e-174c3f07db27"/>
+    <managerType typeId="d399587f-9afc-4b3f-b32c-f18ecef3358b" valueTypeId="ee8c2099-ca7f-4d32-80d7-e8cf9f7e495d"/>
+    <recordSetType typeId="dcb88d27-953f-4704-8165-0c6ca431e1c8" valueTypeId="61253597-f2d5-4f69-8b27-2854293ed39a"/>
+    <recordKeyType typeId="4c930fb5-1897-4f76-bee7-c2b7a1672396" valueTypeId="45c2bb4f-4134-4a35-9bde-2275c3aaf5da"/>
+    <recordType typeId="72376132-8c9f-4766-bf5e-41ad45f56f99" valueTypeId="3de6a540-2f2a-4f5f-9522-40e3c17be585"/>
+    <recordManagerType typeId="6b254c2e-8f2a-4872-be8a-f1d48770f021" valueTypeId="ee6c6dfd-6633-45ad-b9b0-096c116e52e6"/>
+  </producedTypes>
+  <name>смартУчетСпециальныхПредложенийКлиентам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Учет специальных предложений клиентам (смарт)</value>
+  </synonym>
+  <comment>//++ #1960 смарт: Мосолов 08.08.2024 // Создание механизма для учета продаж по Доп. гарантии и спец предложений</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d23ad3da-7eb7-4f8f-a02e-b3ef8187eab0">
+    <name>СтоимостьПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость предложения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="814b4b8f-cb8a-48f9-8de2-cb1790c38c48">
+    <name>ДатаОкончанияПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания предложения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7e5f95d5-2f78-4a4f-b3b9-3ff958c6458a">
+    <name>РезультатПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат предложения</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартРезультатыПредложения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="38eda2a5-d420-4faa-b22e-4ec47f312196">
+    <name>ВалютаПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта предложения</value>
+    </synonym>
+    <comment>//++ #Б-3806 смарт: Фролов 14.07.2025 //Доработка механизмов учета предложения доп гарантии.</comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b5dff365-2c46-4b08-bf82-12883166f8b8">
+    <name>СтоимостьВВалюте</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость в валюте управленческого учета</value>
+    </synonym>
+    <comment>//++ #Б-3806 смарт: Фролов 14.07.2025 //Доработка механизмов учета предложения доп гарантии.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c04a9be9-e72f-4c98-b0d5-4b51128ef460">
+    <name>ВидПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид предложения</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыДополнительныхПредложений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6bbde51f-7205-42f5-8f51-cf0e0ec17eb4">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f5ed3415-6bef-4867-b135-1f74442d5a0e">
+    <name>ДатаПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата предложения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9f791984-30c1-47c2-ba7f-a6afce2e88d0">
+    <name>НоменклатураИсходная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура исходная</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="61456d39-3e61-4b73-8744-1aae4b8d55c4">
+    <name>ДокументПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ предложения</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a82d859b-3854-4bbc-9be4-3f8eedd99bd7">
+    <name>НоменклатураПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура предложения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b2154e20-f067-46a1-b221-9f7028dbe97a">
+    <name>ХарактеристикаПредложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика предложения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

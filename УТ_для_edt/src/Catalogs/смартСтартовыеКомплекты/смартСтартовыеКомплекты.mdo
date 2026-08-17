@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="501fa975-494a-4590-9457-82cfa2c25674">
+  <producedTypes>
+    <objectType typeId="feca207b-fe0b-40b2-bcf4-a74080915cd5" valueTypeId="4aa48c29-5325-4a64-8014-d6102c921b9a"/>
+    <refType typeId="3ad5f24e-b4bf-44d9-b295-31df0e9259e1" valueTypeId="32be309d-c801-443f-bd38-dc0eaa4d3e91"/>
+    <selectionType typeId="0119b48d-ec7e-4992-b88a-4febc46a6e6a" valueTypeId="a123569b-d9e9-4a53-bce9-a3decc7ad800"/>
+    <listType typeId="4514f130-4e89-43b2-a2de-1d1688041773" valueTypeId="b43856d1-1985-447c-a2d3-8d934947325d"/>
+    <managerType typeId="fb7e6bda-d8b9-44c6-9e70-ce16fb5bcc53" valueTypeId="e06747f5-c0db-429c-a1a8-f68a87616857"/>
+  </producedTypes>
+  <name>смартСтартовыеКомплекты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Стартовые комплекты (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-5738 смарт: Фролов 13.02.2026 //Доработки Конструктора КП</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартСтартовыеКомплекты.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.смартСтартовыеКомплекты.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="20e711ae-bd6c-4b7c-89f4-a326dd98b1c9">
+    <name>ЦветоваяКонфигурация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цветовая конфигурация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЦветовыеКонфигурации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4b8ed362-36cd-424d-8198-d81440df3366">
+    <name>Бренд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бренд</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Марки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="deee6991-1949-4b15-8f4b-660a2b5cab9f">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="91113412-e2d9-4c13-ad78-db6f7aa35556">
+    <producedTypes>
+      <objectType typeId="2e53a016-161f-482b-9b4e-e3a4b124c3f0" valueTypeId="1389efcf-2f7b-4af2-b6da-d7143eab5efe"/>
+      <rowType typeId="506f9ae2-bb29-4c5a-91f6-fab7e2febfd7" valueTypeId="914223e0-af28-4426-9edd-4b8310c8e0e0"/>
+    </producedTypes>
+    <name>СоставКомплекта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состав комплекта</value>
+    </synonym>
+    <attributes uuid="21d09b37-c708-46d9-94f3-9bb8dbeb6fcc">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6da09e26-7bff-476f-8ebe-3491c928f047">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5e751fe8-ff3d-48b8-b6d1-8f00d567a21b">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="25024304-deb6-4a92-9cf4-d471b2aae43f">
+      <name>Описание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

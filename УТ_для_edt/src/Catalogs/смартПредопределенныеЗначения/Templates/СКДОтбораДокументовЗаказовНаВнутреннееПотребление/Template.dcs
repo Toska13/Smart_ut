@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Основной</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗаказНаВнПотребление.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_ЗаказыНаВнутреннееПотребление
+ИЗ
+	Документ.ЗаказНаВнутреннееПотребление КАК ЗаказНаВнПотребление
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказНаВнутреннееПотребление.Товары КАК ЗаказНаВнПотреблениеТовары
+		ПО (ЗаказНаВнПотреблениеТовары.Ссылка = ЗаказНаВнПотребление.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказКлиента.Товары КАК ЗаказКлиентаТовары
+		ПО ЗаказНаВнПотребление.ДокументОснование = ЗаказКлиентаТовары.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ВнутреннееПотреблениеТоваров КАК СписаниеНаРасходы
+		ПО ЗаказНаВнПотребление.Ссылка = СписаниеНаРасходы.ЗаказНаВнутреннееПотребление
+ГДЕ
+	ЗаказНаВнПотребление.ДокументОснование ССЫЛКА Документ.ЗаказКлиента
+	И ЗаказНаВнПотребление.ДокументОснование.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыЗаказовКлиентов.Закрыт)
+	И НЕ ЗаказНаВнПотребление.Статус = ЗНАЧЕНИЕ(Перечисление.СтатусыВнутреннихЗаказов.Закрыт)
+	И ЗаказНаВнПотреблениеТовары.Номенклатура.Артикул = &amp;Артикул
+	И ЗаказНаВнПотребление.Проведен
+	И СписаниеНаРасходы.Ссылка ЕСТЬ NULL
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНаВнПотребление.Ссылка
+
+ИМЕЮЩИЕ
+	МИНИМУМ(ЗаказКлиентаТовары.Отменено) = ИСТИНА
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказНаВнутреннееПотреблениеТовары.Ссылка КАК Ссылка,
+	ЗаказНаВнутреннееПотреблениеТовары.Ссылка.Дата КАК Дата
+ИЗ
+	Документ.ЗаказНаВнутреннееПотребление.Товары КАК ЗаказНаВнутреннееПотреблениеТовары
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Номенклатура КАК СпрНоменклатура
+		ПО ЗаказНаВнутреннееПотреблениеТовары.Номенклатура = СпрНоменклатура.Ссылка
+ГДЕ
+	ЗаказНаВнутреннееПотреблениеТовары.Ссылка В
+			(ВЫБРАТЬ
+				ВТ_ЗаказыНаВнутреннееПотребление.Ссылка
+			ИЗ
+				ВТ_ЗаказыНаВнутреннееПотребление)
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНаВнутреннееПотреблениеТовары.Ссылка,
+	ЗаказНаВнутреннееПотреблениеТовары.Ссылка.Дата
+
+ИМЕЮЩИЕ
+	МИНИМУМ(СпрНоменклатура.Артикул) = МАКСИМУМ(СпрНоменклатура.Артикул)</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(ТекущаяДата(), "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаСозданияЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата создания заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>АдресEmailДляРассылки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Email для рассылки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Артикул</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Артикул</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>0</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Дата</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.ДатаОтгрузки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.Склад</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ссылка.смартЗапчастиГарантийные</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

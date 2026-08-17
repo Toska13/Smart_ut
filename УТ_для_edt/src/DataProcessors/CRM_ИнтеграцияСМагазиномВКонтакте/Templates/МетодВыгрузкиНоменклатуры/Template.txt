@@ -1,0 +1,116 @@
+var param = &param;
+var album = &album;
+var group_id = &group_id;
+var prices_properties = &prices_properties;
+var item_group_id = &item_group_id;
+
+var response;
+var resmass = [];
+
+if (prices_properties[0].properties){
+	var i = prices_properties.length-1;
+	if (!param.item_id){
+		param.is_main_variant = 1;
+	}
+	else{
+		param.is_main_variant = 1;
+	};
+	var item_ids = [];
+	while (i>-1){
+		var price_property = prices_properties[i];
+		param.price = price_property.price;
+		if (price_property.old_price>0){
+			param.old_price = price_property.old_price;
+		}
+		else{
+			delete param.old_price;
+		};
+		if (price_property.main_photo_id){
+			param.main_photo_id = price_property.main_photo_id;
+		}
+		else{
+			delete param.main_photo_id;
+		};
+		if (price_property.photo_ids){
+			param.photo_ids = price_property.photo_ids;
+		}
+		else{
+			delete param.photo_ids;
+		};
+		var properties = price_property.properties;
+		var j = properties.length-1;
+		var variant_ids = "";
+		while (j>-1){
+			if (variant_ids == ""){
+				variant_ids = variant_ids + properties[j];
+			}
+			else{
+				variant_ids = variant_ids + "," + properties[j];
+			};
+			j = j - 1;
+		};
+		param.variant_ids = variant_ids;
+		if (price_property.item_id){
+			param.item_id = price_property.item_id;
+			var res = API.market.edit(param);
+		}
+		else{
+			var res = API.market.add(param);
+			if (res.market_item_id){
+				if (param.is_main_variant == 1){
+					response = res;
+				};
+				item_ids.push(res.market_item_id);
+				if (album>0){
+					var res = API.market.addToAlbum({"owner_id":param.owner_id, "item_id":res.market_item_id, "album_ids":album});
+				};
+			};
+		};
+		param.is_main_variant = 0;
+		i = i - 1;
+	};
+	if (item_group_id>0){
+		if (item_ids.length>0){
+			var res = API.market.groupItems({"group_id":group_id, "item_ids":item_ids, "item_group_id":item_group_id});
+		};
+	}
+	else if (item_ids.length>1){
+		var res = API.market.groupItems({"group_id":group_id, "item_ids":item_ids});
+	};		
+}
+else{
+	param.price = prices_properties[0].price;
+	if (prices_properties[0].old_price>0){
+		param.old_price = prices_properties[0].old_price;
+	}
+	else{
+		delete param.old_price;
+	};
+	if (prices_properties[0].main_photo_id){
+		param.main_photo_id = prices_properties[0].main_photo_id;
+	}
+	else{
+		delete param.main_photo_id;
+	};
+	if (prices_properties[0].photo_ids){
+		param.photo_ids = prices_properties[0].photo_ids;
+	}
+	else{
+		delete param.photo_ids;
+	};
+	if (param.item_id){
+		response = API.market.edit(param);
+	}
+	else{
+		var res = API.market.add(param);
+		if (res.market_item_id){
+			response = res;
+			if (album>0){
+				res = API.market.addToAlbum({"owner_id":param.owner_id, "item_id":response.market_item_id, "album_ids":album});
+			};		
+		};		
+	};
+};
+
+return {"result":response};
+

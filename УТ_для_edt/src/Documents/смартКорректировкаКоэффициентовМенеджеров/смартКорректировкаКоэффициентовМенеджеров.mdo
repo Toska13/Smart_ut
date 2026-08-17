@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="137c8aa3-d61c-409a-af12-617ec70dae53">
+  <producedTypes>
+    <objectType typeId="906c7e5c-ae86-430e-8aa2-1831ee5f1a18" valueTypeId="8652bdb5-5410-4106-a61b-271b0d416e09"/>
+    <refType typeId="92857285-6013-4ebc-b524-abbe07268960" valueTypeId="7c592dae-2f0e-4de9-a0ad-3e78aef7d677"/>
+    <selectionType typeId="6513ff60-bb09-4776-a3b0-a59a0bf39353" valueTypeId="85595df3-2e57-49b0-aa53-cff923b45e67"/>
+    <listType typeId="c9f6492e-38ca-46a1-affc-f67d53c2c5d0" valueTypeId="893aaf44-827e-4310-b14f-ff0b3b4a9d62"/>
+    <managerType typeId="8dcf9974-3b1c-4c39-9a2b-3c7d12584d32" valueTypeId="13332edc-4cda-48ab-9ddb-04b6c6edcb6a"/>
+  </producedTypes>
+  <name>смартКорректировкаКоэффициентовМенеджеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка коэффициентов менеджеров (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 04.12.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартКорректировкаКоэффициентовМенеджеров.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартКорректировкаКоэффициентовМенеджеров.Form.ФормаДокумента</defaultObjectForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="db123e2c-5ea1-458a-9141-9e6cafec6793">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="206e1393-fe2a-467a-92ff-e262de7326eb">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольный текст.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="57ea1403-ca97-41db-bae9-b5b2fe2c0e21">
+    <name>ВидКоэффициента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид коэффициента</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыКоэффициентовМенеджеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="9dc8d0a7-6ea4-4d83-bc58-bcaa0b23ee33">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="e22177a5-a641-4e41-98f8-34ae621535b1">
+    <producedTypes>
+      <objectType typeId="645afd7b-de48-436e-bc52-6a273940eeca" valueTypeId="ea5feb2b-3265-45f8-921d-4d69c49088d0"/>
+      <rowType typeId="d8523066-4476-4934-84b8-10d276d12352" valueTypeId="a228286b-d5a4-451f-b634-c4fd07a69f91"/>
+    </producedTypes>
+    <name>Менеджеры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджеры</value>
+    </synonym>
+    <attributes uuid="4bc577f7-4916-4cd0-a660-cbbc94a299f8">
+      <name>Менеджер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Менеджер</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d0c58b60-30f3-4e8b-8244-d43b6be047af">
+      <name>ИтоговыйКоэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент общий</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bfa6fa14-486f-4f6e-88e3-77c647acdda8">
+      <name>КоэффициентОтВыручки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент от выручки</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9e256bc6-bc82-48c4-a377-4292b19c57cb">
+      <name>КоэффициентОтКонверсии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент от конверсии</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a3c77fc6-3c68-42b6-b027-5f08d95e499e">
+      <name>КоэффициентОтПотериЛидов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент от потери лидов</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="41eeca9c-a279-455b-90e6-d3c344dd45ed">
+      <name>КоэффициентОтКоммерческогоОтдела</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент от коммерческого отдела</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e92e305e-dd1c-4b0c-be11-50f5b90b2735">
+      <name>КоэффициентОтМаркетинговогоОтдела</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент от маркетингового отдела</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

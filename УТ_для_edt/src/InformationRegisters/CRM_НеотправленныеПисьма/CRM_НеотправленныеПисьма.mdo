@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3934c26d-80f4-4b3d-a31c-378092985bab">
+  <producedTypes>
+    <selectionType typeId="54b7da3e-8cac-45a0-ab11-dd946db801ce" valueTypeId="c00ddad8-684b-4eb0-a415-d71022a5859c"/>
+    <listType typeId="9379bde0-199d-4ff0-8730-95d9660ceba6" valueTypeId="949e8abe-f640-4e88-a982-7b254b38eab0"/>
+    <managerType typeId="4673ce3e-a245-4dcc-b58d-17da81c0745e" valueTypeId="a1bceae1-2b41-4451-8d13-45f854f8b132"/>
+    <recordSetType typeId="f79561f1-fde1-4e16-8dde-8587537a3760" valueTypeId="af63a9f0-facc-45df-ba0d-da9ca93501a5"/>
+    <recordKeyType typeId="1b0b1cd9-e6d3-4806-b7ba-2747c0c98581" valueTypeId="4d057dae-7200-4d18-9bd5-92354df46402"/>
+    <recordType typeId="bb8a444d-df4a-455f-8689-2fcfd9c421ed" valueTypeId="995ef433-c641-4aeb-abd3-3c8b14ebe68a"/>
+    <recordManagerType typeId="37d3cb51-5d46-43e8-b608-c744cbd6b1b7" valueTypeId="c30d35e9-fff6-4d4a-b2bc-2565ee688436"/>
+  </producedTypes>
+  <name>CRM_НеотправленныеПисьма</name>
+  <synonym>
+    <key>ru</key>
+    <value>Неотправленные письма</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Unsent letters</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="efdbb1fd-eea3-42de-8360-68f359231355">
+    <name>Итерация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Итерация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Iteration</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Итерация письма</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Mail iteration</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="50eadb12-3df7-4f5a-ba88-dd49c0ac3c56">
+    <name>ТекстОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Text of an error</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текст</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Text</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="b995a288-b657-47eb-8cac-8c61081b2266">
+    <name>Рассылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рассылка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mailing</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_РассылкаЭлектронныхПисем</types>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текст рассылки</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Text of mailing</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ce486443-899d-4479-9a40-8f2daea67233">
+    <name>Письмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Письмо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Letter</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текст письма</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>text of the letter</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b7963956-ec15-427e-8895-3cd49cb77283">
+  <producedTypes>
+    <selectionType typeId="23b3023d-e4f8-4d6e-8944-20defcb3bc78" valueTypeId="ded0dff0-6579-4f39-8d9b-bfa6bc68252a"/>
+    <listType typeId="3bde2f1e-98f7-4a69-9955-cdabf53c0c80" valueTypeId="a1f523fa-060c-48be-9820-da70f63adee9"/>
+    <managerType typeId="0eb1b7bd-e5b7-483e-b17f-b5eb587af094" valueTypeId="6c55a8cd-e0e4-4475-a34e-2221218d327e"/>
+    <recordSetType typeId="c7699d28-909e-4787-bd72-e433ffbd5f27" valueTypeId="b8241d23-dabc-4d35-8bf3-cbad5bd4b168"/>
+    <recordKeyType typeId="7ada7725-41d6-429f-a975-9e19efa10989" valueTypeId="e31cc7c9-f13b-42e5-850c-8227ba90f2ac"/>
+    <recordType typeId="0b6cc396-30b5-4e7f-b310-33b82dba477a" valueTypeId="efdb393f-074d-45ca-93c6-9dc65de46e43"/>
+    <recordManagerType typeId="68d1a832-6228-44e2-8989-8e78defe949a" valueTypeId="6638ba45-f0a9-49e1-b2cc-d6024cd5d0af"/>
+  </producedTypes>
+  <name>смартПереопределениеВариантовОтчетовПоУмолчаниюДляПользователей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Переопределение вариантов отчетов по умолчанию для пользователей (смарт)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5d7cb385-d874-4f59-ba36-a37121574883">
+    <name>ВариантОтчетаПереопределеяемый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант отчета переопределеяемый</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Отчет</name>
+      <field>InformationRegister.смартПереопределениеВариантовОтчетовПоУмолчаниюДляПользователей.Dimension.Отчет</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="111f2cf0-a891-4dab-9868-4268a7f6401b">
+    <name>Отчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИдентификаторыОбъектовРасширений</types>
+      <types>CatalogRef.ИдентификаторыОбъектовМетаданных</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1caa3b52-66cd-49c9-81a5-df7d493345ab">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4e0c4999-02ed-4cf8-8484-afefdb3ed916">
+    <name>ВариантОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант отчета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Отчет</name>
+      <field>InformationRegister.смартПереопределениеВариантовОтчетовПоУмолчаниюДляПользователей.Dimension.Отчет</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

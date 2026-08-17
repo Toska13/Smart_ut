@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c68bc07c-1d99-402b-ae6e-d73edbb7d831">
+  <producedTypes>
+    <objectType typeId="ce1c8b1b-1f70-41f8-9426-3bfea9f212fe" valueTypeId="3ae6d037-d20e-4026-9bee-f6c1332dea6d"/>
+    <refType typeId="2d34e588-f634-4894-ab68-1a14e3a5298d" valueTypeId="4ba55cd3-f485-4637-8d20-71d5ab89c7b5"/>
+    <selectionType typeId="9c421ecc-015a-4d01-99dd-288a17b5fb30" valueTypeId="8f643775-8d9c-4304-bdcf-0175a530d421"/>
+    <listType typeId="82a7da75-5353-4bd7-ab4f-bb9693501e66" valueTypeId="55ffabb6-1f04-4245-af31-4009e0664b6f"/>
+    <managerType typeId="4497afe8-6b4a-416a-bbab-64d6846dc9bf" valueTypeId="231b40b0-9b1c-4d3f-8ec3-3f04c3058cbd"/>
+  </producedTypes>
+  <name>смартШаблоныДанныхКонструктора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Шаблоны данных конструктора (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-2074 смарт: Фролов 15.04.2025 //Создание справочника Шаблоны данных конструктора.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартШаблоныДанныхКонструктора.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.смартШаблоныДанныхКонструктора.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартШаблоныДанныхКонструктора.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="2092eb38-718d-4b1f-b0ec-732bd60b9fb6">
+    <name>ФорматированныйТекст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форматированный текст</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="59e1d953-1d58-4b2d-aa07-0049ebeb38b1">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4a94268e-42fa-492f-93c2-fb1c2136613c">
+    <name>НазначениеДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение данных</value>
+    </synonym>
+    <comment>//++ #Б-3074 смарт: Фролов 18.04.2025 //ОСоздание справочника Шаблоны данных конструктора.</comment>
+    <type>
+      <types>CatalogRef.смартНазначениеДанныхКонструктора</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cc58944d-2b04-4ffa-89f2-d472f1b90f7a">
+    <name>СтрокаШаблона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка шаблона</value>
+    </synonym>
+    <comment>//++ #Б-3074 смарт: Фролов 18.04.2025 //ОСоздание справочника Шаблоны данных конструктора.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="63022dd8-5dd0-49d3-a928-82fbd08bb42f">
+    <name>ЧислоШаблона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Число шаблона</value>
+    </synonym>
+    <comment>//++ #Б-3074 смарт: Фролов 18.04.2025 //ОСоздание справочника Шаблоны данных конструктора.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f9a6e202-e4b0-43ee-b6e4-b8bae233f721">
+    <name>Базовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Базовый</value>
+    </synonym>
+    <comment>//++ #Б-3182 смарт: Фролов 23.04.2025 //Корректировка НСИ для конструктора КП.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7037307a-9cbe-442e-9213-34d66e02e34e">
+    <name>ГруппировкаПоТХ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группировка по ТХ</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СмартФильтрыНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ce51441a-a3fd-484d-a849-fb1e2a6f7c3c">
+    <name>ГруппировкаПоРеквизитуКонструктораОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группировка по реквизиту 'Конструктора оборудования'</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="8c761ffc-bf3f-4b68-8692-726fd2bb55d5">
+    <producedTypes>
+      <objectType typeId="20e4aa95-fc2f-4517-b7b1-9bbb5f719f84" valueTypeId="8e9e7958-c879-482d-bc3b-e62c69f8632f"/>
+      <rowType typeId="a2b76730-a0c9-411b-8178-267e92b29022" valueTypeId="43840700-f5da-4e3a-91fd-c3f0991b63d3"/>
+    </producedTypes>
+    <name>МногострочныйШаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Многострочный шаблон</value>
+    </synonym>
+    <attributes uuid="d1cb25f6-a50b-4ce6-9a69-6c426448c0fd">
+      <name>Колонка1</name>
+      <synonym>
+        <key>ru</key>
+        <value>Колонка 1</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+        <types>CatalogRef.смартШаблоныДанныхКонструктора</types>
+        <types>String</types>
+        <types>CatalogRef.смартКонструкторОборудования</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c83af5f2-4d6c-4277-92f2-47b27c0ab464">
+      <name>Колонка2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Колонка 2</value>
+      </synonym>
+      <comment>//++ #Б-3074 смарт: Фролов 18.04.2025 //ОСоздание справочника Шаблоны данных конструктора.</comment>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+        <types>CatalogRef.смартШаблоныДанныхКонструктора</types>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>CatalogRef.смартКонструкторОборудования</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="1fd9b826-5980-456e-a039-9fe944d937b2">
+      <name>Колонка3</name>
+      <synonym>
+        <key>ru</key>
+        <value>Колонка 3</value>
+      </synonym>
+      <comment>//++ #Б-3074 смарт: Фролов 18.04.2025 //ОСоздание справочника Шаблоны данных конструктора.</comment>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+        <types>CatalogRef.смартШаблоныДанныхКонструктора</types>
+        <types>String</types>
+        <types>CatalogRef.смартКонструкторОборудования</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9780c48f-2ec0-46ce-bfbb-26d7d631b6c5">
+      <name>Алгоритм</name>
+      <synonym>
+        <key>ru</key>
+        <value>Алгоритм</value>
+      </synonym>
+      <comment>//++ #Б-3182 смарт: Фролов 23.04.2025 //Корректировка НСИ для конструктора КП.</comment>
+      <type>
+        <types>CatalogRef.смартАлгоритмыКонструктора</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4efd3a68-4167-4cf9-b639-941a5daf1472">
+    <producedTypes>
+      <objectType typeId="c782fe01-9344-4e85-b832-caade97b4fa2" valueTypeId="2fb30dff-1add-4ffa-a8a7-a19da1c6a363"/>
+      <rowType typeId="bcd9f34c-8e00-4f03-a794-01072fcf57d3" valueTypeId="336d7ae5-0efc-448d-a216-b506e488d56e"/>
+    </producedTypes>
+    <name>Алгоритмы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Алгоритмы</value>
+    </synonym>
+    <attributes uuid="ef09b3b7-7f71-40dc-90a1-9adac1579dea">
+      <name>Алгоритм</name>
+      <synonym>
+        <key>ru</key>
+        <value>Алгоритм</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартАлгоритмыКонструктора</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="75c71253-e60b-424f-81c0-2ed6e271a599">
+    <producedTypes>
+      <objectType typeId="b3a1c942-4e89-443c-a220-3198551ce387" valueTypeId="4b5b8a57-9750-4597-ade4-bb148027562d"/>
+      <rowType typeId="42bed90e-85c8-4514-a2b7-f15ba6a71b76" valueTypeId="e2ed52c3-a437-4758-9714-7e7940835a23"/>
+    </producedTypes>
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <attributes uuid="5aaf4c6e-e3d0-4d09-9c37-b4582232df60">
+      <name>Оборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартКонструкторОборудования</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c7170025-401f-4a3d-a5c5-ceedded05266">
+    <producedTypes>
+      <objectType typeId="eb6f3ae7-7b07-4878-b949-27fba6d15373" valueTypeId="54fd996f-2f71-470d-90eb-c2672eba1556"/>
+      <rowType typeId="52ec366b-9057-4bff-a546-7351b10f4450" valueTypeId="02d87c85-68b3-4ff7-baaa-bb803d155b1b"/>
+    </producedTypes>
+    <name>ПредварительнаяПроверкаЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предварительная проверка</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <attributes uuid="c93d0126-dce8-4874-b953-b2920ebb2427">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="7475558b-be7f-4ea0-a241-09c34b51a24c">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="8cf096e1-748c-4248-9170-500955251b73">
+    <producedTypes>
+      <objectType typeId="0e5b5ebc-7964-463c-97db-29063ea54489" valueTypeId="2eb44b3d-7eac-4f3e-aa56-e83e5f21cf2b"/>
+      <rowType typeId="18213bd1-299b-4805-a7de-8631c895c669" valueTypeId="576a4b7d-4227-405d-b909-a35db3c6a59a"/>
+    </producedTypes>
+    <name>ДиагностикаЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Диагностика</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="abb5db5c-316a-4b0e-9812-8b5f4dfcd79f">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="528b26b1-aa9b-47dd-9170-8d31f24b48df">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c5a88849-1c56-4ff2-a491-20e5e30718de">
+    <producedTypes>
+      <objectType typeId="38e509a6-f3ec-4400-94f8-6d5a2a901c01" valueTypeId="c1f8cf41-0cb3-438a-b12a-5f33d468f985"/>
+      <rowType typeId="9721d148-b8cc-485e-8b3e-5e9282c31c68" valueTypeId="487b59be-15da-4385-828e-9f42dc4a0c86"/>
+    </producedTypes>
+    <name>ИнженернаяСлужбаЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженерная служба</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="af5bab02-cd79-4ba9-964f-4c12da3735c2">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d85887db-d6b1-4363-9120-8e530865eee6">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="c2cbbe56-4a5c-4094-93d1-935e20821ace">
+    <producedTypes>
+      <objectType typeId="b945fc88-40bf-4ccf-994d-1350cdf6cad2" valueTypeId="238c9828-d7ad-4ed2-8ae1-f883c9a51d71"/>
+      <rowType typeId="b87dcf95-3b4b-4837-97f7-d1e921e0318f" valueTypeId="caddc9e3-d483-473d-bfb7-eb4903bff506"/>
+    </producedTypes>
+    <name>ОККЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОКК</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2234aab4-f8f7-40f6-92c9-902192f1ac41">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="98deb189-5b3c-4bed-8198-7b409787ab32">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="66f05bd4-ef5b-4605-98bd-a4191ef40a4b">
+    <producedTypes>
+      <objectType typeId="c3c7260c-4ded-4c18-b28d-58046ef4b1bb" valueTypeId="f5807bb6-1028-4068-b296-0ec5b6b53f9d"/>
+      <rowType typeId="10409d0f-09a3-405f-9136-ea8b9399f6f2" valueTypeId="0d637d56-3511-4057-a55e-66092e87563f"/>
+    </producedTypes>
+    <name>ПредварительнаяПроверкаП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предварительная проверка</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="3a2c418d-e6af-474c-abbc-02810933a506">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9a11e7e9-a21b-4ef9-b15b-31f4ba8ce372">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f75a7729-58fa-4750-b341-9126633e05d1">
+    <producedTypes>
+      <objectType typeId="08afc06b-f815-406f-af8a-0a861b2b808d" valueTypeId="c121e528-9ebc-44a7-ad46-146b1594e969"/>
+      <rowType typeId="1a9d690b-4453-4bdd-bbf9-2097c2fdab49" valueTypeId="f050655a-09f6-4183-9c62-28f4d0e95e37"/>
+    </producedTypes>
+    <name>ДиагностикаП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Диагностика</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="411bb6eb-0443-4eac-bbac-daaec130d407">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cffe27bc-31ae-4a25-b170-ed6e055605b2">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="ab463a33-8400-464a-8117-c386f4ec2e0e">
+    <producedTypes>
+      <objectType typeId="5a7a4bd4-c33c-4b0e-bbda-d7f15718bbf3" valueTypeId="460539c8-6f55-4326-8dbf-3e28d6f73f6a"/>
+      <rowType typeId="e6bdc770-a9fb-4c5e-9447-2f76419a7067" valueTypeId="0e65d9a4-8eb5-444b-8ad4-549f4b088da8"/>
+    </producedTypes>
+    <name>ИнженернаяСлужбаП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженерная служба</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="943f3647-72de-43d1-973d-040f01735046">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="52de80eb-4706-4c25-9c3e-876f2afdaac9">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e500bec1-3505-43d8-bc90-40d8a93b4385">
+    <producedTypes>
+      <objectType typeId="ede22379-8a5f-4808-9b1b-b5ea3b0f7b73" valueTypeId="8986e1c3-ef89-4cd0-af0b-2ebba770ccdc"/>
+      <rowType typeId="94d88cfc-518a-4855-842e-c1911988ecd7" valueTypeId="3dcd8ae7-a56a-41c1-858d-4fb94f2f12b4"/>
+    </producedTypes>
+    <name>ОККП</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОКК</value>
+    </synonym>
+    <comment>//++ #Б-5892 смарт: Фролов 02.03.2026 //Создание механизма гибкой настройки ЗРР.</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="93150143-765c-49b9-8cc3-75500d1de4e1">
+      <name>ИмяРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя реквизита</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b40c6fdd-866f-41e4-b331-5a152dc0b469">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="2d95c053-acf7-46fd-bd37-ab340ad40d0d">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

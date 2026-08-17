@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="371e20e5-14ab-4bec-bf0c-d855c918ec18">
+  <name>CRM_ПрисоединенныйФайлОбъектПередУдалением</name>
+  <synonym>
+    <key>ru</key>
+    <value>Присоединенный файл объект перед удалением (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM attached files before deleting</value>
+  </synonym>
+  <comment>Присоединенный файл объект перед удалением (CRM)</comment>
+  <source>
+    <types>DefinedType.CRM_ПрисоединенныйФайлОбъект</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.CRM_ПрисоединенныеФайлыОбработчик</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9b5ed19d-e48e-447f-99b7-afc1f78260e5">
+  <producedTypes>
+    <objectType typeId="0e5854c7-029c-4522-9456-c1d70f96526f" valueTypeId="bae6257c-162c-45df-9265-acb740043f4d"/>
+    <refType typeId="f83741df-2e1b-45c1-8c4a-e6d6c6716fb8" valueTypeId="b588db5c-c753-4442-807b-ddddadee2006"/>
+    <selectionType typeId="7ad5cdf2-c94b-4a4b-9e77-6f8382c4670a" valueTypeId="69bb08be-e7b9-43fe-bc44-88399c46682f"/>
+    <listType typeId="2c566dd5-230f-4c15-a5c5-ab154325b76a" valueTypeId="b2aebab6-952e-4cd6-83d4-5cb6a4a89492"/>
+    <managerType typeId="a1d05737-7f1c-4289-b48f-775523a989fc" valueTypeId="246f5448-bee5-4d0d-bab9-ed8c9adc980b"/>
+  </producedTypes>
+  <name>CRM_ОтчетОРаботе</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет о работе</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Timesheet</value>
+  </synonym>
+  <comment>Не переносить в спарку с УНФ, анализировать изменения, нужные переносить в документ УчетВремени</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.CRM_ОтчетОРаботе.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата документа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Document date</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер документа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Document Number</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <listPresentation>
+    <key>ru</key>
+    <value>Отчеты о работе</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Operation Reports</value>
+  </listPresentation>
+  <explanation>
+    <key>ru</key>
+    <value>Подразделение</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>Department</value>
+  </explanation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.CRM_ОтчетОРаботе.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.CRM_ОтчетОРаботе.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.CRM_РабочееВремя</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="a7391a7f-f55a-45e7-b46f-9bef3a0bc6ab">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Author</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Автор отчета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Report author</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1257456c-0a89-4055-adfc-f148c1aab2f8">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Department</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение сотрудника</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Department of the employee</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c02f18bf-5bab-4542-8f71-3b88799fe8ce">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Комментарий отчета отчета о работе</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Comment of report of report on operation</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b32dc223-d9bc-471e-abce-2993bd98c3ec">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сотрудник, который отчитывается по выполненным работам</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The employee which reported on the executable operations</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a824db11-0908-4da1-98ed-995358bb411c">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало отчетного периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Beginning of the account period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period start</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4e997403-6b1e-4983-bc2a-d093df994e2f">
+    <name>КонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец отчетного периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End of the account period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period end</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="74580be6-cbb5-41f7-8d7e-fc30ee4202dc">
+    <name>СуммаЧасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма часов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Total of hours</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма часов  отчета о работе</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Total of hours of report on operation</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="dfa17fe2-dee0-4123-b970-f5e77808806b">
+    <name>АдресХранилищаФайлов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища файлов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>File repository address</value>
+    </synonym>
+    <comment>Служебный реквизит, используется для механизма шаблонов</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Адрес хранилища файлов отчета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Report file repository address</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3559348e-5328-4fa8-a6e1-3172606443cb">
+    <name>Шаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Template</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ШаблоныОбъектов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Шаблон отчета о работе</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Job Report Template</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c67b9644-4fb7-4734-ac4a-45f7186679c2">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the document</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7a7bdea4-d8b6-4f98-8ad6-3c53f0793889">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="43da15b2-8810-444b-8d1d-5225a2cd1ae1">
+    <producedTypes>
+      <objectType typeId="b994717a-9751-4b54-970f-fb2cb1bf4521" valueTypeId="7eaf51cf-0287-4bef-b33d-15f92c0f096f"/>
+      <rowType typeId="ed35a4e4-9c15-47b9-a6ff-adc5a5c9fa11" valueTypeId="06abffe9-fccc-4b04-ab52-d4dbeb5b401e"/>
+    </producedTypes>
+    <name>СтрокиОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строки отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lines of report</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="d137e3de-3316-4d18-8a5c-289fd6524fef">
+      <name>ДатаР</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата работ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date of operations</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата работ отчета</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Date of operations of report</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="bea45ce4-1019-4323-8292-6a02921adc4c">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Project</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Проект отчета</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Project of report</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="71e77dc2-0a11-4a53-95bd-2f8aeb79ccf6">
+      <name>Этап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.CRM_ЭтапыПроектов</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап отчета</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Stage of report</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <field>Document.CRM_ОтчетОРаботе.TabularSection.СтрокиОтчета.Attribute.Проект</field>
+      </choiceParameterLinks>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c6887ddb-6334-40c8-bc34-88936845c62c">
+      <name>Часов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Часов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>hours</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Продолжительность работ в часах</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Duration of operations in hours</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c860fd56-d7b6-4578-a92f-5f170c8626da">
+      <name>ПодразделениеРабот</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Department</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение отчета отчета о работе</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Department of report of report on operation</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4ab91ab5-77fe-4d45-a28f-f83ac8e55b72">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Comment</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Комментарий строки</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Comment of line</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <commands uuid="701f9815-4678-4da8-8e59-a732a1e6e8f0">
+    <name>ОткрытьФормуСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчеты по работе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Timesheets</value>
+    </synonym>
+    <group>CommandGroup.CRM_Проекты1Документы</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Document>

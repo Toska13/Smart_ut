@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2c36317f-fa7f-483a-98f5-41636c1e7321">
+  <name>CRM_СинхронизацияiCRMРегистрацияНабора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация iCRM регистрация набора (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Synchronization CRMRegistration</value>
+  </synonym>
+  <comment>Синхронизация iCRM регистрация набора (CRM)</comment>
+  <source>
+    <types>InformationRegisterRecordSet.ЦеныНоменклатуры</types>
+    <types>InformationRegisterRecordSet.КурсыВалют</types>
+    <types>InformationRegisterRecordSet.CRM_СостоянияИнтересов</types>
+    <types>InformationRegisterRecordSet.CRM_ЗапланированныеАктивности</types>
+    <types>InformationRegisterRecordSet.КонтактыВзаимодействий</types>
+    <types>InformationRegisterRecordSet.СостоянияПредметовВзаимодействий</types>
+    <types>InformationRegisterRecordSet.ПредметыПапкиВзаимодействий</types>
+    <types>InformationRegisterRecordSet.СостоянияКонтактовВзаимодействий</types>
+    <types>InformationRegisterRecordSet.CRM_ЗадачиПользователей</types>
+    <types>InformationRegisterRecordSet.CRM_СобытияКалендаря</types>
+    <types>InformationRegisterRecordSet.РучныеИзмененияГрафиковРаботы</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_СинхронизацияСiCRMНовый.CRM_СинхронизацияiCRMРегистрацияРегистрыПередЗаписью</handler>
+</mdclass:EventSubscription>

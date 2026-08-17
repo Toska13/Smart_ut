@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d456ee2b-596a-4517-b78f-7377a3887ce7">
+  <name>shop</name>
+  <synonym>
+    <key>ru</key>
+    <value>Shop</value>
+  </synonym>
+  <comment>Сервис для получения различных данных сайтом из 1С</comment>
+  <rootURL>shop</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="64977964-bbd6-4eb2-bea0-c72c72d4f609">
+    <name>stock</name>
+    <synonym>
+      <key>ru</key>
+      <value>Stock</value>
+    </synonym>
+    <comment>Сервис для получения сайтом остатков номенклатуры из 1С</comment>
+    <template>/stock</template>
+    <methods uuid="1679f3c7-16ce-4eed-87c1-755285f7e857">
+      <name>stockPOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>Stock POST</value>
+      </synonym>
+      <comment>Точка входа для получения остатков номенклатуры по складам из 1С</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>stockPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0e279e14-a720-4293-b4fe-10296a4de6bb">
+    <name>new_contragents</name>
+    <synonym>
+      <key>ru</key>
+      <value>New contragents</value>
+    </synonym>
+    <comment>Сервис получения новых контрагентов с сайта</comment>
+    <template>/new_contragents</template>
+    <methods uuid="e0bd7359-7327-47d8-921e-9a2d500cc392">
+      <name>new_contragentsPOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>New contragents POST</value>
+      </synonym>
+      <comment>Точка входа для получения уведомления о создании на сайте нового контрагента</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>new_contragentPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8d7c81a8-efbd-4476-b7bc-67a204ec1d6e">
+    <name>users</name>
+    <synonym>
+      <key>ru</key>
+      <value>Users</value>
+    </synonym>
+    <comment>Сервис для получения новых пользователей с сайта</comment>
+    <template>/users</template>
+    <methods uuid="1f192000-7c02-44ad-94ac-b5c9f82f114a">
+      <name>usersPOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>Users POST</value>
+      </synonym>
+      <comment>Точка входа для получения пользователей с сайта</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>usersPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="076bada7-e891-462f-b9be-e94177af621d">
+    <name>order</name>
+    <synonym>
+      <key>ru</key>
+      <value>Order</value>
+    </synonym>
+    <comment>Сервис для инициализации обмена Заказами со стороны сайта</comment>
+    <template>/order</template>
+    <methods uuid="2df6cd2c-5cdb-4a68-ab9a-4e91b9aad6dc">
+      <name>orderPOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>Order POST</value>
+      </synonym>
+      <comment>Точка входа для информирования, что на сайте создан Заказ</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>orderPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7f4dfc80-6263-4049-a10a-0934ae35ea9c">
+    <name>payments_customer</name>
+    <synonym>
+      <key>ru</key>
+      <value>Payments customer</value>
+    </synonym>
+    <comment>Сервис для получения сайтом взаиморасчетов с клиентами</comment>
+    <template>/payments_customer</template>
+    <methods uuid="12af14b9-5889-4a68-bcba-cdf3697aacb4">
+      <name>payments_customer</name>
+      <synonym>
+        <key>ru</key>
+        <value>Payments customer</value>
+      </synonym>
+      <comment>Точка входа  для получения сайтом взаиморсчетов с клиентами</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>payments_customerPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="fbb98d5e-a15b-49e9-915e-391a0767a6c7">
+    <name>new_subscribe</name>
+    <synonym>
+      <key>ru</key>
+      <value>New subscribe</value>
+    </synonym>
+    <comment>Сервис получения нового статуса рассылки</comment>
+    <template>/new_subscribe</template>
+    <methods uuid="edda5d6c-744f-43fa-a9d9-e99aef1f355a">
+      <name>new_subscribePOST</name>
+      <comment>Точка входа для получения уведомления о изменении на сайте состояния подписки</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>new_subscribePOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0cd2eba2-55b4-46bf-a6d2-e6858c78d96b">
+    <name>order_offer</name>
+    <synonym>
+      <key>ru</key>
+      <value>Order offer</value>
+    </synonym>
+    <comment>Сервис для получения сайтом оферты заказа из 1С #1311 смарт: Лопато 03.04.2023 //Изменить форму Счета на оплату (Счет-оферта)</comment>
+    <template>/order_offer</template>
+    <methods uuid="a8363b4d-821f-4e33-976e-80ad553e6d14">
+      <name>order_offerPOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>Order offer POST</value>
+      </synonym>
+      <comment>Точка входа для получения сайтом оферты заказа из 1С #1311 смарт: Лопато 03.04.2023 //Изменить форму Счета на оплату (Счет-оферта)</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>order_offerPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a381062e-d7fc-4d2e-ad0b-2c43acdab497">
+    <name>invoice</name>
+    <synonym>
+      <key>ru</key>
+      <value>Invoice</value>
+    </synonym>
+    <comment>Сервис для получения печатной формы счета </comment>
+    <template>/invoice</template>
+    <methods uuid="4a5bea9b-602f-4345-9e6a-0a528b1800e2">
+      <name>invoicePOST</name>
+      <synonym>
+        <key>ru</key>
+        <value>Invoice POST</value>
+      </synonym>
+      <comment>Точка входа для получения печатной формы счета на оплату</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>invoicePOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="116208c0-f62f-456e-a025-d05bbea1f074">
+    <name>GetSalesInfo</name>
+    <synonym>
+      <key>ru</key>
+      <value>GetSalesInfo</value>
+    </synonym>
+    <comment>#Б-1652 смарт: Лопато 18.12.2024 //Добавить раздел &quot;Мое оборудование&quot;. Создать ветку API, подготовить структуру ответа</comment>
+    <template>/getsalesinfo</template>
+    <methods uuid="2adf0c65-d4bd-4ab6-bf8f-5a874217336f">
+      <name>GetSalesInfo</name>
+      <synonym>
+        <key>ru</key>
+        <value>GetSalesInfo</value>
+      </synonym>
+      <comment>#Б-1652 смарт: Лопато 18.12.2024 //Добавить раздел &quot;Мое оборудование&quot;. Создать ветку API, подготовить структуру ответа</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>GetSalesInfo</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

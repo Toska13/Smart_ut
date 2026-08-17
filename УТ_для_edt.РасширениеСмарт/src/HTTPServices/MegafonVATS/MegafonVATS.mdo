@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="279b1e6c-fcce-46a3-9d92-a57412562d87">
+  <name>MegafonVATS</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВАТС Мегафон (смарт)</value>
+  </synonym>
+  <comment>#1359 Балашов</comment>
+  <rootURL>crm_integration</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="57395806-f53a-42ba-8600-911695707d3d">
+    <name>event</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event</value>
+    </synonym>
+    <template>/*</template>
+    <methods uuid="fada8502-8a45-46c7-bd98-8afa8821bc7c">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>eventPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Основной</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Серия</dataPath>
+			<field>Серия</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КодСтроки</dataPath>
+			<field>КодСтроки</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНаСборку</dataPath>
+			<field>ЗаказНаСборку</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипСборки</dataPath>
+			<field>ТипСборки</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНаСборкуДата</dataPath>
+			<field>ЗаказНаСборкуДата</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗаказыНаСборку.ЗаказНаСборку КАК ЗаказНаСборку,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата КАК Дата,
+	СУММА(ЗаказыНаСборку.ЗаказаноОстаток) КАК ЗаказаноОстаток
+ПОМЕСТИТЬ ВТЗаказыНаСборкуОстатки
+ИЗ
+	РегистрНакопления.ЗаказыНаСборку.Остатки(, ЗаказНаСборку.Дата &lt;= &amp;ДатаСозданияЗаказа) КАК ЗаказыНаСборку
+
+СГРУППИРОВАТЬ ПО
+	ЗаказыНаСборку.ЗаказНаСборку,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказыНаСборку.ЗаказНаСборку КАК ЗаказНаСборку,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата КАК Дата
+ИЗ
+	РегистрНакопления.ЗаказыНаСборку.Остатки(
+			,
+			ЗаказНаСборку.Дата &lt;= &amp;ДатаСозданияЗаказа
+				И ЗаказНаСборку.ДокументОснование В (НЕОПРЕДЕЛЕНО, ЗНАЧЕНИЕ(Документ.смартЗаявкаНаГарантийныйРемонт.ПустаяСсылка), ЗНАЧЕНИЕ(Документ.смартЗаявкаНаРемонтныеРаботы.ПустаяСсылка), ЗНАЧЕНИЕ(Документ.смартЗаявкаНаРазборкуОборудования.ПустаяСсылка), ЗНАЧЕНИЕ(Задача.ЗадачаИсполнителя.ПустаяСсылка), ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка))) КАК ЗаказыНаСборку
+{ГДЕ
+	ЗаказыНаСборку.ЗаказНаСборку.*,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата}
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ЗаказыНаСборку.ЗаказНаСборку,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата
+ИЗ
+	РегистрНакопления.ЗаказыНаСборку.Остатки(
+			,
+			ЗаказНаСборку.Дата &lt;= &amp;ДатаСозданияЗаказа
+				И ЗаказНаСборку.ДокументОснование ССЫЛКА Документ.ЗаказКлиента
+				И НЕ ЗаказНаСборку.ДокументОснование = ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка)) КАК ЗаказыНаСборку
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияЗаказовКлиентов КАК СостоянияЗаказовКлиентов
+		ПО ЗаказыНаСборку.ЗаказНаСборку.ДокументОснование = СостоянияЗаказовКлиентов.Заказ
+ГДЕ
+	(НЕ ЗаказыНаСборку.ЗаказНаСборку.ДокументОснование.Проведен
+			ИЛИ СостоянияЗаказовКлиентов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказовКлиентов.Закрыт))
+{ГДЕ
+	ЗаказыНаСборку.ЗаказНаСборку.*,
+	ЗаказыНаСборку.ЗаказНаСборку.Дата}
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ВТЗаказыНаСборкуОстатки.ЗаказНаСборку,
+	ВТЗаказыНаСборкуОстатки.Дата
+ИЗ
+	ВТЗаказыНаСборкуОстатки КАК ВТЗаказыНаСборкуОстатки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ЗаказНаСборку.Товары КАК ЗаказНаСборкуТовары
+		ПО ВТЗаказыНаСборкуОстатки.ЗаказНаСборку = ЗаказНаСборкуТовары.Ссылка
+{ГДЕ
+	ВТЗаказыНаСборкуОстатки.ЗаказНаСборку.*,
+	ВТЗаказыНаСборкуОстатки.Дата}
+
+СГРУППИРОВАТЬ ПО
+	ВТЗаказыНаСборкуОстатки.ЗаказНаСборку,
+	ВТЗаказыНаСборкуОстатки.Дата
+
+ИМЕЮЩИЕ
+	СУММА(ЗаказНаСборкуТовары.КоличествоУпаковок) = МАКСИМУМ(ВТЗаказыНаСборкуОстатки.ЗаказаноОстаток)
+
+УПОРЯДОЧИТЬ ПО
+	Дата</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КОНЕЦПЕРИОДА(ТекущаяДата(), "ДЕНЬ")</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаСозданияЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата создания заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КоличествоДнейСМоментаСозданияЗаказа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество дней с момента создания заказа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>АдресEmailДляРассылки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Email для рассылки</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>100</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>КоличествоРабочихДнейДоПредупреждения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество рабочих дней до предупреждения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>3</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказНаСборку</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаказНаСборку.Ответственный</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

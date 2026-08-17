@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d78b285b-92d6-4d03-ad93-3af5c7bdea9f">
+  <producedTypes>
+    <objectType typeId="2e717050-1989-434c-864b-3f317f1942ea" valueTypeId="37566eaf-b974-4748-b47c-e4190d5727a5"/>
+    <managerType typeId="86e3e9a9-0406-4983-b2d4-2a86000f9799" valueTypeId="8bfee425-785b-4060-baea-fb687b99f6ad"/>
+  </producedTypes>
+  <name>CRM_КонвертацияВзаимодействий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Конвертация взаимодействий (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Interaction Conversion (CRM)</value>
+  </synonym>
+  <comment>Конвертация документов Встреча, Телефонный звонок и Запланированное взаимодействие во Взаимодействия CRM</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_КонвертацияВзаимодействий.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="6307e207-bae2-4d1a-9ba7-be53e1378d72">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2c7d04c1-6c3c-46e0-9822-075742aadba0">
+    <name>ВидВзаимодействияВстречи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид взаимодействия для Встреч</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of interaction for Meetings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыВзаимодействий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="994c2430-d012-4a23-894d-b96b728f711a">
+    <name>ВидВзаимодействияЗвонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид взаимодействия для Звонков</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interaction type for Calls</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыВзаимодействий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="90d16545-5bee-4243-98e0-6019429d60b9">
+    <name>ВидВзаимодействияПрочееВзаимодействие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид взаимодействия для Прочих</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of interaction for Other</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыВзаимодействий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <forms uuid="bbefd5c8-452a-4ff0-9610-0cb4e6508405">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

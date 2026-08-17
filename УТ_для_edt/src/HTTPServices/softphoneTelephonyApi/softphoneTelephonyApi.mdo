@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f6ada5c7-49d4-4ad5-b9c5-8a0b148bbf84">
+  <name>softphoneTelephonyApi</name>
+  <synonym>
+    <key>en</key>
+    <value>vats ITooLabs</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>softphone Telephony Api</value>
+  </synonym>
+  <comment>Сервис Телефонии</comment>
+  <rootURL>telephony-api</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="bd4ee38b-6ca2-43da-85c5-42c1d8aa5b89">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="cf15866c-1f69-4286-95bc-2cb2ab8a5ee7">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="becfc789-59e5-4750-b40e-56ef2d99828c">
+    <name>itoolabsEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Itoolabs event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Itoolabs event</value>
+    </synonym>
+    <template>/itoolabs/*</template>
+    <methods uuid="5d9b9c45-a37f-4d2f-a4cf-88b07e5e8c12">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>itoolabsEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b06ff0f0-7249-4f78-9430-76fd9154c56f">
+    <name>beelineEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Beeline event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Beeline event</value>
+    </synonym>
+    <template>/beeline/*</template>
+    <methods uuid="0be99c3e-d19a-434e-be34-589b4f749944">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>beelineEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4333fb9c-41e7-46e3-984d-dd3017728184">
+    <name>mangoEventsCall</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mango events call</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mango events call</value>
+    </synonym>
+    <template>/mango/events/call</template>
+    <methods uuid="31fe0180-07af-48f9-966d-68bd5a5ccc03">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>mangoEventsCallPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="872d7081-4b0f-49eb-ad2c-0b38cc983df8">
+    <name>mangoEventsRecording</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mango events recording</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mango events recording</value>
+    </synonym>
+    <template>/mango/events/recording</template>
+    <methods uuid="3ab1513f-789a-497a-8b10-75cb2ef13730">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>mangoEventsRecordingPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b2525328-2d97-4a4b-a16a-6bce6bcf9d10">
+    <name>mttEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Mtt event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Mtt event</value>
+    </synonym>
+    <template>/mtt/*</template>
+    <methods uuid="e4d87b59-5dea-41ff-a271-bdc40ef169c2">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>mttEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1fe24ad9-208d-473a-9a1a-3d3cbfdb01bf">
+    <name>webmoduleEventsCall</name>
+    <synonym>
+      <key>ru</key>
+      <value>Webmodule events call</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Webmodule events call</value>
+    </synonym>
+    <template>/webmodule/events/call</template>
+    <methods uuid="6f87e8a2-d303-4203-a648-2774af54641b">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>webmoduleEventsCallPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c7a3971f-dad0-41ac-8f3d-816fd640dbf8">
+    <name>webmoduleEventsRecording</name>
+    <synonym>
+      <key>ru</key>
+      <value>Webmodule events recording</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Webmodule events recording</value>
+    </synonym>
+    <template>/webmodule/events/recording</template>
+    <methods uuid="3168bd3d-4b5c-4559-943c-82b01898a8b8">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>webmoduleEventsRecordingPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="afd2677a-048b-4636-a306-fa94cf9646b4">
+    <name>yandexEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Yandex event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Yandex event</value>
+    </synonym>
+    <template>/yandex/*</template>
+    <methods uuid="297c90a7-eea4-4448-ab68-bb633f18530a">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>yandexEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="01200834-94a1-4ad3-ab25-001031dd25df">
+    <name>uisEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>Uis event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Uis event</value>
+    </synonym>
+    <template>/uis/*</template>
+    <methods uuid="17c1b093-6804-474d-a761-72d99b4670e7">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>uisEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="83e2dbcb-b867-440c-8ed5-ac09661d9cb8">
+    <name>rtEvent</name>
+    <synonym>
+      <key>ru</key>
+      <value>RT Event</value>
+    </synonym>
+    <template>/rt/call_events</template>
+    <methods uuid="f7c062d8-6003-4d82-83b4-d221d426e9a6">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>rtEventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="590f7383-c629-47a6-99ba-c43adcc26e78">
+    <name>calltrackingWebhook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Calltracking webhook</value>
+    </synonym>
+    <template>/calltracking</template>
+    <methods uuid="97d56fea-3cc9-45fa-8c03-d5bf4eb03d08">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>calltrackingWebhookGET</handler>
+    </methods>
+    <methods uuid="f500ffbe-8d0a-4096-850b-580668aaf6bc">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>calltrackingWebhookPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c2a4cb2a-91af-4dbe-b2e9-f4c0fc0bb269">
+  <producedTypes>
+    <selectionType typeId="8f45413c-e1c1-4163-aef5-b18bd775998a" valueTypeId="b8d0e56d-764c-4cd4-8897-036a53f016ab"/>
+    <listType typeId="700b059c-90c4-400b-b2b7-aba656d3ddd6" valueTypeId="8fd82e61-847b-4175-b331-3161d20fe5da"/>
+    <managerType typeId="f95267cf-edc0-4576-8816-334ecb9cdbdd" valueTypeId="89cd6b62-f5c3-4c1f-971a-fd4cdfdf637b"/>
+    <recordSetType typeId="465f1ac1-39a4-4419-b63f-344d4e86b868" valueTypeId="a7b89d7b-2e9e-4074-ad3a-241929705112"/>
+    <recordKeyType typeId="574a4dd5-f45d-424d-be2d-5bf3668cf1ac" valueTypeId="0ac6175c-d006-4d3c-9480-5319dc06783d"/>
+    <recordType typeId="4c5203ae-c47d-4b3e-84d1-c4919e5e9850" valueTypeId="837c12fa-5794-4f4b-a3be-26d312142846"/>
+    <recordManagerType typeId="3969bf58-7338-44ba-bcc8-b1d031a26901" valueTypeId="7c7b0530-8dd4-4bb5-bccb-42f6984d2ec6"/>
+  </producedTypes>
+  <name>смартТарифыНаДоставку</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тарифы на доставку</value>
+  </synonym>
+  <comment>//++ #Б674 смарт: Шляпников 25.03.2025 / Отчет по кол-ву платных доставок, ИТСМ 1959</comment>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f5b94f2d-8f3a-447d-9f33-7c991635aec7">
+    <name>СкидкаНаценка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скидка наценка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СкидкиНаценки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7ece9534-52b2-4d40-9a84-cbd409903fff">
+    <name>СтоимостьДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость доставки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cea35137-8caf-4c7f-98c2-92b310fbccf0">
+    <name>НеИспользуется</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не используется</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="16a59e7e-2929-4c5a-9a15-adecb8594034">
+    <name>Регион</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c1765786-9654-4c11-acd3-1151a14659d2">
+    <name>СуммаЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма заказа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8e107909-b258-4180-a525-0cf6ae1fed71">
+    <name>ВесЗаказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вес заказа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d5f6e38b-700c-416f-bbc5-52d1476ad302">
+    <name>Город</name>
+    <synonym>
+      <key>ru</key>
+      <value>Город</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="01ffa611-c29c-40b2-9d9b-7f0933cb939d">
+    <name>Расстояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расстояние</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c28cb169-9ced-4546-ab1a-9cba40bf1e70">
+    <name>СегментКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент клиента</value>
+    </synonym>
+    <comment>//++ #Б5448 смарт: Шляпников 23.01.2026 / Документ Заказ клиента. Установка тарифа доставки для приоритетных клиентов.</comment>
+    <type>
+      <types>CatalogRef.СегментыПартнеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <commands uuid="ab42c089-0907-4278-af8e-bdce7d7e259b">
+    <name>ТарифыНаДоставку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тарифы на доставку</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

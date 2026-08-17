@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc20ae45-ca54-4d53-9ba7-943e807664b7">
+  <producedTypes>
+    <selectionType typeId="a24df3dc-a3e8-42f4-8beb-a2437f1e2670" valueTypeId="aff7bf37-b1f8-472e-9e15-314204ec6ef6"/>
+    <listType typeId="ec2936ff-3261-42da-b759-9d8d9ef1a7d2" valueTypeId="be2d59f9-6cc7-44e7-85db-20a42d2f1b73"/>
+    <managerType typeId="1ab47e51-918b-45c8-a4dd-3279a87b33ad" valueTypeId="19c5ce8a-e05c-409d-aa2e-2d17af26d7d1"/>
+    <recordSetType typeId="d8b1d8f0-eb19-4db7-9d3c-124395ed8663" valueTypeId="bf48a70e-8365-4ce4-a84f-c4f3857c2469"/>
+    <recordKeyType typeId="7c6a2478-844f-4065-8f18-6fb11a82dc06" valueTypeId="c01fac06-81c3-4f31-a0a2-383b65181955"/>
+    <recordType typeId="406782b4-22e2-4c88-af75-095a62abba46" valueTypeId="a06b4228-749a-4290-9cd6-4cfad42149c5"/>
+    <recordManagerType typeId="2474fdf3-16ca-4e72-b317-c22e6625e41d" valueTypeId="be924fab-6034-485a-a58a-06d6c0c8611f"/>
+  </producedTypes>
+  <name>смартВходящиеСобытияВзаимодействий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Входящие события взаимодействий (смарт)</value>
+  </synonym>
+  <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="de4f5c35-f42c-4eee-b5de-303facf57ccb">
+    <name>Данные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="cecbb698-49cb-4b8d-b240-1cc43cc5113b">
+    <name>Обработано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработано</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="e7469e6c-badc-4523-9709-7c4f66aca0e3">
+    <name>КемОбработано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кем обработано</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0952625c-5228-4ffb-8800-fc1481d3adaa">
+    <name>КогдаОбработано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Когда обработано</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="3f97a95f-8c8f-49ab-b6de-1143bd364674">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <comment>#1789 смарт: Ермаков 22.04.2024 / Доработка механизма оповещений менеджеров.	</comment>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f94d5fcc-0b07-4deb-a491-87ab3c12faa6">
+    <name>ВидСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид события</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>EnumRef.смартВидыСобытийВзаимодействий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7f1dda1d-2a58-4102-83c5-dcb9f7c53cb6">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="51beca50-ab26-4c53-8e67-239ee9180ed6">
+    <name>ИдентификаторСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор события</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="011e3167-0cb8-4035-8878-37266586d3cc">
+    <name>ФормаСобытияСозданиеДокументаИнтерес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма события (создание документа интерес)</value>
+    </synonym>
+    <comment>#1760 смарт: Ермаков 12.04.2024 / Создание механизма оповещений менеджеров о назначенных Интересах.</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

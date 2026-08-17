@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="efb4495f-a026-4a00-88f7-aca070baf383" extendedConfigurationObject="041da5e8-eb95-4ff3-ae40-9b24fce14854">
+  <producedTypes>
+    <selectionType typeId="f1a39111-ab79-415e-8141-982d0ce7da3b" valueTypeId="fda3075b-3d47-45ec-8f76-a78aed113a13"/>
+    <listType typeId="9f9f8c75-0736-4203-bfff-9a0ae83ebbc2" valueTypeId="8981a920-eda7-4087-b978-65961388f10a"/>
+    <managerType typeId="6d54532b-498e-4e65-b44b-b6f620b91d1b" valueTypeId="a906f8ee-d3bf-4778-b89b-094a39ca2fa3"/>
+    <recordSetType typeId="bcbf779a-0e25-4512-b155-482fd457e28e" valueTypeId="5aee4b1b-faf1-4b2f-a480-7e6c86a8f7f8"/>
+    <recordKeyType typeId="69262415-b5c4-4c3f-9286-a60ed873c9ab" valueTypeId="803722df-ff11-40ef-afbe-b685beba8056"/>
+    <recordType typeId="5cbdf0f3-94c8-4ccc-a46b-8ec368c47bfd" valueTypeId="4657d96e-ca39-48c2-af6e-150697c25dfd"/>
+    <recordManagerType typeId="977cd7d0-f9ce-4266-9887-043d073d25ea" valueTypeId="2348b621-a160-438d-b1db-69a3ad78520d"/>
+  </producedTypes>
+  <name>СмартСтатусОтслеживаниеОтправления</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:InformationRegisterExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <informationRegisterPeriodicity>Checked</informationRegisterPeriodicity>
+    <writeMode>Checked</writeMode>
+  </extension>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <attributes uuid="c717e15a-cc00-49e0-b25c-a6ed002cbf11" extendedConfigurationObject="1b687659-84e2-4e63-9593-84762a9f969b">
+    <name>СтатусЗадания</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.СтатусыЗаданийНаПеревозку</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <attributes uuid="86acdabd-ff2d-4825-9b58-f0f4eb08d99f" extendedConfigurationObject="e65ef157-c3f0-422e-bed6-9c90b04800cb">
+    <name>ТрекНомер</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>String</type>
+        </types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <dimensions uuid="15d0135f-b89a-492e-8c2d-a4c8203d3608" extendedConfigurationObject="9b865b07-7fef-4cb9-9a04-411cc62c0642">
+    <name>ЗаданиеНаПеревозку</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>DocumentRef.ЗаданиеНаПеревозку</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="bd42c8c6-09e5-467e-81c6-a0c43068fc83" extendedConfigurationObject="dd9ab401-f19d-4fee-89d6-0cbb7ccdc6ea">
+    <name>Заказ</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>DocumentRef.ЗаказКлиента</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+</mdclass:InformationRegister>

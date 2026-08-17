@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78ace1e4-8f2b-494b-b755-85a62af39e94">
+  <producedTypes>
+    <selectionType typeId="09c8f1f6-0376-4c97-a692-586db51fffcb" valueTypeId="328f9c5e-751f-4142-bf88-134fae1c5316"/>
+    <listType typeId="0e1141cb-86a5-431b-b17f-701c2c95b521" valueTypeId="0cef9aeb-c49c-483c-88d1-818ebbc90582"/>
+    <managerType typeId="03a930ee-88ea-48b5-bdbd-4bc2ef954654" valueTypeId="d48e6360-92de-4246-a9c4-1bfd3e51118e"/>
+    <recordSetType typeId="76faa87d-8b74-44e7-b683-ea77790857fc" valueTypeId="d6cc16f0-8549-44f3-b27b-f17a1dc44d57"/>
+    <recordKeyType typeId="51b2051a-f845-43e0-a467-28c87a37deb3" valueTypeId="b854280a-88ff-47ea-b686-238bc80602c9"/>
+    <recordType typeId="41f07cc5-c1e5-4cd0-9314-3ab127c6233c" valueTypeId="6f10a3e2-2246-43e3-991b-e91755a8ff7b"/>
+    <recordManagerType typeId="11b10ab9-0acd-4c2c-8024-736bb6429ae7" valueTypeId="50ad8fcc-24fc-4771-91cc-e7ca57887c23"/>
+  </producedTypes>
+  <name>смартАналогиНоменклатуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аналоги номенклатуры (смарт)</value>
+  </synonym>
+  <comment>//++ #1646 смарт: Мосолов 20.02.2024 // Контроль разобранного оборудования и снятых запчастей</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартАналогиНоменклатуры.Form.ФормаЗаписи</defaultRecordForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="71bd2484-57d5-4ce6-a54b-9dd2cf0f8c59">
+    <name>Примечание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Примечание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>512</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="d60966bb-9f01-478f-96df-fbf1c76b8624">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6e516d61-25e2-42ec-8337-99cf98eb8521">
+    <name>НоменклатураАналог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура аналог</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="49c2f329-a048-4877-8319-781e4361d68f">
+    <name>ФормаВыбораАналога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора аналога</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5f38cc88-d58a-4bb6-85cc-a0e5c3fc61fc">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

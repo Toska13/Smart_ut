@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e00bb06-fb76-48e0-b6af-f8996d6c84fa">
+  <name>CRM_УстановитьПометкуУдаленияПрисоединенныхФайловБизнесПроцессаИЗадачи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить пометку удаления присоединенных файлов бизнес процесса и задачи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Set deletion mark for attached files catalogs</value>
+  </synonym>
+  <comment>Установить пометку удаления присоединенных файлов бизнес процесса и задачи (CRM)</comment>
+  <source>
+    <types>BusinessProcessObject.CRM_БизнесПроцесс</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РаботаСФайлами.УстановитьПометкуУдаленияПрисоединенныхФайлов</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтересыУспешные</dataPath>
+			<field>ИнтересыУспешные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интересы успешные</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Successful leads</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтересыНеудачно</dataPath>
+			<field>ИнтересыНеудачно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интересы неудачно</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Leads unsuccessfuly</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КаналПервичногоИнтереса</dataPath>
+			<field>КаналПервичногоИнтереса</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыручкаНеудачно</dataPath>
+			<field>ВыручкаНеудачно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выручка неудачно</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Revenue unsuccessfully</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыручкаУспешные</dataPath>
+			<field>ВыручкаУспешные</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выручка успешные</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Revenue successful</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнтересПродажи</dataPath>
+			<field>ИнтересПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интерес продажи</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Interest sale</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПродажи</dataPath>
+			<field>СуммаПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма продажи</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Amount of sale</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Request</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Интерес</dataPath>
+			<field>Интерес</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интерес</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Lead</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекламнаяКампания</dataPath>
+			<field>РекламнаяКампания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекламная кампания</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Advertising Campaign</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетНаОплату</dataPath>
+			<field>СчетНаОплату</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет на оплату</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Invoice</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ИсточникиПервичногоИнтереса.Сделка КАК Сделка,
+	ИсточникиПервичногоИнтереса.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ИсточникиПервичногоИнтереса.Период КАК Период,
+	ИсточникиПервичногоИнтереса.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса
+ПОМЕСТИТЬ ВременнаяТаблицаЗаявки
+ИЗ
+	РегистрСведений.ИсточникиПервичногоИнтереса КАК ИсточникиПервичногоИнтереса
+ГДЕ
+	ИсточникиПервичногоИнтереса.Период МЕЖДУ &amp;Период1 И &amp;Период2
+
+ИНДЕКСИРОВАТЬ ПО
+	КаналПервичногоИнтереса,
+	Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	CRM_Интерес.СостояниеИнтереса.Родитель КАК СостояниеИнтересаРодитель
+ПОМЕСТИТЬ ВоронкаПродаж
+ИЗ
+	ВременнаяТаблицаЗаявки КАК ВременнаяТаблицаЗаявки
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.CRM_Интерес КАК CRM_Интерес
+		ПО ВременнаяТаблицаЗаявки.Сделка = CRM_Интерес.ДокументОснование
+ГДЕ
+	CRM_Интерес.ТипОбращения = ЗНАЧЕНИЕ(Справочник.CRM_ТипыОбращений.Интерес)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_Интерес.Ссылка КАК Ссылка,
+	ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ВременнаяТаблицаЗаявки.Сделка КАК Заявка,
+	CRM_Интерес.ОжидаемаяВыручка КАК ОжидаемаяВыручка,
+	ВременнаяТаблицаЗаявки.Период КАК Период,
+	ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса
+ПОМЕСТИТЬ ВременнаяТаблицаИнтересы
+ИЗ
+	ВременнаяТаблицаЗаявки КАК ВременнаяТаблицаЗаявки
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.CRM_Интерес КАК CRM_Интерес
+		ПО ВременнаяТаблицаЗаявки.Сделка = CRM_Интерес.ДокументОснование
+ГДЕ
+	НЕ CRM_Интерес.ПометкаУдаления
+	И CRM_Интерес.ТипОбращения = ЗНАЧЕНИЕ(Справочник.CRM_ТипыОбращений.Интерес)
+
+ИНДЕКСИРОВАТЬ ПО
+	КаналПервичногоИнтереса,
+	Период,
+	ИсточникПервичногоИнтереса
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_СостоянияИнтересов.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВременнаяТаблицаУспешноЗавершено
+ИЗ
+	ВоронкаПродаж КАК ВоронкаПродаж
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.CRM_СостоянияИнтересов КАК CRM_СостоянияИнтересов
+		ПО ВоронкаПродаж.СостояниеИнтересаРодитель = CRM_СостоянияИнтересов.Родитель
+ГДЕ
+	CRM_СостоянияИнтересов.ВидСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСостоянияИнтереса.УспешноеЗавершение)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_СостоянияИнтересов.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВременнаяТаблицаНеУспешноЗавершено
+ИЗ
+	ВоронкаПродаж КАК ВоронкаПродаж
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.CRM_СостоянияИнтересов КАК CRM_СостоянияИнтересов
+		ПО ВоронкаПродаж.СостояниеИнтересаРодитель = CRM_СостоянияИнтересов.Родитель
+ГДЕ
+	CRM_СостоянияИнтересов.ВидСостояния = ЗНАЧЕНИЕ(Перечисление.CRM_ВидыСостоянияИнтереса.НеудачноеЗавершение)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВременнаяТаблицаИнтересы.Ссылка КАК ИнтересыУспешные,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.ОжидаемаяВыручка КАК ВыручкаУспешные,
+	ВременнаяТаблицаИнтересы.Период КАК Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Заявка КАК Заявка
+ПОМЕСТИТЬ ВременнаяТаблицаУспешно
+ИЗ
+	ВременнаяТаблицаИнтересы КАК ВременнаяТаблицаИнтересы
+ГДЕ
+	ВременнаяТаблицаИнтересы.Ссылка.СостояниеИнтереса В
+			(ВЫБРАТЬ
+				ВременнаяТаблицаУспешноЗавершено.Ссылка
+			ИЗ
+				ВременнаяТаблицаУспешноЗавершено)
+
+СГРУППИРОВАТЬ ПО
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Ссылка,
+	ВременнаяТаблицаИнтересы.ОжидаемаяВыручка,
+	ВременнаяТаблицаИнтересы.Заявка
+
+ИНДЕКСИРОВАТЬ ПО
+	КаналПервичногоИнтереса,
+	Период,
+	ИсточникПервичногоИнтереса
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВременнаяТаблицаИнтересы.Ссылка КАК ИнтересыНеудачно,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.ОжидаемаяВыручка КАК ВыручкаНеудачно,
+	ВременнаяТаблицаИнтересы.Период КАК Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Заявка КАК Заявка
+ПОМЕСТИТЬ ВременнаяТаблицаОтказ
+ИЗ
+	ВременнаяТаблицаИнтересы КАК ВременнаяТаблицаИнтересы
+ГДЕ
+	ВременнаяТаблицаИнтересы.Ссылка.СостояниеИнтереса В
+			(ВЫБРАТЬ
+				ВременнаяТаблицаНеУспешноЗавершено.Ссылка
+			ИЗ
+				ВременнаяТаблицаНеУспешноЗавершено)
+
+СГРУППИРОВАТЬ ПО
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.Ссылка,
+	ВременнаяТаблицаИнтересы.ОжидаемаяВыручка,
+	ВременнаяТаблицаИнтересы.Заявка
+
+ИНДЕКСИРОВАТЬ ПО
+	КаналПервичногоИнтереса,
+	Период,
+	ИсточникПервичногоИнтереса
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РегистрСведенийCRM_ЖурналДокументов.Объект КАК Объект,
+	РегистрСведенийCRM_ЖурналДокументов.CRM_Интерес КАК CRM_Интерес,
+	РасчетыСПокупателямиОбороты.СуммаПриход КАК СуммаПриход,
+	РасчетыСПокупателямиОбороты.Регистратор КАК СчетНаОплату
+ПОМЕСТИТЬ ПродажиПо
+ИЗ
+	РегистрСведений.CRM_ЖурналДокументов КАК РегистрСведенийCRM_ЖурналДокументов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ИнформацияОПисьмах КАК CRM_ИнформацияОПисьмах
+		ПО РегистрСведенийCRM_ЖурналДокументов.Объект = CRM_ИнформацияОПисьмах.Объект
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РасчетыСПокупателями.Обороты(, , Авто, ) КАК РасчетыСПокупателямиОбороты
+		ПО РегистрСведенийCRM_ЖурналДокументов.Объект = РасчетыСПокупателямиОбороты.Документ
+ГДЕ
+	НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.CRM_Интерес
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.CRM_Взаимодействие
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.ЭлектронноеПисьмоВходящее
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.ЭлектронноеПисьмоИсходящее
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.ТелефонныйЗвонок
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.СообщениеSMS
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.CRM_Заявка
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Документ.CRM_СообщениеМессенджера
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА БизнесПроцесс.CRM_БизнесПроцесс
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.Объект ССЫЛКА Задача.ЗадачаИсполнителя
+	И НЕ РегистрСведенийCRM_ЖурналДокументов.CRM_Интерес = ЗНАЧЕНИЕ(Документ.CRM_Интерес.ПустаяСсылка)
+	И РегистрСведенийCRM_ЖурналДокументов.ГлавнаяЗапись = ИСТИНА
+	И РегистрСведенийCRM_ЖурналДокументов.CRM_Интерес В
+			(ВЫБРАТЬ
+				ВременнаяТаблицаИнтересы.Ссылка
+			ИЗ
+				ВременнаяТаблицаИнтересы)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВременнаяТаблицаИнтересы.Период КАК Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ПродажиПо.СуммаПриход КАК СуммаПродажи,
+	ПродажиПо.Объект КАК Заявка,
+	ПродажиПо.CRM_Интерес КАК ИнтересПродажи,
+	ПродажиПо.СчетНаОплату КАК СчетНаОплату
+ПОМЕСТИТЬ ВременнаяТаблицаИтговыеПродажи
+ИЗ
+	ВременнаяТаблицаИнтересы КАК ВременнаяТаблицаИнтересы
+		ЛЕВОЕ СОЕДИНЕНИЕ ПродажиПо КАК ПродажиПо
+		ПО ВременнаяТаблицаИнтересы.Ссылка = ПродажиПо.CRM_Интерес
+
+СГРУППИРОВАТЬ ПО
+	ВременнаяТаблицаИнтересы.Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса,
+	ПродажиПо.СуммаПриход,
+	ПродажиПо.Объект,
+	ПродажиПо.CRM_Интерес,
+	ПродажиПо.СчетНаОплату
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВременнаяТаблицаИнтересы.Период КАК Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса КАК ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ПродажиПо.CRM_Интерес КАК Объект,
+	ПродажиПо.СчетНаОплату КАК СчетНаОплату
+ПОМЕСТИТЬ ВременнаяТаблицаИтговыеПродажиКоличество
+ИЗ
+	ВременнаяТаблицаИнтересы КАК ВременнаяТаблицаИнтересы
+		ЛЕВОЕ СОЕДИНЕНИЕ ПродажиПо КАК ПродажиПо
+		ПО ВременнаяТаблицаИнтересы.Ссылка = ПродажиПо.CRM_Интерес
+
+СГРУППИРОВАТЬ ПО
+	ВременнаяТаблицаИнтересы.Период,
+	ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса,
+	ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса,
+	ПродажиПо.CRM_Интерес,
+	ПродажиПо.СчетНаОплату
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВременнаяТаблицаЗаявки.Сделка КАК Заявка,
+	ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса КАК КаналПервичногоИнтереса,
+	ВременнаяТаблицаЗаявки.Период КАК Период,
+	ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса КАК РекламнаяКампания,
+	ВременнаяТаблицаИнтересы.Ссылка КАК Интерес,
+	ВременнаяТаблицаОтказ.ИнтересыНеудачно КАК ИнтересыНеудачно,
+	ВременнаяТаблицаОтказ.ВыручкаНеудачно КАК ВыручкаНеудачно,
+	ВременнаяТаблицаУспешно.ИнтересыУспешные КАК ИнтересыУспешные,
+	ВременнаяТаблицаУспешно.ВыручкаУспешные КАК ВыручкаУспешные,
+	ВременнаяТаблицаИтговыеПродажи.ИнтересПродажи КАК ИнтересПродажи,
+	ВременнаяТаблицаИтговыеПродажи.СуммаПродажи КАК СуммаПродажи,
+	ВременнаяТаблицаИтговыеПродажи.СчетНаОплату КАК СчетНаОплату
+{ВЫБРАТЬ
+	Заявка.*,
+	КаналПервичногоИнтереса.*,
+	Период,
+	РекламнаяКампания.*,
+	Интерес.*,
+	ИнтересыНеудачно.*,
+	ВыручкаНеудачно,
+	ИнтересыУспешные.*,
+	ВыручкаУспешные,
+	ИнтересПродажи.*,
+	СуммаПродажи,
+	СчетНаОплату.*}
+ИЗ
+	ВременнаяТаблицаЗаявки КАК ВременнаяТаблицаЗаявки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВременнаяТаблицаИнтересы КАК ВременнаяТаблицаИнтересы
+		ПО ВременнаяТаблицаЗаявки.Период = ВременнаяТаблицаИнтересы.Период
+			И ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса = ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса
+			И ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса = ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса
+			И ВременнаяТаблицаЗаявки.Сделка = ВременнаяТаблицаИнтересы.Заявка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВременнаяТаблицаУспешно КАК ВременнаяТаблицаУспешно
+		ПО (ВременнаяТаблицаЗаявки.Период = ВременнаяТаблицаИнтересы.Период)
+			И (ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса = ВременнаяТаблицаИнтересы.ИсточникПервичногоИнтереса)
+			И (ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса = ВременнаяТаблицаИнтересы.КаналПервичногоИнтереса)
+			И ВременнаяТаблицаЗаявки.Сделка = ВременнаяТаблицаУспешно.Заявка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВременнаяТаблицаОтказ КАК ВременнаяТаблицаОтказ
+		ПО ВременнаяТаблицаЗаявки.Период = ВременнаяТаблицаОтказ.Период
+			И ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса = ВременнаяТаблицаОтказ.ИсточникПервичногоИнтереса
+			И ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса = ВременнаяТаблицаОтказ.КаналПервичногоИнтереса
+			И ВременнаяТаблицаЗаявки.Сделка = ВременнаяТаблицаОтказ.Заявка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВременнаяТаблицаИтговыеПродажи КАК ВременнаяТаблицаИтговыеПродажи
+		ПО ВременнаяТаблицаЗаявки.Период = ВременнаяТаблицаИтговыеПродажи.Период
+			И ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса = ВременнаяТаблицаИтговыеПродажи.ИсточникПервичногоИнтереса
+			И ВременнаяТаблицаЗаявки.КаналПервичногоИнтереса = ВременнаяТаблицаИтговыеПродажи.КаналПервичногоИнтереса
+			И (ВременнаяТаблицаЗаявки.Сделка = ВременнаяТаблицаИнтересы.Заявка)
+{ГДЕ
+	ВременнаяТаблицаЗаявки.ИсточникПервичногоИнтереса.* КАК РекламнаяКампания,
+	ВременнаяТаблицаЗаявки.Сделка.* КАК Заявка}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>ВыручкаНеудачно</dataPath>
+		<expression>Сумма(ВыручкаНеудачно)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ВыручкаУспешные</dataPath>
+		<expression>Сумма(ВыручкаУспешные)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПродажи</dataPath>
+		<expression>Сумма(СуммаПродажи)</expression>
+	</totalField>
+	<parameter>
+		<name>Период1</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период1</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период1</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>Период2</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период2</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Период2</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Заявки по рекламным кампаниям</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Requets on advertising campaigns</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РекламнаяКампания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ИнтересыУспешные</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ВыручкаУспешные</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продажи по интересам</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Lead sales</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнтересПродажи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Интересы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Leads</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПродажи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выручка</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Revenue</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Интересы неудачные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Leads unsuccessful</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ВыручкаНеудачно</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выручка</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Revenue</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнтересыНеудачно</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Интересы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Leads</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>691bd874-430e-408b-9770-55365e7c6e93</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РекламнаяКампания</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Заявка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Продажи по интересам</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Lead sales</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтересПродажи</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Интересы</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Leads</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>СуммаПродажи</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выручка</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Revenue</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Интересы неудачные</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Leads unsuccessful</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ВыручкаНеудачно</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выручка</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Revenue</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИнтересыНеудачно</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Интересы</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Leads</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ПродажиСчета</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Продажи по рекламным кампаниям</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РекламнаяКампания</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СчетНаОплату</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПродажи</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выручка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Revenue</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Заявка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ИнтересыУспешные</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ВыручкаУспешные</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продажи по интересам</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Lead sales</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ИнтересПродажи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Интересы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Leads</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Интересы неудачные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Leads unsuccessful</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ВыручкаНеудачно</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выручка</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Revenue</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ИнтересыНеудачно</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Интересы</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Leads</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РекламнаяКампания</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РекламнаяКампания</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РекламнаяКампания</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПродажи</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выручка</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Revenue</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Заявка</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Продажи по интересам</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Lead sales</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ИнтересПродажи</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Интересы</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Leads</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Интересы неудачные</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Leads unsuccessful</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ВыручкаНеудачно</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Выручка</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Revenue</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:field>ИнтересыНеудачно</dcsset:field>
+								<dcsset:lwsTitle>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Интересы</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Leads</v8:content>
+									</v8:item>
+								</dcsset:lwsTitle>
+							</dcsset:item>
+							<dcsset:placement>Auto</dcsset:placement>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СчетНаОплату</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>СуммаПродажи</dcsset:field>
+							<dcsset:lwsTitle>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выручка</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Revenue</v8:content>
+								</v8:item>
+							</dcsset:lwsTitle>
+						</dcsset:item>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

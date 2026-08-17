@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инженер</dataPath>
+			<field>Инженер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инженер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Командировка</dataPath>
+			<field>Командировка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content> </v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДеньНедели</dataPath>
+			<field>ДеньНедели</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>День недели</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номер</dataPath>
+			<field>Номер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаявкаРасшифровка</dataPath>
+			<field>ЗаявкаРасшифровка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка расшифровка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВЫРАЗИТЬ(смартПредопределенныеЗначенияЗначения.Значение КАК Справочник.Пользователи) КАК Значение
+ПОМЕСТИТЬ ВТ_ВсеСервисныеИнженеры
+ИЗ
+	Справочник.смартПредопределенныеЗначения.Значения КАК смартПредопределенныеЗначенияЗначения
+ГДЕ
+	смартПредопределенныеЗначенияЗначения.Ссылка = ЗНАЧЕНИЕ(Справочник.смартПредопределенныеЗначения.СписокИнженеров)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	смартЗаявкаНаРемонтныеРаботы.Ссылка КАК Ссылка,
+	смартЗаявкаНаРемонтныеРаботы.Командировка КАК Командировка,
+	смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС КАК НазначеннаяДатаРемонтаС,
+	ВЫБОР
+		КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС
+		ИНАЧЕ смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо
+	КОНЕЦ КАК НазначеннаяДатаРемонтаПо,
+	смартЗаявкаНаРемонтныеРаботы.НазначенныйНаРемонтИнженер КАК НазначенныйНаРемонтИнженер
+ПОМЕСТИТЬ ВТ_ВсеЗаявки
+ИЗ
+	Документ.смартЗаявкаНаРемонтныеРаботы КАК смартЗаявкаНаРемонтныеРаботы
+ГДЕ
+	ВЫБОР
+			КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			КОГДА ВЫБОР
+					КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС
+					ИНАЧЕ смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо
+				КОНЕЦ &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+	И НЕ смартЗаявкаНаРемонтныеРаботы.ПометкаУдаления
+	И смартЗаявкаНаРемонтныеРаботы.НазначенныйНаРемонтИнженер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+	И смартЗаявкаНаРемонтныеРаботы.Статус В(&amp;Статусы)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	смартЗаявкаНаРемонтныеРаботы.Ссылка,
+	смартЗаявкаНаРемонтныеРаботы.Командировка2,
+	смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС2,
+	ВЫБОР
+		КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо2 = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС2
+		ИНАЧЕ смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо2
+	КОНЕЦ,
+	смартЗаявкаНаРемонтныеРаботы.НазначенныйНаРемонтИнженер2
+ИЗ
+	Документ.смартЗаявкаНаРемонтныеРаботы КАК смартЗаявкаНаРемонтныеРаботы
+ГДЕ
+	ВЫБОР
+			КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС2 &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			КОГДА ВЫБОР
+					КОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо2 = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаС2
+					ИНАЧЕ смартЗаявкаНаРемонтныеРаботы.НазначеннаяДатаРемонтаПо2
+				КОНЕЦ &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+	И НЕ смартЗаявкаНаРемонтныеРаботы.ПометкаУдаления
+	И смартЗаявкаНаРемонтныеРаботы.НазначенныйНаРемонтИнженер2 &lt;&gt; ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+	И смартЗаявкаНаРемонтныеРаботы.Статус В(&amp;Статусы)
+
+// ++ 26.02.2021
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	смартЗаявкаНаПускоНаладку.Ссылка КАК Ссылка,
+	ЛОЖЬ КАК Командировка,
+	// ++ 16.08.2021
+	//смартЗаявкаНаПускоНаладку.ЖелаемаяДатаИнсталляции КАК НазначеннаяДатаРемонтаС,
+	//смартЗаявкаНаПускоНаладку.ЖелаемаяДатаИнсталляции КАК НазначеннаяДатаРемонтаПо,
+	смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС,
+	ВЫБОР
+		КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС
+		ИНАЧЕ смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо
+	КОНЕЦ,
+
+	// --
+	смартЗаявкаНаПускоНаладку.НазначенныйНаЗапускИнженер КАК НазначенныйНаРемонтИнженер
+ИЗ
+	Документ.смартЗаявкаНаПускоНаладку КАК смартЗаявкаНаПускоНаладку
+ГДЕ
+	// ++ 16.08.2021
+	//ВЫБОР
+	//		КОГДА смартЗаявкаНаПускоНаладку.ЖелаемаяДатаИнсталляции &gt;= &amp;Период
+	//			ТОГДА ИСТИНА
+	//		ИНАЧЕ ЛОЖЬ
+	//	КОНЕЦ
+	ВЫБОР
+			КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			КОГДА ВЫБОР
+					КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС
+					ИНАЧЕ смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо
+				КОНЕЦ &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+	// --
+	И НЕ смартЗаявкаНаПускоНаладку.ПометкаУдаления
+	И смартЗаявкаНаПускоНаладку.НазначенныйНаЗапускИнженер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+	И смартЗаявкаНаПускоНаладку.Статус В(&amp;Статусы)
+
+// ++ 16.08.2021
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	смартЗаявкаНаПускоНаладку.Ссылка КАК Ссылка,
+	ЛОЖЬ КАК Командировка,
+	смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС2,
+	ВЫБОР
+		КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо2 = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС2
+		ИНАЧЕ смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо2
+	КОНЕЦ,
+	смартЗаявкаНаПускоНаладку.НазначенныйНаЗапускИнженер2 КАК НазначенныйНаРемонтИнженер
+ИЗ
+	Документ.смартЗаявкаНаПускоНаладку КАК смартЗаявкаНаПускоНаладку
+ГДЕ
+	// ++ 16.08.2021
+	//ВЫБОР
+	//		КОГДА смартЗаявкаНаПускоНаладку.ЖелаемаяДатаИнсталляции &gt;= &amp;Период
+	//			ТОГДА ИСТИНА
+	//		ИНАЧЕ ЛОЖЬ
+	//	КОНЕЦ
+	ВЫБОР
+			КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС2 &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			КОГДА ВЫБОР
+					КОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо2 = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаС2
+					ИНАЧЕ смартЗаявкаНаПускоНаладку.НазначеннаяДатаЗапускаПо2
+				КОНЕЦ &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+	// --
+	И НЕ смартЗаявкаНаПускоНаладку.ПометкаУдаления
+	И смартЗаявкаНаПускоНаладку.НазначенныйНаЗапускИнженер &lt;&gt; ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+	И смартЗаявкаНаПускоНаладку.Статус В(&amp;Статусы)
+// --
+//++ смарт:ММ 633 10.09.2021
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	смартСтатусыИнженеров.ТекущийСтатус,
+	ЛОЖЬ,
+	смартСтатусыИнженеров.ДатаНачала,
+	ВЫБОР
+		КОГДА смартСтатусыИнженеров.ДатаОкончания = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА смартСтатусыИнженеров.ДатаНачала
+		ИНАЧЕ смартСтатусыИнженеров.ДатаОкончания
+	КОНЕЦ,
+	смартСтатусыИнженеров.Инженер
+ИЗ
+	РегистрСведений.смартСтатусыИнженеров КАК смартСтатусыИнженеров
+ГДЕ
+	ВЫБОР
+			КОГДА смартСтатусыИнженеров.ДатаНачала &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			КОГДА ВЫБОР
+					КОГДА смартСтатусыИнженеров.ДатаОкончания = ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА смартСтатусыИнженеров.ДатаНачала
+					ИНАЧЕ смартСтатусыИнженеров.ДатаОкончания
+				КОНЕЦ &gt;= &amp;Период
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ
+//-- смарт:ММ 10.09.2021
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ВТ_ВсеЗаявки.НазначеннаяДатаРемонтаПо) КАК НазначеннаяДатаРемонтаПо
+ПОМЕСТИТЬ ВТ_МаксимальнаяДатаОтчета
+ИЗ
+	ВТ_ВсеЗаявки КАК ВТ_ВсеЗаявки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	КалендарныеГрафики.ДатаГрафика КАК Дата
+ПОМЕСТИТЬ ВТ_ВсеДатыОтчета
+ИЗ
+	РегистрСведений.КалендарныеГрафики КАК КалендарныеГрафики
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_МаксимальнаяДатаОтчета КАК ВТ_МаксимальнаяДатаОтчета
+		ПО КалендарныеГрафики.ДатаГрафика &lt;= ВТ_МаксимальнаяДатаОтчета.НазначеннаяДатаРемонтаПо
+			И (КалендарныеГрафики.Календарь.Наименование = "Российская Федерация")
+			И (КалендарныеГрафики.ДатаГрафика &gt;= НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВсеДатыОтчета.Дата КАК Дата,
+	ВТ_ВсеСервисныеИнженеры.Значение КАК Инженер
+ПОМЕСТИТЬ ВТ_ВсеДатыПоВсемИнженерам
+ИЗ
+	ВТ_ВсеСервисныеИнженеры КАК ВТ_ВсеСервисныеИнженеры
+		ПОЛНОЕ СОЕДИНЕНИЕ ВТ_ВсеДатыОтчета КАК ВТ_ВсеДатыОтчета
+		ПО (ИСТИНА)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВсеДатыПоВсемИнженерам.Дата КАК Дата,
+	ВТ_ВсеДатыПоВсемИнженерам.Инженер КАК Инженер,
+		
+	ЕСТЬNULL(ВТ_ВсеЗаявки.Ссылка, "") КАК Заявка,
+	ЕСТЬNULL(ВТ_ВсеЗаявки.Ссылка, "") КАК ЗаявкаРасшифровка,
+
+	ЕСТЬNULL(ВТ_ВсеЗаявки.Ссылка.Номер, "") КАК Номер,
+	ВТ_ВсеЗаявки.Командировка КАК Командировка,
+	ВЫБОР ДЕНЬНЕДЕЛИ(ВТ_ВсеДатыПоВсемИнженерам.Дата) 
+	КОГДА 1 ТОГДА "Понедельник"
+	КОГДА 2 ТОГДА "Вторник"
+	КОГДА 3 ТОГДА "Среда"
+	КОГДА 4 ТОГДА "Четверг"
+	КОГДА 5 ТОГДА "Пятница"
+	КОГДА 6 ТОГДА "Суббота"
+	КОГДА 7 ТОГДА "Воскресенье"
+	КОНЕЦ КАК ДеньНедели
+ИЗ
+	ВТ_ВсеДатыПоВсемИнженерам КАК ВТ_ВсеДатыПоВсемИнженерам
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВсеЗаявки КАК ВТ_ВсеЗаявки
+		ПО ВТ_ВсеДатыПоВсемИнженерам.Дата &gt;= ВТ_ВсеЗаявки.НазначеннаяДатаРемонтаС
+			И ВТ_ВсеДатыПоВсемИнженерам.Дата &lt;= ВТ_ВсеЗаявки.НазначеннаяДатаРемонтаПо
+			И ВТ_ВсеДатыПоВсемИнженерам.Инженер = ВТ_ВсеЗаявки.НазначенныйНаРемонтИнженер</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Текст</dataPath>
+		<expression>ВЫБОР КОГДА ТипЗначения(Заявка) = тип( "Документ.смартЗаявкаНаПускоНаладку")  ТОГДА "Заявка на ПНР №" + ПрефиксацияОбъектовКлиентСервер.НомерНаПечать(Номер)   КОГДА ТипЗначения(Заявка) = тип( "Документ.смартЗаявкаНаРемонтныеРаботы") ТОГДА "Заявка на ремонт №" + ПрефиксацияОбъектовКлиентСервер.НомерНаПечать(Номер) + выбор когда Командировка тогда " (Ком)" иначе " "  конец  КОГДА ТипЗначения(Заявка) = тип("Справочник.смартСписокСтатусовИнженеров")
+ТОГДА Заявка ИНАЧЕ " " КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текст</v8:content>
+			</v8:item>
+		</title>
+		<useRestriction>
+			<field>true</field>
+			<condition>true</condition>
+			<group>true</group>
+			<order>true</order>
+		</useRestriction>
+	</calculatedField>
+	<totalField>
+		<dataPath>Командировка</dataPath>
+		<expression>Командировка</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Заявка</dataPath>
+		<expression>Массив(Текст)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДеньНедели</dataPath>
+		<expression>ДеньНедели</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЗаявкаРасшифровка</dataPath>
+		<expression>Массив(ЗаявкаРасшифровка)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Текст</dataPath>
+		<expression>Текст</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>Статусы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Статусы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.смартСтатусыЗаявокНаРемонтныеРаботы</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.смартСтатусыЗаявокНаПускоНаладку</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаРемонтныеРаботы.НазначенИнженер</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаРемонтныеРаботы.ПовторныйВыезд</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаПускоНаладку.НазначенИнженер</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаРемонтныеРаботы.ТребуетсяПовторныйВыезд</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаРемонтныеРаботы.РемонтЗавершен</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаРемонтныеРаботы.ЖдемЗапчасти</value>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.смартСтатусыЗаявокНаПускоНаладку.Выполнена</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ДеньНедели</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>
+</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Дата</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ДеньНедели</dcsat:name>
+			<dcsat:expression>ДеньНедели</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Дата</dcsat:name>
+			<dcsat:expression>Формат(Дата, "ДФ='dd MMMM'")</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Заявка</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ЗаявкаРасшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Заявка</dcsat:name>
+			<dcsat:expression>СоединитьСтроки(Текст)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ЗаявкаРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ЗаявкаРасшифровка</dcsat:field>
+				<dcsat:expression>ЗаявкаРасшифровка</dcsat:expression>
+			</dcsat:fieldExpression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>Заявка</field>
+		<template>Макет2</template>
+	</fieldTemplate>
+	<groupTemplate>
+		<groupField>Дата</groupField>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupTemplate>
+	<settingsVariant>
+		<dcsset:name>КалендарьЗагрузкиИнженеров_смарт</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Календарь загрузки инженеров (смарт)</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Заявка</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>4c182d0f-edac-475b-b1b7-6192d668a858</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Инженер</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+					<dcsset:userSettingID>02f8ef18-7f0f-4d4e-bb28-7a27bf5eb009</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>6aad7574-5eb5-4dec-adc7-a2b91a0dac79</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>c4c5b919-1931-4dc0-b6ad-d6881f194ed1</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Статусы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Инженер.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>f04decdc-c14c-4608-acc2-cbddcd888165</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗаявкаНаРемонтныеРаботы</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Командировка</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">14</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">style:FieldAlternativeBackColor</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>МаксимальнаяВысота</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">30</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Main</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">WithOwnerField</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesPlacement">Vertically</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать итоги по горизонтали</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Инженер</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>ДеньНедели</dcsset:field>
+								</dcsset:item>
+								<dcsset:item>
+									<dcsset:field>Заявка</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+								</dcscor:item>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+									<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:row>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

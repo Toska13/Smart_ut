@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="78abc10f-ba7d-43ca-a861-fb35790242cd">
+  <name>CRM_ОбъектОповещенияПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект оповещения при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>When recording an alert object</value>
+  </synonym>
+  <comment>Объект оповещения при записи (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ОповещенияСервер.ПриЗаписиОбъектаОповещения</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f37315b9-4b1d-42f5-ac6f-3abfef734d49">
+  <name>CRM_КонстантыПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Константы перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Before writing a constant</value>
+  </synonym>
+  <comment>Константы перед записью (CRM)</comment>
+  <source>
+    <types>ConstantValueManager.ИспользоватьНапоминанияПользователя</types>
+    <types>ConstantValueManager.ИспользоватьПрочиеВзаимодействия</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_МетодыМодулейМенеджеровЗначенийКонстант.CRM_ПередЗаписьюКонстантыПередЗаписью</handler>
+</mdclass:EventSubscription>

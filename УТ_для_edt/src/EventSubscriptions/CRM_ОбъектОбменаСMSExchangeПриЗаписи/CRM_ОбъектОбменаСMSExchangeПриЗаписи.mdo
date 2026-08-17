@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9037cada-765e-419c-b485-49d6f2f1c17a">
+  <name>CRM_ОбъектОбменаСMSExchangeПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект обмена с MS Exchange при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM when recording exchange object with MS Exchange</value>
+  </synonym>
+  <comment>Объект обмена с MS Exchange при записи (CRM)</comment>
+  <source>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>DocumentObject.ЭлектронноеПисьмоВходящее</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+    <types>DocumentObject.ЭлектронноеПисьмоИсходящее</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_MSExchangeВызовСервера.ПриЗаписиОбъектаОбменаСMSExchange</handler>
+</mdclass:EventSubscription>

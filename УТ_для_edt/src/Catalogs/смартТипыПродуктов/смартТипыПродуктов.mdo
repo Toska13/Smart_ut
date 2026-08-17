@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="56d6c039-77ff-42c6-b0bb-baf2633ce727">
+  <producedTypes>
+    <objectType typeId="0c0280fd-e4b4-4e8c-98ef-68d3b6cbe481" valueTypeId="439198ae-e12f-448a-adc4-058698f1592d"/>
+    <refType typeId="82e15ebd-aa01-4808-b55f-af6f67f6fc1e" valueTypeId="ac9ab7cd-5ebe-451c-b50c-2af0c0a4ffd1"/>
+    <selectionType typeId="f7e99db4-54a2-4655-8a46-f8135cb2b022" valueTypeId="31260ea0-3e7d-4815-a370-cf941142d81f"/>
+    <listType typeId="3ea4cdd1-dfa9-473a-914b-147be0a2f78b" valueTypeId="be18d167-b698-41af-b071-b7988c7f6ed5"/>
+    <managerType typeId="7f482550-e87d-4a2d-a0b8-19857f2bb99b" valueTypeId="480c0336-a247-4ca5-9c19-c2fc57608cf7"/>
+  </producedTypes>
+  <name>смартТипыПродуктов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Типы продуктов (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 22.12.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартТипыПродуктов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.смартТипыПродуктов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="ac33a4d4-f692-47fe-9bb2-b6cd3f107e23">
+      <name>Запчасти</name>
+      <description>Запчасти</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+    <items id="98ba3bc1-2486-4a3d-ab32-34a0817aa676">
+      <name>Неопределено</name>
+      <description>Неопределено</description>
+      <code xsi:type="core:StringValue">
+        <value>000000005</value>
+      </code>
+    </items>
+    <items id="ae932cca-1eb0-4a71-a8b5-40d62dd7d539">
+      <name>Оборудование</name>
+      <description>Оборудование</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+    <items id="78e5c753-c475-42c0-a152-6ad47b038f90">
+      <name>Прочее</name>
+      <description>Прочее</description>
+      <code xsi:type="core:StringValue">
+        <value>000000004</value>
+      </code>
+    </items>
+    <items id="97f400e6-6adf-48df-b02b-a57039daf981">
+      <name>Расходка</name>
+      <description>Расходка</description>
+      <code xsi:type="core:StringValue">
+        <value>000000003</value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартТипыПродуктов.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="35b42876-fed0-49d6-859e-37c9c4f71bf9">
+    <name>АнализироватьПродукт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Анализировать продукт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a810811c-348d-4991-a29c-47e30634bb59">
+    <name>ВидОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид ответственного</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="3281656d-63de-4b6b-a45e-5dce9d64ee35">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

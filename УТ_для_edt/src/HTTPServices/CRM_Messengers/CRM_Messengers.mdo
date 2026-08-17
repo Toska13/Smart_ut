@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a1dd3102-be7b-4915-889e-ceab9622524b">
+  <name>CRM_Messengers</name>
+  <synonym>
+    <key>ru</key>
+    <value>Messengers</value>
+  </synonym>
+  <rootURL>Messengers</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="eba8622d-62af-4822-9dd3-58f55c81ff21">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="8af0aea9-0aca-40ff-9390-63e5b86e0c7b">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7e40a0a8-1e5d-4c31-bbf6-f4cca9978365">
+    <name>webhook</name>
+    <synonym>
+      <key>ru</key>
+      <value>Webhook</value>
+    </synonym>
+    <template>/{ИмяМетода}</template>
+    <methods uuid="743905ae-6186-4f9c-a802-36061ea8b471">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>webhookGet</handler>
+    </methods>
+    <methods uuid="c7aebb58-9e55-4824-a1ec-4030fe363177">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>webhookPost</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

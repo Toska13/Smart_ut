@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9cccd79e-c315-4ab3-9fb8-6ee76c64d8c6">
+  <name>CRM_ОбработкаПолученияФормПВХ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обработка получения форм ПВХ (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Processing of the production of PVC forms (CRM)</value>
+  </synonym>
+  <comment>Обработка получения форм ПВХ (CRM)</comment>
+  <source>
+    <types>ChartOfCharacteristicTypesManager.ДополнительныеРеквизитыИСведения</types>
+    <types>ChartOfCharacteristicTypesManager.ВопросыДляАнкетирования</types>
+  </source>
+  <event>FormGetProcessing</event>
+  <handler>CommonModule.CRM_МетодыМодулейМенеджеровПВХ.ОбработкаПолученияФормОбъектовCRM</handler>
+</mdclass:EventSubscription>

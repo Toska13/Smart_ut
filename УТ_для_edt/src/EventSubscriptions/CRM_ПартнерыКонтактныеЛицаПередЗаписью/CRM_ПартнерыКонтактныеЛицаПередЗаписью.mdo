@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2a025fb6-7cf7-4366-bb2d-2c8c950f85ec">
+  <name>CRM_ПартнерыКонтактныеЛицаПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Партнеры контактные лица перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Partners contact persons before the entry</value>
+  </synonym>
+  <comment>Партнеры контактные лица перед записью (CRM)</comment>
+  <source>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.Партнеры</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.ПередЗаписьюПартнераКонтактногоЛицаКонтагента</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0fb0f5d6-e0aa-4b00-b025-0e582d50e0d5">
+  <producedTypes>
+    <objectType typeId="fb912f5d-7428-403e-8608-092ed47a9fb7" valueTypeId="edc22300-fa36-49cc-a924-41a43562e050"/>
+    <managerType typeId="7c7c2e96-029f-4185-91b6-b5d15b2f59e7" valueTypeId="8072d2bc-0965-4760-b472-4392e578d015"/>
+  </producedTypes>
+  <name>смартКомплектацияНоменклатуры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Комплектация номенклатуры (смарт)</value>
+  </synonym>
+  <comment>#077 380 20.10.2020</comment>
+  <defaultForm>DataProcessor.смартКомплектацияНоменклатуры.Form.Форма</defaultForm>
+  <attributes uuid="9b86229a-cbe5-4c55-9332-11e368290897">
+    <name>СсылкаНаОбъект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f0ac6f49-0c3f-4a22-82de-87e792c50cab">
+    <name>СтараяНоменклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Старая номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="abcc0364-f0bd-48d2-b070-6a6ad5aedd23">
+    <name>МОЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мат. ответственное лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="08d08b82-c054-4f40-a75e-d97e7698d115">
+    <producedTypes>
+      <objectType typeId="65775f6f-585d-4803-a735-7de2bdc4c398" valueTypeId="1f326769-8e3c-427c-8434-82d2fe51bf6f"/>
+      <rowType typeId="9c710651-6365-4e7a-a64d-cb79705a0127" valueTypeId="047d78cb-4a11-416d-a2a2-9772f11d2bc4"/>
+    </producedTypes>
+    <name>ЗаказыНаСборку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы на сборку</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7bd435d0-d4b7-4917-aabb-55f303134726">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ на сборку</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаказНаСборку</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e6290e80-c734-4431-b925-5986ceb82d6b">
+      <name>СборкаТоваров</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сборка товаров</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СборкаТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="85a81253-90a5-4d1c-a908-ca9a1c821532">
+      <name>РасходныйОрдер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расходный ордер</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РасходныйОрдерНаТовары</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9a7fab9c-ff50-4c58-99b8-1bc866c7220b">
+      <name>ПриходныйОрдер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Приходный ордер</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПриходныйОрдерНаТовары</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="ab2e74c6-6f81-413b-99a4-eb81567ebcd8">
+    <producedTypes>
+      <objectType typeId="07a136fc-70ca-4f2d-8647-7077567bd787" valueTypeId="eb3abec9-ff13-421c-ba50-f7290c9ffd77"/>
+      <rowType typeId="c7adf0ef-3954-45f1-9726-d41412f6bbab" valueTypeId="fbe846e3-ab95-44de-a2b7-a310ed16bff2"/>
+    </producedTypes>
+    <name>Остатки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остатки</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="cf908c8a-f321-4b17-8a5a-96e69bd01603">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ba8010f6-6349-4fdc-a57f-a7d96508db4c">
+      <name>Доступно</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доступно</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="776991ad-68c0-4996-a7c6-23a00cd8a595">
+      <name>КОтгрузке</name>
+      <synonym>
+        <key>ru</key>
+        <value>К отгрузке</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0b9829a7-b2f2-4e82-b4eb-fe5f768f2367">
+      <name>ВРезерве</name>
+      <synonym>
+        <key>ru</key>
+        <value>В резерве</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="93a4c346-3233-495e-8628-20675df9e2a4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="a907316c-aafd-4baf-a5ab-4704efbd750b">
+    <name>ПриказОбУтвержденииНовойНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приказ об утверждении новой номенклатуры</value>
+    </synonym>
+  </templates>
+  <commands uuid="bdb34346-6214-44be-a2d0-41752236f633">
+    <name>смартКомандаКомплектацияНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комплектация номенклатуры (смарт)</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.Номенклатура</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

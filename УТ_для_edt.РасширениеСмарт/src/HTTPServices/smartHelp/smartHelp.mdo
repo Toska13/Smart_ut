@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ad888ea5-ea4b-46f4-9a9c-5266e25384a2">
+  <name>smartHelp</name>
+  <synonym>
+    <key>ru</key>
+    <value>Smart help</value>
+  </synonym>
+  <rootURL>SerialNumber</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="6d094238-fe32-4d6f-9863-96457b694a51">
+    <name>Receive</name>
+    <synonym>
+      <key>ru</key>
+      <value>Receive</value>
+    </synonym>
+    <comment>Получение серийных номеров проданного оборудования, отбор по определенному контрагенту</comment>
+    <template>/V1/{ИмяМетода}</template>
+    <methods uuid="b409557a-476f-425d-aec6-7b65894deb8c">
+      <name>Get</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get</value>
+      </synonym>
+      <comment>Получение серии номенклатуры</comment>
+      <handler>ReceiveGet</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

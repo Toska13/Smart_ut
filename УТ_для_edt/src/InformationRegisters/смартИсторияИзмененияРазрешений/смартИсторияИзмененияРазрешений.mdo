@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1cead533-b11f-4399-b415-c63c265403c9">
+  <producedTypes>
+    <selectionType typeId="2f5eec92-ec9f-456e-a714-b9e48bda2596" valueTypeId="3500d4c3-3899-4369-83c6-1aea308f5fe1"/>
+    <listType typeId="2ce18dc4-e2b2-46c5-8368-cf6772e97683" valueTypeId="184b5fe1-2e3a-45f9-be87-984db179b6a1"/>
+    <managerType typeId="2af42c97-d95d-48cd-88ef-7dc9ff0df14f" valueTypeId="4c97ed09-8c25-418e-aafe-c12316dda14a"/>
+    <recordSetType typeId="4b7d1146-2ff5-4925-8242-26e1edc0b0fa" valueTypeId="a19d5d61-3cb8-4701-a55d-5db31278ee64"/>
+    <recordKeyType typeId="e1d3b70e-a748-4f1e-8e2e-f710db02002b" valueTypeId="5dfe381b-e612-479a-be9d-4c3d767a0c5f"/>
+    <recordType typeId="cf9b058a-c8ae-42ce-be20-c7e125937374" valueTypeId="f109b0d4-5cf5-49c5-92e0-06d33a06e75c"/>
+    <recordManagerType typeId="92e0ff0f-befd-49c1-87cb-8b49546f2dd7" valueTypeId="98509d94-2940-4e49-8ae9-66f94efeb762"/>
+  </producedTypes>
+  <name>смартИсторияИзмененияРазрешений</name>
+  <synonym>
+    <key>ru</key>
+    <value>История изменения разрешений</value>
+  </synonym>
+  <comment>//++ #Б3790 смарт: Шляпников 12.08.2025 / Маркировка радиоэлектронной продукции. Доработка документов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7f6bd346-1eef-450b-b27a-352ca79bd0a4">
+    <name>Разрешено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разрешено</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="31a1df6a-9bd4-45dc-b0ce-2700acc96dd1">
+    <name>ДатаИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b2493ef6-548c-4050-805b-3fcd5a80152e">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e1ad6d1a-103f-4737-9e44-595261fa3bd3">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f71cee16-30da-4685-9d60-27c15a32c1a4">
+    <name>КодСтроки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="2eb57726-86b6-467b-8230-0a794c0d447b">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1cb4eecd-98c1-45f4-9d05-24c3cb265480">
+    <name>ИД</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИД</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ae9510ff-9dcf-4721-903a-9382ccce3bf7">
+    <name>ВидРазрешения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид разрешения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

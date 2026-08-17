@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6ac9e60b-57a4-481d-b28a-9da72ea41b59">
+  <producedTypes>
+    <selectionType typeId="d21f4815-216b-42d6-964e-b7f08104ef02" valueTypeId="829047e7-4a62-45a3-9996-c131f193c2b7"/>
+    <listType typeId="b7cebd3d-14b5-489f-b307-3be4dc58ccce" valueTypeId="21b7188e-f822-4775-845e-78e41c946e8a"/>
+    <managerType typeId="93cd33c2-21c4-41ce-ae31-e4b7bba823cc" valueTypeId="1cd0a094-b0e8-4351-a401-2bf501053fbb"/>
+    <recordSetType typeId="0faa0f8f-44b0-49ab-90c9-7dad0ed7a482" valueTypeId="08831759-c41d-43e5-8515-c8e43022d04d"/>
+    <recordKeyType typeId="cdb62740-b2dc-4012-9b60-b4dec780337a" valueTypeId="024484d5-5751-4e1b-b584-86bd3e195f3e"/>
+    <recordType typeId="ee0af37d-d0ff-4efd-8350-facfa8d908d4" valueTypeId="4e479e70-df9b-42f7-87e7-34a26a2e71ed"/>
+  </producedTypes>
+  <name>смартОстаткиНаСкладеГарантийныхЗапчастей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Остатки на складе гарантийных запчастей (смарт)</value>
+  </synonym>
+  <comment>// #044 224</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="0612fd97-d79a-4989-8da4-e760579d538b">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="a34b0b4a-4ec1-4010-b6e3-1d1f4784340e">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="38f4e9fb-f140-475a-a67b-a95b94ff9a20">
+    <name>НомерЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер заявки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9dccae58-47e3-499b-b64f-9f3a4ad6eb8b">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <comment>++ #Б1132 смарт: Шляпников 14.10.2024 / Ссылки на документ Заявка на гарантийный ремонт</comment>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаГарантийныйРемонт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

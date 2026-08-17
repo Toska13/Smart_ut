@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="df7b35e0-7142-46e7-a091-e3fbf5c0b9c7">
+  <name>смартПриИзмененииКурсовВалют</name>
+  <synonym>
+    <key>ru</key>
+    <value>При изменении курсов валют (смарт)</value>
+  </synonym>
+  <comment>//++ #Б7778 смарт: Шляпников 05.08.2026 / Управление акциями. Регистрация изменений в узле обмена при изменении курсов валют.</comment>
+  <source>
+    <types>InformationRegisterRecordSet.КурсыВалют</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.смартПриИзмененииКурсовВалютПриЗаписи</handler>
+</mdclass:EventSubscription>

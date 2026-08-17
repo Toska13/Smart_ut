@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="923622cf-4404-4ff5-bdb6-dae54236d242">
+  <name>CRM_ДокументыОбработкаУдаленияПроведения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы обработка удаления проведения (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM document removal processing</value>
+  </synonym>
+  <comment>Документы обработка удаления проведения (CRM)</comment>
+  <source>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+  </source>
+  <event>UndoPosting</event>
+  <handler>CommonModule.CRM_МетодыМодулейОбъектовДокументов.ОбработкаУдаленияПроведенияДокументов</handler>
+</mdclass:EventSubscription>

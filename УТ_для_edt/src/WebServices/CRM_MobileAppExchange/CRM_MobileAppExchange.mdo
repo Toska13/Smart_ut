@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:WebService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="06d89848-5c5b-40f0-a14d-22ae9d19a36f">
+  <name>CRM_MobileAppExchange</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен с мобильным приложением</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Mobile Exchange</value>
+  </synonym>
+  <namespace>http://www.rarus.ru/CRM_MobileAppExchange</namespace>
+  <descriptorFileName>CRM_MobileAppExchange.1cws</descriptorFileName>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <operations uuid="520e51a3-1601-4af6-938b-a3a1da82cf3c">
+    <name>Registration</name>
+    <synonym>
+      <key>ru</key>
+      <value>Registration</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Регистрация</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>Registration</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="ba733356-32ed-41e1-bb32-514fdeab100f">
+      <name>IMEI</name>
+      <synonym>
+        <key>ru</key>
+        <value>IMEI</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>IMEI</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="6031f26b-d900-49ed-8ea5-afc2bd353ba9">
+      <name>SettingsID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settings ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Settings ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="50c9d7d6-e8e1-42e1-91bc-e533ea9dbbcb">
+    <name>GetSettings</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get settings</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get settings</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetSettings</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="717ee142-7e27-4371-8902-dc01a444e335">
+      <name>SettingsID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settings ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Settings ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="bb8a877b-b392-4c9e-ad69-df2ca99d7f4b">
+    <name>PutData</name>
+    <synonym>
+      <key>ru</key>
+      <value>Put data</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Put data</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>PutData</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="b8962726-79d0-4c1b-b299-22ee61466280">
+      <name>SettingsID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settings ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Settings ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="3ddad2e5-9c66-42e8-a063-6c043c6ba23d">
+      <name>Data</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Data</value>
+      </synonym>
+      <xdtoValueType>
+        <name>base64Binary</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="b8cb0bd1-cc82-4d08-ab22-197364b5d5a4">
+    <name>GetData</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get data</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get data</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <nillable>true</nillable>
+    <procedureName>GetData</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="821a3441-d42d-4c23-bdab-c95d584cf400">
+      <name>DataID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Data ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="55009a23-7eb5-4dd3-ae98-2d85799b119a">
+    <name>GetDataID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get data ID</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get data ID</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetDataID</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="76e7aefa-9729-4536-b40d-c6073d41fc78">
+      <name>SettingsID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settings ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Settings ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="0897cf35-8ef0-4d1f-ba75-5a97abb69ecc">
+    <name>PutConfirmation</name>
+    <synonym>
+      <key>ru</key>
+      <value>Put confirmation</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Put confirmation</value>
+    </synonym>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>PutConfirmation</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="a9ffb246-e5cf-4fca-b317-8d04af4cb515">
+      <name>DataID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Data ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+  </operations>
+  <operations uuid="cb43bb9f-c4bc-4ea8-8db8-fcbbe5f2ff0d">
+    <name>GetUpdate</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get update</value>
+    </synonym>
+    <comment>Вызывается при обновлении</comment>
+    <xdtoReturningValueType>
+      <name>string</name>
+      <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+    </xdtoReturningValueType>
+    <procedureName>GetUpdate</procedureName>
+    <dataLockControlMode>Managed</dataLockControlMode>
+    <parameters uuid="90d8feba-5473-4917-bf06-db04cf3818ff">
+      <name>DataID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data ID</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Data ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="7331cca9-fe47-4cb6-9b7d-93e2ddef80db">
+      <name>Data</name>
+      <synonym>
+        <key>ru</key>
+        <value>Data</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Data</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+    </parameters>
+    <parameters uuid="6d5c199e-e3fa-4f25-8638-da728e5334d1">
+      <name>SettingsID</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settings ID</value>
+      </synonym>
+      <xdtoValueType>
+        <name>string</name>
+        <nsUri>http://www.w3.org/2001/XMLSchema</nsUri>
+      </xdtoValueType>
+      <nillable>true</nillable>
+    </parameters>
+  </operations>
+</mdclass:WebService>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c041db27-56c3-46b5-b566-1b35cb394284">
+  <producedTypes>
+    <selectionType typeId="8bba16a2-acde-42d4-aaaf-8e99b1a33640" valueTypeId="6197a683-988e-4d49-a13e-90e7f8cb6a20"/>
+    <listType typeId="a172205d-cefe-4cc0-a0a8-f9247be1063f" valueTypeId="ebf43cd9-be94-4a63-a6c3-21bdd336333d"/>
+    <managerType typeId="b5cc395d-f889-4455-b225-20e591b40a3b" valueTypeId="ab90b235-a8bc-46ba-993d-b2ff784b2502"/>
+    <recordSetType typeId="17fbcb6b-bdd1-40a7-93b6-0139f518c315" valueTypeId="d8530667-0776-4b64-be89-2e218840ddac"/>
+    <recordKeyType typeId="e5033c9a-0f2b-4a3e-9743-151a6c1f72c3" valueTypeId="86ed3d2f-97f5-4176-b8ff-c78b56cd2d54"/>
+    <recordType typeId="19a2645f-4542-4e59-a025-f7582ab66eab" valueTypeId="e33ea0d7-9338-4ff7-b06b-bf2d3deaf49e"/>
+    <recordManagerType typeId="1cc15e59-0cc9-41d4-9533-4b4c8d29b0e9" valueTypeId="cb3384d3-8164-4881-ad18-d59c10f860c0"/>
+  </producedTypes>
+  <name>сфпРечеваяАналитика</name>
+  <synonym>
+    <key>ru</key>
+    <value>Речевая аналитика (Софтфон)</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="32591a74-813b-44db-a53b-c972173f710b">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="3f864f81-51c4-4f0b-bf5c-2ebe90870200">
+    <name>СтопСлова</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоп-слова</value>
+    </synonym>
+    <comment>Стоп-слова на которые сработала тематика</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="009251f8-0067-417d-8b82-32d943e2618c">
+    <name>Звонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Звонок</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9420c0e0-a3c8-43d0-bc6c-63fe8e9307b6">
+    <name>Тематика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тематика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.сфпТематикиРечевойАналитики</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c6ff1bd7-2d29-4439-b8f7-58fc2e9861e5">
+  <name>CRM_ОбъектСНастраиваемымПорядкомПриКопировании</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект с настраиваемым порядком при копировании (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Reset ordering attribute value</value>
+  </synonym>
+  <comment>Сбросить значение реквизита упорядочивания</comment>
+  <source>
+    <types>DefinedType.CRM_ОбъектСНастраиваемымПорядком</types>
+  </source>
+  <event>OnCopy</event>
+  <handler>CommonModule.НастройкаПорядкаЭлементов.СброситьЗначениеРеквизитаУпорядочивания</handler>
+</mdclass:EventSubscription>

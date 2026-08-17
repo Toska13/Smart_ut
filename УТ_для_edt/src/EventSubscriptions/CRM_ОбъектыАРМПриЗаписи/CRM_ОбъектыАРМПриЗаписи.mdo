@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8dc730fa-3c8b-433d-b0ca-56ee473c1955">
+  <name>CRM_ОбъектыАРМПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты АРМ при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM filling of workstation</value>
+  </synonym>
+  <comment>Объекты АРМ при записи (CRM)</comment>
+  <source>
+    <types>DefinedType.CRM_ОбъектыАРМ</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_РаботаАРМСервер.CRM_ЗаполнениеАРМПриЗаписи</handler>
+</mdclass:EventSubscription>

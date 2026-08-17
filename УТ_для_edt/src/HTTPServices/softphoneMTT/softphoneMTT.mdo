@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="783c4847-f0c2-4b94-a893-1c6501e99445">
+  <name>softphoneMTT</name>
+  <synonym>
+    <key>ru</key>
+    <value>МТТ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>MTT</value>
+  </synonym>
+  <comment>Виртуальная АТС МТТ</comment>
+  <rootURL>mtt-api</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="19320a6f-67c3-46cb-b44c-05b310153129">
+    <name>Event</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Событие</value>
+    </synonym>
+    <template>/*</template>
+    <methods uuid="8727a34e-60b7-4699-82fb-8dca7673963d">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>EventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6e37b538-b2d6-462a-ba74-3b9c04e9e294">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="d3778655-6357-42b0-9f5a-b690695ec74b">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

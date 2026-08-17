@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4b340a8a-0865-47d9-9222-4829a9d24ac7">
+  <producedTypes>
+    <objectType typeId="254c26b4-5f32-4535-bba3-b98eefdf173e" valueTypeId="fbd73605-5b05-406b-ba85-d69fe103d9c2"/>
+    <refType typeId="d39f8399-35dc-4729-a89f-8cb8c48fe8ba" valueTypeId="15e4d59f-d80d-45ef-b910-be0877cf0e2e"/>
+    <selectionType typeId="99ecefa8-869c-4400-b86a-efaed6bd109c" valueTypeId="56349f77-ee6b-4300-8417-153128749b6c"/>
+    <listType typeId="1bf9be59-5e3d-4a6b-a300-8c2a583c926b" valueTypeId="a3b42ce4-4dc4-4d47-a5a4-fa0532f72108"/>
+    <managerType typeId="e53032c9-618f-4978-ac1d-8ab023587684" valueTypeId="8172a749-9d4d-4e5f-8546-be98e8662b6c"/>
+  </producedTypes>
+  <name>смартОтчетЗапускаМимаки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет запуска Мимаки (смарт)</value>
+  </synonym>
+  <comment>//++ #1287 смарт: Фролов 13.03.2023 //Работа с гарантийными и коммерческими запасными частями</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартОтчетЗапускаМимаки.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>10</codeLength>
+  <descriptionLength>75</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартОтчетЗапускаМимаки.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.смартОтчетЗапускаМимаки.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="3f5e3cb3-11a9-4d91-9235-3aab5d6537ed">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="08db23b0-28e4-41a3-b06e-11e661295829">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f83a1ffb-e80b-4707-a64c-9e76224c11ad">
+    <name>Чернила</name>
+    <synonym>
+      <key>ru</key>
+      <value>Чернила</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d1cb6018-de67-46a6-a2ce-864c4bec7472">
+    <name>ПрограммноеОбеспечение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Программное обеспечение</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартПрограммноеОбеспечение</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="837efbf8-5ab1-4ef1-9bf7-9f09f7f169fc">
+    <name>ДатаУстановки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата установки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="62e5a1c9-ab9e-45dc-a93e-479b5b2fa0e5">
+    <name>Страна</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страна</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтраныМира</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cecfc9e6-4acd-47b7-8e33-6d287bd6142a">
+    <name>НачальнаяВерсияПО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Версия ПО при поступлении</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cdde99c2-f40e-4d14-93fa-9ef3a4efa701">
+    <name>ОкончательнаяВерсияПО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончательная версия ПО</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="82d2a10a-d94c-4697-8f4f-47a80b9553b9">
+    <name>Инженер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8de7d965-d0bb-4169-91fe-3bdb5c401132">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаПускоНаладку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4e422a65-a180-4fce-a961-8570338e58eb">
+    <name>ФотоОборудования</name>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a693bd49-aaa8-4f4a-8876-04920de1a51c">
+    <name>ФотоШильдаОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фото шильда оборудования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="50827ea6-01d6-4ae9-9226-4cb67428b8a6">
+    <name>ParametersДоИнсталяции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parameters до инсталяции</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7e06b474-f971-4303-bad7-9f33250d5553">
+    <name>LogДоИнсталяции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Log до инсталяции</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="75e5a012-f7a7-45fa-b270-a5bda1650606">
+    <name>LogПослеИнсталяции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Log после инсталяции</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa69ac3d-5d6d-4c43-b199-b44666b65df6">
+    <name>ParametersПослеИнсталяции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Parameters после инсталяции</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартЗаявкаНаПускоНаладкуПрисоединенныеФайлы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="8618d570-4e73-45b0-9edf-c22be08b8438">
+    <producedTypes>
+      <objectType typeId="2b3fe98b-cbba-4119-9ab8-216ce1449b86" valueTypeId="2762b944-1194-4360-8410-9cf6673b9400"/>
+      <rowType typeId="8de954cc-6ab9-42b6-9940-5f574c7fd647" valueTypeId="26af330a-1045-4bff-b5c8-2af8159b3ffc"/>
+    </producedTypes>
+    <name>Опции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Опции</value>
+    </synonym>
+    <attributes uuid="57d4c587-fd16-40fa-97c0-2df2387a2596">
+      <name>КодОпции</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код опции</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>9</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e1436e2e-0609-427a-a359-503fadf72a5c">
+      <name>СерийныйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серийный номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="40f2d111-08b6-4315-8cee-893d4625905b">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a7a67e1b-c2de-431b-bbb4-a2e3ad26a597">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="fe80f8ec-0a27-4cf7-a399-325cdb2ecda2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

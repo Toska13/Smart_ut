@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7f886aab-9446-428a-81eb-c9fd5fe09896">
+  <producedTypes>
+    <selectionType typeId="b996a48d-1f78-4bbd-9652-f6a7ca8bf35a" valueTypeId="db8fd58e-1eed-4fdc-96f1-c732103d4650"/>
+    <listType typeId="6ad16031-563c-492d-ad29-60be5202082a" valueTypeId="3b12017d-2376-4427-9231-a9392fc7b95a"/>
+    <managerType typeId="1838104c-4a5c-4b27-b1ec-0e6a50579915" valueTypeId="3fe46c53-ea15-426f-bbd9-8ecaf66a5be4"/>
+    <recordSetType typeId="2f8aa872-cff6-4c40-ab74-c2aab17c1511" valueTypeId="2d5f541a-bbec-42e7-b8cc-a392e67bad3e"/>
+    <recordKeyType typeId="b72dfe1a-d136-4b2d-bad7-37a320a3a29f" valueTypeId="30d034cc-008a-4404-9207-683f016219ea"/>
+    <recordType typeId="b14a5ddd-f27c-4345-acbc-6bbc42686a49" valueTypeId="7ad324fd-21dd-42b4-b817-ab846df4c1b2"/>
+    <recordManagerType typeId="7e7d5767-a46a-4c9e-9529-a2145a67d069" valueTypeId="3d3f2a5d-6a9b-4ec9-aa5d-dad017ab7795"/>
+  </producedTypes>
+  <name>CRM_ЗапланированныеАктивности</name>
+  <synonym>
+    <key>ru</key>
+    <value>Запланированные активности</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Scheduled Activities</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="cde2f746-3902-4fc0-b831-b07ebc44bc56">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7c7ebf5e-5c5c-4a5d-999d-e6efd91dc5b2">
+    <name>Тема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="9f46a943-28bc-41db-9224-47db8771e086">
+    <name>ПланируемаяДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планируемая дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planned date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6902295c-6b7f-430f-a339-bbd6503d3eb1">
+    <name>ТипАктивности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип активности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity Type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ТипыАктивности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f65c2ca7-f750-4a51-950b-3b9577bc2b1b">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9570f14b-e3ec-47db-916d-6e92151d55f4">
+    <name>ПланируемаяАктивность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планируемая активность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planned Activity</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+      <types>TaskRef.ЗадачаИсполнителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

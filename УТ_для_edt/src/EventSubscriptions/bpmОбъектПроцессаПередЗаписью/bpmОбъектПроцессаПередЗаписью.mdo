@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="99516baa-26b4-488c-a79b-9a1722855f9b">
+  <name>bpmОбъектПроцессаПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект процесса перед записью (bpm)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Before writing a process object</value>
+  </synonym>
+  <comment>Объект процесса перед записью (bpm)</comment>
+  <source>
+    <types>DocumentObject.CRM_ОтчетОРаботе</types>
+    <types>DocumentObject.CRM_РассылкаЭлектронныхПисем</types>
+    <types>DocumentObject.CRM_ЭтапКалендарногоПлана</types>
+    <types>DocumentObject.ЭлектронноеПисьмоВходящее</types>
+    <types>DocumentObject.CRM_Интерес</types>
+    <types>DocumentObject.CRM_УстановкаИспользуемыхПоказателей</types>
+    <types>DocumentObject.ЗаказКлиента</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>DocumentObject.CRM_Телемаркетинг</types>
+    <types>DocumentObject.ЭлектронноеПисьмоИсходящее</types>
+    <types>DocumentObject.CRM_ПланированиеВоронкиПродаж</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_БизнесПроцессыСервер.ПередЗаписьюОбъектаПроцесса</handler>
+</mdclass:EventSubscription>

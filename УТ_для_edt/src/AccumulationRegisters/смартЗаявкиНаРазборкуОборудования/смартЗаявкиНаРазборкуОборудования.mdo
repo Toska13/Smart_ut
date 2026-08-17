@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="198c6552-4b70-44bc-99c1-b6a24097e315">
+  <producedTypes>
+    <selectionType typeId="56c33247-ec7d-4122-a564-f85e565bd0db" valueTypeId="f4b53416-7ce8-458b-a6d0-940a3ec26f08"/>
+    <listType typeId="49d88628-8893-4e17-b25b-bdbf06303048" valueTypeId="8fcbc4ee-545e-4bb6-9628-d1a17ab7985c"/>
+    <managerType typeId="51f2e250-db96-4b4d-89a7-20c7e92ee7fb" valueTypeId="7303a342-b10e-4396-8684-970a8f081d87"/>
+    <recordSetType typeId="f97fd8af-d3bd-4223-918f-737a017ed246" valueTypeId="7dedc07b-fd29-422c-aebc-dd87f92bfaac"/>
+    <recordKeyType typeId="466cf611-d971-4533-9963-8efdb30f2d7e" valueTypeId="d63d42f9-77b5-4423-9cad-35f26177c9b6"/>
+    <recordType typeId="5c8d3a80-57b4-44eb-b677-71b8a35fca0a" valueTypeId="1d530245-b33c-41a7-9291-4d2729765cc1"/>
+  </producedTypes>
+  <name>смартЗаявкиНаРазборкуОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заявки на разборку оборудования (смарт)</value>
+  </synonym>
+  <comment>#1901 смарт: Ермаков 20.08.2024 / Создание документа Заявка на разборку оборудования</comment>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <explanation>
+    <key>ru</key>
+    <value>Регистр сожержит остатки и обороты движений заявок на разборку оборудования
+Аналогичный регистр (схож по идее) - ЗаказыКлиентов</value>
+  </explanation>
+  <resources uuid="e873b4af-fdf6-47be-80bf-7fd71a08655e">
+    <name>КРазборке</name>
+    <synonym>
+      <key>ru</key>
+      <value>К разборке</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="e5d1486e-19be-41a8-baeb-8dc52f566811">
+    <name>КПолучению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К получению</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="5bd6f243-8f46-4433-a01a-6f365885b74b">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаРазборкуОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="32acb851-5bc0-4f67-b815-87f26f03be96">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bfdf80fc-fde1-4608-9352-e406711f5345">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

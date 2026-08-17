@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3e5df7a1-1b02-462c-b010-a7283e8b5020">
+  <name>смартУведомленияПриУстановкиПометкиУдаления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Смарт уведомления при установки пометки удаления</value>
+  </synonym>
+  <source>
+    <types>BusinessProcessObject</types>
+    <types>ChartOfCharacteristicTypesObject</types>
+    <types>ExchangePlanObject</types>
+    <types>CatalogObject</types>
+    <types>TaskObject</types>
+    <types>DocumentObject</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.смартУведомления.смартУведомленияПриУстановкиПометкиУдаленияПередУдалением</handler>
+</mdclass:EventSubscription>

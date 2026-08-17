@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7e0782a0-5110-4751-82dd-a69b42706b64">
+  <name>CRM_LeadsExchange</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка обращений</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Load leads</value>
+  </synonym>
+  <rootURL>LeadsExchange</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="8c4d7683-9687-40ca-a5f4-0da86c1707f2">
+    <name>GetFields</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get fields</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get fields</value>
+    </synonym>
+    <comment>Передает структуру базовых полей лида</comment>
+    <template>/GetFields</template>
+    <methods uuid="4c0847fa-b647-4a8c-b24f-4f65eefc8cf8">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>GetFieldsGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="62ac9681-6aaf-4297-beb5-173dbbc4e244">
+    <name>GetFieldsDefault</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get fields default</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get default fields</value>
+    </synonym>
+    <comment>Передает структуру базовых и дополнительных полей лида</comment>
+    <template>/GetFieldsDefault</template>
+    <methods uuid="124e0e64-743d-4c00-a978-46f0ab04dcea">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>GetFieldsDefaultGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b4ebbe66-e7f9-414b-b5f2-6773582d201f">
+    <name>LoadLead</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружает лид</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Loads the lead</value>
+    </synonym>
+    <template>/LoadLead</template>
+    <methods uuid="cfcfbbbb-e00f-4c19-a0e0-4b0e48f3144c">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>LoadLeadPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="aad169f1-a2f3-485d-9e2e-ace35a528959">
+    <name>GetListExtraOptions</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get list extra options</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get list extra options</value>
+    </synonym>
+    <template>/GetListExtraOptions</template>
+    <methods uuid="11de5b67-0ccd-471a-bdd4-51dc148898cf">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>GetListExtraOptionsGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="be4a8f05-deb1-46b5-abfc-632b8e6c02c4">
+    <name>leads</name>
+    <synonym>
+      <key>ru</key>
+      <value>Leads</value>
+    </synonym>
+    <template>/{ИмяМетода}</template>
+    <methods uuid="ebda6259-ce30-439a-ac49-b974f5d4040c">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>leadsPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="cde70b7a-0885-4960-83c5-ea919b0cb77e">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="10fa0258-ffc0-41e2-9994-b07a1fd82d60">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3544fa03-eb1b-4fba-b8d8-f5872160cd2d">
+  <producedTypes>
+    <objectType typeId="08cf9a08-6ea6-461d-a04d-a72a345139bd" valueTypeId="e4772820-f9b4-4d35-94d3-b8a6ff5c2e16"/>
+    <refType typeId="6914c982-9ba8-4c5c-9ab1-c7911f49aeb1" valueTypeId="ab64b5dc-d6e3-4771-98b4-49729ac2066d"/>
+    <selectionType typeId="2d732510-380c-4e44-bf61-4ead4d4e988a" valueTypeId="e655e39e-43bc-4820-b537-edcb6198f13b"/>
+    <listType typeId="983f5490-3102-4a3f-b62d-8a706c399e23" valueTypeId="813df85c-50e6-4eb3-a50b-c5723b1fe959"/>
+    <managerType typeId="f8872a8f-a9bc-454d-ae43-a1c2265e50c9" valueTypeId="600d1ce2-c17e-4774-9da3-fcf07ff708fa"/>
+  </producedTypes>
+  <name>смартПланПродажПоМенеджерам</name>
+  <synonym>
+    <key>ru</key>
+    <value>План продаж (смарт)</value>
+  </synonym>
+  <comment>//++ #1498 смарт: Фролов 17.10.2023 //Разработать план продаж</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартПланПродажПоМенеджерам.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартПланПродажПоМенеджерам.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.смартПланПродажПоМенеджерам.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.смартПланПродажПоМенеджерам</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="483b5faa-589e-422a-8ae9-dcdd03a5abc6">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c3333ace-e6bf-457b-9743-27a68135095a">
+    <name>КурсДляРасчетаРублевогоПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Курс для расчета рублевого плана</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>7</precision>
+        <scale>4</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1d305a4e-5729-4cc7-926f-4b24f071d33b">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3908da28-53f6-4cad-85c6-e871da7fa508">
+    <name>КоэффициентИзмененияОбщий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент изменения общий</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4b5f7eaf-dd06-4c72-a755-f9c1a3cd9d99">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСтатусыПланаПродаж</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa348445-48ae-4a67-8a19-afe8d2646005">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Произвольный текст.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="40420675-17b9-404a-92b9-31bf7bb15c24">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет границу начала периода плана.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="be534646-fccd-4375-875c-efbc1d899177">
+    <name>ОкончаниеПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание периода</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет границу окончания периода плана.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="94182a47-e672-4777-9dec-268658d9d11e">
+    <name>ИтогоПланНаСледПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Итого план на след период</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="150d6ddd-d5f3-4fb7-b359-becd7ef01eba">
+    <name>ПериодПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период плана</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e7ebb5cd-1496-41ab-9695-d913f126b454">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+    <type>
+      <types>CatalogRef.СегментыНоменклатуры</types>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="af0b39c6-5834-4aa9-9d46-8cfeb382c5cf">
+    <name>ВидПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид плана</value>
+    </synonym>
+    <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+    <type>
+      <types>EnumRef.смартВидПлана</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="15146068-112c-4a4e-bd26-f77e5a070721">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c3b9db68-77a2-4386-a217-7d0aff30f9d7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="6f566065-b537-438b-88f9-afbea3219e77">
+    <producedTypes>
+      <objectType typeId="bfa175d8-8ab6-4153-aaa7-20d0b30e2edc" valueTypeId="1ab42479-f64f-45ac-8aa4-72b03dd201bb"/>
+      <rowType typeId="393c2211-25ee-44b8-80a4-cbc248c29734" valueTypeId="10943883-07ad-404b-accd-5ac700157e2c"/>
+    </producedTypes>
+    <name>Планирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планирование</value>
+    </synonym>
+    <attributes uuid="a97c0829-8d0d-4a95-85eb-dd739ff3eaeb">
+      <name>СегментНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сегмент номенклатуры</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СегментыНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3d1181f7-ec7d-4e91-b87a-a350be4c337f">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <comment>//++ #Б-958 смарт: Фролов 26.09.2024 //Создание отчета план/факт выручка по подразделениям, менеджерам.</comment>
+      <type>
+        <types>DefinedType.Подразделение</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение, в котором работает пользователь</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a0caeeb6-3a29-4f8b-9d0d-656da47a1ee4">
+      <name>Менеджер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Менеджер</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cd83f6d4-cd19-4c13-9d0c-99f476482702">
+      <name>Период</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="f58dba12-0bb6-40a0-b9f6-a8aca06c4b82">
+      <name>КоэффициентИзменения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент изменения</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c5e34470-c726-4e17-b0c3-28685eee2446">
+      <name>НовыйПлан</name>
+      <synonym>
+        <key>ru</key>
+        <value>Новый план</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6d5d1277-48b7-4d69-9f45-93187999c479">
+      <name>Комментарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="36c6c45e-25ad-481d-9765-1856f0e5f553">
+      <name>РучноеИзменение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ручное изменение</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="32871332-c1be-4082-8fcd-571a15971111">
+      <name>НовыйПланКоличество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Новый план количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="43b59fa2-32c6-42cc-867b-50f213899b22">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="1177ba4d-d3a9-4f44-aa71-1a3da095b31d">
+    <producedTypes>
+      <objectType typeId="8188498f-303a-4636-aaef-d1e3a020430e" valueTypeId="21abe6d1-ad92-4fd4-9496-02e1044e162b"/>
+      <rowType typeId="6c3922e6-a2a4-4d87-a825-a1dae5c12d3b" valueTypeId="88a10483-1501-4199-875d-286914c18ad7"/>
+    </producedTypes>
+    <name>ГруппыТоваровМенеджеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группы товаров менеджеров</value>
+    </synonym>
+    <attributes uuid="93f4b50f-ff88-434f-a1e6-e2e925223980">
+      <name>Менеджер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Менеджер</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d04d5e6e-eb63-46fe-b929-f7a995a0f001">
+      <name>ГруппаТоваров</name>
+      <synonym>
+        <key>ru</key>
+        <value>Группа товаров</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="571cc04f-ab18-405d-89bc-88c375eb849d">
+    <producedTypes>
+      <objectType typeId="2045d115-430d-4b7a-b336-a039631da55d" valueTypeId="f2e4858e-cf35-423b-b48a-9855b6256c66"/>
+      <rowType typeId="938dfb4f-ad5e-4c9e-8ea8-d5ab9cc6edb7" valueTypeId="4c24b959-82da-4d1f-ac7c-03fc9ba867f7"/>
+    </producedTypes>
+    <name>ПартнерыИсключения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнеры исключения</value>
+    </synonym>
+    <attributes uuid="3f2d532b-062b-4188-a2c5-7381948fed88">
+      <name>Партнер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партнер</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Партнеры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="7a322ec1-6416-4ef1-a7b5-debadfb5da9f">
+    <name>ПФ_MXL_ПланПродажПоМенеджерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>План продаж по менеджерам</value>
+    </synonym>
+  </templates>
+</mdclass:Document>

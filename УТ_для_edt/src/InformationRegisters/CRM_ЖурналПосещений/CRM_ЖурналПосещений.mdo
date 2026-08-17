@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f9d35c3d-0a3f-453c-b335-0d4a85a34e62">
+  <producedTypes>
+    <selectionType typeId="c99cad1b-7db4-4799-ab7d-eb303055bb6b" valueTypeId="3812de8b-327b-41a8-b129-34dc3b87c768"/>
+    <listType typeId="8a676829-39f2-4e6b-a25f-cef196deec21" valueTypeId="894b4135-1b27-4de0-9128-c5ff245aa909"/>
+    <managerType typeId="0d85acf2-d8a9-4e7c-be8f-ce7b724165c1" valueTypeId="34060c4f-5af8-4f5c-912c-716323d1a1a2"/>
+    <recordSetType typeId="5f8927b5-83a7-4822-b9ad-76fd7e978e3c" valueTypeId="02ff1d0d-2e3b-44ee-9e98-6bfeb83decae"/>
+    <recordKeyType typeId="4dba8687-9e80-4474-b271-d15b15cb34b1" valueTypeId="c9e70f52-dd81-4a04-8ec6-9f3b87b17ee0"/>
+    <recordType typeId="8db67e87-c8f7-4486-bde8-067eaffdeadb" valueTypeId="1767fe84-ed4c-46d6-bda3-9b0764605326"/>
+    <recordManagerType typeId="98086721-bbf3-4d68-b54a-b9ab25fc514c" valueTypeId="7a045e6a-2e44-439e-ab1e-3810951ca62c"/>
+  </producedTypes>
+  <name>CRM_ЖурналПосещений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Журнал посещений</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Visitor log</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c0265880-9d24-45b1-b645-b5f43a9c20e2">
+    <name>ДатаПосещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата посещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date of visit</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="96b66213-cc64-4dff-93e4-919ecfe1756c">
+    <name>ДатаПосещенияСтр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата посещения стр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date visited page</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>16</length>
+        <fixed>true</fixed>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:StringValue">
+      <value>                </value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="ff5ab61d-08be-4510-9939-72c0642e76d3">
+    <name>Клиент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Client</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ПотенциальныеКлиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="32b33a1c-c05a-4229-b4f3-2da4e6e442fc">
+    <name>Камера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Камера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Camera</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Камеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="65afc841-6c16-49e4-b2dd-4ef126504c67">
+    <name>Помещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Помещения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dc87e02b-2967-4528-a6f3-b890f6c8a0cd">
+    <name>Мероприятие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мероприятие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МаркетинговыеМероприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

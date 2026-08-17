@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5b8a55f7-9cd9-483b-bdb2-e44c5d2d244f">
+  <producedTypes>
+    <selectionType typeId="71a93ab9-f593-4502-ad02-e556a57e35ec" valueTypeId="a1779d8b-ca2c-4c29-aebf-bf8687a20109"/>
+    <listType typeId="8810e005-503e-4c67-be99-6418cc6c7b3a" valueTypeId="e5d79462-c315-476f-8e83-6309e16e9541"/>
+    <managerType typeId="25d8d2f7-392c-42b1-a3d3-ddb35ddd65c6" valueTypeId="b8fc9107-b238-4c38-9711-a544059f1abc"/>
+    <recordSetType typeId="9f443a63-4837-43f6-b80a-e9b61056ca7e" valueTypeId="240f40d5-7698-4140-b6cf-ecc6aa0397e5"/>
+    <recordKeyType typeId="3f7cb7f8-ed56-46f1-adb2-e14ba0fe338c" valueTypeId="152e37aa-1846-43e3-9e01-8f145bcfd608"/>
+    <recordType typeId="ad741fba-29ba-4361-89fb-438301123907" valueTypeId="2d3080a0-3039-4916-a365-9463bb0f577b"/>
+    <recordManagerType typeId="715f758e-ed5f-4ae2-bb48-2913d2a0a11d" valueTypeId="aaf9c931-ab13-4587-a7a9-59a6b00045b4"/>
+  </producedTypes>
+  <name>смартСозданиеПредзаказовВ_ТК</name>
+  <synonym>
+    <key>ru</key>
+    <value>(Смарт) Создание предзаказов в ТК </value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="493f8b7f-fc90-42c6-bcb9-fa9b7c880274">
+    <name>requestID</name>
+    <synonym>
+      <key>ru</key>
+      <value>Request ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="b20c724a-4cbc-4393-b1e9-851816485893">
+    <name>ИдТрек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ид трек</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="387da327-833a-44bc-8110-03ac31fdfd15">
+    <name>barcode</name>
+    <synonym>
+      <key>ru</key>
+      <value>Barcode</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="42de1de9-da93-4f34-8a26-0dba3252798f">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <types>DocumentRef.ЗаказНаПеремещение</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

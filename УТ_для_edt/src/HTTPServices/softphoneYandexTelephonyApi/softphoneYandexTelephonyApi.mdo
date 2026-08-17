@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b51bee41-016a-4d56-a0cf-a5ad42b0ea51">
+  <name>softphoneYandexTelephonyApi</name>
+  <synonym>
+    <key>ru</key>
+    <value>vats Yandex.Telephony api</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>vats Yandex.Telephony api</value>
+  </synonym>
+  <comment>Яндекс.Телефония</comment>
+  <rootURL>yandex-api</rootURL>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="999b4ac3-4014-471b-a3a8-378ea8cd47de">
+    <name>Event</name>
+    <synonym>
+      <key>ru</key>
+      <value>Event</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Событие</value>
+    </synonym>
+    <template>/*</template>
+    <methods uuid="ab32b98d-df3e-42c9-ba8f-b7fc91585078">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>EventPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="aa04ee15-a58a-48d7-a735-0607b8240679">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="f8270739-7520-438b-b9a0-433f91466fca">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

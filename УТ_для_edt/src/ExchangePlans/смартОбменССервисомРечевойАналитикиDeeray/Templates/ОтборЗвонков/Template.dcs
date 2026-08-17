@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТелефонныйЗвонок</dataPath>
+			<field>ТелефонныйЗвонок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефонный звонок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗвонка</dataPath>
+			<field>ДатаЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АбонентКакСвязаться</dataPath>
+			<field>АбонентКакСвязаться</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АбонентПредставление</dataPath>
+			<field>АбонентПредставление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Абонент представление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АбонентКонтакт</dataPath>
+			<field>АбонентКонтакт</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КонтактноеЛицо</dataPath>
+			<field>КонтактноеЛицо</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контактное лицо</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВнутреннийНомер</dataPath>
+			<field>ВнутреннийНомер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внутренний номер</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Входящий</dataPath>
+			<field>Входящий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДлительностьЗвонка</dataPath>
+			<field>ДлительностьЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Длительность звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИдентификаторЗвонка</dataPath>
+			<field>ИдентификаторЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИдентификаторЗаписи</dataPath>
+			<field>ИдентификаторЗаписи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор записи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеЗвонка</dataPath>
+			<field>СостояниеЗвонка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние звонка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидАТС</dataPath>
+			<field>ВидАТС</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид АТС</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Абонент</dataPath>
+			<field>Абонент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Абонент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерАбонента</dataPath>
+			<field>НомерАбонента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер абонента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСотрудника</dataPath>
+			<field>НомерСотрудника</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер сотрудника</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИдентификаторDeeray</dataPath>
+			<field>ИдентификаторDeeray</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор deeray</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоМенеджерКоммерческогоОтдела</dataPath>
+			<field>ЭтоМенеджерКоммерческогоОтдела</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это менеджер коммерческого отдела</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипУслуги</dataPath>
+			<field>ТипУслуги</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип услуги</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПроектDeeray</dataPath>
+			<field>ПроектDeeray</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проект deeray</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеИнтереса</dataPath>
+			<field>СостояниеИнтереса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние интереса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоМенеджерКоммерческогоОтделаПоОборудованию</dataPath>
+			<field>ЭтоМенеджерКоммерческогоОтделаПоОборудованию</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это менеджер коммерческого отдела по оборудованию</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ТелефонныйЗвонокИзменения.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_ЗвонкиИзменения
+ИЗ
+	Документ.ТелефонныйЗвонок.Изменения КАК ТелефонныйЗвонокИзменения
+ГДЕ
+	ТелефонныйЗвонокИзменения.Узел = &amp;Узел
+	И ТелефонныйЗвонокИзменения.Узел.Активно
+	И &amp;ОтбиратьТолькоИзменения
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	смартОбменССервисомРечевойАналитикиDeerayВыгружаемыеТеги.Тег КАК СвойствоТега
+ПОМЕСТИТЬ ВТ_Теги
+ИЗ
+	ПланОбмена.смартОбменССервисомРечевойАналитикиDeeray.ВыгружаемыеТеги КАК смартОбменССервисомРечевойАналитикиDeerayВыгружаемыеТеги
+ГДЕ
+	смартОбменССервисомРечевойАналитикиDeerayВыгружаемыеТеги.Ссылка = &amp;Узел
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ТелефонныйЗвонок.Ссылка КАК ТелефонныйЗвонок,
+	ТелефонныйЗвонок.Дата КАК ДатаЗвонка,
+	ТелефонныйЗвонок.АбонентКонтакт КАК АбонентКонтакт,
+	ТелефонныйЗвонок.АбонентПредставление КАК АбонентПредставление,
+	ТелефонныйЗвонок.АбонентКакСвязаться КАК АбонентКакСвязаться,
+	ТелефонныйЗвонок.Ответственный КАК Ответственный,
+	ВЫБОР
+		КОГДА ДЛИНАСТРОКИ(ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) &gt; 3
+			ТОГДА "7"
+		ИНАЧЕ ""
+	КОНЕЦ + ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "") КАК ВнутреннийНомер,
+	ТелефонныйЗвонок.Входящий КАК Входящий,
+	ТелефонныйЗвонок.Комментарий КАК Комментарий,
+	ТелефонныйЗвонок.сфпДлительностьЗвонка КАК ДлительностьЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗвонка КАК ИдентификаторЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗаписи КАК ИдентификаторЗаписи,
+	ТелефонныйЗвонок.сфпСостояниеЗвонка КАК СостояниеЗвонка,
+	ТелефонныйЗвонок.смартИдентификаторDeeray КАК ИдентификаторDeeray,
+	ВЫБОР
+		КОГДА ТелефонныйЗвонок.смартВидАТС &lt;&gt; ЗНАЧЕНИЕ(Справочник.смартВидыАТС.ПустаяСсылка)
+			ТОГДА ТелефонныйЗвонок.смартВидАТС
+		КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Мегафон"
+			ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Мегафон)
+		КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Asterisk"
+			ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Asterisk)
+	КОНЕЦ КАК ВидАТС
+ПОМЕСТИТЬ ВТ_Звонки_Врем
+ИЗ
+	ВТ_ЗвонкиИзменения КАК ВТ_ЗвонкиИзменения
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ТелефонныйЗвонок КАК ТелефонныйЗвонок
+		ПО ВТ_ЗвонкиИзменения.Ссылка = ТелефонныйЗвонок.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.сфпИсторияЗвонков КАК сфпИсторияЗвонков
+		ПО (сфпИсторияЗвонков.Звонок = ТелефонныйЗвонок.Ссылка)
+ГДЕ
+	ТелефонныйЗвонок.Дата &gt;= &amp;ДатаНачала
+{ГДЕ
+	ТелефонныйЗвонок.Ссылка.* КАК ТелефонныйЗвонок,
+	ТелефонныйЗвонок.Дата КАК ДатаЗвонка,
+	ТелефонныйЗвонок.АбонентКонтакт.* КАК Абонент,
+	ТелефонныйЗвонок.АбонентПредставление,
+	ТелефонныйЗвонок.АбонентКакСвязаться КАК НомерАбонента,
+	ТелефонныйЗвонок.Ответственный.*,
+	(ВЫБОР
+			КОГДА ДЛИНАСТРОКИ(ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) &gt; 3
+				ТОГДА "7"
+			ИНАЧЕ ""
+		КОНЕЦ + ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) КАК НомерСотрудника,
+	ТелефонныйЗвонок.Входящий,
+	ТелефонныйЗвонок.Комментарий,
+	ТелефонныйЗвонок.сфпДлительностьЗвонка КАК ДлительностьЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗвонка КАК ИдентификаторЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗаписи КАК ИдентификаторЗаписи,
+	ТелефонныйЗвонок.сфпСостояниеЗвонка.* КАК СостояниеЗвонка,
+	ТелефонныйЗвонок.смартИдентификаторDeeray КАК ИдентификаторDeeray,
+	(ВЫБОР
+			КОГДА ТелефонныйЗвонок.смартВидАТС &lt;&gt; ЗНАЧЕНИЕ(Справочник.смартВидыАТС.ПустаяСсылка)
+				ТОГДА ТелефонныйЗвонок.смартВидАТС
+			КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Мегафон"
+				ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Мегафон)
+			КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Asterisk"
+				ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Asterisk)
+		КОНЕЦ).* КАК ВидАТС}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ТелефонныйЗвонок.Ссылка,
+	ТелефонныйЗвонок.Дата,
+	ТелефонныйЗвонок.АбонентКонтакт,
+	ТелефонныйЗвонок.АбонентПредставление,
+	ТелефонныйЗвонок.АбонентКакСвязаться,
+	ТелефонныйЗвонок.Ответственный,
+	ВЫБОР
+		КОГДА ДЛИНАСТРОКИ(ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) &gt; 3
+			ТОГДА "7"
+		ИНАЧЕ ""
+	КОНЕЦ + ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, ""),
+	ТелефонныйЗвонок.Входящий,
+	ТелефонныйЗвонок.Комментарий,
+	ТелефонныйЗвонок.сфпДлительностьЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗаписи,
+	ТелефонныйЗвонок.сфпСостояниеЗвонка,
+	ТелефонныйЗвонок.смартИдентификаторDeeray,
+	ВЫБОР
+		КОГДА ТелефонныйЗвонок.смартВидАТС &lt;&gt; ЗНАЧЕНИЕ(Справочник.смартВидыАТС.ПустаяСсылка)
+			ТОГДА ТелефонныйЗвонок.смартВидАТС
+		КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Мегафон"
+			ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Мегафон)
+		КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Asterisk"
+			ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Asterisk)
+	КОНЕЦ
+ИЗ
+	Документ.ТелефонныйЗвонок КАК ТелефонныйЗвонок
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.сфпИсторияЗвонков КАК сфпИсторияЗвонков
+		ПО (сфпИсторияЗвонков.Звонок = ТелефонныйЗвонок.Ссылка)
+ГДЕ
+	НЕ &amp;ОтбиратьТолькоИзменения
+	И ТелефонныйЗвонок.Дата &gt;= &amp;ДатаНачала
+{ГДЕ
+	ТелефонныйЗвонок.Ссылка.* КАК ТелефонныйЗвонок,
+	ТелефонныйЗвонок.Дата КАК ДатаЗвонка,
+	ТелефонныйЗвонок.АбонентКонтакт.* КАК Абонент,
+	ТелефонныйЗвонок.АбонентПредставление,
+	ТелефонныйЗвонок.АбонентКакСвязаться КАК НомерАбонента,
+	ТелефонныйЗвонок.Ответственный.*,
+	(ВЫБОР
+			КОГДА ДЛИНАСТРОКИ(ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) &gt; 3
+				ТОГДА "7"
+			ИНАЧЕ ""
+		КОНЕЦ + ЕСТЬNULL(сфпИсторияЗвонков.ВнутреннийНомер, "")) КАК НомерСотрудника,
+	ТелефонныйЗвонок.Входящий,
+	ТелефонныйЗвонок.Комментарий,
+	ТелефонныйЗвонок.сфпДлительностьЗвонка КАК ДлительностьЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗвонка КАК ИдентификаторЗвонка,
+	ТелефонныйЗвонок.сфпИдентификаторЗаписи КАК ИдентификаторЗаписи,
+	ТелефонныйЗвонок.сфпСостояниеЗвонка.* КАК СостояниеЗвонка,
+	ТелефонныйЗвонок.смартИдентификаторDeeray КАК ИдентификаторDeeray,
+	(ВЫБОР
+			КОГДА ТелефонныйЗвонок.смартВидАТС &lt;&gt; ЗНАЧЕНИЕ(Справочник.смартВидыАТС.ПустаяСсылка)
+				ТОГДА ТелефонныйЗвонок.смартВидАТС
+			КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Мегафон"
+				ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Мегафон)
+			КОГДА ТелефонныйЗвонок.Комментарий ПОДОБНО "%Asterisk"
+				ТОГДА ЗНАЧЕНИЕ(Справочник.смартВидыАТС.Asterisk)
+		КОНЕЦ).* КАК ВидАТС}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВТ_Звонки.ТелефонныйЗвонок КАК ТелефонныйЗвонок,
+	ВТ_Звонки.ДатаЗвонка КАК ДатаЗвонка,
+	ВТ_Звонки.АбонентКонтакт КАК АбонентКонтакт,
+	ВТ_Звонки.АбонентПредставление КАК АбонентПредставление,
+	ВТ_Звонки.АбонентКакСвязаться КАК АбонентКакСвязаться,
+	ВТ_Звонки.Ответственный КАК Ответственный,
+	ВТ_Звонки.ВнутреннийНомер КАК ВнутреннийНомер,
+	ВТ_Звонки.Входящий КАК Входящий,
+	ВЫРАЗИТЬ(ВТ_Звонки.Комментарий КАК СТРОКА(1000)) КАК Комментарий,
+	ВТ_Звонки.ДлительностьЗвонка КАК ДлительностьЗвонка,
+	ВТ_Звонки.ИдентификаторЗвонка КАК ИдентификаторЗвонка,
+	ВЫРАЗИТЬ(ВТ_Звонки.ИдентификаторЗаписи КАК СТРОКА(1000)) КАК ИдентификаторЗаписи,
+	ВТ_Звонки.СостояниеЗвонка КАК СостояниеЗвонка,
+	ВТ_Звонки.ИдентификаторDeeray КАК ИдентификаторDeeray,
+	ВТ_Звонки.ВидАТС КАК ВидАТС
+ПОМЕСТИТЬ ВТ_Звонки
+ИЗ
+	ВТ_Звонки_Врем КАК ВТ_Звонки
+
+ИНДЕКСИРОВАТЬ ПО
+	ТелефонныйЗвонок,
+	АбонентКонтакт,
+	АбонентКакСвязаться,
+	Ответственный
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	КонтактныеЛицаПартнеровКонтактнаяИнформация.Ссылка.Владелец КАК Владелец,
+	КонтактныеЛицаПартнеровКонтактнаяИнформация.Ссылка КАК КонтактноеЛицо,
+	КонтактныеЛицаПартнеровКонтактнаяИнформация.НомерТелефона КАК НомерТелефона
+ПОМЕСТИТЬ ВТ_КонтактныеЛица
+ИЗ
+	Справочник.КонтактныеЛицаПартнеров.КонтактнаяИнформация КАК КонтактныеЛицаПартнеровКонтактнаяИнформация
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Звонки КАК ВТ_Звонки
+		ПО (ВТ_Звонки.АбонентКонтакт = КонтактныеЛицаПартнеровКонтактнаяИнформация.Ссылка.Владелец)
+			И (ВТ_Звонки.АбонентКакСвязаться = КонтактныеЛицаПартнеровКонтактнаяИнформация.НомерТелефона)
+
+ИНДЕКСИРОВАТЬ ПО
+	Владелец,
+	НомерТелефона
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_КонтактныеЛица.Владелец КАК Владелец,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_КонтактныеЛица.КонтактноеЛицо) КАК КонтактноеЛицо,
+	ВТ_КонтактныеЛица.НомерТелефона КАК НомерТелефона
+ПОМЕСТИТЬ ВТ_НомераКонтактов
+ИЗ
+	ВТ_КонтактныеЛица КАК ВТ_КонтактныеЛица
+
+СГРУППИРОВАТЬ ПО
+	ВТ_КонтактныеЛица.Владелец,
+	ВТ_КонтактныеЛица.НомерТелефона
+
+ИМЕЮЩИЕ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_КонтактныеЛица.КонтактноеЛицо) = 1
+
+ИНДЕКСИРОВАТЬ ПО
+	Владелец,
+	НомерТелефона
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_КонтактныеЛица.Владелец КАК Владелец,
+	ВТ_КонтактныеЛица.КонтактноеЛицо КАК КонтактноеЛицо,
+	ВТ_КонтактныеЛица.НомерТелефона КАК НомерТелефона
+ПОМЕСТИТЬ ВТ_КонтактныеЛицаБезДублей
+ИЗ
+	ВТ_КонтактныеЛица КАК ВТ_КонтактныеЛица
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_НомераКонтактов КАК ВТ_НомераКонтактов
+		ПО ВТ_КонтактныеЛица.Владелец = ВТ_НомераКонтактов.Владелец
+			И ВТ_КонтактныеЛица.НомерТелефона = ВТ_НомераКонтактов.НомерТелефона
+
+ИНДЕКСИРОВАТЬ ПО
+	Владелец,
+	НомерТелефона
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗЛИЧНЫЕ
+	смартКвалификацииМенеджеровПользователи.Пользователь КАК Пользователь,
+	МАКСИМУМ(смартКвалификацииМенеджеровПользователи.Ссылка.ТипПродукта = ЗНАЧЕНИЕ(Справочник.смартТипыПродуктов.Оборудование)) КАК ЭтоМенеджерПоОборудованию
+ПОМЕСТИТЬ ВТ_ПользователиКвалификаций
+ИЗ
+	Справочник.смартКвалификацииМенеджеров.Пользователи КАК смартКвалификацииМенеджеровПользователи
+ГДЕ
+	смартКвалификацииМенеджеровПользователи.Пользователь В
+			(ВЫБРАТЬ
+				ВТ_Звонки.Ответственный
+			ИЗ
+				ВТ_Звонки)
+	И НЕ смартКвалификацииМенеджеровПользователи.Ссылка.ПометкаУдаления
+
+СГРУППИРОВАТЬ ПО
+	смартКвалификацииМенеджеровПользователи.Пользователь
+
+ИНДЕКСИРОВАТЬ ПО
+	Пользователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Интересы.Ссылка КАК Интерес
+ПОМЕСТИТЬ ВремИнтересы
+ИЗ
+	Документ.CRM_Интерес КАК Интересы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.Партнеры КАК Партнеры
+		ПО (Партнеры.Ссылка = Интересы.Партнер)
+			И (Партнеры.ОсновнойМенеджер = Интересы.Ответственный)
+ГДЕ
+	НЕ Интересы.ПометкаУдаления
+	И Интересы.Партнер В
+			(ВЫБРАТЬ
+				ВТ_Звонки.АбонентКонтакт
+			ИЗ
+				ВТ_Звонки)
+{ГДЕ
+	Интересы.ТипУслуги.* КАК ТипУслуги}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_СостоянияИнтересов.Ссылка КАК Состояние
+ПОМЕСТИТЬ ВремСостояния
+ИЗ
+	Справочник.CRM_СостоянияИнтересов КАК CRM_СостоянияИнтересов
+ГДЕ
+	CRM_СостоянияИнтересов.Родитель = &amp;РодительСостояниеИнтереса
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	CRM_ИсторияСостоянийОбращений.Обращение КАК Интерес,
+	CRM_ИсторияСостоянийОбращений.Обращение.Партнер КАК Партнер,
+	CRM_ИсторияСостоянийОбращений.Период КАК ДатаСостояния,
+	CRM_ИсторияСостоянийОбращений.Состояние КАК Состояние
+ПОМЕСТИТЬ ВТ_Интересы
+ИЗ
+	РегистрСведений.CRM_ИсторияСостоянийОбращений КАК CRM_ИсторияСостоянийОбращений
+ГДЕ
+	CRM_ИсторияСостоянийОбращений.Обращение В
+			(ВЫБРАТЬ
+				ВремИнтересы.Интерес
+			ИЗ
+				ВремИнтересы)
+	И CRM_ИсторияСостоянийОбращений.Состояние В
+			(ВЫБРАТЬ
+				ВремСостояния.Состояние
+			ИЗ
+				ВремСостояния)
+
+ИНДЕКСИРОВАТЬ ПО
+	Интерес,
+	Партнер,
+	ДатаСостояния
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВремИнтересы
+;
+
+////////////////////////////////////////////////////////////////////////////////
+УНИЧТОЖИТЬ ВремСостояния
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Звонки.ТелефонныйЗвонок КАК ТелефонныйЗвонок,
+	МАКСИМУМ(ВТ_Интересы.ДатаСостояния) КАК ДатаСостояния
+ПОМЕСТИТЬ ВТ_Звонки_МаксДатыСостояний
+ИЗ
+	ВТ_Звонки КАК ВТ_Звонки
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Интересы КАК ВТ_Интересы
+		ПО (ВТ_Интересы.ДатаСостояния &lt;= ВТ_Звонки.ДатаЗвонка)
+			И (ВТ_Интересы.Партнер = ВТ_Звонки.АбонентКонтакт)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Звонки.ТелефонныйЗвонок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Звонки_МаксДатыСостояний.ТелефонныйЗвонок КАК ТелефонныйЗвонок,
+	МАКСИМУМ(ВТ_Интересы.Состояние) КАК СостояниеИнтереса
+ПОМЕСТИТЬ ВТ_Звонки_ПоследниеСостоянияИнтересов
+ИЗ
+	ВТ_Интересы КАК ВТ_Интересы
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_Звонки_МаксДатыСостояний КАК ВТ_Звонки_МаксДатыСостояний
+		ПО ВТ_Интересы.ДатаСостояния = ВТ_Звонки_МаксДатыСостояний.ДатаСостояния
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Звонки_МаксДатыСостояний.ТелефонныйЗвонок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫРАЗИТЬ(Регистр.Объект КАК Документ.ТелефонныйЗвонок) КАК Объект,
+	Регистр.Значение КАК Значение,
+	Свойства.ИдентификаторДляФормул КАК ИдентификаторДляФормул
+ПОМЕСТИТЬ СвойстваЗначенияЗвонков
+ИЗ
+	РегистрСведений.ДополнительныеСведения КАК Регистр
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПланВидовХарактеристик.ДополнительныеРеквизитыИСведения КАК Свойства
+		ПО (Свойства.Ссылка = Регистр.Свойство)
+			И (Свойства.ИдентификаторДляФормул = "ПроектDeeray"
+				ИЛИ Свойства.Ссылка В
+					(ВЫБРАТЬ
+						ВТ_Теги.СвойствоТега
+					ИЗ
+						ВТ_Теги КАК ВТ_Теги))
+ГДЕ
+	ВЫРАЗИТЬ(Регистр.Объект КАК Документ.ТелефонныйЗвонок) В
+			(ВЫБРАТЬ
+				ВТ_Звонки.ТелефонныйЗвонок
+			ИЗ
+				ВТ_Звонки)
+
+ИНДЕКСИРОВАТЬ ПО
+	Объект,
+	ИдентификаторДляФормул
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Звонки.ТелефонныйЗвонок КАК ТелефонныйЗвонок,
+	ВТ_Звонки.ДатаЗвонка КАК ДатаЗвонка,
+	ВТ_Звонки.АбонентКонтакт КАК АбонентКонтакт,
+	ВТ_Звонки.АбонентПредставление КАК АбонентПредставление,
+	ВТ_Звонки.АбонентКакСвязаться КАК АбонентКакСвязаться,
+	ЕСТЬNULL(ВТ_КонтактныеЛицаБезДублей.КонтактноеЛицо, ЗНАЧЕНИЕ(Справочник.КонтактныеЛицаПартнеров.ПустаяСсылка)) КАК КонтактноеЛицо,
+	ВТ_Звонки.Ответственный КАК Ответственный,
+	ВТ_Звонки.ВнутреннийНомер КАК ВнутреннийНомер,
+	ВТ_Звонки.Входящий КАК Входящий,
+	ВТ_Звонки.Комментарий КАК Комментарий,
+	ВТ_Звонки.ДлительностьЗвонка КАК ДлительностьЗвонка,
+	ВТ_Звонки.ИдентификаторЗвонка КАК ИдентификаторЗвонка,
+	ВТ_Звонки.ИдентификаторЗаписи КАК ИдентификаторЗаписи,
+	ВТ_Звонки.СостояниеЗвонка КАК СостояниеЗвонка,
+	ВТ_Звонки.ИдентификаторDeeray КАК ИдентификаторDeeray,
+	ВТ_Звонки.ВидАТС КАК ВидАТС,
+	ЕСТЬNULL(ВложенныйЗапросПроектDeeray.Значение, "") КАК ПроектDeeray,
+	//%ВыборкаПолейТегов%
+	НЕ ВТ_ПользователиКвалификаций.Пользователь ЕСТЬ NULL КАК ЭтоМенеджерКоммерческогоОтдела,
+	ЕСТЬNULL(ВТ_ПользователиКвалификаций.ЭтоМенеджерПоОборудованию, ЛОЖЬ) КАК ЭтоМенеджерКоммерческогоОтделаПоОборудованию,
+	ЕСТЬNULL(ВТ_Звонки_ПоследниеСостоянияИнтересов.СостояниеИнтереса, ЗНАЧЕНИЕ(Справочник.CRM_СостоянияИнтересов.ПустаяСсылка)) КАК СостояниеИнтереса
+{ВЫБРАТЬ
+	ТелефонныйЗвонок.*,
+	ДатаЗвонка,
+	АбонентКонтакт.*,
+	АбонентПредставление,
+	АбонентКакСвязаться,
+	КонтактноеЛицо.*,
+	Ответственный.*,
+	ВнутреннийНомер,
+	Входящий,
+	Комментарий,
+	ДлительностьЗвонка,
+	ИдентификаторЗвонка,
+	ИдентификаторЗаписи,
+	СостояниеЗвонка.*,
+	ИдентификаторDeeray,
+	ВидАТС.*,
+	ПроектDeeray,
+	//%ПоляТегов%
+	ЭтоМенеджерКоммерческогоОтдела,
+	ЭтоМенеджерКоммерческогоОтделаПоОборудованию,
+	СостояниеИнтереса.*}
+ИЗ
+	ВТ_Звонки КАК ВТ_Звонки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КонтактныеЛицаБезДублей КАК ВТ_КонтактныеЛицаБезДублей
+		ПО ВТ_Звонки.АбонентКонтакт = ВТ_КонтактныеЛицаБезДублей.Владелец
+			И ВТ_Звонки.АбонентКакСвязаться = ВТ_КонтактныеЛицаБезДублей.НомерТелефона
+		ЛЕВОЕ СОЕДИНЕНИЕ СвойстваЗначенияЗвонков КАК ВложенныйЗапросПроектDeeray
+		ПО (ВложенныйЗапросПроектDeeray.Объект = ВТ_Звонки.ТелефонныйЗвонок)
+			И (ВложенныйЗапросПроектDeeray.ИдентификаторДляФормул = "ПроектDeeray")
+		//%СоединенияТаблицПолейТегов%
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПользователиКвалификаций КАК ВТ_ПользователиКвалификаций
+		ПО ВТ_Звонки.Ответственный = ВТ_ПользователиКвалификаций.Пользователь
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Звонки_ПоследниеСостоянияИнтересов КАК ВТ_Звонки_ПоследниеСостоянияИнтересов
+		ПО ВТ_Звонки.ТелефонныйЗвонок = ВТ_Звонки_ПоследниеСостоянияИнтересов.ТелефонныйЗвонок
+//%Условие%
+{ГДЕ
+	(ЕСТЬNULL(ВТ_КонтактныеЛицаБезДублей.КонтактноеЛицо, ЗНАЧЕНИЕ(Справочник.КонтактныеЛицаПартнеров.ПустаяСсылка))) КАК КонтактноеЛицо,
+	(ЕСТЬNULL(ВложенныйЗапросПроектDeeray.Значение, "")) КАК ПроектDeeray,
+	(НЕ ВТ_ПользователиКвалификаций.Пользователь ЕСТЬ NULL) КАК ЭтоМенеджерКоммерческогоОтдела,
+	(ЕСТЬNULL(ВТ_ПользователиКвалификаций.ЭтоМенеджерПоОборудованию, ЛОЖЬ)) КАК ЭтоМенеджерКоммерческогоОтделаПоОборудованию,
+	(ЕСТЬNULL(ВТ_Звонки_ПоследниеСостоянияИнтересов.СостояниеИнтереса, ЗНАЧЕНИЕ(Справочник.CRM_СостоянияИнтересов.ПустаяСсылка))) КАК СостояниеИнтереса}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>РодительСостояниеИнтереса</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Родитель состояние интереса</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_СостоянияИнтересов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Узел</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Узел</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.МиграцияПриложений</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.ОбновлениеИнформационнойБазы</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.Полный</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.смартОбменССервисомРечевойАналитикиDeeray</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.ИнтеграцияС1СДокументооборотомПереопределяемый</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ExchangePlanRef.СОтборами</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ОтбиратьТолькоИзменения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Отбирать только изменения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТелефонныйЗвонок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СостояниеЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ответственный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КонтактноеЛицо</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Комментарий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИдентификаторЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИдентификаторЗаписи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИдентификаторDeeray</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДлительностьЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗвонка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Входящий</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВнутреннийНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВидАТС</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АбонентПредставление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АбонентКонтакт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АбонентКакСвязаться</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроектDeeray</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СостояниеИнтереса</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЭтоМенеджерКоммерческогоОтдела</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЭтоМенеджерКоммерческогоОтделаПоОборудованию</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ТелефонныйЗвонок.ПометкаУдаления</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">СостояниеЗвонка</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.сфпСостоянияЗвонков.Отвеченный</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Ответственный</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ДлительностьЗвонка</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:decimal">60</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ИдентификаторЗаписи</dcsset:left>
+					<dcsset:comparisonType>NotContains</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">НЕТ ФАЙЛА</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Абонент</dcsset:left>
+					<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ЭтоМенеджерКоммерческогоОтдела</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ТипУслуги</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Абонент.ОсновнойМенеджер</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">Ответственный</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">СостояниеИнтереса</dcsset:left>
+					<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Ответственный</dcsset:left>
+					<dcsset:comparisonType>InList</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:ValueListType">
+						<v8:valueType/>
+						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЭтоМенеджерКоммерческогоОтделаПоОборудованию</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ТелефонныйЗвонок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

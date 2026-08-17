@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="846587bf-6856-4d0d-a3be-5f21619e33c4">
+  <producedTypes>
+    <selectionType typeId="23392f61-e68e-4f0c-8ef6-5dd9a58d1a3b" valueTypeId="36b1c1e3-00c7-460c-8e6b-05d42670538b"/>
+    <listType typeId="cfa282ea-9b03-4cb0-a5f8-e409bdf6dc68" valueTypeId="8dbb49ec-0f67-4555-bbe4-24e889a6012a"/>
+    <managerType typeId="61f43914-985a-4e7e-9130-4e78349c3a31" valueTypeId="e64a210b-5335-4323-8ee1-a83c23a765d5"/>
+    <recordSetType typeId="a9938578-5484-48a7-b97e-09ef88bafb65" valueTypeId="fe331447-c815-46a3-bf73-493633d13901"/>
+    <recordKeyType typeId="c6fdcd8d-478e-4106-8c71-d74524128211" valueTypeId="b28133d4-8eae-43e7-a79e-176624c7ea97"/>
+    <recordType typeId="821db3a8-2ed7-4983-8f24-9647aad66b5b" valueTypeId="dd9f00c3-f04b-4778-bdb3-b7d1f8bd1e75"/>
+    <recordManagerType typeId="32229ed5-54b1-4158-aa59-07da84b4dbf9" valueTypeId="3d05ad36-45da-468f-861c-1f93a307fa52"/>
+  </producedTypes>
+  <name>смартСвязьИнтересаСПочтовымиСообщениями</name>
+  <synonym>
+    <key>ru</key>
+    <value>Связь интереса с почтовыми сообщениями (смарт)</value>
+  </synonym>
+  <comment>//++ #1698 смарт: Фролов 27.03.2024 //Оповещение Маркетинга и Коммерции о результатах обработки интереса менеджером.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="85d383f8-0480-45de-8378-c272be528e65">
+    <name>Отправитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УчетныеЗаписиЭлектроннойПочты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2182a8c2-1715-47ed-97ea-04b4f57be17c">
+    <name>Интерес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интерес</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ff0da639-ded4-4e42-90fe-da1ea8ac89cd">
+    <name>ИдентификаторОснования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор основания</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Идентификатор письма в системе, ответом на которое является текущее письмо. Скрытый реквизит.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d865a26f-9403-43a0-9b9e-8c359b3196a5">
+    <name>ИдентификаторСообщения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор сообщения</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Идентификатор письма в системе. Скрытый реквизит.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cef30222-da0d-4a84-a618-ddd0595ff455">
+  <producedTypes>
+    <selectionType typeId="d639c3ca-3cad-4779-bcea-184c1fe9636d" valueTypeId="84f550d1-5204-4691-add9-9c5167ff9427"/>
+    <listType typeId="c3bc678c-0181-44f4-a8f0-326cddc8397f" valueTypeId="a44f405d-b975-4326-b081-558fe2c27f2e"/>
+    <managerType typeId="16249f57-7174-4e46-8ec3-6b5418072243" valueTypeId="52c11686-02ed-4035-a5cb-f98bfb6976ae"/>
+    <recordSetType typeId="b26019d5-44b4-4f1a-8e8d-d03db48baf62" valueTypeId="eafc2d06-c0a9-439d-9107-96175973d35d"/>
+    <recordKeyType typeId="b2d1d9fa-d7e8-48ed-8a1b-f3ab9086beff" valueTypeId="2db6d9e0-e0af-4267-b423-816f2ebeb1c0"/>
+    <recordType typeId="1c5c749c-da2f-4a6a-bab3-4fa1c9640c18" valueTypeId="5cb011ea-cd80-45c7-b6fd-6b5be0d3e0e8"/>
+    <recordManagerType typeId="0e3d5103-9766-49df-b738-0e77d9775d85" valueTypeId="608f1264-5818-472c-9230-168eeab7731c"/>
+  </producedTypes>
+  <name>CRM_ДокументыВзаимодействия</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы взаимодействий</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Interaction documents</value>
+  </synonym>
+  <comment>Документы взаимодействий</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="f5bc39a1-73d8-456d-a640-f033084ca071">
+    <name>Взаимодействие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взаимодействие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interaction</value>
+    </synonym>
+    <comment>Взаимодействие</comment>
+    <type>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+      <types>TaskRef.ЗадачаИсполнителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="81294f7b-08d5-420a-8064-58e7d24e9c69">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document</value>
+    </synonym>
+    <comment>АПК:1208 имя корректное</comment>
+    <type>
+      <types>DocumentRef.CRM_РассылкаЭлектронныхПисем</types>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+      <types>DocumentRef.удалитьCRM_Мероприятие</types>
+      <types>DocumentRef.КоммерческоеПредложениеКлиенту</types>
+      <types>DocumentRef.СообщениеSMS</types>
+      <types>DocumentRef.CRM_СообщениеМессенджера</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ, созданный на основании взаимодействия</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>A document created on the basis of interaction</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

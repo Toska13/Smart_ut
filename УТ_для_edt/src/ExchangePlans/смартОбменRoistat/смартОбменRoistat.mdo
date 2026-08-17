@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ExchangePlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a2835779-b976-472c-9347-97e4f2d438b0" thisNode="00364554-ee6d-40d5-bc92-c504d8ab5b7d">
+  <producedTypes>
+    <objectType typeId="d2c19650-9f38-4694-b6cb-5cb5618d8922" valueTypeId="ed7ac421-b992-4237-beb1-0f509e739af0"/>
+    <refType typeId="333e22a6-c28e-4ac4-b0dd-88360a8b052d" valueTypeId="673d0e93-b8d2-485c-986f-dc87ac7fe386"/>
+    <selectionType typeId="e393c49c-9461-428e-abd5-c18e8e786b4c" valueTypeId="87b0d992-177e-48b3-ac70-efb459983616"/>
+    <listType typeId="726d292e-cbd3-44a4-8032-839a2956a33a" valueTypeId="fcbf1029-01b4-499b-8da9-1a0470d7a88e"/>
+    <managerType typeId="27292ebc-ce0c-45ff-a0b6-79b06d2b99f4" valueTypeId="4d90e5fa-b036-4197-9b2a-6dde57317478"/>
+  </producedTypes>
+  <name>смартОбменRoistat</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен с Roistat (смарт)</value>
+  </synonym>
+  <comment>#Б-1534 смарт: Лопато 05.12.2024 //Интеграция с ROIStat. Узел обмена, очередь выгрузки, регистрация данных</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>ExchangePlan.смартОбменRoistat.StandardAttribute.Description</inputByString>
+  <inputByString>ExchangePlan.смартОбменRoistat.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>ThisNode</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>ReceivedNo</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>SentNo</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Description</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Code</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>9</codeLength>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <descriptionLength>100</descriptionLength>
+  <content>
+    <mdObject>Document.ЗаказКлиента</mdObject>
+  </content>
+  <content>
+    <mdObject>Document.CRM_Интерес</mdObject>
+  </content>
+  <content>
+    <mdObject>Catalog.смартСтатусыRoistat</mdObject>
+  </content>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>ExchangePlan.смартОбменRoistat.Form.ФормаУзла</defaultObjectForm>
+  <defaultListForm>ExchangePlan.смартОбменRoistat.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="ecaff9ba-5501-4acb-80a9-131855f44e88">
+    <name>URL</name>
+    <synonym>
+      <key>ru</key>
+      <value>URL</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>URL, с которым настраивается обмен</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="26a3901d-6e64-471f-9a74-8c6f09460aff">
+    <name>RoistatProject</name>
+    <synonym>
+      <key>ru</key>
+      <value>Project</value>
+    </synonym>
+    <comment>#Б-1530 смарт: Лопато 04.12.2024 //Интеграция с ROIStat. Подготовительные работы и авторизация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3b50d93d-627b-4758-8e20-7299d21eba0b">
+    <name>ИспользоватьРегламентныеЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать периодический обмен данными</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>При установленном флажке обмен данными будет запускаться автоматически, согласно расписанию</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="26c3b4dc-efe5-4f9e-9220-12ebdb9d2acf">
+    <name>ИдентификаторРегламентногоЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор регламентного задания</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e0a1e4f9-c438-4f0c-85e9-59cd6c2b4d6e">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Текст комментария к настройкам узла обмена</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="81b5f989-26d9-4f18-b978-170a766079a7">
+    <name>ПользовательРегламентногоЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь регламентного задания</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Пользователь</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="3eb75b8d-d6fe-4bc7-8ba0-1dd7f948e490">
+    <name>ФормаУзла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма узла</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="af384a9c-05bb-46b9-875c-b7bc0b70d56f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="6214de5f-977e-44aa-809f-24b35a521ca7">
+    <name>ВыполнитьОбменДанными</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выполнить обмен данными</value>
+    </synonym>
+    <group>CommandGroup.СинхронизацияДанных</group>
+    <commandParameterType>
+      <types>ExchangePlanRef.смартОбменRoistat</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.GenerateReport</picture>
+    </picture>
+  </commands>
+  <commands uuid="bc67debd-bdb3-4d41-b0da-c749af3ffb9d">
+    <name>СоставОтправляемыхДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состав отправляемых данных</value>
+    </synonym>
+    <group>CommandGroup.ПараметрыСинхронизацииДанных</group>
+    <commandParameterType>
+      <types>ExchangePlanRef.смартОбменRoistat</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Magnifier</picture>
+    </picture>
+  </commands>
+</mdclass:ExchangePlan>

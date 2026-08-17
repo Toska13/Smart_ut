@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d3d0ebf5-d1bb-414b-b5d4-05b78d348d60">
+  <producedTypes>
+    <objectType typeId="13fd0fb3-adff-4d3a-ba53-92e776e44e1b" valueTypeId="11f19ba5-229d-4f6b-b730-250b7d2f02b1"/>
+    <refType typeId="e020cd5a-ae06-4a7c-a11e-ffee95df9b43" valueTypeId="19a82f89-0705-49a6-a96b-a05d2ad530f4"/>
+    <selectionType typeId="db66209f-7822-4fa1-808e-89af4d1083a9" valueTypeId="30efc37d-4472-4998-9bda-c876fcce274d"/>
+    <listType typeId="e36e938f-ec9f-4b9d-821c-fce057e5418f" valueTypeId="8a993ab6-d140-4f4e-b40b-ac5b3eea06a3"/>
+    <managerType typeId="c82f2e11-1835-44f7-b8c2-7ddd9e522387" valueTypeId="ae2ca750-1ab4-47bb-989a-423295411c88"/>
+  </producedTypes>
+  <name>смартИнцидент</name>
+  <synonym>
+    <key>ru</key>
+    <value>Инцидент (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-5664 смарт: Фролов 12.02.2026 //Сделать механизм контроля эффективности работы ОКК</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартИнцидент.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>12</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартИнцидент.Form.ФормаДокумента</defaultObjectForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="31456b17-dc00-4b73-a80b-287a7294f89e">
+    <name>ОбъектИнцидента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект инцидента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b130bbc5-1c73-4f8a-ac26-ca9ac66f4bca">
+    <name>Задача</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задача</value>
+    </synonym>
+    <type>
+      <types>TaskRef.ЗадачаИсполнителя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c71ea37d-2ee5-4436-a5d3-e90a88961728">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3a9dd420-7ab0-4d71-bbfc-5f62012b2ac2">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c0b81a36-f3a2-494c-8c7f-513fee2c8c0d">
+    <name>Адресат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адресат</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="32880582-a337-4915-89ba-3c2d7c28adc6">
+    <name>Решение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Решение</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4a2afef2-3849-4169-9804-57159ca08235">
+    <name>Оценка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УровниПроизводительности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="424d48b8-b468-4a93-8d9f-7ad9abc71637">
+    <name>НовыйИнтерес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новый интерес</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c417d131-a5fb-4f2d-b9ef-b7f35a0db4a7">
+    <name>ДатаРеакции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата реакции</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="97201d45-48ca-4c3f-9983-3b97f6049c85">
+    <name>КтоОтреагировал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кто отреагировал</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6c3ca604-f591-46a8-962e-34e6c17314e6">
+    <name>ЕстьРеакция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть реакция</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b2a21a39-a88b-4a12-8015-e2f789e4f2e1">
+    <name>КомментарийКОценке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий к оценке</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="09ee74a3-c701-4f9c-a224-4e6bd735eb26">
+    <name>ИтоговыйРезультат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Итоговый результат</value>
+    </synonym>
+    <comment>//++ #Б-5928 смарт: Фролов 04.03.2026 //Доработка механизма Инциденты.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="cef68de1-69af-46e1-9254-474f68104352">
+    <name>ДатаРезультата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата результата</value>
+    </synonym>
+    <comment>//++ #Б-5928 смарт: Фролов 04.03.2026 //Доработка механизма Инциденты.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="41ea6ea8-c210-4c1b-8a92-995caa67290d">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="c2f7078d-7ad7-4475-96f9-f377460a7dd8">
+    <producedTypes>
+      <objectType typeId="e2eafac3-3b17-4da1-8ba0-f1edb306fba9" valueTypeId="d8f0b9bf-b849-4cf3-a1d8-383c8fa1c07a"/>
+      <rowType typeId="bbe0f7f3-490d-45a0-9e4b-1e3746226e96" valueTypeId="7cac8d28-18d2-41b7-88f1-511123e1266e"/>
+    </producedTypes>
+    <name>ВидыИнцидентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виды инцидентов</value>
+    </synonym>
+    <attributes uuid="ef8f5cb8-9145-405f-b53c-5b49566c74a8">
+      <name>ВидИнцидента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид инцидента</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартВидыИнцидентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="dd790670-6209-4a38-853f-16abe71b8d07">
+    <producedTypes>
+      <objectType typeId="1957fcdf-0c29-4810-9de0-50b4fef24068" valueTypeId="463ff802-7e12-4eb1-baf4-33fc68596ce9"/>
+      <rowType typeId="2c5da88b-f5de-4f60-a183-5d25c2a73ec5" valueTypeId="9aac5eb2-16b3-4a78-825d-cb6e1bd18660"/>
+    </producedTypes>
+    <name>ВидыРеакцииНаИнцидент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виды реакции на инцидент</value>
+    </synonym>
+    <attributes uuid="69eb98d7-0774-4ac7-801d-55422b056678">
+      <name>ВидРеакцииНаИнцидент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид реакции на инцидент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартВидыРеакцийНаИнцидент</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="3529d422-e645-4b1d-af1d-190c1283fa1e">
+    <producedTypes>
+      <objectType typeId="eed3d48b-0c83-48ac-977c-9b062c4585ba" valueTypeId="b71e4426-3978-434e-8bac-cf9e54f66a88"/>
+      <rowType typeId="4edc6b09-7238-44e3-b8d1-1fe5117cb8df" valueTypeId="8add84f1-aa47-4041-8c4d-9cfe3eaf33e9"/>
+    </producedTypes>
+    <name>ВидыРезультатов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виды результатов</value>
+    </synonym>
+    <comment>//++ #Б-6288 смарт: Фролов 02.04.2026 //Доработка Инцидентов.</comment>
+    <attributes uuid="cf3a078a-ba65-494d-bc1a-d2080c9e91ce">
+      <name>ВидРезультата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид результата</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартВидыИтоговыхРезультатовИнцидентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

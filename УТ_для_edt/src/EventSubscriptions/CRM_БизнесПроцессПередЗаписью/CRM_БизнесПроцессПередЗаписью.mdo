@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e076bf5c-ba29-4efe-acc4-3fa166d68d32">
+  <name>CRM_БизнесПроцессПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бизнес-процесс перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>(CRM) Business Process Before Recording</value>
+  </synonym>
+  <comment>Бизнес-процесс перед записью (CRM)</comment>
+  <source>
+    <types>BusinessProcessObject.CRM_БизнесПроцесс</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_БизнесПроцессыИЗадачиСобытия.УдалитьОповещенияПриУстановкеПометкиУдаления</handler>
+</mdclass:EventSubscription>

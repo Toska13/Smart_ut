@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="43628545-18ca-4c6e-9bcd-67e5b9e735e2">
+  <producedTypes>
+    <selectionType typeId="7b94d741-6499-4780-a454-0a58ac3e5128" valueTypeId="c430983e-dcad-447c-845c-09f92aa8d946"/>
+    <listType typeId="8459aa00-b3d8-4e3a-92a7-f257d7fd0580" valueTypeId="3c393b25-dce6-47e6-bc06-7f53c9c24e48"/>
+    <managerType typeId="ff948b5e-0c4e-416c-ac6b-0d9e7becd0d3" valueTypeId="23a3af52-ca97-4690-be50-712cedf8468b"/>
+    <recordSetType typeId="3222baa2-137a-441a-a3b4-1898a638c505" valueTypeId="05d09d28-1388-45a7-b074-ad4c766ba7cd"/>
+    <recordKeyType typeId="a34f6803-aa76-4f55-bf99-97518cc9ad50" valueTypeId="fab37684-ad6d-4095-9d39-b29deeaafc4d"/>
+    <recordType typeId="683bb876-0910-48ca-87fb-df4a7de8c2ad" valueTypeId="9beb1635-8150-4ada-bb78-b9689d86e282"/>
+    <recordManagerType typeId="8a577940-5115-49dd-8ee8-993dbc26512c" valueTypeId="4df7de90-8474-4738-ad77-564c35c1d804"/>
+  </producedTypes>
+  <name>смартОборудованиеЧернилаКлиентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оборудование/чернила клиентов (смарт)</value>
+  </synonym>
+  <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартОборудованиеЧернилаКлиентов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартОборудованиеЧернилаКлиентов.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8be53461-9bc4-4201-a13d-e7b98c25778f">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6ccc3768-7020-4828-aa65-b9e919f078cb">
+    <name>МотоРесурс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Моторесурс</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="3ebdaf3e-d2d3-4882-a754-86950a5a66df">
+    <name>АвторИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор изменения</value>
+    </synonym>
+    <comment>#1741 смарт: Лопато 03.04.2024 //Доработать регистр сопоставления оборудования клиентов</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2f79c499-4a07-4d22-9484-2374ab6775b3">
+    <name>ДатаИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения</value>
+    </synonym>
+    <comment>#1741 смарт: Лопато 03.04.2024 //Доработать регистр сопоставления оборудования клиентов</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="1cd6c9d5-c4bf-4081-9361-6a9080edd0a8">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>DontUse</createOnInput>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b667e42c-59ac-4cca-ba1e-76d8247b13be">
+    <name>ОборудованиеКлиентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование клиентов</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="43a09133-19a8-4d42-959f-4326282da687">
+    <name>СопоставлениеСТоваром</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопоставление с товаром</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="8fb0b9a5-da1e-4a90-bd7b-23b4299d5e14">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e5ea9e5a-e8eb-46cd-a945-82a1a27e376b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="f48abeb0-fedd-402a-8242-0f3f54460353">
+    <name>ОборудованиеЧернилаКлиентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Связанная номенклатура и запчасти (смарт)</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="0f5220c1-6f01-4964-8b74-01fa2e652e1d">
+    <name>ОборудованиеЧернилаКлиентовНоменклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Связанное оборудование и запчасти (смарт)</value>
+    </synonym>
+    <comment>//++ #1305 смарт: Фролов 06.02.2023 //Отчет Стоимость использования оборудования</comment>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.Номенклатура</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

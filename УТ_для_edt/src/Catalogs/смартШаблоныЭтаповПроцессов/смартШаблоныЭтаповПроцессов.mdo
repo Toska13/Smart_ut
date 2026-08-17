@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c3a60f3d-d1a3-4c8b-b7db-bad4a98e9cb9">
+  <producedTypes>
+    <objectType typeId="1930f624-70cd-4c88-b0dc-6ef183bea728" valueTypeId="716ef9f3-6d3a-4b91-a9e1-9bdbaafb9959"/>
+    <refType typeId="5c84f4b5-5acf-4349-9098-5aca82057eda" valueTypeId="6b7ebcb3-6988-46f1-b4e2-d07bf71a4387"/>
+    <selectionType typeId="85f18602-dc24-40b7-9386-eef897f5ec2d" valueTypeId="a46222dc-e7ed-4e48-af1b-1b3800b53de1"/>
+    <listType typeId="39e012ce-8db3-43cb-b87b-1dc3c9c76ea0" valueTypeId="843f6ade-dd65-46a1-a49c-4a092534f1eb"/>
+    <managerType typeId="46c5ebcf-7875-4f78-9219-0ed422fda76c" valueTypeId="cbe5bec3-8fa6-48d5-a1e5-2f4e3eddc5e9"/>
+  </producedTypes>
+  <name>смартШаблоныЭтаповПроцессов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Шаблоны этапов процессов (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-5028 смарт: Фролов 20.11.2025 //Доработка документа Заявка на ремонтные работы, по новому регламенту</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартШаблоныЭтаповПроцессов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.смартШаблоныЭтаповПроцессов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="829a217a-33ac-4bc4-b192-039d1f8f79d4">
+    <name>ОбластьПримененияЭтаповПроцессов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Область применения этапов процессов</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.смартОбластиПримененияЭтаповПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="f99ad2e3-7a52-4a06-a14f-4918b7959a0f">
+    <producedTypes>
+      <objectType typeId="538e7b92-58dd-4642-a797-08a7a806b80d" valueTypeId="be6c0a4d-36ec-4260-a971-e1bb63ac2078"/>
+      <rowType typeId="fe4f9fa4-e4c3-48ee-abbb-36518664e9f4" valueTypeId="000d81d7-ce54-49d3-9a91-c07f3fd3471e"/>
+    </producedTypes>
+    <name>Представительства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представительства</value>
+    </synonym>
+    <attributes uuid="6e2c7709-cb1f-4e81-9408-8f17a71d34c8">
+      <name>Представительство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Представительство</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d55d4146-ab63-47ec-a926-b13c27a84347">
+    <producedTypes>
+      <objectType typeId="12505a05-64a1-4d70-aa14-7b7a12e47be5" valueTypeId="3b9f38d3-ca3c-4e3f-9003-ecb67f6263d8"/>
+      <rowType typeId="86821d74-9433-49c5-9a72-ed696f740781" valueTypeId="4394feee-c40b-41f4-be9f-5379b7c204e8"/>
+    </producedTypes>
+    <name>ЭтапыПроцессов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этапы процессов</value>
+    </synonym>
+    <attributes uuid="e55ebab7-97d2-4197-b2eb-b44f52c5da8f">
+      <name>Этап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартЭтапыПроцессов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

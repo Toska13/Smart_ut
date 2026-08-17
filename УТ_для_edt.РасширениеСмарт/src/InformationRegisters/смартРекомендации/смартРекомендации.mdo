@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="b6b8718d-d15e-4d1d-8943-36e367ec5864">
+  <producedTypes>
+    <selectionType typeId="bb1052cf-3588-4863-a267-e5a9ad987eea" valueTypeId="3fb272ad-107a-4c3c-ac5e-77cdc75f2c4b"/>
+    <listType typeId="fee338eb-17cf-420b-8618-16a6a977db28" valueTypeId="564e06b8-0dca-45c4-82ac-46029b012866"/>
+    <managerType typeId="05b1d740-998c-451d-969a-5fb3b723a4df" valueTypeId="81f27189-9fdd-4aa3-a209-81f34aaaf2f6"/>
+    <recordSetType typeId="2e1cb1b2-c0c7-4dbe-94f8-8d6253af7d5c" valueTypeId="dd256cbd-9e2e-4f3c-aea7-406ded0d2840"/>
+    <recordKeyType typeId="b01535fa-b059-4f8a-a585-a1ef3ed0b8b9" valueTypeId="eef93555-4bfc-410c-a624-f1e65a905e30"/>
+    <recordType typeId="598af6b5-1cd8-4ca8-a8a5-71f81916f2bf" valueTypeId="81f7b2f4-fabb-43f9-aeae-15b31a77990a"/>
+    <recordManagerType typeId="ff87f773-b06c-4c3e-a5ba-07c368e60597" valueTypeId="a40c6787-c44d-4f34-a379-b2f663594fb1"/>
+  </producedTypes>
+  <name>смартРекомендации</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:InformationRegisterExtension">
+    <informationRegisterPeriodicity>Checked</informationRegisterPeriodicity>
+    <writeMode>Checked</writeMode>
+    <recordSetModule>Extended</recordSetModule>
+    <defaultRecordForm>Extended</defaultRecordForm>
+    <defaultListForm>Extended</defaultListForm>
+  </extension>
+  <defaultRecordForm>InformationRegister.смартРекомендации.Form.смарт_ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартРекомендации.Form.смарт_ФормаСписка</defaultListForm>
+  <resources uuid="ef45abdc-fef4-402b-8f43-9b5cce6e782e">
+    <name>Дата</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Date</type>
+        </types>
+        <dateQualifiers/>
+      </typeExtension>
+    </extension>
+  </resources>
+  <attributes uuid="a6c5941b-a7e9-4859-94ce-9cfcf4ce26d7">
+    <name>Автор</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Пользователи</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <dimensions uuid="ec38909e-02a5-4a0e-9b99-32910f48ed88">
+    <name>Партнер</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Партнеры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="d310c20a-545a-4e3a-9745-f746b5f844a7">
+    <name>СотрудникДавшийРекомендацию</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ФизическиеЛица</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="1c299f9c-1b9e-4e4d-a21a-6cc20a04b67f">
+    <name>ГруппаНоменклатуры</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Номенклатура</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <forms uuid="b4eaac35-db25-4925-9443-76e200824850">
+    <name>смарт_ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смарт форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="aa3d147d-f7e8-47ac-8a74-0c62a4593342">
+    <name>смарт_ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смарт форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

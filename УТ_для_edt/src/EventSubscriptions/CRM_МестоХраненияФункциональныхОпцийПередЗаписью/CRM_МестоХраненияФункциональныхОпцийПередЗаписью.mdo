@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9323d7e4-e786-4905-af7a-f9537805ab75">
+  <name>CRM_МестоХраненияФункциональныхОпцийПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Место хранения функциональных опций перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Enable the scheduled job when changing the function option (CRM)</value>
+  </synonym>
+  <comment>Включить регламентное задание при изменении функциональной опции</comment>
+  <source>
+    <types>DefinedType.CRM_МестоХраненияФункциональныхОпций</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РегламентныеЗаданияСлужебный.ВключитьРегламентноеЗаданиеПриИзмененииФункциональнойОпции</handler>
+</mdclass:EventSubscription>

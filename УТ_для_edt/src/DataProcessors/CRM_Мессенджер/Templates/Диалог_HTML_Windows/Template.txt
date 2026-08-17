@@ -1,0 +1,3089 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Диалоги</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      html {
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      html * {
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #000000;
+        height: 98%;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      #main {
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      #chat {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+
+      #dialogs {
+        width: 100%;
+      }
+
+      #messages {
+        flex: 1;
+        position: relative;
+      }
+
+      #dialog {
+        overflow-y: scroll;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding-right: 12px;
+      }
+
+      #previous {
+        text-align: center;
+        font-size: 9pt;
+      }
+
+      #QuotedMessage {
+        border-left: groove;
+        color: grey;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        margin-left: 10px;
+        border-left: groove;
+      }
+
+      #search_context {
+        width: 100%;
+        overflow: hidden;
+        border-left: solid;
+        border-left-color: #e5e5e5;
+        border-left-width: 1px;
+        margin-left: 6px;
+        max-width: 326px;
+        flex-shink: 0;
+      }
+
+      #search,
+      #files,
+      #favourite,
+      #smiles-select__menu {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 12px 12px;
+      }
+
+      #searchFiles,
+      #favouriteMessages,
+      #searchMessages {
+        height: 100%;
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+
+      #context {
+        height: 100%;
+        padding: 8px;
+        border-left: dashed;
+        border-left-color: lightgrey;
+        border-left-width: 1px;
+        margin-left: 5px;
+      }
+
+      #searchHeader {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+
+      a {
+        color: #00a0f2;
+        text-decoration: none;
+      }
+
+      .check {
+        display: block;
+        position: relative;
+        padding-left: 18px;
+        user-select: none;
+        cursor: pointer;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: inherit;
+        font-family: inherit;
+        color: #2c2c2c;
+      }
+
+      .check__input,
+      radio__input {
+        position: absolute;
+        appearance: none;
+      }
+
+      .check__input:checked + .check__box {
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L4.13043 8L9 1' stroke='%2300A0F2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .check__box,
+      .radio__box {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+        background: #ffffff;
+      }
+
+      .radio__box {
+        border-radius: 50%;
+      }
+
+      .radio__input:checked + .radio__box {
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='4' fill='%2300A0F2'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .chat__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        white-space: pre-line;
+        justify-content: space-between;
+        column-gap: 20px;
+      }
+
+      .chat__item--responder {
+        flex-direction: row-reverse;
+      }
+
+      .chat__item + .chat__item--info {
+        margin-top: 24px;
+        margin-bottom: 8px;
+      }
+
+      .chat__item--info + .chat__item {
+        margin-top: 24px;
+      }
+
+      .chat__item--info + .chat__item--info {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      .chat__item--info {
+        justify-content: center;
+      }
+
+      .chat__item--select {
+        padding-left: 40px;
+        position: relative;
+      }
+
+      .chat__message-select {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .chat__message-input {
+        appearance: none;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      .chat__message-input:checked {
+        background-image: url("images/icon-filled.png");
+        background-color: transparent;
+        -webkit-appearance: none;
+      }
+
+      .chat__message-input:not(:checked) {
+        background-image: url("images/icon-empty.png");
+        background-color: transparent;
+        -webkit-appearance: none;
+      }
+
+      .chat__info {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #838e9c;
+      }
+
+      .chat__info-link {
+        font-weight: 700;
+      }
+
+      .chat__date {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: #838e9c;
+        background: #fafafa;
+        border-radius: 26px;
+        padding: 4px 16px;
+      }
+
+      /* Группировка нескольких входящих / исходящих сообщений подряд
+        .chat__item--sent + .chat__item--sent .chat__message-data {
+            display: none;
+        }
+
+        .chat__item--responder + .chat__item--responder .chat__message-data {
+            display: none;
+        }
+        */
+
+      .chat__item--responder .chat__message,
+      .chat__item--responder .chat__favMessage {
+        flex-direction: row-reverse;
+        background: #d1f0ff;
+      }
+
+      .chat__item--responder .chat__message-content {
+        margin-left: 0;
+        margin-right: 5px;
+      }
+
+      .chat__item:hover .action_button {
+        opacity: 1;
+      }
+
+      .chat__person-avatar {
+        border-radius: 50%;
+      }
+
+      .chat__serice {
+        display: flex;
+        max-width: fit-content;
+        position: relative;
+        background-color: #f0f0f0;
+        margin-bottom: 8px;
+        border-radius: 14px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+        border: 1px solid #dddddd;
+        padding: 5px 5px 5px 5px;
+        box-sizing: border-box;
+      }
+
+      .chat__messages {
+        margin-left: 10px;
+      }
+
+      .chat__message,
+      .chat__favMessage {
+        min-width: 218px;
+        max-width: 90%;
+        position: relative;
+        background: #fafafa;
+        border-radius: 20px;
+        padding: 14px 14px 13px 16px;
+        box-sizing: border-box;
+        display: inline-block;
+        align-items: flex-start;
+        z-index: 1;
+        font-size: 13px;
+        line-height: 15px;
+      }
+
+      .chat__message-data {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 4px;
+      }
+
+      .chat__message-fav {
+        background-size: 15px;
+        margin-right: 4px;
+        height: 15px;
+        width: 15px;
+        cursor: pointer;
+      }
+
+      .chat__message-favNotSelected {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhFBMVEX///+fp7eltb2irbuhrbmjrLujrruirbqirbukrbyhrLqjrLufq7ejq7ufn6+fr7efr7qfqrWfr7+jrLqkrbyjrLqjq7ufr6+irbijr7ykq7ujrbyjrLqlqrqfqrqjrLmjrbufn7+irbqirLmjrbyhrLmiq7iir7ukrbuiqrqjrbv///+ZZK0fAAAAKnRSTlMAIB9wgM+/3++fkL9AQBAgMDAQoN+QgBBwb3CvzzAwUO8QYLDvoHCPj2Bf5waAAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+YIGQgvEWcXSMwAAACdSURBVBjTlU/tEoIgEDwy46gUA7SyD43Iyvd/wCBTaOhPOwO3s8zuLQAjyAxiJPMfYrqINUIx9idsGftX68z7c/5GQQFwM/AchOxRWZQAlZvYy61Lw51P2at6IJwy8sk6HPn0XqmTG2cXEuxu3J2lX81bewgIvASivkJjlIZbF7q7Oy04fSTB/0VvSltOSNN6v8Z6JE/faCrHGfyFF0YGCJlg6AtXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA4LTI1VDA4OjQ3OjE3KzAwOjAwhAN6oAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wOC0yNVQwODo0NzoxNyswMDowMPVewhwAAAAASUVORK5CYII=");
+      }
+
+      .chat__message-favSelected {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAP1BMVEUAAAAAn+8ApfcAn/EAn/EAoPMAoPIAn+8An/cAn/QAn/EAoPIAoPEAoPEAoPEAn/EAn/IAn+8AoPIAoPL////P3PLLAAAAE3RSTlMAIB9wgM+/ECAwoO/v38+QYDCfBj+RwQAAAAFiS0dEFJLfyTUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmCBkINRnZ4TolAAAAc0lEQVQY05WPSRKAIAwEg6AREI3m/3+VRRbBi32iuhhmAMiICUak+pDzMjrBPOYl85hfmGse14hmj05nBDTcYTC8Zlu1yafYVbeL8rDK7ui6471ueQIbSVnKd9qdoa/5P/oGH/STbc1THkeW6qIyTlzwixvbLAhzU6CgIQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wOC0yNVQwODo1MzoyNSswMDowMFV2E9AAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDgtMjVUMDg6NTM6MjUrMDA6MDAkK6tsAAAAAElFTkSuQmCC");
+      }
+
+      .chat__message-time {
+        color: #838e9c;
+        margin-right: 8px;
+      }
+
+      .chat__message-author {
+        color: #333333;
+        font-weight: 700;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+
+      .chat__message-content {
+        color: #333333;
+        margin-bottom: 3px;
+        overflow-wrap: break-word;
+      }
+
+      .chat__message-content:last-child {
+        margin-bottom: 0;
+      }
+
+      .chat__message-attachments > div {
+        margin-bottom: 3px;
+      }
+
+      .chat__message-attachments > div:last-child {
+        margin-bottom: 0;
+      }
+
+      .chat__message-attachments a {
+        display: block;
+        width: fit-content;
+      }
+
+      .chat__detail {
+        max-width: 218px;
+      }
+
+      .chat__detail-link {
+        color: #333333;
+        font-weight: 700;
+        margin-right: 8px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .action_button {
+        cursor: pointer;
+        margin-left: auto;
+        color: #6b7889;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        border-width: 1px 1px 1px 2px;
+        border-color: #777;
+        background-color: #aaa;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        border-width: 1px 1px 1px 2px;
+        border-color: #555;
+        background-color: #777;
+      }
+
+      ::-webkit-scrollbar-track {
+        border-width: 0;
+      }
+
+      ::-webkit-scrollbar-track:hover {
+        border-left: solid 1px #aaa;
+        background-color: #eee;
+      }
+
+      /* menu_action */
+
+      .menu_action {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        padding: 6px 0;
+        width: 157px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+      }
+
+      .menu_action--active {
+        display: block;
+      }
+
+      .menu_action__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu_action__item {
+        display: block;
+      }
+
+      .menu_action__link {
+        display: block;
+        padding: 6px 12px;
+        font-size: 13px;
+        line-height: 15px;
+        color: #2c2c2c;
+        text-decoration: none;
+      }
+
+      .menu_action__link:hover {
+        background-color: #fafafa;
+      }
+
+      .dialogs__group {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 25px;
+        padding-right: 23px;
+      }
+
+      .dialogs__group--collapse .dialogs__collapse-content {
+        display: none;
+        width: 100%;
+      }
+
+      .dialogs__collapse-link {
+        padding-top: 8px;
+      }
+
+      .dialogs__collapse-link,
+      .dialogs__expand-link {
+        overflow: hidden;
+        background: none;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      .dialogs__collapse-link > div,
+      .dialogs__expand-link > div {
+        cursor: pointer;
+        text-align: center;
+        color: #00a0f2;
+        font-size: 9pt;
+      }
+
+      .dialogs__collapse-link > div::before,
+      .dialogs__collapse-link > div::after,
+      .dialogs__expand-link > div::before,
+      .dialogs__expand-link > div::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        border: solid #f8f8f8;
+        border-width: 0 10px;
+      }
+
+      .dialogs__collapse-link > div::before,
+      .dialogs__expand-link > div::before {
+        margin-left: -100%;
+      }
+
+      .dialogs__collapse-link > div::after,
+      .dialogs__expand-link > div::after {
+        margin-right: -100%;
+      }
+
+      .dialogs__expand-link .icon-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dialogs__collapse-content {
+        transition-delay: 0.2ms;
+        overflow-y: auto;
+        max-height: 40%;
+      }
+
+      .dialogs__item {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        background-color: #fff;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      .dialogs__item > div {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .dialogs__item a,
+      .dialogs__history a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .dialogs__item a:hover,
+      .dialogs__history a:hover {
+        color: #00a0f2;
+      }
+
+      .dialogs__item a,
+      .dialogs__item button {
+        z-index: 20;
+      }
+
+      .dialogs__accepted {
+      }
+
+      .dialogs__text-collapse {
+        display: none;
+        transition: 0.2s;
+      }
+
+      .dialogs__item--collapsed .dialogs__text-collapse {
+        display: block;
+      }
+
+      .dialogs__collapse-button {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin: -12px auto 0;
+        background: #fff;
+        cursor: pointer;
+        padding: 5px 20px;
+        border: 1px solid #dfe3e8;
+        border-radius: 50px;
+        outline: none;
+        width: 54px;
+        box-sizing: border-box;
+      }
+
+      .dialogs__collapse-button:hover {
+        background: #dfe3e8;
+      }
+
+      .dialogs__collapse-button .icon-arrow {
+        display: block;
+        margin: 0 auto;
+        min-width: auto;
+        width: 12px;
+        height: 9px;
+        transition: 0.2s;
+      }
+
+      .dialogs__item--collapsed .dialogs__collapse-button .icon-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dialogs__item-wrap {
+        text-decoration: none;
+        border-bottom: none;
+        color: #2c2c2c;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 15px;
+      }
+
+      .dialogs__props {
+        width: 100%;
+        max-width: calc(100% - 60px);
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+
+      .dialogs__props > span {
+        margin-right: 10px;
+      }
+
+      .dialogs__props--info {
+        float: left;
+        max-width: calc(100% - 155px);
+      }
+
+      .dialogs__props--link {
+        float: right;
+        color: #00a0f2;
+      }
+
+      .dialogs__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 7px;
+      }
+
+      .dialogs__info {
+        color: #838e9c;
+        font-size: 13px;
+        line-height: 15px;
+      }
+
+      .dialogs__history {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+        z-index: 20;
+      }
+
+      .dialogs__history > div {
+        margin-bottom: 8px;
+      }
+
+      .dialogs__content {
+        width: 100%;
+        margin-top: 8px;
+        white-space: pre-line;
+      }
+
+      .text__black {
+        color: #000000;
+      }
+
+      .text__blue {
+        color: #00a0f2;
+      }
+
+      .text__grey {
+        color: #838e9c;
+      }
+
+      .text__bold {
+        font-weight: 600;
+        margin-right: 8px;
+      }
+
+      .text__red {
+        color: #ff5722;
+        margin-right: 8px;
+      }
+
+      .text__green {
+        color: #1e9852;
+        margin-right: 8px;
+      }
+
+      .text__strike {
+        text-decoration: line-through;
+        margin-right: 8px;
+      }
+
+      .close__quoted {
+        color: #6b7889;
+        font-size: 26px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .close__quoted:hover {
+        color: black;
+      }
+
+      .quoted {
+        display: flex;
+        margin-top: 15px;
+        background-color: #f9f9f9;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .quoted .quoted__message {
+        display: none;
+      }
+
+      .quoted__message {
+        border-left: groove;
+      }
+
+      .result__item {
+        width: 100%;
+        position: relative;
+        margin-bottom: 5px;
+        padding: 14px 16px 12px 16px;
+        cursor: pointer;
+        z-index: 1;
+        background: #fafafa;
+        border: 1px solid #fafafa;
+        border-radius: 12px;
+        font-size: 13px;
+        line-height: 15px;
+      }
+
+      .result__item {
+        color: #2c2c2c;
+        font-weight: 400;
+      }
+
+      .result__item.current {
+        border-color: yellow;
+      }
+
+      .group__title {
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 700;
+        color: #2c2c2c;
+        margin-bottom: 6px;
+      }
+
+      [hidden] {
+        display: none;
+      }
+
+      .dialogs__navigation {
+        flex-shrink: 0;
+      }
+
+      .dialogs__navigation-button + .dialogs__navigation-button {
+        margin-left: 12px;
+      }
+
+      .button {
+        cursor: pointer;
+        user-select: none;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      .button--icon {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background: 0 0;
+      }
+
+      .button__icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .icon-arrow {
+        vertical-align: middle;
+      }
+
+      .search__title-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6px;
+      }
+
+      .search__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      .search__button {
+        vertical-align: middle;
+      }
+
+      .search__button.close__quoted {
+        font-family: Times, serif;
+        font-size: 44px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+
+      .search__input {
+        display: block;
+        width: 365px;
+        max-width: 100%;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        box-sizing: border-box;
+        border-radius: 2px;
+        color: #2c2c2c;
+        padding: 3px 6px;
+        font-size: 13px;
+        line-height: 16px;
+        outline: none;
+      }
+
+      .search-filter {
+        display: none;
+        position: absolute;
+        right: 50px;
+        z-index: 10;
+        padding: 6px 0;
+        width: 157px;
+        background-color: #ffffff;
+        border: 1px solid #e5e5e5;
+      }
+
+      .search-filter--show {
+        display: block;
+      }
+
+      .search-filter__item {
+        display: block;
+        padding: 6px 12px;
+        font-size: 13px;
+        line-height: 15px;
+        color: #2c2c2c;
+        text-decoration: none;
+      }
+
+      .search-filter__item:hover {
+        background-color: #fafafa;
+      }
+
+      .search-filter__item--border-top::before {
+        content: "";
+        border-top: 1px solid #e5e5e5;
+        width: 100%;
+        height: 1px;
+        display: block;
+        transform: translateY(-6px);
+      }
+
+      .chat__message-attachment {
+        display: flex;
+        align-items: flex-start;
+        word-break: break-all;
+        font-size: 13px;
+        line-height: 15px;
+        color: #00a0f2;
+        max-width: 100%;
+      }
+
+      .chat__message-attachment:not(:last-child) {
+        margin-bottom: 4px;
+      }
+
+      .chat__message-icon {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+
+      .global-search__item:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      .global-search .result__item {
+        display: flex;
+        align-items: flex-start;
+        font-size: 10px;
+        line-height: 12px;
+        color: #6b7889;
+      }
+
+      .global-search .result__logo {
+        margin-right: 8px;
+      }
+
+      .global-search .result__message {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .global-search .result__text {
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      .global-search .result__data {
+        flex-shrink: 0;
+      }
+
+      .global-search .result__contact {
+        margin-bottom: 7px;
+        width: 100%;
+      }
+
+      .global-search .result__date {
+        margin-left: 8px;
+        color: #6b7889;
+      }
+
+      /* Переименовать диалог */
+
+      .input__dialog {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        padding: 6px 0;
+        width: 157px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+      }
+
+      .input__dialog--active {
+        display: block;
+      }
+
+      .chat-smiles-img {
+        background: url("images/smiles.png");
+      }
+
+      .chat-smiles-img:not([src]) {
+        content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+      }
+
+      .chat-input-smile {
+        height: 15px;
+        width: 15px;
+        background-size: 180px 4073.37px;
+        display: inline-block;
+        margin: 0 1px;
+        line-height: 15px;
+        vertical-align: -3px;
+        user-select: text;
+        pointer-events: none;
+      }
+
+      #chat-textarea-wrap {
+        width: 100%;
+        height: 6em;
+        min-height: 6em;
+        margin-top: 4px;
+        position: relative;
+        font-size: 13px;
+      }
+
+      .chat-textarea__field {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #dddddd;
+        border-radius: 2px;
+        background: transparent;
+        padding: 6px;
+        position: absolute;
+        z-index: 2;
+        overflow-y: auto;
+      }
+
+      .chat-textarea__field:focus {
+        border: 1px solid #00a0f2;
+      }
+
+      .chatInput__readOnly:hover{
+        cursor: default;
+      }
+
+      [contenteditable]:focus {
+        outline: 0px solid transparent;
+      }
+
+      .chat-textarea__span {
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        color: #dddddd;
+        z-index: 1;
+      }
+
+      .smiles-select__title-block {
+        padding-bottom: 4px;
+        border-bottom: 1px solid #dddddd;
+      }
+
+      #smiles {
+        object-fit: contain;
+        height: 6696px;
+        width: 296px;
+        cursor: pointer;
+      }
+
+      .result__item {
+        overflow-wrap: break-word;
+      }
+
+      .changeChatInputReadOnly[readonly] {
+        cursor: default;
+      }
+
+      .smiles__body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #all-smiles-wrap {
+        height: 100%;
+        overflow-y: scroll;
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      .recent-smiles-wrap {
+        min-height: 100px;
+        flex-basis: 0;
+      }
+
+      .recent-emoji {
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        margin: 8px 0 0 8px;
+        background-size: 296px 6696px;
+        cursor: pointer;
+      }
+
+      #recentEmojis {
+        height: 100%;
+      }
+
+      <SMILES_OFFSET_STYLES>
+    </style>
+    <script>
+      "use strict";
+      var contextMenuClassName = "menu_action";
+      var contextMenuItemClassName = "menu_action__item";
+      var contextMenuLinkClassName = "menu_action__link";
+      var contextMenuActive = "menu_action--active";
+      var taskItemClassName = "chat__message";
+      var taskItemActionClassName = "action_button";
+      var taskItemInContext;
+      var taskItemId = "";
+      var clickCoords;
+      var clickCoordsX;
+      var clickCoordsY;
+      var inputDName;
+      var menu;
+      var menuItems;
+      var menuState = 0;
+      var menuWidth;
+      var menuHeight;
+      var menuPosition;
+      var menuPositionX;
+      var menuPositionY;
+      var windowWidth;
+      var windowHeight;
+      var dialogCompleted;
+      var maxWidthImg;
+      var lastClickedEmoji;
+      var showPasteFlag;
+
+      var SMILES_MAP = new Map();
+      var SMILE_SIZE_FULL = 32;
+      var SMILE_SIZE_TEXT = (180 - 50) / 9;
+      var INPUT_ELEMENT;
+
+      var showMessageContextMenu = true;
+
+      <SMILES_REGEXP_AND_CODES>
+
+      var SIDEMENU_LIST = [
+        "favourite",
+        "files",
+        "search",
+        "smiles-select__menu",
+      ];
+
+      var SERVICE_MESSAGE_TYPE = {
+        COLLABORATOR: 1
+      };
+
+      function clickInsideElement(e, className) {
+        var el = e.srcElement || e.target;
+        if (el.classList.contains(className)) {
+          return el;
+        } else {
+          while ((el = el.parentNode)) {
+            if (el.classList && el.classList.contains(className)) {
+              return el;
+            }
+          }
+        }
+
+        return false;
+      }
+
+      function getPosition(e) {
+        var posx = 0;
+        var posy = 0;
+        if (!e) var e = window.event;
+        if (e.pageX || e.pageY) {
+          posx = e.pageX;
+          posy = e.pageY;
+        } else if (e.clientX || e.clientY) {
+          posx =
+            e.clientX +
+            document.body.scrollLeft +
+            document.documentElement.scrollLeft;
+          posy =
+            e.clientY +
+            document.body.scrollTop +
+            document.documentElement.scrollTop;
+        }
+
+        return {
+          x: posx,
+          y: posy,
+        };
+      }
+
+      function init() {
+        menu = document.querySelector("#menu_action");
+        menu.addEventListener("click", clickListener, true);
+        menuItems = menu.querySelectorAll(".menu_action__item");
+        var elChat = document.getElementById("chat");
+        elChat.addEventListener("click", clickListener, true);
+        resizeListener();
+
+        document.getElementById("dialog").onscroll = function () {
+          toggleMenuOff();
+          if (this.scrollTop === 0) {
+            let previous = document.getElementById("previous");
+            if (previous && !previous.hidden) {
+              let previousHref = document.getElementById("previousHref");
+              previousHref.click();
+            }
+          }
+        };
+
+        document.getElementById("search_context").onscroll = function () {
+          toggleMenuOff();
+          if (!document.getElementById("favouriteMessages").hidden) {
+            if (this.scrollTop === 0) {
+              let previous = document.getElementById("previousFav");
+              if (previous && !previous.hidden) {
+                let previousHref = document.getElementById("previousFavHref");
+                previousHref.click();
+              }
+            }
+          }
+        };
+
+        inputDName = document.querySelector("#input__dialog");
+
+        INPUT_ELEMENT = document.getElementById("chat-input");
+        var inputSpan = document.getElementById("chat-input__span");
+        var smiles = document.getElementById("smiles");
+
+        smiles.onclick = function (event) {
+          event.preventDefault();
+
+          if (INPUT_ELEMENT.readonly != undefined && INPUT_ELEMENT.readonly === true) {
+            return;
+          }
+
+          var smilesWrap = document.getElementById('all-smiles-wrap');
+
+          var offsetX = event.pageX - this.offsetLeft + smilesWrap.scrollLeft;
+          var offsetY = event.pageY - this.offsetTop + smilesWrap.scrollTop;
+
+          var smileX = Math.trunc(offsetX / SMILE_SIZE_FULL);
+          var smileY = Math.trunc(offsetY / SMILE_SIZE_FULL);
+
+          var smileElem = createSmileElement(smileX, smileY);
+
+          if (
+            smileY >= SMILES_CODES.length ||
+            smileX >= SMILES_CODES[smileY].length
+          ) {
+            return;
+          }
+
+          if (document.activeElement !== INPUT_ELEMENT) {
+            INPUT_ELEMENT.focus();
+          }
+
+          putElementBeforeCursor(smileElem);
+
+          lastClickedEmoji = SMILES_CODES[smileY][smileX];
+          document.getElementById('smilesClick').click();
+        };
+
+        smiles.ondragstart = function() {
+          return false;
+        }
+
+        SMILES_CODES.forEach(function (row, rowIndex) {
+          row.forEach(function (col, colIndex) {
+            SMILES_MAP.set(col, [colIndex, rowIndex]);
+          });
+        });
+
+        var chatInput = document.getElementById("chat-input");
+        var inputSpan = document.getElementById("chat-input__span");
+        var searchInput = document.getElementById("searchInput");
+
+        searchInput.onfocus = function (event) { changeContextMenu(true); }
+        searchInput.onblur = function (event) { changeContextMenu(false); }
+
+        chatInput.onfocus = function (event) {
+          if (chatInput.readonly != undefined && chatInput.readonly === true) {
+            event.preventDefault();
+            chatInput.blur();
+            return;
+          }
+
+          inputSpan.setAttribute("style", "display: none");
+          changeContextMenu(true);
+        };
+
+        chatInput.onblur = function () {
+          var spanStyle =
+            chatInput.childNodes.length === 0 ||
+            (chatInput.childNodes.length === 1 &&
+              chatInput.childNodes[0].nodeName === "BR")
+              ? ""
+              : "display: none";
+          inputSpan.setAttribute("style", spanStyle);
+          changeContextMenu(false);
+        };
+
+        chatInput.oncopy = function (event) {
+          event.preventDefault();
+
+          if (chatInput.readonly != undefined && chatInput.readonly === true) {
+            return;
+          }
+
+          var selectedElements = getSelectedElements();
+          var selectedString = selectedElements.reduce(function (prev, curr) {
+            return prev + elemsToString(curr.childNodes);
+          }, "");
+
+          event.clipboardData.setData("text/plain", selectedString);
+        };
+
+        chatInput.onpaste = function (event) {
+          event.preventDefault();
+
+          if (chatInput.readonly != undefined && chatInput.readonly === true) {
+            return;
+          }
+
+          var stringFromClipboard = event.clipboardData.getData("text/plain");
+          var elementFromClipboard = stringToElems(stringFromClipboard, false);
+
+          putElementBeforeCursor(elementFromClipboard);
+        };
+
+        chatInput.oncut = function (event) {
+          if (chatInput.readonly != undefined && chatInput.readonly === true) {
+            event.preventDefault();
+          }
+        };
+
+        chatInput.onkeypress = function (event) {
+          if (chatInput.readonly != undefined && chatInput.readonly === true) {
+            event.preventDefault();
+            return;
+          }
+
+          if (event.which == 13) {
+            document.execCommand('insertHTML', false, '<br>\u200B');
+            return false;
+          }
+        };
+
+        chatInput.ondrop = function (event) {
+          event.preventDefault();
+        }
+      }
+
+      function windowIsScrollable() {
+        let dialogElement = document.getElementById("dialog");
+        return dialogElement.scrollHeight > dialogElement.clientHeight;
+      }
+
+      function resetScrollElement() {
+        let previous = document.getElementById("previous");
+        previous.hidden = false;
+      }
+
+      function changeContextMenu(val) {
+        var elem = document.getElementById('changeContextMenu');
+        showPasteFlag = val;
+        elem.click();
+      }
+
+      function clickListener(e) {
+        var clickeElIsLink = clickInsideElement(e, contextMenuLinkClassName);
+        if (clickeElIsLink) {
+          e.preventDefault();
+          menuItemListener(clickeElIsLink);
+        } else {
+          taskItemInContext = clickInsideElement(e, taskItemActionClassName);
+          if (taskItemInContext) {
+            taskItemId =
+              taskItemInContext.parentNode.parentNode.parentNode.getAttribute(
+                "id"
+              );
+            toggleMenuOn();
+            positionMenu(e);
+          } else {
+            taskItemInContext = null;
+            toggleMenuOff();
+            return false;
+          }
+        }
+      }
+
+      function resizeListener() {
+        window.onresize = function (e) {
+          toggleMenuOff();
+        };
+      }
+
+      function toggleMenuOn() {
+        if (menuState !== 1) {
+          menuState = 1;
+          menu.classList.add(contextMenuActive);
+          menu.setAttribute("taskId", taskItemId);
+        }
+      }
+
+      function toggleMenuOff() {
+        if (menuState !== 0) {
+          menuState = 0;
+          menu.classList.remove(contextMenuActive);
+        }
+      }
+
+      function positionMenu(e) {
+        clickCoords = getPosition(e);
+        clickCoordsX = clickCoords.x;
+        clickCoordsY = clickCoords.y;
+        menuWidth = menu.offsetWidth + 4;
+        menuHeight = menu.offsetHeight + 4;
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+        if (windowWidth - clickCoordsX < menuWidth) {
+          menu.style.left = windowWidth - menuWidth + "px";
+        } else {
+          menu.style.left = clickCoordsX + "px";
+        }
+
+        if (windowHeight - clickCoordsY < menuHeight) {
+          menu.style.top = windowHeight - menuHeight + "px";
+        } else {
+          menu.style.top = clickCoordsY + "px";
+        }
+      }
+
+      function menuItemListener(link) {
+        toggleMenuOff();
+      }
+
+      function changeFavIcon(favElement, isFav) {
+        if (favElement !== undefined) {
+          let favIcon = isFav
+            ? "chat__message-favSelected"
+            : "chat__message-favNotSelected";
+          favElement.setAttribute("Class", "chat__message-fav " + favIcon);
+        }
+      }
+
+      function AddMessage(
+        text,
+        time,
+        author,
+        out,
+        guid,
+        isFav,
+        attachments,
+        quoted,
+        isHTML,
+        insert = false,
+        interest,
+        interestLink
+      ) {
+        if (document.getElementById(guid)) {
+          return;
+        }
+        let elDialog = document.getElementById("dialog");
+        let DivItem = document.createElement("DIV");
+        DivItem.setAttribute("id", guid);
+        if (out === true) {
+          DivItem.setAttribute("Class", "chat__item chat__item--responder");
+        } else {
+          DivItem.setAttribute("Class", "chat__item chat__item--sent");
+        }
+        let DivMessage = document.createElement("DIV");
+        DivMessage.setAttribute("Class", "chat__message");
+        let DivData = document.createElement("DIV");
+        DivData.setAttribute("Class", "chat__message-data");
+        let DivFav = document.createElement("DIV");
+        let favIcon = isFav
+          ? "chat__message-favSelected"
+          : "chat__message-favNotSelected";
+        DivFav.setAttribute("Class", "chat__message-fav " + favIcon);
+        let timenode = document.createTextNode(time);
+        let DivTime = document.createElement("DIV");
+        DivTime.setAttribute("Class", "chat__message-time");
+        DivTime.appendChild(timenode);
+        let DivAuthor = document.createElement("DIV");
+        DivAuthor.setAttribute("Class", "chat__message-author");
+        DivAuthor.innerHTML = author;
+        DivData.appendChild(DivFav);
+        DivData.appendChild(DivTime);
+        DivData.appendChild(DivAuthor);
+
+        if (interest !== undefined && interestLink !== undefined) {
+          let DivDetail = document.createElement("DIV");
+          DivDetail.setAttribute("Class", "chat__detail");
+          DivItem.appendChild(DivDetail);
+
+          let linkDetail = document.createElement("a");
+          linkDetail.setAttribute("Class", "chat__detail-link");
+          linkDetail.setAttribute("href", interestLink);
+          linkDetail.innerHTML = interest;
+          DivDetail.appendChild(linkDetail);
+        }
+
+        if (!dialogCompleted && showMessageContextMenu) {
+          let DivAction = document.createElement("DIV");
+          DivAction.setAttribute("Class", "action_button");
+          DivAction.innerHTML = "...";
+          DivData.appendChild(DivAction);
+        }
+
+        DivMessage.appendChild(DivData);
+        if (isHTML) {
+          var DivText = document.createElement("DIV");
+          DivText.innerHTML = text;
+        } else {
+          var DivText = stringToElems(text);
+        }
+        DivText.setAttribute("Class", "chat__message-content");
+
+        if (quoted != null) {
+          let divQuoted = document.createElement("DIV");
+          divQuoted.setAttribute("Class", "quoted__message");
+          divQuoted.onclick = function () {
+            let el = document.getElementById("" + quoted.guid);
+            if (el) {
+              el.scrollIntoView();
+            }
+          };
+          let qData = document.createElement("DIV");
+          let qTime = document.createElement("DIV");
+          let qAuthor = document.createElement("DIV");
+          let qText = stringToElems(quoted.text);
+          let qTimenode = document.createTextNode(quoted.time);
+          qData.setAttribute("Class", "chat__message-data");
+          qTime.setAttribute("Class", "chat__message-time");
+          qAuthor.setAttribute("Class", "chat__message-author");
+          qText.setAttribute("Class", "chat__message-content");
+          qTime.appendChild(qTimenode);
+          qAuthor.innerHTML = quoted.contact;
+          qData.appendChild(qTime);
+          qData.appendChild(qAuthor);
+          divQuoted.appendChild(qData);
+          divQuoted.appendChild(qText);
+          DivMessage.appendChild(divQuoted);
+        }
+        DivMessage.appendChild(DivText);
+        let index,
+          len = attachments.length;
+        if (len !== 0) {
+          let DivAttachments = document.createElement("DIV");
+          DivAttachments.setAttribute("Class", "chat__message-attachments");
+          for (index = 0; index < len; index++) {
+            let DivAttachment = document.createElement("DIV");
+            DivAttachment.setAttribute(
+              "Class",
+              "chat__message-attachmentblock"
+            );
+            let fileName = attachments[index].file;
+            if (fileName.match(/(\.jpeg|\.jpg|\.png|\.gif)/i) === null) {
+              fileName =
+                '<a href="' +
+                fileName +
+                '" target="_blank" class="chat__message-attachment" id="' +
+                attachments[index].guid +
+                '"><img src="' +
+                attachments[index].image +
+                '" class="chat__message-icon"> ' +
+                fileName +
+                "</a>";
+            } else {
+              var imgSize = attachments[index].size;
+              var imgSizeAttrib = "";
+              if (imgSize) {
+                var newSize = getProportionalImageSize(imgSize.width, imgSize.height);
+                imgSizeAttrib = 'height="' + newSize.height + '" width="' + newSize.width + '"';
+              } else {
+                imgSizeAttrib = 'onload="img_resize(this)"';
+              }
+              fileName =
+                '<a href="' +
+                fileName +
+                '" target="_blank"><img class="chat__message-attachment" id="' +
+                attachments[index].guid +
+                '" src="' +
+                attachments[index].image +
+                '" alt=""' + imgSizeAttrib + '></a>';
+            }
+            DivAttachment.innerHTML = fileName;
+            DivAttachments.appendChild(DivAttachment);
+          }
+          DivMessage.appendChild(DivAttachments);
+        }
+        DivItem.prepend(DivMessage);
+        if (insert) {
+          elDialog.insertBefore(DivItem, elDialog.childNodes[1]);
+        } else {
+          elDialog.appendChild(DivItem);
+        }
+      }
+
+      function AddServiceMessage(data, insert = false, guid, serviceMsgType) {
+        if (document.getElementById(guid)) {
+          return;
+        }
+
+        let elDialog = document.getElementById("dialog");
+        let DivItem = document.createElement("DIV");
+
+        DivItem.setAttribute("id", guid);
+        DivItem.setAttribute("Class", "chat__item chat__item--info");
+
+        let DivInfo = document.createElement("DIV");
+        DivInfo.setAttribute("Class", "chat__info");
+
+        if (serviceMsgType === SERVICE_MESSAGE_TYPE.COLLABORATOR) {
+          DivInfo.innerHTML = data.time + " " + data.text;
+        } else {
+          let dTime = document.createElement("DIV");
+          let dAuthor = document.createElement("a");
+          let dTimenode = document.createTextNode(
+            data.time + " " + data.text + " "
+          );
+
+          dAuthor.innerHTML = data.contact;
+
+          dAuthor.setAttribute("Class", "chat__info-link");
+          dAuthor.setAttribute("href", data.contactRef);
+
+          DivInfo.appendChild(dTimenode);
+          DivInfo.appendChild(dAuthor);
+        }
+
+        DivItem.appendChild(DivInfo);
+
+        if (insert) {
+          elDialog.insertBefore(DivItem, elDialog.childNodes[1]);
+        } else {
+          elDialog.appendChild(DivItem);
+        }
+      }
+
+      function AddMessages(
+        JSONMessages,
+        insert = false,
+        hidePrev = false,
+        scrollEnd = true
+      ) {
+        var MessagesData = JSON.parse(JSONMessages).ArrayOfMessages;
+        var index,
+          len = MessagesData.length;
+        if (len > 0) {
+          let rootEl = document.getElementById("dialog");
+          let firstel = rootEl.childNodes[1];
+          for (index = 0; index < len; index++) {
+            if (MessagesData[index].service) {
+              AddServiceMessage(
+                MessagesData[index],
+                insert,
+                MessagesData[index].guid,
+                MessagesData[index].msgType,
+              );
+            } else {
+              AddMessage(
+                MessagesData[index].text,
+                MessagesData[index].time,
+                MessagesData[index].contact,
+                MessagesData[index].out,
+                MessagesData[index].guid,
+                MessagesData[index].isFav,
+                MessagesData[index].attachments,
+                MessagesData[index].reply_message,
+                MessagesData[index].isHTML,
+                insert,
+                MessagesData[index].lead_descr,
+                MessagesData[index].leadRef
+              );
+            }
+          }
+
+          if (typeof checkedMessages !== "undefined") {
+            markMessages(checkedMessages);
+          }
+
+          if (insert) {
+            firstel.scrollIntoView();
+          } else {
+            if (scrollEnd) {
+              setTimeout(scrollToEnd, 100);
+            } else {
+              rootEl.scrollTop = 1;
+            }
+          }
+        }
+
+        if (hidePrev) {
+          let previous = document.getElementById("previous");
+          previous.hidden = true;
+        }
+      }
+
+      function ClearDialog() {
+        var dialog = document.getElementById("dialog");
+        while (dialog.firstChild) {
+          dialog.removeChild(dialog.firstChild);
+        }
+        let previous = document.createElement("div");
+        previous.setAttribute("id", "previous");
+        previous.setAttribute("class", "previous");
+        previous.innerHTML =
+          '<a href="previous" style="color: #00a0f2" id="previousHref" hidden>Показать более ранние сообщения...</a>';
+        dialog.appendChild(previous);
+      }
+
+      function ClearFavourite() {
+        var favMessages = document.getElementById("favouriteMessages");
+        while (favMessages.firstChild) {
+          favMessages.removeChild(favMessages.firstChild);
+        }
+        let previous = document.createElement("div");
+        previous.setAttribute("id", "previousFav");
+        previous.setAttribute("class", "previous");
+        previous.innerHTML =
+          '<a href="previousFav" style="color: #00a0f2" id="previousFavHref" hidden>Показать более ранние сообщения...</a>';
+        favMessages.appendChild(previous);
+      }
+
+      function AddDialog(DialogData, className, dCount) {
+        var divWrap,
+          divOwner,
+          divDialogs = document.getElementById("dialogs");
+        let divGroup = document.getElementsByClassName(className)[0];
+        let isFirst = !divGroup;
+        if (isFirst) {
+          dialogCompleted = DialogData.completed;
+          divGroup = document.createElement("DIV");
+          divGroup.setAttribute("Class", className);
+          divGroup.setAttribute("id", "dialogs-group");
+          divOwner = divGroup;
+          divDialogs.appendChild(divGroup);
+          divWrap = document.createElement("DIV");
+        } else {
+          let divCollapse = document.getElementsByClassName(
+            "dialogs__collapse-content"
+          )[0];
+          if (!divCollapse) {
+            divCollapse = document.createElement("DIV");
+            divCollapse.setAttribute("Class", "dialogs__collapse-content");
+            divGroup.appendChild(divCollapse);
+          }
+          divOwner = divCollapse;
+          divWrap = document.createElement("a");
+          divWrap.setAttribute("href", DialogData.ref);
+        }
+
+        divWrap.setAttribute("Class", "dialogs__item-wrap");
+        let divItem = document.createElement("DIV");
+        if (DialogData.completed) {
+          divItem.setAttribute("Class", "dialogs__item dialogs__closed");
+        } else if (DialogData.accepted) {
+          divItem.setAttribute("Class", "dialogs__item dialogs__accepted");
+        } else {
+          divItem.setAttribute("Class", "dialogs__item");
+        }
+
+        let divProps = document.createElement("DIV");
+        divProps.setAttribute("Class", "dialogs__props");
+
+        let divTitle = document.createElement("DIV");
+        if (isFirst && dCount > 1) {
+          divTitle.setAttribute(
+            "Class",
+            "dialogs__title dialogs__collapse-link"
+          );
+          divTitle.onclick = function () {
+            showHideDialog(this);
+          };
+        } else {
+          divTitle.setAttribute("Class", "dialogs__title");
+        }
+
+        let bRename = document.createElement("button");
+        bRename.type = "button";
+        bRename.innerHTML =
+          '<img alt="Переименовать" title="Переименовать" name="renameDialog" class="icon" src="images/icon-rename.png">';
+        bRename.setAttribute("dialog", DialogData.ref);
+        bRename.style.border = "none";
+        divTitle.appendChild(bRename);
+
+        let el = document.createElement("span");
+        el.setAttribute("Class", "text__blue");
+        el.innerHTML = "Диалог: ";
+        divTitle.appendChild(el);
+
+        el = document.createElement("span");
+        el.innerHTML = DialogData.name;
+        divTitle.appendChild(el);
+
+        if (!DialogData.completed) {
+          el.setAttribute("Class", "text__blue");
+        }
+
+        if (isFirst && dCount > 1) {
+          el = document.createElement("span");
+          el.setAttribute("Class", "icon icon-arrow");
+          el.innerHTML =
+            '<img alt="" src="images/icon-arrow-down.png" class="icon-arrow">';
+          divTitle.appendChild(el);
+
+          el = document.createElement("span");
+          el.innerHTML = "(" + dCount + ")";
+          divTitle.appendChild(el);
+        }
+
+        divProps.appendChild(divTitle);
+
+        let elDate = document.createElement("span");
+        elDate.setAttribute("Class", "text__grey");
+        elDate.innerHTML = DialogData.date;
+
+        divProps.appendChild(elDate);
+
+        let elDateAccepted = document.createElement("span");
+        elDateAccepted.setAttribute("Class", "text__grey");
+        elDateAccepted.innerHTML = DialogData.dateAccepted;
+
+        divProps.appendChild(elDateAccepted);
+
+        if (DialogData.completed) {
+          let elDateCompleted = document.createElement("span");
+          elDateCompleted.setAttribute("Class", "text__grey");
+          elDateCompleted.innerHTML = DialogData.dateOfCompletion;
+          divProps.appendChild(elDateCompleted);
+        }
+        divItem.appendChild(divProps);
+        if (DialogData.interest) {
+          let aEl = document.createElement("a");
+          aEl.setAttribute("href", DialogData.interest.ref);
+          aEl.innerHTML = DialogData.interest.title;
+          divItem.appendChild(aEl);
+        }
+
+        divWrap.appendChild(divItem);
+        divOwner.appendChild(divWrap);
+      }
+
+      function AddDialogs(JSONDialogs) {
+        var DialogsData = JSON.parse(JSONDialogs).ArrayOfDialogs;
+        var index,
+          dCount = DialogsData.length;
+        let className =
+          dCount === 1
+            ? "dialogs__group"
+            : "dialogs__group dialogs__group--collapse";
+        for (index = 0; index < dCount; index++) {
+          AddDialog(DialogsData[index], className, dCount);
+        }
+      }
+
+      function ClearDialogs(hideS) {
+        hideQuoted();
+        var dialogs = document.getElementById("dialogs");
+        while (dialogs.firstChild) {
+          dialogs.removeChild(dialogs.firstChild);
+        }
+        if (hideS) {
+          hideSearch();
+        }
+        hideFiles();
+        hideSmiles();
+      }
+
+      function showHideDialog(element) {
+        var divCollapse = document.getElementById("dialogs-group");
+        if (element.className === "dialogs__title dialogs__collapse-link") {
+          divCollapse.className = "dialogs__group";
+          element.className = "dialogs__title dialogs__expand-link";
+        } else {
+          divCollapse.className = "dialogs__group dialogs__group--collapse";
+          element.className = "dialogs__title dialogs__collapse-link";
+        }
+      }
+
+      function scrollToEnd() {
+        let objDiv = document.getElementById("dialog");
+        let el = objDiv.lastElementChild;
+        el.scrollIntoView();
+      }
+
+      function scrollToBegin() {
+        let objDiv = document.getElementById("dialog");
+        let el = objDiv.firstElementChild;
+        el.scrollIntoView();
+      }
+
+      function img_resize(img, width = 600, height = 200) {
+        if (!img.width && !img.height) {
+          window.setTimeout(function () {
+            fb_resize(img);
+          }, 100);
+          return;
+        }
+        let w = img.width;
+        let h = img.height;
+        if (h > height) {
+          w = Math.ceil((w * height) / h);
+          h = height;
+        }
+        if (w > width) {
+          h = Math.ceil((h * width) / w);
+          w = width;
+        }
+        img.setAttribute("width", w);
+        img.parentNode.style.width = w + "px";
+        img.setAttribute("height", h);
+        img.parentNode.style.height = h + "px";
+      }
+
+      function getProportionalImageSize(currWidth, currHeight, width = 600, height = 200) {
+        if (currHeight > height) {
+          currWidth = Math.ceil((currWidth * height) / currHeight);
+          currHeight = height;
+        }
+        if (currWidth > width) {
+          currHeight = Math.ceil((currHeight * width) / currWidth);
+          currWidth = width;
+        }
+        
+        return {
+          width: currWidth,
+          height: currHeight
+        }
+      }
+
+      function replaceRef(text) {
+        var referens = text.match(/http\S*/g);
+        if (referens !== null) {
+          referens.forEach((v) => {
+            if (v.match(/^https?\:\/\/yandex\.[a-z]+\/maps\/?/) !== null ||
+                v.match(/^https?\:\/\/(www\.|maps\.)?google\.[a-z]+\/maps\/?/) !== null) {
+              var coords = getCoordsFromURL(/(@|pt=)(-?\d+\.\d+),(-?\d+\.\d+)/, v);
+              var replaceTo = (
+                coords ?
+                '<a href="' + v + '" target="_blank">Геопозиция. Широта: ' + coords.latitude + '. Долгота: ' + coords.longitude + ".</a>" :
+                '<a href="' + v + '" target="_blank">' + v + "</a>"
+              );
+              text = text.replace(v, replaceTo);
+            } else if (v.match(/(\.jpeg|\.jpg|\.png|\.gif)/i) === null) {
+              text = text.replace(
+                v,
+                '<a href="' + v + '" target="_blank">' + v + "</a>"
+              );
+            } else {
+              text = text.replace(
+                v,
+                '<a href="' +
+                  v +
+                  '" target="_blank"><img src="' +
+                  v +
+                  '" alt="" onload="img_resize(this)"></a>'
+              );
+            }
+          });
+        } else {
+          text = escapeHtml(text);
+        }
+        return text;
+      }
+
+      function getCoordsFromURL(matchRegexp, url) {
+        var result = matchRegexp.exec(url);
+        if (result && result.length >= 3) {
+          return {
+            latitude: result[2],
+            longitude: result[3]
+          }
+        }
+      }
+
+      function showQuoted(element) {
+        var quotedMessage = document.getElementById("QuotedMessage");
+        quotedMessage.innerHTML = document
+          .getElementById(element.parentNode.parentNode.getAttribute("taskId"))
+          .querySelector(".chat__message").outerHTML;
+        quotedMessage.firstChild.className = "";
+        quotedMessage.parentElement.hidden = false;
+      }
+
+      function hideQuoted() {
+        var quotedMessage = document.getElementById("QuotedMessage");
+        quotedMessage.parentElement.hidden = true;
+      }
+
+      function showSearch() {
+        toggleSideMenu("search");
+        let time;
+        let searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", function () {
+          clearTimeout(time);
+          time = setTimeout(requestSearch, 500);
+        });
+      }
+
+      function favouriteIsHidden() {
+        let favElem = document.getElementById("favourite");
+        return favElem.hidden;
+      }
+
+      function requestSearch() {
+        let searchInput = document.getElementById("searchInput");
+        let searchSubmit = document.getElementById("searchSubmit");
+        if (searchInput.value !== "") {
+          searchSubmit.value = searchInput.value;
+          searchSubmit.click();
+        } else {
+          clearSearchResults();
+        }
+      }
+
+      function hideSearch() {
+        document.getElementById('search_context').hidden = true;
+        let search = document.getElementById("search");
+        search.hidden = true;
+        let context = document.getElementById("context");
+        context.hidden = context.innerHTML === "";
+        let searchInput = document.getElementById("searchInput");
+        searchInput.value = "";
+        clearSearchResults();
+      }
+
+      function clearSearchResults() {
+        let el = document.getElementById("searchMessages");
+        while (el.firstChild) {
+          el.removeChild(el.firstChild);
+        }
+      }
+
+      function addResultItem(owner, itemData, search) {
+        let aItem = document.createElement("a");
+        aItem.setAttribute("href", itemData.ref);
+
+        let divItem = document.createElement("div");
+        divItem.setAttribute("class", "result__item");
+        divItem.setAttribute("onclick", "clickItem(this)");
+
+        let DivData = document.createElement("DIV");
+        DivData.setAttribute("Class", "chat__message-data");
+
+        let timenode = document.createTextNode(itemData.date);
+        let DivTime = document.createElement("DIV");
+        DivTime.setAttribute("Class", "chat__message-time");
+        DivTime.appendChild(timenode);
+
+        let DivAuthor = document.createElement("DIV");
+        DivAuthor.setAttribute("Class", "chat__message-author");
+        DivAuthor.innerHTML = escapeHtml(itemData.contact);
+
+        DivData.appendChild(DivTime);
+        DivData.appendChild(DivAuthor);
+        divItem.appendChild(DivData);
+
+        let divMessege = document.createElement("div");
+        divMessege.setAttribute("class", "result__message");
+
+        let searchElems = selectSearch(itemData.text, search);
+        let divText = addSmilesToSearchResult(searchElems);
+        divText.setAttribute("class", "result__text");
+
+        divMessege.appendChild(divText);
+        divItem.appendChild(divMessege);
+        aItem.appendChild(divItem);
+        owner.appendChild(aItem);
+      }
+
+      function addSearchResults(resultsJSON) {
+        var results = JSON.parse(resultsJSON);
+        var search = results.search;
+
+        clearSearchResults();
+        if (results.messages) {
+          var elOwner = document.getElementById("searchMessages");
+          let elGroupTitle = document.createElement("div");
+          elGroupTitle.setAttribute("class", "group__title");
+          elGroupTitle.innerHTML = "Результаты поиска";
+          elOwner.appendChild(elGroupTitle);
+          var index,
+            len = results.messages.length;
+          for (index = 0; index < len; index++) {
+            addResultItem(elOwner, results.messages[index], search);
+          }
+        }
+      }
+
+      function selectSearch(str, search) {
+        var elemArray = [];
+        var el,
+          res = str.search(new RegExp(search, "ig"));
+
+        while (res !== -1) {
+          if (res > 0) {
+            elemArray.push(str.substr(0, res));
+          }
+
+          el = document.createElement("span");
+          el.setAttribute("class", "text__blue");
+          el.innerHTML = escapeHtml(str.substr(res, search.length));
+          elemArray.push(el);
+
+          str = str.substr(res + search.length);
+          res = str.search(new RegExp(search, "ig"));
+        }
+
+        if (str.length > 0) {
+          elemArray.push(str);
+        }
+
+        return elemArray;
+      }
+
+      function addSmilesToSearchResult(searchElem) {
+        return searchElem.reduce(function (prev, curr) {
+          if (typeof curr === "string") {
+            var elems = stringToElems(curr, false);
+            elems.childNodes.forEach(function (elem) {
+              prev.appendChild(elem);
+            });
+          } else {
+            prev.appendChild(curr);
+          }
+          return prev;
+        }, document.createElement("div"));
+      }
+
+      function setContext(context) {
+        let el = document.getElementById("context");
+        el.innerHTML = context;
+        el.hidden = context === "";
+      }
+
+      function showFiles() {
+        toggleSideMenu("files");
+      }
+
+      function hideFiles() {
+        document.getElementById('search_context').hidden = true;
+        let files = document.getElementById("files");
+        files.hidden = true;
+        let context = document.getElementById("context");
+        context.hidden = context.innerHTML === "";
+      }
+
+      function clearFilesResults() {
+        let el = document.getElementById("searchFiles");
+        while (el.firstChild) {
+          el.removeChild(el.firstChild);
+        }
+      }
+
+      function filterFiles() {
+        let attachments = document.getElementById("attachments");
+        let filter = document.getElementById("attachments-filter");
+        filter.classList.toggle("search-filter--show");
+      }
+
+      function addFilesItem(owner, fileData) {
+        let aItem = document.createElement("a");
+        aItem.setAttribute("href", fileData.ref);
+        let divItem = document.createElement("div");
+        divItem.setAttribute("class", "result__item");
+        divItem.setAttribute("onclick", "clickItem(this)");
+        let DivData = document.createElement("DIV");
+        DivData.setAttribute("Class", "chat__message-data");
+        let timenode = document.createTextNode(fileData.date);
+        let DivTime = document.createElement("DIV");
+        DivTime.setAttribute("Class", "chat__message-time");
+        DivTime.appendChild(timenode);
+        let DivAuthor = document.createElement("DIV");
+        DivAuthor.setAttribute("Class", "chat__message-author");
+        DivAuthor.innerHTML = fileData.contact;
+        DivData.appendChild(DivTime);
+        DivData.appendChild(DivAuthor);
+        divItem.appendChild(DivData);
+        let fileName = fileData.file;
+        if (fileData.image !== "") {
+          let DivAttachment = document.createElement("DIV");
+          DivAttachment.setAttribute("Class", "chat__message-attachmentblock");
+          if (fileName.match(/(\.jpeg|\.jpg|\.png|\.gif)/i) === null) {
+            fileName =
+              '<a href="' +
+              fileData.file +
+              '" target="_blank" class="chat__message-attachment" id="' +
+              fileData.guid +
+              '"><img src="' +
+              fileData.image +
+              '" class="chat__message-icon"> ' +
+              fileData.file +
+              "</a>";
+          } else {
+            var imgSize = fileData.size;
+            var imgSizeAttrib = "";
+            if (imgSize) {
+              var newSize = getProportionalImageSize(imgSize.width, imgSize.height);
+              imgSizeAttrib = 'height="' + newSize.height + '" width="' + newSize.width + '"';
+            } else {
+              imgSizeAttrib = 'onload="img_resize(this)"';
+            }
+            fileName =
+              '<a href="' +
+              fileData.file +
+              '" target="_blank"><img class="chat__message-attachment" id="' +
+              fileData.guid +
+              '" src="' +
+              fileData.image +
+              '" alt=""' + imgSizeAttrib + '></a>';
+          }
+          DivAttachment.innerHTML = fileName;
+          divItem.appendChild(DivAttachment);
+        } else {
+          let divMessege = document.createElement("div");
+          divMessege.setAttribute("class", "result__message");
+          let divText = document.createElement("div");
+          divText.setAttribute("class", "result__text");
+          divText.innerHTML = replaceRef(fileName);
+          divMessege.appendChild(divText);
+          divItem.appendChild(divMessege);
+        }
+
+        aItem.appendChild(divItem);
+        owner.appendChild(aItem);
+      }
+
+      function addFiles(filesJSON) {
+        clearFilesResults();
+        var files = JSON.parse(filesJSON);
+        var elOwner = document.getElementById("searchFiles");
+        maxWidthImg =
+          (document.getElementById("main").offsetWidth / 100) * 30 - 50;
+        let elGroupTitle = document.createElement("div");
+        elGroupTitle.setAttribute("class", "group__title");
+        elGroupTitle.innerHTML = "Файлы";
+        elOwner.appendChild(elGroupTitle);
+        var index,
+          len = files.length;
+        for (index = 0; index < len; index++) {
+          addFilesItem(elOwner, files[index]);
+        }
+      }
+
+      function showFavourite() {
+        toggleSideMenu("favourite");
+      }
+
+      function hideFavourite() {
+        document.getElementById('search_context').hidden = true;
+        let favourite = document.getElementById("favourite");
+        favourite.hidden = true;
+        let context = document.getElementById("context");
+        context.hidden = context.innerHTML === "";
+      }
+
+      function AddFavourite(
+        text,
+        time,
+        author,
+        out,
+        guid,
+        isFav,
+        attachments,
+        quoted,
+        isHTML,
+        insert = false,
+        interest,
+        interestLink,
+        ref
+      ) {
+        if (document.getElementById(guid)) {
+          return;
+        }
+        let elDialog = document.getElementById("favouriteMessages");
+        let aItem = document.createElement("a");
+        aItem.setAttribute("href", ref);
+        let DivItem = document.createElement("DIV");
+        DivItem.setAttribute("class", "result__item");
+        DivItem.setAttribute("id", guid);
+        aItem.appendChild(DivItem);
+        if (out === true) {
+          DivItem.setAttribute("Class", "chat__item chat__item--responder");
+        } else {
+          DivItem.setAttribute("Class", "chat__item chat__item--sent");
+        }
+        let DivMessage = document.createElement("DIV");
+        DivMessage.setAttribute("Class", "chat__favMessage");
+        let DivData = document.createElement("DIV");
+        DivData.setAttribute("Class", "chat__message-data");
+        let DivFav = document.createElement("DIV");
+        let favIcon = isFav
+          ? "chat__message-favSelected"
+          : "chat__message-favNotSelected";
+        DivFav.setAttribute("Class", "chat__message-fav " + favIcon);
+        let timenode = document.createTextNode(time);
+        let DivTime = document.createElement("DIV");
+        DivTime.setAttribute("Class", "chat__message-time");
+        DivTime.appendChild(timenode);
+        let DivAuthor = document.createElement("DIV");
+        DivAuthor.setAttribute("Class", "chat__message-author");
+        DivAuthor.innerHTML = author;
+        DivData.appendChild(DivFav);
+        DivData.appendChild(DivTime);
+        DivData.appendChild(DivAuthor);
+
+        DivMessage.appendChild(DivData);
+        if (isHTML) {
+          var DivText = document.createElement("DIV");
+          DivText.innerHTML = text;
+        } else {
+          var DivText = stringToElems(text);
+        }
+        DivText.setAttribute("Class", "chat__message-content");
+
+        if (quoted != null) {
+          let divQuoted = document.createElement("DIV");
+          divQuoted.setAttribute("Class", "quoted__message");
+          divQuoted.onclick = function () {
+            let el = document.getElementById("" + quoted.guid);
+            if (el) {
+              el.scrollIntoView();
+            }
+          };
+          let qData = document.createElement("DIV");
+          let qTime = document.createElement("DIV");
+          let qAuthor = document.createElement("DIV");
+          let qText = document.createElement("DIV");
+          let qTimenode = document.createTextNode(quoted.time);
+          qData.setAttribute("Class", "chat__message-data");
+          qTime.setAttribute("Class", "chat__message-time");
+          qAuthor.setAttribute("Class", "chat__message-author");
+          qText.setAttribute("Class", "chat__message-content");
+          qTime.appendChild(qTimenode);
+          qText.innerHTML = replaceRef(quoted.text);
+          qAuthor.innerHTML = quoted.contact;
+          qData.appendChild(qTime);
+          qData.appendChild(qAuthor);
+          divQuoted.appendChild(qData);
+          divQuoted.appendChild(qText);
+          DivMessage.appendChild(divQuoted);
+        }
+        DivMessage.appendChild(DivText);
+        let index,
+          len = attachments.length;
+        if (len !== 0) {
+          let DivAttachments = document.createElement("DIV");
+          DivAttachments.setAttribute("Class", "chat__message-attachments");
+          for (index = 0; index < len; index++) {
+            let DivAttachment = document.createElement("DIV");
+            DivAttachment.setAttribute(
+              "Class",
+              "chat__message-attachmentblock"
+            );
+            let fileName = attachments[index].file;
+            if (fileName.match(/(\.jpeg|\.jpg|\.png|\.gif)/i) === null) {
+              fileName =
+                '<a href="' +
+                fileName +
+                '" target="_blank" class="chat__message-attachment" id="' +
+                attachments[index].guid +
+                '"><img src="' +
+                attachments[index].image +
+                '" class="chat__message-icon"> ' +
+                fileName +
+                "</a>";
+            } else {
+              var imgSize = attachments[index].size;
+              var imgSizeAttrib = "";
+              if (imgSize) {
+                var newSize = getProportionalImageSize(imgSize.width, imgSize.height);
+                imgSizeAttrib = 'height="' + newSize.height + '" width="' + newSize.width + '"';
+              } else {
+                imgSizeAttrib = 'onload="img_resize(this)"';
+              }
+              fileName =
+                '<a href="' +
+                fileName +
+                '" target="_blank"><img class="chat__message-attachment" id="' +
+                attachments[index].guid +
+                '" src="' +
+                attachments[index].image +
+                '" alt=""' + imgSizeAttrib + '></a>';
+            }
+            DivAttachment.innerHTML = fileName;
+            DivAttachments.appendChild(DivAttachment);
+          }
+          DivMessage.appendChild(DivAttachments);
+        }
+        DivItem.prepend(DivMessage);
+        if (insert) {
+          elDialog.insertBefore(aItem, elDialog.childNodes[1]);
+        } else {
+          elDialog.appendChild(aItem);
+        }
+      }
+
+      function AddFavourites(
+        JSONMessages,
+        insert = false,
+        hidePrev = false,
+        scrollEnd = true
+      ) {
+        var MessagesData = JSON.parse(JSONMessages).ArrayOfMessages;
+        if (MessagesData.length > 0) {
+          let rootEl = document.getElementById("favouriteMessages");
+          let firstel = rootEl.childNodes[1];
+
+          for (let index = 0; index < MessagesData.length; index++) {
+            AddFavourite(
+              MessagesData[index].text,
+              MessagesData[index].time,
+              MessagesData[index].contact,
+              MessagesData[index].out,
+              MessagesData[index].guid,
+              MessagesData[index].isFav,
+              MessagesData[index].attachments,
+              MessagesData[index].reply_message,
+              MessagesData[index].isHTML,
+              insert,
+              MessagesData[index].lead_descr,
+              MessagesData[index].leadRef,
+              MessagesData[index].ref
+            );
+          }
+
+          if (insert) {
+            firstel.scrollIntoView();
+          } else {
+            if (scrollEnd) {
+              setTimeout(function () {
+                let objDiv = document.getElementById("favouriteMessages");
+                let el = objDiv.lastElementChild;
+                el.scrollIntoView();
+              }, 100);
+            }
+          }
+        }
+
+        if (hidePrev) {
+          let previous = document.getElementById("previousFav");
+          previous.hidden = true;
+        }
+      }
+
+      function filterFavourite() {
+        let filter = document.getElementById("favourite-filter");
+        filter.classList.toggle("search-filter--show");
+      }
+
+      function changeFavouriteFilterVisibility(visibility) {
+        let filterButtonElem = document.getElementById(
+          "favourite-filterButton"
+        );
+        let filterDialogMenu = document.getElementById("favourite-filter");
+
+        filterDialogMenu.classList.remove("search-filter--show");
+        filterButtonElem.hidden = visibility;
+      }
+
+      function escapeHtml(text) {
+        "use strict";
+        return text.replace(/[\"&<>]/g, function (a) {
+          return { '"': "&quot;", "&": "&amp;", "<": "&lt;", ">": "&gt;" }[a];
+        });
+      }
+
+      let checkedMessages;
+      //появление чекбоксов выделения сообщений
+      function selectMessages() {
+        checkedMessages = [];
+        let dialog = document.getElementById("dialog");
+        let messages = dialog.querySelectorAll(".chat__item");
+
+        messages.forEach(function (message) {
+          let isService = message.querySelectorAll(".chat__info").length > 0;
+          if (!isService) {
+            message.classList.add("chat__item--select");
+            let label = document.createElement("label");
+            label.classList.add("chat__message-select");
+            let input = document.createElement("input");
+            input.classList.add("chat__message-input");
+            input.setAttribute("type", "checkbox");
+            message.appendChild(label);
+            label.appendChild(input);
+
+            //скрытие кнопки показа меню
+            let menuButton = message.querySelector(".action_button");
+            menuButton.style.display = "none";
+          }
+        });
+        //выделение кликнутого сообщения
+        let menu = document.getElementById("menu_action");
+        if (menu.hasAttribute("taskId")) {
+          let itemGuid = menu.getAttribute("taskId");
+          checkedMessages.push(itemGuid);
+          let checkedMessage = document.getElementById(itemGuid);
+          let input = checkedMessage.querySelector("input");
+          if (!input.checked) {
+            input.checked = true;
+          }
+        }
+
+        watchSelectMessages();
+      }
+
+      //отменить выделение сообщений
+      function cancelSelectMessages() {
+        checkedMessages = [];
+        let dialog = document.getElementById("dialog");
+        let messages = dialog.querySelectorAll(".chat__item");
+        messages.forEach(function (message) {
+          let isService = message.querySelectorAll(".chat__info").length > 0;
+          if (!isService) {
+            message.classList.remove("chat__item--select");
+            let label = message.querySelector("label");
+            if (label) {
+              label.remove();
+            }
+
+            let menuButton = message.querySelector(".action_button");
+            menuButton.style.display = "block";
+          }
+        });
+      }
+
+      //выделить все сообщения(становится возможным только после выполнения функции selectMessages())
+      function selectAllMessages() {
+        let dialog = document.getElementById("dialog");
+        let messages = dialog.querySelectorAll(".chat__item");
+        messages.forEach(function (message) {
+          let isService = message.querySelectorAll(".chat__info").length > 0;
+          if (!isService) {
+            let messageId = message.getAttribute("id");
+            if (checkedMessages.indexOf(messageId) === -1) {
+              checkedMessages.push(messageId);
+            }
+            let input = message.querySelector(".chat__message-input");
+            if (input && !input.checked) {
+              input.checked = true;
+            }
+          }
+        });
+      }
+
+      //снять выделение со всех сообщений (становится возможным только после выполнения функции selectMessages())
+      function cancelSelectAllMessages() {
+        checkedMessages = [];
+        let dialog = document.getElementById("dialog");
+        let messages = dialog.querySelectorAll(".chat__item");
+        messages.forEach(function (message) {
+          let isService = message.querySelectorAll(".chat__info").length > 0;
+          if (!isService) {
+            let input = message.querySelector(".chat__message-input");
+            if (input && input.checked) {
+              input.checked = false;
+            }
+          }
+        });
+      }
+
+      //функция которая возвращает выбранные сообщения
+      function watchSelectMessages() {
+        let inputs = document.querySelectorAll(".chat__message-input");
+        inputs.forEach(function (input) {
+          input.addEventListener("click", function () {
+            let block = input.closest(".chat__item");
+            let blockId = block.getAttribute("id");
+            if (input.checked) {
+              checkedMessages.push(blockId);
+            } else {
+              let uncheckedId = checkedMessages.indexOf(blockId, 0);
+              if (uncheckedId !== -1) {
+                checkedMessages.splice(uncheckedId, 1);
+              }
+            }
+          });
+        });
+      }
+
+      //проставить маркеры из входящего массива
+      function markMessages(arr) {
+        if (arr.length !== 0) {
+          selectMessages();
+          arr.forEach(function (item) {
+            let message = document.getElementById(item);
+            if (message !== null) {
+              let input = message.querySelector("input");
+              if (input && !input.checked) {
+                input.checked = true;
+              }
+            }
+          });
+        }
+      }
+
+      function getSelectedArr() {
+        return JSON.stringify(checkedMessages);
+      }
+
+      function showDialogMenu(hide) {
+        let dialog = document.getElementById("dialogs");
+        if (hide === 0) {
+          dialog.style.display = "none";
+        } else {
+          dialog.style.display = "block";
+        }
+      }
+
+      function showMenuOption(menuId, hide) {
+        let option = document.getElementById(menuId);
+        if (hide === 0) {
+          option.style.display = "none";
+        } else {
+          option.style.display = "block";
+        }
+      }
+
+      function putElementBeforeCursor(element) {
+        var selection, range;
+
+        if (window.getSelection) {
+          var selection = window.getSelection();
+          var focusNode = selection.focusNode;
+
+          if (selection.getRangeAt && selection.rangeCount) {
+            var elementToPush =
+              element.nodeName === "DIV"
+                ? stringToHTMLFragment(element.innerHTML)
+                : element;
+
+            range = selection.getRangeAt(0);
+            range.deleteContents();
+            range.insertNode(elementToPush);
+
+            selection.addRange(range);
+          }
+        } else if (document.selection && document.selection.createRange) {
+          document.selection.createRange().text = element;
+        }
+
+        selection.collapseToEnd();
+      }
+
+      function stringToHTMLFragment(string) {
+        return document.createRange().createContextualFragment(string);
+      }
+
+      function stringToElems(string, needToAddRefs = true) {
+        if (!string) {
+          return document.createElement("div");
+        }
+
+        var matchResult = string.match(EMOJI_MATCH_REGEXP);
+
+        if (matchResult) {
+          return matchResult.reduce(function (prev, curr) {
+            if (EMOJI_REGEXP.test(curr)) {
+              var smileOffset = SMILES_MAP.get(curr);
+
+              if (smileOffset !== undefined) {
+                var smileElem = createSmileElement(...smileOffset);
+                prev.appendChild(smileElem);
+              } else {
+                prev.appendChild(createTextFragmentFromMessage(curr, false));
+              }
+            } else {
+              prev.appendChild(createTextFragmentFromMessage(curr, needToAddRefs));
+            }
+            return prev;
+          }, document.createElement("div"));
+        } else {
+          var elementToPrint = document.createElement("div");
+          elementToPrint.appendChild(createTextFragmentFromMessage(string, needToAddRefs));
+          return elementToPrint;
+        }
+      }
+
+      function createTextFragmentFromMessage(text, needToAddRefs) {
+        var textWithRefs = (needToAddRefs ? replaceRef(text) : text);
+        var textWithBrs = textWithRefs.replace(/\r?\n/g, '<br>');
+        return stringToHTMLFragment(textWithBrs);
+      }
+
+      function elemsToString(childNodes) {
+        var childElems = [...childNodes];
+        var outputText = childElems.reduce(function (prev, curr) {
+          if (curr.nodeName === "DIV" || curr.nodeName === "#text") {
+            if (curr.textContent) {
+              return prev + curr.textContent;
+            } else {
+              return prev + (curr.innerText ? curr.innerText : "");
+            }
+          } else if (curr.nodeName === "IMG") {
+            return prev + curr.getAttribute("alt");
+          } else if (curr.nodeName === "BR") {
+            return prev + "\n";
+          }
+          return prev;
+        }, "");
+
+        return outputText;
+      }
+
+      function createSmileElement(offsetX, offsetY) {
+        var newSmile = document.createElement("img");
+
+        var offsetXClass = " smileX_offset_" + offsetX;
+        var offsetYClass = " smileY_offset_" + offsetY;
+
+        var baseClass =
+          "chat-smiles-img chat-input-smile" + offsetXClass + offsetYClass;
+
+        newSmile.setAttribute("class", baseClass);
+        newSmile.setAttribute("alt", SMILES_CODES[offsetY][offsetX]);
+
+        return newSmile;
+      }
+
+      function getSelectedElements() {
+        var ranges = [];
+        var elements = [];
+        var selection = document.getSelection();
+
+        for (var index = 0; index < selection.rangeCount; index++) {
+          var currentRange = selection.getRangeAt(index);
+          var rangeElements = currentRange.cloneContents();
+          elements.push(rangeElements);
+        }
+
+        return elements;
+      }
+
+      function setFocusToInputField() {
+        var chatInput = document.getElementById("chat-input");
+        if (chatInput) {
+          chatInput.focus();
+        }
+      }
+
+      function changeChatInputVisibility(isVisible) {
+        toggleHiddenAttribute("chat-textarea-wrap", isVisible);
+      }
+
+      function addClass(el, className) {
+        if (el.classList) el.classList.add(className)
+        else if (!hasClass(el, className)) el.className += " " + className;
+      }
+
+      function removeClass(el, className) {
+        if (el.classList) el.classList.remove(className)
+        else if (hasClass(el, className)) {
+          var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+          el.className = el.className.replace(reg, ' ');
+        }
+      }
+
+      function changeChatInputReadOnly(isReadOnly) {
+        var chatInput = document.getElementById("chat-input");
+        if (chatInput) {
+          chatInput.readonly = !isReadOnly;
+          if (!isReadOnly) {
+            addClass(chatInput, "chatInput__readOnly");
+          } else {
+            removeClass(chatInput, "chatInput__readOnly");
+          }
+        }
+      }
+
+      function chatInputIsFilled() {
+        var chatInput = document.getElementById("chat-input");
+
+        if (chatInput) {
+          var childNodes = chatInput.childNodes;
+          return (
+            chatInput.hasChildNodes() &&
+            (elemsHasChildsAs(childNodes, "#text") ||
+              elemsHasChildsAs(childNodes, "IMG"))
+          );
+        }
+
+        return false;
+      }
+
+      function elemsHasChildsAs(childNodes, nodeName) {
+        for (var i = 0; i < childNodes.length; i++) {
+          if (childNodes[i].nodeName === nodeName) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function getChatInputMessageForSend() {
+        var chatInput = document.getElementById("chat-input");
+        return elemsToString(chatInput.childNodes);
+      }
+
+      function clearChatInput() {
+        let el = document.getElementById("chat-input");
+        let inputSpan = document.getElementById("chat-input__span");
+
+        while (el.firstChild) {
+          el.removeChild(el.firstChild);
+        }
+
+        inputSpan.setAttribute("style", "");
+
+        return el;
+      }
+
+      function setTextToChatInput(inputText) {
+        var chatInput = clearChatInput();
+
+        var inputTextDiv = stringToElems(inputText);
+        var inputTextFragment = stringToHTMLFragment(inputTextDiv.innerHTML);
+
+        chatInput.appendChild(inputTextFragment);
+      }
+
+      function hideSmiles() {
+        document.getElementById('search_context').hidden = true;
+        toggleHiddenAttribute('smiles-select__menu', false);
+      }
+
+      function toggleHiddenAttribute(elemId, elemState = undefined) {
+        var targetElem = document.getElementById(elemId);
+        if (targetElem) {
+          targetElem.hidden =
+            elemState != undefined ? !elemState : !targetElem.hidden;
+        }
+      }
+
+      function toggleSideMenu(sideMenuId) {
+        SIDEMENU_LIST.forEach(function (elem) {
+          var htmlElem = document.getElementById(elem);
+          if (htmlElem) {
+            htmlElem.hidden = true;
+            document.getElementById('search_context').hidden = false;
+          }
+        });
+
+        toggleHiddenAttribute(sideMenuId);
+      }
+
+      function showSmiles() {
+        toggleSideMenu("smiles-select__menu");
+      }
+
+      function encodeStringToUTF8(stringToEncode) {
+        return encodeURIComponent(stringToEncode);
+      }
+
+      function clearRecentEmojis() {
+        var el = document.getElementById('recentEmojis');
+
+        while (el.firstChild) {
+          el.removeChild(el.firstChild);
+        }
+
+        return el;
+      }
+
+      function updateLastClickedEmojis(emojisString) {
+        var recentDiv = clearRecentEmojis();
+        var recentSmiles = JSON.parse(emojisString).RecentSmiles;
+
+        for (var i = 0; i < recentSmiles.length; i++) {
+          pushRecentEmojiElem(recentDiv, recentSmiles[i]);
+        }
+      }
+
+      function createRecentSmile(smileX, smileY, emojiSym) {
+        var newSmile = document.createElement("img");
+
+        var offsetX_px = smileX * 24 + 8 * (smileX + 1);
+        var offsetY_px = smileY * 24 + 8 * (smileY + 1);
+
+        var backgroundPosX = 'background-position-x: -' + offsetX_px + 'px; ';
+        var backgroundPosY = 'background-position-y: -' + offsetY_px + 'px; ';
+
+        newSmile.setAttribute("style", backgroundPosX + backgroundPosY);
+        newSmile.setAttribute("class", "chat-smiles-img recent-emoji");
+
+        newSmile.onclick = function (event) {
+          event.preventDefault();
+
+          if (INPUT_ELEMENT.readonly != undefined && INPUT_ELEMENT.readonly === true) {
+            return;
+          }
+
+          if (document.activeElement !== INPUT_ELEMENT) {
+            INPUT_ELEMENT.focus();
+          }
+
+          var smileDiv = document.createElement('div');
+          var smileElem = createSmileElement(smileX, smileY);
+
+          smileDiv.appendChild(smileElem);
+
+          putElementBeforeCursor(smileDiv);
+        }
+
+        newSmile.setAttribute("alt", SMILES_CODES[smileY][smileX]);
+
+        return newSmile;
+      }
+
+      function pushRecentEmojiElem(recentDiv, emoji) {
+        var emojiOffset = SMILES_MAP.get(emoji);
+        if (emojiOffset) {
+          var smileElem = createRecentSmile(...emojiOffset);
+          recentDiv.appendChild(smileElem);
+        }
+      }
+
+      function replaceRecentSmileElementToBegin(emojiIndex) {
+        var recentDiv = document.getElementById('recentEmojis');
+        if (emojiIndex < recentDiv.childNodes.length) {
+          var recentEmoji = recentDiv.childNodes[emojiIndex];
+          recentDiv.removeChild(recentEmoji);
+          recentDiv.prepend(recentEmoji);
+        }
+      }
+
+      function pushRecentEmojiToBegin(emoji, removeLast = false) {
+        var emojiOffset = SMILES_MAP.get(emoji);
+        var recentDiv = document.getElementById('recentEmojis');
+
+        if (emojiOffset) {
+          var smileElem = createRecentSmile(...emojiOffset);
+          if (removeLast) {
+            recentDiv.removeChild(recentDiv.lastChild);
+          }
+          recentDiv.prepend(smileElem);
+        }
+      }
+
+      function getSideBarHiddenState(sideBarName) {
+        var sideBar = document.getElementById(sideBarName);
+        return (sideBar && sideBar.hidden);
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="main">
+      <div id="chat">
+        <div id="dialogs"></div>
+        <div id="messages">
+          <div id="dialog"></div>
+        </div>
+        <div class="quoted" hidden>
+          <div id="QuotedMessage"></div>
+          <span class="close__quoted" onclick="hideQuoted()">&times;</span>
+        </div>
+        <div id="chat-textarea-wrap">
+          <div class="chat-textarea">
+            <div class="chat-textarea__field" id="chat-input" aria-multiline="true" contenteditable="true"></div>
+            <span class="chat-textarea__span" id="chat-input__span">Введите сообщение</span>
+          </div>
+        </div>
+      </div>
+      <div id="search_context" hidden>
+        <div id="search" hidden>
+          <div id="searchHeader">
+            <div class="search__title-block">
+              <div class="search__title">Поиск</div>
+              <button type="button" class="search__button button button--icon close__quoted" onclick="hideSearch(false)">
+                ×
+              </button>
+            </div>
+            <input class="search__input" id="searchInput" style="width: 1000px" placeholder="поиск..." type="text"/>
+            <input hidden="" id="searchSubmit" type="button" value="те" />
+          </div>
+          <div id="searchMessages"></div>
+        </div>
+        <div id="files" hidden>
+          <div style="width: 1000px"></div>
+          <div class="search__header">
+            <div class="search__title-block">
+              <div class="search__title">Вложения</div>
+              <div class="search__buttons">
+                <button type="button" class="search__button button button--icon" onclick="filterFiles()">
+                  <img alt="" src="images/icon-filter.png" />
+                </button>
+                <button type="button" class="search__button button button--icon close__quoted" onclick="hideFiles()">
+                  ×
+                </button>
+                <div class="search-filter" id="attachments-filter">
+                  <div class="search-filter__item">
+                    <label id="filesFilter_all" class="check">
+                      <input type="radio" id="filesFilter_all_radio" name="filesFilter_radio" class="radio__input" hidden/>
+                      <span class="radio__box"></span>
+                      Все
+                    </label>
+                  </div>
+                  <div class="search-filter__item">
+                    <label id="filesFilter_refs" class="check">
+                      <input type="radio" id="filesFilter_refs_radio" name="filesFilter_radio" class="radio__input" hidden/>
+                      <span class="radio__box"></span>
+                      Ссылки
+                    </label>
+                  </div>
+                  <div class="search-filter__item">
+                    <label id="filesFilter_files" class="check">
+                      <input type="radio" id="filesFilter_files_radio" name="filesFilter_radio" class="radio__input" hidden/>
+                      <span class="radio__box"></span>
+                      Файлы
+                    </label>
+                  </div>
+                  <div class="search-filter__item search-filter__item--border-top" hidden>
+                    <label id="filesFromAllDialogs" class="check">
+                      <input type="checkbox" id="filesFromAllDialogs_checkbox" class="check__input" hidden/>
+                      <span class="check__box"></span>
+                      Во всех диалогах
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="searchFiles"></div>
+        </div>
+        <div id="favourite" hidden>
+          <div style="width: 1000px"></div>
+          <div class="search__header">
+            <div class="search__title-block">
+              <div class="search__title">Важные сообщения</div>
+              <div>
+                <div style="white-space: nowrap">
+                  <button type="button" class="search__button button button--icon" id="favourite-filterButton" onclick="filterFavourite()">
+                    <img alt="" src="images/icon-filter.png" />
+                  </button>
+                  <button type="button" class="search__button button button--icon close__quoted" onclick="hideFavourite()">
+                    ×
+                  </button>
+                </div>
+                <div class="search-filter" id="favourite-filter">
+                  <div class="search-filter__item">
+                    <label id="favouriteFilter_currentDialog" class="check">
+                      <input type="radio" id="favouriteFilter_currentDialog_radio" name="favouriteFilter_radio" class="radio__input" hidden/>
+                      <span class="radio__box"></span>
+                      В текущем диалоге
+                    </label>
+                  </div>
+                  <div class="search-filter__item">
+                    <label id="favouriteFilter_all" class="check">
+                      <input type="radio" id="favouriteFilter_all_radio" name="favouriteFilter_radio" class="radio__input" hidden/>
+                      <span class="radio__box"></span>
+                      Во всех диалогам
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="favouriteMessages"></div>
+        </div>
+        <div id="smiles-select__menu" hidden>
+          <div style="width: 1000px"></div>
+          <div class="search__title-block">
+            <div class="search__title">Эмодзи</div>
+            <button type="button" class="search__button button button--icon close__quoted" onclick="hideSmiles()">
+              ×
+            </button>
+          </div>
+          <div class="smiles__body">
+            <div id="all-smiles-wrap">
+              <img id="smiles" src="images/smiles.png" />
+              <div id="smilesClick"></div>
+            </div>
+            <div class="recent-smiles-wrap">
+              <div class="group__title" style="margin-top: 8px;">Недавние</div>
+              <div id="recentEmojis">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="context" hidden></div>
+      </div>
+    </div>
+    <nav class="menu_action" id="menu_action">
+      <ul class="menu_action__items">
+        <li class="menu_action__item" id="QuoteMessageOption" onclick="showQuoted(this)">
+          <a class="menu_action__link" href="#" data-action="ЦитироватьСообщение">
+            <i class="accept"></i>Цитировать
+          </a>
+        </li>
+
+        <li class="menu_action__item" id="NewDialogOption">
+          <a class="menu_action__link" href="#" data-action="НовыйДиалог">
+            <i class="reject"></i>Новый диалог
+          </a>
+        </li>
+
+        <li class="menu_action__item" id="AddDialogAndTakeOverOption">
+          <a class="menu_action__link" href="#" data-action="СоздатьДиалогПринять">
+            <i class="associate"></i>Создать диалог и принять обращение
+          </a>
+        </li>
+
+        <li class="menu_action__item" id="TakeOverOption">
+          <a class="menu_action__link" href="#" data-action="ПринятьОбращение">
+            <i class="associate"></i>Принять обращение
+          </a>
+        </li>
+
+        <li class="menu_action__item" id="AddQuickAnswerOption">
+          <a class="menu_action__link" href="#" data-action="ДобавитьБыстрыйОтвет">
+            <i class="associate"></i>Добавить в быстрые ответы
+          </a>
+        </li>
+
+        <li class="menu_action__item" id="chooseMessageOption" onclick="selectMessages()">
+          <a class="menu_action__link" href="#" data-action="ВыбратьCообщение">
+            <i class="associate"></i>Выбрать сообщение
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div id="changeContextMenu" hidden></div>
+  </body>
+</html>

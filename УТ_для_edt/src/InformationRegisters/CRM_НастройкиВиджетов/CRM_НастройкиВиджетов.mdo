@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="72a8cf34-185e-4ead-be74-968c682dd669">
+  <producedTypes>
+    <selectionType typeId="050e6992-c31b-4ecc-a0de-a47efe4aee39" valueTypeId="56dcee36-72e9-415e-91c7-ddce01084613"/>
+    <listType typeId="006b89cd-ba92-4bf1-8cbf-86a139191428" valueTypeId="3108fe19-ec92-47fd-a9cf-3b4607ef25df"/>
+    <managerType typeId="32919b2e-8c84-401a-9502-c715cbd7d69e" valueTypeId="b7908f92-fe04-42a7-a4fb-ed2e539d97bc"/>
+    <recordSetType typeId="1821cf55-3abd-4342-9334-c65106578900" valueTypeId="ae43ea29-224e-40e9-b3e6-a51e9e969037"/>
+    <recordKeyType typeId="a5968ebf-bd23-46f2-b90d-ef4aa9967ad8" valueTypeId="6defe424-0ceb-497c-bdab-b51a8344fc56"/>
+    <recordType typeId="5a9d214b-a8e6-4702-811b-20b754eb40c6" valueTypeId="ccd709d6-cf91-4d88-91fe-4926fe19b301"/>
+    <recordManagerType typeId="83df2322-ca39-4726-9e5a-40fd53b4930e" valueTypeId="f8876b66-fd8a-4e6e-89f0-42bcacf0717b"/>
+  </producedTypes>
+  <name>CRM_НастройкиВиджетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки виджетов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Widget settings</value>
+  </synonym>
+  <comment>АПК:1032 не проверять на орфографию синоним</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="35eb4da9-ddc7-4960-8d44-e90310577420">
+    <name>ПериодОбновления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период обновления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Update period</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="49c156ea-c99d-4f71-8eea-4e96569efe4a">
+    <name>ТипАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип аналитики</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВидыРазверткиПоказателей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="161e396e-877c-4c96-b305-4d96f07ff819">
+    <name>ЗначениеАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение аналитики</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension value</value>
+    </synonym>
+    <type>
+      <types>Characteristic.CRM_ТипыАналитикПоказателей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="ba3ee2d0-cdcd-4603-83c3-fb105582064f">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bf97e0ec-7abb-45b5-9736-6f578780d0ca">
+    <name>Виджет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виджет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Widget</value>
+    </synonym>
+    <comment>АПК:1032 не проверять на орфографию синоним</comment>
+    <type>
+      <types>CatalogRef.CRM_Виджеты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d2a9efed-3c02-4e5b-91cc-7c9cf7a1cce6">
+    <name>ИндексВиджета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индекс виджета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Widget index</value>
+    </synonym>
+    <comment>АПК:1032 АПК:265 не проверять на орфографию синоним и имя</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+        <fixed>true</fixed>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value>  </value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

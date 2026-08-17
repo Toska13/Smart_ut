@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7382dbaf-db11-46a4-bc76-3fdc7c501a81">
+  <name>CRM_ДокументыПриКопировании</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы при копировании (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Documents when copying (CRM)</value>
+  </synonym>
+  <comment>Документы при копировании (CRM)</comment>
+  <source>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.ЭлектронноеПисьмоИсходящее</types>
+  </source>
+  <event>OnCopy</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.ДокументПриКопировании</handler>
+</mdclass:EventSubscription>

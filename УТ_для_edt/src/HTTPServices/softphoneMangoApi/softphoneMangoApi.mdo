@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7b410cd1-e8ab-4fd7-8099-4302ec2f62cc">
+  <name>softphoneMangoApi</name>
+  <synonym>
+    <key>ru</key>
+    <value>Softphone mango api</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Softphone mango api</value>
+  </synonym>
+  <comment>Виртуальная АТС Mango Office</comment>
+  <rootURL>mango-api</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="f992ae65-4f05-4f21-9c1b-5caef6626418">
+    <name>EventsCall</name>
+    <synonym>
+      <key>ru</key>
+      <value>Events call</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Events call</value>
+    </synonym>
+    <template>/events/call</template>
+    <methods uuid="8f95a189-6fca-4cce-be45-a971df0e4af6">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>EventsCallPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9d667a81-9c88-4ff6-8468-c512df3c5b53">
+    <name>EventsRecording</name>
+    <synonym>
+      <key>ru</key>
+      <value>Events recording</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Events recording</value>
+    </synonym>
+    <template>/events/recording</template>
+    <methods uuid="429e7a25-338a-4638-8b76-e00725a36e04">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>EventsRecordingPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="05dbd47b-0c3b-4cdf-8b6e-b0d79e449593">
+    <name>ResultCallback</name>
+    <synonym>
+      <key>ru</key>
+      <value>Result callback</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Result callback</value>
+    </synonym>
+    <template>/result/callback</template>
+    <methods uuid="f7711cd9-8bca-433c-a48e-93d7ae6c116e">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ResultCallbackPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="92cecdf5-86d8-41ab-adc5-177ce4035e29">
+    <name>ResultStats</name>
+    <synonym>
+      <key>ru</key>
+      <value>Result stats</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Result stats</value>
+    </synonym>
+    <template>/result/stats</template>
+    <methods uuid="c0b441eb-c1cc-4250-b76f-25ff49284664">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ResultStatsPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="69c265ea-c900-4723-93df-012e05426974">
+    <name>ResultRoute</name>
+    <synonym>
+      <key>ru</key>
+      <value>Result route</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Result route</value>
+    </synonym>
+    <template>/result/route</template>
+    <methods uuid="5ebd1417-886c-4304-8096-8ddb04205152">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ResultRoutePOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="fa282547-9a63-438a-9af0-b5b70dc6f301">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="18c442e1-5474-4d7e-ad8e-e92a2f3b24fc">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a162aaf1-a1c7-49c9-82da-fb7c9db5b9a3">
+    <name>ResultCallHangUp</name>
+    <synonym>
+      <key>ru</key>
+      <value>Result call hangup</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Result of call hangup</value>
+    </synonym>
+    <template>/result/call/hangup</template>
+    <methods uuid="6199908a-82d7-4f2c-abbd-4ea21c095356">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ResultCallHangUpPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

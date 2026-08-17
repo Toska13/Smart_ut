@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="61db3bb4-9083-4ef2-a243-fe36f0659fdc">
+  <name>CRM_УстановитьПометкуУдаленияПрисоединенныхФайловСправочники</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить пометку удаления присоединенных файлов справочники (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Set deletion mark for attached files catalogs</value>
+  </synonym>
+  <comment>Установить пометку удаления присоединенных файлов справочники (CRM)</comment>
+  <source>
+    <types>CatalogObject.CRM_Решения</types>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.CRM_ШаблоныОбъектов</types>
+    <types>CatalogObject.CRM_ШаблоныПроектов</types>
+    <types>CatalogObject.Пользователи</types>
+    <types>CatalogObject.CRM_ШаблоныРассылки</types>
+    <types>CatalogObject.CRM_ЭтапыПроектов</types>
+    <types>CatalogObject.CRM_Подписи</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РаботаСФайлами.УстановитьПометкуУдаленияПрисоединенныхФайлов</handler>
+</mdclass:EventSubscription>

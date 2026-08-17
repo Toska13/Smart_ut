@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c48ad064-0167-44cc-8992-81752b1b43b5">
+  <producedTypes>
+    <selectionType typeId="b057fac7-da43-4c23-9580-efd42f988fa2" valueTypeId="6b6848e6-b5de-4280-961b-632b8427eb51"/>
+    <listType typeId="da051675-b8f3-4921-8d30-a81cf1c92178" valueTypeId="aac9cd92-bb48-4154-b1c3-718308942869"/>
+    <managerType typeId="528d3110-064b-48c4-9663-e0a45f1bac10" valueTypeId="ec3fe2dc-59c7-4383-83f2-c8b6a83e2768"/>
+    <recordSetType typeId="2aa26d1c-cf59-49ff-a849-943bedc91930" valueTypeId="f7996f44-32c8-46f8-bd1c-ec5a97c6c4c0"/>
+    <recordKeyType typeId="e16cc46b-a2e9-493d-9349-7b382d88478b" valueTypeId="41da4c9e-daa4-4d23-8cab-4ba2dbcd845c"/>
+    <recordType typeId="d9502152-e883-4faf-84d2-a54d6bbfb79f" valueTypeId="bf467767-375e-480b-8119-f848bb53e6b8"/>
+    <recordManagerType typeId="00ef6aea-020c-4588-a30d-bd105ee3e69b" valueTypeId="385806c6-fa56-461f-bc5d-493e4e16077a"/>
+  </producedTypes>
+  <name>смартВидыКвалификацийИнженеровСЦ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Виды квалификаций инженеров СЦ (смарт)</value>
+  </synonym>
+  <comment>#Б-2770 смарт: Лопато 26.03.2025 //Создание механизма учета квалификации инженеров СЦ.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="73ef3871-eb71-413d-b059-de320bf1d354">
+    <name>Запуск</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запуск</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3917001e-35d0-4c65-af2e-6f9bb6bdc6ba">
+    <name>Ремонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="012dc307-b74c-40d7-b112-d3515009fb9a">
+    <name>ЗапускРучноеИзменение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запуск ручное изменение</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартРучнаяКорректировкаКвалификаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="88405c85-e164-4fa4-a796-29a12d92f6b4">
+    <name>РемонтРучноеИзменение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонт ручное изменение</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартРучнаяКорректировкаКвалификаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="28d123bd-26d9-43ef-a0f4-cd41153b11a9">
+    <name>ЗапускРучноеИзменениеАвтор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запуск ручное изменение автор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dbd2aa9b-a24d-4dbe-acca-565e955a3c72">
+    <name>РемонтРучноеИзменениеАвтор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонт ручное изменение автор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b473201b-0899-4809-bc3f-b0a39cc38736">
+    <name>ЗапускДатаДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запуск дата до</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ac70f441-420d-47cd-8ee8-e6b52ed23d04">
+    <name>РемонтДатаДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонт дата до</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="686fbf46-9a9e-452f-b581-e31cb3d5760d">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b9ff88f1-0e19-4fae-9a07-0972a09f0e00">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fcbc8127-127f-4539-a7f6-dd8855b729cc">
+    <name>Инженер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d7ca884d-f3c9-4525-bc25-3fe596ab74ac">
+  <producedTypes>
+    <selectionType typeId="ff27333c-ef44-412b-b3e4-12c610c751b7" valueTypeId="b79f0031-85b2-4da1-8f23-0b53be8cdabf"/>
+    <listType typeId="21512412-4acd-42e4-96bd-cccb78f69966" valueTypeId="28468768-52dc-409f-90c6-7967d838716c"/>
+    <managerType typeId="e48bbdaa-3968-4cd3-b9b2-0dadd00be96c" valueTypeId="cbb5c8b5-5f86-4577-8c05-51a93ae3b443"/>
+    <recordSetType typeId="50d37081-2e5b-4794-bae1-0e67ddbd3f0d" valueTypeId="a347037b-0f38-4729-a7c3-19da3f05aaec"/>
+    <recordKeyType typeId="1c3502c2-7c46-468b-918e-808412380bd6" valueTypeId="c34e660a-2554-480e-bfd5-d3b94b930f6d"/>
+    <recordType typeId="fa43f73c-473b-4766-982e-e55c3e40f978" valueTypeId="6c77d58d-5514-4ca6-ab87-5b1b0aa55767"/>
+    <recordManagerType typeId="836c02d4-0623-49b0-ae27-f298a96d3d8e" valueTypeId="06885d89-6de9-4b04-b473-693af05927ae"/>
+  </producedTypes>
+  <name>смартСостоянияЗаявокНаРазборкуОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния заявок на разборку оборудования (смарт)</value>
+  </synonym>
+  <comment>//++ #1901 смарт: Мосолов 11.07.2024 //Создание документа Заявка на разборку оборудования</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b896ef49-d0de-4847-bac3-a4e1019e4775">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСостоянияЗаявокНаРазборкуОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="11b29aa5-8f3b-4db5-987d-43e17c992d1a">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаРазборкуОборудования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

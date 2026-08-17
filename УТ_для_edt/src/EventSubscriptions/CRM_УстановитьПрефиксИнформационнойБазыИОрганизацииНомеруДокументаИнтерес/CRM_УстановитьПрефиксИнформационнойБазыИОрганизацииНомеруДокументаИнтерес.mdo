@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="259ea704-4e78-498c-9423-53aa9f083dca">
+  <name>CRM_УстановитьПрефиксИнформационнойБазыИОрганизацииНомеруДокументаИнтерес</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить префикс информационной базы и организации номеру документа интерес (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Set the prefix of the information base and organization to the document number (CRM)</value>
+  </synonym>
+  <comment>Установить префикс информационной базы и организации номеру документа интерес (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_Интерес</types>
+  </source>
+  <event>OnSetNewNumber</event>
+  <handler>CommonModule.CRM_ПрефиксацияОбъектовСобытия.CRM_УстановитьПрефиксИнформационнойБазыИОрганизацииНомеруДокументаИнтересПриУстановкеНовогоНомера</handler>
+</mdclass:EventSubscription>

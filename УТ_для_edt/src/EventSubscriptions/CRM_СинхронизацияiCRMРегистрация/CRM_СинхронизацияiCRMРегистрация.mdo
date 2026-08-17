@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c59bf62d-382d-4d61-8ae4-3feecbe81b97">
+  <name>CRM_СинхронизацияiCRMРегистрация</name>
+  <synonym>
+    <key>ru</key>
+    <value>Синхронизация iCRM перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Synchronization CRMRegistration</value>
+  </synonym>
+  <comment>Синхронизация iCRM перед записью (CRM)</comment>
+  <source>
+    <types>CatalogObject.CRM_СостоянияСобытий</types>
+    <types>CatalogObject.CRM_ВидыДелВзаимодействий</types>
+    <types>CatalogObject.CRM_Разделители</types>
+    <types>CatalogObject.CRM_ВидыВзаимодействий</types>
+    <types>CatalogObject.CRM_Помещения</types>
+    <types>BusinessProcessObject.CRM_БизнесПроцесс</types>
+    <types>CatalogObject.CRM_СостоянияИнтересов</types>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.CRM_ПричиныОтказаПоИнтересам</types>
+    <types>CatalogObject.CRM_ПотенциальныеКлиенты</types>
+    <types>CatalogObject.CRM_Должности</types>
+    <types>CatalogObject.CRM_ВоронкиПродаж</types>
+    <types>CatalogObject.Проекты</types>
+    <types>CatalogObject.Пользователи</types>
+    <types>CatalogObject.ДоговорыКонтрагентов</types>
+    <types>CatalogObject.ХарактеристикиНоменклатуры</types>
+    <types>CatalogObject.ФизическиеЛица</types>
+    <types>CatalogObject.Номенклатура</types>
+    <types>CatalogObject.CRM_КатегорииПользователей</types>
+    <types>CatalogObject.CRM_ВариантыЗавершенияБизнесПроцесса</types>
+    <types>CatalogObject.ВидыЦен</types>
+    <types>CatalogObject.БизнесРегионы</types>
+    <types>CatalogObject.CRM_ПричиныОтказов</types>
+    <types>CatalogObject.CRM_ОфисыКомпании</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>CatalogObject.СтруктураПредприятия</types>
+    <types>CatalogObject.ВидыКонтактнойИнформации</types>
+    <types>CatalogObject.CRM_ЭтапыПроектов</types>
+    <types>CatalogObject.CRM_Отрасли</types>
+    <types>CatalogObject.Календари</types>
+    <types>CatalogObject.Валюты</types>
+    <types>CatalogObject.Организации</types>
+    <types>CatalogObject.CRM_Категории</types>
+    <types>CatalogObject.РолиКонтактныхЛицПартнеров</types>
+    <types>CatalogObject.CRM_ТипУслуги</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+    <types>CatalogObject.РолиИсполнителей</types>
+    <types>CatalogObject.CRM_РядыСобытий</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_СинхронизацияСiCRMНовый.CRM_СинхронизацияiCRMРегистрацияПередЗаписью</handler>
+</mdclass:EventSubscription>

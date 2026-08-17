@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="572575fb-5849-42ca-9244-b7fa0e7af2b6">
+  <name>смартПартнерКонтрагентКЛПриЗаписиОтправкаНаСайт</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи партнера контрагента контактного лица отправлять данные пользователя в ИМ (смарт)</value>
+  </synonym>
+  <comment>#1912 смарт: Лопато 28.08.2024 //Синхронизация связки Пользователь + Партнер</comment>
+  <source>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>CatalogObject.Контрагенты</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.ПартнерКонтрагентКЛПриЗаписиОтправкаНаСайт</handler>
+</mdclass:EventSubscription>

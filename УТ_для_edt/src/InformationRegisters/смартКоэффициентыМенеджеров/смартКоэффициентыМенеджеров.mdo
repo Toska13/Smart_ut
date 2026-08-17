@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="67718a85-76cd-489c-a81f-09fb1dfe9855">
+  <producedTypes>
+    <selectionType typeId="f80962e9-b0de-4691-b16a-72c5ad9f341c" valueTypeId="10c947c2-9719-4c26-9ae8-970b572b4991"/>
+    <listType typeId="50d3d5ea-c68c-4e17-b700-ec3171a2433a" valueTypeId="e1783559-06ef-4426-9458-a9129b9449bc"/>
+    <managerType typeId="23b7307d-e4ad-468f-bd3b-70e52345ec48" valueTypeId="049b52c7-2cef-43df-99c1-68e90aa15a30"/>
+    <recordSetType typeId="aa187af8-8913-4f71-af42-d552f9949244" valueTypeId="4a50b9ef-d9db-44ac-a1ef-1a52a8b4e251"/>
+    <recordKeyType typeId="f9885aef-26d0-4457-97b1-40e18b90a58f" valueTypeId="38d75232-cc2d-4b11-9a84-b0a7e033dd8a"/>
+    <recordType typeId="66c01559-a4b1-4997-a15c-fc1847234efa" valueTypeId="9977d937-e377-4658-bc25-d996b91abd8a"/>
+    <recordManagerType typeId="93d135d2-e158-47d1-b3dc-9db6e85bc15f" valueTypeId="079a9fe3-f538-43df-88e1-c78c6e6219a9"/>
+  </producedTypes>
+  <name>смартКоэффициентыМенеджеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Коэффициенты менеджеров (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 15.11.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.смартКоэффициентыМенеджеров.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5ad0812f-0bac-4b9d-974f-e752da4fe33c">
+    <name>Коэффициент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>1</value>
+    </fillValue>
+  </resources>
+  <resources uuid="ca9aaa70-1a89-408c-aee7-8a92a7dffc46">
+    <name>ИзменениеКоэффициента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменение коэффициента</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1c29349a-82a4-4078-a96a-93553c5c5199">
+    <name>ВыдачаЗаблокирована</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдача заблокирована</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="77e5aa47-11d5-4c86-9d8c-5016a249f8fa">
+    <name>ВыдачаЗаблокированаВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдача заблокирована вручную</value>
+    </synonym>
+    <comment>//++ #Б-3704 смарт: Фролов 07.07.2025 //Корректировка данных по отпускам и блокирование выдачи Интересов на основании данных регистра &quot;График отсутствия сотрудников&quot;</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="2df0081a-3bb5-44ad-8add-fc5e3886f56e">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="5c522601-ee62-48ed-84aa-40f45faee20b">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1f5921ac-0487-4438-88a7-7843937066c8">
+    <name>ВидКоэффициента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид коэффициента</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыКоэффициентовМенеджеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fa5e905d-71b5-4a80-87f3-caf5d0bd4f23">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="aa847a54-3f61-4092-8a3b-ef9cd0deaa66">
+    <name>ФормаКорректировкиКоэффициентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировки коэффициентов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="85cedf36-6df1-4eb6-bee3-e4bb8d051a83">
+    <name>КорректировкаКоэффициентовМенеджеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка коэффициентов менеджеров (смарт)</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

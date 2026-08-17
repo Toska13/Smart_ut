@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e651c3cb-9fa3-4f17-b96d-08f3ba81156e">
+  <name>CRM_ДокументыПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM documents before writing</value>
+  </synonym>
+  <comment>Документы перед записью (CRM)</comment>
+  <source>
+    <types>DocumentObject.ЭлектронноеПисьмоВходящее</types>
+    <types>DocumentObject.СообщениеSMS</types>
+    <types>DocumentObject.ТелефонныйЗвонок</types>
+    <types>DocumentObject.ЭлектронноеПисьмоИсходящее</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.ДокументыПередЗаписью</handler>
+</mdclass:EventSubscription>

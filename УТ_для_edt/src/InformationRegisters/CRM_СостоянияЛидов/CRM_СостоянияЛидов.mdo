@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c24d8f29-a738-4512-aea6-40aee69cfe9c">
+  <producedTypes>
+    <selectionType typeId="f0aee9e6-48ab-45f5-a9d2-12061a8d7ad7" valueTypeId="6794f429-3347-41f5-ae8b-2dbea5816a5b"/>
+    <listType typeId="8df221c4-4854-4f55-8d71-16631247729b" valueTypeId="c3e2dd09-1db1-4c8d-a891-e715aa8a9e43"/>
+    <managerType typeId="e1c6ee2b-58dc-45c1-9b4f-31995050351e" valueTypeId="12c75568-e016-4a54-9b8b-1c5f5a772373"/>
+    <recordSetType typeId="4806ead8-a923-41c6-aada-d3e923a54f0a" valueTypeId="9b07f6e0-0864-48a2-b5f5-60cd025a15f2"/>
+    <recordKeyType typeId="196eac93-2393-4e65-ae31-6390a5764ec7" valueTypeId="05647a2a-b3ed-4187-ac7c-f953af6c6c17"/>
+    <recordType typeId="1dfe4b6b-d38d-428a-bb54-b7484653b22d" valueTypeId="ea2ce815-f631-48a0-ab9a-292a2a3d3b3c"/>
+    <recordManagerType typeId="71d4ef35-724a-4640-b380-fe3ec1da8dbc" valueTypeId="a95f0372-40cc-4485-913f-c9aad50ddaa8"/>
+  </producedTypes>
+  <name>CRM_СостоянияЛидов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния обращений</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Request States</value>
+  </synonym>
+  <comment>АПК:265 не проверять на орфографию имя</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="df29310d-5701-4d34-81e8-bf26edc25c14">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияЛидов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="24ecb1b0-b60f-4128-9c83-093567306282">
+    <name>СконвертированВОбъект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сконвертировано в объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Converted to an object</value>
+    </synonym>
+    <comment>АПК:1032 АПК:265 не проверять на орфографию синоним и имя</comment>
+    <type>
+      <types>TaskRef.ЗадачаИсполнителя</types>
+      <types>BusinessProcessRef.CRM_БизнесПроцесс</types>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="5cfc4dd9-cf98-45ea-bf3e-0a9d2871e4a9">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="b11b0d09-24cc-4717-8cde-373108103bf5">
+    <name>СвязанСКлиентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Связан с клиентом</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Associated with customer</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="33fe0aec-82d5-4ca7-a430-e506f5fe2f88">
+    <name>КаналПолучения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Канал получения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>How received?</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ИсточникиПолученияЛидов</types>
+      <types>CatalogRef.CRM_УчетныеЗаписиМессенджеров</types>
+      <types>CatalogRef.УчетныеЗаписиЭлектроннойПочты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="13bd2939-4053-4f0b-81c1-d86324eb9c77">
+    <name>ВидКанала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид канала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Channel View</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВидыКаналовПоступленияОбращений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="72e2b5f2-042f-4bd8-871c-99e4884f5d70">
+    <name>ПричинаОтклонения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отклонения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reason for Rejection</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ПричиныОтклоненияОбращений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="63827104-6ecc-4084-b4ff-3ef85f93edc2">
+    <name>ДатаОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата обработки обращения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="44358a6d-ddae-4453-b600-4d74785e0bdd">
+    <name>ОтветственныйЗаОбработку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный за обработку</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь который обработал обращение</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1ec88309-de2d-419b-991a-17c292d02ff6">
+    <name>Описание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>300</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="288a5c03-5b32-49d8-a7c3-234042089ed4">
+    <name>УдалитьПричинаОтклонения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить причина отклонения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reason for Rejection</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ПричиныОтказаПоИнтересам</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f8d60801-7956-4358-9ae4-e1ccabe8992d">
+    <name>Лид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обращение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Request</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>CatalogRef.CRM_Диалоги</types>
+      <types>DocumentRef.ЭлектронноеПисьмоВходящее</types>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+      <types>DocumentRef.CRM_Заявка</types>
+      <types>DocumentRef.CRM_СообщениеМессенджера</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

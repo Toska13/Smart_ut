@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5a6726ca-4f0d-45a1-92ed-1ffcfb478903">
+  <name>смартОбработкаПроведенияДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обработка проведения документов</value>
+  </synonym>
+  <comment>//смарт:ММ #010 137</comment>
+  <source>
+    <types>DocumentObject.ПриходныйОрдерНаТовары</types>
+    <types>DocumentObject.РасходныйОрдерНаТовары</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.смартОбработкаПроведенияДокументовОбработкаПроведения</handler>
+</mdclass:EventSubscription>

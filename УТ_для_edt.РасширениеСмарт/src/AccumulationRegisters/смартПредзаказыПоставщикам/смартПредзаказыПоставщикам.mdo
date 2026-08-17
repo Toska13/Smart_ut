@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="48c55324-84b1-41ad-8e88-3e6e808ee39c">
+  <producedTypes>
+    <selectionType typeId="8b56bf91-3454-44b5-be2f-76532ab19ee8" valueTypeId="27bfc2a0-7e71-405f-8915-075b82a916fd"/>
+    <listType typeId="23c67b84-d1ce-4866-9112-225328961159" valueTypeId="db14975d-2fe3-441e-a9ae-7194af5324e1"/>
+    <managerType typeId="7046102f-4740-4cce-af6b-4be1c1cd6421" valueTypeId="dc34a465-c8f6-4669-821a-4ce4e72fbf57"/>
+    <recordSetType typeId="bf625eed-83cf-4749-9d82-1c9498f3eb5a" valueTypeId="ba892cd3-0788-470f-a88f-39accc4ea3c7"/>
+    <recordKeyType typeId="e6fadbad-355f-45c4-8ba7-6baa4b8ef48c" valueTypeId="37f7d1db-6f1c-4e6e-80d3-117f17f06a7a"/>
+    <recordType typeId="689c738b-3234-4471-80ba-820535069156" valueTypeId="7ee28422-5981-47fc-ac93-b536aa6eb4b5"/>
+  </producedTypes>
+  <name>смартПредзаказыПоставщикам</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:AccumulationRegisterExtension">
+    <registerType>Checked</registerType>
+  </extension>
+  <resources uuid="5d1265a4-1262-44f6-a920-91aaf455f948">
+    <name>Заказано</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+  </resources>
+  <dimensions uuid="5215f18c-4b53-44d3-8128-8dd1d8d380f9">
+    <name>ПредзаказПоставщику</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>DocumentRef.смартПредзаказПоставщику</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="342add9c-9ab9-4469-b053-4261cf8b831b">
+    <name>Организация</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Организации</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="8a08e95c-4b3b-451b-a40c-5f582ed81b92">
+    <name>Партнер</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Партнеры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="e97688b7-31a1-4b82-bbf1-2d998489c135">
+    <name>Номенклатура</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Номенклатура</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="777f06f8-f040-43f3-8fac-cb0024872501">
+    <name>Характеристика</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ХарактеристикиНоменклатуры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+</mdclass:AccumulationRegister>

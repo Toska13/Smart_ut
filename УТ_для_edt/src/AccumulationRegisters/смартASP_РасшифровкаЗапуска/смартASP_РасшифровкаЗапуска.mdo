@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1ec5d5fb-654d-4725-8737-48e62e3447dd">
+  <producedTypes>
+    <selectionType typeId="1dbb0ae4-66da-4ca1-a45a-7804708fd442" valueTypeId="75049c63-3da4-4a5a-a809-069e7d2452b4"/>
+    <listType typeId="05b05d18-1aff-463c-a9b1-9f6f4d3112dd" valueTypeId="f5fce9cd-7ca0-4cda-8f3d-7f15ef803b48"/>
+    <managerType typeId="1b3b22d8-6f6a-4c40-912a-a7fead21640d" valueTypeId="82b53910-ca5c-49a4-90ca-1c1bc4697d4b"/>
+    <recordSetType typeId="76ed1985-f6a5-4950-a5bc-481d261c102d" valueTypeId="4635244f-3e80-4b35-8ebb-7de06869e99e"/>
+    <recordKeyType typeId="eaf4d4fd-502b-4eef-b8f9-0c621bee065e" valueTypeId="7b2b291e-6119-4d2d-a0c0-bb17c4c3c7c9"/>
+    <recordType typeId="110a028a-68c3-4848-97d9-932ff2f1a76a" valueTypeId="bb15d6af-0330-44dc-aa8c-804df87ef24d"/>
+  </producedTypes>
+  <name>смартASP_РасшифровкаЗапуска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Запуск</value>
+  </synonym>
+  <comment>//доработка внешней компании Асиситпро по проекту Бонусы инженеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3f10fbb6-4ef4-4d11-96b3-cf493e4020ac">
+    <name>Тариф</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тариф</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1f9d3d83-ff26-46fd-b322-f638b77ee52b">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="c4dc819c-c193-43fe-9545-d3d44c3e50f7">
+    <name>Инженер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cf58844e-220d-495a-90cf-0950617ecb5c">
+    <name>ЗаявкаНаЗапуск</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на запуск</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаПускоНаладку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a59598c3-c2d5-4582-b4b2-73baf1fb07bc">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

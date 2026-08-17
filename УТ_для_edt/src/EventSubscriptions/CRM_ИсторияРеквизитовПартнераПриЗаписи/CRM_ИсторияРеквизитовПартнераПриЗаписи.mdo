@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a5f2ae07-89f2-4101-8c6f-92f621cbe56d">
+  <name>CRM_ИсторияРеквизитовПартнераПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>История реквизитов партнера при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>When record register of partner attributes history</value>
+  </synonym>
+  <comment>История реквизитов партнера при записи (CRM)</comment>
+  <source>
+    <types>InformationRegisterRecordSet.ПартнерыСегмента</types>
+    <types>InformationRegisterRecordSet.ABCXYZКлассификацияКлиентов</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_КлиентыСервер.ПриЗаписиРегистраИсторииРеквизитовПартнера</handler>
+</mdclass:EventSubscription>

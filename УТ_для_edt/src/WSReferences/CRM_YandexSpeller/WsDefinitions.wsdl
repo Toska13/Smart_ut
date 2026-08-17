@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap12bind="http://schemas.xmlsoap.org/wsdl/soap12/"
+		xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:tns="http://speller.yandex.net/services/spellservice"
+		xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsd1="http://speller.yandex.net/services/spellservice"
+		targetNamespace="http://speller.yandex.net/services/spellservice">
+	<types>
+		<s:schema xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+				xmlns:s="http://www.w3.org/2001/XMLSchema"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				elementFormDefault="qualified"
+				targetNamespace="http://speller.yandex.net/services/spellservice">
+			<s:element name="CheckTextRequest">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="text"
+								type="s:string"/>
+					</s:sequence>
+					<s:attribute name="lang"
+							type="s:string"/>
+					<s:attribute name="options"
+							type="s:int"
+							use="optional"
+							default="0"/>
+					<s:attribute name="format"
+							type="s:string"
+							use="optional"
+							default=""/>
+				</s:complexType>
+			</s:element>
+			<s:element name="CheckTextResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="SpellResult"
+								type="xsd1:SpellResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="SpellResult">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="error"
+							type="xsd1:SpellError"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="SpellError">
+				<s:sequence>
+					<s:element minOccurs="1"
+							maxOccurs="1"
+							name="word"
+							type="s:string"/>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="s"
+							type="s:string"/>
+				</s:sequence>
+				<s:attribute name="code"
+						type="s:int"
+						use="required"/>
+				<s:attribute name="pos"
+						type="s:int"
+						use="required"/>
+				<s:attribute name="row"
+						type="s:int"
+						use="required"/>
+				<s:attribute name="col"
+						type="s:int"
+						use="required"/>
+				<s:attribute name="len"
+						type="s:int"
+						use="required"/>
+			</s:complexType>
+			<s:element name="CheckTextsRequest">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0"
+								maxOccurs="unbounded"
+								name="text"
+								type="s:string"/>
+					</s:sequence>
+					<s:attribute name="lang"
+							type="s:string"/>
+					<s:attribute name="options"
+							type="s:int"
+							use="optional"
+							default="0"/>
+					<s:attribute name="format"
+							type="s:string"
+							use="optional"
+							default=""/>
+				</s:complexType>
+			</s:element>
+			<s:element name="CheckTextsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1"
+								maxOccurs="1"
+								name="ArrayOfSpellResult"
+								type="xsd1:ArrayOfSpellResult"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ArrayOfSpellResult">
+				<s:sequence>
+					<s:element minOccurs="0"
+							maxOccurs="unbounded"
+							name="SpellResult"
+							type="xsd1:SpellResult"/>
+				</s:sequence>
+			</s:complexType>
+		</s:schema>
+	</types>
+	<message name="checkTextSoapIn">
+		<part name="parameters"
+				element="tns:CheckTextRequest"/>
+	</message>
+	<message name="checkTextSoapOut">
+		<part name="parameters"
+				element="tns:CheckTextResponse"/>
+	</message>
+	<message name="checkTextsSoapIn">
+		<part name="parameters"
+				element="tns:CheckTextsRequest"/>
+	</message>
+	<message name="checkTextsSoapOut">
+		<part name="parameters"
+				element="tns:CheckTextsResponse"/>
+	</message>
+	<portType name="SpellServiceSoap">
+		<operation name="checkText">
+			<input name="checkTextRequest"
+					message="tns:checkTextSoapIn"/>
+			<output name="checkTextResponse"
+					message="tns:checkTextSoapOut"/>
+		</operation>
+		<operation name="checkTexts">
+			<input name="checkTextsRequest"
+					message="tns:checkTextsSoapIn"/>
+			<output name="checkTextsResponse"
+					message="tns:checkTextsSoapOut"/>
+		</operation>
+	</portType>
+	<binding name="SpellServiceSoap"
+			type="tns:SpellServiceSoap">
+		<soapbind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="checkText">
+			<soapbind:operation style="document"
+					soapAction="http://speller.yandex.net/services/spellservice/checkText"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="checkTexts">
+			<soapbind:operation style="document"
+					soapAction="http://speller.yandex.net/services/spellservice/checkTexts"/>
+			<input>
+				<soapbind:body use="literal"/>
+			</input>
+			<output>
+				<soapbind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="SpellServiceSoap12"
+			type="tns:SpellServiceSoap">
+		<soap12bind:binding style="document"
+				transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="checkText">
+			<soap12bind:operation style="document"
+					soapAction="http://speller.yandex.net/services/spellservice/checkText"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="checkTexts">
+			<soap12bind:operation style="document"
+					soapAction="http://speller.yandex.net/services/spellservice/checkTexts"/>
+			<input>
+				<soap12bind:body use="literal"/>
+			</input>
+			<output>
+				<soap12bind:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="SpellService">
+		<port name="SpellServiceSoap"
+				binding="tns:SpellServiceSoap">
+			<soapbind:address location="http://speller.yandex.net/services/spellservice"/>
+		</port>
+		<port name="SpellServiceSoap12"
+				binding="tns:SpellServiceSoap12">
+			<soap12bind:address location="http://speller.yandex.net/services/spellservice"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7573b7f7-7b1e-4218-9842-5ba4c8056692">
+  <producedTypes>
+    <selectionType typeId="4ef89472-065b-4876-9780-8da0361a9d45" valueTypeId="816fc015-5e31-4a62-ba0f-0caeda367ef9"/>
+    <listType typeId="ef5b10a7-1dce-40c4-9f48-8b85c40ab69d" valueTypeId="e86d553e-5c79-4cdc-87fa-e6f9e728627e"/>
+    <managerType typeId="42b60f7f-d85b-4d86-91c0-c1a72977e6a6" valueTypeId="1ae2bd69-b6f7-4d45-98d9-1d3b496c5171"/>
+    <recordSetType typeId="d97e155c-dec4-46d8-8f97-047e74e0346f" valueTypeId="3da564ff-7744-450e-a7dd-fc583e87379b"/>
+    <recordKeyType typeId="2bc6a32d-99b6-4e5e-8811-e2489bc27046" valueTypeId="ddce2b5f-2747-4a60-a83e-144174656b31"/>
+    <recordType typeId="4640a0cd-3c5e-45ea-8e15-1f305b6153a8" valueTypeId="3bb38feb-713b-4219-8b4d-2779e8089335"/>
+    <recordManagerType typeId="3c02a64a-6a1f-4c27-90fe-5eb583e4a96e" valueTypeId="69d2178e-17a3-41f4-be98-d024b70b6136"/>
+  </producedTypes>
+  <name>смартВыведенныеИзОборотаТовары</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выведенные из оборота товары (смарт)</value>
+  </synonym>
+  <comment>//++ #1686 смарт: Мосолов 18.03.2024 // Создать механизм ручного резервирования товаров (временного вывода из оборота)</comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.смартВыведенныеИзОборотаТовары.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="000417f3-f171-48ff-9b6e-f6095e857fd1">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="9b08cf42-25c6-45ab-b577-10748af9d473">
+    <name>ДатаВозникновения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата возникновения</value>
+    </synonym>
+    <comment>//++ #Б-1384 смарт: Мосолов 18.11.2024 //Добавить в форму &quot;Выведенные из оборота товары (смарт)&quot; две колонки</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="68ebf76c-4137-4b18-8567-53546931b96e">
+    <name>ХодВосстановления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ход восстановления</value>
+    </synonym>
+    <comment>//++ #Б-1384 смарт: Мосолов 18.11.2024 //Добавить в форму &quot;Выведенные из оборота товары (смарт)&quot; две колонки</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="7e8098be-11af-4257-b2bc-b300c505a215">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ad4ba742-7473-4e68-9293-f2187a55dac6">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="39e63282-bcdb-48ed-b760-28907cd8e810">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fb7b71eb-63df-41f8-ac5a-26cc77e968a3">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a6865ace-968b-457a-8e00-9fa609f468b8">
+    <name>ПричинаВыводаИзОборота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина вывода из оборота</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f0db2084-7292-4acc-b0ed-1dbb72e61ac4">
+    <name>КорректировкаРегистров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка регистров</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.КорректировкаРегистров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e4b30e01-a6ec-4ffa-bebf-2714320f35d0">
+    <name>ДокументОтгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ отгрузки</value>
+    </synonym>
+    <type>
+      <types>DefinedType.РаспоряжениеНаОтгрузку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="bf785a68-c143-44c3-bf6d-3cf22b6e75e7">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="096315ac-0bf3-4ea5-a0b3-b7ffab767c6f">
+    <name>ФормаВыводаТоваровИзОборота</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма вывода товаров из оборота</value>
+    </synonym>
+    <comment>//++ #1686 смарт: Мосолов 18.03.2024 // Создать механизм ручного резервирования товаров (временного вывода из оборота)</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="6e7d448f-45e3-41df-ac31-e6240cd05a33">
+    <name>ОткрытьФормуСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выведенные из оборота товары (смарт)</value>
+    </synonym>
+    <comment>#1886 смарт: Шляпников 16.01.2025 / Регистр сведений смартВыведенныеИзОборотаТовары - дополнения.</comment>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

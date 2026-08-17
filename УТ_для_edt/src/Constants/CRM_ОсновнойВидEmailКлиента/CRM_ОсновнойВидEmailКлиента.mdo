@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Constant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a268d05d-c7d3-4694-a246-8ffd81f77928">
+  <producedTypes>
+    <managerType typeId="d27d3c22-9f11-4817-8696-18031d8aa29a" valueTypeId="e54f72d6-3c2f-48f8-aff8-ff1ef1f70c51"/>
+    <valueManagerType typeId="a1386d0f-fc5c-46c7-bf77-1f16a7a00355" valueTypeId="c213111c-4446-47a3-b925-23240ba973bf"/>
+    <valueKeyType typeId="71703ba1-f6e4-4eb1-9f4c-8a4ab7247a99" valueTypeId="1acca0f2-2153-464a-aaae-eb1cfaca0b09"/>
+  </producedTypes>
+  <name>CRM_ОсновнойВидEmailКлиента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основной вид e-mail клиента</value>
+  </synonym>
+  <type>
+    <types>CatalogRef.ВидыКонтактнойИнформации</types>
+  </type>
+  <useStandardCommands>true</useStandardCommands>
+  <minValue xsi:type="core:UndefinedValue"/>
+  <maxValue xsi:type="core:UndefinedValue"/>
+  <choiceParameters>
+    <name>Отбор.Тип</name>
+    <value xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыКонтактнойИнформации.EnumValue.АдресЭлектроннойПочты</value>
+    </value>
+  </choiceParameters>
+  <choiceParameters>
+    <name>Отбор.Родитель</name>
+    <value xsi:type="core:ReferenceValue">
+      <value>Catalog.ВидыКонтактнойИнформации.СправочникПартнеры</value>
+    </value>
+  </choiceParameters>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:Constant>

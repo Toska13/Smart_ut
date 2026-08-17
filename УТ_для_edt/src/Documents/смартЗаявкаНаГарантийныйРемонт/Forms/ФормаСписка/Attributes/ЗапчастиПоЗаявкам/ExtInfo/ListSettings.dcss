@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core">
+	<filter>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>AndGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Получена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>6b2c96ba-a1b4-47d2-b962-7d9f48d897e2</userSettingID>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Отправлена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>8867c7b7-9ae2-4ece-975b-70471217c59d</userSettingID>
+			</item>
+			<presentation xsi:type="xs:string">Получена, но не отправлена</presentation>
+			<viewMode>Inaccessible</viewMode>
+			<userSettingPresentation xsi:type="xs:string">Получена, но не отправлена</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>AndGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Получена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>8c2c5a0b-0635-4279-bd60-ade07f1de8b0</userSettingID>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Отправлена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>61ebbc94-27ff-4781-b2e3-8b53f9dcad19</userSettingID>
+			</item>
+			<presentation xsi:type="xs:string">Отправлена, но не получена</presentation>
+			<viewMode>Inaccessible</viewMode>
+			<userSettingPresentation xsi:type="xs:string">Отправлена, но не получена</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>AndGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Отправлена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>01898a5a-4551-4bee-8963-a10c4b884735</userSettingID>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Получена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+				<viewMode>Normal</viewMode>
+				<userSettingID>a6eee768-1182-4c84-8d58-ebb9801da3c2</userSettingID>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДатаОтправления</left>
+				<comparisonType>NotFilled</comparisonType>
+				<viewMode>Normal</viewMode>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДатаПолучения</left>
+				<comparisonType>NotFilled</comparisonType>
+			</item>
+			<presentation xsi:type="xs:string">Не отправлена и не получена</presentation>
+			<viewMode>Inaccessible</viewMode>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ДатаОтправления</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="v8:StandardBeginningDate">
+				<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+				<v8:date>0001-01-01T00:00:00</v8:date>
+			</right>
+			<userSettingID>a6fc731a-f7f5-4b64-9296-e47792d78d96</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Дата отправления</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">НомерОтправления</left>
+			<comparisonType>Contains</comparisonType>
+			<right xsi:type="xs:string"/>
+			<userSettingID>00b9b783-9138-4984-9e0b-8edb5de03332</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Номер отправления</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">Номенклатура</left>
+			<comparisonType>Equal</comparisonType>
+			<userSettingID>dd73cb37-4870-4787-91da-91f5477eabf5</userSettingID>
+		</item>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>OrGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КОбработке</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К обработке</presentation>
+				<viewMode>Normal</viewMode>
+				<userSettingID>655a3985-527f-441d-b383-bd1c86d52b23</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К обработке</userSettingPresentation>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КОтправке</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К отправке</presentation>
+				<userSettingID>05e2c733-8f59-4fd6-86ad-d910af191e71</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К отправке</userSettingPresentation>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КСписанию</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К списанию</presentation>
+				<viewMode>Normal</viewMode>
+				<userSettingID>41c48a82-4c3e-49e1-9a48-e960d2c3a11e</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К списанию</userSettingPresentation>
+			</item>
+			<presentation xsi:type="xs:string">К обработке или к отправке или к списанию</presentation>
+			<userSettingID>c795fbfe-c7e1-42a3-b164-982db5f207c9</userSettingID>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ОтменаОтправки</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="xs:boolean">true</right>
+			<presentation xsi:type="xs:string">Отмена отправки</presentation>
+			<viewMode>Normal</viewMode>
+			<userSettingID>0cba7a5f-4521-44ef-8b9d-f62ba1c0d746</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Отмена отправки</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>AndGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Получена</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+				<viewMode>Inaccessible</viewMode>
+				<userSettingPresentation xsi:type="xs:string">Не получена</userSettingPresentation>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ДатаПолучения</left>
+				<comparisonType>NotFilled</comparisonType>
+				<viewMode>Inaccessible</viewMode>
+			</item>
+			<presentation xsi:type="xs:string">Не получена</presentation>
+			<viewMode>Inaccessible</viewMode>
+		</item>
+		<viewMode>Normal</viewMode>
+		<userSettingID>b43c813d-680c-4fc7-8324-6c20573b745f</userSettingID>
+	</filter>
+	<order>
+		<viewMode>Normal</viewMode>
+		<userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</userSettingID>
+	</order>
+	<conditionalAppearance>
+		<viewMode>Normal</viewMode>
+	</conditionalAppearance>
+	<item xsi:type="StructureItemGroup">
+		<groupItems>
+			<item xsi:type="GroupItemField">
+				<use>false</use>
+				<field>Номер</field>
+				<groupType>Items</groupType>
+				<periodAdditionType>None</periodAdditionType>
+				<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+				<periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+			</item>
+		</groupItems>
+	</item>
+	<itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</itemsUserSettingID>
+</Settings>

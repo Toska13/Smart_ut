@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b8c26d26-7491-44aa-adf4-50ddae6e4b7d">
+  <name>CRM_ОбъектыШаблоновПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты шаблонов перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Objects of templates before record</value>
+  </synonym>
+  <comment>Объекты шаблонов перед записью (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_ОтчетОРаботе</types>
+    <types>DocumentObject.CRM_РассылкаЭлектронныхПисем</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.СообщениеSMS</types>
+    <types>DocumentObject.CRM_Телемаркетинг</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ШаблоныОбъектов.CRM_ШаблонОбъектовПередЗаписью</handler>
+</mdclass:EventSubscription>

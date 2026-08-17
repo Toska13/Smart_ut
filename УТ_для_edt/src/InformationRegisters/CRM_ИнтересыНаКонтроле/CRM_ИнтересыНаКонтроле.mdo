@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="679b7b12-0f9e-467e-8ebe-99f92042f74a">
+  <producedTypes>
+    <selectionType typeId="d11236d8-e7aa-472c-b285-ed9f0c77d1a8" valueTypeId="228aeaf3-36b4-4a7d-97b9-3389326400ac"/>
+    <listType typeId="ce69699b-0023-4df1-af44-80a292f402db" valueTypeId="c9ca6b6c-ae83-4c54-b205-97e3b10e8377"/>
+    <managerType typeId="bd02a4c7-9347-47a4-90dc-53f5abbcaf01" valueTypeId="828c6ef4-5c8c-47bd-9c0e-c74597b26754"/>
+    <recordSetType typeId="959d0d43-cd2a-4b3e-9cac-17797febdd58" valueTypeId="10b3fdaa-8f07-46b6-980c-34e3a21a602f"/>
+    <recordKeyType typeId="6f0cba76-7b9e-4ec8-b9b8-137d48886643" valueTypeId="0499dab1-95b2-4f06-b6df-58a4f82db31c"/>
+    <recordType typeId="91591635-5d1f-4afe-a79f-a7e4f75074fc" valueTypeId="e7cec121-44cc-4ccd-9678-b64c7f83ac7e"/>
+    <recordManagerType typeId="ebccd20d-66f6-4df3-84a5-58f3a35c7cbc" valueTypeId="46c90d33-964a-4d01-8c48-1f48bac9b9c8"/>
+  </producedTypes>
+  <name>CRM_ИнтересыНаКонтроле</name>
+  <synonym>
+    <key>ru</key>
+    <value>Интересы на контроле</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Leads Under Review</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.CRM_ИнтересыНаКонтроле.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.CRM_ИнтересыНаКонтроле.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record period</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Период записи данных</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Data recording period</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="fe09652b-24c7-4b92-a9a4-c70eae2f45d4">
+    <name>СтатусКонтроля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус контроля</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Control Status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_СтатусыКонтроляИнтереса</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статус контроля интереса</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Status of lead control</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="24bed951-873b-47f8-a02b-bf52fe25fa33">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Department</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение интереса</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Department of lead</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bf477dca-2d8e-4102-be4a-49ed12d0ed13">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Комментарий по интересу</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Comments on lead</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="7369245b-bddd-4b6c-8d3d-109febbaa378">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект интереса</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Object of lead</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="193b74a8-3573-478a-aa0d-ae8e14eb6d87">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь интереса</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Lead user</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="890ddfbe-ef67-46f9-b73c-ba4e4e6f36ff">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of record</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="565c7eb8-eae0-4f59-a266-1deb69bf83ad">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

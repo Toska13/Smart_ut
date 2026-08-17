@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ac0cd7a7-e7c6-4c48-b7cf-e7d9c20af39b">
+  <name>CRM_СквознаяАналитикаСостоянияЛидовПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи состояния обращений (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>While writing request state (CRM:End-to-end analytics)</value>
+  </synonym>
+  <comment>АПК:265 не проверять на орфографию имя</comment>
+  <source>
+    <types>InformationRegisterRecordSet.CRM_СостоянияЛидов</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_СистемаСквознойАналитикиВызовСервера.CRM_СквознаяАналитикаСостоянияЛидовПриЗаписи</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5bd28348-22f5-4e1e-a461-ff1995983f34">
+  <producedTypes>
+    <objectType typeId="d8bdc7ba-7a5e-4570-af2c-947279617c84" valueTypeId="5ab8186b-2020-4d0e-bc2f-860d5195a047"/>
+    <refType typeId="02ca5694-cc81-4fa3-9c82-8dacaf39bc5a" valueTypeId="54871bb9-2d21-47f1-9adf-51f167fa4c9e"/>
+    <selectionType typeId="e00318f6-4ac3-4b51-a1d2-0ea732ff77f4" valueTypeId="ca782b84-6358-427c-a2fd-184866cb6446"/>
+    <listType typeId="fc4eb91f-7979-4f28-a94d-5cd486e22588" valueTypeId="56988621-405e-49b2-9e58-2783255ec34e"/>
+    <managerType typeId="be8a0ef9-5741-449c-b626-0d292e310309" valueTypeId="1ed7a2f9-607c-4e6d-ad09-ee370116c375"/>
+  </producedTypes>
+  <name>смартКвалификацииМенеджеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Квалификации (смарт)</value>
+  </synonym>
+  <comment>//++ #1543 смарт: Фролов 10.11.2023 //Автоматическое распределение лидов на менеджеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартКвалификацииМенеджеров.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="665c022b-f011-4460-a037-cf1c5c1ce09a">
+      <name>РегистрацияПользователяНаСайте</name>
+      <description>Регистрация пользователя на сайте</description>
+      <code xsi:type="core:StringValue">
+        <value></value>
+      </code>
+    </items>
+  </predefined>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартКвалификацииМенеджеров.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.смартКвалификацииМенеджеров.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="e98fab62-318a-4477-95c2-c5fabb515ea6">
+    <name>СценарийИнтереса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий интереса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияИнтересов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2b9c7c89-1ded-4ce8-a33a-07466ccbc275">
+    <name>СтартовыйЭтап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стартовый этап</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияИнтересов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0698cef6-4c88-477b-aa70-19833f00881c">
+    <name>ВремяРеакции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время реакции, час</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2dec65be-6eaf-4bb6-9fca-fd731085615a">
+    <name>ПериодВзаимодействияСКлиентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период взаимодействия с клиентом, мес</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>При загрузке Лидов, если в карточке Клиента установлен основной менеджер осуществляется проверка, наличия взаимодействий в течение казанного срока, если их нет, то клиент считается свободным.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1b2c42ef-6e38-44f6-8291-d6907b4a0636">
+    <name>ТипПродукта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип продукта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартТипыПродуктов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="46ef5cce-f3af-4b87-a16c-e134a1e73f82">
+    <name>ЕстьПродажиВПрошлыхПеридах</name>
+    <synonym>
+      <key>ru</key>
+      <value>Есть продажи в прошлых периодах</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="22470ac4-1a0a-4f87-9bf6-dca9bef53443">
+    <name>МаксимальноеКоличествоЛидовВДень</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальное количество лидов в день</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="87ee35a3-5210-4de3-9419-be4290ffe3ca">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <comment>//++ #1748 смарт: Саломадин 05.04.2024 //Переход на единую воронку</comment>
+    <type>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7a0d3954-480a-4631-b7bc-049bb42a0d37">
+    <name>Сортировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0700b918-5a73-4944-8077-18d1fcb7029b">
+    <name>НеПроверятьНаличиеТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не проверять наличие товаров</value>
+    </synonym>
+    <comment>//++ #Б-1198 смарт: Фролов 24.10.2024 //Исключение некоторых квалификаций из условий обязательного указания товаров в ТЧ товары</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="efbd53e1-983c-4a5d-be6f-d544c585fe36">
+    <name>НеАктуальна</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не актуальна</value>
+    </synonym>
+    <comment>//++ #Б-4442 смарт: Фролов 30.09.2025 //Доработка механизма Квалификаций менеджеров.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="505dfa2c-d8de-4224-8e87-02e1b11d7f4d">
+    <name>ВидОбучения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид обучения</value>
+    </synonym>
+    <comment>//++ #Б-4944 смарт: Фролов 07.11.2025 //Доработка справочника Оборудование клиентов/Квалификации менеджеров.</comment>
+    <type>
+      <types>EnumRef.смартВидыОбучения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="77d7ba8f-ea8f-47e9-9591-2143bb04fc3f">
+    <name>ВариантОценки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант оценки</value>
+    </synonym>
+    <comment>//++ #Б-4944 смарт: Фролов 07.11.2025 //Доработка справочника Оборудование клиентов/Квалификации менеджеров.</comment>
+    <type>
+      <types>EnumRef.смартВариантыОценкиОбучения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4cc204de-fbe7-4853-9f4c-6efd856c28eb">
+    <name>КвалификацияОбучения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Квалификация обучения</value>
+    </synonym>
+    <comment>//++ #Б-4944 смарт: Фролов 07.11.2025 //Доработка справочника Оборудование клиентов/Квалификации менеджеров.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="6cba22d0-1492-4221-b75a-de677cd9cb2d">
+    <producedTypes>
+      <objectType typeId="fe7cb71e-f8be-4fb3-bc8e-913bc1d18395" valueTypeId="e3de8134-ccc5-4247-b86e-e0dc8bfd0ca1"/>
+      <rowType typeId="1a769707-3084-487b-ba5f-f2c149689639" valueTypeId="ee2f14d1-195d-437c-95da-6d3fe22b15a6"/>
+    </producedTypes>
+    <name>Продукты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продукты</value>
+    </synonym>
+    <attributes uuid="6486ce44-d732-4316-a2c6-679b318e0e6a">
+      <name>Продукт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продукт</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="78fcad7b-908a-4670-9f95-fe7da354951e">
+    <producedTypes>
+      <objectType typeId="fd190aa9-a153-4f50-9a21-dec93791c23a" valueTypeId="1025d978-07a1-4bc2-9866-1e142e21915e"/>
+      <rowType typeId="584c0f9c-84ee-4e99-9776-a8a144bc3beb" valueTypeId="789561b1-5025-4f3f-9719-1c51b6d5e1ff"/>
+    </producedTypes>
+    <name>Пользователи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователи</value>
+    </synonym>
+    <attributes uuid="1b183c8e-f9ff-4663-a860-09b45364fb9c">
+      <name>Пользователь</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пользователь</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="188c91bd-36b5-4b59-8255-6be4c3486c56">
+    <producedTypes>
+      <objectType typeId="f79668d4-97e8-433e-9ac2-8e96257ef720" valueTypeId="cb4571d4-37d1-49a6-a18b-a6e2986e9efd"/>
+      <rowType typeId="aa5db725-6abf-446d-825c-e4433c0ee56f" valueTypeId="83976794-d01b-42c1-9f62-5ea5113437a7"/>
+    </producedTypes>
+    <name>ГруппыНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группы номенклатуры (для оценки продаж)</value>
+    </synonym>
+    <attributes uuid="de1c2fad-f409-4a4b-8300-4ad078298b3a">
+      <name>ГруппаНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Группа номенклатуры</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceFoldersAndItems>Folders</choiceFoldersAndItems>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="5e126dc6-76a0-4a1a-84fe-dc6f15bbc56a">
+    <producedTypes>
+      <objectType typeId="cc43c2d0-ad8b-4b18-9083-bcf2f1263393" valueTypeId="0755e9c3-980f-4b5b-885e-e8972e045506"/>
+      <rowType typeId="c1e6f1d3-4cf1-49e9-ae1b-9224ca855919" valueTypeId="e5088efe-cbb7-45f4-b114-91f6236e8726"/>
+    </producedTypes>
+    <name>ПолучателиРассылок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатели рассылок</value>
+    </synonym>
+    <comment>//++ #1738 смарт: Фролов 02.04.2024 //Добавляем дополнительных получателей рассыки по квалификации.</comment>
+    <attributes uuid="b7642302-bbc4-4967-914a-5f2552f3782f">
+      <name>Пользователь</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пользователь</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a53f5cd3-72cf-4d1e-abe9-29ac2d9e4dc1">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d562d5f2-25ee-428d-840c-d04f5139c4b2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="827e89eb-b4e9-4b7c-b107-f84a97846ad2">
+    <name>ФормаКорректировкиКвалификаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма корректировки квалификаций</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Подключаем API -->
+    <!-- Подробнее https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/load-docpage/ -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+ 
+<!-- Создаём контейнер для карты -->
+<div id="map" style="width: 100%; height: 100%"></div> 
+<!-- Создаём карту -->
+<script type="text/javascript">
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+ 
+    function init() {
+        // Создание карты.
+        // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/map-docpage/
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчнию: «широта, долгота».
+            center: [ЭтоБудетЦентрКарты],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 11,
+            // Элементы управления
+            // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/controls/standard-docpage/
+            controls: [
+ 
+                'zoomControl', // Ползунок масштаба
+                'rulerControl', // Линейка
+                'routeButtonControl', // Панель маршрутизации
+                'trafficControl', // Пробки
+                'typeSelector', // Переключатель слоев карты
+                'fullscreenControl', // Полноэкранный режим
+ 
+                // Поисковая строка
+                new ymaps.control.SearchControl({
+                    options: {
+                        // вид - поисковая строка
+                        size: 'large',
+                        // Включим возможность искать не только топонимы, но и организации.
+                        provider: 'yandex#search'
+                    }
+                })
+ 
+            ]
+        });
+ 
+        // Добавление метки
+        // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
+        ЗдесьБудутМетки
+    }
+</script>
+</body>
+</html>

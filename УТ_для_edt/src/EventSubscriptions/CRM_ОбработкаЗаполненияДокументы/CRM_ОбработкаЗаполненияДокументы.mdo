@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c580550b-79b8-40c4-aa85-649bec5dc764">
+  <name>CRM_ОбработкаЗаполненияДокументы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы обработка заполнения (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Processing Fill (CRM)</value>
+  </synonym>
+  <comment>Заполнение общих реквизитов и на основании интереса</comment>
+  <source>
+    <types>DocumentObject.CRM_РассылкаЭлектронныхПисем</types>
+    <types>DocumentObject.CRM_Интерес</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.СообщениеSMS</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>DocumentObject.ТелефонныйЗвонок</types>
+    <types>DocumentObject.ЭлектронноеПисьмоИсходящее</types>
+  </source>
+  <event>Filling</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.ЗаполнитьИнтересСостояние</handler>
+</mdclass:EventSubscription>

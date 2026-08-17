@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7ea6a7c6-5bac-4409-8b2f-7c541476e195">
+  <producedTypes>
+    <selectionType typeId="0062e67f-8138-4fb5-bdaf-d91b137e0437" valueTypeId="7906bf83-a2d8-44c1-961a-80569cc3b905"/>
+    <listType typeId="5463b514-c113-4cea-82c2-20b23c06987a" valueTypeId="d7e1231a-18e7-4347-bebe-9f6a20e57d6f"/>
+    <managerType typeId="eb621bbf-753b-45e6-9f35-30a3f22f0681" valueTypeId="aed2a9da-99de-4655-9d58-b4af78fa0a5e"/>
+    <recordSetType typeId="80462c63-4ca2-459e-8ebb-c7117709e608" valueTypeId="2f560c88-85b6-4d3f-bea3-bbc4f6b292f3"/>
+    <recordKeyType typeId="784e2e18-3ff5-4c87-ab47-ecb9d0ba3fe2" valueTypeId="e996b713-42cc-445c-8f59-054196a312d2"/>
+    <recordType typeId="a68c0bf4-84c1-448a-b944-edae0d1a9939" valueTypeId="83a5b9f0-c77e-4405-98ae-f621109966a5"/>
+    <recordManagerType typeId="6cdc2256-79f2-4c1f-bdcd-421343071143" valueTypeId="015cc42e-16c7-44d6-b481-21df86bbe93b"/>
+  </producedTypes>
+  <name>CRM_Оповещения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Оповещения</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Notifications</value>
+  </synonym>
+  <comment>Данный регистр предназначен для реализации механизма оповещений.</comment>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.CRM_Оповещения.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Оповещение</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Notification</value>
+  </recordPresentation>
+  <extendedRecordPresentation>
+    <key>ru</key>
+    <value>Оповещение</value>
+  </extendedRecordPresentation>
+  <extendedRecordPresentation>
+    <key>en</key>
+    <value>Notification</value>
+  </extendedRecordPresentation>
+  <resources uuid="ace55a7c-feb8-4fbc-b266-880c86c743c3">
+    <name>ДатаАктуальности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата актуальности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Relevance Date</value>
+    </synonym>
+    <comment>Дата до которой напоминание считается актуальным. Не актуальные напоминания удаляются.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d49e07b6-8b66-4925-8d7e-5a841a6d75f9">
+    <name>Содержание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Содержание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Content</value>
+    </synonym>
+    <comment>Содержание напоминания - сообщение содержащее суть напоминания.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Содержание оповещения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Content of the notification</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="80f32642-ca8a-412f-8ebf-fa587a497394">
+    <name>Тема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <comment>Тема</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>250</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Содержание</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Content</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a09f2add-cb6e-48e1-ab46-61c0100d412f">
+    <name>Шаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Template</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ШаблоныРассылки</types>
+      <types>CatalogRef.SMS4B_ШаблоныСообщений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7b476549-4a33-4541-9784-294a15b6f153">
+    <name>Взаимодействие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взаимодействие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interaction</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="a3f80d90-a781-4046-a3c8-edb35eeeacae">
+    <name>СрокОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period of the notification</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Срок</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b37fea4e-fd61-4547-bb10-2a19ec1afdd5">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Periodicity</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ПериодичностьОповещений</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак периодичности</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sign of periodicity</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="775e8515-6b62-4b99-994d-761f3a67f6f3">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document</value>
+    </synonym>
+    <comment>АПК:1208 имя корректное</comment>
+    <type>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>DocumentRef.СообщениеSMS</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f02aa5a9-33f0-4f07-ae99-25ddee3a5671">
+    <name>Получатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recipient</value>
+    </synonym>
+    <comment>Получатель  оповещения</comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.КонтактныеЛицаПартнеров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Получатель оповещения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Receiver of the notification</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7ede8cc9-2d81-40d3-978f-35664eca8b2b">
+    <name>Предмет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предмет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <comment>Ссылка на объект конфигурации прилагаемый к напоминанию</comment>
+    <type>
+      <types>AnyRef</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Предмет оповещения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Subject of the notification</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="14735bef-594c-4401-a5a3-8c43a83ab7a1">
+    <name>ДатаОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Notification date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6fe0610c-9948-4f48-a50d-b86dc4d19946">
+    <name>ВидОповещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид оповещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type of Notification</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыОповещений</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="49230df3-0eb4-4ee6-bfc7-e4577850115c">
+    <name>Канал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Канал</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Channel</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_КаналыОповещений</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Предмет</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Subject</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="d6d73e83-2af4-4fd3-b0f2-493448e76441">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

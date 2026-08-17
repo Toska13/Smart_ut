@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core">
+	<filter>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ЗаполняетсяСпециалистомПоПретензиям.ДатаОтправления</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="v8:StandardBeginningDate">
+				<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+				<v8:date>0001-01-01T00:00:00</v8:date>
+			</right>
+			<userSettingID>b9585271-1609-4b17-9d88-0210d71a0275</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Дата отправления</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ЗаполняетсяСпециалистомПоПретензиям.НомерОтправления</left>
+			<comparisonType>Contains</comparisonType>
+			<right xsi:type="xs:string"/>
+			<userSettingID>cf6acc02-28e1-40fd-8c8b-05093584ca83</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Номер отправления</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ЗаполняетсяСпециалистомПоПретензиям.Номенклатура</left>
+			<comparisonType>Equal</comparisonType>
+			<userSettingID>ae89b232-5d99-4b72-b537-a94875d432b8</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Номенклатура</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">КЗакрытию</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="xs:boolean">true</right>
+			<presentation xsi:type="xs:string">К закрытию</presentation>
+			<viewMode>Normal</viewMode>
+			<userSettingID>cfac8603-e0e4-4155-b594-cbb4c3ddb926</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">К закрытию</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">ОтменаОтправки</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="xs:boolean">true</right>
+			<presentation xsi:type="xs:string">Отмена отправки</presentation>
+			<viewMode>Normal</viewMode>
+			<userSettingID>c49b90c7-614c-4709-a553-0d5d6e2b5f9a</userSettingID>
+			<userSettingPresentation xsi:type="xs:string">Отмена отправки</userSettingPresentation>
+		</item>
+		<item xsi:type="FilterItemGroup">
+			<use>false</use>
+			<groupType>OrGroup</groupType>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КОбработке</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К обработке</presentation>
+				<viewMode>Normal</viewMode>
+				<userSettingID>afdd98ad-10ec-4fcd-994d-0baea45ebcf8</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К обработке</userSettingPresentation>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КОтправке</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К отправке</presentation>
+				<viewMode>Normal</viewMode>
+				<userSettingID>c8597947-2b32-4f6c-8440-578e83100a8a</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К отправке</userSettingPresentation>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<use>false</use>
+				<left xsi:type="dcscor:Field">КСписанию</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+				<presentation xsi:type="xs:string">К списанию</presentation>
+				<viewMode>Normal</viewMode>
+				<userSettingID>16c3fe95-b706-458a-8075-826cf45a815d</userSettingID>
+				<userSettingPresentation xsi:type="xs:string">К списанию</userSettingPresentation>
+			</item>
+			<presentation xsi:type="xs:string">К обработке или к отправке или к списанию</presentation>
+			<viewMode>Inaccessible</viewMode>
+			<userSettingID>7acc6d92-c78d-4d7d-b0f1-2beb892861a0</userSettingID>
+		</item>
+		<viewMode>Normal</viewMode>
+		<userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</userSettingID>
+	</filter>
+	<order>
+		<viewMode>Normal</viewMode>
+		<userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</userSettingID>
+	</order>
+	<conditionalAppearance>
+		<item>
+			<selection>
+				<item>
+					<field>КартинкаКОтправке</field>
+				</item>
+				<item>
+					<field>КартинкаКОбработке</field>
+				</item>
+				<item>
+					<field>Клиент</field>
+				</item>
+				<item>
+					<field>ДатаЗаявки</field>
+				</item>
+				<item>
+					<field>Номер</field>
+				</item>
+				<item>
+					<field>Организация</field>
+				</item>
+				<item>
+					<field>Контрагент</field>
+				</item>
+				<item>
+					<field>Статус</field>
+				</item>
+				<item>
+					<field>Оборудование</field>
+				</item>
+				<item>
+					<field>СкладГарантийныхЗапчастей</field>
+				</item>
+				<item>
+					<field>СкладИнженера</field>
+				</item>
+				<item>
+					<field>Комментарий</field>
+				</item>
+				<item>
+					<field>Ссылка</field>
+				</item>
+				<item>
+					<field>Ответственный</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ОтменаОтправки</left>
+					<comparisonType>Equal</comparisonType>
+					<right xsi:type="xs:boolean">true</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">style:ЦветФонаПредупреждения</dcscor:value>
+				</dcscor:item>
+			</appearance>
+			<viewMode>Normal</viewMode>
+			<userSettingID>b8a11c2a-cb02-4359-af89-a131cc728bdc</userSettingID>
+		</item>
+		<viewMode>Normal</viewMode>
+		<userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</userSettingID>
+	</conditionalAppearance>
+	<itemsViewMode>Normal</itemsViewMode>
+	<itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</itemsUserSettingID>
+</Settings>

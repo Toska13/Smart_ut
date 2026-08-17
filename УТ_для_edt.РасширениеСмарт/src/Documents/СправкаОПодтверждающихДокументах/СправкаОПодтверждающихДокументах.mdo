@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="efe37c28-4cc0-4cfc-b37a-cdcb546dd307">
+  <producedTypes>
+    <objectType typeId="67ced6d3-074a-452c-a00d-899f14d447c0" valueTypeId="c60006af-9c50-4908-bb62-30391225b2ed"/>
+    <refType typeId="44f9a153-9eb4-4037-8da9-f774c06296d3" valueTypeId="83679cd2-40fd-44f0-b111-d4c58fdec9f7"/>
+    <selectionType typeId="078d6748-a770-4f0b-97c6-185fbb19efb7" valueTypeId="eb27619c-7d9d-4a7d-999f-3fe77e4e9f52"/>
+    <listType typeId="4ee0c380-861b-46fb-a2be-db1d8ef57917" valueTypeId="8e55b8b7-3011-45e7-9312-74a9e047c33d"/>
+    <managerType typeId="cdc7b261-49a9-422c-bb9c-78c55c7336d2" valueTypeId="2feb4f86-d1ca-4355-b0ee-81d583afd6bd"/>
+  </producedTypes>
+  <name>СправкаОПодтверждающихДокументах</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:DocumentExtension">
+    <numberType>Checked</numberType>
+    <numberLength>Checked</numberLength>
+    <numberAllowedLength>Checked</numberAllowedLength>
+  </extension>
+  <numberType>String</numberType>
+  <numberLength>11</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <attributes uuid="65b865d4-2dcd-4c9e-913b-3902743b911e">
+    <name>Организация</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Организации</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <attributes uuid="62dc29e1-5571-4dc1-865a-496e5e55618e">
+    <name>Банк</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.КлассификаторБанков</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+  <attributes uuid="128ec72b-9394-4422-bff5-d716c192b32a">
+    <name>Договор</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ДоговорыКонтрагентов</type>
+        </types>
+        <types>
+          <state>Checked</state>
+          <type>AnyRef</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </attributes>
+</mdclass:Document>

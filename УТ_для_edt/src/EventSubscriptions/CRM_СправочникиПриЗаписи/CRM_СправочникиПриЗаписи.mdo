@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b21c8d7e-3805-4c2e-9566-563644e6d974">
+  <name>CRM_СправочникиПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Справочники при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Catalogs when writing (CRM)</value>
+  </synonym>
+  <comment>Справочники при записи (CRM)</comment>
+  <source>
+    <types>CatalogObject.УчетныеЗаписиЭлектроннойПочты</types>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.Проекты</types>
+    <types>CatalogObject.CRM_ШаблоныПроектов</types>
+    <types>CatalogObject.CRM_ШаблоныЭтаповПроектов</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>CatalogObject.CRM_ЭтапыПроектов</types>
+    <types>CatalogObject.ПапкиЭлектронныхПисем</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.СправочникПриЗаписи</handler>
+</mdclass:EventSubscription>

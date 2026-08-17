@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html;charset=utf-8" http-equiv="content-type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.9600.18792"></meta></head><body>
+<p>
+<style>BODY {
+	MARGIN-LEFT: 3pt
+}
+A:link {
+	TEXT-DECORATION: none; COLOR: #006699
+}
+A:visited {
+	TEXT-DECORATION: none; COLOR: #006699
+}
+A:hover {
+	TEXT-DECORATION: underline; COLOR: #006699
+}
+H2 {
+	FONT-SIZE: 130%; FONT-FAMILY: Verdana; BORDER-BOTTOM: sienna 1px solid; FONT-WEIGHT: normal; COLOR: #a3611f; PADDING-BOTTOM: 2px
+}
+H3 {
+	FONT-SIZE: 120%; MARGIN-TOP: 5px
+}
+P.Usual {
+	MARGIN-TOP: 10px
+}
+UL {
+	MARGIN-LEFT: 5pt
+}
+OL {
+	MARGIN-LEFT: 5pt
+}
+</style></p>
+<p class="Usual">Условие маршрутизации - это набор правил, по которым шаблоны процессов привязываются к видам документов и переходят от одного действия к другому. </p>
+<p class="Usual">Есть три способа создания условий:</p>
+<ol><li><strong>В режиме конструктора</strong> - укажите одно или несколько правил сравнения и сгруппируйте их по принципу <strong>И</strong>, <strong>Или</strong> или <strong>Не</strong>. Выберите реквизиты, вид сравнения и значение, с которым нужно сравнивать. Например, чтобы найти все договоры поставки за этот квартал с суммой больше 100 000 руб, нужно создать три правила и сгруппировать их по принципу <strong>И</strong>:</li></ol><blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<div style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr"></p><pre dir="ltr">Вид документа - Равно - Договор поставки, </pre>
+<p></p></div><pre dir="ltr">Дата регистрации - Больше или равно - Начало этого квартала, </pre>
+<div style="MARGIN-RIGHT: 0px" dir="ltr">
+<p style="MARGIN-RIGHT: 0px" dir="ltr"></p><pre dir="ltr">Сумма - Больше или равно - 100 000. </pre>
+<p></p></div></blockquote></blockquote>
+<dl style="MARGIN-RIGHT: 0px" dir="ltr"><ol start="2"><li><strong>На встроенном языке "1С" -</strong> впишите код условия с указанием значения переменной <strong>Результат</strong> типа <strong>Булево</strong> (<strong>Ложь</strong> или <strong>Истина</strong>). Если это значение не присвоено, то условие выполняться не будет. Например, чтобы проверить наличие регистрационного номера у документа, впишите следующее выражение:</li></ol></dl><blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr"><pre dir="ltr">Если НЕ ТипЗнч(Предмет) = Тип("СправочникСсылка.Файлы")<br>      И ЗначениеЗаполнено(Предмет.РегистрационныйНомер) Тогда<br>      Результат = Истина;<br>Иначе<br>      Результат = Ложь;<br>КонецЕсли;</pre></blockquote></blockquote>
+<blockquote class="Usual" style="MARGIN-RIGHT: 0px" dir="ltr">
+<p class="Usual" dir="ltr">Чтобы проверить, есть ли у документа файлы, впишите выражение:</p></blockquote>
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+<blockquote style="MARGIN-RIGHT: 0px" dir="ltr"><pre dir="ltr">Запрос = Новый Запрос;<br>Запрос.Текст = <br>      "ВЫБРАТЬ<br>      |    Файлы.Ссылка КАК Ссылка<br>      |ИЗ<br>      |    Справочник.Файлы КАК Файлы<br>      |ГДЕ<br>      |    Файлы.ВладелецФайла = &amp;Владелец";<br>Запрос.УстановитьПараметр("Владелец", Предмет.Ссылка);<br>Результат = Запрос.Выполнить();<br>Выборка = Результат.Выбрать();<br>Результат = Выборка.Количество() &gt; 0; </pre></blockquote></blockquote>
+<ol start="3"><li><strong>Комбинация из других условий -</strong> подберите из справочника уже созданные ранее условия и свяжите их в логическую комбинацию с помощью группировки. </li></ol><p class="Usual"><strong></strong> </p>
+<p class="Usual"><strong>Где узнать больше</strong>  </p>
+<ul><li><a>Шаблоны бизнес-процессов</a> 
+</li><li><a href="http://v8.1c.ru/doc8/demo/index.htm">Примеры настройки условий маршрутизации в демонстрационной базе "1С:Документооборота"</a> </li></ul></body></html>

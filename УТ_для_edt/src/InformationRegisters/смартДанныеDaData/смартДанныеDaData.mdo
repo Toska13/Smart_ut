@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e99d67d-6645-42d1-b046-0d4057717b36">
+  <producedTypes>
+    <selectionType typeId="4c27ec8f-70b9-49f1-8437-a8f549736db1" valueTypeId="99f19571-35b6-4f7e-b98d-972a152acbed"/>
+    <listType typeId="15ff90f7-936b-4cac-8bba-f0d8c1da1979" valueTypeId="bd4e04ad-ed70-44d7-8b02-e2c87e923aee"/>
+    <managerType typeId="37b3010f-3a37-4b9b-a274-29a70918a718" valueTypeId="b110b96b-c24f-4632-b155-023aee139ca0"/>
+    <recordSetType typeId="e2e24c49-c6d4-415c-b13b-ee020016b781" valueTypeId="69b56d49-5b28-49ca-9da1-4599475bae0c"/>
+    <recordKeyType typeId="17495c40-9765-4653-bbd1-00aac37ce4d1" valueTypeId="72d5d472-9107-4dda-8264-ae90a39463fc"/>
+    <recordType typeId="f8250efc-e382-4afd-963d-1157ef803996" valueTypeId="b047f57b-1ad3-4416-bbec-71c609d44a78"/>
+    <recordManagerType typeId="02c5d57b-df13-4672-9ee2-2c42f29f8e46" valueTypeId="4eb53efb-6e64-46ae-9bc9-04b34dde226c"/>
+  </producedTypes>
+  <name>смартДанныеDaData</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные DaData (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-4842 смарт: Фролов 05.11.2025 //Создание механизма хранения данных DaData </comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="743517c8-f0ae-4a03-b587-07b72e17ec24">
+    <name>Выручка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>16</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5e0a7d7d-d53c-463b-bf51-f24844909f5f">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="54aa5a9d-daca-49aa-b052-8262eeaa0176">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="033cf52c-a231-48c2-8125-5486ac3113fe">
+    <name>ГодОтчетности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Год отчетности</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="74352e2c-719c-4612-b2c7-a69812f3b8f3">
+  <name>смартЗарегистрироватьИзмененияПриЗаписиСправочникаДокументаАтлант</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрировать изменения при записи справочников и документов для обмена с Атлант (смарт)</value>
+  </synonym>
+  <comment>#Б-2746 смарт: Лопато 31.03.2025 //Интеграция с WMS. Атлант. Выгрузка номенклатуры</comment>
+  <source>
+    <types>CatalogObject.Номенклатура</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартИнтеграцияАтлант.ЗарегистрироватьИзмененияПриЗаписиСправочникаДокументаДляОбменаАтлант</handler>
+</mdclass:EventSubscription>

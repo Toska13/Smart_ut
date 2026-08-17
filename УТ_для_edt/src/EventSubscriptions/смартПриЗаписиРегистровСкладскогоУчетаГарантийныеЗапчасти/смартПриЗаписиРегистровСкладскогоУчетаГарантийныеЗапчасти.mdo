@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dfc08e34-d859-47de-9c24-146ba67dc4b0">
+  <name>смартПриЗаписиРегистровСкладскогоУчетаГарантийныеЗапчасти</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи регистров складского учета гарантийные запчасти (смарт)</value>
+  </synonym>
+  <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ГрафикПоступленияТоваров</types>
+    <types>AccumulationRegisterRecordSet.ОбеспечениеЗаказов</types>
+    <types>AccumulationRegisterRecordSet.ТоварыКОтгрузке</types>
+    <types>AccumulationRegisterRecordSet.СвободныеОстатки</types>
+    <types>AccumulationRegisterRecordSet.ГрафикОтгрузкиТоваров</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.смартОбеспечение.смартПриЗаписиРегистровСкладскогоУчетаГарантийныеЗапчастиПередЗаписью</handler>
+</mdclass:EventSubscription>

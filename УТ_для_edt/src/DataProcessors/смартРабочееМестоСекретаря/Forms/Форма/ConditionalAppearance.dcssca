@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+	<item>
+		<selection>
+			<item>
+				<field>МенеджерыСтатус</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПСтатус</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Менеджеры.Статус</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="dcscor:DesignTimeValue">Справочник.смартСтатусыСотрудников.НаРабочемМесте</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:CRM_ЦветФонаПодсказкиПомощника</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>РегионыРегион</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Регионы.Регион</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="dcscor:Field">ВыбранныйРегионВУ</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:SpecialTextColor</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>МенеджерыМенеджер</field>
+			</item>
+			<item>
+				<field>МенеджерыПодразделение</field>
+			</item>
+			<item>
+				<field>МенеджерыВнТелефон</field>
+			</item>
+			<item>
+				<field>МенеджерыСтатус</field>
+			</item>
+			<item>
+				<field>МенеджерыЗанятДо</field>
+			</item>
+			<item>
+				<field>МенеджерыВыданоЛидов</field>
+			</item>
+			<item>
+				<field>МенеджерыВыдатьЛидов</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПМенеджер</field>
+			</item>
+			<item>
+				<field>МенеджерыЭППодразделение</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПВнТелефон</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПСтатус</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПЗанятДо</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПВыданоЛидов</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПВыдатьЛидов</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Менеджеры.БлокироватьВыдачу</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:CRM_ЦветИнтервалаПакетаПлан</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>МенеджерыСтатус</field>
+			</item>
+			<item>
+				<field>МенеджерыЭПСтатус</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">Менеджеры.Статус</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="dcscor:DesignTimeValue">Справочник.смартСтатусыСотрудников.НеРабочееВремя</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветФона</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">web:Salmon</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОсновныеМенеджерыВидМенеджера</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыМенеджер</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыПодразделение</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыСтатус</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыМобильныйТелефон</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыЛичныйТелефон</field>
+			</item>
+			<item>
+				<field>ОсновныеМенеджерыВнутреннийТелефон</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОсновныеМенеджеры.Статус</left>
+				<comparisonType>NotInList</comparisonType>
+				<right xsi:type="dcscor:DesignTimeValue">Справочник.смартСтатусыСотрудников.НаРабочемМесте</right>
+				<right xsi:type="dcscor:DesignTimeValue">Справочник.смартСтатусыСотрудников.ТелефонЗанят</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">style:CRM_ЦветИнтервалаПакетаПлан</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Доступность</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

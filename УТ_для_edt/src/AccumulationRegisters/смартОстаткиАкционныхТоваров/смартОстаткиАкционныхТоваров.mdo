@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="47fbe722-b273-42c3-bcf8-e0401d9f0028">
+  <producedTypes>
+    <selectionType typeId="b1e3250d-d559-4684-a5b1-b4781e7b5bda" valueTypeId="b484503e-b2cc-41eb-bde8-5f483c363253"/>
+    <listType typeId="30548380-3fe3-457c-916d-d9dcd08e6cc3" valueTypeId="7f57f797-72b9-4f61-be5c-bf478d73d215"/>
+    <managerType typeId="e4ab7977-5511-4328-92af-8c4ae8eb93d2" valueTypeId="51578fad-98b2-495b-a45f-234f556c7917"/>
+    <recordSetType typeId="420ec3c0-5f57-4b64-b165-3062cb2ad238" valueTypeId="1d9a9277-886b-49bf-8d57-b0e0e5bb1b7e"/>
+    <recordKeyType typeId="3a9ee40f-5d23-478f-90b3-ca099d4417eb" valueTypeId="758c8a44-18c3-458f-b37c-8def5d0aa866"/>
+    <recordType typeId="b480b4bf-42c0-492f-8647-9ca02c9f11f2" valueTypeId="50da8b23-672f-40cc-9c17-e18e3070db80"/>
+  </producedTypes>
+  <name>смартОстаткиАкционныхТоваров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Остатки акционных товаров (смарт)</value>
+  </synonym>
+  <comment>//++ #Б4818 смарт: Шляпников 17.11.2025 / Создание механизма учета скидок и акций по оборудованию. </comment>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3419384b-c3fc-4f41-b71c-16011ca75e53">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="f5112dcf-422f-4021-adaa-bc6cab096741">
+    <name>ЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ клиента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="c1b1b7d1-4f18-456f-aeb7-6a73a2f532b3">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3899133e-d979-4a2d-8330-4846fd28944e">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="11b5ef03-c5cc-4950-ae92-65b84778e227">
+    <name>ДокументАкции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ акции</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартУправлениеАкциями</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="29e33022-3c3f-4a69-a3d2-b49bbfc1ba6f">
+  <name>смартПриЗаписиОбъектаОбменССайтомБитрикс</name>
+  <synonym>
+    <key>ru</key>
+    <value>Смарт при записи объекта обмен с сайтом битрикс</value>
+  </synonym>
+  <comment>//++ #Б3686 смарт: Шляпников 03.07.2025 / Проект smart-t.ru. API. Выгрузка &quot;Личный кабинет&quot; </comment>
+  <source>
+    <types>CatalogObject.смартОборудованиеКлиентов</types>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>DocumentObject.смартУправлениеАкциями</types>
+    <types>CatalogObject.ДоговорыКонтрагентов</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>CatalogObject.Контрагенты</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбменССайтомБитриксСервер.смартПриЗаписиОбъектаОбменССайтомБитриксПриЗаписи</handler>
+</mdclass:EventSubscription>

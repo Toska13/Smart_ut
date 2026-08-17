@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7fd587e9-2b09-4bf7-972f-3af0c69d924a">
+  <name>CRM_ПроверитьНомерДокументаПоДате</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить номер документа по дате (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Check up number of the document by date</value>
+  </synonym>
+  <comment>Проверить номер документа по дате (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_ОтчетОРаботе</types>
+    <types>DocumentObject.CRM_РассылкаЭлектронныхПисем</types>
+    <types>DocumentObject.НазначениеОпросов</types>
+    <types>DocumentObject.CRM_ЭтапКалендарногоПлана</types>
+    <types>DocumentObject.Анкета</types>
+    <types>DocumentObject.СообщениеSMS</types>
+    <types>DocumentObject.CRM_Телемаркетинг</types>
+    <types>DocumentObject.CRM_ПланированиеВоронкиПродаж</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ПрефиксацияОбъектовСобытия.ПроверитьНомерДокументаПоДате</handler>
+</mdclass:EventSubscription>

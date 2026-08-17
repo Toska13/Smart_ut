@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d25809f8-0322-409f-b266-3a184449de45">
+  <producedTypes>
+    <objectType typeId="e9f89a84-0f8a-4842-b81e-766db502f5a5" valueTypeId="ac54407f-c896-457e-8b30-4c4e8acafb19"/>
+    <refType typeId="ffcc4504-4218-4335-9e1c-141436238461" valueTypeId="286cea8d-9c84-4293-85a9-aef3aab3a921"/>
+    <selectionType typeId="eaf70f82-6409-4ce0-a41c-1f21a367c05f" valueTypeId="77d0fe05-57d1-4636-8464-51227d80aaf4"/>
+    <listType typeId="e1d3b80b-19a4-43cd-8f6d-2d1693e5ea89" valueTypeId="60e55fe7-8bd8-48f1-91ef-5b936c8c1b56"/>
+    <managerType typeId="8d9c87c5-a6d4-4904-9c55-5e5a6a948ceb" valueTypeId="13108fc9-34d9-498d-9c19-97ca73f01cd9"/>
+  </producedTypes>
+  <name>смартПолезныеФайлы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Полезные файлы (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-6510 смарт: Фролов 17.04.2026 //Добавить в Рабочий стол сотрудника раздел &quot;Полезная информация&quot;</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартПолезныеФайлы.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <hierarchical>true</hierarchical>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартПолезныеФайлы.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="b81956a3-d488-453c-9299-7af1278e1376">
+    <name>ИндексКартинки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индекс картинки</value>
+    </synonym>
+    <comment>Индекс иконки, соответствующей расширению файла, для показа в списке</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Индекс картинки файла (служебное поле)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:NumberValue">
+      <value>0</value>
+    </fillValue>
+    <use>ForFolderAndItem</use>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="973e633b-c7ac-48c3-9e2b-c6b7f277ef23">
+    <name>ФайлХранилище</name>
+    <synonym>
+      <key>ru</key>
+      <value>Файл хранилище</value>
+    </synonym>
+    <comment>Служебное поле для обмена файлами в РИБ</comment>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Временное хранилище файла (служебное поле)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c1c43ff1-d72a-4484-8c58-be1e6aa6948f">
+    <name>Расширение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расширение</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Расширение файла</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="a1239a96-a58f-4748-bf1a-f4451f2e4aaa">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

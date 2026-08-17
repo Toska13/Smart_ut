@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7d320c2e-62e0-4f53-8e69-cef3e744bb0b">
+  <producedTypes>
+    <selectionType typeId="6ea3a575-f443-4b06-bb81-d7e52df5a602" valueTypeId="87107dee-9a15-4e21-993e-23950017db44"/>
+    <listType typeId="26a2239d-1add-4139-a1ac-471b33f823f0" valueTypeId="65a9d649-a6af-480c-8feb-a9511bb06550"/>
+    <managerType typeId="aeaa999b-b860-4e12-807d-1f5f7c8a7fcb" valueTypeId="88fa06c3-ebcd-429c-abc3-2a42c0c5d1da"/>
+    <recordSetType typeId="1920c808-763f-4342-9301-6192ab9197ad" valueTypeId="113c93a1-4447-4bd1-93e5-5917e2fea60e"/>
+    <recordKeyType typeId="ed3a1d58-49c1-48e0-9189-a9d116872d6d" valueTypeId="1206513b-4ec8-48cb-9976-7964e79010f0"/>
+    <recordType typeId="78578cde-d755-4275-b899-d9a63092d281" valueTypeId="95c7f8c2-5f01-4f61-8516-942c2cbc3660"/>
+    <recordManagerType typeId="88c024a0-a1e1-47f5-b8fb-0eb06b676060" valueTypeId="b1f2df76-94e9-4a60-9881-5329d4b7cc82"/>
+  </producedTypes>
+  <name>CRM_ПартнерыСегментаПериодический</name>
+  <synonym>
+    <key>ru</key>
+    <value>Клиенты сегмента периодический</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Customers of a segment the periodic</value>
+  </synonym>
+  <defaultRecordForm>InformationRegister.CRM_ПартнерыСегментаПериодический.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.CRM_ПартнерыСегментаПериодический.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <toolTip>
+      <key>ru</key>
+      <value>Период</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period</value>
+    </toolTip>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dimensions uuid="807c34a2-d704-471e-a144-76d5894eb46a">
+    <name>Сегмент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сегмент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Segment</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СегментыПартнеров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Периодически обновляемый или статический сегмент.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Periodically updated or static segment.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СегментыПартнеров.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="62162fb7-20c4-4459-bc02-26d4b0a43899">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Partner</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партнер, отнесенный к сегменту.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The partner carried  to a segment.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Партнеры.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="61810cda-6297-437b-b1b0-0e5aaf8b800f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b8fc439a-657c-46e0-9dfa-af85a78de200">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

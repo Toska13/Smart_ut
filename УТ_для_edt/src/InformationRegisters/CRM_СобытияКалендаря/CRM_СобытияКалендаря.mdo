@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d094bbf1-2b05-428b-819b-f65c4b2c6c8e">
+  <producedTypes>
+    <selectionType typeId="aa625ca2-9a16-41a5-90af-da45db4b80c5" valueTypeId="a6b1dc49-b127-4808-b53c-6406a938a2b2"/>
+    <listType typeId="8d5afe1f-8cd4-477d-858f-cea1a5ff7e3a" valueTypeId="857375f1-e8f3-4a3b-8b42-62791688009c"/>
+    <managerType typeId="8df445c4-316e-4959-98f4-b531b5888b5a" valueTypeId="eb8d09f9-7e3a-4e29-af34-5dd202ff913b"/>
+    <recordSetType typeId="da37dfbd-ca9d-4567-83dd-6e05d60127c8" valueTypeId="de332ce2-88f4-4722-ac5e-9b6be6d795bc"/>
+    <recordKeyType typeId="eed02bdc-bedf-4e8a-a8ff-54eac390005b" valueTypeId="b00f2c8f-9b8c-4c74-b0f6-152c568d2396"/>
+    <recordType typeId="2766a7e4-a08d-4233-b27c-d751ac414d0c" valueTypeId="1fdeb017-5e8f-460e-90e4-02fe601bddd8"/>
+    <recordManagerType typeId="20fa0457-69b5-4b76-84be-3d005c48ec94" valueTypeId="945851a5-61d1-438b-9d5d-29715b1558ec"/>
+  </producedTypes>
+  <name>CRM_СобытияКалендаря</name>
+  <synonym>
+    <key>ru</key>
+    <value>События календаря</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Events of a calendar</value>
+  </synonym>
+  <comment>Обязательное поле для вывода в календарь</comment>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.CRM_СобытияКалендаря.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start</value>
+    </synonym>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e64e5300-032b-431e-8bd4-905324ecc61c">
+    <name>Тема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тема события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Subject of event</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="87356d20-293b-4a8e-b9bd-900ad6cfbd1f">
+    <name>НаВесьДень</name>
+    <synonym>
+      <key>ru</key>
+      <value>На весь день</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>All Day</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>На день</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Per day</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f7268176-7b58-4ef7-b913-b7a233aaa8e0">
+    <name>ПомещениеСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помещение события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Location of event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Помещения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Помещение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Location</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="4acb30d4-8049-46de-808d-003f413fbc9e">
+    <name>ВидСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВидыСобытий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ca11e9cd-bbc2-419b-9571-a135ff4bf560">
+    <name>ВходящееИсходящееСобытие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Входящее исходящее событие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Incoming Outcoming Event</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ВходящееИсходящееСобытие</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Входящее или исходящее</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Inbox or Outbox</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="00a8e15d-f377-461c-bbbc-649735cecd5a">
+    <name>СостояниеСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State of event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияСобытий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Состояние</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Status</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0f535dfd-46dd-4460-81ec-0b90228a81dc">
+    <name>ОсновнаяКатегорияСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная категория события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main category of event</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_Категории</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Основная категория</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Main category</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e0a8d86f-da75-439d-a543-f7baabe81828">
+    <name>Проект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Project</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Проекты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Проект события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Project of event</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="edfa72e6-a817-4638-bad6-f6a8473aba1f">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Department</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение по событию</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Department on event</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fc156134-f8a5-4caa-89f4-2bc0a699ecfa">
+    <name>СтатусКонтрольнойТочки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус контрольной точки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status of check point</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_СтатусыЭтаповКалендарногоПлана</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статус</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Status</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="93f07292-132b-47b1-995d-64efbc762ded">
+    <name>Важность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Важность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Importance</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыВажностиВзаимодействия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Важность события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Event priority</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВариантыВажностиВзаимодействия.EnumValue.Обычная</value>
+    </fillValue>
+  </resources>
+  <resources uuid="8639d5a7-881a-4600-9a00-768b24d62433">
+    <name>Завершено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Завершено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Completed</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак завершенности</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sign of completedness</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ed017c39-ea94-4280-a33c-7dc4f2bc5ee7">
+    <name>УдалитьПартнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Клиент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(not used) Customer</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партнер</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Partner</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5dc589cd-a0f7-4940-937c-f1d246c4582e">
+    <name>ОрганизаторGApi</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организатор g api</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Organizer g api</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организатор g api календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Organizer g api calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2b7a7e86-38f1-406b-a549-c54e9d5559f5">
+    <name>ПериодическоеСобытиеСпособИзмененияРядаGApi</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодическое событие способ изменения ряда g api</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>The periodic event is the way of changing the series g api</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Периодическое событие способ изменения ряда g api календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Periodic event is the way to change the gapi series of the calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="b418f42b-1f3b-43b7-8b34-76d07f5d09d1">
+    <name>Расписание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расписание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Schedule</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Расписание событий</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Event Schedule</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5c138552-28d6-4d68-a49d-c4dea97c7c5b">
+    <name>Балл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Балл</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Score</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Балл календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Score of the calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="405aba15-d791-4d45-b087-c943b4e1c344">
+    <name>ВидВзаимодействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид взаимодействия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interaction Type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыВзаимодействий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид взаимодействия календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Interaction view of the calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e18d15b8-9f7c-43d3-8297-161d4460efa8">
+    <name>ВидДела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид дела</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type of case</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВидыДелВзаимодействий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид дела календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind of business of a calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1ea89a43-9202-47d1-9bef-37ae4477722b">
+    <name>ФактТрудоемкость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Факт трудоемкость</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>The fact of labor</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Факт трудоемкость по событию</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The fact that the event is labor-intensive</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="64ebb34a-0d57-4c69-829e-94073e06d7b1">
+    <name>ETag</name>
+    <synonym>
+      <key>ru</key>
+      <value>E tag</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>E tag</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="e7229e24-b4f9-407b-b67c-ef1f8405e30f">
+    <name>Идентификатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Identifier</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1024</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ид события g api календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Id event g api calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="65081f91-6fb0-4453-a69e-9f14925f13d7">
+    <name>ИндексЦвета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индекс цвета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Colour Index</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="986e30bc-6e96-4d37-98be-20b306c3266c">
+    <name>Ключ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Key</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>64</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="ae545d05-bd74-4330-963b-ab0990036c1b">
+    <name>УдалитьНомерПоследовательности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить номер последовательности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Delete sequence number</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер последовательности g api календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sequence number g api calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e71c40e6-19a3-4074-a614-8e39ae7f291d">
+    <name>УдалитьТаймСтамп</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить тайм стамп</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Delete time stamp</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тайм стамп g api календаря</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Time stump g api calendar</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f2e4b954-3359-46ca-85ca-aaf4fdce2e0b">
+    <name>Гиперссылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Гиперссылка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hyperlink</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="cb28396b-05d9-4140-ad4d-a1b9fee3d41c">
+    <name>ПериодНачало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период начала события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Event start time</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cf83ba77-60ec-4557-9a54-7569fbf7e9b3">
+    <name>ПериодОкончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Termination</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период окончания события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Event end time</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="cabecb9c-bdfd-4e5f-9da1-82321a9269f3">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>User of event</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4c3b3e42-27c0-4660-8a60-88ec972ae889">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Событие календаря</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event of a calendar</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_ЭтапКалендарногоПлана</types>
+      <types>CatalogRef.МаркетинговыеМероприятия</types>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+      <types>DocumentRef.CRM_Телемаркетинг</types>
+      <types>DocumentRef.удалитьCRM_Мероприятие</types>
+      <types>DocumentRef.УдалитьCRM_Событие</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект события</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Object of event</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d2904d0e-7484-435e-8531-b19614d2cdef">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Client</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партнер</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Partner</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="db67c3d7-8bec-4829-9dba-df59d43b139a">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

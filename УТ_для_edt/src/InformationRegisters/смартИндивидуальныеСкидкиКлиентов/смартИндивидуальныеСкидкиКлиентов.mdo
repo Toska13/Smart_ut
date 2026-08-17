@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8eea1cf1-c334-4132-bad6-0338fe61453a">
+  <producedTypes>
+    <selectionType typeId="62785c33-1930-4787-9d93-ac67e15ca23a" valueTypeId="7630a3e5-6a3e-4725-9203-f401d7deb853"/>
+    <listType typeId="205c1c83-5959-4b43-99c2-f0953165db33" valueTypeId="5223bc85-eee1-4566-930d-ca7c6fceac8c"/>
+    <managerType typeId="13d3b655-397e-423f-8ad5-c88120e4d536" valueTypeId="fd5886ee-720d-4933-801e-9d7ae3eeb07c"/>
+    <recordSetType typeId="eba96b7f-a1cc-4668-b70a-795a47b3b56d" valueTypeId="e7d00868-d426-42d7-b47d-a8b29594873a"/>
+    <recordKeyType typeId="2df72808-ea55-40f1-9212-fc0e7d5aa08a" valueTypeId="d474459b-b22c-446d-b1f1-21a22c68dd65"/>
+    <recordType typeId="15d55e6e-6e2b-4316-9274-318b2ac7b484" valueTypeId="191ebff2-da3c-4b09-9dfa-b1b80300c91c"/>
+    <recordManagerType typeId="91ab3ac0-28d3-4da9-a304-72b32d304d4b" valueTypeId="681f824b-e300-4429-ba60-f5a9037fdf01"/>
+  </producedTypes>
+  <name>смартИндивидуальныеСкидкиКлиентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Индивидуальные скидки клиентов (смарт)</value>
+  </synonym>
+  <comment>#1323 смарт: Лопато 15.03.2023 //Восстановить и переделать механизм индивидуальных скидок</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.смартИндивидуальныеСкидкиКлиентов.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Индивидуальные скидки клиентов (смарт)</value>
+  </recordPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Индивидуальные скидки клиентов (смарт)</value>
+  </listPresentation>
+  <resources uuid="685d98d6-220b-4273-8df1-c99836b4d796">
+    <name>ПроцентСкидки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент скидки (наценки)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Процент скидки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="73bcb654-e2b7-4979-9ec0-29bea3af47cd">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ответственный пользователь</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Пользователи.EmptyRef</value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="f5f7ca8c-4e7e-4833-b173-73d0e30ec092">
+    <name>СрокДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок действия</value>
+    </synonym>
+    <comment>#1870 смарт: Лопато 24.06.2024 //Доработать механизм выгрузки индивидуальных скидок</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Срок действия скидки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f56f103e-5e41-41d1-9281-d84673fcece4">
+    <name>Клиент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f6de689e-c422-40d1-aa3a-4e289eb56d88">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="acc5d191-e473-4173-ac4c-bb5ebe7f89f1">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

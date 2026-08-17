@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d749066c-964e-4303-8901-5d7d74bb297b">
+  <name>смартЗаказКлиентаПриЗаписиРаспределениеИМ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказ клиента при записи для распределения с интернет-магазина (смарт)</value>
+  </synonym>
+  <comment>#1993 смарт: Лопато 19.08.2024 //Обработка онлайн заказов (переделка)</comment>
+  <source>
+    <types>DocumentObject.ЗаказКлиента</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.ЗаказКлиентаПодпискаПриЗаписиРаспределениеИМ</handler>
+</mdclass:EventSubscription>

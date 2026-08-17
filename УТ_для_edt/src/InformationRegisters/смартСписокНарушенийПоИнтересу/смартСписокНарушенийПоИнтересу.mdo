@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eca15a34-f980-4d08-9564-b8b180def54f">
+  <producedTypes>
+    <selectionType typeId="58158aad-a3da-490b-aa4d-afa78ccd3f20" valueTypeId="f8f047fb-10d0-47db-b17e-bf7e38bf259f"/>
+    <listType typeId="b860c1a6-643c-463f-b52c-0fe8cec356dd" valueTypeId="510ea1e3-2f0e-4c07-9b18-b1c77c1252b6"/>
+    <managerType typeId="811fa83e-b1ed-4e2a-8413-23c0b7356635" valueTypeId="c213e602-94a6-42a8-bd5d-3231b7fe8dee"/>
+    <recordSetType typeId="ca6f4dbb-eb56-4f19-b4c8-48ef78707caa" valueTypeId="b4709ba9-7ef8-44f4-93c8-91c632986ea1"/>
+    <recordKeyType typeId="410ccb6a-3049-409a-bcff-7cac72d1cbfa" valueTypeId="7d6c9b38-e449-4631-b183-71ea27f041ef"/>
+    <recordType typeId="6129e33b-a724-4606-a9e1-b88aae1e13a5" valueTypeId="fe57700d-32af-44f3-add2-138adba24f14"/>
+    <recordManagerType typeId="8679f564-431f-4984-9f0b-1a4b3176e724" valueTypeId="ce560324-ad21-4948-b4d5-200fb802e33d"/>
+  </producedTypes>
+  <name>смартСписокНарушенийПоИнтересу</name>
+  <synonym>
+    <key>ru</key>
+    <value>Список нарушений по интересу (смарт)</value>
+  </synonym>
+  <comment>//-- #Б-3718 смарт: Фролов 09.07.2025</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="8b4483a9-82ff-4239-bb7a-309b78282326">
+    <name>Интерес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интерес</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="56f152df-c485-4d07-8310-442a5f5c89a0">
+    <name>ЧтоСталоПричинойПровала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выявленные нарушения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ПричиныОтказов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

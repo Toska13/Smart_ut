@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кол-во</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РешениеПоставщика</dataPath>
+			<field>РешениеПоставщика</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АрендаЗапчастей</dataPath>
+			<field>АрендаЗапчастей</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аренда запчастей</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЦены</dataPath>
+			<field>ВидЦены</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаявкаНаГарантийныйРемонт</dataPath>
+			<field>ЗаявкаНаГарантийныйРемонт</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявка на гарантийный ремонт</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УстановленоКлиенту</dataPath>
+			<field>УстановленоКлиенту</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установлено клиенту</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолученоОтПоставщика</dataPath>
+			<field>ПолученоОтПоставщика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получено от поставщика</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПолученоОтКлиента</dataPath>
+			<field>ПолученоОтКлиента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получено от клиента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОтправленоПоставщикуСписано</dataPath>
+			<field>ОтправленоПоставщикуСписано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправлено поставщику/списано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Характеристика</dataPath>
+			<field>Характеристика</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СебестоимостьЗаЕд</dataPath>
+			<field>СебестоимостьЗаЕд</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Себестоимость за ед.</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СебестоимостьВсего</dataPath>
+			<field>СебестоимостьВсего</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Себестоимость всего</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	смартЗаявкаНаГарантийныйРемонт.Ссылка КАК Ссылка,
+	ЗаполняетсяСпециалистом.Номенклатура КАК Номенклатура,
+	ЗаполняетсяСпециалистом.Количество КАК Количество,
+	ЗаполняетсяИнженеромТЧ.ДокументЗаказНаВнутреннееПотребление КАК ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту,
+	ЗаполняетсяИнженеромТЧ.ДокументВводОстатков КАК ДокументВводОстатков,
+	ЗаполняетсяСпециалистом.РешениеПоставщика КАК РешениеПоставщика,
+	СтатусыСписать.ДокументДвижения КАК ЗаказНаВнутреннееПотреблениеДляСписано,
+	СтатусыОжидаетсяОтправка.ДокументДвижения КАК ВозвратПоставщику,
+	СтатусыОжидаетсяПоступление.ДокументДвижения КАК ЗаказПоставщику,
+	ЗаполняетсяИнженеромТЧ.НоменклатураУстановленнаяКлиенту КАК НоменклатураУстановленнаяКлиенту,
+	НоменклатураСпр.Артикул КАК Артикул,
+	ВЫБОР
+		КОГДА НоменклатураСпр.Артикул ПОДОБНО "%LOA%"
+			ТОГДА ИСТИНА
+		ИНАЧЕ ЛОЖЬ
+	КОНЕЦ КАК АрендаЗапчастей
+ПОМЕСТИТЬ ВТ_Промежуточная
+ИЗ
+	Документ.смартЗаявкаНаГарантийныйРемонт КАК смартЗаявкаНаГарантийныйРемонт
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.смартЗаявкаНаГарантийныйРемонт.ЗаполняетсяСпециалистомПоПретензиям КАК ЗаполняетсяСпециалистом
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.смартЗаявкаНаГарантийныйРемонт.Статусы КАК СтатусыСписать
+			ПО (СтатусыСписать.Статус = ЗНАЧЕНИЕ(Перечисление.смартСтатусыПоГарантии.ОтгрузкаНеТребуется))
+				И (ЗаполняетсяСпециалистом.НомерПозиции = СтатусыСписать.НомерПозиции)
+				И (ЗаполняетсяСпециалистом.Ссылка = СтатусыСписать.Ссылка)
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.смартЗаявкаНаГарантийныйРемонт.Статусы КАК СтатусыОжидаетсяПоступление
+			ПО (СтатусыОжидаетсяПоступление.Статус = ЗНАЧЕНИЕ(Перечисление.смартСтатусыПоГарантииПолучение.ОжидаетсяПоступление))
+				И (ЗаполняетсяСпециалистом.НомерПозиции = СтатусыОжидаетсяПоступление.НомерПозиции)
+				И (ЗаполняетсяСпециалистом.Ссылка = СтатусыОжидаетсяПоступление.Ссылка)
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.смартЗаявкаНаГарантийныйРемонт.Статусы КАК СтатусыОжидаетсяОтправка
+			ПО (СтатусыОжидаетсяОтправка.Статус = ЗНАЧЕНИЕ(Перечисление.смартСтатусыПоГарантии.ОжидаетсяОтправка))
+				И (ЗаполняетсяСпециалистом.НомерПозиции = СтатусыОжидаетсяОтправка.НомерПозиции)
+				И (ЗаполняетсяСпециалистом.Ссылка = СтатусыОжидаетсяОтправка.Ссылка)
+			ЛЕВОЕ СОЕДИНЕНИЕ Документ.смартЗаявкаНаГарантийныйРемонт.ЗаполняетсяИнженером КАК ЗаполняетсяИнженеромТЧ
+				ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Номенклатура КАК НоменклатураСпр
+				ПО (ЗаполняетсяИнженеромТЧ.НоменклатураУстановленнаяКлиенту = НоменклатураСпр.Ссылка)
+			ПО (ЗаполняетсяСпециалистом.Ссылка = ЗаполняетсяИнженеромТЧ.Ссылка)
+				И (ЗаполняетсяСпециалистом.ИДСтрокиЗаполняетсяИнженером = ЗаполняетсяИнженеромТЧ.ИДСтрокиЗаполняетсяИнженером)
+		ПО (смартЗаявкаНаГарантийныйРемонт.Ссылка = ЗаполняетсяСпециалистом.Ссылка)
+ГДЕ
+	смартЗаявкаНаГарантийныйРемонт.Дата &gt;= &amp;ДатаНачала
+	И смартЗаявкаНаГарантийныйРемонт.Дата &lt;= &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту КАК ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту,
+	ВТ_Промежуточная.Номенклатура КАК Номенклатура,
+	МАКСИМУМ(ВнутреннееПотреблениеТоваровТовары.Ссылка) КАК ВнутреннееПотреблениеДляУстановленоКлиенту
+ПОМЕСТИТЬ ВТ_ВнутрПотреблениеДляУстановленоКлиенту
+ИЗ
+	ВТ_Промежуточная КАК ВТ_Промежуточная
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ВнутреннееПотреблениеТоваров.Товары КАК ВнутреннееПотреблениеТоваровТовары
+		ПО ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту = ВнутреннееПотреблениеТоваровТовары.Ссылка.ЗаказНаВнутреннееПотребление
+			И (НЕ ВнутреннееПотреблениеТоваровТовары.Ссылка.ПометкаУдаления)
+			И (ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту &lt;&gt; ЗНАЧЕНИЕ(Документ.ЗаказНаВнутреннееПотребление.ПустаяСсылка))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту,
+	ВТ_Промежуточная.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляСписано КАК ЗаказНаВнутреннееПотреблениеДляСписано,
+	ВТ_Промежуточная.Номенклатура КАК Номенклатура,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВнутреннееПотреблениеТоваровТовары.Ссылка) КАК ВнутреннееПотреблениеДляСписано
+ПОМЕСТИТЬ ВТ_ВнутрПотреблениеДляСписано
+ИЗ
+	ВТ_Промежуточная КАК ВТ_Промежуточная
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ВнутреннееПотреблениеТоваров.Товары КАК ВнутреннееПотреблениеТоваровТовары
+		ПО ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляСписано = ВнутреннееПотреблениеТоваровТовары.Ссылка.ЗаказНаВнутреннееПотребление
+			И (НЕ ВнутреннееПотреблениеТоваровТовары.Ссылка.ПометкаУдаления)
+			И (ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляСписано &lt;&gt; ЗНАЧЕНИЕ(Документ.ЗаказНаВнутреннееПотребление.ПустаяСсылка))
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляСписано,
+	ВТ_Промежуточная.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Промежуточная.ЗаказПоставщику КАК ЗаказПоставщику,
+	ВТ_Промежуточная.Номенклатура КАК Номенклатура,
+	МАКСИМУМ(ПриобретениеТоваровУслугТовары.Ссылка) КАК ПриобретениеТоваров
+ПОМЕСТИТЬ ВТ_ПриобретениеТоваров
+ИЗ
+	ВТ_Промежуточная КАК ВТ_Промежуточная
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ПриобретениеТоваровУслуг.Товары КАК ПриобретениеТоваровУслугТовары
+		ПО ВТ_Промежуточная.Номенклатура = ПриобретениеТоваровУслугТовары.Номенклатура
+			И ВТ_Промежуточная.ЗаказПоставщику = ПриобретениеТоваровУслугТовары.Ссылка.ЗаказПоставщику
+			И (НЕ ПриобретениеТоваровУслугТовары.Ссылка.ПометкаУдаления)
+
+СГРУППИРОВАТЬ ПО
+	ВТ_Промежуточная.ЗаказПоставщику,
+	ВТ_Промежуточная.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Промежуточная.Ссылка КАК ЗаявкаНаГарантийныйРемонт,
+	ВТ_Промежуточная.Номенклатура КАК Номенклатура,
+	ВТ_Промежуточная.Количество КАК Количество,
+	ЕСТЬNULL(ВТ_ВнутрПотреблениеДляУстановленоКлиенту.ВнутреннееПотреблениеДляУстановленоКлиенту, ЗНАЧЕНИЕ(Документ.ВнутреннееПотреблениеТоваров.ПустаяСсылка)) КАК УстановленоКлиенту,
+	ВТ_Промежуточная.ДокументВводОстатков КАК ПолученоОтКлиента,
+	ЕСТЬNULL(ВТ_ВнутрПотреблениеДляСписано.ВнутреннееПотреблениеДляСписано, ВТ_Промежуточная.ВозвратПоставщику) КАК ОтправленоПоставщикуСписано,
+	ВТ_ПриобретениеТоваров.ПриобретениеТоваров КАК ПолученоОтПоставщика,
+	ВТ_Промежуточная.РешениеПоставщика КАК РешениеПоставщика,
+	ВТ_Промежуточная.АрендаЗапчастей КАК АрендаЗапчастей,
+	ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) КАК СебестоимостьЗаЕд,
+	ВТ_Промежуточная.Количество * ЕСТЬNULL(ЦеныНоменклатурыСрезПоследних.Цена, 0) КАК СебестоимостьВсего
+ИЗ
+	ВТ_Промежуточная КАК ВТ_Промежуточная
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВнутрПотреблениеДляУстановленоКлиенту КАК ВТ_ВнутрПотреблениеДляУстановленоКлиенту
+		ПО (ВТ_Промежуточная.Номенклатура = ВТ_ВнутрПотреблениеДляУстановленоКлиенту.Номенклатура)
+			И (ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту = ВТ_ВнутрПотреблениеДляУстановленоКлиенту.ЗаказНаВнутреннееПотреблениеДляУстановленоКлиенту)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ВнутрПотреблениеДляСписано КАК ВТ_ВнутрПотреблениеДляСписано
+		ПО (ВТ_Промежуточная.Номенклатура = ВТ_ВнутрПотреблениеДляСписано.Номенклатура)
+			И (ВТ_Промежуточная.ЗаказНаВнутреннееПотреблениеДляСписано = ВТ_ВнутрПотреблениеДляСписано.ЗаказНаВнутреннееПотреблениеДляСписано)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПриобретениеТоваров КАК ВТ_ПриобретениеТоваров
+		ПО (ВТ_Промежуточная.Номенклатура = ВТ_ПриобретениеТоваров.Номенклатура)
+			И (ВТ_Промежуточная.ЗаказПоставщику = ВТ_ПриобретениеТоваров.ЗаказПоставщику)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ЦеныНоменклатуры.СрезПоследних(
+				&amp;ДатаОкончания,
+				Номенклатура в (ВЫБРАТЬ ВТ.Номенклатура ИЗ ВТ_Промежуточная КАК ВТ )
+				И ВидЦены = &amp;ВидЦеныСебестоимость) КАК ЦеныНоменклатурыСрезПоследних
+		ПО (ВТ_Промежуточная.Номенклатура = ЦеныНоменклатурыСрезПоследних.Номенклатура)</query>
+		<useQueryGroupIfPossible>false</useQueryGroupIfPossible>
+	</dataSet>
+	<totalField>
+		<dataPath>СебестоимостьВсего</dataPath>
+		<expression>Сумма(СебестоимостьВсего)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(&amp;ПериодОтчета.ДатаОкончания, "день")</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидЦеныСебестоимость</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид цены себестоимость</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ВидыЦен</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Полный</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗаявкаНаГарантийныйРемонт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СебестоимостьЗаЕд</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СебестоимостьВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УстановленоКлиенту</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПолученоОтКлиента</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОтправленоПоставщикуСписано</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПолученоОтПоставщика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РешениеПоставщика</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АрендаЗапчастей</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>4c182d0f-edac-475b-b1b7-6192d668a858</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЗаявкаНаГарантийныйРемонт</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>2c2d2ea8-ba01-4b29-9fa6-5c8bf1349769</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>a2128ddd-54c0-47a0-8395-14184e639709</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>6aad7574-5eb5-4dec-adc7-a2b91a0dac79</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>8d680178-f729-4a09-8b54-c45674f4f3ae</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>4396099a-7f16-4d39-9c6e-93f8e8e8d2df</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ЗаявкаНаГарантийныйРемонт</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Номенклатура.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>f04decdc-c14c-4608-acc2-cbddcd888165</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ОтправленоПоставщикуСписано</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПолученоОтКлиента</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ПолученоОтПоставщика</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>УстановленоКлиенту</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>СредняяСебестоимостьЗаПериод</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>АрендаЗапчастей</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>РешениеПоставщика</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>ЗаявкаНаГарантийныйРемонт</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Номенклатура</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">45</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">45</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Together</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать итоги по горизонтали</dcsset:userSettingPresentation>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗаявкаНаГарантийныйРемонт</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Кратко</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Кратко</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СебестоимостьЗаЕд</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СебестоимостьВсего</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УстановленоКлиенту</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">УстановленоКлиенту</dcsset:left>
+					<dcsset:comparisonType>Filled</dcsset:comparisonType>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">ПолученоОтПоставщика</dcsset:left>
+					<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">АрендаЗапчастей</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">РешениеПоставщика</dcsset:left>
+					<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.смартРешенияПоставщика.WarrantyProvided</dcsset:right>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ЗаявкаНаГарантийныйРемонт</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>d68923ad-430b-4f2c-a83e-b169333098f5</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Номенклатура</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>8e0febe7-0777-475e-88c7-083a779337eb</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">LastMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>3acaa1d3-3a33-4443-bf8d-dffc76c946df</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ЗаявкаНаГарантийныйРемонт</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

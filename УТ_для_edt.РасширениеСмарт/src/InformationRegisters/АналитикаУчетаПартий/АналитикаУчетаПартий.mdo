@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="abaa4b3d-fff1-4210-8670-ed72e5d8e337">
+  <producedTypes>
+    <selectionType typeId="ca5eed0b-fca1-4446-9cbf-3e6012a9fe25" valueTypeId="c1533104-c710-44ce-a723-eb7b9c2184eb"/>
+    <listType typeId="b4489f10-8a2d-4b34-a320-a40491c087a3" valueTypeId="68e4a8dc-703a-4e25-90b8-84050e541bd6"/>
+    <managerType typeId="badccf7a-6739-410d-8b51-a6cc28473bfc" valueTypeId="207bf003-4848-4917-87f8-5e6c9c37c43d"/>
+    <recordSetType typeId="73345dc1-53eb-456b-872f-9914f3c02175" valueTypeId="6553d35b-57c5-407e-b7df-df9e140f2110"/>
+    <recordKeyType typeId="e27d7b87-4dde-4bcb-993b-1c2c00d48880" valueTypeId="783203d3-95be-4862-bbcc-e7e0100b2ffe"/>
+    <recordType typeId="c29fc355-e681-468c-b531-f57c12556a18" valueTypeId="5f73205e-bc35-4ed9-906e-2ed45f490f84"/>
+    <recordManagerType typeId="c52879da-95a4-4803-b0c5-cfa5f37fa9a7" valueTypeId="dab511d2-cc2b-46f2-b528-c28f152b896a"/>
+  </producedTypes>
+  <name>АналитикаУчетаПартий</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:InformationRegisterExtension">
+    <informationRegisterPeriodicity>Checked</informationRegisterPeriodicity>
+    <writeMode>Checked</writeMode>
+  </extension>
+  <resources uuid="70d29410-10ef-4f8f-8fee-dd2ec0f67cc0">
+    <name>КлючАналитики</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.КлючиАналитикиУчетаПартий</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </resources>
+  <dimensions uuid="1a77a772-188d-491f-9832-4d3e0ed89014">
+    <name>ГруппаФинансовогоУчета</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ГруппыФинансовогоУчетаНоменклатуры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="3e74590c-2761-4500-9487-7ba700f83af1">
+    <name>Поставщик</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Партнеры</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="58c27349-5a42-4ccd-b6b5-0e922ebdf678">
+    <name>Контрагент</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>AnyRef</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="1bf3fdae-c9b2-40d4-863d-2ad7156172f4">
+    <name>НалогообложениеНДС</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.ТипыНалогообложенияНДС</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="83ec00e8-3513-4567-909c-ad3f2e6bed33">
+    <name>СтавкаНДС</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.СтавкиНДС</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="81ba0f40-ed1f-483d-b34b-7d1607d3f26d">
+    <name>ВидЦенности</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.ВидыЦенностей</type>
+        </types>
+      </typeExtension>
+    </extension>
+  </dimensions>
+  <dimensions uuid="adf80e2c-4965-4e0d-8287-37350e7a331d">
+    <name>КодСтроки</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+  </dimensions>
+</mdclass:InformationRegister>

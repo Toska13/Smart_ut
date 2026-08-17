@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9cbfbbfb-1063-4b1f-9add-edd4d1be0487">
+  <producedTypes>
+    <objectType typeId="2c122a7d-8f73-4b61-bd86-66422d4e0cd1" valueTypeId="31bab4a2-04c9-4929-a5f9-6cd4a3b99062"/>
+    <refType typeId="98fa141c-f17c-4fd1-a928-35a24a7d6e96" valueTypeId="f6a879a5-0459-458b-b625-7382dff98b7e"/>
+    <selectionType typeId="ba29f199-3c84-4491-a469-dce1c140262e" valueTypeId="c55bd4fd-9cf9-416a-bb18-e85257979540"/>
+    <listType typeId="057147d4-c298-485e-973a-606145b8fdb3" valueTypeId="268ab48e-117d-4db0-a6d5-1dacf20e1ecc"/>
+    <managerType typeId="d8ac3efb-5fe9-44e4-a154-948aeb951df4" valueTypeId="15debcbb-563e-4d9c-a804-32b7416afa67"/>
+  </producedTypes>
+  <name>смартiECHOЗаполнениеСтоимости</name>
+  <synonym>
+    <key>ru</key>
+    <value>iECHO заполнение стоимости (смарт)</value>
+  </synonym>
+  <comment>//++ #1376 смарт: Фролов 15.06.2023 //доработка функционала консруктора iECHO (Глобализация параметров)</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.смартiECHOЗаполнениеСтоимости.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.смартiECHOЗаполнениеСтоимости.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="2c513590-bcde-4ac5-93ea-08edafc12480">
+    <name>Страна</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страна</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтраныМира</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="9e732838-3822-41b6-95f9-785af0143188">
+    <name>СтоимостьДоставкиДоГраницыРФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка до границы РФ (USD)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1f12ef98-6d59-4c04-8397-15f9317f8503">
+    <name>СтоимостьДоставкиПоРФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка по РФ (руб)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="71cc3c4a-06a2-4a66-bd98-a0fd96f064a9">
+    <name>СтоимостьТаможенногоОформления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таможенное оформление (руб)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="80046235-039b-4a7d-9075-07336404d32a">
+    <name>Маржа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Торговая наценка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="264564bf-1c5b-48f3-a6df-2c691f3f9cf6">
+    <name>КоличествоДнейДействияКП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество дней действия КП</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="733c7874-4af6-4fbc-b1f7-7929b59de279">
+    <name>СрокПоставкиДней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок поставки (дней)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="782d468b-39d4-464e-9deb-20d05894ba97">
+    <name>СтоимостьДоставкиЖДТранспортом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка ЖД транспортом (Валюта учета)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8d69ae78-8026-4f85-a1f6-68d64f8d3b02">
+    <name>СтоимостьДоставкиАМТранспортом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доставка АМ транспортом (Валюта учета)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="50fdd754-42a9-4cb2-82ae-8123046870ed">
+    <name>ВалютаУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта учета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d8ac1080-a123-4a12-9535-9a853d3806a0">
+    <name>СтавкаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка НДС, %</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6b2be8b0-2c3d-43c8-80f4-a642b0d6a4ff">
+    <name>ТипДоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип доставки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартТипыДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c0f4e7e1-82dd-4b3a-adfa-92bd0cc4be0e">
+    <name>СхемаПоУмолчанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема по умолчанию</value>
+    </synonym>
+    <comment>//++ #Б-5346 смарт: Фролов 30.12.2025 //Доработка Конструктора IECHO</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="3dd08c38-f56f-4a7b-a0d5-066322c5abc6">
+    <producedTypes>
+      <objectType typeId="f4d7f8c3-93a5-49a6-b742-8db2b9a82c9f" valueTypeId="15f5b74a-3adb-4b9d-bfa3-c11252839e49"/>
+      <rowType typeId="d6a5da18-965f-4222-ae9a-12abaa924713" valueTypeId="a6e2561a-6b25-4555-ac55-c6db671a654c"/>
+    </producedTypes>
+    <name>НаценкаПоМоделям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наценка по моделям</value>
+    </synonym>
+    <comment>#Б-3928 смарт: Лопато 28.07.2025 //Доработка конструктора IECHO. Уточнение наценки по моделям.</comment>
+    <attributes uuid="07b96340-5ed0-4d7b-9673-86ab040ac333">
+      <name>Модель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Модель</value>
+      </synonym>
+      <type>
+        <types>EnumRef.смартIECHOМоделиКомплектующих</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0c34be55-f112-408a-bffa-7f26a044f1a8">
+      <name>Маржа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Торговая наценка</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="bc5da078-fedb-43db-8197-5a4bad1fcbf0">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

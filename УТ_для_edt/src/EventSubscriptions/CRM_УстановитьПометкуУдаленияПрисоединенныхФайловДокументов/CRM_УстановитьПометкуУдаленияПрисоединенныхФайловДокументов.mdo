@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8a210399-6e8d-432c-a870-2291174f0498">
+  <name>CRM_УстановитьПометкуУдаленияПрисоединенныхФайловДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить пометку удаления присоединенных файлов документов (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Set deletion mark for attached files documents</value>
+  </synonym>
+  <comment>Установить пометку удаления присоединенных файлов документов (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_ОтчетОРаботе</types>
+    <types>DocumentObject.CRM_ШаблонЭтапаКалендарногоПлана</types>
+    <types>DocumentObject.CRM_РассылкаЭлектронныхПисем</types>
+    <types>DocumentObject.CRM_ЭтапКалендарногоПлана</types>
+    <types>DocumentObject.CRM_Интерес</types>
+    <types>DocumentObject.CRM_СообщениеМессенджера</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>DocumentObject.CRM_Телемаркетинг</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РаботаСФайлами.УстановитьПометкуУдаленияПрисоединенныхФайловДокументов</handler>
+</mdclass:EventSubscription>

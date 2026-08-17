@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c45cd82c-1783-4d31-99ae-ea17f85a457e">
+  <producedTypes>
+    <selectionType typeId="2a2134b0-2221-43ea-87dc-c7e217b65f19" valueTypeId="9f29a8ed-88cd-4005-83c0-6c9accdb2e7e"/>
+    <listType typeId="9d15da7f-e0c1-4fb8-9611-e179b78abfaf" valueTypeId="d9f966fa-a161-432c-9fad-0aa291172651"/>
+    <managerType typeId="7c77a748-9419-49bf-9402-cfd84b2ded05" valueTypeId="bd121a0b-09c2-403d-9920-88d024860ad8"/>
+    <recordSetType typeId="619e805f-e69b-49da-9394-4f87c36d42ea" valueTypeId="f74edca5-9af0-438b-8155-ac5a15b8aa97"/>
+    <recordKeyType typeId="a8751e45-a534-41a7-b852-c6c5f728623f" valueTypeId="1b85047b-c9e5-4294-9b82-000470f308f7"/>
+    <recordType typeId="e18e74cf-58a9-4c0b-800e-b424544edbd8" valueTypeId="c2d299c5-6738-4548-b91a-8436d61fc444"/>
+  </producedTypes>
+  <name>смартДвиженияГарантийныхЗапасныхЧастей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движения гарантийных запасных частей (смарт)</value>
+  </synonym>
+  <comment>//++ #1411 смарт: Фролов 27.07.2023 //Контроль движений запчастей по гарантии</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="c7726162-7de3-4677-8541-196d2b512127">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="5790e289-be1e-425c-be37-07b690d7ded5">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаГарантийныйРемонт</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="44f518bb-beea-4985-bea0-9c7b8c74cb51">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="faaa44c5-d6a2-4e3e-b034-2540fbb950ac">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="92ff22ac-73ba-4829-b9f3-bc78cfe59e8b">
+    <name>ВидКонтроля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид контроля</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыКонтроляГарантийныхЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

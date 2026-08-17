@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4ec58c65-e030-4ea0-9da9-b956e57e8bf0">
+  <producedTypes>
+    <selectionType typeId="c720ba9d-43d9-4eab-bf21-940bf7f2ead6" valueTypeId="ff8addf1-223d-45bd-845c-e2a67ebb8933"/>
+    <listType typeId="f38d3895-b66d-4c95-930c-f772f4f8bc17" valueTypeId="d0250b34-415f-48e9-9c8a-2144777e106d"/>
+    <managerType typeId="b2d3af7e-1251-4751-aa57-9a96de6980c8" valueTypeId="2876b2e1-da71-4b66-884f-fc673de2c55b"/>
+    <recordSetType typeId="968751c5-54ce-432d-a98a-3f726523fa9f" valueTypeId="3460e830-a679-408c-b702-dbe05520afec"/>
+    <recordKeyType typeId="685a00ed-a95b-4243-b7e3-7e19154d5f7c" valueTypeId="fb44c35b-1f63-4878-b2f9-e0732e99943a"/>
+    <recordType typeId="86649667-deb1-466e-9d8b-4d8fad9e1956" valueTypeId="14193c38-6663-43ef-b343-e7e5754b444d"/>
+    <recordManagerType typeId="46a508b1-2a71-469a-8efb-26f1e92d122b" valueTypeId="3c3cd105-7bef-46f5-872b-1023357d7e8b"/>
+  </producedTypes>
+  <name>смартМаксимальныеСкидки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Максимальные скидки (смарт)</value>
+  </synonym>
+  <comment>//++ #Б5008 смарт: Шляпников 20.11.2025 / Создание механизма контроля максимальных скидок.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="cba861bd-d729-4dea-a1cd-793aafa36857">
+    <name>МаксимальнаяСкидка</name>
+    <synonym>
+      <key>ru</key>
+      <value>% максимальной скидки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9dc90f0c-4a1e-4d64-8b89-315d1b63db4e">
+    <name>Отменена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отменена</value>
+    </synonym>
+    <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7ffb22fe-4bcd-47de-8b75-ca66cd184fa8">
+    <name>СкидкаЗапрещена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Скидка запрещена</value>
+    </synonym>
+    <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="42735716-bc7b-4d70-88b2-2065a807ca12">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fb53b2cf-74d4-4445-a29f-9e8c3043ff4f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="74135381-ab7b-4d70-9884-3e0bb3229eb6">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c6a2aca-c164-4652-a61f-4c4340f32819">
+    <name>ДляДилеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Для дилеров</value>
+    </synonym>
+    <comment>//++ #Б5044 смарт: Шляпников 25.11.2025 / Доработка документа Установка максимальных скидок.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

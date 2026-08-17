@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ba5810a1-f7d4-40df-8017-fe0c78b2e0ff">
+  <name>смартКонтрольПриходаТовараДляОжидаемыхЗапчастей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контроль прихода товара для ожидаемых запчастей (смарт)</value>
+  </synonym>
+  <comment>//++ #1366 смарт: Фролов 02.06.2023 //Отслеживать появление на складах запчастей, требуемых для выполнения заявок со статусом  </comment>
+  <source>
+    <types>DocumentObject.ЗаказПоставщику</types>
+    <types>DocumentObject.ПриходныйОрдерНаТовары</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.смартКонтрольПриходаТовараДляОжидаемыхЗапчастейПриПроведенииДокументов</handler>
+</mdclass:EventSubscription>

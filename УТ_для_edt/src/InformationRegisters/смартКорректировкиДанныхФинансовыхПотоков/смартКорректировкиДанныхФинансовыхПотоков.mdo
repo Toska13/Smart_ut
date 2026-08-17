@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bb32a8e1-f0bf-46e6-a0fd-b8b52bfc3c46">
+  <producedTypes>
+    <selectionType typeId="92d8bacd-7b71-4f7c-80c6-9f065a7afab3" valueTypeId="7e631de2-4032-468d-96c1-c557f338a38f"/>
+    <listType typeId="0bc17239-e78a-4d89-aeca-ae33e177a5da" valueTypeId="d04e1bdb-d494-46a3-8a06-e49422d50d52"/>
+    <managerType typeId="8106dcac-af6d-44da-a6c2-09b26f2dfd09" valueTypeId="36ea1c38-1679-414a-845b-f0136982a930"/>
+    <recordSetType typeId="37c2ba9f-db9d-45aa-b8f9-9691da6366d1" valueTypeId="15e24201-5ef1-43e4-878d-93fc24833b86"/>
+    <recordKeyType typeId="eb35097d-cf92-48e1-85bb-aded84f144e7" valueTypeId="c1468866-8081-46e0-808c-85549155498b"/>
+    <recordType typeId="20ef3c5c-2e0a-42ad-9599-9fe301a31928" valueTypeId="af138dbc-e8f9-4af9-8f93-3aa7822e28b1"/>
+    <recordManagerType typeId="7841a893-4f14-448a-90a1-efd240f6bc23" valueTypeId="d01d395e-bd9f-4373-8445-db1df40accd7"/>
+  </producedTypes>
+  <name>смартКорректировкиДанныхФинансовыхПотоков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировки данных финансовых потоков (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-4676 смарт: Фролов 10.10.2025 //Доработка обработки &quot;Управление финансовыми потоками&quot;.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="65fc5da1-248c-43ce-a677-0ba5790071db">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="5d83988d-ced6-4de8-8056-ad643be96211">
+    <name>БанковскийСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банковский счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2b823e49-9eb4-4514-95cf-ff79ccedd1b3">
+    <name>Приход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приход</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

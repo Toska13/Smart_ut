@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bf208b83-9375-4a49-80cc-32d36002a0cb">
+  <producedTypes>
+    <selectionType typeId="7e516369-4909-4b5f-abd0-14549515395a" valueTypeId="047f876f-1f19-4e7e-90e0-47b12598d11e"/>
+    <listType typeId="cf5e8e37-1efe-404e-aea9-bc2753a703c9" valueTypeId="9f714795-76fe-4571-a0be-be53575fb5db"/>
+    <managerType typeId="657c66c7-67b8-445f-b420-fee432ad4764" valueTypeId="9af3bb5a-22e1-4c84-abf6-138aa0ea6711"/>
+    <recordSetType typeId="b501ae9f-db7e-402c-9213-30b2c9e36df4" valueTypeId="36087806-1c36-4d8f-b914-80eeea1abfcb"/>
+    <recordKeyType typeId="b81c6f7a-0ab0-4199-a3fd-2326406e7833" valueTypeId="6ecd8230-e227-4e54-84db-1c6f0f7b77fe"/>
+    <recordType typeId="7c7ffcbc-8c67-482a-b49b-0fa68f478d07" valueTypeId="f953c3ea-7bab-4f14-a49d-1b7a9d5262ed"/>
+    <recordManagerType typeId="666305d1-6b5b-44ea-9cda-5b260b5e8259" valueTypeId="6ba22203-f00d-4810-91da-482f29b458d4"/>
+  </producedTypes>
+  <name>CRM_ЗадачиПользователей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Задачи пользователей</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>User Tasks</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.CRM_ЗадачиПользователей.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.CRM_ЗадачиПользователей.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d49f9be8-60fa-41e5-b3d4-9c7418238f06">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияСобытий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статус задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Status of user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4e14f137-1888-4141-9514-30e174b1a611">
+    <name>Важность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Важность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Importance</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыВажностиВзаимодействия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Важность задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Importance of user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c454099b-47fd-4ef5-87f1-337744c8b188">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Наименование задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Tasks of users</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="abd94eb1-ab6b-4d9a-a933-a4af27b784d9">
+    <name>КрайнийСрок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Крайний срок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deadline</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy HH:mm'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy HH:mm'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Крайний срок задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The deadline for user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="56b0db44-7fec-470a-af55-d4dc15ff30c3">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Author</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Автор задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Author of user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="53bfe12d-dec2-49ca-9de2-3597643c98b7">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ответственный задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Responsible user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9c41851a-8936-4cf4-9afd-c4664fb2722f">
+    <name>Проверяющий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверяющий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>The check</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Проверяющий задачи пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Verifying user tasks</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="655061dc-7a1d-4000-8f1a-09e9a7222c0e">
+    <name>Поставлено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставлено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Delivered</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Поставлено всего задач</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Complete tasks set</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="aa26099b-927d-4490-baf6-2f7ca0c060f0">
+    <name>Закрыта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрыта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Closed</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Закрыта задача</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Closed Task</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3d635122-48ee-40ca-aaaf-0c21e2009399">
+    <name>Номер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>14</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер задачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Task number</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="4d36a433-bd36-40da-a22e-8397fbae2f9b">
+    <name>ВключатьВремя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Включать время</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Include time</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Включать время выполнения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Enable runtime</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="503f4425-f128-4d91-945a-0d03c3842de0">
+    <name>ЧтоСделать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Что сделать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>What to do</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Что сделать с задачей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>What to do with the task</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="fe7f99d3-ba21-4630-8295-1e95d0c8586b">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь задачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Task user</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="592e6682-6bb9-4b88-ab20-af42fe4fe1f6">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+      <types>TaskRef.ЗадачаИсполнителя</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект задач пользователей</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>User task object</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="94f976a3-8674-4b30-986f-99bf7a102618">
+    <name>Клиент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Client</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="b5dbc0c4-4540-48ac-b3e4-fb5cac7b2beb">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="96e49497-c727-4d5e-8d7f-d049bfd744d0">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c478fdac-49c5-4dbc-84e0-16a705e0b141">
+  <name>CRM_ПланируемаяАктивностьПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планируемая активность при записи (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>When recording the planned activity</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.CRM_Взаимодействие</types>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_ВзаимодействияСервер.ПриЗаписиПланируемойАктивности</handler>
+</mdclass:EventSubscription>

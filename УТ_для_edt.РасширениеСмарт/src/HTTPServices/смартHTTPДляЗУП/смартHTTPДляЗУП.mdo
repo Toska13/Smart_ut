@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c75bf54c-e988-4d27-aff3-dc5b02fe152f">
+  <name>смартHTTPДляЗУП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Смарт HTTPДля ЗУП</value>
+  </synonym>
+  <rootURL>zup</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="460dd5ae-7a8e-4381-b01f-db33a15a8b3d">
+    <name>ЗагрузкаEnterpriseData</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка enterprise data</value>
+    </synonym>
+    <template>/EnterpriseData/*</template>
+    <methods uuid="98cab247-eaca-4416-a271-b0eb6100c0f4">
+      <name>ЗагрузитьДанныеИзЗУП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Загрузить данные из ЗУП</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>смартЗагрузитьДанныеИзЗУП</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a9ed35a3-4abd-48c0-8393-9c081e55a5bf">
+    <name>ЗагрузкаДанныхОбОтпусках</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка данных об отпусках</value>
+    </synonym>
+    <template>/vacation/*</template>
+    <methods uuid="8f3f77cf-8f40-4feb-841f-26fb5b1da2e5">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ЗагрузкаДанныхОбОтпускахPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

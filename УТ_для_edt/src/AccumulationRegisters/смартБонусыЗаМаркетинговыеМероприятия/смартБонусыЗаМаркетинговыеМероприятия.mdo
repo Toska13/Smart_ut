@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f365e46d-2141-470a-afc6-3775ad33bed0">
+  <producedTypes>
+    <selectionType typeId="0568bdcc-b6ad-4f8e-b97f-2da069c5c879" valueTypeId="eb152b1a-a432-4d7c-91f9-26711aa4722a"/>
+    <listType typeId="f091bde2-4462-4f80-aa38-c2e7b17a99dd" valueTypeId="82369e33-64ad-41a9-8cb5-5c45e9b39dae"/>
+    <managerType typeId="1462db30-09f9-4a93-b6d9-12981f878ca3" valueTypeId="d0aecdc1-fbf7-4f89-add3-8e1da2d33138"/>
+    <recordSetType typeId="0cdb03c9-d15c-40df-8aeb-8379028c9ca1" valueTypeId="dd12b264-1c20-4d69-b424-ad99f464377f"/>
+    <recordKeyType typeId="d7aa785d-faa1-48cb-bead-85307ddfc124" valueTypeId="7a28da3e-3c6a-4a97-acf5-343a2933e6b6"/>
+    <recordType typeId="b6c59207-3d7e-4114-87f7-a7b7f5faffba" valueTypeId="fd95851e-a104-4f98-a38e-ffd6084541d1"/>
+  </producedTypes>
+  <name>смартБонусыЗаМаркетинговыеМероприятия</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы за маркетинговые мероприятия (смарт)</value>
+  </synonym>
+  <comment>#6224 смарт: Тимофеева 13.04.2026 / Расчет бонусов инженеров за маркетинговые мероприятия</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="cb4f9390-2d31-409d-b41d-cd851b96d4e8">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="24b1e8f0-d3d7-472f-9f3b-3bf33ca79de9">
+    <name>Инженер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0f9d108f-1c74-4a59-ae1d-b80e0407c29f">
+    <name>МаркетинговоеМероприятие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маркетинговое мероприятие</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.МаркетинговыеМероприятияДокумент</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="cdf2f73f-565d-43af-9c61-532e82ac6aae">
+    <name>ЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ клиента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e1427ff3-61c0-40db-850f-d36f8bb744ee">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

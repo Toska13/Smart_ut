@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure 
+	xmlns="http://v8.1c.ru/8.1/data/core" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Property name="Справочники">
+		<Value xsi:type="Structure">
+			<!--Типы источников: 
+"api" - Таблица справочника загружается посредствам методов api (имя метода указывается в одноименном свойстве источника); 
+"Объект" - Таблица справочника хранится в данных объекта (Обработка) и инициализируется (загружается текстового макета, содержащего сериоализованную таблицу значений) при запуске обработки
+"Виртуальный" - Таблица справочника физически не загружается. Для получения данных справочника (например, поиск данных справочника по идентификатору)используются специальные обработчики (указываются в соответствующих свойствах источника)-->
+			<Property name="Страны">
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">Страны</Value>
+					</Property>
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Страны</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure" />
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникСтраны</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ПоляСтатистическогоОтчета">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Поля статистического отчета</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure" />
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникПоляСтатистическогоОтчета</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ПравовыеФормы">
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">ПравовыеФормы</Value>
+					</Property>
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Организационно-правовые формы</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ЮридическоеЛицо">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ЮридическоеЛицо</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="СтранаИдентификатор">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">СтранаИдентификатор</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникПравовыеФормы</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="СтатусыЗаказов">
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">СтатусыЗаказов</Value>
+					</Property>
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Статусы заказов</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure" />
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникСтатусыЗаказов</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="Терминалы">
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">Терминалы</Value>
+					</Property>
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Терминалы</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ГородИдентификатор">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ГородИдентификатор</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Адрес">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Адрес</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Информация">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Информация</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникТерминалы</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="Контрагенты">
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">Контрагенты</Value>
+					</Property>
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Контрагенты</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ЭтоТекущийКонтрагент">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ЭтоТекущийКонтрагент</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="УровеньДоступа">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">УровеньДоступа</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникКонтрагенты</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="СпецТребования">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Спец. требования</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="Заголовок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Заголовок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="НесовместимаяУслуга">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">НесовместимаяУслуга</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникСпецТребования</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Сервер</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="УслугиПРР">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Погрузо-разгрузочные работы</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ТребуетсяЗначение">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ТребуетсяЗначение</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">api</Value>
+							</Property>
+							<Property name="Метод">
+								<Value xsi:type="xs:string">СправочникУслугиПРР</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Сервер</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="УслугиНаТерминале">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Услуги на терминале</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="Заголовок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Заголовок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ТребуетсяЗначение">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ТребуетсяЗначение</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ИдентификаторУпаковки">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИдентификаторУпаковки</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="КодУслуги">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">КодУслуги</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ПолеКоличество">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ПолеКоличество</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">УслугиНаТерминале</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Сервер</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="НаселенныеПункты">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Населенные пункты</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="КодКЛАДР">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">КодКЛАДР</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Виртуальный</Value>
+							</Property>
+							<Property name="Обработчики">
+								<Value xsi:type="Structure">
+									<Property name="НайтиПоИдентификатору">
+										<Value xsi:type="xs:string">НайтиНаселенныйПунктПоИдентификатору</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ТипыУдостоверяющихДокументов">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Типы удостоверяющих документов</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">ТипыУдостоверяющихДокументов</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="РолиВПеревозке">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Роли заказчика в перевозке</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ПолныйДоступ">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ПолныйДоступ</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ОграниченныйДоступ">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ОграниченныйДоступ</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Булево</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">РолиВПеревозке</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ЕдиницыИзмерения">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Единицы измерения</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="НаименованиеПолное">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">НаименованиеПолное</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Коэффициент">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Коэффициент</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">ЕдиницыИзмерения</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ФормыОплаты">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Формы оплаты</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="ИдентификаторДоставкаДоАдреса">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИдентификаторДоставкаДоАдреса</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">ФормыОплаты</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ВидыПлательщиков">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Виды плательщиков</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">ВидыПлательщиков</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="СоставыГруза">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Составы груза</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">СоставыГруза</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="ВидыКонтрагентов">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Виды контрагентов</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+							<Property name="Порядок">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">Порядок</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Число</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">ВидыКонтрагентов</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="СтатусыСтатистическогоОтчета">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Статусы статистического отчета</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ИмяПредопределенного">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ИмяПредопределенного</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">СтатусыСтатистическогоОтчета</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="СтатусыДокументов">
+				<Value xsi:type="Structure">
+					<Property name="Синоним">
+						<Value xsi:type="xs:string">Статусы документов</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure"></Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Объект</Value>
+							</Property>
+							<Property name="Таблица">
+								<Value xsi:type="xs:string">СтатусыДокументов</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+			<Property name="Улицы">
+				<Value xsi:type="Structure">
+					<Property name="Владелец">
+						<Value xsi:type="Structure">
+							<Property name="Справочник">
+								<Value xsi:type="xs:string">НаселенныеПункты</Value>
+							</Property>
+							<Property name="Реквизит">
+								<Value xsi:type="xs:string">ГородИдентификатор</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Реквизиты">
+						<Value xsi:type="Structure">
+							<Property name="ГородИдентификатор">
+								<Value xsi:type="Structure">
+									<Property name="Имя">
+										<Value xsi:type="xs:string">ГородИдентификатор</Value>
+									</Property>
+									<Property name="Тип">
+										<Value xsi:type="xs:string">Строка</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Источник">
+						<Value xsi:type="Structure">
+							<Property name="Тип">
+								<Value xsi:type="xs:string">Виртуальный</Value>
+							</Property>
+							<Property name="Обработчики">
+								<Value xsi:type="Structure">
+									<Property name="НайтиПоИдентификатору">
+										<Value xsi:type="xs:string">НайтиУлицуПоИдентификатору</Value>
+									</Property>
+								</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="Хранилище">
+						<Value xsi:type="Structure">
+							<Property name="Расположение">
+								<Value xsi:type="xs:string">Клиент</Value>
+							</Property>
+						</Value>
+					</Property>
+					<Property name="СпособыВыбора">
+						<Value xsi:type="Structure">
+							<Property name="БыстрыйВыбор">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+							<Property name="ВводПоСтроке">
+								<Value xsi:type="xs:boolean">true</Value>
+							</Property>
+							<Property name="ФормаВыбора">
+								<Value xsi:type="xs:boolean">false</Value>
+							</Property>
+						</Value>
+					</Property>
+				</Value>
+			</Property>
+		</Value>
+	</Property>
+</Structure>

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b040d32f-415d-463e-8463-32730e0ec4cf">
+  <producedTypes>
+    <objectType typeId="283236ed-db32-40c1-b77d-a544541782de" valueTypeId="dc7bbd29-376d-4078-9a01-2f023e7a274a"/>
+    <managerType typeId="8102626f-186f-4045-9d7b-b70f297ce2d2" valueTypeId="4a01d998-f4fa-46a7-81a7-72c25d2acb52"/>
+  </producedTypes>
+  <name>смартПечатьСопроводительныхДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Печать сопроводительных документов (смарт)</value>
+  </synonym>
+  <comment>// смарт:ММ #044 224 137 27.04.2020</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.смартПечатьСопроводительныхДокументов.Form.Форма</defaultForm>
+  <attributes uuid="481a9f82-2000-45b6-81a5-e5984f86ea22">
+    <name>НомерОтправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер отправления</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="90a5d3dc-a1d8-4af8-a6a5-dfe4dd94b2f0">
+    <name>ДатаОтправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отправления</value>
+    </synonym>
+    <comment>#4418 смарт: Тимофеева 26.09.2025 / Обработка Печать Сопроводительных Документов. Доработка.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="065da9de-f5d0-4ab9-a151-44bad6c78075">
+    <name>ВесБрутто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вес брутто</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="32a463f4-7985-4084-a0d0-00249098ae16">
+    <name>БанковскийСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банковский счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="09071360-c54c-4514-9652-0024168a0624">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="624e24e4-4b22-4e9f-a76c-da1ff02d6c14">
+    <name>ЗаменаЧего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Замена чего</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c0bbdcb1-a96b-4e45-a056-1142cff45dc7">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d9f65866-74c4-4f49-9573-ad49da5efb9f">
+    <name>Оператор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор</value>
+    </synonym>
+    <comment>// 27.08.2020</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="778ebbf6-59f8-4974-b17c-cc1ddb5e90a6">
+    <name>ЛицоСПравомПодписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лицо с правом подписи</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОтветственныеЛицаОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="703f0fee-e579-4b99-8467-210c100c8432">
+    <producedTypes>
+      <objectType typeId="5784a3e2-16e6-4a80-8402-db3586d768c9" valueTypeId="54ef2ef8-8765-4d21-9985-574e7853f750"/>
+      <rowType typeId="0c653d6a-3d51-4481-862b-923cf3dcf6a2" valueTypeId="375863bf-4943-4375-b0a4-cf238f044e0b"/>
+    </producedTypes>
+    <name>ЗапчастиКОтправке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запчасти к отправке</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ec075210-66f0-4d96-97e7-40378f45f4eb">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e782dd41-2494-45ba-99c8-88cfcccbe803">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество запчастей</value>
+      </toolTip>
+      <minValue xsi:type="core:StringValue">
+        <value>1</value>
+      </minValue>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af1c5d33-2e37-4073-9b92-533b9da13094">
+      <name>КодТНВЭД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ТНВЭД</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КлассификаторТНВЭД</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Код по товарной номенклатуре внешнеэкономической деятельности Таможенного союза</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceForm>Catalog.КлассификаторТНВЭД.Form.ФормаВыбора</choiceForm>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f77f7216-20f8-4d46-9c8c-8adb51c89fa5">
+      <name>ВесНетто</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вес (нетто)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:StringValue">
+        <value>1</value>
+      </minValue>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4beed0f8-380c-42b1-aed6-663fcfffe55d">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2fb7a5d4-aeb2-4b0a-817c-59b5f5fd16e8">
+      <name>Описание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Описание</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <multiLine>true</multiLine>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="875a40bb-f15a-46ab-acca-283a670c545c">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9eb7a3dd-a8e6-4714-8395-fe65bd137e99">
+      <name>НомерЗаявки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер заявки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="5e063284-052d-4fe9-afc0-7d0f421e0af9">
+      <name>ЗаявкаСсылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заявка ссылка</value>
+      </synonym>
+      <comment>//смарт:ММ 635 19.10.2021</comment>
+      <type>
+        <types>DocumentRef.смартЗаявкаНаГарантийныйРемонт</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b6890c3-d85c-4d81-886a-a01ab2fe2686">
+      <name>НомерОтправления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер отправления</value>
+      </synonym>
+      <comment>#4418 смарт: Тимофеева 26.09.2025 / Обработка Печать Сопроводительных Документов. Доработка.</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="5536c7e2-ab03-4150-a1e6-14ba7c18cd67">
+      <name>ДатаОтправления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата отправления</value>
+      </synonym>
+      <comment>#4418 смарт: Тимофеева 26.09.2025 / Обработка Печать Сопроводительных Документов. Доработка.</comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="959b4ffe-e09d-4af7-add0-2489e5fa04f7">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="d44680a5-dc82-48e9-8e57-daa512c43005">
+    <name>ИнвойсMimaki</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвойс Mimaki</value>
+    </synonym>
+    <comment>TNT</comment>
+  </templates>
+  <templates uuid="cea782fd-412d-4d9d-a1b3-f0f8790829de">
+    <name>Приложение1Mimaki</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приложение1 Mimaki</value>
+    </synonym>
+  </templates>
+  <templates uuid="d478b732-5c19-4639-bc58-249131452b8d">
+    <name>РекламационныйАктMimaki</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рекламационный акт Mimaki</value>
+    </synonym>
+  </templates>
+  <templates uuid="94b9e278-b459-4060-a6ee-d8a2b28262c4">
+    <name>ИнвойсMimakiDHL</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвойс Mimaki</value>
+    </synonym>
+    <comment>DHL</comment>
+  </templates>
+  <templates uuid="4a8c7776-02d1-44eb-b900-aec81f0192ea">
+    <name>ПФ_MXL_РекламационныйАкт</name>
+    <synonym>
+      <key>ru</key>
+      <value>П ф MXL рекламационный акт</value>
+    </synonym>
+  </templates>
+  <templates uuid="24b0f41e-0c51-467b-9fc0-50c0242f78d5">
+    <name>ПФ_MXL_Инвойс</name>
+    <synonym>
+      <key>ru</key>
+      <value>П ф MXL инвойс</value>
+    </synonym>
+  </templates>
+  <templates uuid="3cb11168-6a4f-4cb7-91d6-8304429145b3">
+    <name>ПФ_MXL_УпаковочныйЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>П ф MXL упаковочный лист</value>
+    </synonym>
+  </templates>
+  <templates uuid="a19ac4b9-68b9-42a0-b8e0-689b46fe5ec0">
+    <name>ПФ_MXL_БланкПередачиБрака</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бланк передачи брака</value>
+    </synonym>
+    <comment>//++ #Б-5960 смарт: Фролов 06.03.2026 //Печать сопроводительных документов. Новый бланк</comment>
+  </templates>
+  <commands uuid="e44bfea1-78c5-4729-8130-ea78c8a691cb">
+    <name>ПечатьСопроводительныхДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать сопроводительных документов (смарт)</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

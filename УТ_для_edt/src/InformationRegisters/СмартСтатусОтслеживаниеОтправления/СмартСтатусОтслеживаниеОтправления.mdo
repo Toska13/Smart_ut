@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="041da5e8-eb95-4ff3-ae40-9b24fce14854">
+  <producedTypes>
+    <selectionType typeId="d397d07c-0147-443e-b6df-613dafddde92" valueTypeId="50912429-1019-4d08-8d13-01c5f351fd64"/>
+    <listType typeId="8dbc3885-623f-46d8-80c4-63248fdae3ab" valueTypeId="108d3fe4-da7c-4c4f-a216-547af0489398"/>
+    <managerType typeId="8637ad0d-24c1-44bb-9d67-099b300daf25" valueTypeId="f73e0e06-72f2-4560-a4c8-c8816905f473"/>
+    <recordSetType typeId="26aafedc-974d-42b1-9d86-49eb2bd4fa80" valueTypeId="3aa2fbed-31e7-4474-8a54-29e3244fa496"/>
+    <recordKeyType typeId="50389d9d-71de-4c57-bb7f-c21e5a591011" valueTypeId="fd279786-80fd-4762-9156-ef399b71cc47"/>
+    <recordType typeId="fdedf454-9cd9-4000-83d5-31a8da111d2d" valueTypeId="95fc36dc-284e-4fac-95f9-1bf60cf6c6c7"/>
+    <recordManagerType typeId="97e8b980-5ebd-418c-82f7-7d80e77ae363" valueTypeId="2b873b2f-2298-4503-9912-e29584bf69ae"/>
+  </producedTypes>
+  <name>СмартСтатусОтслеживаниеОтправления</name>
+  <synonym>
+    <key>ru</key>
+    <value>(Смарт) Статус, отслеживание отправления</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="1b687659-84e2-4e63-9593-84762a9f969b">
+    <name>СтатусЗадания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус задания</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыЗаданийНаПеревозку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e65ef157-c3f0-422e-bed6-9c90b04800cb">
+    <name>ТрекНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трек номер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>40</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="9b865b07-7fef-4cb9-9a04-411cc62c0642">
+    <name>ЗаданиеНаПеревозку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задание на перевозку</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаданиеНаПеревозку</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="dd9ab401-f19d-4fee-89d6-0cbb7ccdc6ea">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

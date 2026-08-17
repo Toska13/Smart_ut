@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="81d85e7c-1b49-497a-b003-e6f6d9ad892c">
+  <producedTypes>
+    <selectionType typeId="50684449-1cc9-46d3-85b4-954b20ff619e" valueTypeId="b521d836-ccde-42c2-8a56-3f49cd4fc415"/>
+    <listType typeId="223058bb-e1b6-4f83-a6be-41a9164a7c2a" valueTypeId="362796b4-88e1-4cf6-8c59-18284a9b586f"/>
+    <managerType typeId="8ab834bb-e13f-4cc8-85b3-acebfe777e63" valueTypeId="32b6fa9b-6ebe-4982-8286-570909dca535"/>
+    <recordSetType typeId="20c48c7c-7c9c-4251-bdf0-dfe19cfec033" valueTypeId="8e98d698-a81e-4dd3-9fd6-86af5c5df6d8"/>
+    <recordKeyType typeId="52c81b98-c73d-49f4-97d4-2f35e9bab1c2" valueTypeId="883cb3e3-ca2f-4da8-b90e-d272854de80f"/>
+    <recordType typeId="fa11d60b-d1ec-4174-8722-6caad20b6265" valueTypeId="70398a71-6520-403a-86ef-fded4e65d90a"/>
+    <recordManagerType typeId="50ec04e1-94ac-4519-8cc3-a9a83e250d19" valueTypeId="9c7e08e7-4896-49b8-b6e8-723422ae4487"/>
+  </producedTypes>
+  <name>CRM_ИсторияСостоянийОбращений</name>
+  <synonym>
+    <key>ru</key>
+    <value>История состояний обращений</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.CRM_ИсторияСостоянийОбращений.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="68a41e79-e129-4933-b8af-9cf8a29867a6">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияИнтересов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="026dd058-af8b-4efa-aafc-4fb323d89f82">
+    <name>ДатаЗавершения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата завершения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="bf58bafd-1f72-4aa1-8174-8c151b7f4154">
+    <name>смартСтатусRoistat</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус Roistat (смарт)</value>
+    </synonym>
+    <comment>#Б-1538 смарт: Лопато 05.12.2024 //Интеграция с ROIStat. Добавить справочник Статусы ROIStat, доработать регистр состояний Интересов</comment>
+    <type>
+      <types>CatalogRef.смартСтатусыRoistat</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="c6f919e5-ce8a-4289-a10b-b258acaf1f9b">
+    <name>Обращение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обращение</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="dd555cfc-b3e9-4def-916e-73439cfe6519">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

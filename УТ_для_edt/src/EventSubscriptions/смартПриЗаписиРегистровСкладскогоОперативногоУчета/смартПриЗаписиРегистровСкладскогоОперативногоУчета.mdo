@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="17f362bb-cccc-4700-8181-b2e171791ca7">
+  <name>смартПриЗаписиРегистровСкладскогоОперативногоУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи регистров складского оперативного учета (смарт)</value>
+  </synonym>
+  <comment>//++ #Б1154 смарт: Шляпников 17.10.2024 / Контроль оперативных остатков в разрезе организаций</comment>
+  <source>
+    <types>AccumulationRegisterRecordSet.ГрафикПоступленияТоваров</types>
+    <types>AccumulationRegisterRecordSet.ТоварыКОтгрузке</types>
+    <types>AccumulationRegisterRecordSet.СвободныеОстатки</types>
+    <types>AccumulationRegisterRecordSet.ГрафикОтгрузкиТоваров</types>
+    <types>AccumulationRegisterRecordSet.ТоварыНаСкладах</types>
+    <types>AccumulationRegisterRecordSet.ТоварыКОтбору</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбеспечение.смартПриЗаписиРегистровСкладскогоОперативногоУчетаПриЗаписи</handler>
+</mdclass:EventSubscription>

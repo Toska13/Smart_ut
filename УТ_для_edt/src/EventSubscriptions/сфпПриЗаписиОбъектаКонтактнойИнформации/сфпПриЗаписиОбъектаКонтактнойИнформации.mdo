@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="17721159-fc0b-40e9-a7a1-4a8faed84eab">
+  <name>сфпПриЗаписиОбъектаКонтактнойИнформации</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи объекта контактной информации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>At record of object of the contact information</value>
+  </synonym>
+  <comment>Сохраняет телефоны для его дальнейшего поиска в регистре СофтФон</comment>
+  <source>
+    <types>DefinedType.сфпКонтактВзаимодействияОбъект</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.сфпСофтФонПроСервер.сфпПриЗаписиОбъектаСофтФона</handler>
+</mdclass:EventSubscription>

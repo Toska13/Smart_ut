@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b6591368-3a87-443d-ae9e-0e031ace7a67">
+  <producedTypes>
+    <selectionType typeId="5c29db51-67ee-4deb-8bab-d6d7136a4aaa" valueTypeId="678764f6-e4e4-458e-a6fa-da892561ea45"/>
+    <listType typeId="622598b1-25bb-4359-b2cc-4ea12e198e96" valueTypeId="5e400359-44f2-43d5-a0b6-7dcba84321d7"/>
+    <managerType typeId="1b25a6e3-554c-413a-8aea-09fa550d08b4" valueTypeId="45630266-94ed-4378-ad57-66cd9a4312bc"/>
+    <recordSetType typeId="724de938-fbfb-4d2d-abbe-9f8d48f17380" valueTypeId="1bf66753-45b3-4612-a165-547783abbf67"/>
+    <recordKeyType typeId="cf44abce-55a1-4625-9581-687dedebde1d" valueTypeId="a16e58f4-c2a7-4282-a77e-c677fda4b205"/>
+    <recordType typeId="fa1f9fd2-3fa9-4f34-9eb3-657c906b4a80" valueTypeId="cec943bc-4be6-4cd6-a054-c4b56d4f06bb"/>
+    <recordManagerType typeId="cab34773-2b4a-48b7-926a-a69ab813f7c3" valueTypeId="3bf3467f-c64d-42ce-8163-1e05119c5537"/>
+  </producedTypes>
+  <name>CRM_СтатусыПисемEmailРассылки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы писем Email рассылки</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Email statuses of mailings</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="54e85314-5807-4128-83c0-535935d61c6b">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_СтатусыПисемEmailРассылки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="7703e063-d99c-4ebd-abaa-15e4303db590">
+    <name>СтатусСтрокой</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус строкой</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status in the line</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="5733dc5e-38fe-4abf-a6d0-385f36cb2353">
+    <name>Письмо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Письмо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Letter</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

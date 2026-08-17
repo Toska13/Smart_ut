@@ -1,0 +1,64 @@
+var group_id = &group_id;
+var properties = &properties;
+var created_objects = [];
+
+var resItems = API.market.getProperties({"group_id":group_id});
+
+var i = properties.length-1;
+while (i > -1){
+	var property = properties[i];
+	var variants = property.variants;
+	var property_id = 0;
+	var variantsItems = [];
+	i = i-1;
+
+	if (property.id == 0){
+		property_id = API.market.addProperty({"group_id":group_id, "type":"text", "title":property.title}).property_id;
+		created_objects.push({"type":"property", "guid":property.guid, "id":property_id});
+	}
+	else{
+		property_id = property.id;
+		var j = resItems.items.length-1;
+		while (j > -1){
+			if (resItems.items[j].id == property_id){
+				variantsItems = resItems.items[j].variants;
+				if ((resItems.items[j].title == property.title)==false){
+					var res = API.market.editProperty({"group_id": group_id, "property_id":property_id, "type":"text", "title":property.title});
+				};
+				j =	-1;
+			}	
+			else{
+				j =	j - 1;
+			};
+		};
+	};
+	
+	var j = variants.length-1;
+	while (j > -1){
+		var variant_id = 0;
+		var variant = variants[j];
+		if (variant.id == 0){
+			variant_id = API.market.addPropertyVariant({"group_id": group_id, "property_id": property_id, "title":variant.title}).variant_id;
+			created_objects.push({"type":"variant", "guid":variant.guid, "id":variant_id});
+		}
+		else{
+			variant_id = variant.id;
+			var k = variantsItems.length-1;
+			while (k > -1){
+				if (variantsItems[k].id == variant_id){
+					if ((variantsItems[k].title == variant.title)==false){
+						var res = API.market.editPropertyVariant({"group_id": group_id, "variant_id":variant_id, "title":variant.title, "name":variant.title});
+					};
+					k =	-1;
+				}	
+				else{
+					k =	k - 1;
+				};
+			};
+		};
+		j =	j - 1;
+	};
+};
+
+return created_objects;
+

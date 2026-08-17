@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Офис</dataPath>
+			<field>Офис</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипУслуги</dataPath>
+			<field>ТипУслуги</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пользователь</dataPath>
+			<field>Пользователь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Responsible</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">24</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОтгружено</dataPath>
+			<field>СуммаОтгружено</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОплачено</dataPath>
+			<field>СуммаОплачено</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлановаяДата</dataPath>
+			<field>ПлановаяДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Партнер</dataPath>
+			<field>Партнер</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">25</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаЗавершения</dataPath>
+			<field>ДатаЗавершения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КартаМаршрута</dataPath>
+			<field>КартаМаршрута</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНачала</dataPath>
+			<field>ДатаНачала</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">42</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеЭтапа</dataPath>
+			<field>СостояниеЭтапа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сегмент</dataPath>
+			<field>Сегмент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>БизнесРегион</dataPath>
+			<field>БизнесРегион</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бизнес регион</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Business Region</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НовыйКлиент</dataPath>
+			<field>НовыйКлиент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новый клиент</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>New Customer</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеИсточникаПривлечения</dataPath>
+			<field>ЗначениеИсточникаПривлечения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Значение источника привлечения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Value of the source of attraction</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Завершено</dataPath>
+			<field>Завершено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершено</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Completed</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникПривлечения</dataPath>
+			<field>ИсточникПривлечения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник привлечения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Referral Source</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтапОтбор</dataPath>
+			<field>ЭтапОтбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этап отбор</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage Filter</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТекущийЭтап</dataPath>
+			<field>ТекущийЭтап</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий этап</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Current stage</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеЭтапаОтбор</dataPath>
+			<field>СостояниеЭтапаОтбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние этапа</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Stage state</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СледующееДействие</dataPath>
+			<field>СледующееДействие</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Следующее действие</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Next Action</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">38</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сделка</dataPath>
+			<field>Сделка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Тема</dataPath>
+			<field>Тема</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПланируемаяДата</dataPath>
+			<field>ПланируемаяДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСледующегоДействия</dataPath>
+			<field>ДатаСледующегоДействия</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата следующего действия</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Next action date</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Обращение</dataPath>
+			<field>Обращение</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокНаЭтапе</dataPath>
+			<field>СрокНаЭтапе</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок на этапе</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(КалендарныеГрафики.ДатаГрафика) КАК СрокНаЭтапе,
+	CRM_ИсторияСостоянийОбращенийСрезПоследних.Обращение КАК Обращение
+ПОМЕСТИТЬ смартСрокиНаЭтапе
+ИЗ
+	РегистрСведений.CRM_ИсторияСостоянийОбращений.СрезПоследних(&amp;ТекущаяДата, ) КАК CRM_ИсторияСостоянийОбращенийСрезПоследних
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.КалендарныеГрафики КАК КалендарныеГрафики
+		ПО CRM_ИсторияСостоянийОбращенийСрезПоследних.Период &lt;= КалендарныеГрафики.ДатаГрафика
+			И (КалендарныеГрафики.ДеньВключенВГрафик)
+			И (КалендарныеГрафики.ДатаГрафика &lt;= &amp;ТекущаяДата)
+			И (КалендарныеГрафики.Календарь = &amp;Календарь)
+
+СГРУППИРОВАТЬ ПО
+	CRM_ИсторияСостоянийОбращенийСрезПоследних.Состояние.ОжидаемыйСрокНаЭтапе,
+	CRM_ИсторияСостоянийОбращенийСрезПоследних.Обращение
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВложенныйЗапрос.Ссылка КАК Этап,
+	ВложенныйЗапрос.КартаМаршрута КАК КартаМаршрута,
+	ВложенныйЗапрос.ТочкаМаршрута КАК ТочкаМаршрута,
+	ВложенныйЗапрос.РеквизитДопУпорядочивания КАК Порядок
+ПОМЕСТИТЬ ЭтапыТочекМаршрута
+ИЗ
+	(ВЫБРАТЬ РАЗЛИЧНЫЕ ПЕРВЫЕ 100
+		CRM_ВоронкиПродажСостав.Ссылка КАК Ссылка,
+		CRM_ВоронкиПродажСостав.КартаМаршрута КАК КартаМаршрута,
+		CRM_ВоронкиПродажСостав.ТочкаМаршрута КАК ТочкаМаршрута,
+		CRM_ВоронкиПродажСостав.Ссылка.РеквизитДопУпорядочивания КАК РеквизитДопУпорядочивания
+	ИЗ
+		Справочник.CRM_ВоронкиПродаж.Состав КАК CRM_ВоронкиПродажСостав
+	ГДЕ
+		CRM_ВоронкиПродажСостав.Ссылка.Родитель = &amp;Воронка
+		И НЕ CRM_ВоронкиПродажСостав.Ссылка.ПометкаУдаления
+	
+	УПОРЯДОЧИТЬ ПО
+		РеквизитДопУпорядочивания) КАК ВложенныйЗапрос
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	CRM_СостоянияВоронкиПродаж.Объект КАК Объект,
+	МИНИМУМ(CRM_СостоянияВоронкиПродаж.ДатаНачала) КАК ПерваяДата,
+	МАКСИМУМ(ЭтапыТочекМаршрута.Порядок) КАК ПорядокМакс,
+	МИНИМУМ(ЭтапыТочекМаршрута.Порядок) КАК ПорядокМин,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.Партнер) КАК Партнер,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.Пользователь) КАК Пользователь,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.Подразделение) КАК Подразделение,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.Офис) КАК Офис,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.ТипУслуги) КАК ТипУслуги,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродаж.Сумма) КАК Сумма
+ПОМЕСТИТЬ CRM_СостоянияВоронкиПродажОбъекты
+ИЗ
+	РегистрСведений.CRM_СостоянияВоронкиПродаж КАК CRM_СостоянияВоронкиПродаж
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ЭтапыТочекМаршрута КАК ЭтапыТочекМаршрута
+		ПО (ЭтапыТочекМаршрута.ТочкаМаршрута = CRM_СостоянияВоронкиПродаж.Этап)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+		ПО (ПартнерыСегмента.Партнер = CRM_СостоянияВоронкиПродаж.Партнер)
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ИсточникиПервичногоИнтересаСрезПоследних.Период КАК Период,
+			ИсточникиПервичногоИнтересаСрезПоследних.Партнер КАК Партнер,
+			ИсточникиПервичногоИнтересаСрезПоследних.КаналПервичногоИнтереса КАК ИсточникПривлечения,
+			ИсточникиПервичногоИнтересаСрезПоследних.ИсточникПервичногоИнтереса КАК ЗначениеИсточникаПривлечения
+		ИЗ
+			РегистрСведений.ИсточникиПервичногоИнтереса.СрезПоследних КАК ИсточникиПервичногоИнтересаСрезПоследних
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					МАКСИМУМ(ИсточникиПервичногоИнтересаСрезПоследних.Период) КАК Период,
+					ИсточникиПервичногоИнтересаСрезПоследних.Партнер КАК Партнер
+				ИЗ
+					РегистрСведений.ИсточникиПервичногоИнтереса.СрезПоследних КАК ИсточникиПервичногоИнтересаСрезПоследних
+				
+				СГРУППИРОВАТЬ ПО
+					ИсточникиПервичногоИнтересаСрезПоследних.Партнер) КАК МаксДатыСреза
+				ПО ИсточникиПервичногоИнтересаСрезПоследних.Период = МаксДатыСреза.Период
+					И ИсточникиПервичногоИнтересаСрезПоследних.Партнер = МаксДатыСреза.Партнер) КАК СрезПервичногоИнтереса
+		ПО CRM_СостоянияВоронкиПродаж.Партнер = СрезПервичногоИнтереса.Партнер
+			И CRM_СостоянияВоронкиПродаж.Объект.Дата &gt;= СрезПервичногоИнтереса.Период
+ГДЕ
+	ВЫБОР
+			КОГДА CRM_СостоянияВоронкиПродаж.ДатаЗавершения &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА CRM_СостоянияВоронкиПродаж.ДатаЗавершения МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			ИНАЧЕ ВЫБОР
+					КОГДА CRM_СостоянияВоронкиПродаж.ПлановаяДата &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+						ТОГДА CRM_СостоянияВоронкиПродаж.ПлановаяДата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+					ИНАЧЕ ВЫБОР
+							КОГДА CRM_СостоянияВоронкиПродаж.ДатаНачала &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+								ТОГДА CRM_СостоянияВоронкиПродаж.ДатаНачала МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+							ИНАЧЕ ИСТИНА
+						КОНЕЦ
+				КОНЕЦ
+		КОНЕЦ
+	И НЕ CRM_СостоянияВоронкиПродаж.Объект.ПометкаУдаления
+	И (ВЫБОР
+				КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА Документ.CRM_Интерес
+					ТОГДА CRM_СостоянияВоронкиПродаж.Объект.ДатаЗакрытия
+				КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА БизнесПроцесс.CRM_БизнесПроцесс
+					ТОГДА CRM_СостоянияВоронкиПродаж.Объект.ДатаЗавершения
+				ИНАЧЕ CRM_СостоянияВоронкиПродаж.Объект.Дата
+			КОНЕЦ МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+			ИЛИ ВЫБОР
+				КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА Документ.CRM_Интерес
+					ТОГДА CRM_СостоянияВоронкиПродаж.Объект.ДатаЗакрытия
+				КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА БизнесПроцесс.CRM_БизнесПроцесс
+					ТОГДА CRM_СостоянияВоронкиПродаж.Объект.ДатаЗавершения
+				ИНАЧЕ CRM_СостоянияВоронкиПродаж.Объект.Дата
+			КОНЕЦ = ДАТАВРЕМЯ(1, 1, 1))
+{ГДЕ
+	CRM_СостоянияВоронкиПродаж.Пользователь КАК Пользователь,
+	CRM_СостоянияВоронкиПродаж.Офис КАК Офис,
+	CRM_СостоянияВоронкиПродаж.ТипУслуги КАК ТипУслуги,
+	CRM_СостоянияВоронкиПродаж.Подразделение КАК Подразделение,
+	CRM_СостоянияВоронкиПродаж.Партнер.БизнесРегион КАК БизнесРегион,
+	CRM_СостоянияВоронкиПродаж.СостояниеЭтапа КАК СостояниеЭтапа,
+	CRM_СостоянияВоронкиПродаж.Объект КАК Объект,
+	ПартнерыСегмента.Сегмент КАК Сегмент,
+	(CRM_СостоянияВоронкиПродаж.Партнер.ДатаРегистрации &gt; &amp;НачалоПериода
+			ИЛИ CRM_СостоянияВоронкиПродаж.Партнер ССЫЛКА Справочник.CRM_ПотенциальныеКлиенты) КАК НовыйКлиент,
+	СрезПервичногоИнтереса.ИсточникПривлечения КАК ИсточникПривлечения,
+	СрезПервичногоИнтереса.ЗначениеИсточникаПривлечения КАК ЗначениеИсточникаПривлечения,
+	(ВЫБОР
+			КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА Документ.CRM_Интерес
+				ТОГДА CRM_СостоянияВоронкиПродаж.Объект.Завершен
+			КОГДА CRM_СостоянияВоронкиПродаж.Объект ССЫЛКА БизнесПроцесс.CRM_БизнесПроцесс
+				ТОГДА CRM_СостоянияВоронкиПродаж.Объект.ДатаЗавершения &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+			ИНАЧЕ ИСТИНА
+		КОНЕЦ) КАК Завершено}
+
+СГРУППИРОВАТЬ ПО
+	CRM_СостоянияВоронкиПродаж.Объект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	КалендарныеГрафики.ДатаГрафика КАК ДатаГрафика,
+	КалендарныеГрафики.ДеньВключенВГрафик КАК ДеньВключенВГрафик
+ПОМЕСТИТЬ КалендарныйГрафик
+ИЗ
+	РегистрСведений.КалендарныеГрафики КАК КалендарныеГрафики
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			МИНИМУМ(CRM_СостоянияВоронкиПродажОбъекты.ПерваяДата) КАК ПерваяДата
+		ИЗ
+			CRM_СостоянияВоронкиПродажОбъекты КАК CRM_СостоянияВоронкиПродажОбъекты) КАК ВложенныйЗапрос
+		ПО КалендарныеГрафики.ДатаГрафика &gt;= ВложенныйЗапрос.ПерваяДата
+ГДЕ
+	КалендарныеГрафики.Календарь = &amp;Календарь
+	И КалендарныеГрафики.ДатаГрафика &lt;= &amp;ТекущаяДата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	CRM_СостоянияВоронкиПродажОбъекты.Объект КАК Объект,
+	ЭтапыТочекМаршрута.Этап КАК Этап,
+	ЭтапыТочекМаршрута1.Этап КАК ТекущийЭтап,
+	CRM_СостоянияВоронкиПродажОбъекты.Партнер КАК Партнер,
+	CRM_СостоянияВоронкиПродажОбъекты.Пользователь КАК Пользователь,
+	CRM_СостоянияВоронкиПродажОбъекты.Подразделение КАК Подразделение,
+	CRM_СостоянияВоронкиПродажОбъекты.Офис КАК Офис,
+	CRM_СостоянияВоронкиПродажОбъекты.ТипУслуги КАК ТипУслуги,
+	CRM_СостоянияВоронкиПродажОбъекты.Сумма КАК Сумма
+ПОМЕСТИТЬ ЭтапыОбъектов
+ИЗ
+	CRM_СостоянияВоронкиПродажОбъекты КАК CRM_СостоянияВоронкиПродажОбъекты
+		ЛЕВОЕ СОЕДИНЕНИЕ ЭтапыТочекМаршрута КАК ЭтапыТочекМаршрута
+		ПО (ЭтапыТочекМаршрута.Порядок &lt;= CRM_СостоянияВоронкиПродажОбъекты.ПорядокМакс)
+		ЛЕВОЕ СОЕДИНЕНИЕ ЭтапыТочекМаршрута КАК ЭтапыТочекМаршрута1
+		ПО (ЭтапыТочекМаршрута1.Порядок = CRM_СостоянияВоронкиПродажОбъекты.ПорядокМакс)
+
+СГРУППИРОВАТЬ ПО
+	CRM_СостоянияВоронкиПродажОбъекты.Объект,
+	ЭтапыТочекМаршрута.Этап,
+	ЭтапыТочекМаршрута1.Этап,
+	CRM_СостоянияВоронкиПродажОбъекты.Партнер,
+	CRM_СостоянияВоронкиПродажОбъекты.Пользователь,
+	CRM_СостоянияВоронкиПродажОбъекты.Подразделение,
+	CRM_СостоянияВоронкиПродажОбъекты.Офис,
+	CRM_СостоянияВоронкиПродажОбъекты.ТипУслуги,
+	CRM_СостоянияВоронкиПродажОбъекты.Сумма
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЭтапыОбъектов.Этап КАК Этап,
+	ЭтапыОбъектов.ТекущийЭтап КАК ТекущийЭтап,
+	ЭтапыОбъектов.Объект КАК Объект,
+	ЕСТЬNULL(CRM_СостоянияВоронкиПродаж.СостояниеЭтапа, &amp;ЭтапПропущен) КАК СостояниеЭтапа,
+	ЭтапыОбъектов.Партнер КАК Партнер,
+	ЭтапыОбъектов.Пользователь КАК Пользователь,
+	ЭтапыОбъектов.Подразделение КАК Подразделение,
+	ЭтапыОбъектов.Офис КАК Офис,
+	ЭтапыОбъектов.ТипУслуги КАК ТипУслуги,
+	CRM_СостоянияВоронкиПродаж.КартаМаршрута КАК КартаМаршрута,
+	CRM_СостоянияВоронкиПродаж.ДатаНачала КАК ДатаНачала,
+	CRM_СостоянияВоронкиПродаж.ДатаЗавершения КАК ДатаЗавершения,
+	CRM_СостоянияВоронкиПродаж.ПлановаяДата КАК ПлановаяДата,
+	ЭтапыОбъектов.Сумма КАК Сумма,
+	CRM_СостоянияВоронкиПродаж.СуммаОтгружено КАК СуммаОтгружено,
+	CRM_СостоянияВоронкиПродаж.СуммаОплачено КАК СуммаОплачено,
+	ЕСТЬNULL(CRM_СостоянияВоронкиПродаж.Количество, 1) КАК Количество,
+	ЭтапыТочекМаршрута.ТочкаМаршрута КАК ТочкаМаршрута,
+	ЭтапыТочекМаршрута.Порядок КАК Порядок
+ПОМЕСТИТЬ CRM_СостоянияВоронкиПродажОтбор
+ИЗ
+	ЭтапыОбъектов КАК ЭтапыОбъектов
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.CRM_СостоянияВоронкиПродаж КАК CRM_СостоянияВоронкиПродаж
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ЭтапыТочекМаршрута КАК ЭтапыТочекМаршрута
+			ПО CRM_СостоянияВоронкиПродаж.Этап = ЭтапыТочекМаршрута.ТочкаМаршрута
+		ПО (ЭтапыТочекМаршрута.Этап = ЭтапыОбъектов.Этап)
+			И ЭтапыОбъектов.Объект = CRM_СостоянияВоронкиПродаж.Объект
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_СостоянияВоронкиПродажОтбор.Этап КАК ЭтапОтбор,
+	CRM_СостоянияВоронкиПродажОтбор.Объект КАК Объект,
+	МИНИМУМ(CRM_СостоянияВоронкиПродажОтбор.СостояниеЭтапа) КАК СостояниеЭтапаОтбор,
+	CRM_СостоянияВоронкиПродажОтбор.Партнер КАК Партнер,
+	CRM_СостоянияВоронкиПродажОтбор.Пользователь КАК Пользователь,
+	CRM_СостоянияВоронкиПродажОтбор.Подразделение КАК Подразделение,
+	CRM_СостоянияВоронкиПродажОтбор.Офис КАК Офис,
+	CRM_СостоянияВоронкиПродажОтбор.КартаМаршрута КАК КартаМаршрута,
+	CRM_СостоянияВоронкиПродажОтбор.ТипУслуги КАК ТипУслуги,
+	МИНИМУМ(CRM_СостоянияВоронкиПродажОтбор.ДатаНачала) КАК ДатаНачала,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродажОтбор.ДатаЗавершения) КАК ДатаЗавершения,
+	МАКСИМУМ(CRM_СостоянияВоронкиПродажОтбор.ПлановаяДата) КАК ПлановаяДата,
+	СРЕДНЕЕ(CRM_СостоянияВоронкиПродажОтбор.Сумма) КАК Сумма,
+	СРЕДНЕЕ(CRM_СостоянияВоронкиПродажОтбор.СуммаОтгружено) КАК СуммаОтгружено,
+	СРЕДНЕЕ(CRM_СостоянияВоронкиПродажОтбор.СуммаОплачено) КАК СуммаОплачено,
+	СРЕДНЕЕ(CRM_СостоянияВоронкиПродажОтбор.Количество) КАК Количество,
+	CRM_СостоянияВоронкиПродажОтбор.ТекущийЭтап КАК ТекущийЭтап,
+	МАКСИМУМ(ВложенныйЗапрос.Тема) КАК СледующееДействие,
+	МАКСИМУМ(ВложенныйЗапрос.ПланируемаяДата) КАК ДатаСледующегоДействия,
+	смартСрокиНаЭтапе.СрокНаЭтапе КАК СрокНаЭтапе
+ИЗ
+	CRM_СостоянияВоронкиПродажОтбор КАК CRM_СостоянияВоронкиПродажОтбор
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			CRM_ЗапланированныеАктивности.Объект КАК Объект,
+			МИНИМУМ(CRM_ЗапланированныеАктивности.ПланируемаяДата) КАК ПланируемаяДата,
+			МИНИМУМ(CRM_ЗапланированныеАктивности.Тема) КАК Тема
+		ИЗ
+			РегистрСведений.CRM_ЗапланированныеАктивности КАК CRM_ЗапланированныеАктивности
+				ВНУТРЕННЕЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+					CRM_ЗапланированныеАктивности.Объект КАК Объект,
+					МИНИМУМ(CRM_ЗапланированныеАктивности.ПланируемаяДата) КАК ПланируемаяДата
+				ИЗ
+					РегистрСведений.CRM_ЗапланированныеАктивности КАК CRM_ЗапланированныеАктивности
+				
+				СГРУППИРОВАТЬ ПО
+					CRM_ЗапланированныеАктивности.Объект) КАК ВложенныйЗапрос
+				ПО CRM_ЗапланированныеАктивности.Объект = ВложенныйЗапрос.Объект
+					И CRM_ЗапланированныеАктивности.ПланируемаяДата = ВложенныйЗапрос.ПланируемаяДата
+		
+		СГРУППИРОВАТЬ ПО
+			CRM_ЗапланированныеАктивности.Объект) КАК ВложенныйЗапрос
+		ПО CRM_СостоянияВоронкиПродажОтбор.Объект = ВложенныйЗапрос.Объект
+		ЛЕВОЕ СОЕДИНЕНИЕ смартСрокиНаЭтапе КАК смартСрокиНаЭтапе
+		ПО CRM_СостоянияВоронкиПродажОтбор.Объект = смартСрокиНаЭтапе.Обращение
+
+СГРУППИРОВАТЬ ПО
+	CRM_СостоянияВоронкиПродажОтбор.Этап,
+	CRM_СостоянияВоронкиПродажОтбор.Объект,
+	CRM_СостоянияВоронкиПродажОтбор.Партнер,
+	CRM_СостоянияВоронкиПродажОтбор.Пользователь,
+	CRM_СостоянияВоронкиПродажОтбор.Подразделение,
+	CRM_СостоянияВоронкиПродажОтбор.Офис,
+	CRM_СостоянияВоронкиПродажОтбор.КартаМаршрута,
+	CRM_СостоянияВоронкиПродажОтбор.ТипУслуги,
+	CRM_СостоянияВоронкиПродажОтбор.ТекущийЭтап,
+	смартСрокиНаЭтапе.СрокНаЭтапе</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ОбщееКоличество</dataPath>
+		<expression>КоличествоАктивных+КоличествоУспешных+КоличествоНеудачных+КоличествоПропущенных</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общее количество</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Total</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>СледующееДействиеПредставление</dataPath>
+		<expression>Формат(ДатаСледующегоДействия, "ДФ='dd.MM.yyyy HH:mm'") + ", " + СледующееДействие</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Следующее действие</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Next Action</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<parameter>
+		<name>Воронка</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Воронка</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Funnel</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_ВоронкиПродаж</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>Календарь</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Календарь</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Calendar</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Календари</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>Константы.ОсновнойКалендарьПредприятия.Получить()</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Current date</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ПервыйЭтапВоронки</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Первый этап воронки</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>The first stage of the funnel</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_ВоронкиПродаж</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЭтапПропущен</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Этап пропущен</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Stage Skipped</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:string</v8:Type>
+			<v8:StringQualifiers>
+				<v8:Length>20</v8:Length>
+				<v8:AllowedLength>Variable</v8:AllowedLength>
+			</v8:StringQualifiers>
+		</valueType>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<expression>НСтр("en = 'Stage Skipped'; ru = 'Этап пропущен'")</expression>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расшифровка воронки продаж</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Sales Funnel Description</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СрокНаЭтапе</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект.ПричинаОтказа</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Причины отказа</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТекущийЭтап</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Партнер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СледующееДействиеПредставление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Пользователь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТипУслуги</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Количество</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Воронка</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:viewMode>Inaccessible</dcsset:viewMode>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a03c04e5-a9a7-4de1-909c-6ca773f4e787</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>fdee6ffe-1a3f-45f7-930e-acec8c47132a</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Порядок</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СледующееДействиеПредставление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ПлановаяДата</dcsset:left>
+								<dcsset:comparisonType>Less</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:Field">ПараметрыДанных.ТекущаяДата</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаЗавершения</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+									<v8:date>0001-01-01T00:00:00</v8:date>
+								</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ТекущийЭтап</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:Field">ПараметрыДанных.ПервыйЭтапВоронки</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">СостояниеЭтапаОтбор</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.CRM_СостоянияЭтаповВоронки.Активный</dcsset:right>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#FF989C</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СледующееДействиеПредставление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаЗавершения</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+									<v8:date>0001-01-01T00:00:00</v8:date>
+								</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">СостояниеЭтапаОтбор</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.CRM_СостоянияЭтаповВоронки.Активный</dcsset:right>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#5BFF9B</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СледующееДействиеПредставление</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemGroup">
+							<dcsset:groupType>AndGroup</dcsset:groupType>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ПлановаяДата</dcsset:left>
+								<dcsset:comparisonType>Less</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:Field">ПараметрыДанных.ТекущаяДата</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ДатаЗавершения</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="v8:StandardBeginningDate">
+									<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+									<v8:date>0001-01-01T00:00:00</v8:date>
+								</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ТекущийЭтап</dcsset:left>
+								<dcsset:comparisonType>NotEqual</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:Field">ПараметрыДанных.ПервыйЭтапВоронки</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">СостояниеЭтапаОтбор</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.CRM_СостоянияЭтаповВоронки.Активный</dcsset:right>
+							</dcsset:item>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">#F0FFA6</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СостояниеЭтапаОтбор</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Пользователь</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c84286b2-e7ec-4e91-b258-fa8229250c73">
+  <name>CRM_РегистрыСведенийПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистры сведений перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Information register before writing (CRM)</value>
+  </synonym>
+  <comment>Регистры сведений перед записью (CRM)</comment>
+  <source>
+    <types>InformationRegisterRecordSet.КонтактыВзаимодействий</types>
+    <types>InformationRegisterRecordSet.ПредметыПапкиВзаимодействий</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.РегистрыСведенийПередЗаписью</handler>
+</mdclass:EventSubscription>

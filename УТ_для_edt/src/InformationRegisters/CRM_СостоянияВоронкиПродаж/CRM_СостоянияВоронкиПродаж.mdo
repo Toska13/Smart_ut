@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1bfb9bad-ba02-4047-9872-31bff6a93010">
+  <producedTypes>
+    <selectionType typeId="be66ae96-1176-4b4e-ab2f-c2425f5376fd" valueTypeId="2410f0f1-4c05-4afb-a4ca-daef50dfb21f"/>
+    <listType typeId="7c179440-37cf-4f12-b825-eb5ee55d7798" valueTypeId="18e78adf-f020-4cbd-8e2a-0bb619fe5e39"/>
+    <managerType typeId="c3f51dbf-76bc-4a16-b397-87deda723489" valueTypeId="f00cd891-2e0a-4ed9-b81e-fe08a3abea2a"/>
+    <recordSetType typeId="ce0b9b95-a8d8-4ee5-9068-891add93a4b6" valueTypeId="36e39739-2fe9-4340-95f4-530df06c744c"/>
+    <recordKeyType typeId="69ad6571-9fc0-4ef6-bada-f2eadfdcaad0" valueTypeId="b8ecbdd5-cc0b-4c0f-9559-46beb142edd8"/>
+    <recordType typeId="4fa38c7c-317f-4569-8e28-8567f86d2ffc" valueTypeId="bbcff7e9-8805-4745-8651-b868ec759c2e"/>
+    <recordManagerType typeId="e18e780f-7aed-4975-9074-947941d47e9a" valueTypeId="b6a313ed-9038-44e4-8de0-463330eb3997"/>
+  </producedTypes>
+  <name>CRM_СостоянияВоронкиПродаж</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния воронки продаж</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Funnel sales conditions</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="eca00029-abd9-4deb-b828-c6417f20af20">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Partner</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+      <types>CatalogRef.CRM_ПотенциальныеКлиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="b7437a57-09e7-4c60-b521-065c0adb7841">
+    <name>ПредыдущийЭтап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предыдущий этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Previous stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияИнтересов</types>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+      <types>ChartOfCharacteristicTypesRef.CRM_ВидыОбъектовБизнесПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3f31b25b-0794-46bd-b28b-96bc75c4ce47">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>User</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1777cd77-63b7-41bc-8e6b-136015f82a77">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Department</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c335db34-8c23-42d1-873b-ca82a9661f4a">
+    <name>Офис</name>
+    <synonym>
+      <key>ru</key>
+      <value>Офис</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Office</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ОфисыКомпании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="43488a9b-173b-423e-b14d-4624ad608ac6">
+    <name>КартаМаршрута</name>
+    <synonym>
+      <key>ru</key>
+      <value>Карта маршрута</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Flow Chart</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_КартыМаршрутов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c12d58ed-dcc6-4da3-8c8d-881567f7ac4c">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Service Type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="04af85c9-abbc-4a50-b8a3-c559a771cecb">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="55b6ccda-c62d-4a94-ab80-de2054b24883">
+    <name>ДатаЗавершения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата завершения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="614203d1-5f9a-4af6-b7da-5e007eceaaec">
+    <name>ПлановаяДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановая дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planned Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="92dcb5d2-8f3a-4a43-8cd3-2c0dae0026a3">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f625c040-e5ac-4cd3-9f39-e01c4bc34d17">
+    <name>СуммаОтгружено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма отгружено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity shipped</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c4ab4e00-e337-44b3-aa8b-b708e4751745">
+    <name>СуммаОплачено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма оплачено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity paid</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1d1e7a08-323e-4924-a27c-e6bf659ad12f">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6843d433-a74d-4ec1-a579-c70c20da5c22">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_СостоянияИнтересов</types>
+      <types>CatalogRef.CRM_ТочкиМаршрутов</types>
+      <types>ChartOfCharacteristicTypesRef.CRM_ВидыОбъектовБизнесПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9c7e27c0-7f1e-46ee-ad92-609b58a6bca7">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВнутреннееПотреблениеТоваров</types>
+      <types>DocumentRef.АктОРасхожденияхПослеПеремещения</types>
+      <types>DocumentRef.РасходныйОрдерНаТовары</types>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.АктОРасхожденияхПослеОтгрузки</types>
+      <types>DocumentRef.ДвижениеПрочихАктивовПассивов</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      <types>DocumentRef.ОперацияПоПлатежнойКарте</types>
+      <types>DocumentRef.CRM_Интерес</types>
+      <types>DocumentRef.ЧекККМВозврат</types>
+      <types>DocumentRef.CRM_РассылкаЭлектронныхПисем</types>
+      <types>DocumentRef.CRM_Взаимодействие</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.ОрдерНаОтражениеПересортицыТоваров</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.АктОРасхожденияхПослеПриемки</types>
+      <types>DocumentRef.ЭлектронноеПисьмоВходящее</types>
+      <types>DocumentRef.ПоступлениеТоваровНаСклад</types>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+      <types>DocumentRef.CRM_Телемаркетинг</types>
+      <types>DocumentRef.ТранспортнаяНакладная</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.CRM_Заявка</types>
+      <types>DocumentRef.ОрдерНаОтражениеИзлишковТоваров</types>
+      <types>DocumentRef.ЗаявкаНаВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.СписаниеНедостачТоваров</types>
+      <types>DocumentRef.ПеремещениеТоваров</types>
+      <types>DocumentRef.ОрдерНаОтражениеНедостачТоваров</types>
+      <types>DocumentRef.ОрдерНаОтражениеПорчиТоваров</types>
+      <types>DocumentRef.ЗаказНаСборку</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.УстановкаЦенНоменклатуры</types>
+      <types>DocumentRef.удалитьCRM_Мероприятие</types>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+      <types>DocumentRef.КорректировкаПоОрдеруНаТовары</types>
+      <types>BusinessProcessRef.CRM_БизнесПроцесс</types>
+      <types>DocumentRef.КорректировкаНазначенияТоваров</types>
+      <types>DocumentRef.ПересортицаТоваров</types>
+      <types>DocumentRef.АвансовыйОтчет</types>
+      <types>DocumentRef.КорректировкаПриобретения</types>
+      <types>DocumentRef.СчетФактураВыданный</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ПересчетТоваров</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыКлиентом</types>
+      <types>DocumentRef.ДоверенностьВыданная</types>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+      <types>DocumentRef.АннулированиеПодарочныхСертификатов</types>
+      <types>DocumentRef.АктВыполненныхРабот</types>
+      <types>DocumentRef.ОтчетОРозничныхПродажах</types>
+      <types>DocumentRef.УдалитьCRM_Сделка</types>
+      <types>DocumentRef.ПоручениеЭкспедитору</types>
+      <types>DocumentRef.ЗаказНаПеремещение</types>
+      <types>DocumentRef.КоммерческоеПредложениеКлиенту</types>
+      <types>DocumentRef.ОприходованиеИзлишковТоваров</types>
+      <types>DocumentRef.ЧекККМ</types>
+      <types>DocumentRef.ОжидаемоеПоступлениеДенежныхСредств</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.СборкаТоваров</types>
+      <types>DocumentRef.СверкаВзаиморасчетов</types>
+      <types>DocumentRef.ЗаданиеТорговомуПредставителю</types>
+      <types>DocumentRef.СообщениеSMS</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ПриходныйОрдерНаТовары</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыУПоставщика</types>
+      <types>DocumentRef.ВзаимозачетЗадолженности</types>
+      <types>DocumentRef.ЗаявкаНаРасходованиеДенежныхСредств</types>
+      <types>DocumentRef.СчетНаОплатуКлиенту</types>
+      <types>DocumentRef.ПрочееОприходованиеТоваров</types>
+      <types>DocumentRef.ЗаказНаВнутреннееПотребление</types>
+      <types>DocumentRef.РеализацияПодарочныхСертификатов</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ЗаданиеНаПеревозку</types>
+      <types>DocumentRef.УдалитьCRM_Событие</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.УпаковочныйЛист</types>
+      <types>DocumentRef.ОрдерНаПеремещениеТоваров</types>
+      <types>DocumentRef.ПорчаТоваров</types>
+      <types>DocumentRef.CRM_ОтчетОРаботе</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4a4ad6b9-94a4-48f3-8cb3-ab1ffbbda06b">
+    <name>СостояниеЭтапа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние этапа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage state</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_СостоянияЭтаповВоронки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

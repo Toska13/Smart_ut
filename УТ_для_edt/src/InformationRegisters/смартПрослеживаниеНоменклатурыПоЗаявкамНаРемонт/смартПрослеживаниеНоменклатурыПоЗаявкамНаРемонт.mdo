@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="898ff7ec-4cb2-4b7c-bc11-63c04fd37461">
+  <producedTypes>
+    <selectionType typeId="157b2be8-e43d-44f1-ad72-98fa1f70f57d" valueTypeId="d6eda58c-f252-429d-ae67-0cf382e24b16"/>
+    <listType typeId="f90e63b5-fb09-4c2d-a3cf-bd02ea6940cd" valueTypeId="67390bdb-771a-4454-b045-20812c9808cd"/>
+    <managerType typeId="057e5085-ddd7-4fa4-8b48-3ab7ae01e6fc" valueTypeId="4fff79e2-b774-44ad-8812-cd1a8d51d8d2"/>
+    <recordSetType typeId="ade8bb60-2ffc-475a-8073-2b214fe2a22a" valueTypeId="32ada7c7-7b51-446a-b444-6eda3d16ca11"/>
+    <recordKeyType typeId="88057e70-fe29-4150-b7f0-f73a4d5fd5f2" valueTypeId="4c385a94-1cff-40ee-8a6f-ba56bf7237e0"/>
+    <recordType typeId="49bf60c4-c0f6-4a32-8ea9-f81ad837ec08" valueTypeId="f0f6a925-a071-48de-a47e-13fee0bf37de"/>
+    <recordManagerType typeId="186a6190-1e23-4943-a6c3-a06dd3d8dabb" valueTypeId="58cc89e8-df8d-4f2a-ab3a-af310b16ac30"/>
+  </producedTypes>
+  <name>смартПрослеживаниеНоменклатурыПоЗаявкамНаРемонт</name>
+  <synonym>
+    <key>ru</key>
+    <value>Прослеживание номенклатуры по заявкам на ремонт (смарт)</value>
+  </synonym>
+  <comment>//++ #1646 смарт: Мосолов 20.02.2024 // Контроль разобранного оборудования и снятых запчастей</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="29e3faf8-bf8f-49de-be32-e9086074d12c">
+    <name>ЗаявкаНаРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на ремонт</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.смартЗаявкаНаРемонтныеРаботы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a3795837-1154-4e93-af8c-4ab62bbd9512">
+    <name>ДокументСборки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ сборки</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.СборкаТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8b3555f8-50b0-4ab2-be62-6c1909ca61b4">
+    <name>ТипСборки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип сборки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1eb52440-6059-4765-b828-6db9eef8f726">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ef048000-bf37-4171-8d91-5420f0b8bf5e">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="124d7842-302a-4b44-99b0-e2ad097e64f1">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

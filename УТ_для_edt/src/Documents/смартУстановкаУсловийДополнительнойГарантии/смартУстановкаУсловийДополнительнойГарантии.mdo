@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0025f8db-3d07-4353-a4c0-fa41952f9fde">
+  <producedTypes>
+    <objectType typeId="34325c95-8205-4e17-84ec-4906f8103408" valueTypeId="c43eb096-53fe-4c8d-82fb-3e5f02920599"/>
+    <refType typeId="635a55f6-9842-4a35-9a7e-7c3af007474d" valueTypeId="b121aedc-f550-4db5-af89-f6e8b02255ae"/>
+    <selectionType typeId="09c05c89-6919-45af-8a55-114cc09d5e8f" valueTypeId="046703f3-d192-4c24-8dc0-04c29ce8f4d6"/>
+    <listType typeId="cbb294d0-06b4-4a73-80d8-ad05ae68d5db" valueTypeId="b379b6d3-dcf9-4979-83b0-be9c1b73e80e"/>
+    <managerType typeId="2f81025f-d0e2-4b39-a90f-e716b37baf70" valueTypeId="205c4aeb-477a-4b49-a696-7ff57154ac93"/>
+  </producedTypes>
+  <name>смартУстановкаУсловийДополнительнойГарантии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка условий дополнительной гарантии (смарт)</value>
+  </synonym>
+  <comment>//++ #1944 смарт: Мосолов 26.07.2024 // Реализовать механизм предложения доп гарантии при покупке оборудования.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартУстановкаУсловийДополнительнойГарантии.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартУстановкаУсловийДополнительнойГарантии.Form.ФормаДокумента</defaultObjectForm>
+  <registerRecords>InformationRegister.смартУсловияДополнительнойГарантии</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="66c6902c-24a7-46e7-99aa-793595eead83">
+    <name>Автор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="393e11a6-0a33-452d-938b-3bb344f4e179">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="f75185f0-5aee-483e-aa78-5d87b0a7e4f9">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="3fc34af5-e649-4dfb-b425-e79b04f507f9">
+    <producedTypes>
+      <objectType typeId="8ca2d4c0-52c0-44b0-a8e2-bedcf8e92d0b" valueTypeId="7c54e8fc-98f4-464e-9731-cbf35ed8e2aa"/>
+      <rowType typeId="e674d4c4-6279-463d-aab1-d8ca484364fb" valueTypeId="f6e14076-52ab-4084-aa14-51dadf12ac13"/>
+    </producedTypes>
+    <name>СписокОборудования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список оборудования</value>
+    </synonym>
+    <attributes uuid="4a2e8e8c-0d0b-481a-83b6-39c60850f0d9">
+      <name>Оборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Оборудование</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартОборудованиеКлиентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="47f89e0d-9117-4f7e-926c-d071ece1fe12">
+      <name>СрокГарантииНаОборудование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Срок гарантии на оборудование, мес.</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="741f7c8c-0967-4f4d-ba1c-431effde256e">
+      <name>СрокГарантииНаГоловку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Срок гарантии на головку, мес.</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c0fd0762-4b62-4d41-912e-e6afb800ec1f">
+      <name>СтоимостьДопГарантииНаПервомЭтапе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость доп. гарантии на первом этапе, % от стоимости</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="13005032-eae8-4d9c-9c02-0fc4482a84d9">
+      <name>СтоимостьДопГарантииНаВторомЭтапе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость доп гарантии на втором этапе</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d65192ea-1714-4d4e-a655-a376494caf00">
+      <name>ДатаНачалаДействияУсловий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала действия условий</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="eccc8783-cc82-4070-9f64-faf53034d3bd">
+      <name>ДатаОкончанияДействияУсловий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата окончания действия условий</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d845a1df-d75e-4052-96dc-564aa91b1839">
+      <name>Недействителен</name>
+      <synonym>
+        <key>ru</key>
+        <value>Недействителен</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

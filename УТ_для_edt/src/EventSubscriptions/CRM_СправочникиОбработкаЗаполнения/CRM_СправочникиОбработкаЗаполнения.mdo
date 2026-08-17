@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eb248b2c-1d2b-470d-bace-2155cb4e2944">
+  <name>CRM_СправочникиОбработкаЗаполнения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Справочники обработка заполнения (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Catalogs before writing (CRM)</value>
+  </synonym>
+  <comment>Справочники обработка заполнения (CRM)</comment>
+  <source>
+    <types>CatalogObject.УчетныеЗаписиЭлектроннойПочты</types>
+    <types>CatalogObject.КонтактныеЛицаПартнеров</types>
+    <types>CatalogObject.Проекты</types>
+    <types>CatalogObject.Пользователи</types>
+    <types>CatalogObject.ФизическиеЛица</types>
+    <types>CatalogObject.Партнеры</types>
+    <types>CatalogObject.МаркетинговыеМероприятия</types>
+  </source>
+  <event>Filling</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.СправочникОбработкаЗаполнения</handler>
+</mdclass:EventSubscription>

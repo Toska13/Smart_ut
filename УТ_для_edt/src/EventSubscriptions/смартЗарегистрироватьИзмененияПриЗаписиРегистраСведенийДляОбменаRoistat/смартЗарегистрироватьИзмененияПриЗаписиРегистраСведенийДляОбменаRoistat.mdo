@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="527dda82-273d-4133-ab63-93a0bfcf490c">
+  <name>смартЗарегистрироватьИзмененияПриЗаписиРегистраСведенийДляОбменаRoistat</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарегистрировать изменения при записи регистра сведений для обмена с Roistat (смарт)</value>
+  </synonym>
+  <source>
+    <types>InformationRegisterRecordSet.CRM_ИсторияСостоянийОбращений</types>
+    <types>InformationRegisterRecordSet.СостоянияЗаказовКлиентов</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартИнтеграцияRoistat.ЗарегистрироватьИзмененияПриЗаписиРегистраСведенийДляОбменаRoistat</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd660e87-90f2-46dd-89d0-deddcf0af35f">
+  <producedTypes>
+    <selectionType typeId="1620e307-8047-499e-9f85-27f3ba86c495" valueTypeId="41a1cd1c-ddd0-4565-a0f5-05b273ca1f05"/>
+    <listType typeId="b5ac30b8-b63d-42e0-85be-ccf21afee34f" valueTypeId="42584bca-14fb-44b3-8d75-b0b1110aa2c5"/>
+    <managerType typeId="dd064046-ea1a-4f02-8622-48f000bea749" valueTypeId="f8568551-2d6d-45f0-bdee-008d757a3e4a"/>
+    <recordSetType typeId="66e516f5-5f2b-48e7-8e6e-d67718a8af06" valueTypeId="05e26be6-ed37-457e-8aad-718635a3dce8"/>
+    <recordKeyType typeId="dfdcb7e1-1dbc-4bfd-9d4a-db4eb032115b" valueTypeId="7a9e91f3-7253-4f86-94c4-3463b18ea24e"/>
+    <recordType typeId="931b98de-67b0-49cd-b0d6-fc8d77721e3f" valueTypeId="3a43c3d6-1d98-43db-9870-9183a813832a"/>
+    <recordManagerType typeId="eef22072-6811-40a1-8904-a1712f9b17a6" valueTypeId="a135658d-6b94-4f32-b4c7-b0cbe26a9908"/>
+  </producedTypes>
+  <name>CRM_ГоризонтПланированияВзаимодействий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Горизонт планирования взаимодействий</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Horizon of interaction planning</value>
+  </synonym>
+  <comment>Горизонт планирования взаимодействий (ЕИС)</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.CRM_ГоризонтПланированияВзаимодействий.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="02938ca7-b3f6-4158-b135-fbeb763da7c6">
+    <name>Дней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дней</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Days</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дней планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Planning days</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="c0552fe2-e0f5-4c70-9a38-fec11dbe2f5b">
+    <name>Важность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Важность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Importance</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ВажностьКлиентов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Важность планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The Importance of Planning</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b21307a6-41c0-472b-8d9d-ec63ea360d98">
+    <name>ТипУслуги</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип услуги</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Service Type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ТипУслуги</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип услуги планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Planning service type</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ff7a55c2-c848-4611-b57a-68e8fe73b6ff">
+    <name>КомпанияОфис</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компания / офис</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company / Office</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ОфисыКомпании</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Компания / офис планирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company / Planning Office</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="960cfb41-c23b-49b5-841e-3d564b3ce006">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of the list</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="46ffec22-eef9-4172-bd43-92a6be2847f3">
+    <name>НастройкаГоризонтаПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка горизонта планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setting the planning horizon</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="e00caa6f-23fc-4668-8675-4092e247f38a">
+    <name>ГоризонтПланированияВзаимодействий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настроить горизонт планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setup Planning Time Frame</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.CRM_ОфисыКомпании</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a305434-597d-414f-8bda-f9bf814c9c9d">
+  <producedTypes>
+    <selectionType typeId="3d476f01-b2d0-4d94-b70b-acb335b55114" valueTypeId="5d99db75-4ac0-438f-add1-ae41124eae99"/>
+    <listType typeId="c13e97b9-5123-4b8f-bda5-86765e04c9e6" valueTypeId="d0efe3fc-89be-4166-a14a-db992e1da7e6"/>
+    <managerType typeId="8e1ae364-961a-453e-a1cb-43665dce4b71" valueTypeId="1d537400-be15-42c7-9037-b4800000e84c"/>
+    <recordSetType typeId="d648c1bb-8b46-4697-92b0-98f8732dd8e9" valueTypeId="f5d8d408-5fa2-42f2-a269-e15426a808d4"/>
+    <recordKeyType typeId="8a9d0f7b-6a6d-4e27-9fac-8412e11fec5f" valueTypeId="5ab6abe3-4ae7-4c18-8f3b-a4a428186ae3"/>
+    <recordType typeId="aae89bb4-676b-45a4-baf4-747870adddd2" valueTypeId="e1e91b61-2c7c-4282-82bd-ffbdaa87c775"/>
+    <recordManagerType typeId="52bdad4f-f661-4723-8f8a-6063d5d53795" valueTypeId="3149395e-01a6-4780-b882-604c9342a529"/>
+  </producedTypes>
+  <name>CRM_СрокиОбработкиОбращений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сроки обработки обращений</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="6b703e5b-ab68-438b-8dac-690b7bd4d4c1">
+    <name>СрокОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок обработки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="568d9deb-5bee-4faa-beb2-d0ea25bd9031">
+    <name>Обращение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обращение</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>CatalogRef.CRM_Диалоги</types>
+      <types>DocumentRef.ЭлектронноеПисьмоВходящее</types>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+      <types>DocumentRef.CRM_Заявка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

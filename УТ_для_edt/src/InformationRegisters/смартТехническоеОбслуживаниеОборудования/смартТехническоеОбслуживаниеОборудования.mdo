@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="12430542-3804-41fe-a11c-c300d9afab89">
+  <producedTypes>
+    <selectionType typeId="09a3176a-126d-47c7-9392-d73e872e77e2" valueTypeId="d5cbe87e-290a-4f9e-96df-07c543283dbb"/>
+    <listType typeId="063e1da8-12a1-44e0-9418-0ad52cabd3ec" valueTypeId="65e3aad9-d155-4dfa-ab8d-a9b84e7967b9"/>
+    <managerType typeId="b4723fcb-4231-47bc-80db-f9e9eb3530b4" valueTypeId="d11e45a3-3d66-4e08-aeeb-5d466b88a29f"/>
+    <recordSetType typeId="2ee7be62-f91c-496f-99e8-52d82fa6c17c" valueTypeId="39ad5f0e-2126-4d66-aa59-28395480f3cb"/>
+    <recordKeyType typeId="541ee0a1-7c9a-4d6e-a504-1c42bcee1536" valueTypeId="06db8bd4-5155-4875-a0a8-bc9e1fc82cfd"/>
+    <recordType typeId="df61e558-03c9-49bb-8da6-946a5ca31215" valueTypeId="601da268-2a33-48ef-bdbf-26d997a89086"/>
+    <recordManagerType typeId="e78bd7ac-55b9-4f5e-be4c-f7876ee6140c" valueTypeId="a71fed2e-dc6a-4c33-9768-07744fec39fa"/>
+  </producedTypes>
+  <name>смартТехническоеОбслуживаниеОборудования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Техническое обслуживание оборудования (смарт)</value>
+  </synonym>
+  <comment>// смарт:rnp 409 15.12.2020</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="50fdbd63-4616-465f-9811-02247e49b633">
+    <name>СрокЗамены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок замены</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартСрокиЗаменыЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="552b673c-92e3-42d3-a7a8-73ec4f22d804">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:StringValue">
+      <value>1</value>
+    </minValue>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2eb1d518-0cba-4415-bf0a-582477a75342">
+    <name>Оборудование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборудование</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартОборудованиеКлиентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4dcdc6ca-9787-4e56-ab30-f1e8bc64d44f">
+    <name>Запчасть</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запчасть</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

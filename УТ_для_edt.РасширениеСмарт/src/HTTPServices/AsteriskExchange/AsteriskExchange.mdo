@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0a8535b5-8e3c-4e78-98e9-f201925f6c19">
+  <name>AsteriskExchange</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен данными с АТС Asterisk</value>
+  </synonym>
+  <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+  <rootURL>asterisk_exchange</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="b6dfcaa6-f279-4bb8-a6c8-53a1a2353c1c">
+    <name>events</name>
+    <synonym>
+      <key>ru</key>
+      <value>Events</value>
+    </synonym>
+    <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+    <template>/*</template>
+    <methods uuid="71f46142-307d-4a4c-9b71-a5c78fb81001">
+      <name>ВходящийВызовАТС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Входящий вызов АТС</value>
+      </synonym>
+      <comment>#1747 смарт: Ермаков 05.04.2024 / Интеграция телефонии в 1C:СRM - Создание HTTP Сервиса для оповещения 1С</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>ВходящийВызовАТС</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

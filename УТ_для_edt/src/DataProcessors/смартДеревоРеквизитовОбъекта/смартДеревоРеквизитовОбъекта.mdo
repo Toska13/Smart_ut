@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d43f4545-ca85-4baa-ad4e-e92896370437">
+  <producedTypes>
+    <objectType typeId="982ead09-4653-47a1-8ff6-faa0f576eb8c" valueTypeId="304ae380-40c7-4dec-b9c9-a1ad57dba4ed"/>
+    <managerType typeId="9ca92260-2aee-46e4-88a7-8c49a7aab2da" valueTypeId="5eee2aab-ef40-4cf3-a42c-fbc50f667047"/>
+  </producedTypes>
+  <name>смартДеревоРеквизитовОбъекта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дерево реквизитов объекта (смарт)</value>
+  </synonym>
+  <comment>#Б-3164 смарт: Лопато 20.05.2025 //Печать договора из Заказа клиента. Функциональное описание новой обработки.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.смартДеревоРеквизитовОбъекта.Form.Форма</defaultForm>
+  <attributes uuid="cb2ab163-6bc4-4b51-b383-889fe0698242">
+    <name>СсылкаНаДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип документа</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИдентификаторыОбъектовМетаданных</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ecc456a1-abd3-49e6-b93d-22b9b0477453">
+    <name>ДеревоДоступныеПоля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево доступные поля</value>
+    </synonym>
+    <type>
+      <types>ValueTree</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f323889e-eaee-4889-bada-3e5900f11e70">
+    <name>УдалитьВыбранныеПоля</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить выбранные поля</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="be1326f5-4b67-40b5-ad18-bd417dc919e5">
+    <name>ТипДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип документа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>80</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="d6c1177f-6f72-4918-965a-b0849f6b2733">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

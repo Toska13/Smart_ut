@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9993b260-c992-44db-a8c0-d8f231251918">
+  <producedTypes>
+    <selectionType typeId="e2afe232-5298-4ce4-8c0e-052c9d2a3724" valueTypeId="b092abed-ff3f-4b3d-b813-daf8ec705d8e"/>
+    <listType typeId="2283e28b-6129-4981-a9f3-092e74b6438f" valueTypeId="9d90c08a-ba01-4a92-93e3-7ef43b48f240"/>
+    <managerType typeId="09805d1d-d384-47fc-b884-27f61f38f645" valueTypeId="11a115c9-b440-4aad-8173-59b579140ec4"/>
+    <recordSetType typeId="0757fba8-72be-46f9-98dd-dace5587d85d" valueTypeId="5b61ee4e-d9bb-492c-a538-7a8eeb5eb91e"/>
+    <recordKeyType typeId="1b4b8dc4-fc78-4597-af24-33b27dc77cf7" valueTypeId="1f45d35a-4478-4175-aa8c-e22bce5cc47d"/>
+    <recordType typeId="2c787d28-9b62-4e42-9dec-a55039598aca" valueTypeId="80955fb1-cc18-43dc-9603-dbb533deb57d"/>
+  </producedTypes>
+  <name>смартГрафикПоступленияТоваровОрганизаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>График поступления товаров организаций (смарт)</value>
+  </synonym>
+  <comment>//++ #Б1154 смарт: Шляпников 17.10.2024 / Контроль оперативных остатков в разрезе организаций</comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="fa0e0cea-bdd5-4dc5-903e-508cae6c146b">
+    <name>КоличествоИзЗаказов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество из заказов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество  товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="604f1d16-e93f-40a1-a33f-30863162f48a">
+    <name>КоличествоПодЗаказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество под заказ</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество товаров отгружаемых с вариантом обеспечения Обособленно или поступающих по назначению</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9f84dc36-76ce-4cf1-967b-fdc0408610fe">
+    <name>КоличествоИзЗаказовСНеподтвержденными</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество из заказов с неподтвержденными</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество  товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="9d4ddd81-a089-458f-8426-467dcf436e85">
+    <name>КоличествоПодЗаказСНеподтвержденными</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество под заказ с неподтвержденными</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество товаров отгружаемых с вариантом обеспечения Обособленно или поступающих по назначению</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d29d5e89-47f2-4574-9b29-70f9dff292d2">
+    <name>смартКоличествоИзЗаказовГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество из заказов гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество  товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a6df3957-8564-4f79-935b-65304e239cdf">
+    <name>смартКоличествоПодЗаказГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество под заказ гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество товаров отгружаемых с вариантом обеспечения Обособленно или поступающих по назначению</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="88dee86f-ef74-41d9-8753-8f9ee7182ae2">
+    <name>смартКоличествоИзЗаказовСНеподтвержденнымиГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество из заказов с неподтвержденными гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество  товаров</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="f96d073d-304b-4f6c-a4cc-067dc34f0b6b">
+    <name>смартКоличествоПодЗаказСНеподтвержденнымиГарантийные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество под заказ с неподтвержденными гарантийные (смарт)</value>
+    </synonym>
+    <comment>++ #Б1376 смарт: Шляпников 19.11.2024 / Раздельный учет товаров. Гарантийные запчасти. Разработка документов и регистров.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество товаров отгружаемых с вариантом обеспечения Обособленно или поступающих по назначению</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="735b9c80-6ea3-4829-9b9f-c798938a82ff">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="56db80fc-8a11-4d87-b15c-c82e1934661c">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, запланированная к отгрузке со склада.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ac0cf5a4-3df6-4018-83e3-49fdc88b360c">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, запланированная к отгрузке со склада.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.смартГрафикПоступленияТоваровОрганизаций.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c5c46356-bc09-4bcb-b2a8-1f328029a1f0">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, с которого запланирована отгрузка товара.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e23bf23e-ed34-4fa8-b7a8-82f486891b44">
+    <name>ДатаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата события</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bc22b48b-aad3-4866-b438-1a9bbb9e0229">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Назначение обособленного обеспечения заказа товарами.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

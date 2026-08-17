@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConditionalAppearance xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамВыбрать</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ПредзаказПоставщику</left>
+				<comparisonType>Greater</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ПредзаказПоставщику</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">1000</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоДоступно</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ВсегоДоступно</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВПредзаказе</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ВсегоВПредзаказе</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВыкуплено</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ВсегоВыкуплено</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамВыбрать</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.Выбрано</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамНоменклатура</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамХарактеристика</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамНоменклатураСсылкаАртикул</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамПредзаказПоставщику</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамЦена</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВПредзаказе</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВыкуплено</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоДоступно</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВыбрать</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВыб</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.ПризнакСтроки</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыбрать</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ПредзаказПоставщику</left>
+				<comparisonType>Greater</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ПредзаказПоставщику</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">1000</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+				<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоДоступно</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ВсегоДоступно</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВПредзаказе</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ВсегоВПредзаказе</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВыкуплено</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ВсегоВыкуплено</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыбрать</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.Выбрано</left>
+				<comparisonType>Less</comparisonType>
+				<right xsi:type="xs:decimal">0</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#FF0000</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияНоменклатура</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияХарактеристика</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияНоменклатураАртикул</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияПредзаказПоставщику</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияЦена</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВПредзаказе</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВыкуплено</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоДоступно</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыбрать</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыб</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.ПризнакСтроки</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">false</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамНоменклатура</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамХарактеристика</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамНоменклатураСсылкаАртикул</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамПредзаказПоставщику</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамЦена</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВПредзаказе</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоВыкуплено</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВсегоДоступно</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВыбрать</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамВыб</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамМенеджерПредзаказ</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказам.Выб</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#0000FF</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+	<item>
+		<selection>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияНоменклатура</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияХарактеристика</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияНоменклатураАртикул</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияПредзаказПоставщику</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияЦена</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВПредзаказе</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоВыкуплено</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВсегоДоступно</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыбрать</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияВыб</field>
+			</item>
+			<item>
+				<field>ОстаткиПоПредзаказамКопияМенеджерПредзаказ</field>
+			</item>
+		</selection>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">ОстаткиПоПредзаказамКопия.Выб</left>
+				<comparisonType>Equal</comparisonType>
+				<right xsi:type="xs:boolean">true</right>
+			</item>
+		</filter>
+		<appearance>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ЦветТекста</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Color">#0000FF</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>Шрифт</dcscor:parameter>
+				<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+			</dcscor:item>
+		</appearance>
+	</item>
+</ConditionalAppearance>

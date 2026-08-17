@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="3801603e-ecde-44fb-a3bc-1792a9f2abfe" extendedConfigurationObject="3ad08f4a-6202-4099-b6cc-bc116e6731a0">
+  <producedTypes>
+    <objectType typeId="ca24a059-4e8c-46af-be6a-355b135318a7" valueTypeId="070fcc44-e422-438a-9773-961e918f66e5"/>
+    <refType typeId="f51718aa-752c-4177-b394-7d01c941fdef" valueTypeId="723c060e-affb-4808-a674-fd40888fc812"/>
+    <selectionType typeId="f553cadc-7357-4fd9-8ac6-2f0a8434ce3f" valueTypeId="48342d03-a8cb-4f0b-a7da-2a23892407ac"/>
+    <listType typeId="ae2a71dd-27d2-4fd8-849e-b344432036f4" valueTypeId="c54a5367-d196-4642-b81e-f44d17eae967"/>
+    <managerType typeId="9a6e72a8-ebe4-4fc9-bb64-f0fff51f42f3" valueTypeId="3e2656ef-ecf9-4d08-b97f-a7c4c0bd7d05"/>
+  </producedTypes>
+  <name>ЗадачаИсполнителя</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:TaskExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <objectModule>Extended</objectModule>
+    <managerModule>Extended</managerModule>
+  </extension>
+  <forms uuid="c01595c9-d55a-4b8d-b978-1e579dc11746" extendedConfigurationObject="6db19d51-ff53-4f88-b6d5-2bf2d7e9f45e">
+    <name>CRM_ФормаЛичнойЗадачи</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFormExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <form>Extended</form>
+    </extension>
+  </forms>
+  <forms uuid="7fac96e9-7d42-47fe-bbb5-a5a3549648cf" extendedConfigurationObject="8006daac-b313-4c31-9a44-94ee589aabdc">
+    <name>CRM_ФормаСписка</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFormExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <form>Extended</form>
+    </extension>
+  </forms>
+  <forms uuid="011054c0-1728-4ba9-b650-c154d1f4e8ea" extendedConfigurationObject="68a46338-4f9c-48fb-b1a8-8e4698f7ead3">
+    <name>CRM_ФормаЛичнойЗадачиКраткая</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFormExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <form>Extended</form>
+    </extension>
+  </forms>
+  <forms uuid="ef4f55ec-5325-43be-9178-6a8c92427d30" extendedConfigurationObject="a9957f43-8b6f-4d98-a2d8-77b78047494c">
+    <name>ФормаЗадачи</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFormExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <form>Extended</form>
+    </extension>
+  </forms>
+  <commands uuid="d3e251b5-9d3d-4c61-ad79-2bf4c35f3aa2">
+    <name>смартКомандаСоздатьЗадачуНаОснованииДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задача исполнителя</value>
+    </synonym>
+    <comment>#Б-2916 смарт: Лопато 11.04.2025 //Договоры контрагентов. Доработка. Задача исполнителя.</comment>
+    <extension xsi:type="mdclassExtension:BasicCommandExtension">
+      <synonym>Extended</synonym>
+      <group>Checked</group>
+    </extension>
+    <group>FormCommandBarCreateBasedOn</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Task>

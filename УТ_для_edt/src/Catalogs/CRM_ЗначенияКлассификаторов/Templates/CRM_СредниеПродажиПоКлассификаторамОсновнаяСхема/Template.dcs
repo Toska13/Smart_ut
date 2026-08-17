@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ФормированиеСостава</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Коэффициент</dataPath>
+			<field>Коэффициент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Коэффициент</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Factor</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Объект</dataPath>
+			<field>Объект</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Object</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Description</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Аналитика</dataPath>
+			<field>Аналитика</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аналитика</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Dimension</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Company</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	CRM_ПродажиОбороты.Номенклатура КАК Номенклатура,
+	CRM_ПродажиОбороты.Организация КАК Организация,
+	CRM_ПродажиОбороты.КоличествоОборот КАК КоличествоПродажи
+ПОМЕСТИТЬ ВТ_Продажи
+ИЗ
+	РегистрНакопления.CRM_Продажи.Обороты(
+			&amp;НачалоПериода,
+			&amp;КонецПериода,
+			,
+			НЕ Номенклатура В
+					(ВЫБРАТЬ РАЗЛИЧНЫЕ
+						CRM_ОбъектыЗначенийКлассификаторов.Объект
+					ИЗ
+						РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов
+					ГДЕ
+						CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора = &amp;ЗначениеКлассификатораИсключение) {(Номенклатура).*, (Организация).*}) КАК CRM_ПродажиОбороты
+
+ИНДЕКСИРОВАТЬ ПО
+	Организация,
+	Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Продажи.Организация КАК Организация,
+	CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора КАК ЗначениеКлассификатора,
+	ВЫРАЗИТЬ(СУММА(ВТ_Продажи.КоличествоПродажи) / КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_Продажи.Номенклатура) КАК ЧИСЛО(15, 2)) КАК КоличествоСредниеПродажиКлассификатора
+ПОМЕСТИТЬ ВТ_СредниеПродажиПоКлассификатору
+ИЗ
+	ВТ_Продажи КАК ВТ_Продажи
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК CRM_ОбъектыЗначенийКлассификаторов
+		ПО (ВТ_Продажи.Номенклатура = (ВЫРАЗИТЬ(CRM_ОбъектыЗначенийКлассификаторов.Объект КАК Справочник.Номенклатура)))
+			И (CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора.Владелец = &amp;КлассификаторТипа)
+
+СГРУППИРОВАТЬ ПО
+	CRM_ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора,
+	ВТ_Продажи.Организация
+
+ИНДЕКСИРОВАТЬ ПО
+	Организация
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СправочникНоменклатура.Ссылка КАК Объект,
+	СправочникОрганизации.Ссылка КАК Аналитика
+ПОМЕСТИТЬ ВТ_ОбъектыКлассификаторов
+ИЗ
+	Справочник.Номенклатура КАК СправочникНоменклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Организации КАК СправочникОрганизации
+		ПО (ИСТИНА)
+ГДЕ
+	НЕ СправочникНоменклатура.ЭтоГруппа
+{ГДЕ
+	СправочникНоменклатура.Ссылка.* КАК Номенклатура,
+	СправочникОрганизации.Ссылка.* КАК Организация}
+
+ИНДЕКСИРОВАТЬ ПО
+	Объект,
+	Аналитика
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ОбъектыКлассификаторов.Объект КАК Объект,
+	ВТ_ОбъектыКлассификаторов.Аналитика КАК Аналитика,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) = 0
+			ТОГДА 0
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 2
+			ТОГДА 5
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 1.3
+				И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 2
+			ТОГДА 4
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.7
+				И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 1.3
+			ТОГДА 3
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.35
+				И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.7
+			ТОГДА 2
+		КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; 0
+				И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.35
+			ТОГДА 1
+	КОНЕЦ КАК Коэффициент
+{ВЫБРАТЬ
+	Объект.*,
+	Аналитика.*}
+ИЗ
+	ВТ_ОбъектыКлассификаторов КАК ВТ_ОбъектыКлассификаторов
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажи КАК ВТ_Продажи
+		ПО ВТ_ОбъектыКлассификаторов.Объект = ВТ_Продажи.Номенклатура
+			И ВТ_ОбъектыКлассификаторов.Аналитика = ВТ_Продажи.Организация
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СредниеПродажиПоКлассификатору КАК ВТ_СредниеПродажиПоКлассификатору
+		ПО ВТ_ОбъектыКлассификаторов.Аналитика = ВТ_СредниеПродажиПоКлассификатору.Организация
+{ГДЕ
+	(ВЫБОР
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) = 0
+				ТОГДА 0
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 2
+				ТОГДА 5
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 1.3
+					И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 2
+				ТОГДА 4
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.7
+					И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 1.3
+				ТОГДА 3
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.35
+					И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.7
+				ТОГДА 2
+			КОГДА ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &gt; 0
+					И ЕСТЬNULL(ВТ_Продажи.КоличествоПродажи, 0) &lt; ЕСТЬNULL(ВТ_СредниеПродажиПоКлассификатору.КоличествоСредниеПродажиКлассификатора, 0) * 0.35
+				ТОГДА 1
+		КОНЕЦ) КАК Коэффициент}</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ВыводСостава</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектСостава</dataPath>
+			<field>ОбъектСостава</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Object</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗначениеКлассификатора</dataPath>
+			<field>ЗначениеКлассификатора</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОбъектыЗначенийКлассификаторов.Объект
+ПОМЕСТИТЬ СоставЗначения
+ИЗ
+	РегистрСведений.CRM_ОбъектыЗначенийКлассификаторов КАК ОбъектыЗначенийКлассификаторов
+{ГДЕ
+	ОбъектыЗначенийКлассификаторов.ЗначениеКлассификатора}
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	СоставЗначения.Объект КАК Объект
+{ВЫБРАТЬ
+	Объект.* КАК ОбъектСостава}
+ИЗ
+	СоставЗначения КАК СоставЗначения</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period start</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>НачалоПериода(ДобавитьКДате(ТекущаяДата(), "Месяц", -1), "День")</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Period end</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>КонецПериода(ТекущаяДата(), "Месяц")</expression>
+	</parameter>
+	<parameter>
+		<name>КлассификаторТипа</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Классификатор типа</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Classifier of type</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.CRM_Классификаторы</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ЗначениеКлассификатораИсключение</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Значение классификатора исключение</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>The value of the exception classifier</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.CRM_ЗначенияКлассификаторов</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ФормированиеСостава</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Формирование состава</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Formulation of composition</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Объект</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Аналитика</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КлассификаторТипа</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>6b61140b-7923-4450-90fa-2077da29fa85</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ЗначениеКлассификатораИсключение</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>e7d816be-337a-40a6-8278-557135a23258</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Объект</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Аналитика</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ВыводСостава</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вывод состава</v8:content>
+			</v8:item>
+			<v8:item>
+				<v8:lang>en</v8:lang>
+				<v8:content>Conclusion of the composition</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектСостава</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектСостава.Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектСостава.ТипНоменклатуры</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ОбъектСостава</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Аналитика</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d3625d60-7107-4b1f-a298-f40ef23e2200">
+  <producedTypes>
+    <selectionType typeId="03b02c38-8ba1-43d0-bae0-481cd30c2988" valueTypeId="75fa2f8e-33f8-4063-a4f4-8e73d2ac0611"/>
+    <listType typeId="65deae4c-126c-4db0-8e4d-a99781ff80df" valueTypeId="a44cb87a-b009-4b6f-98c7-b77bcb55b77f"/>
+    <managerType typeId="4b23d499-4d2b-4f3f-be9a-801377d08fa2" valueTypeId="508a7fff-9585-4576-bd13-a1feabb94e58"/>
+    <recordSetType typeId="758114f2-500e-44d3-bddd-b2d81c42dcd4" valueTypeId="600fbcf9-00c5-47a9-b957-007edfec13b9"/>
+    <recordKeyType typeId="7e2d89b4-5e18-477f-ab03-b8a6728476ae" valueTypeId="289f8a29-a4e0-4b05-ab94-1930feb4fb67"/>
+    <recordType typeId="2635829a-e7b0-45d5-806a-3a2479d77044" valueTypeId="84ccd423-0e4c-4b72-8079-52418b85a34e"/>
+  </producedTypes>
+  <name>смартASP_НакоплениеБонусов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы</value>
+  </synonym>
+  <comment>//доработка внешней компании Асиситпро по проекту Бонусы инженеров</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="2b780565-0332-4984-99a7-6641343c3df9">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="e4fe3d0c-5ba6-4d4e-907a-9d44b6d08c61">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="d1029454-8c82-4e40-8396-963fc999a5bf">
+    <name>ТипБонуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип бонуса</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартASP_ТипыБонусов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8f9363be-5deb-4632-966c-92c9ecfbe467">
+    <name>Инженер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инженер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

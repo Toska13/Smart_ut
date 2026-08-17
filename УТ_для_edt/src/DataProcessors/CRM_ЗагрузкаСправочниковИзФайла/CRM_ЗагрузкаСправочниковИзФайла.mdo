@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="76daea18-bdb6-458e-ad50-5e3b0a2b04d8">
+  <producedTypes>
+    <objectType typeId="09fbbc3d-f87d-4001-9cab-785e662c99f3" valueTypeId="b1d7b03d-959d-4635-a210-902678b16d4a"/>
+    <managerType typeId="7e1c591e-22dd-4107-96f6-ab060c7340aa" valueTypeId="72cc0039-f992-4167-b660-60269cb44ca0"/>
+  </producedTypes>
+  <name>CRM_ЗагрузкаСправочниковИзФайла</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка справочников из файла</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Loading catalogs from file</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_ЗагрузкаСправочниковИзФайла.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="37d2a52d-e9cb-4ce8-9ef4-9e5a28a288f4">
+    <name>ИмяФайлаОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя файла обмена</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Exchange file name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Имя файла обмена справочников</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Name of catalog exchange file</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="bb685dc8-51c5-4ff8-b06b-8edf2452df66">
+    <producedTypes>
+      <objectType typeId="160ddd32-3750-43a2-9414-59171ecb6d26" valueTypeId="001d74b5-4e1c-48c8-9341-b3fbe62a91d2"/>
+      <rowType typeId="646354a8-c4ee-48d4-b65e-b1bf8111d6f0" valueTypeId="0636a660-5f11-48c7-bac2-270c1c56bee6"/>
+    </producedTypes>
+    <name>ПоляСправочника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля справочника</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Catalog fields</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="32885902-0ad7-4b69-886d-f154960a53b8">
+      <name>Обязательный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обязательный</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>The mandatory</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Обязательный реквизит</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Required river</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b9a45fce-19c6-4b24-a5ba-584a4eeb7724">
+      <name>НаименованиеРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование реквизита</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attribute name </value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование реквизита справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Description of catalog attribute</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="1240361f-be52-4e84-881b-978dd22acd6b">
+      <name>НаименованиеПоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование поля</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name of a field</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование поля справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Description of catalog field</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="f3070e17-be0f-4ef8-9512-f5efbefe643b">
+      <name>СинонимРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Синоним реквизита</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Synonym of attribute</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Синоним реквизита справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Synonym for catalog attribute</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="70af63b4-32d6-4388-a653-4b42d4360fda">
+      <name>НаименованиеПоляПров</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование поля проверочное</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name of a field the checkout</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование поля для проверки</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The name of a field for check</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="744cac90-12eb-41c9-82fa-f71dfe0ede36">
+      <name>ПризнакКИ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Признак КИ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sign of KI</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак КИ справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Sign of CI catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3ea169ef-bdcb-4c3f-9b23-45307331bf63">
+      <name>СсылкаКИ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка КИ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Reference СI</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыКонтактнойИнформации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Ссылка КИ справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Reference CI catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="be618268-4618-4874-a949-dd5a95840bdb">
+      <name>СправочникСсылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Справочник ссылка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Catalog reference</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef</types>
+        <types>CatalogRef</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Справочник</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9b94bfc4-b022-4bee-8af7-c0345539bdcd">
+      <name>РеквизитСправочник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реквизит справочник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attribute Catalog</value>
+      </synonym>
+      <comment>Реквизит справочник</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак реквизит справочник</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Sign attribute catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="249eab3c-05fb-47da-a189-762d565dd437">
+      <name>РеквизитДата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реквизит дата</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attribute date</value>
+      </synonym>
+      <comment>Реквизит дата</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак реквизит справочник</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Sign attribute catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ccab26d3-85d2-4469-80f8-0956027f9f62">
+      <name>ДополнительныйРеквизит</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дополнительный реквизит</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Additional details</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дополнительный реквизит справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Additional attribute of catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b56a17f5-9366-412f-baf0-bc6023f2832f">
+      <name>РеквизитТип</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реквизит тип</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attribute type</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак реквизит справочник</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Sign attribute catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="508f84d0-c4be-4eeb-823a-1f9e950f5de2">
+      <name>СоздаватьЭлемент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Создавать элемент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Create Item</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак реквизит справочник</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Sign attribute catalog</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4109d153-57a7-49be-95dc-3cfcd00a77a6">
+    <producedTypes>
+      <objectType typeId="f338f0e6-078e-4bff-9b42-f2bfecee4791" valueTypeId="eb51e81b-17d6-4980-b8f5-2de9807680ac"/>
+      <rowType typeId="ca2c2b47-0e65-43d5-b96c-68c9ae1af141" valueTypeId="ee4ae67a-4981-4836-bd1f-be9fb1c3fea6"/>
+    </producedTypes>
+    <name>ПоляФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля файла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fields of a file</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2ad8c14e-8255-4f06-b66a-e9a8e33df6af">
+      <name>НаименованиеРеквизита</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование реквизита</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Attribute name </value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование реквизита справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Description of catalog attribute</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="8c1560a1-6de2-4f3e-8df1-f30be579ab89">
+      <name>НаименованиеПоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование поля</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name of a field</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование поля справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Description of catalog field</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="367e3f11-c1ab-44ed-bbd2-1d67436c03bf">
+    <producedTypes>
+      <objectType typeId="0e2835a5-a808-4971-9a3d-a3df5001921c" valueTypeId="1806b1d9-652a-4722-a6be-7ff0bfaac81d"/>
+      <rowType typeId="0cc25bd0-355a-4ea1-8a9b-1508901bb39a" valueTypeId="aec6abab-d42b-43d0-8e55-408e8d0cd15d"/>
+    </producedTypes>
+    <name>ДополнительныеРеквизиты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительные реквизиты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Additional attributes</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8766fcf7-72cb-4155-9973-6d71af219a38">
+      <name>Свойство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Свойство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Property</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Свойство справочника</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Catalog Property</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="581ff791-83eb-48b2-b0f2-997c02ef12a7">
+      <name>Наименование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Наименование дополнительного реквизита</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Description of additional attribute</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6cf2ca62-fdda-41ec-9be9-cbc90b24ee30">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e8b5a6e3-1ec3-404e-b145-ab9a24cc93de">
+    <name>ФормаПодбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма подбора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of selection</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="ecf9bff0-f0d1-4c31-99f8-c9def8699df5">
+    <name>Партнеры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиенты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customers</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="16c5218a-f486-4d0c-acb3-26b5e6dfbd0e">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Nomenclature</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="ea53a0d7-5adb-4943-8923-7311dd14dab6">
+    <name>ЗагрузкаЦен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка цен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Loading prices</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="de71fb30-7c79-4cd8-b489-a8412b91f53c">
+    <name>Контрагенты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагенты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparties</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <templates uuid="abdb62bd-5667-4e31-bfe9-92e504ace5be">
+    <name>КонтактныеЛица</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контактные лица</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contact persons</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+  <commands uuid="95302b58-5f83-4113-8381-9253171477d0">
+    <name>ИмпортТоваровУслуг</name>
+    <synonym>
+      <key>ru</key>
+      <value>Импорт товаров/услуг из файла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods and Services Import from File</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="c70fac8d-bf3d-4ca4-8701-07933c2e9e44">
+    <name>ИмпортКлиентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Импорт клиентов из файла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customers Import from File</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

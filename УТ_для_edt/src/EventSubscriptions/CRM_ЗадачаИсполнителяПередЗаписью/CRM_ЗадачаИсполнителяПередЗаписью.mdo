@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a702847a-5ef7-4561-ba1f-7175dfb26ec5">
+  <name>CRM_ЗадачаИсполнителяПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Задача исполнителя перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM task before writing</value>
+  </synonym>
+  <comment>Задача исполнителя перед записью (CRM)</comment>
+  <source>
+    <types>TaskObject.ЗадачаИсполнителя</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ОбщегоНазначенияСервер.ЗаполнитьИнтересСостояниеЗадачи</handler>
+</mdclass:EventSubscription>

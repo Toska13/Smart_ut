@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1adcb200-f80b-4de5-8646-afa990a90688">
+  <name>смартПометкаУдаленияФискальныеОперации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пометка удаления (фискальные операции)</value>
+  </synonym>
+  <comment>// #037 15.03.2020</comment>
+  <source>
+    <types>DocumentObject.ОперацияПоПлатежнойКарте</types>
+    <types>DocumentObject.ЧекККМКоррекции</types>
+    <types>DocumentObject.РеализацияУслугПрочихАктивов</types>
+    <types>DocumentObject.ОперацияПоЯндексКассе</types>
+    <types>DocumentObject.ВозвратТоваровОтКлиента</types>
+    <types>DocumentObject.ВзаимозачетЗадолженности</types>
+    <types>DocumentObject.АктВыполненныхРабот</types>
+    <types>DocumentObject.ЧекККМ</types>
+    <types>DocumentObject.КорректировкаРеализации</types>
+    <types>DocumentObject.СписаниеБезналичныхДенежныхСредств</types>
+    <types>DocumentObject.ВозвратПодарочныхСертификатов</types>
+    <types>DocumentObject.СписаниеЗадолженности</types>
+    <types>DocumentObject.РасходныйКассовыйОрдер</types>
+    <types>DocumentObject.ПоступлениеБезналичныхДенежныхСредств</types>
+    <types>DocumentObject.ВнесениеДенежныхСредствВКассуККМ</types>
+    <types>DocumentObject.ПриходныйКассовыйОрдер</types>
+    <types>DocumentObject.ВыкупВозвратнойТарыКлиентом</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ЧекККМВозврат</types>
+    <types>DocumentObject.РеализацияПодарочныхСертификатов</types>
+    <types>DocumentObject.ВыемкаДенежныхСредствИзКассыККМ</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.смартПометкаУдаленияФискальныеОперацииПриЗаписи</handler>
+</mdclass:EventSubscription>

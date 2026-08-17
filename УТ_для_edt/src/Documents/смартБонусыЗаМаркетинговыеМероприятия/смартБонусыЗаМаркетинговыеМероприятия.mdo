@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ef72ef20-a1bc-4265-b2db-c524690290ff">
+  <producedTypes>
+    <objectType typeId="34701a17-a46e-4dcf-a7c4-a5a9ac9904fd" valueTypeId="0732bd2f-9a05-4f4e-b212-1a614d27c77e"/>
+    <refType typeId="7ab12946-4cbe-4a4f-906d-6a428cd06cb2" valueTypeId="edeb0d0e-5acc-4b7e-9a66-e2524e821335"/>
+    <selectionType typeId="ec4cdc67-24b7-4093-804d-4533bb61088a" valueTypeId="a2bbaec1-0a98-4ac9-8641-b771f47d1c6e"/>
+    <listType typeId="0553dbf0-192c-4c47-aa85-594542db0264" valueTypeId="aee4aa78-b246-4e5b-9073-b52c64063c1c"/>
+    <managerType typeId="2ba26a36-9c13-4598-81dc-24ab1af45a5f" valueTypeId="7bcedafd-0d50-4b9f-93d5-53069f17dcec"/>
+  </producedTypes>
+  <name>смартБонусыЗаМаркетинговыеМероприятия</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы за маркетинговые мероприятия (смарт)</value>
+  </synonym>
+  <comment>#6224 смарт: Тимофеева 13.04.2026 / Расчет бонусов инженеров за маркетинговые мероприятия</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.смартБонусыЗаМаркетинговыеМероприятия.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.смартБонусыЗаМаркетинговыеМероприятия.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.смартБонусыЗаМаркетинговыеМероприятия.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.смартASP_НакоплениеБонусов</registerRecords>
+  <registerRecords>AccumulationRegister.смартБонусыЗаМаркетинговыеМероприятия</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="f2e5c19b-9b47-485d-ad86-4daca21ff8c0">
+    <name>ПроцентНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент начисления</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a595dff6-70e4-4601-8137-c3c5b68ec33b">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d1dace2a-fe50-4dc5-99e0-9623e708d986">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>500</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="974a0985-23de-49f3-a466-0be609e3d293">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b71dbb9b-390c-4969-a28d-075174d28328">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="07015ade-8157-442e-8600-ca7c289f386a">
+    <producedTypes>
+      <objectType typeId="30bdeb8f-9086-439e-b619-f0f282efaa98" valueTypeId="aa671841-f7a6-464e-86da-9cb36422a464"/>
+      <rowType typeId="81ddea90-32af-457d-9a18-f5d76179a8f0" valueTypeId="e7f495a3-16d7-459b-a456-0a6c9da47813"/>
+    </producedTypes>
+    <name>Бонусы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонусы</value>
+    </synonym>
+    <attributes uuid="629131de-796f-40d4-bd2b-784a18b6a7a8">
+      <name>Инженер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инженер</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cfa97ce3-8af0-4404-a400-172a87e2741e">
+      <name>МаркетинговоеМероприятие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Маркетинговое мероприятие</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.МаркетинговыеМероприятияДокумент</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="49aed4b6-499b-4032-a3dc-8b726eece897">
+      <name>ЗаказКлиента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заказ клиента</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаказКлиента</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="fe7649be-bd8d-4857-b5e0-8f973ff59cc1">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e06135a8-01ac-4af3-906b-eab68948f43f">
+      <name>СуммаВыручки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма выручки</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cfe7d998-75bf-42d7-ae12-2fa916b74e3d">
+      <name>ПроцентНачисления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент начисления</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>6</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a1e9fab9-d12c-4ea3-8669-a347d3520849">
+      <name>СуммаБонуса</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма бонуса</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

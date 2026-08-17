@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="998dcab6-f108-4cfc-b97a-c4c597e5f73d">
+  <producedTypes>
+    <selectionType typeId="aa735fb7-b42c-4270-868a-49cf0df74b66" valueTypeId="603cc313-42b7-4758-b61a-bdd1d161204a"/>
+    <listType typeId="f28be796-c82e-48e6-b7f0-26b25b115aea" valueTypeId="4f5a2ddc-44ae-4ead-9736-ff8ebd8b82e5"/>
+    <managerType typeId="d42b38f8-8ea2-4298-80b8-7bd8072afcf1" valueTypeId="fbbd3e04-6efc-4bcc-8db5-6c35ab613af9"/>
+    <recordSetType typeId="6f9365c2-c8cc-4289-9fa4-fe5735d748b3" valueTypeId="ddeecf01-5b59-41e1-9d17-cfcb0f8862ce"/>
+    <recordKeyType typeId="ac71ef90-f048-409b-a078-e40709dc7258" valueTypeId="00e9a8a6-8533-4db9-a37b-667dc5059e49"/>
+    <recordType typeId="a1fce416-4c10-4e24-baed-010d20e90e6a" valueTypeId="1b51932b-48e3-4534-833f-bcc9567ee798"/>
+    <recordManagerType typeId="2423ced7-0c43-4d69-b181-a8d4d504b3d2" valueTypeId="5d441e24-35f8-4b96-a946-f283b76d617a"/>
+  </producedTypes>
+  <name>смартСтопЛистТехническойОтсрочки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Стоп-лист технической отсрочки (смарт)</value>
+  </synonym>
+  <comment>#4792 смарт: Тимофеева 17.03.26 / Контроль дебиторской задолженности. Реализация блокировки клиента. Техническая отсрочка. Этап 1</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.смартСтопЛистТехническойОтсрочки.Form.ФормаСтопЛист</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="b04b4fd5-d7ac-4cee-a0ce-be731780b24d">
+    <name>ПродажаОтгрузкаЗапрещена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продажа/отгрузка запрещена</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="629a21e0-e6b5-40e3-80e8-b948822f6095">
+    <name>СуммаЗадолженности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма задолженности</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="beed00d4-2325-4e4c-9acb-2ce668727e23">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="11d27ead-083c-472b-8f2e-5f9b2652a1d4">
+    <name>РасчетныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РеализацияТоваровУслуг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="022de094-fb00-4948-a6bb-e47d5ff152b5">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="82b13ac1-da71-4cdc-ac63-750342512d3d">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c2ed2783-0855-4bf9-b800-3171f1150dc9">
+    <name>ЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ клиента</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ клиента, по которому отражена продажа товаров и услуг.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="23996fd1-366a-4de9-b755-e6f7a9078b49">
+    <name>ФормаСтопЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоп-лист технической отсрочки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="f888c1b6-f6ae-472c-809c-f50da135e89a">
+    <name>смартУведомлениеОбИстеченииСрокаОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уведомление об истечении срока оплаты</value>
+    </synonym>
+  </templates>
+  <templates uuid="b4197350-9041-4324-8b6d-31864af1a6ef">
+    <name>смартУведомлениеОбИстеченииСрокаОплатыПриОтсрочках</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уведомление об истечении срока оплаты</value>
+    </synonym>
+  </templates>
+</mdclass:InformationRegister>

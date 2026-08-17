@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3a39c2aa-06af-4018-9d6a-fe9a7c645ff8">
+  <producedTypes>
+    <selectionType typeId="a897c0b2-66c3-4f9b-9847-56b79a164c3e" valueTypeId="01799f02-d2a8-4783-a235-a3f96160504f"/>
+    <listType typeId="a2c23e44-5c77-4676-9534-a3ada3893fa3" valueTypeId="03f1d19f-99d2-41aa-b494-70ea04dca415"/>
+    <managerType typeId="b4c34075-3d53-4384-ae63-8f3ae29de926" valueTypeId="3fd4fb63-fae0-477f-aa44-e25d360e9cfb"/>
+    <recordSetType typeId="24300042-fd00-4e7f-89a7-311e51ef78a8" valueTypeId="d6c585f7-2e8e-4efb-8aa0-357499a158f9"/>
+    <recordKeyType typeId="3d465247-f2e3-4ba4-b578-75ff7e1ea46d" valueTypeId="7a35232f-cd22-4615-a05e-f50032c53855"/>
+    <recordType typeId="644dff9d-3d79-44bc-9fd8-0b333ef0c940" valueTypeId="ee0ca962-426f-4559-b9aa-fe03ddec8e01"/>
+    <recordManagerType typeId="c8744753-769f-47fc-bf11-22ef2d42fe5e" valueTypeId="c1140af7-ca75-4a49-9a12-21eca3581678"/>
+  </producedTypes>
+  <name>CRM_ОтложенныеОперацииПоIMAP</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отложенные операции по IMAP</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Deferred operations via IMAP</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="c39bc011-c9fe-4c75-9486-16bf77d629cd">
+    <name>ИмяПапкиНаСервере</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя папки на сервере</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Folder name on server</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="6131105a-5410-42e9-a435-c458a2081b5c">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПапкиЭлектронныхПисем</types>
+      <types>DocumentRef.ЭлектронноеПисьмоИсходящее</types>
+      <types>DocumentRef.ЭлектронноеПисьмоВходящее</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d626ac89-a9ab-48ee-a83f-21abc1070ced">
+    <name>УчетнаяЗапись</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учетная запись</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Login Account</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УчетныеЗаписиЭлектроннойПочты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8c8db1df-53ca-42c6-ade7-a15f6275b09f">
+    <name>Действие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Action</value>
+    </synonym>
+    <type>
+      <types>EnumRef.CRM_ДействияПоIMAP</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

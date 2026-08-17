@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b17f62f-f752-49a6-9978-24f579714ff2">
+  <name>CRM_ОбъектСНастраиваемымПорядкомПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объект c настраиваемым порядком перед записью (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Fill in arrangement attribute value</value>
+  </synonym>
+  <comment>Заполнить значение реквизита упорядочивания</comment>
+  <source>
+    <types>DefinedType.CRM_ОбъектСНастраиваемымПорядком</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.CRM_ОбработкиЗаполненияЗаписиКопированияОбъектов.ЗаполнитьЗначениеРеквизитаУпорядочивания</handler>
+</mdclass:EventSubscription>

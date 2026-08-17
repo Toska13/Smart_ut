@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3765a0bf-049b-4293-8ba4-608f3ec45f38">
+  <producedTypes>
+    <selectionType typeId="e0e3b17c-ad56-4ae7-aca8-8b0478629280" valueTypeId="a073fe40-2530-457b-9484-cfab1d4c742d"/>
+    <listType typeId="ac6a1d39-dd6f-413b-9fd4-c2bab896049b" valueTypeId="346ce1fc-c132-4618-8413-49fc0c6ad793"/>
+    <managerType typeId="bf289d6c-1490-4bfe-aa49-108131d263f4" valueTypeId="eff05f11-ee39-4ad0-9c2a-df2f5debe824"/>
+    <recordSetType typeId="5b03994c-f3be-442d-ac9c-1d7e9e07ddc7" valueTypeId="bc15486c-46d8-4fc5-86ac-97e1319c9e4d"/>
+    <recordKeyType typeId="8641e408-d007-4363-b25a-b0a87b6a241a" valueTypeId="e2e6ea8a-fa15-47ae-959f-5ae942c5842c"/>
+    <recordType typeId="abc7c6fc-043b-4960-8aa6-a88b87fcf5e5" valueTypeId="04676496-1d1c-491a-b6b2-6d60575d3cbf"/>
+    <recordManagerType typeId="b1bf2be7-be94-4ecb-b966-1a18ab9bfdd4" valueTypeId="3d8064b0-a972-48db-8fb0-314207d0d897"/>
+  </producedTypes>
+  <name>смартСоставПрофильныхАссоциаций</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состав профильных ассоциаций (смарт)</value>
+  </synonym>
+  <comment>#Б-2990 смарт: Лопато 09.04.2025 //Информация о профильные ассоциациях и их членов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="c1c4b507-bc50-4a47-bcce-95e21e0963ab">
+    <name>ПредставительКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представитель контрагента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="a67ef6b9-cd48-4861-b9a8-34baea940e2e">
+    <name>НаименованиеКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование контрагента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="abe02c59-d344-4f45-85ac-035a0fe59138">
+    <name>СайтКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сайт контрагента</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="1efd11fe-77ac-440a-a41e-b24365f44c09">
+    <name>Ассоциация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ассоциация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартПрофильныеАссоциации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d0380a62-cdac-4246-b1d6-9036bd74ae78">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4a314e86-8d41-4c1d-8425-32f4e81e5af5">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партнер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c2550487-0235-48a3-83a1-242504339d59">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

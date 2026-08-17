@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="71a5243b-dcc5-4b78-baa4-c82c91ed9df2">
+  <producedTypes>
+    <selectionType typeId="0a99cfd5-2d17-4a25-ab4b-87171ce8ee25" valueTypeId="32052467-c52d-4305-87f6-db20aba07d96"/>
+    <listType typeId="8b8d95fa-f10c-40ae-9a3d-18f298417acd" valueTypeId="047bc9d3-8cb5-4067-95df-15de3a82214b"/>
+    <managerType typeId="52117238-2f09-42c0-ab67-adfbeb2e78e0" valueTypeId="bfaac126-601a-4579-9188-de2abc77da98"/>
+    <recordSetType typeId="20bcc151-f03b-472a-b1a3-41096d15333a" valueTypeId="945db912-9f6f-4a27-9454-f99fadffb284"/>
+    <recordKeyType typeId="f1c790ae-89be-42e7-bea0-8f950de4e6d8" valueTypeId="40e8fa94-d374-4511-9004-d729236be3d3"/>
+    <recordType typeId="28e2a9a2-1d78-47b1-8277-3d6b4577175d" valueTypeId="754bc616-4170-44ae-b79e-bbaa996603c7"/>
+    <recordManagerType typeId="efea40ff-4fae-4fd2-8e93-2b02add14673" valueTypeId="7f1a5fb1-f8cb-498f-9106-e2313f1315a2"/>
+  </producedTypes>
+  <name>смартДанныеDeeray</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные DEERAY (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-4170 смарт: Фролов 01.09.2025 //Загрузка в 1С аналитики по звонкам из сервиса DEERAY.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартДанныеDeeray.Form.ФормаЗаписи</defaultRecordForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="748cf286-2eaf-4ef9-b07f-373955e7e8f1">
+    <name>СсылкаНаПлатформу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка на платформу</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="b8afae39-0e31-44ec-a801-b385d027f410">
+    <name>ПервыйКонтакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первый контакт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="12f80df8-38d6-4fd2-934a-086274cbcbdb">
+    <name>ЭтапИнтереса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап интереса</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="9ebc52d9-ab3a-4717-91d4-2dc4dd404216">
+    <name>ЦелевойЗвонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Целевой звонок</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="20eeadac-de21-4efe-9ad5-e1614fbafae3">
+    <name>Резюме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резюме</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="450202f6-fd03-4370-9048-7da5327103ff">
+    <name>Интерес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интерес</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f4da9527-59ab-4af1-88a6-ac0020eb2bc4">
+    <name>ТелефонныйЗвонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Телефонный звонок</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ТелефонныйЗвонок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="970fed27-ec63-4fae-ac37-7a18adbbd839">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

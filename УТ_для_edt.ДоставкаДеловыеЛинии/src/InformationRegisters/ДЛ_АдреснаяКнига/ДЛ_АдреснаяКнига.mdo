@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f79ca5e3-9c45-47df-89f7-7fe7bf83bf86">
+  <producedTypes>
+    <selectionType typeId="d9c02e24-a908-445e-a078-e5d946d297b9" valueTypeId="cdf3ef94-cc31-40b5-a297-ff60799f73a7"/>
+    <listType typeId="fc52af78-b3ff-46be-8881-535a3276edcd" valueTypeId="b009cffd-6dfb-4525-b097-b9f3eb2e48b2"/>
+    <managerType typeId="8f9713d5-cbf4-4de9-a607-3898cc625680" valueTypeId="58d755e5-ff05-4342-8631-635074d4b45c"/>
+    <recordSetType typeId="86d8e790-5ade-4626-942d-141ea598c4d2" valueTypeId="cee229ca-9317-4411-b8ab-faaebbb7d373"/>
+    <recordKeyType typeId="d5d6caae-8938-4a94-9d17-4f1e7526a51e" valueTypeId="3b267698-9167-45cd-b6c4-8a71b73f5c4a"/>
+    <recordType typeId="7ca44c0f-bc44-4af2-9e20-f63b2abf294f" valueTypeId="899d9c50-7b2a-4f8c-8eb6-863379d70def"/>
+    <recordManagerType typeId="d62b2a0d-21cc-4057-b1d9-ea227e7dd13e" valueTypeId="8d5f422d-0792-44ee-848f-4052774ae02c"/>
+  </producedTypes>
+  <name>ДЛ_АдреснаяКнига</name>
+  <synonym>
+    <key>ru</key>
+    <value>Адресная книга (Деловые линии)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ДЛ_АдреснаяКнига.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ДЛ_АдреснаяКнига.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="2a7372f1-f290-4a95-b578-645201a021f5">
+    <name>ДатаИспользования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата использования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="56f711d0-2a23-4bdb-9a51-caaaf1cbcf87">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1ec26621-f7ae-4024-9cab-acc0fd512407">
+    <name>НаселнныйПункт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Населнный пункт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДЛ_Города</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="33454912-3aaa-4cca-a109-5b9556f11bba">
+    <name>УчастникГрузоперевозки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участник грузоперевозки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="700a8d42-d783-419e-8aa1-93d9eba7997e">
+    <name>Адрес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>400</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="5ab733fe-4cdf-48ec-8d7e-aa56312cc772">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c527c37e-7fd4-4c51-9cdb-75daf66eb69f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cb543256-c78e-47e5-b5aa-15fc463c26ec">
+  <producedTypes>
+    <selectionType typeId="6ddee642-b536-48b7-b25c-95a5b3ba84b3" valueTypeId="39e8c488-a7d5-49ce-a807-522dd9326f23"/>
+    <listType typeId="10afb8c5-a62a-4721-a660-f11be8b3ec1a" valueTypeId="5794a55f-e8a0-46c1-a469-9950ee10712c"/>
+    <managerType typeId="6ca20989-d76d-4a54-a820-165bf874d2dc" valueTypeId="fe2c71a5-bdd4-4c59-9cd1-706196a3e26d"/>
+    <recordSetType typeId="58bb94a4-728b-461c-84b5-26586967e368" valueTypeId="0412ba75-1af6-4de4-9518-f458e8a15e9c"/>
+    <recordKeyType typeId="a06ad1d6-5141-4dc5-b36f-0f7b4ccb50be" valueTypeId="1dff9171-3b80-4eb6-a769-10fa3e6f6e55"/>
+    <recordType typeId="baf9c11d-885d-43b6-af5a-2dcd6542183c" valueTypeId="f26565b5-0b1e-4eef-9c7e-08f07f8871fc"/>
+    <recordManagerType typeId="1e135f61-841f-4bef-9e27-4f97d4cb60f1" valueTypeId="4d9df29a-bda7-4dc9-8850-1e641d2e7600"/>
+  </producedTypes>
+  <name>смартИсторияСтатусовСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>История статусов сотрудников (смарт)</value>
+  </synonym>
+  <comment>//++ #1739 смарт: Фролов 05.04.2024 //Создание рабочего места секретаря для распределения звонков и обращений.</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <resources uuid="82b2048a-a0dc-4b27-be18-408adc444e21">
+    <name>РучнойВвод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручной ввод</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="11ddeca4-e82d-4825-8f57-7f355d5781c3">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартСтатусыСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8206ad08-f1d2-4876-813d-aa80a6b7f1c8">
+    <name>До</name>
+    <synonym>
+      <key>ru</key>
+      <value>До</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5a9a9de0-c813-4f97-99bc-752000eefeb3">
+    <name>ДатаОтсрочкиПоОтпуску</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отсрочки по отпуску</value>
+    </synonym>
+    <comment>//++ #Б-2852 смарт: Фролов 11.04.2025 //Реализовать возможность присваивать Архивное &quot;Состояние СЦ&quot; Менеджерами СЦ</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="d9a0725b-c8df-432c-8792-511f334a1e15">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

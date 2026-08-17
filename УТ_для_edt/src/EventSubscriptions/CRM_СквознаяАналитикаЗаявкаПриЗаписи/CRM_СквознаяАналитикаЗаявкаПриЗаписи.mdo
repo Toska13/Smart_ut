@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="802a9f24-f2dd-4336-b1f5-3845c0c3ae3a">
+  <name>CRM_СквознаяАналитикаЗаявкаПриЗаписи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сквозная аналитика при записи заявки (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>While recording request (CRM:End-to-end analytics)</value>
+  </synonym>
+  <comment>Сквозная аналитика при записи заявки (CRM)</comment>
+  <source>
+    <types>DocumentObject.CRM_Интерес</types>
+    <types>DocumentObject.CRM_Заявка</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.CRM_СистемаСквознойАналитикиВызовСервера.CRM_СквознаяАналитикаЗаявкаПриЗаписи</handler>
+</mdclass:EventSubscription>

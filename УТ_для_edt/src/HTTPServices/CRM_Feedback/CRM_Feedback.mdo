@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2c9c7ef7-5a4c-4596-811e-bbb53a2c65a7">
+  <name>CRM_Feedback</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обратная связь</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>CRM feedback</value>
+  </synonym>
+  <rootURL>feedback</rootURL>
+  <sessionMaxAge>10</sessionMaxAge>
+  <urlTemplates uuid="738bea6d-962f-450e-9631-4185c87f2c4e">
+    <name>ЗапроситьОценку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запросить оценку</value>
+    </synonym>
+    <template>/get</template>
+    <methods uuid="e1b9da4f-7551-4199-b55e-4df67846f1f0">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ЗапроситьОценкуGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f7d52e6e-8813-4240-8218-116cb65f39ce">
+    <name>УточнитьОценку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уточнить оценку</value>
+    </synonym>
+    <template>/get/put</template>
+    <methods uuid="9cda95fb-8857-435d-a213-b07109070e30">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УточнитьОценкуPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="291e53db-6dbe-4703-9563-7dd2078bd27e">
+    <name>УточнитьОценкуДоп</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уточнить оценку доп</value>
+    </synonym>
+    <template>/put</template>
+    <methods uuid="e368a294-1a2c-48d4-a9fd-28e8641267f5">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УточнитьОценкуPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8111e160-d524-4030-9dc1-5efb09a0f1e1">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="8fd421d0-1706-4154-afb6-98296e48a8a8">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

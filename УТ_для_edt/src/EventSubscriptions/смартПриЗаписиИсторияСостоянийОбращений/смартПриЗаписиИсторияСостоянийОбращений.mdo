@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a363c5c3-52d4-4d4a-8009-56183f9f82bc">
+  <name>смартПриЗаписиИсторияСостоянийОбращений</name>
+  <synonym>
+    <key>ru</key>
+    <value>При записи CRM_ИсторияСостоянийОбращений (смарт)</value>
+  </synonym>
+  <comment>#Б-1352 смарт: Лопато 25.11.2024 //Добавить ТЭГ выгрузки в imot.io</comment>
+  <source>
+    <types>InformationRegisterRecordSet.CRM_ИсторияСостоянийОбращений</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.ИсторияСостоянийОбращенийПриЗаписи</handler>
+</mdclass:EventSubscription>

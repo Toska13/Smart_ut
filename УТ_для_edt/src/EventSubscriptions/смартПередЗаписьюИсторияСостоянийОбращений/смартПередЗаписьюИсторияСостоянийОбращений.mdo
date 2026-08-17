@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="56957d71-1fad-4c93-bbe1-6bad69e5337f">
+  <name>смартПередЗаписьюИсторияСостоянийОбращений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перед записью CRM_ИсторияСостоянийОбращений (смарт)</value>
+  </synonym>
+  <comment>#1538 смарт: Лопато 05.12.2024 //Интеграция с ROIStat. Добавить справочник Статусы ROIStat, доработать регистр состояний Интересов</comment>
+  <source>
+    <types>InformationRegisterRecordSet.CRM_ИсторияСостоянийОбращений</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.смартОбработкаПодписокНаСобытия.ИсторияСостоянийОбращенийПередЗаписью</handler>
+</mdclass:EventSubscription>

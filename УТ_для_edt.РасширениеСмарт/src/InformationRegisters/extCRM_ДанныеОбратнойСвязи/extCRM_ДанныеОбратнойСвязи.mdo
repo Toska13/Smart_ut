@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0e5fbcb8-d8b7-42f3-a3f6-b04fbb075d2a">
+  <producedTypes>
+    <selectionType typeId="0898e3ca-2cb0-4f7d-aab9-6c5b1e58fd64" valueTypeId="9c7cb682-dcfe-4ad4-a790-202b7b0d6d7a"/>
+    <listType typeId="42091c91-a1ae-4d0e-9c7e-492f046de8c8" valueTypeId="cc2ee316-5001-4524-bc96-145d4f559988"/>
+    <managerType typeId="2a2e887c-77ad-44e6-a254-61c2f39b81e7" valueTypeId="bceb81a4-7a32-4f1a-abcb-d6ef05a412ec"/>
+    <recordSetType typeId="0f5b624d-84f0-409b-8949-53db57f8b76b" valueTypeId="818bb24a-11c5-448c-9897-1a2e285e8bb5"/>
+    <recordKeyType typeId="f6ec1091-323d-4980-aac9-270ed23bf43b" valueTypeId="0f65cdd2-af28-404c-ba88-25cadd18d605"/>
+    <recordType typeId="17d1e749-e95e-4859-9a58-351073a47ca5" valueTypeId="376def07-71a9-4b76-b792-322bd56b2260"/>
+    <recordManagerType typeId="c439fbc1-b9e0-43bd-b0fa-9d7af84c650f" valueTypeId="059dc4bc-74ba-40ea-b588-2ba9405fa9eb"/>
+  </producedTypes>
+  <name>extCRM_ДанныеОбратнойСвязи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные обратной связи (Смарт)</value>
+  </synonym>
+  <comment>#1542 смарт: Лопато 03.11.2023 //Рефакторинг кода 1С. Расширение CRM. Перевести в расширение Смарт.</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="17ac4c8b-6e98-4ca6-8a8c-3459b8586412">
+    <name>Оценка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оценка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4d95f367-21d5-4056-9fb7-8d81b140ffbd">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="8c95717f-8619-47dc-8c07-284ea8b02b41">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.CRM_Интерес</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3a2b0e51-9eb5-48ed-bd20-c607edf23416">
+    <name>Шаблон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.CRM_ШаблоныРассылки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c3faf7ee-0054-42fb-8a64-b894466338f2">
+    <name>ДатаОценки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата оценки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

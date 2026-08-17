@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="337fb14e-0a79-49a8-9e2b-db4bd22eaa36">
+  <producedTypes>
+    <objectType typeId="998aea7b-59c4-409d-a5e2-3d13964e5a6d" valueTypeId="1b2f3070-1b8b-42a7-b2a1-d164206f1ba9"/>
+    <managerType typeId="51169b27-bdae-4d8c-9f0d-f7a5284d5163" valueTypeId="199396e0-76de-4903-85aa-a0be6fca30bb"/>
+  </producedTypes>
+  <name>смартIECHOЗагрузкаКомплектующихИзExcel</name>
+  <synonym>
+    <key>ru</key>
+    <value>IECHO Загрузка комплектующих из Excel (смарт)</value>
+  </synonym>
+  <comment>//смарт:ММ #092 389 06.01.2021</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.смартIECHOЗагрузкаКомплектующихИзExcel.Form.Форма</defaultForm>
+  <attributes uuid="d0a8cfa0-b6df-42fa-8312-5e7081c56c96">
+    <name>АдресФайлаВоВременномХранилище</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес файла во временном хранилище</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="cfaa8fe6-1e7c-4212-b518-39002682b559">
+    <producedTypes>
+      <objectType typeId="fe68d58f-d19e-45f8-b7ea-4464865ee63e" valueTypeId="6f9c9fd3-2605-474d-b76a-16104ade6852"/>
+      <rowType typeId="363f71c6-cb32-42d9-9a74-733a81ff6baa" valueTypeId="b1fc6e7b-d2e1-4b21-aac9-3e4ffad854e2"/>
+    </producedTypes>
+    <name>ЗагружаемыеДанные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загружаемые данные</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="3b91a975-8fa6-48d1-9c58-d9fb02280f64">
+      <name>Порядок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Порядок</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="83710cf8-8b59-4d78-917a-451ff943e13d">
+      <name>Комплектующая</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комплектующая</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.смартIECHOКомплектующие</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ab61218f-0d3f-4d09-af57-4b9912c2d0eb">
+      <name>НаименованиеИзФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование из файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="e7c44f1f-be21-42c7-8707-f052f2b50058">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="42eea48a-02b6-43ae-8df4-004eee0200f6">
+      <name>ЭтоГруппа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Это группа</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="2a61d75e-63b4-4969-b2d2-2f2cc9bf3758">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="39f315c1-d738-439d-b97d-cb84b969900f">
+    <name>смартIECHOЗагрузкаКомплектующихИзExcel</name>
+    <synonym>
+      <key>ru</key>
+      <value>IECHO Загрузка комплектующих из Excel (смарт)</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

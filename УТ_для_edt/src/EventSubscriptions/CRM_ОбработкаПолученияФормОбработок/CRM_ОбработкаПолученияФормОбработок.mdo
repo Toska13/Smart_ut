@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b5125a6a-d2c6-419d-9247-9aa8cbccfed5">
+  <name>CRM_ОбработкаПолученияФормОбработок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обработка получения форм обработок (CRM)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Processing of receipt of processing forms (CRM)</value>
+  </synonym>
+  <comment>Обработка получения форм обработок (CRM)</comment>
+  <source>
+    <types>DataProcessorManager.CRM_МастерРегистрацииОбращения</types>
+    <types>DataProcessorManager.ВводКонтактнойИнформации</types>
+    <types>DataProcessorManager.УниверсальныйОбменДаннымиXML</types>
+    <types>DataProcessorManager.CRM_КалендарьМенеджера</types>
+    <types>DataProcessorManager.CRM_АРМ_МоиДела</types>
+    <types>DataProcessorManager.CRM_АРМ_МоиПродажи</types>
+    <types>DataProcessorManager.ПодключениеОбсуждений</types>
+  </source>
+  <event>FormGetProcessing</event>
+  <handler>CommonModule.CRM_МетодыМодулейМенеджеровОбработок.ОбработкаПолученияФормОбъектовCRM</handler>
+</mdclass:EventSubscription>

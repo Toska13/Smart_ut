@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bbba66b7-bd3d-4818-b9e2-fc85c2ad8dde">
+  <name>smartADDDocum</name>
+  <synonym>
+    <key>ru</key>
+    <value>Smart ADDDocum</value>
+  </synonym>
+  <rootURL>smartaddocum</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="36a0457e-281b-4fbe-9a6e-2555f5c4ca42">
+    <name>smartaddocum</name>
+    <synonym>
+      <key>ru</key>
+      <value>Smartaddocum</value>
+    </synonym>
+    <comment>Используемые виды документов mov- перемещение между организациями, implem- реализация, offset- создание взаиморасчетов и списаний задолженности</comment>
+    <template>/add/{ИмяМетода}</template>
+    <methods uuid="aaa061d8-95a7-42f6-90b4-c0889f13ab0c">
+      <name>Post</name>
+      <synonym>
+        <key>ru</key>
+        <value>Post</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>AddDocumPost</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

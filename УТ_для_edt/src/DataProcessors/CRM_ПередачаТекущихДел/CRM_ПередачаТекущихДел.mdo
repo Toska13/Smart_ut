@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d12ae15-89b7-483a-a9d7-0cc220c830cb">
+  <producedTypes>
+    <objectType typeId="dd4e85e6-cd4e-45f7-a0ab-550b55a5ffa7" valueTypeId="f154301a-189e-4426-9760-0dd0707bcc21"/>
+    <managerType typeId="397c5dd7-b208-43fb-88a1-66c73ab99e1e" valueTypeId="0620ff41-8b49-4c1a-8f27-338c455f6047"/>
+  </producedTypes>
+  <name>CRM_ПередачаТекущихДел</name>
+  <synonym>
+    <key>ru</key>
+    <value>Передача текущих дел другому ответственному</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Transfer Open Accounts to New Responsible Person</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.CRM_ПередачаТекущихДел.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="0ed12fe0-dafc-4a23-864f-f27631e2350b">
+    <name>СотрудникИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник источник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee source</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сотрудник источник передачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Employee source of transfer</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5495a736-a8a4-4aef-80f8-946d31165d74">
+    <name>СотрудникПолучатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник получатель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee receiver</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сотрудник получатель передачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Employee transfer recipient</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a88a7740-1ef4-495d-ae22-3647adaf245b">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата начала передачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Start date of transfer</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6f8b1b19-136d-43e3-bef4-68286c539207">
+    <name>ДатаКонца</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата конца</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата конца передачи</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>End date of transfer</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="bab36a99-7040-47ac-8297-6f583e86bacd">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>
