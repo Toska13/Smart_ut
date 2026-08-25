@@ -15,6 +15,10 @@
         <segments>ПоПартнеру</segments>
       </dataPath>
       <titleLocation>Right</titleLocation>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПоПартнеруПриИзменении</name>
+      </handlers>
       <extendedTooltip>
         <name>ПоПартнеруExtendedTooltip</name>
         <id>17</id>
@@ -53,6 +57,10 @@
         <segments>ПоказыватьГрупповые</segments>
       </dataPath>
       <titleLocation>Right</titleLocation>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПоказыватьГрупповыеПриИзменении</name>
+      </handlers>
       <extendedTooltip>
         <name>ПоказыватьГрупповыеExtendedTooltip</name>
         <id>18</id>
@@ -295,6 +303,14 @@
       <horizontalAlign>Left</horizontalAlign>
       <autoFill>true</autoFill>
     </autoCommandBar>
+    <handlers>
+      <event>BeforeAddRow</event>
+      <name>СписокПередНачаломДобавления</name>
+    </handlers>
+    <handlers>
+      <event>OnActivateRow</event>
+      <name>СписокПриАктивизацииСтроки</name>
+    </handlers>
     <searchStringAddition>
       <name>СписокСтрокаПоиска</name>
       <id>19</id>
@@ -340,6 +356,7 @@
       <source>Список</source>
       <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
       </extInfo>
     </viewStatusAddition>
     <searchControlAddition>
@@ -451,7 +468,11 @@
         <autoMaxWidth>true</autoMaxWidth>
         <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+        <extInfo xsi:type="form:PictureDecorationExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.ВниманиеКрасный</picture>
+          </picture>
+        </extInfo>
       </items>
       <items xsi:type="form:Decoration">
         <name>ДекорацияКрасныйТреугольникПояснение</name>
@@ -552,7 +573,11 @@
         <autoMaxWidth>true</autoMaxWidth>
         <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+        <extInfo xsi:type="form:PictureDecorationExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.Внимание16</picture>
+          </picture>
+        </extInfo>
       </items>
       <items xsi:type="form:Decoration">
         <name>ДекорацияЖелтыйТреугольникПояснение</name>
@@ -657,7 +682,11 @@
         <autoMaxWidth>true</autoMaxWidth>
         <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+        <extInfo xsi:type="form:PictureDecorationExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.ВниманиеСерый</picture>
+          </picture>
+        </extInfo>
       </items>
       <items xsi:type="form:Decoration">
         <name>ДекорацияСерыйТреугольникПояснение</name>
@@ -797,6 +826,14 @@
     <horizontalAlign>Left</horizontalAlign>
     <autoFill>true</autoFill>
   </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>OnClose</event>
+    <name>ПриЗакрытии</name>
+  </handlers>
   <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
   <autoSaveDataInSettings>Use</autoSaveDataInSettings>
   <saveWindowSettings>true</saveWindowSettings>
@@ -810,7 +847,7 @@
   <showCloseButton>true</showCloseButton>
   <attributes>
     <name>Список</name>
-    <id>1000001</id>
+    <id>1</id>
     <valueType>
       <types>DynamicList</types>
     </valueType>
@@ -826,27 +863,27 @@
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	СправочникКонтрагенты.Ссылка,
-	СправочникКонтрагенты.ПометкаУдаления,
-	СправочникКонтрагенты.Предопределенный,
-	СправочникКонтрагенты.Наименование,
-	СправочникКонтрагенты.НаименованиеПолное,
-	СправочникКонтрагенты.ЮрФизЛицо,
+	СправочникКонтрагенты.Ссылка КАК Ссылка,
+	СправочникКонтрагенты.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникКонтрагенты.Предопределенный КАК Предопределенный,
+	СправочникКонтрагенты.Наименование КАК Наименование,
+	СправочникКонтрагенты.НаименованиеПолное КАК НаименованиеПолное,
+	СправочникКонтрагенты.ЮрФизЛицо КАК ЮрФизЛицо,
 	ВЫБОР
 		КОГДА СправочникКонтрагенты.ОбособленноеПодразделение
 			ТОГДА СправочникКонтрагенты.ГоловнойКонтрагент
 		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.Контрагенты.ПустаяСсылка)
 	КОНЕЦ КАК ГоловнойКонтрагент,
 	СправочникКонтрагенты.ОбособленноеПодразделение КАК ОбособленноеПодразделение,
-	СправочникКонтрагенты.ИНН,
-	СправочникКонтрагенты.КПП,
-	СправочникКонтрагенты.КодПоОКПО,
-	СправочникКонтрагенты.НДСпоСтавкам4и2,
-	СправочникКонтрагенты.Партнер,
-	СправочникКонтрагенты.Представление,
+	СправочникКонтрагенты.ИНН КАК ИНН,
+	СправочникКонтрагенты.КПП КАК КПП,
+	СправочникКонтрагенты.КодПоОКПО КАК КодПоОКПО,
+	СправочникКонтрагенты.НДСПоСтавкам4и2 КАК НДСПоСтавкам4и2,
+	СправочникКонтрагенты.Партнер КАК Партнер,
+	СправочникКонтрагенты.Представление КАК Представление,
 	ЕСТЬNULL(СостоянияКонтрагентов.Состояние, ЗНАЧЕНИЕ(Перечисление.СостоянияСуществованияКонтрагента.КонтрагентЕстьВБазеФНС)) КАК СостояниеПроверкиКонтрагента,
 	ВЫБОР
-		КОГДА СостоянияКонтрагентов.Состояние ЕСТЬ NULL 
+		КОГДА СостоянияКонтрагентов.Состояние ЕСТЬ NULL
 				ИЛИ СостоянияКонтрагентов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСуществованияКонтрагента.ПустаяСсылка)
 				ИЛИ СостоянияКонтрагентов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСуществованияКонтрагента.КонтрагентЕстьВБазеФНС)
 				ИЛИ СостоянияКонтрагентов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСуществованияКонтрагента.КонтрагентНеПодлежитПроверке)
@@ -856,11 +893,18 @@
 		КОГДА СостоянияКонтрагентов.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияСуществованияКонтрагента.ПустойИННИлиКПП)
 			ТОГДА 1
 		ИНАЧЕ 0
-	КОНЕЦ КАК НомерКартинкиСостояниеПроверки
+	КОНЕЦ КАК НомерКартинкиСостояниеПроверки,
+	ВЫБОР
+		КОГДА КонтрагентыБизнесСеть.Идентификатор ЕСТЬ NULL
+			ТОГДА ЛОЖЬ
+		ИНАЧЕ ИСТИНА
+	КОНЕЦ КАК ЕстьВБизнесСети
 ИЗ
 	Справочник.Контрагенты КАК СправочникКонтрагенты
 		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СостоянияКонтрагентов КАК СостоянияКонтрагентов
-		ПО (СостоянияКонтрагентов.Контрагент = СправочникКонтрагенты.Ссылка)}</queryText>
+		ПО (СостоянияКонтрагентов.Контрагент = СправочникКонтрагенты.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.КонтрагентыБизнесСеть КАК КонтрагентыБизнесСеть
+		ПО СправочникКонтрагенты.Ссылка = КонтрагентыБизнесСеть.Контрагент}</queryText>
       <mainTable>Catalog.Контрагенты</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -875,7 +919,7 @@
       <key>ru</key>
       <value>По партнеру</value>
     </title>
-    <id>1000002</id>
+    <id>3</id>
     <valueType>
       <types>Boolean</types>
     </valueType>
@@ -892,7 +936,7 @@
       <key>ru</key>
       <value>Показывать групповые</value>
     </title>
-    <id>1000003</id>
+    <id>2</id>
     <valueType>
       <types>Boolean</types>
     </valueType>
@@ -909,7 +953,7 @@
       <key>ru</key>
       <value>Партнер</value>
     </title>
-    <id>1000004</id>
+    <id>4</id>
     <valueType>
       <types>CatalogRef.Партнеры</types>
     </valueType>
@@ -926,7 +970,7 @@
       <key>ru</key>
       <value>Список партнеров</value>
     </title>
-    <id>1000005</id>
+    <id>5</id>
     <valueType>
       <types>ValueList</types>
     </valueType>
@@ -946,7 +990,7 @@
       <key>ru</key>
       <value>Ключ настроек</value>
     </title>
-    <id>1000006</id>
+    <id>6</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>
@@ -964,7 +1008,7 @@
       <key>ru</key>
       <value>Параметры подключаемых команд</value>
     </title>
-    <id>1000007</id>
+    <id>7</id>
     <valueType/>
     <view>
       <common>true</common>
@@ -975,7 +1019,28 @@
   </attributes>
   <commandInterface>
     <navigationPanel/>
-    <commandBar/>
+    <commandBar>
+      <cmiFragmentRecord>
+        <command>CommonCommand.ИнтеграцияС1СДокументооборотСоздатьПисьмо</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.ИнтеграцияС1СДокументооборотСоздатьБизнесПроцесс</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>BusinessProcess.Задание.StandardCommand.CreateBasedOn</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>CommonCommand.СозданиеСвязанныхОбъектов</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+      <cmiFragmentRecord>
+        <command>Report.ДосьеКонтрагента.Command.Досье</command>
+        <userVisible/>
+      </cmiFragmentRecord>
+    </commandBar>
   </commandInterface>
   <extInfo xsi:type="form:DynamicListFormExtInfo"/>
 </form:Form>
