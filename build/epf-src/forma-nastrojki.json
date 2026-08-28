@@ -1,0 +1,158 @@
+{
+  "title": { "ru": "Настройка MAX", "en": "Setting up MAX" },
+  "properties": {
+    "autoTitle": false,
+    "commandBarLocation": "Bottom"
+  },
+  "events": {
+    "OnCreateAtServer": "ПриСозданииНаСервере"
+  },
+  "attributes": [
+    {
+      "name": "ПараметрыПрокси",
+      "type": "Arbitrary"
+    }
+  ],
+  "commands": [
+    {
+      "name": "Готово",
+      "title": { "ru": "Готово", "en": "Done" },
+      "action": "Готово"
+    },
+    {
+      "name": "ПроверитьПодключение",
+      "title": { "ru": "Проверить подключение", "en": "Check connection" },
+      "action": "ПроверитьПодключение"
+    }
+  ],
+  "elements": [
+    {
+      "radio": "Провайдер",
+      "path": "Объект.Провайдер",
+      "titleLocation": "none",
+      "radioButtonType": "Tumbler",
+      "columnsCount": 2,
+      "events": { "OnChange": "ПровайдерПриИзменении" },
+      "choiceList": [
+        {
+          "value": 0,
+          "presentation": { "ru": "Прямое подключение (MAX API)", "en": "Direct (MAX API)" }
+        },
+        {
+          "value": 1,
+          "presentation": { "ru": "Green-API", "en": "Green-API" }
+        }
+      ]
+    },
+    {
+      "pages": "ГруппаПровайдеры",
+      "title": { "ru": "Параметры подключения" },
+      "pagesRepresentation": "None",
+      "children": [
+        {
+          "page": "ГруппаПрямойMAX",
+          "title": { "ru": "Прямой MAX" },
+          "children": [
+            {
+              "input": "Токен",
+              "path": "Объект.Токен",
+              "title": { "ru": "Токен бота MAX" },
+              "width": 60,
+              "events": { "OnChange": "ТокенПриИзменении" }
+            },
+            {
+              "input": "АдресWebhook",
+              "path": "Объект.АдресWebhook",
+              "title": { "ru": "Адрес webhook" },
+              "width": 60
+            },
+            {
+              "input": "СекретWebhook",
+              "path": "Объект.СекретWebhook",
+              "title": { "ru": "Секрет webhook" },
+              "width": 60
+            }
+          ]
+        },
+        {
+          "page": "ГруппаGreenApi",
+          "title": { "ru": "Green-API" },
+          "children": [
+            {
+              "input": "СерверGreen",
+              "path": "Объект.Сервер",
+              "title": { "ru": "apiUrl (хост)" },
+              "width": 60,
+              "inputHint": { "ru": "3100.api.green-api.com" }
+            },
+            {
+              "input": "MediaURL",
+              "path": "Объект.MediaURL",
+              "title": { "ru": "Сервер media (mediaUrl)" },
+              "width": 60,
+              "inputHint": { "ru": "3100.media.green-api.com (пусто = из apiUrl)" }
+            },
+            {
+              "input": "ApiURL",
+              "path": "Объект.ApiURL",
+              "title": { "ru": "ID Instance" },
+              "width": 60,
+              "events": { "OnChange": "ApiURLПриИзменении" }
+            },
+            {
+              "input": "ТокенGreen",
+              "path": "Объект.Токен",
+              "title": { "ru": "apiTokenInstance" },
+              "width": 60,
+              "events": { "OnChange": "ТокенПриИзменении" }
+            },
+            {
+              "input": "АдресWebhookGreen",
+              "path": "Объект.АдресWebhook",
+              "title": { "ru": "Адрес webhook" },
+              "width": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "vertical",
+      "name": "ГруппаПрокси",
+      "title": { "ru": "Прокси" },
+      "behavior": "collapsible",
+      "collapsed": true,
+      "showTitle": true,
+      "children": [
+        {
+          "input": "ПроксиСервер",
+          "path": "Объект.ПроксиСервер",
+          "width": 60
+        },
+        {
+          "input": "ПроксиПорт",
+          "path": "Объект.ПроксиПорт",
+          "width": 10
+        },
+        {
+          "input": "ПроксиПользователь",
+          "path": "Объект.ПроксиПользователь",
+          "width": 40
+        },
+        {
+          "input": "ПроксиПароль",
+          "path": "Объект.ПроксиПароль",
+          "passwordMode": true,
+          "width": 40
+        }
+      ]
+    },
+    {
+      "cmdBar": "КоманднаяПанель",
+      "children": [
+        { "button": "Готово", "command": "Form.Command.Готово", "defaultButton": true },
+        { "button": "ПроверитьПодключение", "command": "Form.Command.ПроверитьПодключение" }
+      ]
+    }
+  ]
+}
