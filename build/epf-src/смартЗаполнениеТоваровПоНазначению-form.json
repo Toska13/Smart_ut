@@ -1,0 +1,148 @@
+{
+  "title": { "ru": "Заполнить по назначению" },
+  "properties": {
+    "autoTitle": true,
+    "windowOpeningMode": "LockOwnerWindow"
+  },
+  "events": {
+    "OnCreateAtServer": "ПриСозданииНаСервере"
+  },
+  "attributes": [
+    {
+      "name": "Сценарий",
+      "type": "string(100)"
+    },
+    {
+      "name": "Склад",
+      "type": "CatalogRef.Склады"
+    },
+    {
+      "name": "смартЗапчастиГарантийные",
+      "type": "boolean"
+    },
+    {
+      "name": "ДокументВладелец",
+      "type": "DocumentRef.ЗаказНаПеремещение | DocumentRef.ЗаказНаВнутреннееПотребление"
+    },
+    {
+      "name": "Товары",
+      "type": "ValueTable",
+      "columns": [
+        { "name": "Перенести", "type": "boolean" },
+        { "name": "Номенклатура", "type": "CatalogRef.Номенклатура" },
+        { "name": "Склад", "type": "CatalogRef.Склады" },
+        { "name": "Характеристика", "type": "CatalogRef.ХарактеристикиНоменклатуры" },
+        { "name": "ДоступноеКоличество", "type": "decimal(15,3)" },
+        { "name": "ЕдиницаИзмерения", "type": "CatalogRef.УпаковкиЕдиницыИзмерения" },
+        { "name": "НаименованиеНоменклатуры", "type": "string(150)" }
+      ]
+    }
+  ],
+  "parameters": [
+    { "name": "Склад", "type": "CatalogRef.Склады" },
+    { "name": "смартЗапчастиГарантийные", "type": "boolean" },
+    {
+      "name": "ДокументВладелец",
+      "type": "DocumentRef.ЗаказНаПеремещение | DocumentRef.ЗаказНаВнутреннееПотребление"
+    }
+  ],
+  "commands": [
+    {
+      "name": "ПеренестиВДокумент",
+      "title": { "ru": "Перенести в документ" },
+      "tooltip": { "ru": "Перенести отмеченные строки в документ" },
+      "action": "ПеренестиВДокумент",
+      "defaultButton": true
+    },
+    {
+      "name": "ОтметитьВсе",
+      "title": { "ru": "Отметить все" },
+      "tooltip": { "ru": "Отметить все" },
+      "action": "ОтметитьВсе",
+      "picture": "StdPicture.CheckAll",
+      "representation": "Picture"
+    },
+    {
+      "name": "СнятьОтметку",
+      "title": { "ru": "Снять отметку" },
+      "tooltip": { "ru": "Снять отметку" },
+      "action": "СнятьОтметку",
+      "picture": "StdPicture.UncheckAll",
+      "representation": "Picture"
+    }
+  ],
+  "elements": [
+    {
+      "input": "Сценарий",
+      "path": "Сценарий",
+      "title": { "ru": "Сценарий" },
+      "width": 40,
+      "events": { "OnChange": "СценарийПриИзменении" }
+    },
+    {
+      "table": "Товары",
+      "path": "Товары",
+      "changeRowSet": false,
+      "changeRowOrder": false,
+      "selectionMode": "MultiRow",
+      "tableAutofill": false,
+      "columns": [
+        { "check": "ТоварыПеренести", "path": "Товары.Перенести", "title": { "ru": "Перенести" } },
+        {
+          "input": "ТоварыНоменклатура",
+          "path": "Товары.Номенклатура",
+          "title": { "ru": "Номенклатура" },
+          "readOnly": true
+        },
+        {
+          "input": "ТоварыСклад",
+          "path": "Товары.Склад",
+          "title": { "ru": "Склад" },
+          "readOnly": true
+        },
+        {
+          "input": "ТоварыХарактеристика",
+          "path": "Товары.Характеристика",
+          "title": { "ru": "Характеристика" },
+          "readOnly": true
+        },
+        {
+          "input": "ТоварыДоступноеКоличество",
+          "path": "Товары.ДоступноеКоличество",
+          "title": { "ru": "Доступное количество" },
+          "readOnly": true
+        },
+        {
+          "input": "ТоварыЕдиницаИзмерения",
+          "path": "Товары.ЕдиницаИзмерения",
+          "title": { "ru": "Единица измерения" },
+          "readOnly": true
+        }
+      ],
+      "commandBar": {
+        "autofill": false,
+        "items": [
+          {
+            "button": "ТоварыОтметитьВсе",
+            "command": "ОтметитьВсе",
+            "representation": "Picture",
+            "picture": "StdPicture.CheckAll"
+          },
+          {
+            "button": "ТоварыСнятьОтметку",
+            "command": "СнятьОтметку",
+            "representation": "Picture",
+            "picture": "StdPicture.UncheckAll"
+          }
+        ]
+      }
+    }
+  ],
+  "autoCmdBar": {
+    "name": "ФормаКоманднаяПанель",
+    "items": [
+      { "button": "ФормаПеренестиВДокумент", "command": "ПеренестиВДокумент", "defaultButton": true },
+      { "button": "ФормаЗакрыть", "stdCommand": "Close" }
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Smart.ut — runtime-архитектура",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/Toska13/Smart_ut",
+      "revision": "80a21b0532fc6b28c9e871898c86d7d9178435dd"
+    },
+    "viewBox": [980, 540],
+    "views": [
+      {
+        "id": "user-access",
+        "label": "Доступ пользователей",
+        "focus": ["users", "web_pub", "app_server", "infobase"],
+        "note": "Толстый клиент и веб-клиент сходятся на сервере приложений и ИБ."
+      },
+      {
+        "id": "inbound-api",
+        "label": "Входящие HTTP-сервисы",
+        "focus": ["bitrix", "crm_channels", "web_pub", "app_server"],
+        "note": "Внешние системы вызывают опубликованные /hs/* endpoints."
+      },
+      {
+        "id": "outbound-sync",
+        "label": "Исходящий обмен",
+        "focus": ["app_server", "logistics", "enterprise", "analytics", "bitrix"],
+        "note": "Регламентные задания и HTTP-клиенты платформы."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "users",
+      "type": "frontend",
+      "label": "Пользователи",
+      "sublabel": "тонкий и веб-клиент",
+      "pos": [70, 260],
+      "size": [130, 62],
+      "sources": [{ "path": "УТ_для_edt.РасширениеСмарт/src/Catalogs/Пользователи/Пользователи.mdo", "label": "пользователи" }]
+    },
+    {
+      "id": "web_pub",
+      "type": "cloud",
+      "label": "Веб-публикация",
+      "sublabel": "Apache / IIS, /hs/*",
+      "pos": [290, 260],
+      "size": [140, 62],
+      "sources": [{ "path": "УТ_для_edt/src/HTTPServices/CRM_Messengers/CRM_Messengers.mdo", "label": "HTTP /hs" }]
+    },
+    {
+      "id": "app_server",
+      "type": "backend",
+      "label": "1C:Enterprise",
+      "sublabel": "УТ + РасширениеСмарт + ДЛ",
+      "pos": [530, 260],
+      "size": [150, 72],
+      "tag": "8.3.16+",
+      "sources": [
+        { "path": "УТ_для_edt/src/Configuration/Configuration.mdo", "label": "основная конф." },
+        { "path": "УТ_для_edt.РасширениеСмарт/src/Configuration/Configuration.mdo", "label": "расширение" },
+        { "path": "УТ_для_edt.ДоставкаДеловыеЛинии/src/Configuration/Configuration.mdo", "label": "расширение ДЛ" }
+      ]
+    },
+    {
+      "id": "infobase",
+      "type": "database",
+      "label": "Информационная база",
+      "sublabel": "file / PostgreSQL",
+      "pos": [790, 260],
+      "size": [140, 62],
+      "sources": [{ "path": "УТ_для_edt/src/AccumulationRegisters/ТоварыНаСкладах/ТоварыНаСкладах.mdo", "label": "данные УТ" }]
+    },
+    {
+      "id": "bitrix",
+      "type": "external",
+      "label": "Bitrix / сайт",
+      "sublabel": "shop, заказы, остатки",
+      "pos": [290, 70],
+      "size": [140, 62],
+      "sources": [
+        { "path": "УТ_для_edt.РасширениеСмарт/src/HTTPServices/shop/shop.mdo", "label": "HTTP shop" },
+        { "path": "УТ_для_edt/src/ExchangePlans/Б_ОбменССайтом/Б_ОбменССайтом.mdo", "label": "обмен" }
+      ]
+    },
+    {
+      "id": "crm_channels",
+      "type": "external",
+      "label": "CRM-каналы",
+      "sublabel": "мессенджеры, АТС",
+      "pos": [530, 70],
+      "size": [150, 62],
+      "sources": [
+        { "path": "УТ_для_edt/src/HTTPServices/CRM_Messengers/CRM_Messengers.mdo", "label": "webhooks" },
+        { "path": "УТ_для_edt.РасширениеСмарт/src/HTTPServices/AsteriskExchange/AsteriskExchange.mdo", "label": "Asterisk" },
+        { "path": "УТ_для_edt.РасширениеСмарт/src/HTTPServices/MegafonVATS/MegafonVATS.mdo", "label": "Megafon" }
+      ]
+    },
+    {
+      "id": "logistics",
+      "type": "external",
+      "label": "Логистика",
+      "sublabel": "ДЛ + Атлант",
+      "pos": [790, 70],
+      "size": [150, 62],
+      "sources": [
+        { "path": "УТ_для_edt.ДоставкаДеловыеЛинии/src/Configuration/Configuration.mdo", "label": "REST ДЛ" },
+        { "path": "УТ_для_edt/src/ExchangePlans/смартОбменСоСкладомАтлант/смартОбменСоСкладомАтлант.mdo", "label": "Атлант" }
+      ]
+    },
+    {
+      "id": "enterprise",
+      "type": "external",
+      "label": "Корп. контур",
+      "sublabel": "ЗУП, банки, ЭДО",
+      "pos": [530, 450],
+      "size": [150, 62],
+      "sources": [
+        { "path": "УТ_для_edt.РасширениеСмарт/src/HTTPServices/смартHTTPДляЗУП/смартHTTPДляЗУП.mdo", "label": "HTTP zup" },
+        { "path": "УТ_для_edt/src/HTTPServices/ЭДО/ЭДО.mdo", "label": "edi" }
+      ]
+    },
+    {
+      "id": "analytics",
+      "type": "external",
+      "label": "Аналитика",
+      "sublabel": "Roistat, Deeray",
+      "pos": [790, 450],
+      "size": [140, 62],
+      "sources": [
+        { "path": "УТ_для_edt/src/ExchangePlans/смартОбменRoistat/смартОбменRoistat.mdo", "label": "Roistat" },
+        { "path": "УТ_для_edt/src/ExchangePlans/смартОбменССервисомРечевойАналитикиDeeray/смартОбменССервисомРечевойАналитикиDeeray.mdo", "label": "Deeray" }
+      ]
+    },
+    {
+      "id": "reg_jobs",
+      "type": "messagebus",
+      "label": "Регламентные задания",
+      "sublabel": "фоновые обмены",
+      "pos": [290, 450],
+      "size": [140, 62],
+      "sources": [
+        { "path": "УТ_для_edt/src/ScheduledJobs/Б_ЗаданиеОбменССайтом/Б_ЗаданиеОбменССайтом.mdo", "label": "сайт" },
+        { "path": "УТ_для_edt/src/ScheduledJobs/смартЗаданиеОбменСоСкладомАтлант/смартЗаданиеОбменСоСкладомАтлант.mdo", "label": "Атлант" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Контур 1C runtime",
+      "wraps": ["web_pub", "app_server", "infobase", "reg_jobs"],
+      "pad": 22
+    },
+    {
+      "kind": "security-group",
+      "label": "HTTP /hs — входящие интеграции",
+      "wraps": ["web_pub", "app_server"],
+      "pad": 14
+    }
+  ],
+  "connections": [
+    { "from": "users", "to": "web_pub", "label": "HTTPS UI", "variant": "emphasis" },
+    {
+      "from": "users",
+      "to": "app_server",
+      "label": "TCP/RDP",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [[135, 430], [605, 430]],
+      "labelAt": [340, 442]
+    },
+    { "from": "web_pub", "to": "app_server", "label": "HTTP /hs", "variant": "emphasis", "labelAt": [430, 336] },
+    { "from": "app_server", "to": "infobase", "label": "данные УТ", "variant": "emphasis", "labelAt": [690, 248] },
+    { "from": "bitrix", "to": "web_pub", "label": "POST /hs/shop", "variant": "dashed", "labelAt": [340, 190] },
+    { "from": "crm_channels", "to": "web_pub", "label": "webhooks", "variant": "dashed", "labelAt": [430, 190] },
+    { "from": "reg_jobs", "to": "app_server", "label": "планировщик", "variant": "dashed", "labelAt": [380, 370] },
+    { "from": "app_server", "to": "logistics", "label": "REST / обмен", "variant": "dashed", "labelAt": [710, 190] },
+    { "from": "app_server", "to": "enterprise", "label": "HTTP / EDI", "variant": "dashed", "labelAt": [540, 340] },
+    { "from": "app_server", "to": "analytics", "label": "выгрузки", "variant": "dashed", "labelAt": [710, 396] }
+  ]
+}

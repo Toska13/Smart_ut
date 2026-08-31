@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Smart.ut — обмен с Bitrix",
+    "quality_profile": "showcase",
+    "viewBox": [1068, 680],
+    "views": [
+      {
+        "id": "sync-api",
+        "label": "Синхронные /hs/shop",
+        "focus": ["bitrix", "http_shop", "ut_data"],
+        "note": "Остатки, взаиморасчёты и печать счёта — online-запросы."
+      },
+      {
+        "id": "batch-exchange",
+        "label": "Пакетный CommerceML",
+        "focus": ["reg_job", "exchange", "import", "bitrix", "ut_data"],
+        "note": "Б_ОбменССайтомСервер выгружает каталог на сайт и загружает заказы."
+      }
+    ]
+  },
+  "stages": [
+    { "label": "Bitrix" },
+    { "label": "Триггер" },
+    { "label": "Обработка" },
+    { "label": "УТ" },
+    { "label": "Ответ" }
+  ],
+  "nodes": [
+    { "id": "bitrix", "type": "external", "label": "Bitrix / сайт", "sublabel": "каталог", "stage": 0, "row": 1 },
+    { "id": "http_shop", "type": "frontend", "label": "HTTP /hs/shop", "sublabel": "stock, invoice", "stage": 1, "row": 0 },
+    { "id": "reg_job", "type": "messagebus", "label": "Регл. задание", "sublabel": "Б_ЗаданиеОбменССайтом", "stage": 1, "row": 1 },
+    { "id": "exchange", "type": "backend", "label": "ОбменССайтом", "sublabel": "XML в обе стороны", "stage": 2, "row": 1 },
+    { "id": "import", "type": "backend", "label": "Загрузка XML", "sublabel": "документы", "stage": 2, "row": 2 },
+    { "id": "ut_data", "type": "database", "label": "Данные УТ", "sublabel": "НСИ, заказы", "stage": 3, "row": 1 },
+    { "id": "site_reply", "type": "external", "label": "Ответ сайту", "sublabel": "JSON / PDF", "stage": 4, "row": 1 }
+  ],
+  "flows": [
+    { "from": "bitrix", "to": "http_shop", "label": "POST /hs/shop/*", "classification": "online API", "variant": "emphasis", "fromSide": "top", "toSide": "left", "via": [[100, 157], [259, 157]], "labelAt": [180, 157] },
+    { "from": "http_shop", "to": "ut_data", "label": "запрос остатков", "classification": "read", "variant": "default", "fromSide": "top", "toSide": "top", "via": [[315, 120], [745, 120], [745, 242]], "labelAt": [530, 120] },
+    { "from": "ut_data", "to": "site_reply", "label": "JSON / PDF", "classification": "sync", "variant": "emphasis", "route": "vertical-channel" },
+    { "from": "reg_job", "to": "exchange", "label": "batch", "classification": "batch", "variant": "dashed", "route": "straight", "labelAt": [430, 271] },
+    { "from": "exchange", "to": "bitrix", "label": "XML каталога", "classification": "upload", "variant": "dashed", "route": "bottom-channel", "labelAt": [240, 360] },
+    { "from": "exchange", "to": "import", "label": "XML", "classification": "CommerceML", "variant": "emphasis", "route": "straight", "labelAt": [580, 428] },
+    { "from": "bitrix", "to": "import", "label": "XML заказов", "classification": "download", "variant": "dashed", "fromSide": "bottom", "toSide": "bottom", "via": [[100, 580], [530, 580]], "labelAt": [200, 620] },
+    { "from": "import", "to": "ut_data", "label": "ЗаказКлиента", "classification": "write", "variant": "emphasis", "route": "vertical-channel" }
+  ]
+}
