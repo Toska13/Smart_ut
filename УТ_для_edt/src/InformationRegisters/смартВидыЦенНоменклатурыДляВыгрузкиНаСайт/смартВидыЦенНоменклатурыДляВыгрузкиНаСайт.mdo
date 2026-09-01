@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="54fe08e2-b0c9-49c9-933b-be40d060be64">
+  <producedTypes>
+    <selectionType typeId="a7444e78-304f-47c9-b095-4d9b5c6dee8d" valueTypeId="8a4ea6d9-1b3c-419c-ac2c-8a833d4a7297"/>
+    <listType typeId="297a754c-83a0-4cdb-90cd-171d85f21358" valueTypeId="4bd8fcd9-bb7d-41db-b12f-532055bf78ce"/>
+    <managerType typeId="8d35e597-563d-4ab6-bd29-86d66a1e6f41" valueTypeId="1658ec6b-8412-4368-a6da-4c0fede9508a"/>
+    <recordSetType typeId="eca9a1a2-4353-44c9-9708-2febc003a9bc" valueTypeId="94a673db-db8f-4648-bb64-98a2636c4ad4"/>
+    <recordKeyType typeId="881a3005-6552-48ab-b0f6-cc2d2007ef0b" valueTypeId="4a7a3d8d-7a84-4327-abf0-b4c8c28c13a2"/>
+    <recordType typeId="e4648c80-b0a5-468c-b4cc-a9da5cef3401" valueTypeId="1906d21a-0090-405f-9904-5be18668d04d"/>
+    <recordManagerType typeId="c93fd16e-2a64-4c78-8476-f8df6b4431a0" valueTypeId="98373a67-4e56-492b-bf55-a6f8cb238379"/>
+  </producedTypes>
+  <name>смартВидыЦенНоменклатурыДляВыгрузкиНаСайт</name>
+  <synonym>
+    <key>ru</key>
+    <value>Виды цен номенклатуры для выгрузки на сайт</value>
+  </synonym>
+  <comment>//++ смарт: ограничение вида цены номенклатуры при выгрузке на сайт Битрикс</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартВидыЦенНоменклатурыДляВыгрузкиНаСайт.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартВидыЦенНоменклатурыДляВыгрузкиНаСайт.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="27ddd963-3f75-4c76-b527-ea93ad4647ed">
+    <name>ВидЦены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид цены</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыЦен</types>
+    </type>
+    <fillChecking>ShowError</fillChecking>
+  </resources>
+  <dimensions uuid="bb9faad5-94e6-4f8f-926a-0d27c8b0f361">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="b97f5712-f1cb-4b57-a7a7-10fa988b8311">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+  </forms>
+  <forms uuid="f4171666-2c47-4cfb-a185-68992f17349f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+  </forms>
+</mdclass:InformationRegister>
