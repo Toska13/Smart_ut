@@ -50,14 +50,18 @@
             <key>ru</key>
             <value>С нашего склада</value>
           </presentation>
-          <value xsi:type="core:ReferenceValue"/>
+          <value xsi:type="core:ReferenceValue">
+            <value>Enum.ВидыДоставки.EnumValue.СоСклада</value>
+          </value>
         </choiceList>
         <choiceList>
           <presentation>
             <key>ru</key>
             <value>На наш склад</value>
           </presentation>
-          <value xsi:type="core:ReferenceValue"/>
+          <value xsi:type="core:ReferenceValue">
+            <value>Enum.ВидыДоставки.EnumValue.НаСклад</value>
+          </value>
         </choiceList>
         <backColor xsi:type="core:ColorRef">
           <color>Style.ФонУправляющегоПоля</color>
@@ -664,6 +668,18 @@
               <common>true</common>
             </userVisible>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Add</excludedCommands>
+            <excludedCommands>Change</excludedCommands>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
+            <excludedCommands>EndEdit</excludedCommands>
+            <excludedCommands>HierarchicalList</excludedCommands>
+            <excludedCommands>List</excludedCommands>
+            <excludedCommands>MoveDown</excludedCommands>
+            <excludedCommands>MoveUp</excludedCommands>
+            <excludedCommands>SortListAsc</excludedCommands>
+            <excludedCommands>SortListDesc</excludedCommands>
+            <excludedCommands>Tree</excludedCommands>
             <items xsi:type="form:FormGroup">
               <name>РаспоряженияНаДоставкуГруппаАдрес</name>
               <id>1747</id>
@@ -698,6 +714,9 @@
                   <autoMaxHeight>true</autoMaxHeight>
                   <horizontalStretch>true</horizontalStretch>
                   <verticalStretch>true</verticalStretch>
+                  <valuesPicture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.ИсполнителиДоставки</picture>
+                  </valuesPicture>
                   <border xsi:type="core:BorderDef">
                     <style>Single</style>
                     <width>1</width>
@@ -1027,6 +1046,9 @@
               <showInHeader>true</showInHeader>
               <headerHorizontalAlign>Left</headerHorizontalAlign>
               <showInFooter>true</showInFooter>
+              <footerDataPath xsi:type="form:DataPath">
+                <segments>27</segments>
+              </footerDataPath>
               <footerTextColor xsi:type="core:ColorRef">
                 <color>Style.ЦветИтоговыхПоказателейДокументов</color>
               </footerTextColor>
@@ -2110,6 +2132,12 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Add</excludedCommands>
+              <excludedCommands>Change</excludedCommands>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>HierarchicalList</excludedCommands>
+              <excludedCommands>List</excludedCommands>
+              <excludedCommands>Tree</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>ЗаданияНаПеревозкуПланируемыеПорядокВМаршруте</name>
                 <id>887</id>
@@ -2531,6 +2559,11 @@
                     <choiceFoldersAndItems>Items</choiceFoldersAndItems>
                     <typeDomainEnabled>true</typeDomainEnabled>
                     <textEdit>true</textEdit>
+                    <typeLink>
+                      <datapath xsi:type="form:DataPath">
+                        <segments>Зона</segments>
+                      </datapath>
+                    </typeLink>
                   </extInfo>
                 </items>
                 <visible>true</visible>
@@ -3147,6 +3180,9 @@
               <verticalStretch>true</verticalStretch>
               <enableStartDrag>true</enableStartDrag>
               <enableDrag>true</enableDrag>
+              <rowsPicture xsi:type="core:PictureRef">
+                <picture>CommonPicture.ЗаданиеВыполняетПеревозчик</picture>
+              </rowsPicture>
             </items>
             <items xsi:type="form:FormGroup">
               <name>ГруппаЗаданияПодвал</name>
@@ -3228,7 +3264,11 @@
                 <autoMaxWidth>true</autoMaxWidth>
                 <height>1</height>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.Состояние33Процента</picture>
+                  </picture>
+                </extInfo>
               </items>
               <items xsi:type="form:FormField">
                 <name>НадписьНедогрузОбъем</name>
@@ -3307,7 +3347,11 @@
                 <autoMaxWidth>true</autoMaxWidth>
                 <height>1</height>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>StdPicture.Stop</picture>
+                  </picture>
+                </extInfo>
               </items>
               <items xsi:type="form:FormGroup">
                 <name>СтраницыРаспоряжения</name>
@@ -4133,6 +4177,9 @@
               <autoMaxHeight>true</autoMaxHeight>
               <horizontalStretch>true</horizontalStretch>
               <verticalStretch>true</verticalStretch>
+              <valuesPicture xsi:type="core:PictureRef">
+                <picture>CommonPicture.ОткрытьКарточкуПартнера</picture>
+              </valuesPicture>
               <border xsi:type="core:BorderDef">
                 <style>Single</style>
                 <width>1</width>
@@ -5174,6 +5221,16 @@
           <common>true</common>
         </userVisible>
         <titleLocation>None</titleLocation>
+        <excludedCommands>Add</excludedCommands>
+        <excludedCommands>Change</excludedCommands>
+        <excludedCommands>Copy</excludedCommands>
+        <excludedCommands>Delete</excludedCommands>
+        <excludedCommands>EndEdit</excludedCommands>
+        <excludedCommands>MoveDown</excludedCommands>
+        <excludedCommands>MoveUp</excludedCommands>
+        <excludedCommands>ShowRowRearrangement</excludedCommands>
+        <excludedCommands>SortListAsc</excludedCommands>
+        <excludedCommands>SortListDesc</excludedCommands>
         <items xsi:type="form:FormField">
           <name>ДокументыДляПеревозчиковПеревозчик</name>
           <id>1698</id>

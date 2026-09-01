@@ -633,6 +633,48 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="1229d269-a504-4dd2-aba6-f49d0085ccd5">
+    <name>ЦенаТолькоИзКонструктора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена только из конструктора</value>
+    </synonym>
+    <comment>//++ #Б-7986 смарт: Фролов 26.08.2026 //Цены Basic. Конструктор КП. Изменение логики применения цен.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4984eb95-187c-4e46-8339-95b7730ae88d">
+    <name>ФайлБуклета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Файл буклета</value>
+    </synonym>
+    <comment>//++ #Б-7992 смарт: Фролов 28.08.2026 //Добавить раздел Буклет в Оборудование в Конструкторе Оборудования, и прикреплять его к КП клиенту.</comment>
+    <type>
+      <types>CatalogRef.смартКонструкторОборудованияПрисоединенныеФайлы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ссылка на файл буклета</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>ВладелецФайла</name>
+      <field>Catalog.смартКонструкторОборудования.StandardAttribute.Ref</field>
+    </choiceParameterLinks>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.НоменклатураПрисоединенныеФайлы.EmptyRef</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <tabularSections uuid="8fcc0701-2379-4d89-8a1b-8c6f98659b1e">
     <producedTypes>
       <objectType typeId="bb960d19-4f75-459a-9494-80e8d05d6fe2" valueTypeId="8d28b1f2-5552-4894-b5e0-9d1bf30b2a23"/>

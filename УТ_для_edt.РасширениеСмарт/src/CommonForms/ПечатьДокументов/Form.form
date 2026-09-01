@@ -1007,7 +1007,6 @@
             <horizontalAlign>Left</horizontalAlign>
           </extInfo>
         </extendedTooltip>
-        <commandName>Form.StandardCommand.Help</commandName>
         <representation>Picture</representation>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -1100,7 +1099,11 @@
       </contextMenu>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+      <extInfo xsi:type="form:PictureDecorationExtInfo">
+        <picture xsi:type="core:PictureRef">
+          <picture>CommonPicture.ИнформацияСиняя</picture>
+        </picture>
+      </extInfo>
     </items>
     <items xsi:type="form:Decoration">
       <name>ДополнительнаяИнформация</name>
@@ -1183,6 +1186,17 @@
         <common>true</common>
       </userVisible>
       <titleLocation>None</titleLocation>
+      <excludedCommands>Add</excludedCommands>
+      <excludedCommands>CancelSearch</excludedCommands>
+      <excludedCommands>Change</excludedCommands>
+      <excludedCommands>Copy</excludedCommands>
+      <excludedCommands>Delete</excludedCommands>
+      <excludedCommands>EndEdit</excludedCommands>
+      <excludedCommands>Find</excludedCommands>
+      <excludedCommands>OutputList</excludedCommands>
+      <excludedCommands>SelectAll</excludedCommands>
+      <excludedCommands>SortListAsc</excludedCommands>
+      <excludedCommands>SortListDesc</excludedCommands>
       <items xsi:type="form:FormField">
         <name>НастройкиПечатныхФормПечатать</name>
         <id>93</id>
@@ -1842,7 +1856,11 @@
             </contextMenu>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+            <extInfo xsi:type="form:PictureDecorationExtInfo">
+              <picture xsi:type="core:PictureRef">
+                <picture>CommonPicture.Информация32</picture>
+              </picture>
+            </extInfo>
           </items>
           <items xsi:type="form:Decoration">
             <name>НадписьПечатнаяФормаНедоступна</name>
@@ -2257,7 +2275,7 @@
         <showLeftMargin>true</showLeftMargin>
         <united>true</united>
         <backColor xsi:type="core:ColorRef">
-          <color>0:2bc49c1a-ab48-4ec3-ad56-8a7077e93cd9</color>
+          <color>Style.ИтогиФонГруппы</color>
         </backColor>
         <throughAlign>Auto</throughAlign>
         <currentRowUse>Auto</currentRowUse>

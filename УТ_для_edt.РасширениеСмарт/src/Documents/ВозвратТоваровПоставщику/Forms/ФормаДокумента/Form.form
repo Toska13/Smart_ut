@@ -528,7 +528,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -750,7 +754,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -949,6 +957,12 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceParameterLinks>
+                <name>ХозяйственнаяОперацияДоговора</name>
+                <datapath xsi:type="form:DataPath">
+                  <segments>ХозяйственнаяОперацияДоговора</segments>
+                </datapath>
+              </choiceParameterLinks>
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
@@ -991,6 +1005,12 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceParameterLinks>
+                <name>Отбор.ХозяйственнаяОперация</name>
+                <datapath xsi:type="form:DataPath">
+                  <segments>ХозяйственнаяОперацияДоговора</segments>
+                </datapath>
+              </choiceParameterLinks>
               <choiceParameters>
                 <name>ПоказыватьЗакупкуПоИмпорту</name>
                 <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -1329,7 +1349,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнераКод</name>
-          <id>887</id>
+          <id>265</id>
           <title>
             <key>ru</key>
             <value>Код номенклатуры поставщика</value>
@@ -1342,7 +1362,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераКодРасширеннаяПодсказка</name>
-            <id>891</id>
+            <id>380</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1352,7 +1372,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераКодКонтекстноеМеню</name>
-            <id>890</id>
+            <id>266</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>LabelField</type>
@@ -1368,7 +1388,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнераАртикул</name>
-          <id>884</id>
+          <id>267</id>
           <title>
             <key>ru</key>
             <value>Артикул поставщика</value>
@@ -1381,7 +1401,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераАртикулРасширеннаяПодсказка</name>
-            <id>893</id>
+            <id>381</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1391,7 +1411,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераАртикулКонтекстноеМеню</name>
-            <id>892</id>
+            <id>268</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>LabelField</type>
@@ -1407,7 +1427,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнера</name>
-          <id>881</id>
+          <id>157</id>
           <title>
             <key>ru</key>
             <value>Номенклатура поставщика</value>
@@ -1422,7 +1442,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераРасширеннаяПодсказка</name>
-            <id>895</id>
+            <id>382</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1432,7 +1452,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераКонтекстноеМеню</name>
-            <id>894</id>
+            <id>158</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -1494,6 +1514,9 @@
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible/>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.Товары.Артикул</segments>
+          </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураАртикулExtendedTooltip</name>
             <id>384</id>
@@ -2730,6 +2753,7 @@
           <source>Товары</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -2960,6 +2984,9 @@
           <maxWidth>9</maxWidth>
           <maxHeight>9</maxHeight>
           <extInfo xsi:type="form:PictureDecorationExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.ЛоготипОсновнойСервисДоставки</picture>
+            </picture>
             <fileDragMode>AsFileRef</fileDragMode>
           </extInfo>
         </items>
@@ -5220,12 +5247,12 @@
                 <textEdit>true</textEdit>
                 <choiceList>
                   <value xsi:type="core:ReferenceValue">
-                    <value>Enum.ХозяйственныеОперации.EnumValue.ВозвратТоваровКомитенту</value>
+                    <value>Enum.ХозяйственныеОперации.EnumValue.ВозвратТоваровПоставщику</value>
                   </value>
                 </choiceList>
                 <choiceList>
                   <value xsi:type="core:ReferenceValue">
-                    <value>Enum.ХозяйственныеОперации.EnumValue.ВозвратТоваровПоставщику</value>
+                    <value>Enum.ХозяйственныеОперации.EnumValue.ВозвратТоваровКомитенту</value>
                   </value>
                 </choiceList>
               </extInfo>
@@ -6384,7 +6411,11 @@
             </contextMenu>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+            <extInfo xsi:type="form:PictureDecorationExtInfo">
+              <picture xsi:type="core:PictureRef">
+                <picture>CommonPicture.ВниманиеКрасный</picture>
+              </picture>
+            </extInfo>
           </items>
           <items xsi:type="form:FormField">
             <name>ТекстСчетаФактурыВыданные</name>
@@ -7385,7 +7416,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.StandardCommand.Help</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

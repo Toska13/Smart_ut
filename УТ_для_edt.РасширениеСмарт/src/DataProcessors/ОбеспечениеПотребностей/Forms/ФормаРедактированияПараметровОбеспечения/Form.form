@@ -129,6 +129,9 @@
     </contextMenu>
     <type>Label</type>
     <autoMaxHeight>true</autoMaxHeight>
+    <font xsi:type="core:FontRef">
+      <font>Style.ШрифтВажнойНадписи</font>
+    </font>
     <extInfo xsi:type="form:LabelDecorationExtInfo">
       <horizontalAlign>Left</horizontalAlign>
     </extInfo>
@@ -139,6 +142,9 @@
     <items xsi:type="form:FormField">
       <name>ПереключательСпособаУнаследованный</name>
       <id>314</id>
+      <titleTextColor xsi:type="core:ColorRef">
+        <color>Style.ГруппаВариантовОтчетовЦвет</color>
+      </titleTextColor>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -184,6 +190,9 @@
       <items xsi:type="form:FormField">
         <name>ПереключательСпособаИндивидуальный</name>
         <id>326</id>
+        <titleTextColor xsi:type="core:ColorRef">
+          <color>Style.ГруппаВариантовОтчетовЦвет</color>
+        </titleTextColor>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -457,6 +466,9 @@
       <key>ru</key>
       <value>Способ обеспечения:</value>
     </title>
+    <titleTextColor xsi:type="core:ColorRef">
+      <color>Style.ГруппаВариантовОтчетовЦвет</color>
+    </titleTextColor>
     <enableContentChange>true</enableContentChange>
     <extendedTooltip>
       <name>ГруппаСпособОбеспеченияExtendedTooltip</name>
@@ -517,7 +529,11 @@
       <autoMaxWidth>true</autoMaxWidth>
       <height>1</height>
       <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+      <extInfo xsi:type="form:PictureDecorationExtInfo">
+        <picture xsi:type="core:PictureRef">
+          <picture>CommonPicture.ИнформацияПоНедоступнымПолям</picture>
+        </picture>
+      </extInfo>
     </items>
     <visible>true</visible>
     <enabled>true</enabled>
@@ -2455,6 +2471,13 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceParameterLinks>
+                  <name>Номенклатура</name>
+                  <changeMode>DontChange</changeMode>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Номенклатура</segments>
+                  </datapath>
+                </choiceParameterLinks>
                 <choiceParameters>
                   <name>ДобавлятьПустуюУпаковку</name>
                   <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -2778,14 +2801,18 @@
                 <key>ru</key>
                 <value>Обеспечивать за счет запасов</value>
               </presentation>
-              <value xsi:type="core:ReferenceValue"/>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.ОбеспечениеЗаказовПриПоддержанииЗапаса.EnumValue.ЗаСчетЗапасов</value>
+              </value>
             </choiceList>
             <choiceList>
               <presentation>
                 <key>ru</key>
                 <value>Обеспечивать независимо от поддержания запасов</value>
               </presentation>
-              <value xsi:type="core:ReferenceValue"/>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.ОбеспечениеЗаказовПриПоддержанииЗапаса.EnumValue.НезависимоОтЗапасов</value>
+              </value>
             </choiceList>
           </extInfo>
         </items>
@@ -2851,6 +2878,9 @@
       <key>ru</key>
       <value>Метод обеспечения:</value>
     </title>
+    <titleTextColor xsi:type="core:ColorRef">
+      <color>Style.ГруппаВариантовОтчетовЦвет</color>
+    </titleTextColor>
     <toolTip>
       <key>ru</key>
       <value>Задает алгоритм определения точки заказа и количества к заказу.</value>

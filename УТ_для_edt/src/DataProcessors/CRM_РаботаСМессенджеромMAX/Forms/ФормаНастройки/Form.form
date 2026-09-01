@@ -10,7 +10,7 @@
   </title>
   <items xsi:type="form:FormField">
     <name>Провайдер</name>
-    <id>50</id>
+    <id>1</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -19,13 +19,14 @@
     <dataPath xsi:type="form:DataPath">
       <segments>Объект.Провайдер</segments>
     </dataPath>
+    <titleLocation>None</titleLocation>
     <handlers>
       <event>OnChange</event>
       <name>ПровайдерПриИзменении</name>
     </handlers>
     <extendedTooltip>
       <name>ПровайдерРасширеннаяПодсказка</name>
-      <id>52</id>
+      <id>3</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -35,7 +36,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>ПровайдерКонтекстноеМеню</name>
-      <id>51</id>
+      <id>2</id>
       <autoFill>true</autoFill>
     </contextMenu>
     <type>RadioButtonField</type>
@@ -44,8 +45,7 @@
     <headerHorizontalAlign>Left</headerHorizontalAlign>
     <showInFooter>true</showInFooter>
     <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
-      <radioButtonType>Tumbler</radioButtonType>
-      <itemTitleHeight>1</itemTitleHeight>
+      <radioButtonsType>Tumbler</radioButtonsType>
       <columnsCount>2</columnsCount>
       <choiceList>
         <presentation>
@@ -77,13 +77,17 @@
   </items>
   <items xsi:type="form:FormGroup">
     <name>ГруппаПровайдеры</name>
-    <id>53</id>
+    <id>4</id>
     <items xsi:type="form:FormGroup">
       <name>ГруппаПрямойMAX</name>
-      <id>54</id>
+      <id>6</id>
       <items xsi:type="form:FormField">
         <name>Токен</name>
-        <id>1</id>
+        <id>8</id>
+        <title>
+          <key>ru</key>
+          <value>Токен бота MAX</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -92,17 +96,13 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Объект.Токен</segments>
         </dataPath>
-        <title>
-          <key>ru</key>
-          <value>Токен бота MAX</value>
-        </title>
         <handlers>
           <event>OnChange</event>
           <name>ТокенПриИзменении</name>
         </handlers>
         <extendedTooltip>
           <name>ТокенРасширеннаяПодсказка</name>
-          <id>3</id>
+          <id>10</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -112,7 +112,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>ТокенКонтекстноеМеню</name>
-          <id>2</id>
+          <id>9</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -132,7 +132,11 @@
       </items>
       <items xsi:type="form:FormField">
         <name>АдресWebhook</name>
-        <id>4</id>
+        <id>11</id>
+        <title>
+          <key>ru</key>
+          <value>Адрес webhook</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -143,7 +147,7 @@
         </dataPath>
         <extendedTooltip>
           <name>АдресWebhookРасширеннаяПодсказка</name>
-          <id>6</id>
+          <id>13</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -153,7 +157,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>АдресWebhookКонтекстноеМеню</name>
-          <id>5</id>
+          <id>12</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -163,20 +167,21 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
           <typeDomainEnabled>true</typeDomainEnabled>
           <textEdit>true</textEdit>
-          <inputHint>
-            <key>ru</key>
-            <value>https://mysite.ru/crm/hs/messengers/</value>
-          </inputHint>
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
         <name>СекретWebhook</name>
-        <id>7</id>
+        <id>14</id>
+        <title>
+          <key>ru</key>
+          <value>Секрет webhook</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -187,7 +192,7 @@
         </dataPath>
         <extendedTooltip>
           <name>СекретWebhookРасширеннаяПодсказка</name>
-          <id>9</id>
+          <id>16</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -197,7 +202,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>СекретWebhookКонтекстноеМеню</name>
-          <id>8</id>
+          <id>15</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -207,6 +212,7 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
@@ -221,11 +227,11 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Прямое подключение</value>
+        <value>Прямой MAX</value>
       </title>
       <extendedTooltip>
         <name>ГруппаПрямойMAXРасширеннаяПодсказка</name>
-        <id>55</id>
+        <id>7</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -241,10 +247,14 @@
     </items>
     <items xsi:type="form:FormGroup">
       <name>ГруппаGreenApi</name>
-      <id>56</id>
+      <id>17</id>
       <items xsi:type="form:FormField">
         <name>СерверGreen</name>
-        <id>57</id>
+        <id>19</id>
+        <title>
+          <key>ru</key>
+          <value>apiUrl (хост)</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -253,13 +263,9 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Объект.Сервер</segments>
         </dataPath>
-        <title>
-          <key>ru</key>
-          <value>apiUrl (хост)</value>
-        </title>
         <extendedTooltip>
           <name>СерверGreenРасширеннаяПодсказка</name>
-          <id>59</id>
+          <id>21</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -269,7 +275,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>СерверGreenКонтекстноеМеню</name>
-          <id>58</id>
+          <id>20</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -279,6 +285,7 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
@@ -292,7 +299,11 @@
       </items>
       <items xsi:type="form:FormField">
         <name>MediaURL</name>
-        <id>60</id>
+        <id>22</id>
+        <title>
+          <key>ru</key>
+          <value>Сервер media (mediaUrl)</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -303,7 +314,7 @@
         </dataPath>
         <extendedTooltip>
           <name>MediaURLРасширеннаяПодсказка</name>
-          <id>62</id>
+          <id>24</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -313,7 +324,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>MediaURLКонтекстноеМеню</name>
-          <id>61</id>
+          <id>23</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -323,6 +334,7 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
@@ -336,7 +348,11 @@
       </items>
       <items xsi:type="form:FormField">
         <name>ApiURL</name>
-        <id>63</id>
+        <id>25</id>
+        <title>
+          <key>ru</key>
+          <value>ID Instance</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -345,17 +361,13 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Объект.ApiURL</segments>
         </dataPath>
-        <title>
-          <key>ru</key>
-          <value>ID Instance</value>
-        </title>
         <handlers>
           <event>OnChange</event>
           <name>ApiURLПриИзменении</name>
         </handlers>
         <extendedTooltip>
           <name>ApiURLРасширеннаяПодсказка</name>
-          <id>65</id>
+          <id>27</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -365,7 +377,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>ApiURLКонтекстноеМеню</name>
-          <id>64</id>
+          <id>26</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -375,6 +387,7 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
@@ -384,7 +397,11 @@
       </items>
       <items xsi:type="form:FormField">
         <name>ТокенGreen</name>
-        <id>66</id>
+        <id>28</id>
+        <title>
+          <key>ru</key>
+          <value>apiTokenInstance</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -393,17 +410,13 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Объект.Токен</segments>
         </dataPath>
-        <title>
-          <key>ru</key>
-          <value>apiTokenInstance</value>
-        </title>
         <handlers>
           <event>OnChange</event>
           <name>ТокенПриИзменении</name>
         </handlers>
         <extendedTooltip>
           <name>ТокенGreenРасширеннаяПодсказка</name>
-          <id>68</id>
+          <id>30</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -413,7 +426,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>ТокенGreenКонтекстноеМеню</name>
-          <id>67</id>
+          <id>29</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -423,6 +436,7 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
@@ -432,7 +446,11 @@
       </items>
       <items xsi:type="form:FormField">
         <name>АдресWebhookGreen</name>
-        <id>69</id>
+        <id>31</id>
+        <title>
+          <key>ru</key>
+          <value>Адрес webhook</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -443,7 +461,7 @@
         </dataPath>
         <extendedTooltip>
           <name>АдресWebhookGreenРасширеннаяПодсказка</name>
-          <id>71</id>
+          <id>33</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -453,7 +471,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>АдресWebhookGreenКонтекстноеМеню</name>
-          <id>70</id>
+          <id>32</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
@@ -463,15 +481,12 @@
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
           <width>60</width>
+          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
           <chooseType>true</chooseType>
           <typeDomainEnabled>true</typeDomainEnabled>
           <textEdit>true</textEdit>
-          <inputHint>
-            <key>ru</key>
-            <value>https://mysite.ru/crm/hs/messengers/ (пусто = HTTP API)</value>
-          </inputHint>
         </extInfo>
       </items>
       <visible>true</visible>
@@ -485,7 +500,7 @@
       </title>
       <extendedTooltip>
         <name>ГруппаGreenApiРасширеннаяПодсказка</name>
-        <id>72</id>
+        <id>18</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -510,7 +525,7 @@
     </title>
     <extendedTooltip>
       <name>ГруппаПровайдерыРасширеннаяПодсказка</name>
-      <id>73</id>
+      <id>5</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -520,16 +535,15 @@
     </extendedTooltip>
     <type>Pages</type>
     <extInfo xsi:type="form:PagesGroupExtInfo">
-      <pagesRepresentation>None</pagesRepresentation>
       <currentRowUse>Auto</currentRowUse>
     </extInfo>
   </items>
   <items xsi:type="form:FormGroup">
     <name>ГруппаПрокси</name>
-    <id>10</id>
+    <id>34</id>
     <items xsi:type="form:FormField">
       <name>ПроксиСервер</name>
-      <id>11</id>
+      <id>36</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -540,7 +554,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПроксиСерверРасширеннаяПодсказка</name>
-        <id>13</id>
+        <id>38</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -550,7 +564,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПроксиСерверКонтекстноеМеню</name>
-        <id>12</id>
+        <id>37</id>
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
@@ -560,6 +574,7 @@
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
         <width>60</width>
+        <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
         <chooseType>true</chooseType>
@@ -569,7 +584,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПроксиПорт</name>
-      <id>14</id>
+      <id>39</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -580,7 +595,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПроксиПортРасширеннаяПодсказка</name>
-        <id>16</id>
+        <id>41</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -590,7 +605,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПроксиПортКонтекстноеМеню</name>
-        <id>15</id>
+        <id>40</id>
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
@@ -599,7 +614,8 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
-        <width>60</width>
+        <width>10</width>
+        <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
         <chooseType>true</chooseType>
@@ -609,7 +625,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПроксиПользователь</name>
-      <id>17</id>
+      <id>42</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -620,7 +636,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПроксиПользовательРасширеннаяПодсказка</name>
-        <id>19</id>
+        <id>44</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -630,7 +646,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПроксиПользовательКонтекстноеМеню</name>
-        <id>18</id>
+        <id>43</id>
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
@@ -639,7 +655,8 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
-        <width>60</width>
+        <width>40</width>
+        <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
         <chooseType>true</chooseType>
@@ -649,7 +666,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПроксиПароль</name>
-      <id>20</id>
+      <id>45</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -660,7 +677,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПроксиПарольРасширеннаяПодсказка</name>
-        <id>22</id>
+        <id>47</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -670,7 +687,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПроксиПарольКонтекстноеМеню</name>
-        <id>21</id>
+        <id>46</id>
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
@@ -679,13 +696,14 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
-        <width>60</width>
+        <width>40</width>
+        <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
+        <passwordMode>true</passwordMode>
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
-        <passwordMode>true</passwordMode>
       </extInfo>
     </items>
     <visible>true</visible>
@@ -699,7 +717,7 @@
     </title>
     <extendedTooltip>
       <name>ГруппаПроксиРасширеннаяПодсказка</name>
-      <id>23</id>
+      <id>35</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -710,19 +728,96 @@
     <type>UsualGroup</type>
     <extInfo xsi:type="form:UsualGroupExtInfo">
       <group>Vertical</group>
+      <behavior>Collapsible</behavior>
+      <collapsed>true</collapsed>
+      <representation>WeakSeparation</representation>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
       <showTitle>true</showTitle>
-      <showInHeader>true</showInHeader>
-      <showInFooter>true</showInFooter>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
+    <name>КоманднаяПанель</name>
+    <id>48</id>
+    <items xsi:type="form:Button">
+      <name>Готово</name>
+      <id>50</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ГотовоРасширеннаяПодсказка</name>
+        <id>51</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.Готово</commandName>
+      <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>ПроверитьПодключение</name>
+      <id>52</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ПроверитьПодключениеРасширеннаяПодсказка</name>
+        <id>53</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.ПроверитьПодключение</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>КоманднаяПанельРасширеннаяПодсказка</name>
+      <id>49</id>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>CommandBar</type>
+    <extInfo xsi:type="form:CommandBarExtInfo">
+      <horizontalAlign>Left</horizontalAlign>
     </extInfo>
   </items>
   <commandBarLocation>Bottom</commandBarLocation>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
     <id>-1</id>
-    <horizontalAlign>Right</horizontalAlign>
+    <horizontalAlign>Left</horizontalAlign>
   </autoCommandBar>
-  <autoTitle>true</autoTitle>
-  <autoTitleForObject>true</autoTitleForObject>
   <handlers>
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
@@ -732,9 +827,12 @@
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
   <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
   <attributes>
     <name>Объект</name>
-    <id>8</id>
+    <id>1</id>
     <valueType>
       <types>DataProcessorObject.CRM_РаботаСМессенджеромMAX</types>
     </valueType>
@@ -748,7 +846,11 @@
   </attributes>
   <attributes>
     <name>ПараметрыПрокси</name>
-    <id>9</id>
+    <title>
+      <key>ru</key>
+      <value>Параметры прокси</value>
+    </title>
+    <id>54</id>
     <valueType/>
     <view>
       <common>true</common>
@@ -758,27 +860,6 @@
     </edit>
   </attributes>
   <formCommands>
-    <name>ФормаПроверитьПодключение</name>
-    <title>
-      <key>ru</key>
-      <value>Проверить подключение</value>
-    </title>
-    <title>
-      <key>en</key>
-      <value>Check Connection</value>
-    </title>
-    <id>1</id>
-    <use>
-      <common>true</common>
-    </use>
-    <action xsi:type="form:FormCommandHandlerContainer">
-      <handler>
-        <name>ПроверитьПодключение</name>
-      </handler>
-    </action>
-    <currentRowUse>DontUse</currentRowUse>
-  </formCommands>
-  <formCommands>
     <name>Готово</name>
     <title>
       <key>ru</key>
@@ -786,9 +867,9 @@
     </title>
     <title>
       <key>en</key>
-      <value>Ready</value>
+      <value>Done</value>
     </title>
-    <id>2</id>
+    <id>55</id>
     <use>
       <common>true</common>
     </use>
@@ -797,7 +878,28 @@
         <name>Готово</name>
       </handler>
     </action>
-    <currentRowUse>DontUse</currentRowUse>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ПроверитьПодключение</name>
+    <title>
+      <key>ru</key>
+      <value>Проверить подключение</value>
+    </title>
+    <title>
+      <key>en</key>
+      <value>Check connection</value>
+    </title>
+    <id>56</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ПроверитьПодключение</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
   </formCommands>
   <commandInterface>
     <navigationPanel/>

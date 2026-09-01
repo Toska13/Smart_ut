@@ -669,6 +669,7 @@
                   <picture>CommonPicture.CRM_ПоказатьСкрытьОписание</picture>
                 </picture>
                 <representation>Picture</representation>
+                <shapeRepresentation>None</shapeRepresentation>
               </extInfo>
             </items>
             <visible>true</visible>
@@ -684,7 +685,7 @@
               <key>ru</key>
               <value>Группа меню начало</value>
             </toolTip>
-            <width>30</width>
+            <width>13</width>
             <horizontalStretch>false</horizontalStretch>
             <groupHorizontalAlign>Left</groupHorizontalAlign>
             <extendedTooltip>
@@ -1315,7 +1316,7 @@
           </items>
           <items xsi:type="form:Button">
             <name>ИерархическийСписок1</name>
-            <id>1255</id>
+            <id>1275</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -1323,7 +1324,7 @@
             </userVisible>
             <extendedTooltip>
               <name>ИерархическийСписок1РасширеннаяПодсказка</name>
-              <id>1256</id>
+              <id>1276</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -1331,13 +1332,12 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <type>UsualButton</type>
-            <representation>Picture</representation>
+            <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
             <placementArea>UserCmds</placementArea>
             <representationInContextMenu>Auto</representationInContextMenu>
-            <locationInCommandBar>InCommandBar</locationInCommandBar>
+            <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
           </items>
           <items xsi:type="form:Button">
             <name>Список2</name>
@@ -2299,7 +2299,7 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <placementArea>UserCmds</placementArea>
                 <representationInContextMenu>Auto</representationInContextMenu>
-                <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+                <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
               </items>
               <items xsi:type="form:Button">
                 <name>СписокОбщаяКомандаCRM_НапомнитьЧерез1Час</name>
@@ -2324,7 +2324,7 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <placementArea>UserCmds</placementArea>
                 <representationInContextMenu>Auto</representationInContextMenu>
-                <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+                <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
               </items>
               <items xsi:type="form:Button">
                 <name>СписокОбщаяКомандаCRM_НапомнитьЧерез4Часа</name>
@@ -2349,7 +2349,7 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <placementArea>UserCmds</placementArea>
                 <representationInContextMenu>Auto</representationInContextMenu>
-                <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+                <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
               </items>
               <items xsi:type="form:Button">
                 <name>СписокОбщаяКомандаCRM_НапомнитьЧерез1День</name>
@@ -2374,7 +2374,7 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <placementArea>UserCmds</placementArea>
                 <representationInContextMenu>Auto</representationInContextMenu>
-                <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+                <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
               </items>
               <items xsi:type="form:Button">
                 <name>СписокОбщаяКомандаНапомнить</name>
@@ -2399,7 +2399,7 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <placementArea>UserCmds</placementArea>
                 <representationInContextMenu>Auto</representationInContextMenu>
-                <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+                <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
               </items>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -2555,6 +2555,8 @@
           </userVisible>
           <skipOnInput>false</skipOnInput>
           <titleLocation>None</titleLocation>
+          <excludedCommands>CancelSearch</excludedCommands>
+          <excludedCommands>Find</excludedCommands>
           <items xsi:type="form:FormField">
             <name>ЕстьОшибкиПроверкаКонтрагентов</name>
             <id>462</id>
@@ -3422,6 +3424,7 @@
             <restoreCurrentRow>true</restoreCurrentRow>
             <topLevelParent xsi:type="core:UndefinedValue"/>
             <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+            <userSettingsGroup>ГруппаПользовательскихНастроек</userSettingsGroup>
           </extInfo>
         </items>
         <items xsi:type="form:FormGroup">
@@ -3611,7 +3614,11 @@
               </contextMenu>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ВниманиеКрасный</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:Decoration">
               <name>ДекорацияКрасныйТреугольникПояснение</name>
@@ -3714,7 +3721,11 @@
               </contextMenu>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.Внимание16</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:Decoration">
               <name>ДекорацияЖелтыйТреугольникПояснение</name>
@@ -3816,7 +3827,11 @@
               </contextMenu>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ВниманиеСерый</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:Decoration">
               <name>ДекорацияСерыйТреугольникПояснение</name>
@@ -3934,6 +3949,7 @@
           <key>ru</key>
           <value>Группа список</value>
         </toolTip>
+        <horizontalStretch>true</horizontalStretch>
         <extendedTooltip>
           <name>ГруппаСписокExtendedTooltip</name>
           <id>255</id>
@@ -4284,7 +4300,11 @@
                 </contextMenu>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.ВниманиеКрасный</picture>
+                  </picture>
+                </extInfo>
               </items>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -5210,6 +5230,16 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Add</excludedCommands>
+              <excludedCommands>Change</excludedCommands>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>Delete</excludedCommands>
+              <excludedCommands>EndEdit</excludedCommands>
+              <excludedCommands>MoveDown</excludedCommands>
+              <excludedCommands>MoveUp</excludedCommands>
+              <excludedCommands>SelectAll</excludedCommands>
+              <excludedCommands>SortListAsc</excludedCommands>
+              <excludedCommands>SortListDesc</excludedCommands>
               <items xsi:type="form:FormGroup">
                 <name>ГруппаПредставлениеНомерКартинки</name>
                 <id>240</id>
@@ -5473,6 +5503,17 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Add</excludedCommands>
+              <excludedCommands>CancelSearch</excludedCommands>
+              <excludedCommands>Change</excludedCommands>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>Delete</excludedCommands>
+              <excludedCommands>EndEdit</excludedCommands>
+              <excludedCommands>Find</excludedCommands>
+              <excludedCommands>MoveDown</excludedCommands>
+              <excludedCommands>MoveUp</excludedCommands>
+              <excludedCommands>SortListAsc</excludedCommands>
+              <excludedCommands>SortListDesc</excludedCommands>
               <items xsi:type="form:FormGroup">
                 <name>КатегорииГруппаКолонок</name>
                 <id>245</id>
@@ -6583,6 +6624,9 @@
               <common>true</common>
             </userVisible>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>Create</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ИнтересыТема</name>
               <id>805</id>
@@ -7250,6 +7294,9 @@
               <common>true</common>
             </userVisible>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>Create</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ИнтересыПоддержкиТема</name>
               <id>1091</id>
@@ -8926,6 +8973,7 @@
       <value>Группа панель страниц дополнительной информации</value>
     </toolTip>
     <height>10</height>
+    <horizontalStretch>false</horizontalStretch>
     <extendedTooltip>
       <name>ГруппаПанельСтраницДополнительнойИнформацииРасширеннаяПодсказка</name>
       <id>521</id>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0457d5da-63dd-46f2-b9e9-69800a97d0b9">
+  <producedTypes>
+    <selectionType typeId="2b7f50d1-c7fb-4ead-a398-caca8d3bb4ec" valueTypeId="debd5734-1186-44c1-9f07-4451f4e2e67a"/>
+    <listType typeId="5f58669a-8fd8-4aea-aec3-e632885e5ee4" valueTypeId="df9b266d-3cc5-4802-ac96-fa52efe8cf6f"/>
+    <managerType typeId="ba06ca93-5b27-4d7f-83bf-cb240c4d6ee9" valueTypeId="e5604013-2610-4973-9427-8903cbc368d0"/>
+    <recordSetType typeId="f73b873a-6266-4213-868b-e24852a6e0b5" valueTypeId="532e2cc8-4e6b-4896-8d8a-6eca65d02586"/>
+    <recordKeyType typeId="76addf98-b30d-4a07-9219-f1c4734d6085" valueTypeId="8f4f1752-35fa-47bd-94f6-0e65bed19acc"/>
+    <recordType typeId="4b6770ec-1cd6-4bbf-8c0f-6bee6069ad04" valueTypeId="d8716211-6eb0-4335-b737-f66b70e9c368"/>
+    <recordManagerType typeId="ea3c8694-4559-46e0-b88c-017729bed244" valueTypeId="3b96574e-dbd0-48e9-80c5-8daa07abbdc4"/>
+  </producedTypes>
+  <name>смартКоэффициентыМенеджеровПоКвалификациям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Коэффициенты менеджеров по квалификациям (смарт)</value>
+  </synonym>
+  <comment>//++ #Б-7362 смарт: Фролов 18.08.2026 //Учет KPI по конверсии менеджеров при распределении входящих Лидов</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f8838f6a-d9fd-4d8e-80b9-a1814b132939">
+    <name>Коэффициент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэффициент</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:NumberValue">
+      <value>1</value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="34ea14d9-8a00-43b2-8ffc-4fbf08e1214a">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c376d2dd-7218-4d82-a194-1032a3754c1d">
+    <name>ВидКоэффициента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид коэффициента</value>
+    </synonym>
+    <type>
+      <types>EnumRef.смартВидыКоэффициентовМенеджеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7222e0ef-e269-49e4-a8c4-8dfa288d0fe0">
+    <name>Квалификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Квалификация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартКвалификацииМенеджеров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

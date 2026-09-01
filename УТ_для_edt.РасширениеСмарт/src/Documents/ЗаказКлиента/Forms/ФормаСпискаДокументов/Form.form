@@ -263,7 +263,7 @@
   </items>
   <items xsi:type="form:FormGroup">
     <name>ГруппаСписок</name>
-    <id>468</id>
+    <id>294</id>
     <items xsi:type="form:Table">
       <name>Список</name>
       <id>1</id>
@@ -397,7 +397,7 @@
         </dataPath>
         <extendedTooltip>
           <name>СсылкаСогласованоБухРасширеннаяПодсказка</name>
-          <id>294</id>
+          <id>480</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -419,7 +419,7 @@
       </items>
       <items xsi:type="form:FormField">
         <name>ДокументыПодписаны</name>
-        <id>295</id>
+        <id>479</id>
         <title>
           <key>ru</key>
           <value>ДОК</value>
@@ -856,7 +856,7 @@
       </items>
       <items xsi:type="form:FormField">
         <name>ПредставлениеСостояния</name>
-        <id>470</id>
+        <id>146</id>
         <title>
           <key>ru</key>
           <value>Состояние ЭДО</value>
@@ -871,7 +871,7 @@
         </dataPath>
         <extendedTooltip>
           <name>ПредставлениеСостоянияРасширеннаяПодсказка</name>
-          <id>475</id>
+          <id>199</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -881,7 +881,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>ПредставлениеСостоянияКонтекстноеМеню</name>
-          <id>474</id>
+          <id>147</id>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>LabelField</type>
@@ -2039,7 +2039,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Command.УстановитьСтатусНаСогласовании</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2065,7 +2064,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Command.УстановитьСтатусКВыполнению</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2091,7 +2089,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Command.УстановитьСтатусКОтгрузке</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2117,7 +2114,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Command.УстановитьСтатусЗакрыт</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2135,6 +2131,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.Список.CurrentData.Ссылка</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>СписокОбработкаСостояниеОбеспеченияСостояниеОбеспеченияСпискаЗаказовКлиентаРасширеннаяПодсказка</name>
                 <id>252</id>
@@ -2184,6 +2183,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.Список.CurrentData.Ссылка</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>СписокОбработкаПомощникЗачетаОплатЗачетОплатыРасширеннаяПодсказка</name>
                 <id>256</id>
@@ -2435,7 +2437,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.StandardCommand.ShowMultipleSelection</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2460,7 +2461,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.StandardCommand.CustomizeForm</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2506,7 +2506,6 @@
               <horizontalAlign>Left</horizontalAlign>
             </extInfo>
           </extendedTooltip>
-          <commandName>Form.StandardCommand.Help</commandName>
           <representation>Auto</representation>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -2561,6 +2560,7 @@
         <source>Список</source>
         <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
           <autoMaxWidth>true</autoMaxWidth>
+          <horizontalLocation>Left</horizontalLocation>
         </extInfo>
       </viewStatusAddition>
       <searchControlAddition>
@@ -2745,7 +2745,7 @@
     </title>
     <extendedTooltip>
       <name>ГруппаСписокРасширеннаяПодсказка</name>
-      <id>473</id>
+      <id>295</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -3378,17 +3378,7 @@
   </parameters>
   <commandInterface>
     <navigationPanel/>
-    <commandBar>
-      <cmiFragmentRecord>
-        <command>InformationRegister.смартРекомендации.StandardCommand.Create</command>
-        <type>Added</type>
-        <group>FormCommandBarImportant</group>
-        <index>0</index>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-      </cmiFragmentRecord>
-    </commandBar>
+    <commandBar/>
   </commandInterface>
   <extInfo xsi:type="form:DynamicListFormExtInfo"/>
 </form:Form>

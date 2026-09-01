@@ -245,6 +245,7 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceForm>Catalog.Назначения.Form.ФормаВыбораБезОтбораПоНоменклатуре</choiceForm>
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
@@ -600,19 +601,29 @@
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
                 <choiceList>
-                  <value xsi:type="core:ReferenceValue"/>
+                  <value xsi:type="core:ReferenceValue">
+                    <value>Enum.ТипыОбеспечения.EnumValue.Покупка</value>
+                  </value>
                 </choiceList>
                 <choiceList>
-                  <value xsi:type="core:ReferenceValue"/>
+                  <value xsi:type="core:ReferenceValue">
+                    <value>Enum.ТипыОбеспечения.EnumValue.Перемещение</value>
+                  </value>
                 </choiceList>
                 <choiceList>
-                  <value xsi:type="core:ReferenceValue"/>
+                  <value xsi:type="core:ReferenceValue">
+                    <value>Enum.ТипыОбеспечения.EnumValue.СборкаРазборка</value>
+                  </value>
                 </choiceList>
                 <choiceList>
-                  <value xsi:type="core:ReferenceValue"/>
+                  <value xsi:type="core:ReferenceValue">
+                    <value>Enum.ТипыОбеспечения.EnumValue.Производство</value>
+                  </value>
                 </choiceList>
                 <choiceList>
-                  <value xsi:type="core:ReferenceValue"/>
+                  <value xsi:type="core:ReferenceValue">
+                    <value>Enum.ТипыОбеспечения.EnumValue.ПроизводствоНаСтороне</value>
+                  </value>
                 </choiceList>
               </extInfo>
             </items>
@@ -782,6 +793,9 @@
               <common>true</common>
             </userVisible>
             <titleLocation>None</titleLocation>
+            <excludedCommands>HierarchicalList</excludedCommands>
+            <excludedCommands>List</excludedCommands>
+            <excludedCommands>Tree</excludedCommands>
             <commandBarLocation>None</commandBarLocation>
             <autoCommandBar>
               <name>ПроизвольныеОтборыЭлементыКоманднаяПанель</name>
@@ -834,6 +848,7 @@
               <source>ПроизвольныеОтборыЭлементы</source>
               <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
                 <autoMaxWidth>true</autoMaxWidth>
+                <horizontalLocation>Left</horizontalLocation>
               </extInfo>
             </viewStatusAddition>
             <searchControlAddition>
@@ -1792,6 +1807,7 @@
           <source>СпособыОбеспечения</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -2824,6 +2840,7 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceForm>Catalog.Приоритеты.Form.ФормаВыбора</choiceForm>
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
@@ -3272,7 +3289,7 @@
                     <fixingInTable>Left</fixingInTable>
                     <showInHeader>true</showInHeader>
                     <headerPicture xsi:type="core:PictureRef">
-                      <picture>StdPicture.InputFieldOpen</picture>
+                      <picture>StdPicture.Magnifier</picture>
                     </headerPicture>
                     <headerHorizontalAlign>Left</headerHorizontalAlign>
                     <showInFooter>true</showInFooter>
@@ -3538,6 +3555,9 @@
                       <autoMaxHeight>true</autoMaxHeight>
                       <horizontalStretch>true</horizontalStretch>
                       <verticalStretch>true</verticalStretch>
+                      <valuesPicture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.СрочноКЗаказу</picture>
+                      </valuesPicture>
                       <border xsi:type="core:BorderDef">
                         <style>Single</style>
                         <width>1</width>
@@ -3747,6 +3767,9 @@
                       <autoMaxHeight>true</autoMaxHeight>
                       <horizontalStretch>true</horizontalStretch>
                       <verticalStretch>true</verticalStretch>
+                      <valuesPicture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.КоричневыйШар</picture>
+                      </valuesPicture>
                       <border xsi:type="core:BorderDef">
                         <style>Single</style>
                         <width>1</width>
@@ -3911,6 +3934,13 @@
                     <chooseType>true</chooseType>
                     <typeDomainEnabled>true</typeDomainEnabled>
                     <textEdit>true</textEdit>
+                    <choiceParameterLinks>
+                      <name>Отбор.ТипОбеспечения</name>
+                      <changeMode>DontChange</changeMode>
+                      <datapath xsi:type="form:DataPath">
+                        <segments>ДоступныеТипыОбеспеченияДляВыбора</segments>
+                      </datapath>
+                    </choiceParameterLinks>
                   </extInfo>
                 </items>
                 <items xsi:type="form:FormField">
@@ -4156,6 +4186,7 @@
                   <source>Запасы</source>
                   <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
                     <autoMaxWidth>true</autoMaxWidth>
+                    <horizontalLocation>Left</horizontalLocation>
                   </extInfo>
                 </viewStatusAddition>
                 <searchControlAddition>
@@ -4457,7 +4488,7 @@
                     <fixingInTable>Left</fixingInTable>
                     <showInHeader>true</showInHeader>
                     <headerPicture xsi:type="core:PictureRef">
-                      <picture>StdPicture.InputFieldOpen</picture>
+                      <picture>StdPicture.Magnifier</picture>
                     </headerPicture>
                     <headerHorizontalAlign>Left</headerHorizontalAlign>
                     <showInFooter>true</showInFooter>
@@ -4853,6 +4884,13 @@
                     <chooseType>true</chooseType>
                     <typeDomainEnabled>true</typeDomainEnabled>
                     <textEdit>true</textEdit>
+                    <choiceParameterLinks>
+                      <name>Отбор.ТипОбеспечения</name>
+                      <changeMode>DontChange</changeMode>
+                      <datapath xsi:type="form:DataPath">
+                        <segments>ДоступныеТипыОбеспеченияДляВыбора</segments>
+                      </datapath>
+                    </choiceParameterLinks>
                   </extInfo>
                 </items>
                 <items xsi:type="form:FormField">
@@ -5187,6 +5225,7 @@
                   <source>ЗаказыКОбеспечению</source>
                   <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
                     <autoMaxWidth>true</autoMaxWidth>
+                    <horizontalLocation>Left</horizontalLocation>
                   </extInfo>
                 </viewStatusAddition>
                 <searchControlAddition>
@@ -5521,7 +5560,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.РасчетПоФормуле</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ДоТочкиЗаказа1</name>
@@ -5794,7 +5837,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -5858,7 +5905,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -6046,7 +6097,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать1</name>
@@ -6798,7 +6853,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>МинимальныйЗапас4</name>
@@ -7004,7 +7063,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.РасчетПоФормуле</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ДоТочкиЗаказа4</name>
@@ -7206,7 +7269,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <items xsi:type="form:FormField">
                         <name>МаксимальныйЗаказ4</name>
@@ -7390,7 +7457,11 @@
                             <height>1</height>
                             <autoMaxHeight>true</autoMaxHeight>
                             <verticalStretch>false</verticalStretch>
-                            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                            <extInfo xsi:type="form:PictureDecorationExtInfo">
+                              <picture xsi:type="core:PictureRef">
+                                <picture>CommonPicture.РасчетПоФормуле</picture>
+                              </picture>
+                            </extInfo>
                           </items>
                           <visible>true</visible>
                           <enabled>true</enabled>
@@ -7455,7 +7526,11 @@
                             <height>1</height>
                             <autoMaxHeight>true</autoMaxHeight>
                             <verticalStretch>false</verticalStretch>
-                            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                            <extInfo xsi:type="form:PictureDecorationExtInfo">
+                              <picture xsi:type="core:PictureRef">
+                                <picture>CommonPicture.РасчетПоФормуле</picture>
+                              </picture>
+                            </extInfo>
                           </items>
                           <visible>true</visible>
                           <enabled>true</enabled>
@@ -7649,7 +7724,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать4</name>
@@ -7893,7 +7972,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииВозможенДефицит4</name>
@@ -8339,7 +8422,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>МинимальныйЗапас3</name>
@@ -8545,7 +8632,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.РасчетПоФормуле</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ДоТочкиЗаказа3</name>
@@ -8741,7 +8832,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>МаксимальныйЗаказ3</name>
@@ -8926,7 +9021,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -8991,7 +9090,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -9183,7 +9286,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать3</name>
@@ -9854,7 +9961,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.РасчетПоФормуле</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ДоТочкиЗаказа2</name>
@@ -10123,7 +10234,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -10187,7 +10302,11 @@
                         <height>1</height>
                         <autoMaxHeight>true</autoMaxHeight>
                         <verticalStretch>false</verticalStretch>
-                        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                        <extInfo xsi:type="form:PictureDecorationExtInfo">
+                          <picture xsi:type="core:PictureRef">
+                            <picture>CommonPicture.РасчетПоФормуле</picture>
+                          </picture>
+                        </extInfo>
                       </items>
                       <visible>true</visible>
                       <enabled>true</enabled>
@@ -10375,7 +10494,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать2</name>
@@ -10856,7 +10979,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>КЗаказу6</name>
@@ -11386,7 +11513,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>КЗаказу9</name>
@@ -11529,7 +11660,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать9</name>
@@ -11903,7 +12038,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>КЗаказу8</name>
@@ -12040,7 +12179,11 @@
                   <height>1</height>
                   <autoMaxHeight>true</autoMaxHeight>
                   <verticalStretch>false</verticalStretch>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ИнформацияСиняя</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <items xsi:type="form:FormField">
                   <name>ТекстРекомендацииЗаказать8</name>
@@ -12514,7 +12657,11 @@
                     <height>1</height>
                     <autoMaxHeight>true</autoMaxHeight>
                     <verticalStretch>false</verticalStretch>
-                    <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                    <extInfo xsi:type="form:PictureDecorationExtInfo">
+                      <picture xsi:type="core:PictureRef">
+                        <picture>CommonPicture.РасчетПоФормуле</picture>
+                      </picture>
+                    </extInfo>
                   </items>
                   <items xsi:type="form:FormField">
                     <name>КЗаказу7</name>
@@ -12657,7 +12804,11 @@
                       <height>1</height>
                       <autoMaxHeight>true</autoMaxHeight>
                       <verticalStretch>false</verticalStretch>
-                      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                      <extInfo xsi:type="form:PictureDecorationExtInfo">
+                        <picture xsi:type="core:PictureRef">
+                          <picture>CommonPicture.ИнформацияСиняя</picture>
+                        </picture>
+                      </extInfo>
                     </items>
                     <items xsi:type="form:FormField">
                       <name>ТекстРекомендацииЗаказать7</name>
@@ -13108,6 +13259,21 @@
             <common>true</common>
           </userVisible>
           <titleLocation>None</titleLocation>
+          <excludedCommands>Add</excludedCommands>
+          <excludedCommands>Change</excludedCommands>
+          <excludedCommands>Copy</excludedCommands>
+          <excludedCommands>CopyToClipboard</excludedCommands>
+          <excludedCommands>Delete</excludedCommands>
+          <excludedCommands>EndEdit</excludedCommands>
+          <excludedCommands>HierarchicalList</excludedCommands>
+          <excludedCommands>List</excludedCommands>
+          <excludedCommands>MoveDown</excludedCommands>
+          <excludedCommands>MoveUp</excludedCommands>
+          <excludedCommands>OutputList</excludedCommands>
+          <excludedCommands>SelectAll</excludedCommands>
+          <excludedCommands>SortListAsc</excludedCommands>
+          <excludedCommands>SortListDesc</excludedCommands>
+          <excludedCommands>Tree</excludedCommands>
           <items xsi:type="form:FormField">
             <name>ЗаказыИсточникПополненияЗапаса</name>
             <id>842</id>
@@ -13401,6 +13567,9 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <horizontalStretch>true</horizontalStretch>
                 <verticalStretch>true</verticalStretch>
+                <valuesPicture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.Приблизительно</picture>
+                </valuesPicture>
                 <border xsi:type="core:BorderDef">
                   <style>Single</style>
                   <width>1</width>
@@ -13564,6 +13733,9 @@
                 <autoMaxHeight>true</autoMaxHeight>
                 <horizontalStretch>true</horizontalStretch>
                 <verticalStretch>true</verticalStretch>
+                <valuesPicture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.Приблизительно</picture>
+                </valuesPicture>
                 <border xsi:type="core:BorderDef">
                   <style>Single</style>
                   <width>1</width>
@@ -13693,6 +13865,7 @@
             <source>ЗаказыКОформлению</source>
             <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
               <autoMaxWidth>true</autoMaxWidth>
+              <horizontalLocation>Left</horizontalLocation>
             </extInfo>
           </viewStatusAddition>
           <searchControlAddition>
@@ -14553,6 +14726,7 @@
           <source>СформированныеЗаказы</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>

@@ -1605,6 +1605,14 @@
               <common>true</common>
             </userVisible>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>Create</excludedCommands>
+            <excludedCommands>CreateFolder</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
+            <excludedCommands>LevelDown</excludedCommands>
+            <excludedCommands>LevelUp</excludedCommands>
+            <excludedCommands>MoveItem</excludedCommands>
+            <excludedCommands>SetDeletionMark</excludedCommands>
             <items xsi:type="form:FormField">
               <name>CRM_ПотенциальныеКлиентыСсылка</name>
               <id>906</id>
@@ -1861,6 +1869,13 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceParameterLinks>
+                  <name>Партнер</name>
+                  <changeMode>DontChange</changeMode>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Объект.Owner</segments>
+                  </datapath>
+                </choiceParameterLinks>
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
@@ -2142,6 +2157,7 @@
             </extInfo>
           </extendedTooltip>
           <type>Hyperlink</type>
+          <commandName>0</commandName>
           <representation>Auto</representation>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -2734,6 +2750,11 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Add</excludedCommands>
+              <excludedCommands>Change</excludedCommands>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>Delete</excludedCommands>
+              <excludedCommands>EndEdit</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>CRM_КлючевыеСобытияВидСобытия</name>
                 <id>378</id>
@@ -3864,6 +3885,27 @@
                   <common>true</common>
                 </userVisible>
                 <titleLocation>None</titleLocation>
+                <excludedCommands>Add</excludedCommands>
+                <excludedCommands>CancelSearch</excludedCommands>
+                <excludedCommands>Change</excludedCommands>
+                <excludedCommands>CheckAll</excludedCommands>
+                <excludedCommands>Copy</excludedCommands>
+                <excludedCommands>CopyToClipboard</excludedCommands>
+                <excludedCommands>Delete</excludedCommands>
+                <excludedCommands>EndEdit</excludedCommands>
+                <excludedCommands>Find</excludedCommands>
+                <excludedCommands>FindByCurrentValue</excludedCommands>
+                <excludedCommands>MoveDown</excludedCommands>
+                <excludedCommands>MoveUp</excludedCommands>
+                <excludedCommands>Pickup</excludedCommands>
+                <excludedCommands>SearchEverywhere</excludedCommands>
+                <excludedCommands>SearchHistory</excludedCommands>
+                <excludedCommands>SelectAll</excludedCommands>
+                <excludedCommands>ShowMultipleSelection</excludedCommands>
+                <excludedCommands>ShowRowRearrangement</excludedCommands>
+                <excludedCommands>SortListAsc</excludedCommands>
+                <excludedCommands>SortListDesc</excludedCommands>
+                <excludedCommands>UncheckAll</excludedCommands>
                 <items xsi:type="form:FormField">
                   <name>CRM_СтатусыКонтактныхЛицПометка</name>
                   <id>884</id>
@@ -4706,7 +4748,7 @@
             <id>584</id>
             <title>
               <key>ru</key>
-              <value>Создал &lt;link Автор>&lt;colorstyle 0:43d556bb-fe68-4946-b0f1-b77fe98e3614>Автор&lt;/>&lt;/> Дата</value>
+              <value>Создал &lt;link Автор>&lt;colorstyle 0:030ab1c0-0343-4e42-b7f3-0acce041c67e>Автор&lt;/>&lt;/> Дата</value>
             </title>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -6155,6 +6197,12 @@
                   <chooseType>true</chooseType>
                   <typeDomainEnabled>true</typeDomainEnabled>
                   <textEdit>true</textEdit>
+                  <choiceParameterLinks>
+                    <name>Отбор.Владелец</name>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Объект.Ref</segments>
+                    </datapath>
+                  </choiceParameterLinks>
                   <borderColor xsi:type="core:ColorRef">
                     <color>Web.LightGray</color>
                   </borderColor>

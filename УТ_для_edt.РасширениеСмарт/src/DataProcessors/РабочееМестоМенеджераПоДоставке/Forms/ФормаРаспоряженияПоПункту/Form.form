@@ -284,6 +284,9 @@
       <type>CheckBoxField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
+      <headerPicture xsi:type="core:PictureRef">
+        <picture>CommonPicture.ДоставкаКолонкаДоставлено</picture>
+      </headerPicture>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
@@ -827,6 +830,7 @@
       <source>Распоряжения</source>
       <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
       </extInfo>
     </viewStatusAddition>
     <searchControlAddition>
@@ -891,6 +895,9 @@
     <rowPictureDataPath xsi:type="form:DataPath">
       <segments>Распоряжения.ДоставляетсяПолностью</segments>
     </rowPictureDataPath>
+    <rowsPicture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ДоставкаВНесколькоРейсов</picture>
+    </rowsPicture>
     <rowFilter xsi:type="core:UndefinedValue"/>
   </items>
   <items xsi:type="form:Table">
@@ -906,6 +913,10 @@
       <common>true</common>
     </userVisible>
     <titleLocation>None</titleLocation>
+    <excludedCommands>Add</excludedCommands>
+    <excludedCommands>Change</excludedCommands>
+    <excludedCommands>Copy</excludedCommands>
+    <excludedCommands>EndEdit</excludedCommands>
     <items xsi:type="form:FormGroup">
       <name>ТоварыКДоставкеГруппаТовар</name>
       <id>177</id>
@@ -1337,6 +1348,7 @@
       <source>ТоварыКДоставке</source>
       <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
+        <horizontalLocation>Left</horizontalLocation>
       </extInfo>
     </viewStatusAddition>
     <searchControlAddition>
@@ -1637,7 +1649,11 @@
       <autoMaxWidth>true</autoMaxWidth>
       <height>1</height>
       <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+      <extInfo xsi:type="form:PictureDecorationExtInfo">
+        <picture xsi:type="core:PictureRef">
+          <picture>CommonPicture.Состояние33Процента</picture>
+        </picture>
+      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>НадписьНедогрузОбъем</name>
@@ -1715,7 +1731,11 @@
       <autoMaxWidth>true</autoMaxWidth>
       <height>1</height>
       <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+      <extInfo xsi:type="form:PictureDecorationExtInfo">
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.Stop</picture>
+        </picture>
+      </extInfo>
     </items>
     <visible>true</visible>
     <enabled>true</enabled>

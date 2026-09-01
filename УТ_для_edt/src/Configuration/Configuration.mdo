@@ -2341,6 +2341,8 @@
   <sessionParameters>SessionParameter.УстановленныеРасширения</sessionParameters>
   <sessionParameters>SessionParameter.cмартАвтозагрузкаВыписок</sessionParameters>
   <sessionParameters>SessionParameter.ХозяйственныеОперацииСНастройкамиОграниченийДоступа</sessionParameters>
+  <sessionParameters>SessionParameter.смартДЛ_ИДСессии</sessionParameters>
+  <sessionParameters>SessionParameter.смартДЛ_СрокДействияСессии</sessionParameters>
   <roles>Role.CRM_АдминистрированиеБазыЗнаний</roles>
   <roles>Role.CRM_АнализВзаимодействий</roles>
   <roles>Role.CRM_АнализКлиентскойБазы</roles>
@@ -5536,6 +5538,9 @@
   <commonModules>CommonModule.смартИнтеграцияDeeray</commonModules>
   <commonModules>CommonModule.смартАкцииИСкидки</commonModules>
   <commonModules>CommonModule.смартКонтрольДебиторскойЗадолженности</commonModules>
+  <commonModules>CommonModule.смартДеловыеЛинии</commonModules>
+  <commonModules>CommonModule.смартДеловыеЛинииКлиент</commonModules>
+  <commonModules>CommonModule.смартДеловыеЛинииПовтИсп</commonModules>
   <commonAttributes>CommonAttribute.КомментарийЯзык1</commonAttributes>
   <commonAttributes>CommonAttribute.КомментарийЯзык2</commonAttributes>
   <commonAttributes>CommonAttribute.Б_Идентификатор</commonAttributes>
@@ -9510,6 +9515,18 @@
   <catalogs>Catalog.смартПолезныеФайлы</catalogs>
   <catalogs>Catalog.смартМодельныеРядыНоменклатуры</catalogs>
   <catalogs>Catalog.смартПричиныПереносаПлановыхСроков</catalogs>
+  <catalogs>Catalog.смартДЛ_Города</catalogs>
+  <catalogs>Catalog.смартДЛ_Терминалы</catalogs>
+  <catalogs>Catalog.смартДЛ_ХарактерГруза</catalogs>
+  <catalogs>Catalog.смартДЛ_ДополнительныеУслуги</catalogs>
+  <catalogs>Catalog.смартДЛ_ДокументыДляПолучения</catalogs>
+  <catalogs>Catalog.смартДЛ_ПараметрыДляОтчета</catalogs>
+  <catalogs>Catalog.смартДЛ_ВидыЗагрузки</catalogs>
+  <catalogs>Catalog.смартДЛ_СпециальныеТребования</catalogs>
+  <catalogs>Catalog.смартДЛ_ВидыУпаковок</catalogs>
+  <catalogs>Catalog.смартДЛ_СтатусыЗаказа</catalogs>
+  <catalogs>Catalog.смартДЛ_ОПФ</catalogs>
+  <catalogs>Catalog.смартДЛ_ПараметрыНГГ</catalogs>
   <documents>Document.CRM_Взаимодействие</documents>
   <documents>Document.CRM_Заявка</documents>
   <documents>Document.CRM_Интерес</documents>
@@ -10633,6 +10650,7 @@
   <enums>Enum.смартДанныеПоОборудованию</enums>
   <enums>Enum.смартРезультатыВстреч</enums>
   <enums>Enum.смартПричиныВозврата</enums>
+  <enums>Enum.смартКлассификацияНоменклатуры</enums>
   <reports>Report.ABCXYZАнализНоменклатуры</reports>
   <reports>Report.ABCXYZРаспределениеКлиентов</reports>
   <reports>Report.CRM_Автомотиватор</reports>
@@ -11292,13 +11310,13 @@
   <dataProcessors>DataProcessor.смартКонструкторФормул</dataProcessors>
   <dataProcessors>DataProcessor.смартДеревоРеквизитовОбъекта</dataProcessors>
   <dataProcessors>DataProcessor.смартCRM_Мессенджер</dataProcessors>
-  <dataProcessors>DataProcessor.смартЗаполнениеТоваровПоНазначению</dataProcessors>
   <dataProcessors>DataProcessor.смартИсторияЗвонков</dataProcessors>
   <dataProcessors>DataProcessor.смартПечатьЭтикеткиДоставки</dataProcessors>
   <dataProcessors>DataProcessor.КонтурЭДО</dataProcessors>
   <dataProcessors>DataProcessor.КонтурДиадокГенерацияXML</dataProcessors>
   <dataProcessors>DataProcessor.КонтурДиадокПечатныеФормы</dataProcessors>
   <dataProcessors>DataProcessor.смартПодборМаркировкиВДокументы</dataProcessors>
+  <dataProcessors>DataProcessor.смартЗаполнениеТоваровПоНазначению</dataProcessors>
   <informationRegisters>InformationRegister.ABCXYZКлассификацияКлиентов</informationRegisters>
   <informationRegisters>InformationRegister.ABCXYZКлассификацияНоменклатуры</informationRegisters>
   <informationRegisters>InformationRegister.bpmДополнительныеРеквизиты</informationRegisters>
@@ -12012,6 +12030,11 @@
   <informationRegisters>InformationRegister.смартСтопЛистТехническойОтсрочки</informationRegisters>
   <informationRegisters>InformationRegister.смартУниверсальноеХранениеДанныхПоПринтерам</informationRegisters>
   <informationRegisters>InformationRegister.смартСоответствияТаможенныхОписаний</informationRegisters>
+  <informationRegisters>InformationRegister.смартДЛ_ЛогЗапросов</informationRegisters>
+  <informationRegisters>InformationRegister.смартДЛ_ХешиСправочников</informationRegisters>
+  <informationRegisters>InformationRegister.смартДЛ_АдреснаяКнига</informationRegisters>
+  <informationRegisters>InformationRegister.смартДЛ_Шаблоны</informationRegisters>
+  <informationRegisters>InformationRegister.смартКоэффициентыМенеджеровПоКвалификациям</informationRegisters>
   <informationRegisters>InformationRegister.смартВидыЦенНоменклатурыДляВыгрузкиНаСайт</informationRegisters>
   <accumulationRegisters>AccumulationRegister.CRM_Предложения</accumulationRegisters>
   <accumulationRegisters>AccumulationRegister.CRM_РабочееВремя</accumulationRegisters>

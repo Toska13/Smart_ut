@@ -1366,6 +1366,26 @@
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
+            <choiceParameterLinks>
+              <name>Номенклатура</name>
+              <changeMode>DontChange</changeMode>
+              <datapath xsi:type="form:DataPath">
+                <segments>Items.Товары.CurrentData.Номенклатура</segments>
+              </datapath>
+            </choiceParameterLinks>
+            <choiceParameterLinks>
+              <name>Отбор.СтранаПроисхождения</name>
+              <datapath xsi:type="form:DataPath">
+                <segments>Items.Товары.CurrentData.СтранаПроисхождения</segments>
+              </datapath>
+            </choiceParameterLinks>
+            <choiceParameterLinks>
+              <name>Характеристика</name>
+              <changeMode>DontChange</changeMode>
+              <datapath xsi:type="form:DataPath">
+                <segments>Items.Товары.CurrentData.Характеристика</segments>
+              </datapath>
+            </choiceParameterLinks>
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
@@ -1926,6 +1946,9 @@
       <extInfo xsi:type="form:PageGroupExtInfo">
         <group>Vertical</group>
         <showTitle>true</showTitle>
+        <titleDataPath xsi:type="form:DataPath">
+          <segments>Объект.Товары.RowsCount</segments>
+        </titleDataPath>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">

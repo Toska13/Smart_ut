@@ -592,7 +592,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -810,7 +814,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -1098,7 +1106,11 @@
               <horizontalStretch>false</horizontalStretch>
               <verticalStretch>false</verticalStretch>
               <groupVerticalAlign>Top</groupVerticalAlign>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ОтгрузкаЗапрещена</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:Decoration">
               <name>ТекстОтгрузкаПартнеруЗапрещена</name>
@@ -1292,7 +1304,11 @@
               <width>2</width>
               <verticalStretch>false</verticalStretch>
               <groupVerticalAlign>Bottom</groupVerticalAlign>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ОтгрузкаЗапрещена</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:FormField">
               <name>ТекстОстатокДопустимогоКредита</name>
@@ -2195,6 +2211,12 @@
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
+            <choiceParameterLinks>
+              <name>Отбор.ЦенаВключаетНДС</name>
+              <datapath xsi:type="form:DataPath">
+                <segments>Объект.ЦенаВключаетНДС</segments>
+              </datapath>
+            </choiceParameterLinks>
             <choiceParameters>
               <name>ВыводитьПроизвольныйВидЦен</name>
               <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -3405,6 +3427,7 @@
           <source>Услуги</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -3587,6 +3610,9 @@
       <extInfo xsi:type="form:PageGroupExtInfo">
         <group>Vertical</group>
         <showTitle>true</showTitle>
+        <titleDataPath xsi:type="form:DataPath">
+          <segments>Объект.Услуги.RowsCount</segments>
+        </titleDataPath>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">
@@ -3705,6 +3731,12 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceParameterLinks>
+                <name>Отбор.Владелец</name>
+                <datapath xsi:type="form:DataPath">
+                  <segments>Объект.Партнер</segments>
+                </datapath>
+              </choiceParameterLinks>
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
@@ -5075,7 +5107,11 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+      <extInfo xsi:type="form:PictureDecorationExtInfo">
+        <picture xsi:type="core:PictureRef">
+          <picture>CommonPicture.ВниманиеКрасный</picture>
+        </picture>
+      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>ТекстСчетаФактурыВыданные</name>
@@ -5162,7 +5198,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиИЗакрыть</commandName>
       <representation>Auto</representation>
       <defaultButton>true</defaultButton>
       <autoMaxWidth>true</autoMaxWidth>
@@ -5188,7 +5223,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ЗаписатьДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5213,7 +5247,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5541,7 +5574,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>DataProcessor.ПомощникЗачетаОплат.Command.ЗачетОплаты</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5567,7 +5599,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.СчитатьКартуЛояльности</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5627,7 +5658,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.StandardCommand.Help</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5652,7 +5682,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПроверитьКонтрагентов</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

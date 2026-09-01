@@ -101,6 +101,12 @@
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
+        <choiceParameterLinks>
+          <name>Отбор.Владелец</name>
+          <datapath xsi:type="form:DataPath">
+            <segments>Склад</segments>
+          </datapath>
+        </choiceParameterLinks>
         <inputHint>
           <key>ru</key>
           <value>Выберите помещение</value>
@@ -149,6 +155,18 @@
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
+        <choiceParameterLinks>
+          <name>Отбор.Помещение</name>
+          <datapath xsi:type="form:DataPath">
+            <segments>Помещение</segments>
+          </datapath>
+        </choiceParameterLinks>
+        <choiceParameterLinks>
+          <name>Отбор.Владелец</name>
+          <datapath xsi:type="form:DataPath">
+            <segments>Склад</segments>
+          </datapath>
+        </choiceParameterLinks>
         <choiceParameters>
           <name>Отбор.ТипСкладскойЯчейки</name>
           <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -759,6 +777,15 @@
               </userVisible>
               <skipOnInput>false</skipOnInput>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Add</excludedCommands>
+              <excludedCommands>Change</excludedCommands>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>CopyToClipboard</excludedCommands>
+              <excludedCommands>Delete</excludedCommands>
+              <excludedCommands>EndEdit</excludedCommands>
+              <excludedCommands>MoveDown</excludedCommands>
+              <excludedCommands>MoveUp</excludedCommands>
+              <excludedCommands>ShowRowRearrangement</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>РаспоряженияНаПоступлениеНомер</name>
                 <id>608</id>
@@ -1837,6 +1864,10 @@
             </userVisible>
             <skipOnInput>false</skipOnInput>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>Create</excludedCommands>
+            <excludedCommands>CreateByParameter</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ОрдераВРаботеТип</name>
               <id>312</id>
@@ -3484,6 +3515,7 @@
             </userVisible>
             <skipOnInput>false</skipOnInput>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Delete</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ПеремещенияВРаботеНомер</name>
               <id>126</id>

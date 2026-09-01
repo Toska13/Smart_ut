@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="93a41b8e-8140-43d0-87b9-313b607944cd">
+  <producedTypes>
+    <selectionType typeId="4cc96a9b-5fb2-4127-8215-dd554ca8eb3a" valueTypeId="0847c007-7fd3-49ee-b808-e49ed856ec49"/>
+    <listType typeId="6ccca2d5-6d43-498b-8073-ad44eddfbb76" valueTypeId="052af7a3-32fa-4b7d-909e-3f766c5195f4"/>
+    <managerType typeId="cd491b95-8b4f-4798-94f1-4c5890bd748b" valueTypeId="4083b5b9-1501-4bac-a3ff-45f7dcf754db"/>
+    <recordSetType typeId="dbed6bf1-605e-4f7e-97f7-ecb347b044de" valueTypeId="7fc9e9ce-26bf-4416-b295-cd950d931bbe"/>
+    <recordKeyType typeId="b28efc9d-7346-44e6-b7bb-02291762ae9c" valueTypeId="ebb7234e-dd85-478c-922e-e12392193f6f"/>
+    <recordType typeId="bcb3498f-febc-43cf-9982-7eabf51c7003" valueTypeId="c212ba10-c6a5-4016-89ba-fa4cfb8cdfc4"/>
+    <recordManagerType typeId="237725df-59d6-4009-a1b5-fe0f6fb1edff" valueTypeId="a8634d29-6ca7-43c6-9e0e-bf39be9d0e1c"/>
+  </producedTypes>
+  <name>смартДЛ_АдреснаяКнига</name>
+  <synonym>
+    <key>ru</key>
+    <value>Адресная книга (Деловые линии)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.смартДЛ_АдреснаяКнига.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.смартДЛ_АдреснаяКнига.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="a1cd0d09-901a-4b2b-a6f4-a08b1f6a5eb1">
+    <name>ДатаИспользования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата использования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="24ec7492-4db6-4899-bea1-66fde1be3d73">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5f1a5dec-d6dd-4c66-abb7-9c5031b37087">
+    <name>НаселнныйПункт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Населнный пункт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.смартДЛ_Города</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="cff0e584-abd9-4563-800e-3ba1bae24c2b">
+    <name>УчастникГрузоперевозки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участник грузоперевозки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="afb63b64-1ff3-46ac-a2d8-ee5bac11cb2c">
+    <name>Адрес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>400</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="47d310da-ea5b-4612-a45f-8cbaf7e6f571">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="927765c3-9e92-4b49-848f-c62d8a76e0ef">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

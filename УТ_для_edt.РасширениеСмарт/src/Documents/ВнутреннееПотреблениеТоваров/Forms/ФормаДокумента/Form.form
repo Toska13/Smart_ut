@@ -152,7 +152,11 @@
               <height>1</height>
               <autoMaxHeight>true</autoMaxHeight>
               <verticalStretch>false</verticalStretch>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ПревышениеЗаказа</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:FormField">
               <name>НадписьРасхождениеЗаказ</name>
@@ -355,7 +359,11 @@
               <height>1</height>
               <autoMaxHeight>true</autoMaxHeight>
               <verticalStretch>false</verticalStretch>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ПревышениеЗаказа</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:FormField">
               <name>НадписьРасхождениеЗаказы</name>
@@ -2770,6 +2778,9 @@
       <extInfo xsi:type="form:PageGroupExtInfo">
         <group>Vertical</group>
         <showTitle>true</showTitle>
+        <titleDataPath xsi:type="form:DataPath">
+          <segments>Объект.Товары.RowsCount</segments>
+        </titleDataPath>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">

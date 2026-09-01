@@ -166,7 +166,11 @@
         <autoMaxWidth>true</autoMaxWidth>
         <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+        <extInfo xsi:type="form:PictureDecorationExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>CommonPicture.Состояние33Процента</picture>
+          </picture>
+        </extInfo>
       </items>
       <items xsi:type="form:FormField">
         <name>НадписьНедогрузОбъем</name>
@@ -245,7 +249,11 @@
         <autoMaxWidth>true</autoMaxWidth>
         <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+        <extInfo xsi:type="form:PictureDecorationExtInfo">
+          <picture xsi:type="core:PictureRef">
+            <picture>StdPicture.Stop</picture>
+          </picture>
+        </extInfo>
       </items>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -882,7 +890,11 @@
                 </contextMenu>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.ИнформацияСиняя</picture>
+                  </picture>
+                </extInfo>
               </items>
               <items xsi:type="form:Button">
                 <name>ОткрытьСклады</name>
@@ -1743,6 +1755,8 @@
           <common>true</common>
         </userVisible>
         <titleLocation>None</titleLocation>
+        <excludedCommands>Add</excludedCommands>
+        <excludedCommands>Copy</excludedCommands>
         <items xsi:type="form:FormField">
           <name>МаршрутДоставлено</name>
           <id>1262</id>
@@ -1774,6 +1788,9 @@
           <type>CheckBoxField</type>
           <editMode>EnterOnInput</editMode>
           <showInHeader>true</showInHeader>
+          <headerPicture xsi:type="core:PictureRef">
+            <picture>CommonPicture.ДоставкаКолонкаДоставлено</picture>
+          </headerPicture>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
@@ -1844,6 +1861,9 @@
           <type>PictureField</type>
           <editMode>EnterOnInput</editMode>
           <showInHeader>true</showInHeader>
+          <headerPicture xsi:type="core:PictureRef">
+            <picture>CommonPicture.ТранспортнаяНакладная</picture>
+          </headerPicture>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:ImageFieldExtInfo">
@@ -1852,6 +1872,9 @@
             <autoMaxHeight>true</autoMaxHeight>
             <horizontalStretch>true</horizontalStretch>
             <verticalStretch>true</verticalStretch>
+            <valuesPicture xsi:type="core:PictureRef">
+              <picture>CommonPicture.ТранспортнаяНакладная</picture>
+            </valuesPicture>
             <border xsi:type="core:BorderDef">
               <style>Single</style>
               <width>1</width>
@@ -2568,6 +2591,7 @@
           <source>Маршрут</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -2659,6 +2683,9 @@
       <extInfo xsi:type="form:PageGroupExtInfo">
         <group>Vertical</group>
         <showTitle>true</showTitle>
+        <titleDataPath xsi:type="form:DataPath">
+          <segments>Объект.Маршрут.RowsCount</segments>
+        </titleDataPath>
       </extInfo>
     </items>
     <visible>true</visible>
@@ -2707,7 +2734,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиИЗакрыть</commandName>
       <defaultButton>true</defaultButton>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -2732,7 +2758,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ЗаписатьДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -2757,7 +2782,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -2782,7 +2806,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ЗаполнитьПоРасходнымОрдерам</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

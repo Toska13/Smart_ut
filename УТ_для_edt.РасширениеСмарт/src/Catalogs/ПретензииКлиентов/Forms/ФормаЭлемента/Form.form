@@ -430,6 +430,12 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceParameterLinks>
+                <name>Отбор.Подразделение</name>
+                <datapath xsi:type="form:DataPath">
+                  <segments>Объект.ВиновноеПодразделение</segments>
+                </datapath>
+              </choiceParameterLinks>
             </extInfo>
           </items>
           <visible>true</visible>
@@ -928,6 +934,12 @@
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
+            <choiceParameterLinks>
+              <name>Отбор.Владелец</name>
+              <datapath xsi:type="form:DataPath">
+                <segments>Items.ПартнерыИКонтактныеЛица.CurrentData.Партнер</segments>
+              </datapath>
+            </choiceParameterLinks>
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
@@ -1142,6 +1154,9 @@
       <extInfo xsi:type="form:PageGroupExtInfo">
         <group>Vertical</group>
         <showTitle>true</showTitle>
+        <titleDataPath xsi:type="form:DataPath">
+          <segments>Объект.ПартнерыИКонтактныеЛица.RowsCount</segments>
+        </titleDataPath>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">

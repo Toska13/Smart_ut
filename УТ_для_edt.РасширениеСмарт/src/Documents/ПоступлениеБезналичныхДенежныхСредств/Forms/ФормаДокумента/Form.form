@@ -417,7 +417,6 @@
                 </extInfo>
               </extendedTooltip>
               <type>UsualButton</type>
-              <commandName>Form.Command.ПодборПоУИП</commandName>
               <representation>Picture</representation>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -1178,7 +1177,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -1259,13 +1262,13 @@
           </items>
           <items xsi:type="form:FormGroup">
             <name>ГруппаИндексыСПАРКРиски</name>
-            <id>446</id>
+            <id>414</id>
             <items xsi:type="form:FormGroup">
               <name>ГруппаИндексы</name>
-              <id>444</id>
+              <id>416</id>
               <items xsi:type="form:Decoration">
                 <name>ДекорацияИндексыСПАРКРиски</name>
-                <id>448</id>
+                <id>418</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -1273,7 +1276,7 @@
                 </userVisible>
                 <extendedTooltip>
                   <name>ДекорацияИндексыСПАРКРискиРасширеннаяПодсказка</name>
-                  <id>457</id>
+                  <id>420</id>
                   <type>Label</type>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
@@ -1283,7 +1286,7 @@
                 </extendedTooltip>
                 <contextMenu>
                   <name>ДекорацияИндексыСПАРКРискиКонтекстноеМеню</name>
-                  <id>456</id>
+                  <id>419</id>
                   <autoFill>true</autoFill>
                 </contextMenu>
                 <type>Label</type>
@@ -1307,7 +1310,7 @@
               </title>
               <extendedTooltip>
                 <name>ГруппаИндексыРасширеннаяПодсказка</name>
-                <id>454</id>
+                <id>417</id>
                 <type>Label</type>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
@@ -1329,7 +1332,7 @@
             </items>
             <items xsi:type="form:Decoration">
               <name>КартинкаОжиданиеЗагрузкиИндексовСПАРКРиски</name>
-              <id>451</id>
+              <id>421</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -1347,14 +1350,18 @@
               </extendedTooltip>
               <contextMenu>
                 <name>КартинкаОжиданиеЗагрузкиИндексовСПАРКРискиКонтекстноеМеню</name>
-                <id>455</id>
+                <id>422</id>
                 <autoFill>true</autoFill>
               </contextMenu>
               <width>2</width>
               <autoMaxWidth>true</autoMaxWidth>
               <height>1</height>
               <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.ДлительнаяОперация16</picture>
+                </picture>
+              </extInfo>
             </items>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -1367,7 +1374,7 @@
             </title>
             <extendedTooltip>
               <name>ГруппаИндексыСПАРКРискиРасширеннаяПодсказка</name>
-              <id>453</id>
+              <id>415</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -2176,6 +2183,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.ОснованиеПлатежа</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияОснованиеПлатежаРасширеннаяПодсказка</name>
               <id>301</id>
@@ -2215,6 +2225,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.Заказ</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияЗаказРасширеннаяПодсказка</name>
               <id>304</id>
@@ -2254,6 +2267,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.Партнер</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияПартнерРасширеннаяПодсказка</name>
               <id>307</id>
@@ -2291,6 +2307,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.ДоговорКредитаДепозита</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияДоговорКредитаДепозитаРасширеннаяПодсказка</name>
               <id>310</id>
@@ -2328,6 +2347,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.ДоговорЗаймаСотруднику</segments>
+            </dataPath>
             <toolTipRepresentation>ShowAuto</toolTipRepresentation>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияДоговорЗаймаСотрудникуРасширеннаяПодсказка</name>
@@ -2366,6 +2388,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.ТипСуммыКредитаДепозита</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияТипСуммыКредитаДепозитаРасширеннаяПодсказка</name>
               <id>316</id>
@@ -2407,6 +2432,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.РасшифровкаПлатежа.CurrentData.СуммаВзаиморасчетов</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>РасшифровкаБезРазбиенияСуммаВзаиморасчетовРасширеннаяПодсказка</name>
                 <id>322</id>
@@ -2454,6 +2482,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.РасшифровкаПлатежа.CurrentData.ВалютаВзаиморасчетов</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>РасшифровкаБезРазбиенияВалютаВзаиморасчетовРасширеннаяПодсказка</name>
                 <id>325</id>
@@ -2568,6 +2599,9 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>Items.РасшифровкаПлатежа.CurrentData.СтавкаНДС</segments>
+                </dataPath>
                 <extendedTooltip>
                   <name>РасшифровкаБезРазбиенияСтавкаНДСРасширеннаяПодсказка</name>
                   <id>359</id>
@@ -2606,6 +2640,9 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>Items.РасшифровкаПлатежа.CurrentData.СуммаНДС</segments>
+                </dataPath>
                 <extendedTooltip>
                   <name>РасшифровкаБезРазбиенияСуммаНДСРасширеннаяПодсказка</name>
                   <id>362</id>
@@ -2743,6 +2780,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.СтатьяДвиженияДенежныхСредств</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияСтатьяДвиженияДенежныхСредствРасширеннаяПодсказка</name>
               <id>319</id>
@@ -2783,6 +2823,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.Подразделение</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияПодразделениеРасширеннаяПодсказка</name>
               <id>344</id>
@@ -2820,6 +2863,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.НаправлениеДеятельности</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияНаправлениеДеятельностиРасширеннаяПодсказка</name>
               <id>374</id>
@@ -2857,6 +2903,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.СтатьяДоходов</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияСтатьяДоходовРасширеннаяПодсказка</name>
               <id>328</id>
@@ -2915,6 +2964,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.РасшифровкаПлатежа.CurrentData.АналитикаДоходов</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>РасшифровкаБезРазбиенияАналитикаДоходовРасширеннаяПодсказка</name>
                 <id>335</id>
@@ -2952,6 +3004,9 @@
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Items.РасшифровкаПлатежа.CurrentData.АналитикаАктивовПассивов</segments>
+              </dataPath>
               <extendedTooltip>
                 <name>РасшифровкаБезРазбиенияАналитикаАктивовПассивовРасширеннаяПодсказка</name>
                 <id>338</id>
@@ -3223,6 +3278,9 @@
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Items.РасшифровкаПлатежа.CurrentData.Организация</segments>
+            </dataPath>
             <extendedTooltip>
               <name>РасшифровкаБезРазбиенияОрганизацияРасширеннаяПодсказка</name>
               <id>347</id>
@@ -4113,6 +4171,9 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>Объект.РасшифровкаПлатежа.ПредставлениеОтраженияВРеглУчете</segments>
+                </dataPath>
                 <extendedTooltip>
                   <name>РасшифровкаПлатежаСчетРеглУчетаДоходовРасширеннаяПодсказка</name>
                   <id>276</id>
@@ -4150,6 +4211,9 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
+                <dataPath xsi:type="form:DataPath">
+                  <segments>Объект.РасшифровкаПлатежа.ПредставлениеОтраженияВРеглУчете</segments>
+                </dataPath>
                 <extendedTooltip>
                   <name>РасшифровкаПлатежаСчетРеглУчетаАктивовПассивовРасширеннаяПодсказка</name>
                   <id>279</id>
@@ -4272,7 +4336,6 @@
                     <horizontalAlign>Left</horizontalAlign>
                   </extInfo>
                 </extendedTooltip>
-                <commandName>Form.Command.ЗаполнитьРасшифровкуПлатежа</commandName>
                 <representation>Auto</representation>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
@@ -4298,7 +4361,6 @@
                     <horizontalAlign>Left</horizontalAlign>
                   </extInfo>
                 </extendedTooltip>
-                <commandName>Form.Command.ПодборПоОстаткам</commandName>
                 <representation>Auto</representation>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
@@ -4353,6 +4415,7 @@
               <source>РасшифровкаПлатежа</source>
               <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
                 <autoMaxWidth>true</autoMaxWidth>
+                <horizontalLocation>Left</horizontalLocation>
               </extInfo>
             </viewStatusAddition>
             <searchControlAddition>
@@ -4447,7 +4510,11 @@
               </contextMenu>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+              <extInfo xsi:type="form:PictureDecorationExtInfo">
+                <picture xsi:type="core:PictureRef">
+                  <picture>CommonPicture.НовостиВнимание</picture>
+                </picture>
+              </extInfo>
             </items>
             <items xsi:type="form:Decoration">
               <name>ГиперссылкаРеквизитыОбъектаРасчетов</name>
@@ -4826,7 +4893,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиИЗакрыть</commandName>
       <defaultButton>true</defaultButton>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -4851,7 +4917,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ЗаписатьДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -4876,7 +4941,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПровестиДокумент</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -5238,7 +5302,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПроверитьКонтрагентов</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

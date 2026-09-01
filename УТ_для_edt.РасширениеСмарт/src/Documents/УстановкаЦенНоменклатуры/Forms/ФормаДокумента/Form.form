@@ -390,6 +390,17 @@
             </userVisible>
             <skipOnInput>false</skipOnInput>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Add</excludedCommands>
+            <excludedCommands>Change</excludedCommands>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>CopyToClipboard</excludedCommands>
+            <excludedCommands>Delete</excludedCommands>
+            <excludedCommands>EndEdit</excludedCommands>
+            <excludedCommands>MoveDown</excludedCommands>
+            <excludedCommands>MoveUp</excludedCommands>
+            <excludedCommands>SelectAll</excludedCommands>
+            <excludedCommands>SortListAsc</excludedCommands>
+            <excludedCommands>SortListDesc</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ВыбранныеЦеныВыбрана</name>
               <id>111</id>
@@ -1080,6 +1091,9 @@
             </userVisible>
             <skipOnInput>false</skipOnInput>
             <titleLocation>None</titleLocation>
+            <excludedCommands>Add</excludedCommands>
+            <excludedCommands>Copy</excludedCommands>
+            <excludedCommands>EndEdit</excludedCommands>
             <items xsi:type="form:FormField">
               <name>ДеревоЦенНоменклатураКод</name>
               <id>240</id>
@@ -1254,6 +1268,13 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceParameterLinks>
+                  <name>Номенклатура</name>
+                  <changeMode>DontChange</changeMode>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Items.ДеревоЦен.CurrentData.Номенклатура</segments>
+                  </datapath>
+                </choiceParameterLinks>
                 <choiceParameters>
                   <name>ВариантыРасчетаЦеныНабора</name>
                   <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -1420,6 +1441,7 @@
                     <horizontalAlign>Left</horizontalAlign>
                   </extInfo>
                 </extendedTooltip>
+                <commandName>38:0ae4bea5-23be-42a7-b69e-97b11b29c453</commandName>
                 <representation>Auto</representation>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
@@ -2575,6 +2597,7 @@
                       <horizontalAlign>Left</horizontalAlign>
                     </extInfo>
                   </extendedTooltip>
+                  <commandName>38:0ae4bea5-23be-42a7-b69e-97b11b29c453</commandName>
                   <representation>Auto</representation>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>

@@ -546,6 +546,7 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceForm>Catalog.Номенклатура.Form.ФормаВыбора</choiceForm>
                 <choiceParameters>
                   <name>Отбор.ВестиУчетСертификатовНоменклатуры</name>
                   <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -592,6 +593,13 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceParameterLinks>
+                  <name>Номенклатура</name>
+                  <changeMode>DontChange</changeMode>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Номенклатура</segments>
+                  </datapath>
+                </choiceParameterLinks>
                 <inputHint>
                   <key>ru</key>
                   <value>&lt;для всех характеристик></value>
@@ -637,6 +645,18 @@
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
                 <textEdit>true</textEdit>
+                <choiceParameterLinks>
+                  <name>Номенклатура</name>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Номенклатура</segments>
+                  </datapath>
+                </choiceParameterLinks>
+                <choiceParameterLinks>
+                  <name>Характеристика</name>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>Характеристика</segments>
+                  </datapath>
+                </choiceParameterLinks>
                 <inputHint>
                   <key>ru</key>
                   <value>&lt;для всех серий></value>
@@ -760,6 +780,11 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>MoveDown</excludedCommands>
+              <excludedCommands>MoveUp</excludedCommands>
+              <excludedCommands>SortListAsc</excludedCommands>
+              <excludedCommands>SortListDesc</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>ОбластьДействияВидНоменклатуры</name>
                 <id>97</id>
@@ -844,6 +869,14 @@
                   <chooseType>true</chooseType>
                   <typeDomainEnabled>true</typeDomainEnabled>
                   <textEdit>true</textEdit>
+                  <choiceForm>Catalog.Номенклатура.Form.ФормаВыбора</choiceForm>
+                  <choiceParameterLinks>
+                    <name>Отбор.ВидНоменклатуры</name>
+                    <changeMode>DontChange</changeMode>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Items.ОбластьДействия.CurrentData.ВидНоменклатуры</segments>
+                    </datapath>
+                  </choiceParameterLinks>
                   <choiceParameters>
                     <name>Отбор.ВестиУчетСертификатовНоменклатуры</name>
                     <value xsi:type="form:FormChoiceListDesTimeValue">
@@ -889,6 +922,13 @@
                   <chooseType>true</chooseType>
                   <typeDomainEnabled>true</typeDomainEnabled>
                   <textEdit>true</textEdit>
+                  <choiceParameterLinks>
+                    <name>Номенклатура</name>
+                    <changeMode>DontChange</changeMode>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Items.ОбластьДействия.CurrentData.Номенклатура</segments>
+                    </datapath>
+                  </choiceParameterLinks>
                   <inputHint>
                     <key>ru</key>
                     <value>для всех характеристик</value>
@@ -930,6 +970,18 @@
                   <chooseType>true</chooseType>
                   <typeDomainEnabled>true</typeDomainEnabled>
                   <textEdit>true</textEdit>
+                  <choiceParameterLinks>
+                    <name>Номенклатура</name>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Items.ОбластьДействия.CurrentData.Номенклатура</segments>
+                    </datapath>
+                  </choiceParameterLinks>
+                  <choiceParameterLinks>
+                    <name>Характеристика</name>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Items.ОбластьДействия.CurrentData.Характеристика</segments>
+                    </datapath>
+                  </choiceParameterLinks>
                   <inputHint>
                     <key>ru</key>
                     <value>для всех серий</value>

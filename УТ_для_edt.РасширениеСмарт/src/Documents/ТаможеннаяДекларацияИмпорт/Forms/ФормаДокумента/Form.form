@@ -666,7 +666,7 @@
         </items>
         <items xsi:type="form:Decoration">
           <name>ОшибкаВНомереТаможеннойДекларации</name>
-          <id>632</id>
+          <id>616</id>
           <title>
             <key>ru</key>
             <value>Ошибка в номере таможенной декларации</value>
@@ -694,6 +694,9 @@
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
+          <textColor xsi:type="core:ColorRef">
+            <color>Style.ПоясняющийОшибкуТекст</color>
+          </textColor>
           <extInfo xsi:type="form:LabelDecorationExtInfo">
             <horizontalAlign>Left</horizontalAlign>
           </extInfo>
@@ -758,7 +761,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ГрузКонтекстноеМеню</name>
-            <id>598</id>
+            <id>637</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -1245,7 +1248,7 @@
         <id>484</id>
         <items xsi:type="form:FormField">
           <name>ОплатаЧерезЕдиныйЛицевойСчет</name>
-          <id>616</id>
+          <id>598</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1257,7 +1260,7 @@
           <titleLocation>Right</titleLocation>
           <extendedTooltip>
             <name>ОплатаЧерезЕдиныйЛицевойСчетРасширеннаяПодсказка</name>
-            <id>627</id>
+            <id>600</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1267,7 +1270,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ОплатаЧерезЕдиныйЛицевойСчетКонтекстноеМеню</name>
-            <id>626</id>
+            <id>599</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>CheckBoxField</type>
@@ -2334,7 +2337,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Item.Разделы.StandardCommand.Add</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2553,6 +2555,7 @@
           <source>Разделы</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -3064,6 +3067,9 @@
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible/>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Объект.Товары.Артикул</segments>
+            </dataPath>
             <extendedTooltip>
               <name>ТоварыНоменклатураАртикулExtendedTooltip</name>
               <id>380</id>
@@ -3376,7 +3382,7 @@
           </items>
           <items xsi:type="form:FormGroup">
             <name>ТоварыГруппаКоличествоПоРНПТ</name>
-            <id>619</id>
+            <id>608</id>
             <items xsi:type="form:FormField">
               <name>ТоварыКоличествоПоРНПТ</name>
               <id>610</id>
@@ -3477,7 +3483,7 @@
             </title>
             <extendedTooltip>
               <name>ТоварыГруппаКоличествоПоРНПТРасширеннаяПодсказка</name>
-              <id>628</id>
+              <id>609</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3657,15 +3663,18 @@
           </items>
           <items xsi:type="form:FormField">
             <name>ТоварыПорядковыйНомерТовара</name>
-            <id>621</id>
+            <id>601</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
               <common>true</common>
             </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Объект.Товары.ПорядковыйНомерТовара</segments>
+            </dataPath>
             <extendedTooltip>
               <name>ТоварыПорядковыйНомерТовараРасширеннаяПодсказка</name>
-              <id>630</id>
+              <id>603</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3675,7 +3684,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>ТоварыПорядковыйНомерТовараКонтекстноеМеню</name>
-              <id>629</id>
+              <id>602</id>
               <autoFill>true</autoFill>
             </contextMenu>
             <type>InputField</type>
@@ -3823,7 +3832,7 @@
           </items>
           <items xsi:type="form:FormField">
             <name>ТоварыЗакупкаПодДеятельность</name>
-            <id>605</id>
+            <id>595</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible/>
@@ -3832,7 +3841,7 @@
             </dataPath>
             <extendedTooltip>
               <name>ТоварыЗакупкаПодДеятельностьРасширеннаяПодсказка</name>
-              <id>609</id>
+              <id>597</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3842,7 +3851,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>ТоварыЗакупкаПодДеятельностьКонтекстноеМеню</name>
-              <id>608</id>
+              <id>596</id>
               <autoFill>true</autoFill>
             </contextMenu>
             <type>InputField</type>
@@ -3961,7 +3970,6 @@
                   <horizontalAlign>Left</horizontalAlign>
                 </extInfo>
               </extendedTooltip>
-              <commandName>Form.Item.Товары.StandardCommand.Add</commandName>
               <representation>Auto</representation>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -4257,7 +4265,7 @@
               <id>264</id>
               <items xsi:type="form:Button">
                 <name>ТоварыУстановитьПорядковыйНомерТовара</name>
-                <id>624</id>
+                <id>604</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -4265,7 +4273,7 @@
                 </userVisible>
                 <extendedTooltip>
                   <name>ТоварыУстановитьПорядковыйНомерТовараРасширеннаяПодсказка</name>
-                  <id>631</id>
+                  <id>605</id>
                   <type>Label</type>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
@@ -4498,6 +4506,7 @@
             <source>Товары</source>
             <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
               <autoMaxWidth>true</autoMaxWidth>
+              <horizontalLocation>Left</horizontalLocation>
             </extInfo>
           </viewStatusAddition>
           <searchControlAddition>

@@ -96,6 +96,7 @@
         </extInfo>
       </extendedTooltip>
       <type>UsualButton</type>
+      <commandName>0</commandName>
       <representation>Picture</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -187,7 +188,7 @@
         <id>345</id>
         <title>
           <key>ru</key>
-          <value>&lt;b>&lt;fontsize 10>&lt;colorstyle 0:4ff38c44-881e-4af0-bc75-7d257c316918>Продажи:&lt;/>&lt;/>&lt;/>&lt;fontsize 10> &lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>128 300&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>,&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>50&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/></value>
+          <value>&lt;b>&lt;fontsize 10>&lt;colorstyle 0:043bd380-33a5-4869-bd9f-cbd4e02011b6>Продажи:&lt;/>&lt;/>&lt;/>&lt;fontsize 10> &lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>128 300&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>,&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;link Продажи>&lt;b>&lt;u>&lt;font Arial>&lt;fontsize 10>&lt;color #00A0F2>&lt;bgcolor #FFFFFF>50&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/>&lt;/></value>
         </title>
         <enabled>true</enabled>
         <userVisible>
@@ -802,10 +803,10 @@
     </items>
     <items xsi:type="form:FormGroup">
       <name>КоманднаяПанельСоздать</name>
-      <id>1678</id>
+      <id>1302</id>
       <items xsi:type="form:FormGroup">
         <name>ГруппаПодменюСоздать</name>
-        <id>1676</id>
+        <id>1304</id>
         <items xsi:type="form:Button">
           <name>Создать_Интерес</name>
           <id>1306</id>
@@ -873,7 +874,7 @@
         </toolTip>
         <extendedTooltip>
           <name>ГруппаПодменюСоздатьРасширеннаяПодсказка</name>
-          <id>1681</id>
+          <id>1305</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -1059,7 +1060,7 @@
       <horizontalStretch>false</horizontalStretch>
       <extendedTooltip>
         <name>КоманднаяПанельСоздатьРасширеннаяПодсказка</name>
-        <id>1680</id>
+        <id>1303</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -2597,7 +2598,7 @@
         </items>
         <items xsi:type="form:FormGroup">
           <name>ГруппаМенеджер</name>
-          <id>1683</id>
+          <id>1676</id>
           <displayImportance>High</displayImportance>
           <items xsi:type="form:FormField">
             <name>ОсновнойМенеджер</name>
@@ -3276,7 +3277,7 @@
         </items>
         <items xsi:type="form:FormGroup">
           <name>ГруппаБизнесРегион</name>
-          <id>1682</id>
+          <id>1678</id>
           <displayImportance>High</displayImportance>
           <items xsi:type="form:FormField">
             <name>БизнесРегион</name>
@@ -3606,7 +3607,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ОтгрузкаЗапрещена</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <items xsi:type="form:Button">
                   <name>ОткрытьФормуСегментовЗапретаОтгрузки</name>
@@ -3693,7 +3698,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ОтгрузкаРазрешена</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <items xsi:type="form:Button">
                   <name>ОткрытьФормуСегментовЗапретаОтгрузки1</name>
@@ -4902,9 +4911,6 @@
                 <source>CRM_АдресаОфисов</source>
                 <extInfo xsi:type="form:SearchControlAdditionExtInfo">
                   <autoMaxWidth>true</autoMaxWidth>
-                  <font xsi:type="core:AutoFont">
-                    <bold>true</bold>
-                  </font>
                 </extInfo>
               </searchControlAddition>
               <extendedTooltip>
@@ -8100,7 +8106,11 @@
                 </contextMenu>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.ВниманиеСерый</picture>
+                  </picture>
+                </extInfo>
               </items>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -8163,7 +8173,11 @@
                 </contextMenu>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.Внимание16</picture>
+                  </picture>
+                </extInfo>
               </items>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -8226,7 +8240,11 @@
                 </contextMenu>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
-                <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                <extInfo xsi:type="form:PictureDecorationExtInfo">
+                  <picture xsi:type="core:PictureRef">
+                    <picture>CommonPicture.ВниманиеКрасный</picture>
+                  </picture>
+                </extInfo>
               </items>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -8420,7 +8438,11 @@
             </contextMenu>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+            <extInfo xsi:type="form:PictureDecorationExtInfo">
+              <picture xsi:type="core:PictureRef">
+                <picture>CommonPicture.Предупреждение</picture>
+              </picture>
+            </extInfo>
           </items>
           <items xsi:type="form:Decoration">
             <name>ПредупреждениеГоловнойКонтрагент</name>
@@ -8557,7 +8579,11 @@
             <autoMaxWidth>true</autoMaxWidth>
             <height>4</height>
             <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+            <extInfo xsi:type="form:PictureDecorationExtInfo">
+              <picture xsi:type="core:PictureRef">
+                <picture>CommonPicture.ДлительнаяОперация16</picture>
+              </picture>
+            </extInfo>
           </items>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -10076,6 +10102,14 @@
                 <common>true</common>
               </userVisible>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Copy</excludedCommands>
+              <excludedCommands>Create</excludedCommands>
+              <excludedCommands>CreateFolder</excludedCommands>
+              <excludedCommands>Delete</excludedCommands>
+              <excludedCommands>LevelDown</excludedCommands>
+              <excludedCommands>LevelUp</excludedCommands>
+              <excludedCommands>MoveItem</excludedCommands>
+              <excludedCommands>SetDeletionMark</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>CRM_ПотенциальныеКлиентыСсылка</name>
                 <id>1448</id>
@@ -11722,6 +11756,11 @@
                   <green>221</green>
                   <blue>221</blue>
                 </borderColor>
+                <typeLink>
+                  <datapath xsi:type="form:DataPath">
+                    <segments>CRM_Потенциалы</segments>
+                  </datapath>
+                </typeLink>
               </extInfo>
             </items>
             <visible>true</visible>
@@ -13650,6 +13689,12 @@
                   <chooseType>true</chooseType>
                   <typeDomainEnabled>true</typeDomainEnabled>
                   <textEdit>true</textEdit>
+                  <choiceParameterLinks>
+                    <name>Отбор.Владелец</name>
+                    <datapath xsi:type="form:DataPath">
+                      <segments>Объект.Ref</segments>
+                    </datapath>
+                  </choiceParameterLinks>
                   <borderColor xsi:type="core:ColorRef">
                     <color>Web.LightGray</color>
                   </borderColor>

@@ -304,7 +304,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -526,7 +530,11 @@
                   </contextMenu>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
-                  <extInfo xsi:type="form:PictureDecorationExtInfo"/>
+                  <extInfo xsi:type="form:PictureDecorationExtInfo">
+                    <picture xsi:type="core:PictureRef">
+                      <picture>CommonPicture.ВниманиеКрасный</picture>
+                    </picture>
+                  </extInfo>
                 </items>
                 <visible>true</visible>
                 <enabled>true</enabled>
@@ -809,6 +817,12 @@
               <chooseType>true</chooseType>
               <typeDomainEnabled>true</typeDomainEnabled>
               <textEdit>true</textEdit>
+              <choiceParameterLinks>
+                <name>Отбор.ХозяйственнаяОперация</name>
+                <datapath xsi:type="form:DataPath">
+                  <segments>ХозяйственнаяОперацияДоговора</segments>
+                </datapath>
+              </choiceParameterLinks>
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
@@ -1064,7 +1078,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ГрузКонтекстноеМеню</name>
-            <id>1818</id>
+            <id>1872</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -1310,7 +1324,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнераКод</name>
-          <id>1864</id>
+          <id>856</id>
           <title>
             <key>ru</key>
             <value>Код номенклатуры поставщика</value>
@@ -1323,7 +1337,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераКодРасширеннаяПодсказка</name>
-            <id>1868</id>
+            <id>1091</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1333,7 +1347,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераКодКонтекстноеМеню</name>
-            <id>1867</id>
+            <id>857</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>LabelField</type>
@@ -1349,7 +1363,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнераАртикул</name>
-          <id>1861</id>
+          <id>858</id>
           <title>
             <key>ru</key>
             <value>Артикул поставщика</value>
@@ -1362,7 +1376,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераАртикулРасширеннаяПодсказка</name>
-            <id>1870</id>
+            <id>1092</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1372,7 +1386,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераАртикулКонтекстноеМеню</name>
-            <id>1869</id>
+            <id>859</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>LabelField</type>
@@ -1388,7 +1402,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ТоварыНоменклатураПартнера</name>
-          <id>1858</id>
+          <id>256</id>
           <title>
             <key>ru</key>
             <value>Номенклатура поставщика</value>
@@ -1403,7 +1417,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураПартнераРасширеннаяПодсказка</name>
-            <id>1872</id>
+            <id>1093</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -1413,7 +1427,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ТоварыНоменклатураПартнераКонтекстноеМеню</name>
-            <id>1871</id>
+            <id>257</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -1475,6 +1489,9 @@
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible/>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.Товары.Артикул</segments>
+          </dataPath>
           <extendedTooltip>
             <name>ТоварыНоменклатураАртикулExtendedTooltip</name>
             <id>1095</id>
@@ -2433,7 +2450,7 @@
               </items>
               <items xsi:type="form:Button">
                 <name>ТоварыЗаполнитьНоменклатуруПоНоменклатуреПартнера</name>
-                <id>1857</id>
+                <id>1845</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -2722,7 +2739,6 @@
                 <horizontalAlign>Left</horizontalAlign>
               </extInfo>
             </extendedTooltip>
-            <commandName>Form.Item.Товары.StandardCommand.SelectAll</commandName>
             <representation>Auto</representation>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2777,6 +2793,7 @@
           <source>Товары</source>
           <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
+            <horizontalLocation>Left</horizontalLocation>
           </extInfo>
         </viewStatusAddition>
         <searchControlAddition>
@@ -2939,6 +2956,9 @@
         <initialListView>Auto</initialListView>
         <horizontalStretch>true</horizontalStretch>
         <verticalStretch>true</verticalStretch>
+        <rowPictureDataPath xsi:type="form:DataPath">
+          <segments>Объект.Товары.РасхождениеЗаказ</segments>
+        </rowPictureDataPath>
         <rowsPicture xsi:type="core:PictureRef">
           <picture>CommonPicture.СостоянияСтрок</picture>
         </rowsPicture>
@@ -3213,7 +3233,7 @@
           </items>
           <items xsi:type="form:FormField">
             <name>НалогообложениеНДС</name>
-            <id>1847</id>
+            <id>1815</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3224,7 +3244,7 @@
             </dataPath>
             <extendedTooltip>
               <name>НалогообложениеНДСРасширеннаяПодсказка</name>
-              <id>1854</id>
+              <id>1817</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3234,7 +3254,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>НалогообложениеНДСКонтекстноеМеню</name>
-              <id>1853</id>
+              <id>1816</id>
               <autoFill>true</autoFill>
             </contextMenu>
             <type>InputField</type>
@@ -3599,13 +3619,13 @@
         <id>303</id>
         <items xsi:type="form:FormGroup">
           <name>ГруппаСтраницыНДС</name>
-          <id>1845</id>
+          <id>1818</id>
           <items xsi:type="form:FormGroup">
             <name>СтраницаСНДС</name>
-            <id>1850</id>
+            <id>1820</id>
             <items xsi:type="form:FormField">
               <name>СуммаНДС</name>
-              <id>1852</id>
+              <id>1822</id>
               <title>
                 <key>ru</key>
                 <value>НДС</value>
@@ -3665,7 +3685,7 @@
             </title>
             <extendedTooltip>
               <name>СтраницаСНДСExtendedTooltip</name>
-              <id>1856</id>
+              <id>1821</id>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3767,7 +3787,7 @@
           </title>
           <extendedTooltip>
             <name>ГруппаСтраницыНДСExtendedTooltip</name>
-            <id>1855</id>
+            <id>1819</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3867,7 +3887,7 @@
             <id>1837</id>
             <items xsi:type="form:FormField">
               <name>СуммаВсегоБезНДС</name>
-              <id>309</id>
+              <id>1839</id>
               <title>
                 <key>ru</key>
                 <value>Всего</value>
@@ -3881,8 +3901,8 @@
                 <segments>Объект.Товары.TotalСуммаСНДС</segments>
               </dataPath>
               <extendedTooltip>
-                <name>СуммаВсегоБезНДСExtendedTooltip</name>
-                <id>1285</id>
+                <name>СуммаВсегоБезНДСРасширеннаяПодсказка</name>
+                <id>1841</id>
                 <type>Label</type>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
@@ -3892,7 +3912,7 @@
               </extendedTooltip>
               <contextMenu>
                 <name>СуммаВсегоБезНДСКонтекстноеМеню</name>
-                <id>310</id>
+                <id>1840</id>
                 <autoFill>true</autoFill>
               </contextMenu>
               <type>InputField</type>
@@ -4456,7 +4476,6 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.StandardCommand.Help</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

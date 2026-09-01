@@ -129,6 +129,10 @@
     <items xsi:type="form:Button">
       <name>СоздатьПользователя</name>
       <id>54</id>
+      <title>
+        <key>ru</key>
+        <value>Создать</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -145,7 +149,7 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <representation>Auto</representation>
+      <representation>PictureAndText</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
       <placementArea>UserCmds</placementArea>
@@ -199,7 +203,6 @@
       <autoMaxHeight>true</autoMaxHeight>
       <placementArea>UserCmds</placementArea>
       <representationInContextMenu>Auto</representationInContextMenu>
-      <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
     </items>
     <items xsi:type="form:FormGroup">
       <name>КоманднаяПанельПользователи</name>
@@ -249,7 +252,7 @@
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
-        <representationInContextMenu>Auto</representationInContextMenu>
+        <representationInContextMenu>OnlyInContextMenu</representationInContextMenu>
       </items>
       <items xsi:type="form:Button">
         <name>ФормаИзменить</name>
@@ -298,7 +301,6 @@
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
-        <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
       </items>
       <items xsi:type="form:FormGroup">
         <name>ПользователиСтандартныеКоманды</name>
@@ -349,7 +351,6 @@
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
-        <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
       </items>
       <items xsi:type="form:Button">
         <name>ПользователиИБ</name>
@@ -374,7 +375,6 @@
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
-        <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
       </items>
       <items xsi:type="form:Button">
         <name>ФормаИзменитьВыделенные</name>
@@ -399,7 +399,6 @@
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
-        <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
       </items>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -537,7 +536,6 @@
       </userVisible>
       <defaultItem>true</defaultItem>
       <titleLocation>None</titleLocation>
-      <shortcut>Shift+F</shortcut>
       <extendedTooltip>
         <name>СтрокаПоискаРасширеннаяПодсказка</name>
         <id>224</id>
@@ -573,7 +571,7 @@
         <editTextUpdate>DontUse</editTextUpdate>
         <inputHint>
           <key>ru</key>
-          <value>Поиск (Shift + F) </value>
+          <value>Введите имя пользователя</value>
         </inputHint>
       </extInfo>
     </items>
@@ -796,6 +794,7 @@
               </userVisible>
               <skipOnInput>false</skipOnInput>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Delete</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>НаименованиеГруппы</name>
                 <id>30</id>
@@ -1170,6 +1169,7 @@
               </userVisible>
               <skipOnInput>false</skipOnInput>
               <titleLocation>None</titleLocation>
+              <excludedCommands>Delete</excludedCommands>
               <items xsi:type="form:FormField">
                 <name>Наименование</name>
                 <id>51</id>
@@ -1508,7 +1508,7 @@
               <footerHeight>1</footerHeight>
               <horizontalScrollBar>AutoUse</horizontalScrollBar>
               <verticalScrollBar>AutoUse</verticalScrollBar>
-              <searchOnInput>DontUse</searchOnInput>
+              <searchOnInput>Auto</searchOnInput>
               <initialListView>Auto</initialListView>
               <horizontalStretch>true</horizontalStretch>
               <verticalStretch>true</verticalStretch>
@@ -1739,6 +1739,7 @@
           </userVisible>
           <skipOnInput>false</skipOnInput>
           <titleLocation>Top</titleLocation>
+          <excludedCommands>Delete</excludedCommands>
           <items xsi:type="form:FormField">
             <name>ПользователиСписокПоискНаименование</name>
             <id>254</id>
@@ -2275,6 +2276,14 @@
           <common>true</common>
         </userVisible>
         <titleLocation>Top</titleLocation>
+        <excludedCommands>Add</excludedCommands>
+        <excludedCommands>Change</excludedCommands>
+        <excludedCommands>Copy</excludedCommands>
+        <excludedCommands>EndEdit</excludedCommands>
+        <excludedCommands>MoveDown</excludedCommands>
+        <excludedCommands>MoveUp</excludedCommands>
+        <excludedCommands>SortListAsc</excludedCommands>
+        <excludedCommands>SortListDesc</excludedCommands>
         <items xsi:type="form:FormField">
           <name>ПользователиИГруппы</name>
           <id>81</id>
@@ -2613,9 +2622,8 @@
       <extInfo xsi:type="form:ImageFieldExtInfo">
         <width>7</width>
         <height>4</height>
-        <autoMaxHeight>true</autoMaxHeight>
-        <maxHeight>6</maxHeight>
-        <pictureSize>Proportionally</pictureSize>
+        <maxHeight>4</maxHeight>
+        <pictureSize>AutoSize</pictureSize>
         <nonselectedPictureText>
           <key>ru</key>
           <value>Нет фото</value>
@@ -2659,8 +2667,8 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxHeight>true</autoMaxHeight>
-        <maxHeight>6</maxHeight>
+        <height>4</height>
+        <maxHeight>4</maxHeight>
         <wrap>true</wrap>
         <multiLine>true</multiLine>
         <chooseType>true</chooseType>
@@ -2677,6 +2685,7 @@
       <key>ru</key>
       <value>Контактная информация</value>
     </title>
+    <height>4</height>
     <extendedTooltip>
       <name>ГруппаКонтактнаяИнформацияРасширеннаяПодсказка</name>
       <id>275</id>
@@ -2773,6 +2782,9 @@
           <representation>NormalSeparation</representation>
           <showLeftMargin>true</showLeftMargin>
           <united>true</united>
+          <titleDataPath xsi:type="form:DataPath">
+            <segments>Items.ГруппыПользователей.CurrentData.Description</segments>
+          </titleDataPath>
           <throughAlign>Auto</throughAlign>
           <currentRowUse>Auto</currentRowUse>
         </extInfo>
@@ -2872,6 +2884,9 @@
           <representation>NormalSeparation</representation>
           <showLeftMargin>true</showLeftMargin>
           <united>true</united>
+          <titleDataPath xsi:type="form:DataPath">
+            <segments>Items.ПользователиСписок.CurrentData.Description</segments>
+          </titleDataPath>
           <throughAlign>Auto</throughAlign>
           <currentRowUse>Auto</currentRowUse>
         </extInfo>
@@ -2932,6 +2947,9 @@
     <name>смарт_ПриСозданииНаСервереПосле</name>
     <callType>After</callType>
   </handlers>
+  <excludedCommands>Close</excludedCommands>
+  <excludedCommands>Create</excludedCommands>
+  <excludedCommands>Delete</excludedCommands>
   <autoSaveDataInSettings>Use</autoSaveDataInSettings>
   <saveWindowSettings>true</saveWindowSettings>
   <autoTitle>true</autoTitle>
