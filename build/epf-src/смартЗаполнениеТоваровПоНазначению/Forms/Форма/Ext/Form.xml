@@ -50,20 +50,6 @@
 			<ContextMenu name="ТоварыКонтекстноеМеню" id="5"/>
 			<AutoCommandBar name="ТоварыКоманднаяПанель" id="6">
 				<Autofill>false</Autofill>
-				<ChildItems>
-					<Button name="ТоварыОтметитьВсе" id="54">
-						<Type>CommandBarButton</Type>
-						<Representation>Picture</Representation>
-						<CommandName>Form.Command.ОтметитьВсе</CommandName>
-						<ExtendedTooltip name="ТоварыОтметитьВсеРасширеннаяПодсказка" id="56"/>
-					</Button>
-					<Button name="ТоварыСнятьОтметку" id="55">
-						<Type>CommandBarButton</Type>
-						<Representation>Picture</Representation>
-						<CommandName>Form.Command.СнятьОтметку</CommandName>
-						<ExtendedTooltip name="ТоварыСнятьОтметкуРасширеннаяПодсказка" id="57"/>
-					</Button>
-				</ChildItems>
 			</AutoCommandBar>
 			<ExtendedTooltip name="ТоварыРасширеннаяПодсказка" id="7"/>
 			<SearchStringAddition name="ТоварыСтрокаПоиска" id="8">
@@ -115,6 +101,18 @@
 					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="ТоварыНоменклатураКонтекстноеМеню" id="21"/>
 					<ExtendedTooltip name="ТоварыНоменклатураРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ТоварыНазначение" id="58">
+					<DataPath>Товары.Назначение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначение</v8:content>
+						</v8:item>
+					</Title>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ТоварыНазначениеКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ТоварыНазначениеРасширеннаяПодсказка" id="60"/>
 				</InputField>
 				<InputField name="ТоварыСклад" id="23">
 					<DataPath>Товары.Склад</DataPath>
@@ -176,11 +174,7 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>100</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
+				<v8:Type>cfg:EnumRef.ТипыНазначений</v8:Type>
 			</Type>
 		</Attribute>
 		<Attribute name="Склад" id="36">
@@ -238,6 +232,11 @@
 						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
 					</Type>
 				</Column>
+				<Column name="Назначение" id="47">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Назначения</v8:Type>
+					</Type>
+				</Column>
 				<Column name="Склад" id="42">
 					<Type>
 						<v8:Type>cfg:CatalogRef.Склады</v8:Type>
@@ -261,15 +260,6 @@
 				<Column name="ЕдиницаИзмерения" id="45">
 					<Type>
 						<v8:Type>cfg:CatalogRef.УпаковкиЕдиницыИзмерения</v8:Type>
-					</Type>
-				</Column>
-				<Column name="НаименованиеНоменклатуры" id="46">
-					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>150</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>
@@ -308,46 +298,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПеренестиВДокумент</Action>
-		</Command>
-		<Command name="ОтметитьВсе" id="48">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Отметить все</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Отметить все</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>ОтметитьВсе</Action>
-			<Picture>
-				<xr:Ref>StdPicture.CheckAll</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Representation>Picture</Representation>
-		</Command>
-		<Command name="СнятьОтметку" id="49">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Снять отметку</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Снять отметку</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>СнятьОтметку</Action>
-			<Picture>
-				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
-				<xr:LoadTransparent>true</xr:LoadTransparent>
-			</Picture>
-			<Representation>Picture</Representation>
 		</Command>
 	</Commands>
 </Form>
