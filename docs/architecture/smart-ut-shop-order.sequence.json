@@ -1,53 +1,106 @@
-{
-  "schema_version": 1,
-  "diagram_type": "sequence",
-  "meta": {
-    "title": "Smart.ut — заказ с сайта (/hs/shop)",
-    "quality_profile": "showcase",
-    "viewBox": [900, 560],
-    "views": [
-      {
-        "id": "http-stub",
-        "label": "HTTP-уведомление",
-        "focus": ["bitrix", "web", "shop"],
-        "note": "POST /hs/shop/order с 07.2025 возвращает OK без фоновой загрузки (#Б3696)."
-      },
-      {
-        "id": "reg-exchange",
-        "label": "Регламентный обмен",
-        "focus": ["scheduler", "exchange", "loader", "bitrix", "ib"],
-        "note": "Фактическая загрузка заказов — через Б_ЗаданиеОбменССайтом и CommerceML."
-      }
-    ]
-  },
-  "participants": [
-    { "id": "bitrix", "type": "external", "label": "Bitrix", "sublabel": "сайт" },
-    { "id": "web", "type": "cloud", "label": "Веб / hs", "sublabel": "публикация" },
-    { "id": "shop", "type": "backend", "label": "HTTP shop", "sublabel": "orderPOST" },
-    { "id": "scheduler", "type": "messagebus", "label": "Регл. задание", "sublabel": "Б_ЗаданиеОбменССайтом" },
-    { "id": "exchange", "type": "backend", "label": "Обмен", "sublabel": "Б_ОбменССайтомСервер" },
-    { "id": "loader", "type": "backend", "label": "Загрузка", "sublabel": "ЗагрузкаДокументов" },
-    { "id": "ib", "type": "database", "label": "ИБ УТ", "sublabel": "ЗаказКлиента" }
-  ],
-  "segments": [
-    { "from": 130, "to": 265, "label": "HTTP-уведомление" },
-    { "from": 305, "to": 470, "label": "Регламентный обмен" }
-  ],
-  "messages": [
-    { "from": "bitrix", "to": "web", "y": 160, "label": "POST /hs/shop/order", "variant": "emphasis" },
-    { "from": "web", "to": "shop", "y": 205, "label": "orderPOST", "variant": "emphasis" },
-    { "from": "shop", "to": "bitrix", "y": 240, "label": "200 OK (stub)", "variant": "return" },
-    { "from": "scheduler", "to": "exchange", "y": 325, "label": "смарт_ВыполнитьОбмен", "variant": "dashed" },
-    { "from": "exchange", "to": "bitrix", "y": 365, "label": "HTTP CommerceML", "variant": "emphasis" },
-    { "from": "bitrix", "to": "loader", "y": 405, "label": "XML заказов", "variant": "return" },
-    { "from": "loader", "to": "ib", "y": 445, "label": "ЗаказКлиента", "variant": "emphasis" },
-    { "from": "exchange", "to": "bitrix", "y": 455, "label": "статусы XML", "variant": "dashed" }
-  ],
-  "activations": [
-    { "participant": "web", "from": 198, "to": 248, "type": "cloud" },
-    { "participant": "shop", "from": 205, "to": 245, "type": "backend" },
-    { "participant": "exchange", "from": 320, "to": 460, "type": "backend" },
-    { "participant": "loader", "from": 400, "to": 450, "type": "backend" },
-    { "participant": "ib", "from": 440, "to": 455, "type": "database" }
-  ]
-}
+{
+
+  "schema_version": 1,
+
+  "diagram_type": "sequence",
+
+  "meta": {
+
+    "title": "Smart.ut — заказ с сайта (/hs/shop)",
+
+    "quality_profile": "showcase",
+
+    "viewBox": [900, 560],
+
+    "views": [
+
+      {
+
+        "id": "http-stub",
+
+        "label": "HTTP-уведомление",
+
+        "focus": ["bitrix", "web", "shop"],
+
+        "note": "POST /hs/shop/order с 07.2025 возвращает OK без фоновой загрузки (#Б3696)."
+
+      },
+
+      {
+
+        "id": "reg-exchange",
+
+        "label": "Регламентный обмен",
+
+        "focus": ["scheduler", "exchange", "loader", "bitrix", "ib"],
+
+        "note": "Фактическая загрузка заказов — через Б_ЗаданиеОбменССайтом и CommerceML."
+
+      }
+
+    ]
+
+  },
+
+  "participants": [
+
+    { "id": "bitrix", "type": "external", "label": "Bitrix", "sublabel": "сайт" },
+
+    { "id": "web", "type": "cloud", "label": "Веб / hs", "sublabel": "публикация" },
+
+    { "id": "shop", "type": "backend", "label": "HTTP shop", "sublabel": "orderPOST" },
+
+    { "id": "scheduler", "type": "messagebus", "label": "Регл. задание", "sublabel": "Б_ЗаданиеОбменССайтом" },
+
+    { "id": "exchange", "type": "backend", "label": "Обмен", "sublabel": "Б_ОбменССайтомСервер" },
+
+    { "id": "loader", "type": "backend", "label": "Загрузка", "sublabel": "ЗагрузкаДокументов" },
+
+    { "id": "ib", "type": "database", "label": "ИБ УТ", "sublabel": "ЗаказКлиента" }
+
+  ],
+
+  "segments": [
+
+    { "from": 130, "to": 265, "label": "HTTP-уведомление" },
+
+    { "from": 305, "to": 470, "label": "Регламентный обмен" }
+
+  ],
+
+  "messages": [
+
+    { "from": "bitrix", "to": "web", "y": 160, "label": "POST /hs/shop/order", "variant": "emphasis" },
+
+    { "from": "web", "to": "shop", "y": 205, "label": "orderPOST", "variant": "emphasis" },
+
+    { "from": "shop", "to": "bitrix", "y": 240, "label": "200 OK (stub)", "variant": "return" },
+
+    { "from": "scheduler", "to": "exchange", "y": 325, "label": "смарт_ВыполнитьОбмен", "variant": "dashed" },
+
+    { "from": "exchange", "to": "bitrix", "y": 365, "label": "HTTP CommerceML", "variant": "emphasis" },
+
+    { "from": "bitrix", "to": "loader", "y": 405, "label": "XML заказов", "variant": "return" },
+
+    { "from": "loader", "to": "ib", "y": 445, "label": "ЗаказКлиента", "variant": "emphasis" },
+
+    { "from": "exchange", "to": "bitrix", "y": 455, "label": "статусы XML", "variant": "dashed" }
+
+  ],
+
+  "activations": [
+
+    { "participant": "web", "from": 198, "to": 248, "type": "cloud" },
+
+    { "participant": "shop", "from": 205, "to": 245, "type": "backend" },
+
+    { "participant": "exchange", "from": 320, "to": 460, "type": "backend" },
+
+    { "participant": "loader", "from": 400, "to": 450, "type": "backend" },
+
+    { "participant": "ib", "from": 440, "to": 455, "type": "database" }
+
+  ]
+
+}
+
